@@ -1,0 +1,50 @@
+{
+  "source": "data/predictions_miflu_L60_paper_protocol.csv",
+  "peak_aggregate": {
+    "peak_hit_count": "2/4",
+    "n_true_peaks": 4,
+    "n_hit": 2,
+    "n_missed": 2,
+    "peak_hit_rate": 0.5,
+    "mean_abs_delta_t": 1.5,
+    "mean_peak_magnitude_rel_err_pct": 35.43288149157611,
+    "false_peak_count": 1
+  },
+  "trend_indicators": {
+    "directional_accuracy": 0.6617647058823529,
+    "beta_gt": 0.0,
+    "beta_pred": 0.8522788927591815,
+    "beta_abs_diff": 0.8522788927591815,
+    "zeta_gt": 0.4333620607229375,
+    "zeta_pred": 0.9385685611273328,
+    "zeta_abs_diff": 0.5052065004043953
+  },
+  "verdicts": {
+    "peak_hit_rate": {
+      "value": 0.5,
+      "threshold": 0.75,
+      "verdict": "not accurate"
+    },
+    "mean_abs_delta_t": {
+      "value": 1.5,
+      "threshold": 2.0,
+      "verdict": "accurate"
+    },
+    "mean_peak_magnitude_rel_err": {
+      "value": 35.43288149157611,
+      "threshold": 20.0,
+      "verdict": "not accurate"
+    },
+    "directional_accuracy": {
+      "value": 0.6617647058823529,
+      "threshold": 0.6,
+      "verdict": "accurate"
+    }
+  },
+  "thresholds": {
+    "peak_hit_rate": 0.75,
+    "mean_abs_delta_t": 2.0,
+    "mean_peak_mag_rel_err": 20.0,
+    "directional_accuracy": 0.6
+  }
+}

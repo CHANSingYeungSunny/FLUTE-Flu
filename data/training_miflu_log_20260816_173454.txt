@@ -1,0 +1,23 @@
+[17:34:55] ============================================================
+[17:34:55]   MIFlu — FULL MULTIMODAL (text prompt + time-series)
+[17:34:55]   PAPER PROTOCOL (MIFlu_paper.md — authoritative PDF→markdown conversion; old MIFlu_Complete_Extraction.md deleted 2026-08-17)
+[17:34:55] ============================================================
+[17:34:55]   Evaluation protocol: paper protocol (NOT L=52 walk-forward)
+[17:34:55]   Device: cuda (NVIDIA GeForce GTX 1650 with Max-Q Design)
+[17:34:55]   Config: T=104, L=[24] (each L trained INDEPENDENTLY)
+[17:34:55]           K=6, Lp=24, S=2, lora_r=4
+[17:34:55]           Split: static 70:10:20 (shuffle=False)
+[17:34:55]           Normalization: StandardScaler fit on TRAIN only
+[17:34:55]           batch=16, lr=0.0005, epochs=1, reps=1, seed=42
+[17:34:55] 
+[17:34:55] Data: 1025 total | Train=717 | Val=102 | Test=206
+[17:34:55] 
+[17:34:55] Loading GPT2 text embedder...
+[17:35:00] 
+[17:35:01]   Prompt built for L=24: 369 tokens
+[17:35:01] ──────────────────────────────────────────────────
+[17:35:01]   HORIZON L=24
+[17:35:01] ──────────────────────────────────────────────────
+[17:35:01]   [L=24] Rep 1/1 ...
+[17:35:01]   L=24: train=613 val=103 test=182 windows
+[17:35:01]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819

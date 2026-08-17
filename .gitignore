@@ -1,0 +1,24 @@
+# Model checkpoints (large, >100MB each) — excluded from git
+*.pth
+checkpoints/
+hpc_results/checkpoints/
+
+# Python caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Temp / scratch files
+_tmp_*
+*.tmp
+
+# Reference papers (large PDFs)
+reference_papers/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Local env / secrets
+.env
+*.key
