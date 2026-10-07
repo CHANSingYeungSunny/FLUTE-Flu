@@ -22,3 +22,11 @@ Thumbs.db
 # Local env / secrets
 .env
 *.key
+
+
+# --- Large download / analysis artifacts (over GitHub 100 MB hard limit) ---
+results/v3_clean/final/final_test_analysis_dataset.csv
+results/v3_clean/test_eval/
+
+# --- Vendored third-party repository (nested git repo, no .gitmodules) ---
+recovery/author_repo/

@@ -1,0 +1,38 @@
+item_type,item_id,item_title,source_artifact,source_path,regenerated_programmatically
+table,T-1-1,报告权限清单,REPORT_AUTHORITY_AND_ARCHIVAL_NOTE.md,results/v3_clean/analysis/reports/REPORT_AUTHORITY_AND_ARCHIVAL_NOTE.md,YES
+table,T-4-1,论文表 V 目标值与 R1-B 实测值,"R1B_CORRECTED_PILOT_REPORT.md; TABLE_V_REPRODUCIBILITY_VERDICT.md",hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/,YES
+table,T-4-2,论文结果差距计算,PAPER_GAP_REDUCTION_CALCULATION.md,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/PAPER_GAP_REDUCTION_CALCULATION.md,YES
+table,T-4-3,剩余差距的可能来源与证据等级,"R1C_DOCUMENTARY_EVIDENCE.md; R1_PAPER_CODE_CONFLICTS.md",hpc_results/official_repo_reproduction_20261006/,YES
+table,T-5-1,契约可比性审计,PAPER_GAP_COMPARABILITY_AUDIT.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/PAPER_GAP_COMPARABILITY_AUDIT.csv,YES
+table,T-7-1,三个集合的用途,"STRICT_966_KEY_VALIDATION.md; TRACK_C_MASTER_CONTRACT.md",hpc_results/official_repo_reproduction_20261006/,YES
+table,T-8-1,八个模型的身份,"TRACK_C_MODEL_IDENTITY.csv; TRACK_C_MASTER_CONTRACT.md",hpc_results/official_repo_reproduction_20261006/,YES
+table,T-10-1,八模型 Test MSE 排名,TRACK_C_TEST_MSE_RANKING.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_TEST_MSE_RANKING.csv,YES
+table,T-10-2,八模型 Test MAE 排名,TRACK_C_TEST_MAE_RANKING.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_TEST_MAE_RANKING.csv,YES
+table,T-10-3,分 horizon 前四名,TRACK_C_PER_HORIZON_CHAMPIONS.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_PER_HORIZON_CHAMPIONS.csv,YES
+table,T-10-4,分种子前三名,TRACK_C_PER_SEED_RANKINGS.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_PER_SEED_RANKINGS.csv,YES
+table,T-11-1,LLM 侧与非 LLM 组均值,TRACK_C_LLM_NONLLM_GROUP_SUMMARY.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_LLM_NONLLM_GROUP_SUMMARY.csv,YES
+table,T-12-1,配对比较,TRACK_C_PAIRWISE_STATS_CORRECTED.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_PAIRWISE_STATS_CORRECTED.csv,YES
+table,T-13-1,资源与存储,TRACK_C_COST_SUMMARY.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_COST_SUMMARY.csv,YES
+table,T-14-1,工程修正与事故记录,"TRACK_C_EXECUTION_LOG.md; limitations_and_incidents.md",results/innovation/final/limitations_and_incidents.md,YES
+table,T-A-1,关键哈希与路径,REPORT_AUTHORITY_AND_ARCHIVAL_NOTE.md,results/v3_clean/analysis/reports/REPORT_AUTHORITY_AND_ARCHIVAL_NOTE.md,YES
+table,T-B-1,每张图对应的源数据,FINAL_REPORT_V2_SOURCE_MANIFEST.csv,results/v3_clean/analysis/reports/FINAL_REPORT_V2_SOURCE_MANIFEST.csv,YES
+table,T-1-1-cover,封面元信息表,REPORT_AUTHORITY_AND_ARCHIVAL_NOTE.md,results/v3_clean/analysis/reports/REPORT_AUTHORITY_AND_ARCHIVAL_NOTE.md,YES
+figure,F-3-1,项目时间线 by track,"TRACK_C_EXECUTION_LOG.md; R1B_CORRECTED_PILOT_REPORT.md",hpc_results/official_repo_reproduction_20261006/,YES
+figure,F-3-2,Track H/R/C/F1 契约分离,TRACK_C_MASTER_CONTRACT.md,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/TRACK_C_MASTER_CONTRACT.md,YES
+figure,F-4-1,论文目标 vs 复现分 horizon,PAPER_GAP_REDUCTION_CALCULATION.md,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/PAPER_GAP_REDUCTION_CALCULATION.md,YES
+figure,F-9-1,Track C 最终工作流,TRACK_C_EXECUTION_LOG.md,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/TRACK_C_EXECUTION_LOG.md,YES
+figure,F-10-1,八模型 Test MSE 排名,TRACK_C_TEST_MSE_RANKING.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_TEST_MSE_RANKING.csv,YES
+figure,F-10-2,八模型 Test MAE 排名,TRACK_C_TEST_MAE_RANKING.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_TEST_MAE_RANKING.csv,YES
+figure,F-10-3,分 horizon 对比,TRACK_C_PER_HORIZON_CHAMPIONS.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_PER_HORIZON_CHAMPIONS.csv,YES
+figure,F-10-4,分种子稳定性,TRACK_C_PER_SEED_RANKINGS.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_PER_SEED_RANKINGS.csv,YES
+figure,F-11-1,组均值 vs 单个冠军,TRACK_C_LLM_NONLLM_GROUP_SUMMARY.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_LLM_NONLLM_GROUP_SUMMARY.csv,YES
+figure,F-12-1,MIFlu vs NLinear 12 配对格,TRACK_C_PAIRWISE_STATS_CORRECTED.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_PAIRWISE_STATS_CORRECTED.csv,YES
+figure,F-13-1,GPU 工时与存储占用,TRACK_C_COST_SUMMARY.csv,hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_COST_SUMMARY.csv,YES
+
+# NOTE
+# Every table and figure in the v2 report is regenerated at build time by
+# scripts/build_final_report_v2.py from the frozen CSV artefacts listed above.
+# No value is typed in by hand and no figure is copied from the old report.
+# figure F-12-1 is a schematic sign layout derived from the frozen summary
+# statistics (mean_diff, A_wins, B_wins, ties); the per-cell values themselves
+# are in TRACK_C_PAIRWISE_STATS_CORRECTED.csv, which only publishes summaries.

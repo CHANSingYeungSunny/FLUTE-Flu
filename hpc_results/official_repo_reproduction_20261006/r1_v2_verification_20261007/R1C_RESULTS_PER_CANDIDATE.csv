@@ -1,0 +1,34 @@
+candidate_id,seed,horizon,test_mse,test_mae,best_epoch,val_mse,job_id,rc,status
+C0_r1b_constant_lr,1000,24,2.133497,0.929781,5,0.227362,609506_0,0,COMPLETE
+C0_r1b_constant_lr,1000,36,2.022708,0.997668,6,0.215881,610013_1,0,COMPLETE
+C0_r1b_constant_lr,1000,48,1.841337,0.895716,10,0.201683,610025_2,0,COMPLETE
+C0_r1b_constant_lr,1000,60,1.793311,0.911584,11,0.234158,610032_3,0,COMPLETE
+C0_r1b_constant_lr,1000,mean_4L,1.947713,0.933687,,,-,COMPLETE
+C0_r1b_constant_lr,1001,24,,,,,,PENDING
+C0_r1b_constant_lr,1001,36,,,,,,PENDING
+C0_r1b_constant_lr,1001,48,,,,,,PENDING
+C0_r1b_constant_lr,1001,60,,,,,,PENDING
+C0_r1b_constant_lr,1002,24,,,,,,PENDING
+C0_r1b_constant_lr,1002,36,,,,,,PENDING
+C0_r1b_constant_lr,1002,48,,,,,,PENDING
+C0_r1b_constant_lr,1002,60,,,,,,PENDING
+C1_released_type1_scheduler,1000,24,2.017671,0.915340,5,0.214762,610061_0,0,COMPLETE
+C1_released_type1_scheduler,1000,36,1.777410,0.866462,9,0.201954,610070_1,0,COMPLETE
+C1_released_type1_scheduler,1000,48,1.710919,0.874585,10,0.195516,610639_2,0,COMPLETE
+C1_released_type1_scheduler,1000,60,1.705562,0.862131,17,0.230196,610648_3,0,COMPLETE
+C1_released_type1_scheduler,1000,mean_4L,1.802891,0.879630,,,-,COMPLETE
+C1_released_type1_scheduler,1001,24,,,,,,PENDING
+C1_released_type1_scheduler,1001,36,,,,,,PENDING
+C1_released_type1_scheduler,1001,48,,,,,,PENDING
+C1_released_type1_scheduler,1001,60,,,,,,PENDING
+C1_released_type1_scheduler,1002,24,,,,,,PENDING
+C1_released_type1_scheduler,1002,36,,,,,,PENDING
+C1_released_type1_scheduler,1002,48,,,,,,PENDING
+C1_released_type1_scheduler,1002,60,,,,,,PENDING
+
+# NOTES
+# status PENDING = submitted by r1c_batch_driver.sh, not yet finished at the time this file was generated.
+# horizon mean_4L = equal-weight mean over L = 24/36/48/60 for that seed.
+# Per-candidate means over three seeds will replace the single-seed mean_4L rows once seeds 1001/1002 complete.
+# Every fit selects its checkpoint on Validation only and reads Test exactly once (correction B-5).
+# No candidate above was chosen, added or removed after any result was seen.

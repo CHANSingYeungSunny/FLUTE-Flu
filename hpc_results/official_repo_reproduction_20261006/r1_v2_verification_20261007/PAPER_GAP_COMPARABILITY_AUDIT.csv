@@ -1,19 +1,18 @@
-criterion,old_A2_selfbuilt_miflu,new_R1B_official_repo_miflu,comparable,note
-dataset,author national_illness.csv 966 rows,author national_illness.csv 966 rows,YES,sha256 2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5 on both sides
-dataset_sha256,2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5,2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5,YES,identical
-split,676 / 97 / 193,676 / 97 / 193,YES,identical
-variables,7 channels,7 channels,YES,same VAR_COLS order; ILITOTAL index 4
-metric_space,z-space (StandardScaler, train-only fit),z-space (StandardScaler, train-only fit),YES,identical
-horizons,24 / 36 / 48 / 60,24 / 36 / 48 / 60,YES,identical
-pooling,mean over (origins x leads x 7 variables),mean over (origins x leads x 7 variables),YES,identical
-seeds,42 / 43 / 44,42 / 43 / 44,YES,matched
-window_rule,strict containment,strict containment,YES,origins 170/158/146/134 in both
-containment_flag_in_artifacts,strict,strict,YES,read from the npz/manifest
-profile_flag_in_artifacts,author_966,author_966,YES,read from the npz/manifest
-checkpoint_policy,validation-selected,validation-selected,YES,both select on best validation MSE
-test_access_during_fit,False,False,YES,neither reads Test while fitting
-implementation,project self-built reconstruction (scripts/miflu_model.py),official repository GPT4TS-derived MIFlu (r1b_model.R1BCorrectedMIFlu),NO,THIS IS THE DIFFERENCE BEING MEASURED - the two are different models, not the same model tuned
-text_asset,project-built prompt statistics encoder,author text_emb_label_0507_<L>.txt,NO,declared deviation D2 of R1-B
-n_repetitions,3 seeds,3 seeds,YES,matched
-test_scope,full strict Test (170/158/146/134 origins),full strict Test (170/158/146/134 origins),YES,identical
-VERDICT_OVERALL,,,COMPARABLE_WITH_DECLARED_IMPLEMENTATION_DIFFERENCE,"The old and new author-966 MIFlu results are contract-comparable on dataset, split, variables, metric space, horizons, pooling, seeds, window rule and checkpoint policy. They differ in implementation and text asset, which is precisely what the comparison is intended to measure."
+criterion,old_value_A2_selfbuilt,new_value_R1B_official_repo,comparable,severity_if_violated,evidence,note
+same_966_row_dataset,"author 966-row file, SHA-256 2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5","author 966-row file, SHA-256 2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",YES,blocking,"R1B_CORRECTED_PILOT_REPORT.md gate C1; audit_20260930/data_probe_out.txt",Identical hash on both sides
+same_split,"676 / 97 / 193 (Test rows [773,966) = 193)","676 / 97 / 193 (Test rows [773,966) = 193)",YES,blocking,"R1B_CORRECTED_PILOT_REPORT.md gate C2; audit_20260930/independent_recompute_out.txt (test block [773,966) = 193 rows)",Both reproduce the author loader arithmetic 966-193-104=669 -> 297 rows
+same_variables,7 channels (n, L, 7),7 channels (n, L, 7),YES,blocking,"R1B_CORRECTED_PILOT_REPORT.md gate C4; audit_20260930/independent_recompute_out.txt",Seven-variable contract on both sides
+same_metric_space,z-space (standardized_train_fit_z),z-space ("mean over (origins x leads x 7 variables), z-space"),YES,blocking,"R1B_CORRECTED_PILOT_REPORT.md section 6 pooling axes; audit_20260930/predictions_stage6 scaler space field",Both report z-space MSE
+same_horizons,24;36;48;60,24;36;48;60,YES,blocking,"R1B_CORRECTED_PILOT_REPORT.md section 2; TRACK_C_PER_HORIZON_CHAMPIONS.csv",Identical horizon set
+same_pooling,"average_MSE_4L = seed-mean then equal-weight L-mean over origins x leads x 7 vars","average_MSE_4L = mean over origins x leads x 7 vars, then across L",YES,blocking,"audit_20260930/independent_average_mse_4L_stage6.csv; R1B_CORRECTED_PILOT_REPORT.md section 2",Same aggregation definition
+same_seed_policy,"3 matched seeds 42/43/44","1 repetition, seed identity = 1000 + repetition index",NO,blocking,"R1B_CORRECTED_PILOT_REPORT.md section 6 (seed identity) and gate C15 (repetition count = 1, verdict capped); section 2 (reproduced SD = n/a, not 0)","MATERIAL MISMATCH. The R1-B figure is a single repetition, not a 3-seed mean. A one-repetition mean is a noisier estimator than a 3-seed mean, so part of any difference is estimator variance, not implementation."
+same_checkpoint_policy,UNVERIFIED (not recorded for the A2 artefact),"Validation-only selection (correction B-5); test_access_during_fit = False",UNKNOWN,blocking,"R1B_CORRECTED_PILOT_REPORT.md gate C9; released-code defect documented in section 4 (released code selects on Test)","The A2 side carries no recorded selection rule. Since the released author code selects on Test, an unrecorded A2 rule cannot be assumed validation-only."
+same_strict_origins,"170 at L=24 and 134 at L=60 verified; L36/L48 follow the same rule","170/158/146/134 at L=24/36/48/60",PARTIAL,nonblocking,"audit_20260930/independent_recompute_out.txt (n_origins=170 for L=24, 134 for L=60); R1B_CORRECTED_PILOT_REPORT.md gate C5 (549/74/170, 537/62/158, 525/50/146, 513/38/134)","The two horizons directly checked agree. L36/L48 agree by rule but were not separately recomputed on the A2 side."
+implementation,"project self-built MIFlu reconstruction (A2)","official-repository MIFlu + R1-B corrections",INTENTIONALLY_DIFFERENT,not_a_violation,"TRACK_C_CELL_CLASSIFICATION.csv (old Stage-6 MIFlu rejected as byte-identical to the A2 artefact); R1B_IMPLEMENTATION_CHANGE_LEDGER.md","This is the variable the comparison exists to measure. Not a comparability defect."
+text_asset,"project prompt encoder","author text_emb_label_0507_<L>.txt",INTENTIONALLY_DIFFERENT,not_a_violation,"R1B_CORRECTED_PILOT_REPORT.md section 4 qualification 2 (declared deviation D2)","Declared deviation. Not a comparability defect, but it means the measured difference is attributable to implementation AND text asset jointly."
+uncertainty_statement,"3-seed mean; SD available","SD = n/a (one repetition)",NO,blocking,"R1B_CORRECTED_PILOT_REPORT.md section 2 ('SD is n/a, not 0 - one repetition')","Without an SD on the R1-B side no interval can be placed on the difference, so no improvement can be distinguished from noise."
+
+# OVERALL VERDICT
+# NOT_SUFFICIENTLY_COMPARABLE
+# Blocking violations: same_seed_policy (3 seeds vs 1 repetition), same_checkpoint_policy (A2 unverified), uncertainty_statement (R1-B SD = n/a)
+# Consequence: a numerical reduction percentage must not be stated as a claim. See PAPER_GAP_REDUCTION_CALCULATION.md section 6.

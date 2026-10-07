@@ -1,0 +1,24 @@
+# FINAL_REPORT_V2_SHA256.txt
+# Generated 2026-10-07. Repository commit 5304f9473e8f67b97c23abda1b31775439d5a353
+#
+# Format: <sha256>  <bytes>  <filename>
+
+# --- current deliverables (v2) -------------------------------------------
+# FINAL, post-render-audit. 19 pages, 0 flagged. See FINAL_REPORT_V2_RENDER_AUDIT.md
+d9f14d3a45a4da88c08fc1d018edea0c8331643aaa919f895c3f4387b33cbd68  670113  MIFlu_非LLM与LLM流感预测最终报告_中文版_官方仓库966行严格测试冠军版_v2.docx
+c017673c383e9774460faf60256ad3f89c792231b006710239a91bcdf4735838  5172055  render_v2/MIFlu_非LLM与LLM流感预测最终报告_中文版_官方仓库966行严格测试冠军版_v2.pdf
+
+# --- previous championship report (v1, preserved unmodified) -------------
+f41652ff3d108575a9e93d789810f2fd0d345bb3b8536f14a5367922691f57ef  44675  MIFlu_非LLM与LLM流感预测最终报告_中文版_官方仓库966行严格测试冠军版.docx
+
+# --- archived historical report (SUPERSEDED_HISTORICAL_REPORT) -----------
+# original, preserved in place and in archive/ — byte-identical
+9c573f48fb65e590c7973223d6cb5e0ab74e2dfa4f6df11ec936f980a6b50ead  1372896  MIFlu_非LLM与LLM流感预测最终报告_中文版.docx
+9c573f48fb65e590c7973223d6cb5e0ab74e2dfa4f6df11ec936f980a6b50ead  1372896  archive/MIFlu_非LLM与LLM流感预测最终报告_中文版_旧版_历史1025行实验.docx
+e1e1ecbb0bf498433dae309633b83a302f47f538dd5ee3bb56b3e356e7f9dbfe  1670959  archive/MIFlu_非LLM与LLM流感预测最终报告_中文版_旧版_历史1025行实验.pdf
+
+# --- pinned experimental identities --------------------------------------
+# author 966-row dataset SHA-256
+2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+# strict-966 canonical Test key-set SHA-256
+4ad79bb14b2cc11ec3ae1e07e13ae4bdcf41a87161d5149774ab1a94f95d1961

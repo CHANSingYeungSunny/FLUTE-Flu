@@ -13,6 +13,20 @@ change; see `R1C_DOCUMENTARY_EVIDENCE.md` §2).
 
 No candidate may be added after execution begins.
 
+> **Documented inconsistency (2026-10-07, post-execution).** The frozen matrix
+> `R1C_FROZEN_CANDIDATE_MATRIX.csv` describes C0 as a **12-fit run** at seeds
+> 1000/1001/1002, not as "no new compute". The two frozen documents therefore
+> disagree on the C0 row. **Execution followed the matrix**, because re-running
+> the reference at matched seeds is the more conservative choice: it replaces a
+> single-repetition reference with a 3-seed mean, which is what makes the C1-vs-C0
+> comparison statistically meaningful (see `PAPER_GAP_COMPARABILITY_AUDIT.csv`,
+> blocking violation `same_seed_policy`).
+>
+> This text is **not** amended to match reality. It is recorded here so that the
+> divergence is visible. Neither document has been edited to remove the
+> discrepancy, and no candidate was added, removed or re-parameterised after any
+> result was seen.
+
 ## 2. What C1 changes — and only this
 
 ```
