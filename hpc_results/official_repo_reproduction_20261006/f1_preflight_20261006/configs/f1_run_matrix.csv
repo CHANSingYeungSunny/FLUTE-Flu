@@ -1,0 +1,25 @@
+submission_order,wave,array_index,model,horizon,seed,device,gpu_required,entry_point,expected_elapsed_s,expected_gpu_hours
+1,gpu,0,miflu,24,42,gpu,YES,scripts/train_miflu.py --horizon 24 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+2,gpu,1,miflu,36,42,gpu,YES,scripts/train_miflu.py --horizon 36 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+3,gpu,2,miflu,48,42,gpu,YES,scripts/train_miflu.py --horizon 48 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+4,gpu,3,miflu,60,42,gpu,YES,scripts/train_miflu.py --horizon 60 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+5,gpu,4,notext,24,42,gpu,YES,scripts/train_ablation.py --variant no_multi --horizon 24 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+6,gpu,5,notext,36,42,gpu,YES,scripts/train_ablation.py --variant no_multi --horizon 36 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+7,gpu,6,notext,48,42,gpu,YES,scripts/train_ablation.py --variant no_multi --horizon 48 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+8,gpu,7,notext,60,42,gpu,YES,scripts/train_ablation.py --variant no_multi --horizon 60 --seed 42 --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict,192,0.05333
+9,cpu,n/a,nlinear,24,42,cpu,NO,scripts/train_nlinear_966.py --horizon 24 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,nlinear,36,42,cpu,NO,scripts/train_nlinear_966.py --horizon 36 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,nlinear,48,42,cpu,NO,scripts/train_nlinear_966.py --horizon 48 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,nlinear,60,42,cpu,NO,scripts/train_nlinear_966.py --horizon 60 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,dlinear,24,42,cpu,NO,scripts/train_backbone_966.py --backbone dlinear --horizon 24 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,dlinear,36,42,cpu,NO,scripts/train_backbone_966.py --backbone dlinear --horizon 36 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,dlinear,48,42,cpu,NO,scripts/train_backbone_966.py --backbone dlinear --horizon 48 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,dlinear,60,42,cpu,NO,scripts/train_backbone_966.py --backbone dlinear --horizon 60 --seed 42 --profile author_966 --containment strict,40,0.0
+9,cpu,n/a,last_value_naive,24,42,cpu,NO,f1_naive_runner.py --name last_value_naive --horizon 24 --seed 42 --containment strict,15,0.0
+9,cpu,n/a,last_value_naive,36,42,cpu,NO,f1_naive_runner.py --name last_value_naive --horizon 36 --seed 42 --containment strict,15,0.0
+9,cpu,n/a,last_value_naive,48,42,cpu,NO,f1_naive_runner.py --name last_value_naive --horizon 48 --seed 42 --containment strict,15,0.0
+9,cpu,n/a,last_value_naive,60,42,cpu,NO,f1_naive_runner.py --name last_value_naive --horizon 60 --seed 42 --containment strict,15,0.0
+9,cpu,n/a,seasonal_naive,24,42,cpu,NO,f1_naive_runner.py --name seasonal_naive --horizon 24 --seed 42 --containment strict --insufficient-history-policy invalid,15,0.0
+9,cpu,n/a,seasonal_naive,36,42,cpu,NO,f1_naive_runner.py --name seasonal_naive --horizon 36 --seed 42 --containment strict --insufficient-history-policy invalid,15,0.0
+9,cpu,n/a,seasonal_naive,48,42,cpu,NO,f1_naive_runner.py --name seasonal_naive --horizon 48 --seed 42 --containment strict --insufficient-history-policy invalid,15,0.0
+9,cpu,n/a,seasonal_naive,60,42,cpu,NO,f1_naive_runner.py --name seasonal_naive --horizon 60 --seed 42 --containment strict --insufficient-history-policy invalid,15,0.0

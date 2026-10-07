@@ -1,0 +1,46 @@
+{
+  "generated_utc": "2026-09-21T00:14:51Z",
+  "binding_package": "deferred_parent_binding",
+  "sha256_of_binding_json": "13121b8bd140fb7ba108b66f9b7c7cdf9213911a24b37bbb0d1959fece5cc971",
+  "sha256_of_binding_md": "2199b1035fed137905ae66f39a1935d7f922c4394296a0feca271ee7a3125673",
+  "binding_outcome": {
+    "deferred_parent_resolved": "BEST_VALIDATION_LLM_AFTER_SCREENING = gpt2_miflu",
+    "selected_parent_model": "gpt2_miflu",
+    "selected_parent_average_mse_4l": 0.7708721562796242,
+    "top_equivalence_set": [],
+    "equivalence_triggered": false
+  },
+  "referenced_files": {
+    "results/v3_clean/preregistration/deferred_parent_binding_rule.json": "d0f708796e353017f1212ce4e2a4244d47582937117116049da2e0da5dae6b13",
+    "results/v3_clean/preregistration/paper_aligned_selection_rule.json": "afa7a780010aeed20fd7a2d361300ae2ce4411baeed1d458581538d3df359325",
+    "results/v3_clean/preregistration/deferred_submission_guard.json": "78645555428a8b7d11b7f29a2b1063ea2e645a2ddba30b27c27f3defe1767684",
+    "results/v3_clean/analysis/selection_outcome.json": "f93e711288023703b7c6ed7818009e7598c70f6dc9ed4c9274691ea16f667dc4",
+    "results/v3_clean/analysis/frozen_analysis_protocol.json": "cd229790fd0693334d79a1d63a38f06be8faf8cf30d83eb45c70603bc580fb6f",
+    "results/v3_clean/implementation/source_manifest.json": "95e30137f53d3d3a10a6453f0912883e7361afaada24593bd4bce4db3ac5b313",
+    "results/v3_clean/runs/complete_specs_598.json": "a44aedce01e8c37a02792dea113ff2b3f118b37e236871f24dfbae896e4bcd0b"
+  },
+  "base_model_identity": {
+    "backbone": "gpt2 (TextualInputEmbedder / gpt2_miflu adapter)",
+    "source_version": "innov-v3.19-baseline-no-checkpoint-finalization",
+    "source_aggregate_sha256": "ae75b958b750e97c1ec9c0317ac80bf6fdc94ef979cfa280570540b0d889efaa",
+    "gpt2_related_source_files": {
+      "scripts/innovation/backbones/gpt2_miflu_adapter.py": "6dc97049c36f90d3de8f25ad641b57077a25950374b5b3f735bb72f40120a2d0",
+      "scripts/innovation/backbones/llm_inspired.py": "ffbd5f5321f5f4462bc896b1b99aad9eb5e9768c5e5d8c20e31e35e3b6d50140",
+      "scripts/innovation/encoders/gpt2_encoder.py": "a72b60e87a6514e07f358c1a6bc878ed50cf832be18610af6d337d31c52fe6b3",
+      "scripts/miflu_model.py": "0e6bdb61213bfdcc72e6a5b2733fc891a613baeb3dc52b514997c1507bfc15ef",
+      "scripts/textual_embedder.py": "fc52226fca7fa3165d13221a9d744b0bdb8fc29d56d8cfe848a42f018fc002a0"
+    }
+  },
+  "prompt_config_identity": {
+    "config_resolved_yaml_sha256": "f8edfd3a7c5be0c13c3f167b6a6bcbd058c55294e1d3a45d1a3441c20c67c29c",
+    "prompt_statistics_metadata_sha256": "d3b0bcfe82ef4b2be00f08e6d5067728cc4a72a7de49fcfca06e473db009e76f",
+    "scaler_metadata_sha256": "51b57fd0ec7528bc4452c9065f7e86bb7cf238e714db281b68970e17c0a4e8d5",
+    "split_manifest_sha256": "5e562727791119e4ff4365a5263b2a40bb7a46f8c2b0fe5d8e6124fa6e7a5cef"
+  },
+  "counts": {
+    "deferred_controls": 18,
+    "supporting_accepted_rows": 40,
+    "test_access": 0,
+    "holdout_access": 0
+  }
+}

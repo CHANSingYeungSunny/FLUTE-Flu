@@ -1,0 +1,197 @@
+{
+  "record": "wave1_failstop_d15_baseline_finalize",
+  "generated_utc": "2026-09-19T07:0x:00Z",
+  "defect": "D15_PER_ROW_FINALIZE_MISSING_BASELINE_NO_CHECKPOINT_PATH",
+  "classification": "BEHAVIOR_NEUTRAL_FINALIZE_LIFECYCLE_BASELINE_BRANCH_MISSING",
+  "scientific_failure": false,
+  "runner_failure": false,
+  "gate_failure": false,
+  "where_it_failed": "per-row durable finalization (compact export step), NOT training, NOT evaluation",
+
+  "frozen_identity": {
+    "version": "innov-v3.18-published-path-verification-hardening",
+    "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_clean12",
+    "gate_job": 572033
+  },
+
+  "controller": {
+    "script": "/scratch/sychan552/_v318d/wave1_controller_v318.sh",
+    "ledger": "/scratch/sychan552/_v318d/wave1_ledger.jsonl",
+    "log": "/scratch/sychan552/_v318d/wave1_controller.log",
+    "state": "FAIL-STOP (exited, lock released)",
+    "controller_procs": 0,
+    "lock": "NO_LOCK",
+    "last_log_lines": [
+      "[wave1] SUBMITTED baseline__last_value_naive__L24__seedna__w1 -> 572649",
+      "[wave1] VERIFY_SLURM baseline__last_value_naive__L24__seedna__w1 ok",
+      "[wave1] FAIL-STOP: finalize baseline__last_value_naive__L24__seedna__w1 state=FAILED"
+    ]
+  },
+
+  "failing_row": {
+    "run_key": "baseline__last_value_naive__L24__seedna__w1",
+    "arm": "baseline",
+    "model": "last_value_naive",
+    "horizon": 24,
+    "seed": "n/a",
+    "position_in_frozen_order": 321,
+    "row_job": 572649,
+    "row_job_state": "COMPLETED",
+    "row_job_exit": "0:0",
+    "row_job_elapsed": "00:00:05",
+    "row_scientific_status": "HEALTHY",
+    "finalize_job": 572650,
+    "finalize_job_state": "FAILED",
+    "finalize_job_exit": "1:0",
+    "finalize_job_elapsed": "00:00:02",
+    "finalize_job_node": "gpu-a100-04"
+  },
+
+  "authoritative_traceback": {
+    "source": "finalize job stderr: /gpfs1/scratch/sychan552/_v318d/logs/slurm_572650_finalize_v318_finalize.err",
+    "frames": [
+      "/scratch/sychan552/_v318d/finalize_row.py:205  raise SystemExit(main())",
+      "/scratch/sychan552/_v318d/finalize_row.py:99   rep = CC.export_compact(str(src), str(ckpt), key, info[\"horizon\"], ...)",
+      ".../v3_clean12/scripts/innovation/compact_checkpoint.py:258  full_sd = _load_sd(ckpt)",
+      ".../v3_clean12/scripts/innovation/compact_checkpoint.py:224  obj = torch.load(path, ...)"
+    ],
+    "exception_type": "FileNotFoundError",
+    "exception_message": "[Errno 2] No such file or directory: '/scratch/sychan552/innovation_deploy_root_v3_clean12/results/v3_clean/runs/baseline__last_value_naive__L24__seedna__w1/checkpoints/best_val_mse.pt'",
+    "normalized_signature": "finalize_row.py:99 -> compact_checkpoint.export_compact -> _load_sd -> FileNotFoundError(no such file: <run_dir>/checkpoints/best_val_mse.pt)"
+  },
+
+  "root_cause": {
+    "summary": "The per-row finalize driver unconditionally treats every row as checkpoint-bearing. Deterministic baselines are FROZEN to carry NO checkpoint (checkpoint_applicable=false, stochastic_seed_applicable=false), so export_compact() is called on a path that must not exist.",
+    "evidence_lines_in_driver": [
+      "finalize_row.py:80  ckpt = src / \"checkpoints\" / \"best_val_mse.pt\"   (no arm guard)",
+      "finalize_row.py:99  rep = CC.export_compact(str(src), str(ckpt), ...)  (no baseline branch)",
+      "finalize_row.py:120 sha(str(ckpt)) / os.path.getsize(str(ckpt))       (same assumption)",
+      "finalize_row.py:151 removes the redundant full scratch checkpoint      (also checkpoint-only)"
+    ],
+    "affected_scope": "8 deterministic baseline rows only (2 models x 4 horizons). The 240 ablations and 12 negative controls are stochastic and DO carry checkpoints, so they are unaffected.",
+    "authorised_repair_class": [
+      "lifecycle wiring",
+      "artifact-directory creation",
+      "immutable-spec field mapping (arm -> checkpoint_applicable)"
+    ],
+    "science_impact": "NONE. No model, loss, optimizer, early stopping, checkpoint selection, data, split, scaler, prompt statistics, metric, horizon, seed, matrix, ablation/control semantics or endpoint hierarchy is touched."
+  },
+
+  "blame_evidence_row_is_clean": {
+    "run_status": {
+      "state": "COMPLETED",
+      "stochastic_seed_applicable": false,
+      "checkpoint_applicable": false,
+      "elapsed_seconds": 3.961
+    },
+    "checkpoints_dir": "present but EMPTY (frozen baseline semantics honoured)",
+    "metrics_present": [
+      "metrics/paper_aligned_full_output_metrics.json",
+      "metrics/ilitotal_fixed_step_metrics.json",
+      "metrics/ilitotal_full_horizon_metrics.json",
+      "metrics/pte_pie_metrics.json"
+    ],
+    "predictions_present": ["predictions/validation_predictions.csv"],
+    "provenance_present": [
+      "source_manifest.json",
+      "split_manifest.json",
+      "scaler_metadata.json",
+      "prompt_statistics_metadata.json",
+      "config_resolved.yaml",
+      "environment.txt",
+      "git_commit.txt",
+      "run_status.json",
+      "resource_usage.json"
+    ],
+    "resource_usage": {
+      "stochastic_seed_applicable": false,
+      "checkpoint_applicable": false,
+      "train_seconds": 0.0,
+      "gpu_hours": 0.0
+    }
+  },
+
+  "atomicity_held": {
+    "final_durable_dir_exists": false,
+    "staging_leftover": "/home/sychan552/innovation_durable/screening/baseline__last_value_naive__L24__seedna__w1.staging",
+    "note": "No PARTIAL final package was published: the atomic staging -> rename step never ran because export failed first. The staging leftover is an empty/incomplete artifact and must be quarantined, never promoted.",
+    "storage_verification_report_written": false,
+    "fail_closed": true
+  },
+
+  "wave1_state": {
+    "accepted_this_controller": 115,
+    "accepted_first_controller_clean6_csv": 205,
+    "cumulative_accepted": 320,
+    "total_authorised_wave1": 580,
+    "remaining": 260,
+    "remaining_composition": {
+      "baseline": 8,
+      "ablation": 240,
+      "negative_control": 12
+    },
+    "primary_rows_completed": "320 / 320 (ALL EIGHT PRIMARY MODEL FAMILIES COMPLETE)",
+    "scenario": "no row skipped, no row replaced, no row re-run",
+    "scenario_detail": "the failing row IS the next authorised row in the frozen order (position 321)"
+  },
+
+  "ledger_event_totals_this_controller": {
+    "SUBMITTED": 116,
+    "SLURM_COMPLETED": 116,
+    "SLURM_FAILED": 0,
+    "FINALIZE_SUBMITTED": 116,
+    "FINALIZE_COMPLETED": 115,
+    "FINALIZE_FAILED": 1,
+    "ACCEPTED": 115,
+    "REJECTED": 0,
+    "RETRY": 0
+  },
+
+  "cross_checks": {
+    "durable_row_dirs": 320,
+    "scratch_row_dirs_in_active_root": 116,
+    "accepted_keys_not_in_frozen_order": 0,
+    "frozen_order_total": 580,
+    "frozen_order_unique": 580,
+    "active_jobs": 0,
+    "controller_processes": 0,
+    "test_evaluation_dirs": 0,
+    "holdout_access": 0
+  },
+
+  "quota": {
+    "home_used_gib": 14.85,
+    "home_soft_gib": 50,
+    "home_hard_gib": 100,
+    "scratch_used_gib": 383.5,
+    "scratch_soft_gib": 300,
+    "scratch_hard_gib": 1024,
+    "scratch_grace": "9 days",
+    "verdict": "home has ample headroom; scratch remains above soft quota (pre-existing, monitored)"
+  },
+
+  "actions_taken_this_round": [
+    "reconciled gate/job state BEFORE any submission (no second gate, no second controller)",
+    "read the authoritative traceback from the finalize job stderr",
+    "verified the failing row's runner output is scientifically healthy",
+    "verified atomic publication did not produce a partial final package",
+    "verified no active/pending job and the controller exited cleanly with the lock released",
+    "verified Test/holdout isolation (0 evaluation dirs)"
+  ],
+
+  "actions_deliberately_NOT_taken": [
+    "did NOT skip the failing row",
+    "did NOT replace the failing row",
+    "did NOT retrain the failing row",
+    "did NOT patch the frozen deployment in place",
+    "did NOT restart the controller",
+    "did NOT submit another Gate",
+    "did NOT discover or read results/v3 (archive) ",
+    "did NOT touch Test/holdout",
+    "did NOT bind any deferred control",
+    "did NOT run Wave 2",
+    "did NOT produce any partial ranking or champion"
+  ],
+
+  "state": "V3_CLEAN_WAVE1_FAILURE_REQUIRES_REVIEW"
+}

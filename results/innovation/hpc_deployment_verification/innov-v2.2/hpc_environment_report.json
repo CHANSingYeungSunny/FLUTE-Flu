@@ -1,0 +1,45 @@
+{
+  "generated_utc": "2026-09-14T18:25:00Z",
+  "implementation_source_version": "innov-v2.2",
+  "where": "HPC login node, inside the isolated deployment root /home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18",
+  "command": "INNOVATION_DEPLOYMENT_ROOT=$PWD bash hpc_scripts/hpc_env_check.sh",
+  "login_node_has_no_gpu_by_design": true,
+  "slurm": {"sinfo_version": "slurm 23.11.10", "SLURM_JOB_ID": "none"},
+  "python_stack": {
+    "python": "3.9.25",
+    "torch": "2.5.1",
+    "transformers": "4.57.6",
+    "numpy": "2.0.1",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "sklearn": "1.6.1",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.9.4"
+  },
+  "cuda_on_login_node": {
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "nvidia_smi": "unavailable"
+  },
+  "strict_offline_gpt2_load": {
+    "result": "OK",
+    "env": {"HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1"},
+    "note": "GPT-2 resolved from the local HF cache; no network download occurred"
+  },
+  "pilot_script_syntax_bash_n": {
+    "hpc_scripts/pilot_dlinear_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_gpt2_miflu_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_itransformer_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_patchtst_L24_seed42.sh": "ok",
+    "hpc_scripts/innovation_worker.sh": "ok"
+  },
+  "informational_deployment_root_verification": {
+    "exit_status": 0,
+    "expected_file_count": 70,
+    "verified_file_count": 70,
+    "mode": "explicit_root",
+    "authoritative_check": "the pilot startup step in every pilot_*.sh, which ABORTS on drift"
+  },
+  "gpu_assessment": "LOGIN_NODE_GPU_NOT_EXPECTED",
+  "note": "environment facts only; they do NOT unlock pilot submission and nothing was submitted"
+}

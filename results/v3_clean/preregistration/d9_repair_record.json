@@ -1,0 +1,25 @@
+{
+  "generated_utc": "2026-09-17T16:57:06Z",
+  "defect": "D9",
+  "applied_now": false,
+  "classification": "BEHAVIOR_NEUTRAL_API_SIGNATURE_ADAPTATION_FIX",
+  "file": "scripts/innovation/clean_runner.py",
+  "pre_repair_sha256": "46d2db624ed97880f9871b8a9b655b1cc13677db0e47cd8f3cecb85b617fb109",
+  "post_repair_sha256": "a5bf6183fcbcb7b137d812b2628d53a84495eb78cb2f94ece14485dcf3c19614",
+  "diff_bytes": 913,
+  "diff_sha256": "5b02f3accc5065a1ee078bfda7321b71851e0b84f97391413e2af72993fe1d74",
+  "repair_scope": "API signature adaptation (authorised, item 8)",
+  "untouched": [
+    "model architecture",
+    "loss",
+    "optimizer",
+    "early stopping",
+    "horizons",
+    "seeds",
+    "metrics",
+    "598-row matrix",
+    "ablation/control semantics",
+    "endpoint hierarchy"
+  ],
+  "scientific_parameters_changed": 0
+}

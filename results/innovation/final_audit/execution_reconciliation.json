@@ -1,0 +1,145 @@
+{
+  "generated_utc": "2026-09-15T17:55:50Z",
+  "slurm_jobs_in_sacct": 283,
+  "slurm_jobs_completed": 279,
+  "slurm_jobs_failed": 4,
+  "ledger_rows": 276,
+  "local_gate_rows_excluded_from_slurm_count": 3,
+  "stages": [
+    {
+      "stage": "A",
+      "name": "verify_gate",
+      "submit_mode": "local",
+      "counted_as_slurm_jobs": 0,
+      "ledger_rows": 1,
+      "completed": 1,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "B",
+      "name": "four_pilots",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 4,
+      "ledger_rows": 4,
+      "completed": 4,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "C",
+      "name": "candidate_readiness",
+      "submit_mode": "local",
+      "counted_as_slurm_jobs": 0,
+      "ledger_rows": 1,
+      "completed": 1,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "CONTROLLER",
+      "name": "",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 1,
+      "ledger_rows": 1,
+      "completed": 0,
+      "failed": 0,
+      "other": 1
+    },
+    {
+      "stage": "D",
+      "name": "screening",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 24,
+      "ledger_rows": 24,
+      "completed": 24,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "E",
+      "name": "select_candidates",
+      "submit_mode": "local",
+      "counted_as_slurm_jobs": 0,
+      "ledger_rows": 1,
+      "completed": 1,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "F",
+      "name": "full_evaluation",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 160,
+      "ledger_rows": 160,
+      "completed": 160,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "G",
+      "name": "ablations",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 24,
+      "ledger_rows": 24,
+      "completed": 24,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "H",
+      "name": "llm_tsfcrm",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 12,
+      "ledger_rows": 12,
+      "completed": 12,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "I",
+      "name": "robustness",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 24,
+      "ledger_rows": 24,
+      "completed": 24,
+      "failed": 0,
+      "other": 0
+    },
+    {
+      "stage": "J",
+      "name": "auc",
+      "submit_mode": "slurm",
+      "counted_as_slurm_jobs": 24,
+      "ledger_rows": 24,
+      "completed": 24,
+      "failed": 0,
+      "other": 0
+    }
+  ],
+  "final_test_jobs": [
+    {
+      "job_id": "560659",
+      "name": "onetime_t+",
+      "state": "COMPLETED",
+      "elapsed": "00:01:00",
+      "exit_code": "0:0"
+    }
+  ],
+  "test_resume_job": {
+    "job_id": "560659",
+    "state": "COMPLETED",
+    "elapsed": "00:01:00",
+    "exit_code": "0:0",
+    "node": "gpu-a100-03"
+  },
+  "checkpoint_verification_job": {
+    "job_id": "560692",
+    "state": "COMPLETED"
+  },
+  "notes": [
+    "Local gate stages (A, C, E, K) are recorded in the ledger but are NOT Slurm jobs.",
+    "Repeated monitoring events are not jobs.",
+    "The login-node nohup Test process (PID 3032070) was NOT a Slurm job; it was prohibited activity and is recorded in the incident report."
+  ]
+}

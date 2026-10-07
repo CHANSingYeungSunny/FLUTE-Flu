@@ -1,0 +1,39 @@
+{
+  "stage": "screening",
+  "selection_split": "validation_only",
+  "test_accessed": false,
+  "label": "preliminary validation-only observed screening rank",
+  "n_eligible_runs": 24,
+  "observed_ranking": [
+    {
+      "model": "patchtst",
+      "mean_val_mse": 1.0519965688387554,
+      "n_runs": 6,
+      "rank": 1,
+      "display_name": "PatchTST-inspired"
+    },
+    {
+      "model": "nlinear",
+      "mean_val_mse": 1.0750239392121632,
+      "n_runs": 6,
+      "rank": 2,
+      "display_name": "NLinear"
+    },
+    {
+      "model": "dlinear",
+      "mean_val_mse": 1.168700933456421,
+      "n_runs": 6,
+      "rank": 3,
+      "display_name": "DLinear"
+    },
+    {
+      "model": "itransformer",
+      "mean_val_mse": 1.2310535510381062,
+      "n_runs": 6,
+      "rank": 4,
+      "display_name": "iTransformer-aligned"
+    }
+  ],
+  "baseline_relative_ratio_available": false,
+  "note": "absolute validation MSE (the no-text matrix excludes the MIFlu control, so a baseline ratio is undefined at this stage); baseline-relative scoring applies to the champion freeze (K)"
+}

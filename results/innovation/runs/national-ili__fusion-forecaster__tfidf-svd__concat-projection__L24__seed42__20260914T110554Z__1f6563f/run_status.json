@@ -1,0 +1,6 @@
+{
+  "updated_utc": "2026-09-14T11:06:04Z",
+  "status": "failed",
+  "run_id": "national-ili__fusion-forecaster__tfidf-svd__concat-projection__L24__seed42__20260914T110554Z__1f6563f",
+  "error": "RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat2 in method wrapper_CUDA_mm)"
+}

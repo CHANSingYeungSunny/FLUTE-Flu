@@ -1,0 +1,17 @@
+model,horizon,mse,source
+last_value_naive,24,2.821200197815767,baseline
+last_value_naive,36,3.422431571802754,baseline
+last_value_naive,48,3.167843944134935,baseline
+last_value_naive,60,2.8250886828401813,baseline
+seasonal_naive,24,0.7193443203456401,baseline
+seasonal_naive,36,0.7324035803523475,baseline
+seasonal_naive,48,0.7460317981833594,baseline
+seasonal_naive,60,0.8849131254865326,baseline
+gpt2_miflu,24,0.7324420428409919,primary
+nlinear,24,0.9791234190262844,primary
+gpt2_miflu,36,0.7781652358508216,primary
+nlinear,36,1.0490394758439423,primary
+gpt2_miflu,48,0.7598191411721624,primary
+nlinear,48,1.1007642306107754,primary
+gpt2_miflu,60,0.813062205254521,primary
+nlinear,60,1.1501416905402109,primary

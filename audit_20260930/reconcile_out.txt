@@ -1,0 +1,97 @@
+==============================================================================
+1. LEDGER vs SCORE MATRIX, per stage
+==============================================================================
+
+--- stage5
+    ledger rows      = 56
+    score rows       = 44
+    unique ledger cells = 37
+    unique scored cells = 44
+    ledger cells appearing more than once (retries): 13
+        ('naive', '0', '42')  x8
+        ('notext', '24', '42')  x2
+        ('notext', '24', '43')  x2
+        ('notext', '24', '44')  x2
+        ('notext', '36', '42')  x2
+        ('notext', '36', '43')  x2
+        ('notext', '36', '44')  x2
+        ('notext', '48', '42')  x2
+        ('notext', '48', '43')  x2
+        ('notext', '48', '44')  x2
+        ('notext', '60', '42')  x2
+        ('notext', '60', '43')  x2
+    scored but NOT in ledger : [('last_value_naive', '24', '42'), ('last_value_naive', '36', '42'), ('last_value_naive', '48', '42'), ('last_value_naive', '60', '42'), ('seasonal_naive', '24', '42'), ('seasonal_naive', '36', '42'), ('seasonal_naive', '48', '42'), ('seasonal_naive', '60', '42')]
+    in ledger but NOT scored : [('naive', '0', '42')]
+    ledger model counts: {'miflu': 12, 'nlinear': 12, 'naive': 8, 'notext': 24}
+    scored model counts: {'miflu': 12, 'notext': 12, 'nlinear': 12, 'last_value_naive': 4, 'seasonal_naive': 4}
+    lock rows = 36
+    scored learned cells missing from lock: [('last_value_naive', '24', '42'), ('last_value_naive', '36', '42'), ('last_value_naive', '48', '42'), ('last_value_naive', '60', '42'), ('seasonal_naive', '24', '42'), ('seasonal_naive', '36', '42'), ('seasonal_naive', '48', '42'), ('seasonal_naive', '60', '42')]
+    lock cells never scored            : []
+
+--- stage6
+    ledger rows      = 75
+    score rows       = 116
+    unique ledger cells = 72
+    unique scored cells = 116
+    ledger cells appearing more than once (retries): 3
+        ('dlinear', '48', '42')  x2
+        ('dlinear', '48', '43')  x2
+        ('dlinear', '48', '44')  x2
+    scored but NOT in ledger : [('last_value_naive', '24', '42'), ('last_value_naive', '36', '42'), ('last_value_naive', '48', '42'), ('last_value_naive', '60', '42'), ('miflu', '24', '42'), ('miflu', '24', '43'), ('miflu', '24', '44'), ('miflu', '36', '42'), ('miflu', '36', '43'), ('miflu', '36', '44'), ('miflu', '48', '42'), ('miflu', '48', '43'), ('miflu', '48', '44'), ('miflu', '60', '42'), ('miflu', '60', '43'), ('miflu', '60', '44'), ('nlinear', '24', '42'), ('nlinear', '24', '43'), ('nlinear', '24', '44'), ('nlinear', '36', '42'), ('nlinear', '36', '43'), ('nlinear', '36', '44'), ('nlinear', '48', '42'), ('nlinear', '48', '43'), ('nlinear', '48', '44'), ('nlinear', '60', '42'), ('nlinear', '60', '43'), ('nlinear', '60', '44'), ('notext', '24', '42'), ('notext', '24', '43'), ('notext', '24', '44'), ('notext', '36', '42'), ('notext', '36', '43'), ('notext', '36', '44'), ('notext', '48', '42'), ('notext', '48', '43'), ('notext', '48', '44'), ('notext', '60', '42'), ('notext', '60', '43'), ('notext', '60', '44'), ('seasonal_naive', '24', '42'), ('seasonal_naive', '36', '42'), ('seasonal_naive', '48', '42'), ('seasonal_naive', '60', '42')]
+    in ledger but NOT scored : []
+    ledger model counts: {'dlinear': 15, 'patchtst': 12, 'itransformer': 12, 'calf_llm': 12, 'timecma_llm': 12, 'qwen_time_llm': 12}
+    scored model counts: {'miflu': 12, 'notext': 12, 'nlinear': 12, 'dlinear': 12, 'patchtst': 12, 'itransformer': 12, 'qwen_time_llm': 12, 'calf_llm': 12, 'timecma_llm': 12, 'last_value_naive': 4, 'seasonal_naive': 4}
+    lock rows = 108
+    scored learned cells missing from lock: [('last_value_naive', '24', '42'), ('last_value_naive', '36', '42'), ('last_value_naive', '48', '42'), ('last_value_naive', '60', '42'), ('seasonal_naive', '24', '42'), ('seasonal_naive', '36', '42'), ('seasonal_naive', '48', '42'), ('seasonal_naive', '60', '42')]
+    lock cells never scored            : []
+
+==============================================================================
+2. A0 GPU JOBS - exact scheduler timestamps (local HKT)
+==============================================================================
+    587048|a0_gpu|2026-09-26T18:16:19|2026-09-26T18:16:45|2026-09-26T18:17:01|00:00:16|FAILED|1:0|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+    587054|a0_gpu|2026-09-26T18:20:52|2026-09-26T18:21:04|2026-09-26T18:21:27|00:00:23|FAILED|1:0|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+    587059|a0_gpu|2026-09-26T18:23:31|2026-09-26T18:23:46|2026-09-26T18:24:08|00:00:22|FAILED|1:0|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+    587068|a0_gpu|2026-09-26T18:29:02|2026-09-26T18:29:03|2026-09-26T18:30:25|00:01:22|FAILED|1:0|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+    587091|a0_gpu|2026-09-26T18:42:50|2026-09-26T18:43:04|2026-09-26T18:43:29|00:00:25|COMPLETED|0:0|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+
+   NOTE stage6 first fit started 2026-09-26T10:34:29Z (= 18:34:29 HKT) per the ledger above.
+
+==============================================================================
+3. s6_score jobs and whether they produced the scoring artefacts
+==============================================================================
+    585878|s5_score|2026-09-26T00:13:13|2026-09-26T00:13:44|00:00:25|FAILED|1:0
+    585883|s5_score|2026-09-26T00:16:16|2026-09-26T00:17:09|00:00:49|COMPLETED|0:0
+    587373|s6_score|2026-09-26T20:53:46|2026-09-26T20:54:06|00:00:02|FAILED|1:0
+    587385|s6_score|2026-09-26T21:06:59|2026-09-26T21:09:06|00:02:03|FAILED|3:0
+    score_matrix.csv                 mtime=2026-09-26 21:09:05  size=70253
+    score_summary.csv                mtime=2026-09-26 21:09:05  size=5522
+    average_mse_4L.csv               mtime=2026-09-26 21:09:05  size=345
+    CHECKPOINT_LOCK.csv              mtime=2026-09-26 21:07:14  size=29216
+    CHECKPOINT_LOCK.json             mtime=2026-09-26 21:07:14  size=62637
+    recomputed_average_mse_4L.csv    mtime=2026-09-26 21:23:36  size=483
+
+==============================================================================
+4. stage6 s6_score job stderr tail (why sacct says FAILED)
+==============================================================================
+
+==============================================================================
+5. availability of a0 GPU raw logs and their key numbers
+==============================================================================
+--- 587068
+      mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+      mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+      mse_mean = 0.8581, mse_std = 0.0000
+      mae_mean = 0.6780, mae_std = 0.0000
+      Best performance in iteration 0: Epoch 0 with MSE = 0.8581 and MAE = 0.6780
+      40:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+      48:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+      52:Best performance in iteration 0: Epoch 0 with MSE = 0.8581 and MAE = 0.6780
+--- 587091
+      mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+      mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+      mse_mean = 0.9685, mse_std = 0.0000
+      mae_mean = 0.7158, mae_std = 0.0000
+      Best performance in iteration 0: Epoch 0 with MSE = 0.9685 and MAE = 0.7158
+      40:mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+      48:mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+      52:Best performance in iteration 0: Epoch 0 with MSE = 0.9685 and MAE = 0.7158

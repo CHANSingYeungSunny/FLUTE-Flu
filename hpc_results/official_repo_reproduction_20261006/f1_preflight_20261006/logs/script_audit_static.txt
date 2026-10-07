@@ -1,0 +1,32 @@
+F1 SCRIPT AUDIT - static evidence  (2026-10-05T22:29:51Z)
+
+=== A. F1 sbatch scripts ===
+--- hpc_results/official_repo_reproduction_20261006/f1_preflight_20261006/scripts/f1_gpu_fit.sbatch
+3:#SBATCH --partition=stingy
+5:#SBATCH --gres=gpu:a100:1
+27:#   S7  identical legal origins via --containment strict
+30:#   S12 Test NOT evaluated during the fit (DEFER_TEST=1)
+45:CODE_ROOT=/scratch/sychan552/a2_stage5          # READ-ONLY
+46:F1_ROOT=/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1
+47:SEED=42
+53:if [[ "$(hostname)" == hpclogin* ]]; then
+73:  DATA=/scratch/sychan552/a0_replay/dataset/illness/national_illness.csv
+88:export A2_REQUIRE_STRICT=1          # refuses any non-strict containment
+89:export DEFER_TEST=1                 # S11/S12: NO Test evaluation during the fit
+101:  echo "containment=strict  (S7)"
+103:  echo "test_evaluated_during_fit=NO (DEFER_TEST=1)  (S12)"
+115:      --epochs 20 --batch 16 --profile author_966 --containment strict \
+
+--- hpc_results/official_repo_reproduction_20261006/f1_preflight_20261006/scripts/f1_cpu_rest.sbatch
+3:#SBATCH --partition=stingy
+14:# CPU-ONLY, ZERO GPU-HOURS by construction (no gres/gpu is requested).
+38:CODE_ROOT=/scratch/sychan552/a2_stage5
+39:F1_ROOT=/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1
+42:SEED=42
+46:if [[ "$(hostname)" == hpclogin* ]]; then
+53:export A2_REQUIRE_STRICT=1
+54:export DEFER_TEST=1
+67:      --profile author_966 --containment strict \
+74:      --seed $SEED --profile author_966 --containment strict \
+85:        --seed $SEED --profile author_966 --containment strict \
+

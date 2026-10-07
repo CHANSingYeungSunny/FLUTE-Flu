@@ -1,0 +1,137 @@
+{
+  "audit_dir": "results/v3_clean/analysis/final_cleanup_audit/nlinear_forensic_audit",
+  "generated": "2026-09-21",
+  "n_files": 26,
+  "files": [
+    {
+      "file": "NLINEAR_TEST_CURVE_FORENSIC_AUDIT.json",
+      "bytes": 7535,
+      "sha256": "9dc51256549ad21beb30ffe2894b422c70e954fc6fe8e7ab64313c916cdce6ca"
+    },
+    {
+      "file": "NLINEAR_TEST_CURVE_FORENSIC_AUDIT.md",
+      "bytes": 9439,
+      "sha256": "70b85d8b95c2b6780d8ebc68a98582860dd87b5fea191e3e2230363d7605f5ac"
+    },
+    {
+      "file": "_gen_audit_tables.py",
+      "bytes": 18332,
+      "sha256": "5a812ab611c358ac3dda3d41e4bf5c47141497458094c9620ee45613c933effc"
+    },
+    {
+      "file": "nlinear_L24_displayed_curve_provenance.csv",
+      "bytes": 77010,
+      "sha256": "9e6495f19b0d595fcf26bd333ca631642eb09fbac26d59b05ec1713370b59958"
+    },
+    {
+      "file": "nlinear_L60_displayed_curve_provenance.csv",
+      "bytes": 61829,
+      "sha256": "d608dc7a748541007bcd6ccc92c766ac2c2f5c32cc9ca3ee1c9b688c3950370c"
+    },
+    {
+      "file": "nlinear_audit_split_boundaries.json",
+      "bytes": 2297,
+      "sha256": "483587272c4fa6e2fe9c9ac222142d3a2ff8aa57584835f515163891f462b650"
+    },
+    {
+      "file": "nlinear_audit_split_counts.csv",
+      "bytes": 330,
+      "sha256": "a86bfcb037f01c71558742f25df89e2fe35a77ee16c16e9034aa8d0444951454"
+    },
+    {
+      "file": "nlinear_checkpoint_selection_audit.json",
+      "bytes": 1319,
+      "sha256": "79b901c4815115027826675b6c49d10450adbabe90a4bea4f83b0aaca22e73c9"
+    },
+    {
+      "file": "nlinear_displayed_curve_peak_audit.json",
+      "bytes": 1028,
+      "sha256": "364d5b7afee15f25bda844dcf548b68b694b67004ee0bf91280150e15b700e69"
+    },
+    {
+      "file": "nlinear_figure_location_manifest.json",
+      "bytes": 2719,
+      "sha256": "99882072bd786ea48689e3bc26c04fb37548f0d5807e50983ee3c691e7a1ef1d"
+    },
+    {
+      "file": "nlinear_forensic_artifact_manifest.json",
+      "bytes": 4584,
+      "sha256": "baf0ec7dcb8d1878bb92893aa4df540dc010e9e596cfbe196578970adc126a8c"
+    },
+    {
+      "file": "nlinear_full_horizon_vs_displayed_curve_metrics.csv",
+      "bytes": 836,
+      "sha256": "418b664464897c6b28968e119040aef19bc50b395c872316a4579eff35d2e08f"
+    },
+    {
+      "file": "nlinear_independent_reconstruction_audit.json",
+      "bytes": 1775,
+      "sha256": "ddce8dfc2420fe8e42cb102a1c0f31fd33f00da29de8840ff9b2840b5f822038"
+    },
+    {
+      "file": "nlinear_per_lead_error_profiles.csv",
+      "bytes": 8696,
+      "sha256": "58203db067218c48819250f0c0d6c65792fa65a4f0fb52ee0939c9216fbb1309"
+    },
+    {
+      "file": "nlinear_prediction_identity_audit.csv",
+      "bytes": 693,
+      "sha256": "b1ff375001a4d327a4a7b1a8ec07f7814100bf49ffbf38359a0e41f3956ab702"
+    },
+    {
+      "file": "nlinear_prediction_schema_audit.json",
+      "bytes": 2528,
+      "sha256": "dd204716b5b74ca23b40f40fa7dc57a9f3a46d24311477dd7bf675e6b7216bed"
+    },
+    {
+      "file": "nlinear_preprocessing_leakage_audit.json",
+      "bytes": 1859,
+      "sha256": "c5e40a3b883d0511ede9785366c8c98425f5d3313cc341c3c97c02423d592d5c"
+    },
+    {
+      "file": "nlinear_seed_aggregation_audit.csv",
+      "bytes": 1086,
+      "sha256": "4a864a7cb3b2fab5c12e8b6540728b0642aaee323d9c5deec2599a1e86aff359"
+    },
+    {
+      "file": "nlinear_seed_uncertainty_band_source.csv",
+      "bytes": 627,
+      "sha256": "39b1c42c2c7bade365698665cb3c672e541319c5b48291f8964e47767900346d"
+    },
+    {
+      "file": "nlinear_target_leakage_audit.csv",
+      "bytes": 507,
+      "sha256": "628ce8f77123f4c584f80e233a4cd8f66a242301259f66a44bd260f8d8bf6122"
+    },
+    {
+      "file": "nlinear_tensor_slice_examples.json",
+      "bytes": 2663,
+      "sha256": "c20f29a895a4e56d068539341ba256c4234029786b40d0e2917fed1ca820fe50"
+    },
+    {
+      "file": "original_miflu_vs_clean_v3_split_audit.csv",
+      "bytes": 1096,
+      "sha256": "c352dbdfe787c9e57741e87527d7c84319bdbf48e9cb97120063aee9a3b8c626"
+    },
+    {
+      "file": "original_miflu_vs_clean_v3_split_audit.md",
+      "bytes": 1695,
+      "sha256": "5805bfadc3e35be5b13a1d654b29c7fbf046f9e357dcdc84c5be547fa08d3094"
+    },
+    {
+      "file": "reference_step0_vs_final_nlinear_semantics.json",
+      "bytes": 3170,
+      "sha256": "be7e17251fbddfed07979caa541e19e3c8d4e27040994a5678fc93311b41f498"
+    },
+    {
+      "file": "reference_step0_vs_final_nlinear_semantics.md",
+      "bytes": 1768,
+      "sha256": "ee9151dcb53b509d0a6024dd2a4624b1501842b763ecfc42f509e153b00b04c3"
+    },
+    {
+      "file": "remediation_plan_if_needed.md",
+      "bytes": 2094,
+      "sha256": "76610cf53d65506827bb2acf65829a3e25ae579dd452c7934959bda1dc582689"
+    }
+  ]
+}

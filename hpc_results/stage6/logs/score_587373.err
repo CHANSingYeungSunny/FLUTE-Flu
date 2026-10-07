@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/gpfs1/scratch/sychan552/a2_stage5/scripts/build_lock_stage5.py", line 180, in <module>
+    main()
+  File "/gpfs1/scratch/sychan552/a2_stage5/scripts/build_lock_stage5.py", line 115, in main
+    spec = json.load(open(a.template))
+FileNotFoundError: [Errno 2] No such file or directory: 'results/stage6/lock_templates.json'

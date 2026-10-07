@@ -1,0 +1,2 @@
+commit: nogit
+dirty_files: 0

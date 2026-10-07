@@ -1,0 +1,9 @@
+tag=f1__miflu__L48__seed42
+arm=miflu
+horizon=48
+seed=42
+slurm_job=607605_2
+elapsed=00:02:25
+fit_exit_code=0
+checkpoint_dir=/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/miflu
+test_deferred=1

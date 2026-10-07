@@ -1,0 +1,25 @@
+{
+  "generated_utc": "2026-09-17T16:46:03Z",
+  "defect": "D8",
+  "applied_now": false,
+  "classification": "BEHAVIOR_NEUTRAL_RUNTIME_PATH_RESOLUTION_FIX",
+  "file": "scripts/innovation/clean_runner.py",
+  "pre_repair_sha256": "cfb92258d792b40d675b589730c329e7c4d995f9fbe8238433dbc0bad92f1227",
+  "post_repair_sha256": "46d2db624ed97880f9871b8a9b655b1cc13677db0e47cd8f3cecb85b617fb109",
+  "diff_bytes": 924,
+  "diff_sha256": "57e8a66df73328c6c8432cc094df93504883013b7f0f7fb32f8db82eda2631f6",
+  "repair_scope": "runtime path resolution (authorised, item 8)",
+  "untouched": [
+    "model architecture",
+    "loss",
+    "optimizer",
+    "early stopping",
+    "horizons",
+    "seeds",
+    "metrics",
+    "598-row matrix",
+    "ablation/control semantics",
+    "endpoint hierarchy"
+  ],
+  "scientific_parameters_changed": 0
+}

@@ -1,0 +1,4618 @@
+{
+  "generated_utc": "2026-09-19T10:41:53Z",
+  "version": "innov-v3.19-baseline-no-checkpoint-finalization",
+  "source_aggregate_sha256": "ae75b958b750e97c1ec9c0317ac80bf6fdc94ef979cfa280570540b0d889efaa",
+  "deployment_aggregate_sha256": "05581a557158c0c19bb8e6caa1a5fb35fad889b774195616632cf62d9f4bcff6",
+  "n_members": 766,
+  "roles": [
+    "asset_descriptor",
+    "canonical_data_or_scaler",
+    "environment_bootstrap_metadata",
+    "executable_slurm_script",
+    "frozen_scientific_source",
+    "frozen_spec_registry_csv",
+    "frozen_spec_registry_json",
+    "gate_wrapper",
+    "governance_isolation_or_schema",
+    "source_manifest",
+    "superseded_version_marker"
+  ],
+  "members": [
+    {
+      "path": "data/_legacy/predictions_miflu_L36_paper_protocol.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 2212020,
+      "sha256": "ae3be3eb501a8e10be0c214229339ee8fa766f819d849692215eac5a7a32a437"
+    },
+    {
+      "path": "data/_legacy/predictions_miflu_L48_paper_protocol.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 2912275,
+      "sha256": "21af9d1a965d0ab971d49e95ede2f468aa51818e7b81ad84a348db706b63435b"
+    },
+    {
+      "path": "data/_legacy/predictions_miflu_L60_paper_protocol.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 3589194,
+      "sha256": "699b8a590af88b55b7f4dd8ee7fb01524cbb0a92ba3ee8b8736fec01dbcf0901"
+    },
+    {
+      "path": "data/predictions_miflu_L24_paper_protocol.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 1985691,
+      "sha256": "7ffd66e94b0ebefc14fcbcdee696a683248fb41c1fb946b5885eb3e5e605bf3c"
+    },
+    {
+      "path": "data/predictions_miflu_L36_paper_protocol.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 2943736,
+      "sha256": "5ac6ccc31b080d95eaef96fc2889c2a6a3d315a87e8b19b3da9cf3b93155cb54"
+    },
+    {
+      "path": "data/predictions_miflu_L48_paper_protocol.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 3878859,
+      "sha256": "bb3cface810e4ad73e64f07803a41bacf167fc2677e7551389eaf5325e0dbd35"
+    },
+    {
+      "path": "data/predictions_miflu_L60_paper_protocol.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 4781850,
+      "sha256": "b6dda801cee805c2e891456662ccc27e3cd09466a6c7020b34c8f0c81eeabeb6"
+    },
+    {
+      "path": "data/q4_causality_summary.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 472,
+      "sha256": "76633dd609e886eb80cc3af44cd65a5e5028d44c72a0b53197b0506652548fb3"
+    },
+    {
+      "path": "data/raw/national_illness_raw.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 72100,
+      "sha256": "0a0648000066e12fe499f98693885b88ed3bc29fc8daca7f3af171b1bac86088"
+    },
+    {
+      "path": "data/raw/national_illness_raw_paper_exact.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 73432,
+      "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a"
+    },
+    {
+      "path": "data/raw/us_region_raw.csv",
+      "role": "canonical_data_or_scaler",
+      "bytes": 67502,
+      "sha256": "f1bb8e57e18e39363814bb0c7a1d676715afd16d56b4b65300faf13d371a16e5"
+    },
+    {
+      "path": "data/scaler_miflu_national.json",
+      "role": "canonical_data_or_scaler",
+      "bytes": 557,
+      "sha256": "6b28b2d101309a80898744277de3528433d01a9d795c17f7a1edbb6a48129691"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "63ef98e5fab9b90c0fc1203fa152404a78c3d45098a9a8b5a7f4d17bf109d8e6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "0b2e6f527f44c9ddd5bc0209e0e9ddbf1b048b9dbe5a6bea87ad6541680b7762"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "fbd332a00dda0e3a1204af9c865750fab259bba27cef6a06b440c88780ebde07"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "64c9d19d9c39b9c1c0f5f4b27728f94ddbf886c55d7fb8a24004d8fff0eb4004"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "5ebf419fcfe21069de4627435673a366f65be7671d3912bbe57999bf7c4f3e11"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "1202f9a7f873d5bba97dfa7715c10112c1065adb8faac1b1043d9700559b3a2c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "4c041ac42b2163e72edfb5174a6fcdf0089cd8c8f97e7d11a804b724de4e3c2a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "7fd60f3902411c1c62d629574110249214fd9df560353d3e86a959bd7ce5e6f6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "bafb501fd231ca3d5f5019f99e0db0cddf938029d6efc6ca2d8f30b8525a2f0c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "4f0ae57e9626873aedaf9fe827abc3c3d4a9aa4bd2ad40f51cc48f9b745cdeb4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "88e10889d160ed46249291b0ce3fb9c566c611fba4bf061b6c4c57b7742736f5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "44861b0a688f9076dedc2c007799c8a558ab9d9aab7780e3e3199d7d5368ad4f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "2f501ff4f9c058dd1c208357ef193cd2dc70c12f4506339ce409675f11a60352"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "d2e1eebff2aa0210bfcbbb2b04a69b73c80d71af0bced4e0526c2baa795c1d2b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "0aa17c33adf8cdcaae5d38edd145a91d82b448ac1f7e50c3ab8b0d249b8cf6ec"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "f1cec1f52350afcfc894b42d343ac3ebb95699f752317c93bea43654de367cfb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "83f62f7e97335eda40afd8a45a29364a70c14728a42602eee95ec1abbb8daca1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "0fd41e9b678aca2822c0c8103c51653aeda456a96d5fa2c8831ab01d05909db5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "cda99876123384eeb014b0489448a342fb37cfa5c26367b91510b160f9445bcd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "8697d2a80e85b0ef6e00194935119ec8ca3b56f3568c0efe56cb55689b4a48a3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "badbc5425c8f5d549514db92497dd77dc0e9fc9219752efa869d6287a469aaf0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "3f1b3745347a51c4016ceceeca800508c4750401d811313f9c6b144ae4f3dd48"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "e6089b25dca49913de18ee0575ca4fd2527349460d701361fc3f936eb0d2a925"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "eaed697a360f51437784af3c1037e6025586475f6ade09db7fbf5c7fdc2d42c4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "6b7be278c32cb312875752840baea10164094de8e2306b27cd6dd953f1428213"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "015ab64cac9003f922324976b2805099418781de5e38937a074a2b66e8306d6e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "8320cd9264c9a447e8bc8d13b750549bffcab4a22876c2456dc891cd15c52f23"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "153e267a2a8cdc806f9e088201d95f6d60f2d750090fc5a8aa50249c6b97f43e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "484b5e3b2d10460ade2a5f66323d0af5124bc6ef4c28314bbd3783e3a5617565"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "8c39c30f95d813e5d8863c3733f93a15bd3c76867910a9ea8215cd352ad375af"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "74918ce8e64905e9f3f4410b6b79caa39cb513c97c0bb73e4bbb6a410413ba4a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "af0684a3cb1f0eafae049463e4da1a5baf6409e0145cd069c8594fd05c8a4b54"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "f7ca7e08fa79c28597f28d365935d5507a6860f0b41d8c716721317b1205ea81"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "fb06177f97e2da4a1dddcc1ae486ca20874533bb4325b0ef4c5313bcb8f58069"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "7c588149cdc70539eb665d15286c14b122275190e2352c82b3d1e2bbc7663bee"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "d0367a6d7141cec58f5e3c186678045e04b1dc5f6343241e0d05fcdd01f58a56"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "f8c59f0b5a5fa4d8bd7099eeb87a25285e79f7e3ca03626f36e13753af4bcfb6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "58b2105730cf5fdb04e3f79e3bfce6ab3ea1450836587fd984d6a569406c9a1f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "ce25b8c15c1e47a0a2ad89d50d72b192e0304f317a25afd6d21f8bed67aab37f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_dataset_information__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1089,
+      "sha256": "eced2b6860dfb7950fd34fc6396eac90e1359b4527625de1233e2264040f6c5f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "6ec62eab5ad85c6313214786a932c6b93c051b9134cc4c1d7145ebaaa4fc92a2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "38a484cc11c335761dd7f15be2485e2ae3b7fa508f8885a21b0efbc7319ed0ef"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "11e8ad4cc3630dd08e34e7a3a95b273c1592feb21f650a333b5e6745e2002c83"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "362adca986467b5af3a2877ba6003ce7e8a170d86e8465bd68972c386af306f5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "fd1cd5554c463986f7e2b25bff3090abb4e421f9cfd95a23bdb691d503274f32"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "edcb45147c065d13f317c36567a220afd76eea2cbc7c6cba03a858c84326c6c7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "04953441911dd343e340fbc8a35b80481625eb6292ce31b137c5e7afd23d4e4b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "a0ef5c9d2d26285f6ae4aa5a744440a944bfbe9b3d91e34a960158d6ea9aa57c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "d9b157dbc0393dde40c8e220b5193de12dd25d772ecdc8afbbbd6898a49abb4f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "460b96379858d0200c50b1a5562cc9ed8e454f9caa72c725bff33ef1a14a6d7a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "5ae986761696f951c9ec0ce522d48d0da4fbdcd125cf21b978d6550fb59eb012"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "ffe766beca86ae6260e9c10d79ef6a7224b1718b635f430c3a0c253a6988d831"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "aaa7ccc6015ab9570fbfd7b0cc05a69377454a959350d28a2713c1fe495bec2e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "654fe205a2413b151be26df3f39fbb6eb757a8b704cff8014c786b1ac94809b0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "3c2bcf040ec7ae80c3f7398870d90c241dc450e2b9e9f9b898451681bfc075b1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "2a171ca0d3d503a78e130e13da4d7ed36a8d1695a2b66b7182ca0a5759627102"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "a9b3a420576c6b02aa5b1505994b3748272187c43330307fd8ffbc7f1e59bc30"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "ccb805d4f83d0f8bf771e5f3ff58b018b2ac81d6d2735177e0f675bb58dee6ff"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "28a9b454d310ddbc12f8f2b7ad6657d2d31321f3207516ffb257792b5fd84cef"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "395207e7e0619253161056de3ca19bd6469fd61e5d6e62bb566abfbd4c8d0df1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "2359671cbcf98741c9859d3c23541f1645eb780e73969e7e9f605f13a51d504f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "eba69c2133b24079e7c6c8a7333aadd6ff152c4b21f879eb2236710cdf247183"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "dcb59fb5319b1a5d12795e7e4c3093cf3bcb2b60a5a6310d559f4dcad5f376b4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "eb8aba1b5c0bde6f8dceac24ee4398e445a167e4a50697872790c8959702bc85"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "09f3cf01bb683860ac54394c699c2ad07f9a40df9d8c2a720300372e4948659b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "b0f8332b812682188ad823d4f28465cd580c2aeee36f81722363a3ba0483023b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "f1c01d73beee4cbc93e2676325ee1d17014660a30013f650748d4b6367a2d93c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "20d38ff8c0719ab0e489a25bb4310540cb7fa8b3f438520c7cabddf558c4b324"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "7f98c062efe96e2c1817a223092efa95913b97217d36ac5c579a58395071c400"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "5f348552dd4cd00e174a6b23941e928851aa7bb0ea4537b807b683a89f6100ee"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "0fac7f7c906236c59fedbefc1988c495b75b69811e6b91b425b3b3f744adcf3a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "a4706beac3e01b38d24665747333349909d846eb8428bc7a8b99871cb55b53a0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "734f3f0474c42965fddc59a689c1cee71b528fc92f31160525ffd8a91903d49f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "ffae7a440c1b1a43ddc40a6c0916af55a16c1da5a3fa472ee1fae226eb6c61f0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "a6f73c79772418b1bf5365b191d81b38fcc4c88679fed6566f263bc440233f4d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "0c4af54f019f2eead914710b5f49634fe840c3304cc4f82334559c6062d3798b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "fdbd9b6ac7b3a1984710287ff2696477ec79adc5933ea74debc8223bfcbe2fe9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "2d5661e603160efddf7dd41fa32439f4c9f419634c2348a22e1eb04cc9c1af91"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "52de1310ca335fde932cdd21ef73ec2221edfc1cea5fb58b97ff70744b4286ed"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_input_variable_description__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1117,
+      "sha256": "ac7fd6246c0c5a429c68ffb26cca2eb6fc0257bc3e43723f40b178698a59540f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "453608a69d6467cb048918b877df9272d46c93abc39e7b455098be9f113ae741"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "e4f8864806ca2eb5c67181db25389d7b3c28f53b8368513d23ecb5158588b3c7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "c5afdcfd14678b54e9425c611523397535db942f270d5e906a4b650f0ded85e0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "62309eaffb03ffd80cda3fb00f1ba85a058c6385ef9eb1c450f7d40ed46b4c3c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "4c9a17f7d3ca7ea5d531910101548958879c20389f52ee0441a77a822a4fce5a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "84a1723b13f7725c232178194f7b2b858df85cee80792de24e05ddc2e2382ccb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "fcedae7a4d9057c70bc75dd2cda6c45c594c15d0cd645f65e829964afe5414dd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "df3bd07c427ffcacaed84170fcdfe2256f203163c957cdd5911f28caefa0b912"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "27b9aae88ef3d0de2a2af37e7c37e269cafb094377877504ace5155515d06f5a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "749ded24e1c725df9c07966fc4a7703a33ce5332842bea37766635b97787959c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "5515195c8ee5de8272a9e7802139b0bec33dd244ed9a74f98db6c6f6d7984275"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "22fdae88d67b40ac69b8098b8ea0775209587903db768f7009e4b03a281d2e91"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "6d63ffd6dee573c5dab408e35ce0ebb94c5764a743b42b3978d1f43933bd8cce"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "202ee2d3d86e4ac7a3c6d8533a3d5523848541172ba161ca5558f0820ff2d65a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "67aaf72a3f6f3e06575c3551e852c6b50cb9f859f07f2637e7ea8f6f8a1270f6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "37875e6afec25e83abdf6a3c1c05996ae26cb9ccd2581a3f0f05bfefb7c54ad9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "65f2e086de0ba8b2028c327776bd92379979889845a089cdad11b94a2996d955"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "1899cc342a8be0a713180eebb168a6ab95748d301ed937c52d3979a8257c1c82"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "e36558fb6f320536e9aaa26a2b9d022711fd1c91fb69fa9b5f7ebe79f47bb3bb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "3f5f42b280e728336b8142eb43ba46e4df6f752f15b4e3493be03b0ef8de86af"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "24b7bdc0f839233a9206dc608b8b14442dd688925cd9b9b8b1169063f37581c8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "24b1a97d26c653751265ed1133f182f4c2cb48fc0b244b3f908f76ba907f2a36"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "15e5eee9fd0ebc254e91bcd62ecae152d596e6ef379c36590bcd16a72603bbc1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "3b604e84401cd9e5e45168bb66c0af677ee913f8c7350e474f01b2538833cf12"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "0bb2203c0690daf58caa09c2ee98fc7aaee1304161fbb49a2a09a5c491521053"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "36314b2bce271b0191a8b4270861d9154432de6a09e57091bf862749075b431f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "186d096f9adcd0bde793bf15f38d16c9118338fa552cbf934da60c72a00d4eab"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "73ec5de0076a436450b09faf9949c77880cb7c610337a039be2ee701a8cf84de"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "d6f444fac40dcb770afce7fc37eab786fa13ddabbf0f8cebf8be9f29b8ea7327"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "32a9df45606f492fb8c8f509b01891c42501ce99ef3d91b3d102205f844322c1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "7e4ca5b5fd3fa582233282cd18fb70a1570fc3b0ae73a4ae51308f79159df44d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "3ce443e6432d699144054e5ebeb6bb4b09ae8ef8687272830ed86dc04b4f0749"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "0cf641681379a5ef3335c6d3f487511389a5506ecee0c83f5a1093a22054c5b9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "1fb21b08fdded0bcbba93eb7f0a652467a96a5932707977514a4788db711b27e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "f20e9aa7e6938d50826d4c7b2465cdb691d5d392eefa1a2fc719356ba7ee2a98"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "f8c6bfe1bd59c69bd7c51f0646e5a7cf5ea7cf2e699117f9079eeec54651e134"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "82ffb163f1c8414bf9ec4d8224e460b78e192876d7c807cc9ca170289c71ba75"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "a1b4552d50718a73f627f6b5c6e4bd78d683cdcdeb04fd648587597f2a654b38"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "d0f9ef0be7ce315b491abf3855c8b3407b7d2f4af3114136020692d8435715a8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "48bd9b7d8e807b62cade9d8bbd396d6410dd7bd11d9469edf9c163f815d9acf5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "7646e588d98d00d986992dfee53028d70e9671fe0a3aa2a0e50c5a3b687ea0d1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "771fc8da3a05eedf1c590722bf6d2da561640fa4aa29e63f81cb779541788153"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "38ef3d321fab3b2ee8f6c992a5547553b592d4df46d4fa644a7f0354d9ce7aab"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "9fc73d352aeeb57baccf011069d0d05cec84529bdde82c0bc8025320f6b721a8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "bce8ff70aa2d6fbfeb2f81ba4393fad360422a6bb2bbb8a24052a6b6f26000c6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "4d2b1cb04c210fe4e4838da5be689dfa0f81a0cedbaae5c5e2d2ce636ac7930b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "f0194fc59bac78943d9e013e7fa2445c44a736f476b1efd5200e009f0187e72a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "73bed08d8315fde0226f3ed5c45c63d2278a70da284dc54d4c3dfc5d961e27e8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "1588e4a3f13362ae7f1fb2db05a8521556a2d4e0c111a426ccf2a17ddb3356be"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "46ec59a5e669ee47ca9412b3f139dffd81fb721c9cdfe1827214fba30f6b7a9c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "abd4830358ce5a7194fca8cd66f951a84bcd50ed540a33af5c1e43a136272d6f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "85fbf032f04d6122bd80233aad766285b869253ba1e354a2fa8e66e36dbb8df6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "7e13dca137cc7b45b0a5dba84b09e57cddc0cd6e5ad42f3f8204c2fa8da8c958"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "64f9b9247505abd8cfbf514da5971c01f6aa06d0d743c794ae57ef53fb470a27"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "22bc1856acccaa03170f9fe7daa4cf96a3e32fd7008b4dc487e4a6812910d1b5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "aa44969a63455a2f2e007b70b94dbd97933cb0235a7c94238ad1e95fb7e02e6e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "f4fd1f2408775920cf024f263721649d4e4a59d5405f734c7cc4f25cb53694ab"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "0b7025f6beca81c41f74b334450c34fb1cb62493926a85be59c3d1812869f20e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "b19d85bbff63e5a44254d04ab4f39aec3223bfd9ce9b3683988793dfe2b4bba8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "edfee99c60c65570bab4b9884647c33224572c01afc7957e7fdef63e15915927"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "faf4daece383ccc4bcb54b309da589fef229016ea2c0de86a2b38548d184c3b6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "648f5fed2e0ddffe88b34ba353282abd97230cd298435215f2fffc5720841579"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "be74e31b5923186652628494b1aa216ca46ccb3bd5088f72568079f651ff1dba"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "b8a2d6a4fe60a3d5f2c21b9ca1e0a20e350c43f1fa8c1df9fb452540e1aba00c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "70f9b1d26cdda69fb4afd1e9d4af0a78e492d6affd7a52407fc76b3ec4cc9ba3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "24117917028e1d47f77321e5db8559103db76eaf11b5cfbb375b4e570ee4d692"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "b18ac0d10b0f30962c4d9438a86a21f2e994526618b1d9ad987fc933a7c8c292"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "1f801852a88a2560ee998202dde0aa9d5200a1aab740366138ec0db82f0f6ca8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "cf2e7e7b070c498ffe1458ece36159f2d81b7f7d22edce7c2f3a9eea11a671f1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "d01f6ea3396ee46ae1ba949bf51edf3f8d0846ba7eac5ba0afd697bab86e8836"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "cf8e576a732213fd9bc1e44553c393881bf52344cfb2afd96646d445a8b59494"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "4c3a61ba7a55914276936d463eec54e793d35bbae1ebe8e4af952717d73625cc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "97831101c6c132d6a2afc807bf4d259fdf3d7402edb1f07256fb69bdb4bea351"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "b784602d72bb370f30e6001e5c62a315bf997ced10133dac3643084cef2c6f3c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "76dc1507d0e6be1618dc0ebb52c190119e0b644a206ccc87f62f7a007f3b6106"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "78643b66b497f24264c2c63ccd2b770c786f0576d6e2bc76ef38c7836886fe49"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "142c4fc32293f9268fe7a6ef7596e385a6f5c98f693a9ccc5955ee0886976d93"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "bd66e6b5efc541ff554dfe4cf20ae6e40ebb951439394a046067cb751586008c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "49aae3b801b332b2d8baefeeb2f6d7fafe4d30bdd4d19ec02e96db72228c73e8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_lora_and_multimodality__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1101,
+      "sha256": "dea9bb8d9f159e1cae55bdca6ea653cf66263ce4ad6ac916510f182bec75cf67"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "0fb992c6809c2c7323f77f9c7c411ce74164f06bb2df251a0161844f6ade8845"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "d6991d0d19c808e3a06bbd5780e5d9decebcd5a41a697cf3303586b5a9c25be6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "d0c257132f31883b2e2fc9961d66dbf17adf3a5f1b8be8d7f9b71c105e8ff483"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "6dc351efacf6acf48d2b0d616f8eaaba749c2ba82d457027fbb401e04fa402c0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "e58f22d2de93652052d2724a4e0b70043728b33a7decef418262168df53233bb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "1723ab492dc61a4ae4278f032e83f0c34a0c79d794614ba3834384f8a51ea56c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "c337927945a0e1acb98ec2500d1e8aaef08e1c9e9fb7b3215682845234e94ba7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "c87079ba5a4f21ec17d6695c0cd5d0a045efba1e852578e5684d6d3a31108c80"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "ece7708122a294d8a7049e6d6906f1966c3ea1fdd33d80b0425c5a133682263e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "f206c1c4ccaa62dc77b8b10ad3958f4ed4ef845ebbd71742106bd40b6c3b7872"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "436bb682bc36f656b0218be3e5af99b9d4a5b1150dd18c38fe13c63d6d950e8b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "9cdd3a7bee7925b13e0c1ecb6df6ac9b1c684ba242ecce6c677e9a38c84d5d09"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "041894aa93e19f53756db141bc63e8a4abe14f6a6c6c34f34198f15965fe459e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "26aec5c93fa20be5a471ff16336ce87fef4a456316b633ba6be660df1fd7d9ef"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "2341d3b776cecc41b40052b9b6fb469d988c78dbdbce0c416d3df2dc4438c1a5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "a350cefac8b3a331589f2da0d73937f9e829ed791b3366d38ed78323e49e6ded"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "726f12660410a68521cb97e841551a30b82de97adffd8261f55cc6a08a0abe4c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "67e070dacb45b618b03a8655249ed550039b0c8c3f66635c9f4af843278d5d05"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "b67a9cfc69b17b5d80b01e58341a354e94634dc5606b8aae5cb02399196c40aa"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "0a3d7519034eab7be016a566d45c6e58d721fc8ab9889d28d87c7a6d9019b315"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "7a8ab70ecbd9b4ade815939acd31f4a9497c951183accbce31019ee93357ede9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "0a4ac89d13c1c462319493717cc2f0b00b9849392460ab8c7d8ae59d32a0857a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "fea6dbdffd7e5646731637a85a2a259fb381a43bf1e03768ba19b4c6e2ca24c0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "8d38fd0a18ebe054505b443cb8b2eeea2a4723a716cc1c01b176cbb8160dc7bb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "5a8db823427ff54ac3e1a317b77a8a284b2dfbc51c73d8455349a0feced7afdc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "e388e6668682e987cc3d5bd743ed24e61efec5ae7db47aa7f66283b4aabdd843"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "60cd0cc2c85ba0778811e335dc675f4a4e19c3ed0c27f304d4c74da82166f319"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "f77afd61a65f74c7cd65c7af81d90b2ff44a551d1653fc57a6fd106477d12752"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "1c388b19d702e8af464ff020f39e7332a3577df280a17c5a4ea52dd1979f90e8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "b7fce4d58c16d04b44543fc4d9ae56fcca97da4cebea53b0bf709d481e74e2f2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "75fcf0cb3b1200725c754cb7d060e01846667debb9f516ba971d080e44c0eff6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "5d35a74e2ec2a3b5ee31c6850bee0b3befa8ac1573c65ee472dc5b2b053fe2b1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "fb95df52c9221b7211704ec9f1f77f26fdbb93e89f2fb0400d252392b044ec37"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "9cd1c5f1925edd7e7faba374ec7a5df83c5302da985808d5d5a7999c98a9b2cf"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "d51c4bf9755926955154b9c0b635e214f65376b71577a562bfccd78fb8122982"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "cfc3b6d2afd7700737625ae5a56ee30ca3db4eb4ad5a260f0fad854a8c23d28f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "cb90c49672e3bbf19c6dc6b7689607eb108ce3c39c04dd8fd1f551aca3e5d946"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "b65af0a663dfb4be466f8ea2b60fb8176fbe8bd1426a5e1bc3bbe176f4fe58f5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "532ceaf16a1e64ac6479f35fc1a96f2ef246ca8eb4b080a1c94ee59378badbc4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_multimodality__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "ee57551e6ea88b3dfde7b226cbb90942cb2ff402506de1d1cec398e2b9ee6cd9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "a14416292ebb5eedf42629e8d01fa4d34525ebae86e03ca133e14836b5ed35a8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "66b1a43f497b9239fbef478a50a51a2c893bfc2e614415b5cb540bb13851ba08"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "3662c78aabd9213e83a59e5115bf3ca196dae23c1f3fd5834ac50d15c9e20692"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "4dcaa808e59f1f37214527283398b396a7c8e441d1d76ac8708b6e17de0bed9f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "e799dbb9b2921b1bb28ae55cff466b143dde955ab8d95dced5e3a4f96bdd9564"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "cd813dc370494364f7b921570cd14cbc036695b703aa0a1dc2022bbf66f3596e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "adc84564f6aeaac41b3a314ef27aa38c14c3372f97711913dd7d737c612a9fb1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "3e13b0b340573fbae1af60cf5e6a0213da2aa2271edbf7d201105007f4fa50d3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "2b44bd945120d4b83faab16457212945865ec30b2c1f5aafd4322595abdfb1e6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "32bbf9aa4a762e1d5bc736c1d4bb006781b77ccf4975f8c40c9b3412723c207b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "8493f9e11e9e4aebf4c5919353fea2c81cb2d4478d28aff9badfabda7ea0e7d5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "1a50601c2eae50f0b17b45f4d43df3e38aba84d20fc0022c1b9c8c586c0cf83b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "5c091efcdf3b4312dd6ae5eb66deef1e304a94374f1aa8d93eb9b8ab50016dfa"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "b201468e3d56c74394500ef590d648cf443dbacb16e444b2ad714fb478cd4349"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "e3e1c3ab3eb28368605abc2babda462d370a22990fd0d06226160b95ba94393a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "076f8f12e13519565fdb425f5d52f82405c638a77d4291e3dcc8da69c89718a6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "6794a49de8ce32b670f60f1d1231041ad42b14b7a8328e8dcb0809fde889ede8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "466e725822769e42bb8c24df0f87fa11613f434bbe4d561f2d5812d46b45883d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "f5c94e0d0a812009e690155123fa27d743a981249cc42c5374843d487448ecdf"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "08d763abfd9166ac686ea65a3f5214fddaea4a2a2b7a88dd263cb9583d44fad3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "44a08f680066744ca1512afd9229576125cbe22636982ef6885b4d3ef654ae89"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "ccec63deb203401f9dbcee117893591175c371197856e71dfa8cacce9243eebd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "7af853120f2c0bb673a4b66cc2acd4d2b7308b79d38f7e974453025a91340bd3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "269978dbcbe88317b8d5c745014d9d95dd45ad186d909aa7b2408d968c7d7336"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "47b60e9c8f981f0de543ba3d88438fbf6075c5b6883e00f50ae2738e15f45c7b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "4e3878af2789cc9b4ad34227b6716af313a2f56933fa55d86c9b280b75d6fc45"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "16a083bc8323b8040f35df727c57df7aeb45255dd59427dc88910ed711fc690d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "d3de3ac3dbdfecc64cc634bcf943606c67b28de99669441cb4cada25d7dcf0ea"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "1747156bb479c5681bdbfa4c92c5ad373aeedc349b75df6d800cb7c8fadd948e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "2bb3fa76c3d6328e96fbfc4eab6cec19f458aad330cd8254b203fa3975a99b50"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "f74e750dfd7efcf7920d9a7bb013d8fdcab88fa8ec271dcd1d4148ed8f43e5cf"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "90b7c86e0a60c77e8124e8a3a1ca1afdfb2910cbe2418308ac9f828e72a5c848"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "6c74ca8f87bbf90a90f0a80f59a39784975d7aec3c324de2b9bbf0c2e67664d0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "a0dd8f07a3f155b80d8c7903263bbe8b3ec806e1334cd3cf840adee34b5bff4f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "081ca134175c98601331e308901467248aaf53ac527c5da9ef6c417a677acb58"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "49d37017888f5d2371fe447850d3584ccf49d5b4d418bcf87e686caf941d463a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "c848fec40b27808df757312ca12094165fba4dc2691ffa67e9029d445439ae0b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "7f4957e5f01fbc1d2acc294ee99ba47a3734621d812f5697c958aa3bdc809df5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "c9ab7ceb14f05b2542a6c77fd574b0710a06a9dd4597a3b4bb1af2cff95bae3a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/ablation__without_task_instruction__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1077,
+      "sha256": "86a19ce27c8e01cf2c91ac05896e531d07ecceed628c43a71fb1df026f7cfe9f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__last_value_naive__L24__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1045,
+      "sha256": "aefe6461566804eb1d692f687087e5bbc9c2e04c19ae6c0ced9bc533e500a962"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__last_value_naive__L36__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1045,
+      "sha256": "d1ae5d1faaf6a81287bd7d8a4ffefe71041b7aa507f33867abaa07ac46da4ac2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__last_value_naive__L48__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1045,
+      "sha256": "e5a8c402c192b800260d34439cfd05db2c8c00d98df96ec0f8400a433b23fa4f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__last_value_naive__L60__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1045,
+      "sha256": "0609d7f193e478cf96cde546c630e7b982888afdc640322690fabb9136d42716"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__seasonal_naive__L24__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1037,
+      "sha256": "c94da8c495d24307581ddf8fc010bf3a35a8bd0e8686d73d81469c9539957c46"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__seasonal_naive__L36__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1037,
+      "sha256": "4b85301b62036674e1c06699e868ff965f1d9263c822851eb97ba01d19427ec9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__seasonal_naive__L48__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1037,
+      "sha256": "2189158579ea6b0bac0fc865cf3bd051b0204972157ec43709c6890aae96f82c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/baseline__seasonal_naive__L60__seedna__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1037,
+      "sha256": "9de28d7dfe311d3bbd0c5e75fe3eac0fb5fed770f986c060862365a0171fffe3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/clean_gate.sh",
+      "role": "gate_wrapper",
+      "bytes": 1110,
+      "sha256": "39c8172d7d403886db1eba512f82668f020678f747036e9a45c8ccd11d22a8d1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__shuffled_text__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "8d10210143797dee26f6465b10a62a949126c63d93300135060f1374cbed467a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__shuffled_text__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "91a4ef0b0755863f93386e4fc48821a897080b849c45968368ef589da033f933"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__shuffled_text__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "63a953d386b41bcf99ad150e3c53d9e9ab8a32ec3a2f4e045fd9ae06382399bb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__shuffled_text__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "e8ed8edfbef697d0d4008f8a661c33a521bcf4a97b9a894d9d897d34d7577181"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__shuffled_text__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "7fe26b2ecdc75edd56ea237fb153c7380983fce774a4a341dfc0403f4df29601"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__shuffled_text__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1065,
+      "sha256": "c4ed04b87d93fd21baeab36dfb0abe4764d531dc4c2a5268c935964390d4f76a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__zero_text__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1049,
+      "sha256": "3a90fd10d811228b2ef3632b97ee5d0a7f455bfa5a42e3e0764c45417fcc923a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__zero_text__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1049,
+      "sha256": "b4351b76a7a35713e336f0056e3b98d2e8ae61367acfb35fb2fe325449af8399"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__zero_text__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1049,
+      "sha256": "0e57c6936e136a928eadde9e1451c41c219fe186bd0d15fe257ed4c6a279f64d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__zero_text__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1049,
+      "sha256": "6768eb5a9498f2bba49aafd595aecd9998972fa740aafb2b8399d60a1e912797"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__zero_text__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1049,
+      "sha256": "a6822b4d3f9664d95a240a87a2ab2e7cddb98bfc310ee41e1a2779e5c7fa85d5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/negative_control__zero_text__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1049,
+      "sha256": "c89c6932025a35430b13633dabf4cad96cf34cf916bd62736cbae5b927b549b7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "c2eb5eac1afa3fa64e14837fbb6aa7846de16b789602cd8fe810c89758d9e030"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "038fa95cdf2b5b1c0c2c71d9b2f17148d4a131b535d47d98535d3a7e481c2c3f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "0982901c408a44f4d75cf4251cec4576344eff20b1fd6ed69e56a4e3e10c4dab"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "aad7691baad434a987aa776851d868c3216d30f9d672f5f4aae14ce3a65f0471"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "76f53d31dffed9c1c0c54a8bfe34dbfaebac82e59b2ce855f462abc60f91de3c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "4eac11ef5aef6952e42a088ef1b2a03e93cce75ec18b59cd224bcda413b6a032"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "fcfb3dcfd793d787c750cbfd4d4c36d923ceeb8ce725e2959c7093b8fe6a626c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "28a14c6ec9fc765200c0b1165d981f2b4dedec8decf5469a62aa827ad6d0596c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "f75307273d117ef231025e68d5aa74dd9b917f64f5d594b05718802a69a624ee"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "82a7f75e63bd534409324917d612493478ff31597e6ea4217a838b3b593a7797"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "46fe69962e45730235022882ac1392f5928a170e09b3b591280abd16ce3336c1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "e7a9ee6f5909034dd86c69396bf04e6d17b0d31426aada2a48e4098c4942d0e9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "089fd33aacb9cfc61a515aa5bf09ef0009b06538893985b5c3624eadbdbe7f24"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "e2e7b19f599e7f670f56b89a24f0bbbfffadebc47a475b1a7540fa90fba54c08"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "28f924618b28f17c6049525293c6684d5ab928ba0407a0aae081d6abbf056b77"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "c42e4317fd1b1e561284a73cbe2aae785db2e3517905231cc57570828e2a4a2b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "926c05f81956b7d0dd7dcf00956754213fe3f35c8f09c8858c03873a0ee08196"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "66e45366f063b5ccaa27e737c03fd720378ef32be7bf20777c1df4fc2d267246"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "efba40d0f154f2ed25472559b929d31dae8303415860439c2fbd359a3a047ddb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "d2aaaa96204884d748e8b41e37a66aa5da321ce9f5ff80119b1af24eed3752b5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "ff48509e9056eba1717225a1d9e59492b791e3e7720ed8c4c501ce8cd47cf38a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "58dfa82ad6146c5b18f09ea7386bc7d3de850d8d83d4977b7c3f597e8a42321e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "b478a09ec6a2d9f26129f9100438b3fe0b2d43871e31d30dfeaf5bc449d57e6e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "31de41efb4e14f9ee84123439e6046a9ce8c23e2a290a75257f133dd8b1dab3c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "7e95fc4f98ca7560ce83746951daa9f1ea870f37ff56de1437789d03f4c502b7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "2479e387f05bfdaa06705c97108ecbd7eeb40086539ae8de2ee9c787b9cb7775"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "c28e6bb24aac4cf90517ff7b3e3590280ba1f4223b984884ef63e020f12e5d61"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "f7740676d189c51c6c711323ca4804b5fa2e3bc8af7ca83b03a5404feb830817"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "bc7025a874dfb409fdb74132e5a998e2cb06d8f98182d94cfa9d7cffbd7afb49"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "f1e7b202a0b0a870b1ba1587ba38e59e96beac31bebb30785b7d443943292396"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "bb46038d063998673ef4641088e00fe9e6f40fdf8129d0462681d2b56d979812"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "4aff664dd625f5054f396694b416ad7fff283683d246b02ec2b102a1f9c6ccd3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "748d19e5ea37e9dfe5aeaa7ba9be7585789bbe610fdd019c7a235df46d9da9f6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "ad38c4507f5ada1129cc569ed539d746a93eeab5969a97324b6186d9ae668951"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "cb8660e44c2dc50e719bbcc3f843dc5da0bb3a2f9f01bb86812bddac907f64ab"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "b1b3bb59dc9c97ac10125a8d1cf234f47e04487614a83cee804a9a0953fdcc40"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "125bba394d12918a689ad4d0afa24aaf02d896d6f3b1908290446758329ce4f0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "4d3c739373c54026a1678f102522a87cdc7ba091e2973d9923ae114fa278b89f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "83c6d3758be21767eb6162f7c6f938613a2771be104988e6a756f7059bf1b834"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__calf_llm__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "7541ac4eb7335162e63104d5819891a53f5eb86c862af2745f896474cb649fc5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "e7a19e1014aa1bacfffb2d02c4f695d9ab4a35fd65fd9517b75882d682a02a94"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "51224a4212a3b4b5063181441fa5328bcd1024227d329cb8f963d0fc23f30571"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "3cd0f5d989ed84aa01528c5d0d3ef98071a4aeea43c7b1010db3ce425c38bc2d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "430307c6b7f40a6d6daa5632cf725db0b9e7743921e817782cd4e3a6b139bcab"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "14510e9a63217ec88ae1e5a72f76bd7f0a39e53a3e0d64fcbd61e575c79f8a75"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "f6a779cd0114e641f2951421f96b3152aa4c295788710ddf755048985608362a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "216aa6deb3ce0e23821323ba2437e45dd2ffbd59bdad24d874063d4b789ac053"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "30543871737f09a7bbb87ff851f5b842b5364b01c123e7c72067963d8bec13d2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "405b400583ff254023393a3a85c898df13994ee7420c88183525bdd70599aa1a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "7c5f5e1f148ee3bef37f68a6dc0baefb7f5258ddc742558a54f7a79ee378d800"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "b94918633604abf613893aa31c97aa30c5dcdff59a5589bd8d61ec9c58f57c4d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "6ee0b803946a84ae5ea311cb7fe2332a43b1bdb491377f0d1781a12fed99c306"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "9e737254e6b0567d95d59b42ffc40168a5356a10258d7b5b29923ad44c4e1274"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "d1978e8a0635c3984285378794bcb32c5a7cb74f3c3d88dc8f1650bbccfe835c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "8ce880bfc734b3e2e905c2d541122f03adffc5ee96b9a91ce8959a95bb534a72"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "bab859ef2bfa2bc01276d7ea0fd1ffa3b0f5c9dcc4a7fad3743dfff349d88209"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "d4e1047cd5e5341b351bc24bdd225637694cfe9e837d850c4c59433655f25e15"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "b8a2d41cacaf40623cac944fe70582fae7ff7a6efc467fe081ec23acdbbfd906"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "6f52de204f724b48cefe5c2af1f5164b01e95a1165a995f9e28577c05fd60fc6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "646ccb66e66f4062db2a63237f5ec6853207c2990636e524d939eb5ff9ad5466"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c483ac8d67ba7b7a8101c802ddf29c30ee39eeeef0be1deda9090d12f6ba31bb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "b497f9d3bc8dfda9ca0f37acc7479c364d05bef7b86e68be11b7894c9f0f5a20"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "68954935750ad2285877062e3fd3d9f3aa779ef01d2b31a97fc8522e9a309c5a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "d6e717ae148a5f7612c26c328c0932d18e34373b036f311661bb07034d3f215e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "97b7dc383a21d800398c6a271ed18052c989d1210e8e1516bdefa52b3d96e9c9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "8425dd087a0176d34ccf2ac6ed32c74c4728e3e14ef15c3a3bec2af338d1bb77"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "16fa66800fb4df927c30d2f1c5e079aa502448c2743f30964a3cc1d7760d1933"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "167e8806660a99db75557bf977c7650be338703c30a76aac1379756e9acab948"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "783a5c1e4f9b820ae9e47bd422a8146eaf400d2aa3b353a4dcecd15fdcac6862"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "10f9dd29ac9eeeaff8e2a5aec51ef014f690d83cc9f34d268c22b2c354783bcd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "b898501294e582c6acdd522e90227a6ac34ba5e5f9535c0226d0182cb0578300"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "97959cde22f5244c78e574aa30e8ccc99148c90b2a9202ea10384e75a144a82d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c8aa89ef52c00b4808562c66b45f405ce2ce60442ca729173e5b1a3acb980cba"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "50c2ecad22574855b4088c1ef6b814f391ca48e2a133e247840b0253599b3ca3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "f29c6df668422b4de21358cd75f73ac95324b3e7982e5557b054e9d12cff1eea"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "44ffb09b0fc836716db96e4662979dbd6d333a33313c45e03f1e6898c6d70d6f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "60cb7cd2ed1d93ac4ffe58856f04c870c4d733218ed58a5c95b37754d58b9c63"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "2a92d0c03d7947f392be99a5770d9654445172abdb77bbbb67b909aa6ef83b80"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "80cb5c766f924a561a73d5ddb32369df7ef58635d6ad86573939310e158b505f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__dlinear__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "935bd446616640a61192d62a5229ed2279d26a9ae8e99367d8496cf79144e010"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "5e9b8f2c7844eedd705aad2822c7964886eb6b66ed96d370454a6a4215727947"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "fcff4d21c35e2290e2c0906dce79ec362e889dfce1bcd602bbd11711a15e3f8b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "5bd8e4bc8670a3bf8f6bba7cdb8633bd16005cfea17968170e397eaf36a885ce"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "280ec5ede2c6642fe9652010f33dc0ac49a90d2805fbcfaf523a57916e5b89ce"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "5e0cc232b063b118f0413a8f7eec2991985d402ab15af3326f41be95a2be6a90"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "78d10b811bee12b45b837c9f3d943dc2b73437c9d1107570f48d8be711977b7f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "2981db3b85dd91f153491696851471e457220ec16446f5dd531362263113383d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "2f0ef7d5554bedbc45fcf290a01accfdf4fe774f6ac640831dad8510b92e85a8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "79a070d5978ffc047bef412d8a375f95dbaa07fb01afc67c2d04529cdb9968b3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "0de97a77de641149dd6b6d092d32d0900cc274bb1f61e2fc571a3e32ff3312fb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "85330722468a1957c31a8ce11377ecd2bcb064c0a980f27c010ea3f544dead61"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "185b6c6f8a6b3b2f6a77027c3958e66d423292f100abd9ef08800e75223cb512"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "effb8b655775a54a8b9a7cc2c6c9bdd30ada633f8ba51fd3c4175f20f353de4d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "8bc50632bc3e32a2ca99d39002b2d9467d8a7293f696725026ce2241ec5646b7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "064f29899e9c10f1054709eefc7f0a1f38476ada0333d5a6397e6c8846995604"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "0b42f685285a546ec48a69c0076282fb7d7538a499baaf9b20e7ac2038465df4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "d2e9de767bfcc91838e80efd59d279df7016263b38375f1d11651e84f0c228a5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "cb0dc9609626697156a7f55471b188b527afa345526784be3ed96cf653d5ef8c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "9812598411351fa64080b5967fd718e3ec74c8e677ddad7af6e6a9c9645d2350"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "b0b4c3be8d226817e14cdcd77e9142bb81638a16cc9ba3bad98217c0fabbd2e5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "7aea6ace5505c48fee3b5403f472d69b3cb9d49d9ae39e358aa8f8005ae8da7a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "ab8cf0891f5766a3c5fcd906805ee562d979ed533c03d928419152d3e8384492"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "821bd0fc826ac137447c6aa4c73c5dd2382b9d3e76fa1f241af9f8ab7b87692e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "2763ca60394ee93a533c1987e420290eb3840ae819ea9c8a8b6130ffc1a380f0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "27611951245dc890dcbb16afef6685d4019b220e026ebec82a202f54c701d8f6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "40e857f878e8c603b7d994881ee9c6034604a3557642af67fc7ec626a84445d2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "03eda9d38c45ddded0735df52117d46a174eb5efdfc67b5d0521a00fc379886f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "33fb478ff4f49a049cc88769fbf1081b75c809e01097b19325d60126ca4e21f6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "2df14de920ee7dcf44f05339ea8f003371212e7abc0012b0c2bd533377028113"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "31d8a1c9819f778b1da50d7ad176fc199bfd037d570d2841624c9e275ca6e0d6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "2269fc8a2481aec7dd96b25831605a6a858a42073d19f05835d59850747804b0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "39533f1cd339d7c9d441058a889a60684534c650db423f268f85c29a6aff12ec"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "1475e7d337aefdfc93a050af1a450bccd684fe945e9549e7bb788700b904c389"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "63f30d62caf60925e739f434cd961b14cdbdfedf6ccee969c6e7fb69764fff4d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "de6f08984f513180a7df3a9cda4976423160d19c63d1adc5ae585760120ad744"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "27c983ee0e82cd152c4ef809cdcff82a6f610531febed5ac0e0b2bf5da3b0e9d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "ef7a0b9b1fac1da2b80424ece378ffdbccb0f23888d09a9aa5221730fa46f413"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "b808c6ce1e6d27d70f44da00d7c7c6e75bb81ad305790d7ebc4b83399dfcdb0e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "7270f0bf2c20051bfe736201c5fd9d6912a77079b0e9873efdd6366585261153"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__gpt2_miflu__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1017,
+      "sha256": "3c6ebc604078c10c73c7fc683411e605e0657e973b2b6abf050191177f29efb5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "f3459f935288fc923d0b98d83911332ad5f6c72d5965ce240f3159dc25e590ae"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "e927a22f875a5fa1f946fe67e5a105088a034a7c7128b8117fe68ce8913200b6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "6589bba30ab28cfa642d55eb03a87582e43d8a88a5d1c526505c224dcbd44262"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "81ba63c17be7e6a7507750d6d7400571b4d1d45b5072054ab62c12f1fac44972"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "dfe50c77a4583d410dc17aa2ec4c2987909714db63a9c6fac3baa2c5a76c8c1c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "81964ad7c04543b0818e3d0fc673ae1e7c9f8f8db1db5044293742a865d10775"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "1ab4357121963726ad0415e8103fb48aebd57c1d8544e68176d7a4ccf43cf062"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "7bf45e3558865379ae283d3fbd30bd92f0bfd55982eed814506c7436fc3b3604"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "ca1c4ecc8b0f83d86b16c11890f7796fbb694239ed55b4a30b2815664960351e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "36a3aa25f71418615cbdedcecaf9d308ae0d54702b6ccba30b519c9c2dca4bed"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "9af49fb556dfa45ec92422b5957e2a9736858b02e08fd73eb3368cbbd17cff36"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "fa00d171c9a9a69477247a68bda3f0af137195a72a0ffa16f183cd35fdfa8ca8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "b7bd8744e2a97601c4fb060b9795c8b3da3475e411202636359e43a88b79c13a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "53e01ec90ad0e1ee513fa0debf7c217276262e18ce86b72f2b582b3c9f1746ca"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "eddafdbf8909bafbd7ca79210035e39e7c70998833c7e7d46b38fc35f295da15"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "a80e692ed759d793a109867b6bb5f1ae01fa503fa868fba41d15474a77a3e991"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "589468401c38aa8c55cbf9f1b3ad40f075fbe0b0c551849fd5b648516b19bcff"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "dce753880711d6beb1fc3fe9e0fb8b304dbfdc147062379068087d6bd7f9b18e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "c864e8a8887703ab98c5df05671c745e85253007fe992fdee340b81436e30a3a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "3ead818be51523090a68bc32fc7fc707252645bcb1dbca7f4f197defc4e8d3b0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "391f9dfc77a45e4a1eec0f2f86e4aab22bdd4683e88fedc70629e3bf73dca5a3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "86a2fc66da6a02f8960e1b17a540619917df5804041e340dd7b19e7f988abd42"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "0043f55ca3916093ce53835f3f271b1d2d77dfea2401d08ffccd717e53a4d0f8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "cc563519535894b81ff8db24c3d478b8ecf7b93b991bb64ae8ac8f2767f1aa40"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "f0ff97defa3f7147622f9a17424ea70182c08fce96a3ef38de364449bcd04970"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "7e5a5aa552c2eb00b0243b8868fcf8c4c81c7ed0900876dcf0ebea660ed4a101"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "0d02b17349b4bf66f0ad48e1ad54deeff09322f2276f8acfaae5c8d3b402787b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "af0e2351b32f58ddb649c69846f02372e9f0b07c891c2dd7f7700fea4f49e31f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "ce3fd5f6967e38f92f15bffb1ae6b7fb9943e7f4129f27252e416c41d2545555"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "19430ad66f7f67c3e16ef704cc5fb8c1c89bfedae8be403e647f1d4db7474108"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "73c513e04066ff298dd20088f7762ce9412d590d0b800db570c50e5ca8440ef2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "d389177ec1cec84463eea531b7086c726c2bb809a3f8e68c86f14e2959dad7ff"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "506b160964530276cc982f065f05ba39ba0ec03eaee894a8de54ad24d15111ad"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "0c2857dc9df167a3bfc6b0f05f7ef312020359392e6ad197ead225d86cd503aa"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "3494cee2b24abc4e61224fe49ecd5376c6322720633c95853787f8090cd7483d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "b1f75c771bc6f9c4a53aec8d3b481dde80f15c1e34d4d5314d3cbfda04226f86"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "2d8358187397afd8845b212dcef002c737135d8f618b2dc63fe0a7f5a371f18b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "474d5c7511c60289add53b83f98035e7b457f3f2f62e09fd09f343f5cd80d056"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "eb918478d365d9a1a8bb1442ea4f498bd6bb7ee695b8d4761bfdca0c2b5f7d40"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__itransformer__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1025,
+      "sha256": "fee930b678e5d1aee7fea3e621b5f9a7ccda6ae8785fe43bf6f10518eef1394a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c3b14346e052c3824a02e873d11bfa16e5bdbefb97b9cb4520065db06d3fc04a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "a275cc434af07980a13da369fa8a89d1e0a0b728b3d5338b784be48a7fa1b414"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c927913fc4811be52827a4cb4bf84e9687a7f9d1a43a14022776c3c9553553b3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "01b6f6df1360a3d0aef2b54c957508eac58d5f7d4ed7c6188fc7eba1672669bd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "a73a9ebbcc9f57c2b6f425c6638d2200809102f404584f5d134a4d1a279312dd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "9f6ad19c467c5130605bc2f7b2fd9e44c9507fd279c9c24c4283429f6de77692"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "fadd7223a2ea8bc70c726e7e73330813214de47161e4f9f4c124bb3d22dd6012"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "e632af6ad31df41ba272f4f08894aa894042edb9f773475e5d05a1eddd46196f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "435b63c148baa2a9a90cd0c62d0c97c6204ea83c85cbaece9e57db72d12d8bda"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "99f27d783f64d74b49e6e1b0fe5b51b21b59db839ef916a505c46eafdd8c8288"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "e2d30004eeff4e9546addb2b1f9079257e29cf2be4e75b2d593ad66eeace6f9d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "2300c8e967d388e76dfbccd55e18dad34fa9219a326fc7119243767ac88c26cb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "290a7572aeec2c6e3e7fb067ec4079ca89c0d0cd81f1d98b6d6ab474f9a83e69"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "50f3b7b57c93636cded11194ecd4ddf8e98bdd780e73ee3f111a08cfcd607718"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "fc2871c29d9693f2cdcff221786f68670f9a277fe77948982592fee66d39ef29"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c158ddb276ff6df7c7655663018441596052d6b0896f4920ff12e4bb20659ac0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "caca1e5c98c94daa2042ae53a5f05e4bbe987545f9ce4329dc5989d406054ca4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "e47e4e92553f85a28de44a4e2751b7a161dcff64da38e7fa58286b3c51c1d864"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "2452df08ff24356421f351402f0121d5fdba43e402818d80394bcf4f737168e0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "ac9bd86785dfb6ce1707c39a7e6a76d7f24820efa4803adda0d1fda797be4fbf"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c253b0fd526133614d63de4d6b8b217da758b997a1b57e6abac8d76a7a1316c3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "238b50e1db6fcfa75897afaa336299d309cbf2be03c614aee04117550f4f83fb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "bf9fbbdc2c65e650a92b8cb361832894efd9db2793245e9e63b76999fac185c1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "f259dd69cb9d8229ee86b3080c7890201d94535faffdab96485733b7444cd5a0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "24c9dfa58d19cf11d06ee282bac3b7f85c8eddb2d3da4ac96abc17b8a9aa1beb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "478941cb99630457ca8100f045f3a6bf12e800bcf3402fdf2e6ca1063bc4a282"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "b79f9bb4bf570a5d632ec06076a374a7bed05d35934c1251757f1ad69c805456"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "3e01d17cb7a24e21c6ddbd0a24f06589e111f843aa390c69d299010060bdf016"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "37c541258fcfa17ff56b837bde01b727ae91a831e77d962ba9bec6ae6cad4f29"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "b92d248c1355b114e42b8204468baa3c0b88b65c823cffb70ed66ee0d254e8bc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c4b3f50d02158108c75ef0f36f189c89d9abddf9b3859af225595999bc43c9b8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "0abbc7c4637aa5e7406562646a95c977a661bf5cd293d3cf1a68a1efe7c2a14d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "b60fa7fecae0daa75bd654415a19cdc129b29f98210747a9f73dd4b686a9a62a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "7d0718a70650fa26a7a3e9e7f27881255349548efb4e1d38a5f76dd8e733e08f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "51774969e8b2433ac54872d60d148e2d2a1c7ccf35af3f7f74c1cb7712f1fe31"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "c68608d3ee491ef4996f623d8ca5ae70f87d87d4c4faa97778068cfd588a9807"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "97cbbd329befa2a3e36887e2daf42e9afc49afa71767bdda408dea60dadccaf6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "1eca181170e3cfda76c6b81c78a1d87895f6fa2e678b833be2211d139a56dafc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "320f44757c5314ed523fc5046a896ccf8ef8c7782416b9377f73ae1f6467702a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__nlinear__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1005,
+      "sha256": "5887470e5784f899cd9b26c9ba6a41cebdee40f93afe8b07aef376dd834155d8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "13c115ec13eac7d84a3d59002aba8fb95e1aea478d7a111fb0a050c4c763e27d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "cae5903a15020296ead4303d60a8b9361e2bd17500f0555b0bb2e23ef3aee145"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "0ec8c1dd4bf3881b0626e44be99b37ca44d5e2a28c12d8aa3b6e1763f89d37f7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "9728eeef78732eb633f3d2613b6d5fd10d54ac107ff5e584a4a46e79c868fae2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "c617b8a6030f3cb00636b34c568b1bd39baf5bbde6b0805cd1e0e9aca025ac4f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "9acb242bf5192620572a42d3e74ec06dbe600eeaaa5668ee750b97766cdd0536"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "a0d16a2534ec837d37bc14a1f59872357096d878862de74ea27d4cbe80eb76b4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "239a110d854ceb07d0c519682d18480397e9c15c37bb1d6092c5c38b9a346522"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "ecb7e3d9e394130dc0047cc154e698027d238c67e45baddbd0a9078924b64a31"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "5dace2d9885117c810082d5da9db682010fe11e0f3cefb416efcab45cf8eb12b"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "4e2a233020c417129a949f14283ca37c8f3ed47e493d354c777029d2506b7a35"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "65f65e9a0a59eb59842d4eb1a6e0bce54f24db66c9995742ac0c4c206c97e0c1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "00bd1b479cbe5ebf121af27aa8c5f84e1577143e526abad7209faffadb1940fe"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "08ca92250ffd678d19a3f96edf42799717be972b64943eaab80e39067e688151"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "1c38bab09d990f8df0639ea6908fd7252981121b287a3df5422788dd7cae76b9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "42fe51e59dc40e73085dea03de3ceb88af5baf8f8d4c44b2b48ec2b81aecabe9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "7cad95e551e5d8257af2384af8a798b32d751ce9bb6d668998200b3a1caf9df8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "3e470b8a3eb508ede893a66f55ac0846eac8a00ab353f80aa3ac7b7c10c03e23"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "a2f75f96ecc43e27f7143e5a92817360f67cafc1163effa214969f71de9c50bc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "8c67286f84fbe83ae29839c041608a44f0c885a106967822a3fc519553bf4e69"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "a2aa47df0e301e2cd12a1e03c2bd970c0dccb905269973cbd4912eec224b6298"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "c8d9f0421e37a8a04e64132e35b791129b87e7bb88bfe2abd22cfa74d75cce61"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "c0fff9a4ba7f961cfff819eeafff189db24c12d55da1f2126ef4e3084e245cbd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "83d0865a66bc4e90bddc8695ff9d61596d1cd5a5fdfb06fb0f00f5f991693698"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "b155729cd7e0febbd90038a9b0ce91b1a1efda37b4a953ab0b5790df7018a8f3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "a932dc7c53e7ff9a8fab20f508c7dc44529adc97afc1427793c352fd9d7caf82"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "cf1f48ff01fc63179fa8e1db3fb7960dcb2bcb103fd1cb4c695b61260ac08b26"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "fd94fa978c1a7e308423000f6e8990dd4b85e2bc8f38cb137293fe4647ab64b5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "cc058379c7072691489cbb4448853b3b78d6c1f3c34b613fba0535e025bab2ac"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "7612dded9d03bfa3a8563cb016cfd11f6f42125cbb5749d4b7d59d66895cc2bc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "ecfd7757d888e464485b76d4172b2f7ea2f40644a3cab673e7721f882aee1c77"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "0841efe0968a2c085b9d25912aca6d623c6f74eae7159892d46201aca395e37a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "74b466a13b9a52638cdbf69499ab78a49c735149c1f80d4cbdb67c1fd8a53dd1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "4f5d2c3ee1cb659a3a870deb6ea4e36fb14e28a6ea9fec418762152c4a6ea7a3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "4cdcea70ef4eed17767e5548557d855b120fbf36f3b0f1842d5704afa660e98e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "f5309b2437c77c8ca6ea328aaaa7cfc67f12ee6a388ea3dcdd61b9686c1adbd8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "c23a927307907b4910457b8add9f87f0d8afc8c90e13bda2eb3b39bb9a1f6701"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "4dad49e7a459863d07d032b9560b3ffe46f244ff19256fef1069b944605942e5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "d58fcf7aee394515ec2fa8342a62642f207adb3513ef078135a86c30b0ca299a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__patchtst__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1009,
+      "sha256": "7dd770d9c8dd164fcb6b725be7225e8a9fa8325455862d98a87ebbdf391b579e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "e33566a9b4c38ff816069ff6aab90882fca3002a4b20184c94a37cfa90f9d449"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "61761d0acbec0a8e60366331689f23a4bc3d2db53a00623a8a4dd861cdbda54d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "67c7ce68efd61915947e59a97e4e52101ed306f61dfec1034c9fefb35995bce3"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "2daba1947bb5467a607779c11d6c6116c4b56817d37084f54d4d13ee9c65bd77"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "4e5cef5cffa3013a87b71cad7cffbdf0d57fd0f036dbac437847cba04917d360"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "cc28448673d8f1949b99d1b943803631403fb215a92f8a1d04f117bf50777bb1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "219aded2bd9d65aa72ce93550c9c3d761b15346693bbbbe530cb996664a8f976"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "c7387dcb0325f878695c4a7b87c6d31c362ee113210eee815d27bb648bad86e6"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "15ec70f9849ef4e3e83a2e8d51766baace535c89164e4af9b7fdef34b5d4f335"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "d7847c39103b41863fd8971ad09e2124c367a9ead851181e12cfd737fdbe4ad8"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "f19e2804e352385ed87b4629e7582b581bc86863b8f4401cece44324b4fa7231"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "f1c9749aa9c4f3955d3b502b89177533f3e3d293d0cc77b4b6fe7993e7910621"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "15f0d76a51f0472589b78b5ff13dd072437765306da2e6a40ac614e0a77827ab"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "862b58203c958356f5cc59e46750a9c5eeca5a43209d9513d81b00822e30a300"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "e8f5992cc6349ced1beb96fc3e8825753d933ada4cc4c8401508a6ca92ab810a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "91cbd33681e7b448adb54e3f2800769b28cc3dd68f5bfac9c6a69a469fd84f74"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "9b7a080fb070340e351975bb37f536ed6fd5e82c671c8f97d08150a7f9e69b82"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "a2d8f69c609faf6db32817c28264d2c2e2f6fed537c2209299479880b718c690"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "dcb7dd3cc96132d2d05b43725606ce65c8aef9cce1a7f344195bb4ee3c0968ba"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "037b1caaf1b0d3219d27f79660d747e5c44d6d2328973611302642108af3c95d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "97f65f966dc1192619ae141d82289c600496e85ba55f44f17e2dfd6f0a18576d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "272dec9cdd97491273abbd152a4ad0d4fe4676752604eede0eb0d87dd2580cbf"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "0f4c242adf8c5c3427369ea3c0cb46cea36a7aee54ffbe304cacaa14a258c6ea"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "d52bc372ddaef94b8090aeb76fbda0cd1791a26056a8ef202afef2bcd113f598"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "a4e902c88a34e9e4f4af1bb57f97315dd8bc357c77381bbcb35dc0f95d9713a0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "4689c8762652cd6d8bda51fa7f004103e7c12d4f55a81d1cff15dc7e0e00315f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "dc48fd6ff60dfb4f350ce75e146431e8441d7c890eb8bfe786951323f03a5177"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "9515512c7ff71fc83efb871d40d93af0286760ed5aca9d64327377415293ae94"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "82847a8e97e18717df4cc9104714f443f7bc41aadebad5b69b0ad8209c16e74c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "8f9617f979f80df8c4dfd981d62959138b4793807cf05f16ce71d01c4f9d0e8a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "23d2a21defd50d13f1a9020782dae26d5f5ee78be34027d27e2806ee7389de4f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "56180a89955ba70154b73c3d5f0e6fed377a32fa1a4caefd839d7302b0ef233a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "a61e496f2708a004b841efd655616f16d08949fd52272946b8333bcb2a80396c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "1d75047a8043b0fb0668e2c54e52ba905d1509548ecfcf32b4e267d54c39ee4c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "32b6c1f1c58e3df7c8f8878486a80e968e441ca912ae8d6315e8e20401d8aadd"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "c133093529614e65874d5edbc5bd99e1f0fde1482c43cd03449044159bcc280c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "4a57909a3a091db3fcec5dbcf020eb39c441e7dd6318392d215f5c0c4bb13add"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "094213c15297c132c4c19fa949e35190d572c34033d1b0192c43b4748424bdb7"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "c7d8c308d571b99e8502b7ecca249fcf9e6e82ff845d50a84bc0b0f563a2e1b5"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__qwen_time_llm__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1029,
+      "sha256": "31e78dacd559b468781ba4b334a36a2b12287d7c51a29b1877025beec788f768"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "63df888ce101e9dd537e46ba7542c14d56dc386e455c7ac20c39a6f19f67cbb1"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "f2d2e18766ef3b20e724bb8ec94c165bdcaec30f180a8b553996168419e7cf29"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "7dd72c0d372daef83caf71230f0a24c6e2b829b5147edfcde2c749033cfa8ff0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "edb9a0ef9f0d350cd89b1290dff3e5fdf4de07aa1c6d42ea592c6002de94b9c0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "591bd7fa7300f5bd5922a58bddb26c70387f413370a147e36eba12ba652e9bd2"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "3dca9e29e880958ef778b40cef152da6c1fe004dfeae9d97e9088fa143fcf603"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "3dc85cc4b01100144a3dbd935b7b73726412f44e4f3f30ffefcdd226ed38c52f"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "ccdadf83e9d2fc1dffe18f420d25b8f8e843385363df0380fd31977eb9393dfc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "d228d04376caa995079ba64977b45621bcd1e510be5e7e4ce2c17138fd11938a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L24__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "e0edd8f6a1d517ff4a3b552b8714ee5e482cd1259f270140bfc2319d4c42434d"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "b0621854c2ff5c77a0c167deefb08db7ab8776940c580711910a3d64335daf26"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "5ab3f519a5436d004317ce305c5c8328c86e8c86ad2232dcea70bd03260913e9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "f5dbb26e4617e73e09d2c959400add8d8fbbc9ef4d2f3cbac19e30ee6b852bdc"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "4abf3876a04e3cfc89fb41fbb7d9b1bfad0d2cbc829883422eb9a9075df644d4"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "c580bc37744c54e2ab49c81bbbc797fed0b186023b2575894425fb36153ae5ce"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "8ab73465e42967294b45e296d386e65287adf613e67058180656bc9282fa1b55"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "5ab476eaee6683b1c777ecb1f7593c941dd992671c67ff11ef7eb0471b34d398"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "3240132039cf80199dc8d9bfd8797f3fe7ff14476fbd6c6b27b7d42e00e1c39e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "4fc46568db44a0c4238b7ef05887a253a247f27733e3d81a5e93eeac444d430e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L36__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "b31c09e7fe8442942eca16ce1019aeed43b3b9ccdc836c283a5c166e7432046a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "6f5cbbd26bf43e9856b3cc60f721b300273e228afa6de124a66b1c130ffeba6a"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "1958433abd02daaa343cf422e66cbf14ce1ffb85b693bab9c26a14b99ac205bb"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "aba09b1e15ee1b5f7704e564e46567a9abc22567abb8fac5c8f8455f9d42eeb0"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "29ad98b2afcc32ac6a1d9e502f87b4e0ab84d967de784a29ee23c144edae3a3c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "386fc0f500cea311e3543ba73140665baaa32bf03502c026b557184b46ec3523"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "707583147d073f1be0d31e6ef593664333c3bea4256abbbc6436ab9ef8316d27"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "115864b4c6f1053d5120b4869712642d743dec7d44a47b7731391050ab492555"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "9e43795c2850b3ad40f073a97c51eeea96582b8a52b33de987e8cafd88978693"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "1ae78b8028032fbfc7846bec0c1c39ddef8c96031b82ab7238b048a8984d7d8e"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L48__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "9ad4fb9d68bef9570fcb880f524ab49574775bc44d628b5abd8197c65b240e4c"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed42__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "73ab91b12e648a6c6f18081d15897599dac6d8145fee94925ad93d9eef0f1501"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed43__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "4c0da8920e50bd2ae79e852bb1f7391d908077f8240c445531f3ecf714df31a9"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed44__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "d801388b02f26fb14c21e0b1a07d9660308140537588f01c84e396f1e603a613"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed45__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "8381a97a43023d95d39c970e357531d5203cc40b241d0b4b6b6415c7566dec77"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed46__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "042654ca0bcfa623707f9ef6d3c357dcae6d37903128c3194dc62075be7823ea"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed47__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "53653242124c97981458ccccd932bd17b7de86c961f1e61cbb8dd999dfa7f323"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed48__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "810e8ed97a89c6a85704e33d3e88c1b54833f76983d6203f8284a2a4a1bc4fbe"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed49__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "661cc3deae168b55168e1f4901efc71395850ead2a9fc29c1b052249d5ce0782"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed50__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "9c5e8a4559901f2985288b64c463b16597096fdcbe50487fe6b699bc828cd006"
+    },
+    {
+      "path": "hpc_scripts/v3_clean/primary__timecma_llm__L60__seed51__w1.sh",
+      "role": "executable_slurm_script",
+      "bytes": 1021,
+      "sha256": "ae08f873a6c3f97d0a1154b017adc47be7abda313ab48561c16891914707ee21"
+    },
+    {
+      "path": "results/v3_clean/implementation/asset_descriptors.json",
+      "role": "asset_descriptor",
+      "bytes": 667,
+      "sha256": "d743319938984409d9ca88e0ebdc99a608cd222396d877715c1be1392f471793"
+    },
+    {
+      "path": "results/v3_clean/implementation/environment_bootstrap.json",
+      "role": "environment_bootstrap_metadata",
+      "bytes": 515,
+      "sha256": "9604f8ecbb47271a5d232d6f9f02b497702a745382a8eba1a6895ce545625a29"
+    },
+    {
+      "path": "results/v3_clean/implementation/source_manifest.json",
+      "role": "source_manifest",
+      "bytes": 24440,
+      "sha256": "f27846d3b603d8511128351797005bc353532f1fce3d433802f23ac9262160d5"
+    },
+    {
+      "path": "results/v3_clean/implementation/v318_SUPERSEDED.json",
+      "role": "superseded_version_marker",
+      "bytes": 915,
+      "sha256": "4ab56c33171f7fbbad83e0894d9512f13d5ad70b460e01e2ccba647897b7a5c3"
+    },
+    {
+      "path": "results/v3_clean/preregistration/NEGATIVE_CONTROL_PARENTAGE_STOP.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 3110,
+      "sha256": "7b2806f867142b32c880832e8d03525bda9f2d8c49c2c341cc176b4352aa96b3"
+    },
+    {
+      "path": "results/v3_clean/preregistration/ablation_control_overlap_reconciliation.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1478,
+      "sha256": "068852960e4b32ee1d04788158a90646eab070fb943ac228bae97c27c8715755"
+    },
+    {
+      "path": "results/v3_clean/preregistration/clean_reset_report.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 921,
+      "sha256": "ec1d4e6a7db34a2542231ef226f50a6e8b3096b1447b6ccf766a2925f3238cb1"
+    },
+    {
+      "path": "results/v3_clean/preregistration/component_isolation_audit.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 5354,
+      "sha256": "88e82551714f216fc5d1985205150ed319dc76ea52e298cb207c7333170539b2"
+    },
+    {
+      "path": "results/v3_clean/preregistration/component_isolation_audit_v1_superseded.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 5354,
+      "sha256": "88e82551714f216fc5d1985205150ed319dc76ea52e298cb207c7333170539b2"
+    },
+    {
+      "path": "results/v3_clean/preregistration/component_isolation_audit_v2.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 3237,
+      "sha256": "972925c146444cc1fd066e31aebd5a9cd43abd05757ff9a90c1b0bdaeac114b7"
+    },
+    {
+      "path": "results/v3_clean/preregistration/contamination_audit.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 2040,
+      "sha256": "2c66c8b4ead54d749b248ca06d5177c85c29949daaf862e3bdeaa1e138faa613"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d11_pre_repair_manifest.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1858,
+      "sha256": "29988fc34ea085cdfef38f2e0a0e73011ca8b36466857836c72277487fe49007"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d11_repair_record.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1265,
+      "sha256": "984735b9581b5bf2d47df3631f34ad3be80ab4128cae4a33d6f21f226e793f80"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d12_pre_repair_manifest.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1402,
+      "sha256": "edc575acd521ce7ac973266d45dfc14454f04f149ebc732139f957aefd67d3ca"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d12_repair_record.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1351,
+      "sha256": "aeca545704cc007c230751b1be02a191649b27e320fbe1a5b10b753a8f3cb85e"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d15_repair_record.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1619,
+      "sha256": "a24446695357b178c4d1b8c6f3f32c143792e2e93c36565c532ffd3721df0e7b"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d8_pre_repair_manifest.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1001,
+      "sha256": "7dca722052bd17ca71abb3cbaf737aef06ca17f8c019813cc913aa3c3721bd03"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d8_repair_record.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 844,
+      "sha256": "f478e85bbf1f1c6f4752a4c3933a7840d5acdb409538d8eedf31317effbc68c8"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d9_pre_repair_manifest.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1379,
+      "sha256": "590e7c6dd6d35a21a5192a74676e99e4cf5d03f81ed3685bef3cf7de8138a5f0"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d9_repair_record.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 846,
+      "sha256": "061c486e449eaf2760b67f9963f60e8c54e620a1a57548d44334b13a38e271b8"
+    },
+    {
+      "path": "results/v3_clean/preregistration/deferred_parent_binding_rule.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1020,
+      "sha256": "78f0cba4e96cfbc8252edc727b06f5aeac5176c8b226a487ebdd1c0f50c374c9"
+    },
+    {
+      "path": "results/v3_clean/preregistration/deferred_submission_guard.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 276,
+      "sha256": "394b39fbac8de454884b56dbc7f070220bb06e3a40f3479969a72b5ee3e5d9ca"
+    },
+    {
+      "path": "results/v3_clean/preregistration/endpoint_hierarchy.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 2183,
+      "sha256": "98830b06e9e23a256807e2a4e235cbd49743590fd7b904e8bcef5dedc7139772"
+    },
+    {
+      "path": "results/v3_clean/preregistration/execution_wave_manifest.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 418,
+      "sha256": "762665fbe9a7965630a2307671410cf07dbdd50744668a5b0e80e351dcec706d"
+    },
+    {
+      "path": "results/v3_clean/preregistration/negative_control_matrix_reconciliation.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 10762,
+      "sha256": "f1f97bfb423b53783def1df9893c1cfb89ef42a47e4c59215283ed38b3acef0b"
+    },
+    {
+      "path": "results/v3_clean/preregistration/original_miflu_protocol_manifest.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1006,
+      "sha256": "ab88e5af8c701f2b76b91b36f8e47a04e0f3eaf4b252376439d70c894dabd7a4"
+    },
+    {
+      "path": "results/v3_clean/preregistration/paper_aligned_selection_rule.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1218,
+      "sha256": "53ddf8280a677b39a2072b5a2ef1e071f92f6d3dc744d7559351279f6df804f0"
+    },
+    {
+      "path": "results/v3_clean/preregistration/parentage_correction_audit.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 2140,
+      "sha256": "f415ca2879f5330dd6231c1459262ad1b0b2c945705a1443a2a1906152a18800"
+    },
+    {
+      "path": "results/v3_clean/preregistration/seven_variable_io_contract.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 542,
+      "sha256": "c1d13f48e275f7f29481d3ad24bd6a309aaa8c034ce3bd4561f3bf09cba2a4e2"
+    },
+    {
+      "path": "results/v3_clean/preregistration/static_gate.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 1912,
+      "sha256": "4522602ab66fd85001470ced02d09c971edd1bfd8800f35629051cb775fd4993"
+    },
+    {
+      "path": "results/v3_clean/preregistration/static_gate_v2.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 2117,
+      "sha256": "938550f39d0fd9fa2e87714298a8586d85ebabaa3b216238d7e603757905e357"
+    },
+    {
+      "path": "results/v3_clean/preregistration/static_gate_v36_superseded.json",
+      "role": "governance_isolation_or_schema",
+      "bytes": 348,
+      "sha256": "2ffdb6c7f9f2081774f49b1bc0c2e1b1953574d1054d90634247beab91756029"
+    },
+    {
+      "path": "results/v3_clean/runs/complete_specs_598.csv",
+      "role": "frozen_spec_registry_csv",
+      "bytes": 68375,
+      "sha256": "61e1ffb98f33b25dd36751ee713b8713f866071302293ee64b2a8a7efdc9e184"
+    },
+    {
+      "path": "results/v3_clean/runs/complete_specs_598.json",
+      "role": "frozen_spec_registry_json",
+      "bytes": 222388,
+      "sha256": "376b2887c045aa1443a33b650e5196fe4565b4d41b6a61ad49615ec1fc478152"
+    },
+    {
+      "path": "scripts/_diag_baseline_check.py",
+      "role": "frozen_scientific_source",
+      "bytes": 3681,
+      "sha256": "f97b116bcebad8f466164f3d75960c958eba966bc26baf85a58d8308f2843694"
+    },
+    {
+      "path": "scripts/_smoke_test.py",
+      "role": "frozen_scientific_source",
+      "bytes": 531,
+      "sha256": "d922a3d06fa3392d4fdc4e89baef8ee63bd717c3da302436d72f98d447bbc22a"
+    },
+    {
+      "path": "scripts/aggregate_journal_tables.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7930,
+      "sha256": "1595270463a862bf15939b74f29fd556225a0411d61aa58566e6a7c65480bb75"
+    },
+    {
+      "path": "scripts/audit_channel_isolation.py",
+      "role": "frozen_scientific_source",
+      "bytes": 1611,
+      "sha256": "f9e1586761ac7e1d9afbcd4e0009e34fab4441bf662bb5bae0f197cfa2612d58"
+    },
+    {
+      "path": "scripts/audit_original_repo_integrity.py",
+      "role": "frozen_scientific_source",
+      "bytes": 26330,
+      "sha256": "65ba9b04a46b3ba01ac500da006e623bd958ed991a923ef94425013e816cb0b7"
+    },
+    {
+      "path": "scripts/audit_parameters.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2117,
+      "sha256": "a2e24cc768bc474f25a181eff84205d23cbf3468f2f8f3f7e73fcdaee7b4a40b"
+    },
+    {
+      "path": "scripts/build_innovation_hpc_bundle.py",
+      "role": "frozen_scientific_source",
+      "bytes": 18392,
+      "sha256": "f22b9d949e41c84fdc0df164ceef28b5b18048e2be0e95e56dde2a3ddff7effc"
+    },
+    {
+      "path": "scripts/build_report_docx.py",
+      "role": "frozen_scientific_source",
+      "bytes": 806,
+      "sha256": "2a5fc02b255bb0214b3c129d0b23a6b96b0bec4cb5617cde70e35a457ac7af43"
+    },
+    {
+      "path": "scripts/cdc_calendar.py",
+      "role": "frozen_scientific_source",
+      "bytes": 10991,
+      "sha256": "ad42bf13448f83328e6deaed4cf0d7af72bbfc37658987c7f5d77efec02ad374"
+    },
+    {
+      "path": "scripts/chattime_variant/generate_walkforward.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7914,
+      "sha256": "42830123d331aaf2144999835663fced97b90cecee576709c51a447c030dfc81"
+    },
+    {
+      "path": "scripts/compare_mse.py",
+      "role": "frozen_scientific_source",
+      "bytes": 1508,
+      "sha256": "8039e1ab593b760c053fd2ca3bd64ddb19500eb26792192632543ee79eceee6a"
+    },
+    {
+      "path": "scripts/compute_miflu_indicators.py",
+      "role": "frozen_scientific_source",
+      "bytes": 24398,
+      "sha256": "563d937bbfeaeee0c5d74320449c3ca4df5a2f11fd479bb57463ac80315b81eb"
+    },
+    {
+      "path": "scripts/configs.py",
+      "role": "frozen_scientific_source",
+      "bytes": 11206,
+      "sha256": "fea2fd278d6fe3719c21f1fb79f2270f30d2f8837c6d0287ba2d16e16cc15112"
+    },
+    {
+      "path": "scripts/diagnose_miflu.py",
+      "role": "frozen_scientific_source",
+      "bytes": 8470,
+      "sha256": "812a9aa38a35826938ee80069a12a82ef8511812f8176d56a676b38c0dad5684"
+    },
+    {
+      "path": "scripts/download_national_illness.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6929,
+      "sha256": "d7c78d023e3a36365b96aab61ce8de1444251d09bf993f019a2e84460872c7ba"
+    },
+    {
+      "path": "scripts/download_us_region.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6367,
+      "sha256": "cf975ef50f8e775b86db6d7e08fe14637953c5c01ac373d700363306421a4cf9"
+    },
+    {
+      "path": "scripts/early_stopping.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7202,
+      "sha256": "4368dcbbe2fd797863f79a3e639a7cc9f3f3f3a1521f088ce0caa17c35419d69"
+    },
+    {
+      "path": "scripts/extract_ablation.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2223,
+      "sha256": "55fa59cdbfaf8dd7945da3e48df1864bcc0430a21e10cda48720f74ca84529c8"
+    },
+    {
+      "path": "scripts/extract_attention.py",
+      "role": "frozen_scientific_source",
+      "bytes": 3838,
+      "sha256": "fafd8625fdb2876d7698a002d53a40df66b20448a9161313f3b71e1b93959316"
+    },
+    {
+      "path": "scripts/feature_verification.py",
+      "role": "frozen_scientific_source",
+      "bytes": 28698,
+      "sha256": "d3ac66e2130c0d8cbc061ef98c34d22897c635ebba358b9c7397c458b84ac459"
+    },
+    {
+      "path": "scripts/generate_figures_from_ckpt.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2832,
+      "sha256": "7457f80d2ad6ced7f5c72632f1027c25cc4fd1d7207c709bcd80d3a2675f9987"
+    },
+    {
+      "path": "scripts/innovation/__init__.py",
+      "role": "frozen_scientific_source",
+      "bytes": 1043,
+      "sha256": "57fdb85e210786bc63c3ec99ce220d9a0645b941411d60257f9fc689b0e23e2e"
+    },
+    {
+      "path": "scripts/innovation/architecture_contract.py",
+      "role": "frozen_scientific_source",
+      "bytes": 11319,
+      "sha256": "fd019c59316634d92a074da7e788bfdeed90b91f017fca3993d1c1e488ba991f"
+    },
+    {
+      "path": "scripts/innovation/assets.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7377,
+      "sha256": "d8361a9936508612b9b8780ddf20fec1584aad37e47cf0c0cd70d9ceab7f9873"
+    },
+    {
+      "path": "scripts/innovation/audit_repo.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6657,
+      "sha256": "bf7aa019c7881bccbf4a8ff1fa55b0eb9b9fb3127220d0841bbf98fcd4e59be1"
+    },
+    {
+      "path": "scripts/innovation/backbones/__init__.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2494,
+      "sha256": "a8243857394338b5c52a4d397eacb8626c49e856c2555c84d287d7d3d38e996d"
+    },
+    {
+      "path": "scripts/innovation/backbones/dlinear.py",
+      "role": "frozen_scientific_source",
+      "bytes": 5904,
+      "sha256": "66f7bd6ab69f0c01a2b09a8dcfa0b032fec50156930ebc5f8feeb9b331ce68ed"
+    },
+    {
+      "path": "scripts/innovation/backbones/fusion_forecaster.py",
+      "role": "frozen_scientific_source",
+      "bytes": 3977,
+      "sha256": "b029c1572126a03ea7043891a57a5a181b91ba6c03a5f1417e48faf2588561d8"
+    },
+    {
+      "path": "scripts/innovation/backbones/gpt2_miflu_adapter.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4125,
+      "sha256": "6dc97049c36f90d3de8f25ad641b57077a25950374b5b3f735bb72f40120a2d0"
+    },
+    {
+      "path": "scripts/innovation/backbones/itransformer.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4404,
+      "sha256": "563b52bb080deef0461887fafb3886457d380293bcc1f43aa0ef2287f3b34d8d"
+    },
+    {
+      "path": "scripts/innovation/backbones/llm_inspired.py",
+      "role": "frozen_scientific_source",
+      "bytes": 18187,
+      "sha256": "ffbd5f5321f5f4462bc896b1b99aad9eb5e9768c5e5d8c20e31e35e3b6d50140"
+    },
+    {
+      "path": "scripts/innovation/backbones/patchtst.py",
+      "role": "frozen_scientific_source",
+      "bytes": 5069,
+      "sha256": "ec746018dfd107cda037eb86fc1f96824aec9330518896c516ef35eb11329729"
+    },
+    {
+      "path": "scripts/innovation/backbones/registry.py",
+      "role": "frozen_scientific_source",
+      "bytes": 1075,
+      "sha256": "efac84ab877511575d1721a81fb7415b07df3b85dbde7ceb22820de8e6c5ccfd"
+    },
+    {
+      "path": "scripts/innovation/baseline_finalize.py",
+      "role": "frozen_scientific_source",
+      "bytes": 10512,
+      "sha256": "6727bb7d57eda497ccdabc51f403df2f88c5119f24190ed56fc93831c523a325"
+    },
+    {
+      "path": "scripts/innovation/ckpt_schema_probe.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4254,
+      "sha256": "9020fc960251ead9ca5d1a6daadf0dc434e7d74e6d6a1ddcee8d872ea17f4a18"
+    },
+    {
+      "path": "scripts/innovation/clean_gate.py",
+      "role": "frozen_scientific_source",
+      "bytes": 25442,
+      "sha256": "ea24df3ba433813371d995e825220ae877a051763944d6db1fcec969b9ffaa7c"
+    },
+    {
+      "path": "scripts/innovation/clean_metrics.py",
+      "role": "frozen_scientific_source",
+      "bytes": 13586,
+      "sha256": "a6478cbe259ca1d3b1468844d1a644ba52351d500fbc572dedd51299f794bd2a"
+    },
+    {
+      "path": "scripts/innovation/clean_runner.py",
+      "role": "frozen_scientific_source",
+      "bytes": 20495,
+      "sha256": "2d5e96e177abe5f8ec44cc5e574782cb626943f943049a89f87031cb9046f0ef"
+    },
+    {
+      "path": "scripts/innovation/compact_checkpoint.py",
+      "role": "frozen_scientific_source",
+      "bytes": 20464,
+      "sha256": "1c312721cb894f1bb5f198787dc9e489949f31ca00b3cb8f3ad753876a4cc1a1"
+    },
+    {
+      "path": "scripts/innovation/data_pipeline.py",
+      "role": "frozen_scientific_source",
+      "bytes": 5908,
+      "sha256": "d31b6cb67b59549c4b7c8b80fe5d56c7ab4f97017b8983e57ff4acd260ca9abb"
+    },
+    {
+      "path": "scripts/innovation/encoders/__init__.py",
+      "role": "frozen_scientific_source",
+      "bytes": 901,
+      "sha256": "185b2e1637ab35acb0c1b3177f1631aceb2c62322688413981f38c4fce1ffb77"
+    },
+    {
+      "path": "scripts/innovation/encoders/gpt2_encoder.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4038,
+      "sha256": "a72b60e87a6514e07f358c1a6bc878ed50cf832be18610af6d337d31c52fe6b3"
+    },
+    {
+      "path": "scripts/innovation/encoders/none_encoder.py",
+      "role": "frozen_scientific_source",
+      "bytes": 594,
+      "sha256": "bf81d37915d08ce88c381e4cf567e034588f24a402c9915dc72793b8248b411f"
+    },
+    {
+      "path": "scripts/innovation/encoders/registry.py",
+      "role": "frozen_scientific_source",
+      "bytes": 962,
+      "sha256": "93748526e841a3f47524b89f9b0b51145cacf9817b7e3ccf8406156287baae78"
+    },
+    {
+      "path": "scripts/innovation/encoders/tfidf_svd.py",
+      "role": "frozen_scientific_source",
+      "bytes": 3552,
+      "sha256": "4d073782a80f69a1a26785952b1cc9aeae679d03760b7b17626bccfcf20d139a"
+    },
+    {
+      "path": "scripts/innovation/fidelity.py",
+      "role": "frozen_scientific_source",
+      "bytes": 1386,
+      "sha256": "098ae3e508049d7ceefe34c44f1603c540704c7542c8c31d29e56de896f3b730"
+    },
+    {
+      "path": "scripts/innovation/figures.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4446,
+      "sha256": "87eb2514bfb95a3e217ce0bc18f7fd99d523be33286386865308f3e291215351"
+    },
+    {
+      "path": "scripts/innovation/finalize_row.py",
+      "role": "frozen_scientific_source",
+      "bytes": 16558,
+      "sha256": "d7af4d24f1835b0badc5bf24c04063f40fee15a2b4721e7e5986c60a8cd27610"
+    },
+    {
+      "path": "scripts/innovation/fusion/__init__.py",
+      "role": "frozen_scientific_source",
+      "bytes": 1057,
+      "sha256": "553dcb7b1e7f12388bbbf13c990b75cedaa3f878338a379b300f227c05ca0844"
+    },
+    {
+      "path": "scripts/innovation/fusion/concat_projection.py",
+      "role": "frozen_scientific_source",
+      "bytes": 784,
+      "sha256": "c73ace6856f23848948bc194364d862c187e5ccf3b57a2f8f7f866b3977cabf3"
+    },
+    {
+      "path": "scripts/innovation/fusion/cross_attention.py",
+      "role": "frozen_scientific_source",
+      "bytes": 870,
+      "sha256": "70c6cd60c796894d1650ee70b0a50519d6c9c5c2cf1bac75dd7bc73e17877784"
+    },
+    {
+      "path": "scripts/innovation/fusion/film_gate.py",
+      "role": "frozen_scientific_source",
+      "bytes": 738,
+      "sha256": "bb997df201fd4eea7de885fd0d12edf756eb57b3483342d1a7d7bcee140a6ea7"
+    },
+    {
+      "path": "scripts/innovation/fusion/identity.py",
+      "role": "frozen_scientific_source",
+      "bytes": 299,
+      "sha256": "71bf89ad46f53531c830f2d972204255a178cc1cf7efc77e7628c615027161a2"
+    },
+    {
+      "path": "scripts/innovation/fusion/registry.py",
+      "role": "frozen_scientific_source",
+      "bytes": 673,
+      "sha256": "ffaffc3597cecc9b2f047ec0f2587925e64d875ef3d48106ad92439cc9c8a4af"
+    },
+    {
+      "path": "scripts/innovation/governance.py",
+      "role": "frozen_scientific_source",
+      "bytes": 20485,
+      "sha256": "ff813253e8537cf9245090ffa09404187334936a2486c2273ec7622cb07cb2b2"
+    },
+    {
+      "path": "scripts/innovation/gpt2_contract_audit.py",
+      "role": "frozen_scientific_source",
+      "bytes": 5280,
+      "sha256": "c4ac9e784a82004b6f3842491b2a09b7739e85d6d79938dfbc66e40d06d646ba"
+    },
+    {
+      "path": "scripts/innovation/hpc_specs.py",
+      "role": "frozen_scientific_source",
+      "bytes": 19547,
+      "sha256": "ef334a3a9f0e57d25ea62da208a68c7c749db42cb1d97213a5fd3628592e51ff"
+    },
+    {
+      "path": "scripts/innovation/interfaces.py",
+      "role": "frozen_scientific_source",
+      "bytes": 3217,
+      "sha256": "d95901fad4e4129ca6172ca3176c6af934fc343b4c4a08a9a0568ee81ef5113d"
+    },
+    {
+      "path": "scripts/innovation/inventory_205_rows.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7307,
+      "sha256": "cf319b49686ff27f96d5d811b94c1766505d387cc3c78675a79302eedfd0ca1a"
+    },
+    {
+      "path": "scripts/innovation/metadata_chain.py",
+      "role": "frozen_scientific_source",
+      "bytes": 10354,
+      "sha256": "2e94ef88a0edde12e42935fc943c548ceedfd4a6c841221b184a21167d2b7e9e"
+    },
+    {
+      "path": "scripts/innovation/metrics.py",
+      "role": "frozen_scientific_source",
+      "bytes": 12677,
+      "sha256": "edf9b0f1b5fdf28c0c665e0c44a7febdae5e932604bde0369cc8421fdbd71508"
+    },
+    {
+      "path": "scripts/innovation/migrate_accepted_rows.py",
+      "role": "frozen_scientific_source",
+      "bytes": 10160,
+      "sha256": "db7c70235bd2ab07a177cd7908e5d8f32072e3be310403f52d78dd6d7bd92951"
+    },
+    {
+      "path": "scripts/innovation/paths.py",
+      "role": "frozen_scientific_source",
+      "bytes": 17032,
+      "sha256": "27f39868738fa60a64d8b87ddc6477110a4c9bf39268886d5de9c3f63b2ac29a"
+    },
+    {
+      "path": "scripts/innovation/prehpc_report.py",
+      "role": "frozen_scientific_source",
+      "bytes": 29172,
+      "sha256": "3297b30b2e8afac9286ed7a049f77fdb781d7d1e1bd9f94f5a98d0d0a38e7a4c"
+    },
+    {
+      "path": "scripts/innovation/probe_gpt2_identity.py",
+      "role": "frozen_scientific_source",
+      "bytes": 5578,
+      "sha256": "e87ae11842668e0d6fea9178352aaf85cb59e21dc902ed1ee7d4af4a9da3aebf"
+    },
+    {
+      "path": "scripts/innovation/run_artifacts.py",
+      "role": "frozen_scientific_source",
+      "bytes": 11024,
+      "sha256": "1226b93547e9209363a6be35508828dc6878be44ee695e0b7506b43b14cd3d5f"
+    },
+    {
+      "path": "scripts/innovation/run_id.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2963,
+      "sha256": "e12d0fdce3856f53f118e6bbe12da00b888c66edf8b14ad2000de43dcc195385"
+    },
+    {
+      "path": "scripts/innovation/runner.py",
+      "role": "frozen_scientific_source",
+      "bytes": 30223,
+      "sha256": "b7da81d4b76a48ffbb0ff62732f1e53624cd0a50b451b29d901d81cb150a38d7"
+    },
+    {
+      "path": "scripts/innovation/runtime_guard.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4786,
+      "sha256": "03476cad3a8201fbabdc73824ec87199dacf3b619fb5d7058f25c2be3dd9b66b"
+    },
+    {
+      "path": "scripts/innovation/same_source_invariant.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6400,
+      "sha256": "f319472c6cd44bff270cbf62d8e046c129860b4b8f633a6af5578eac4c756cb6"
+    },
+    {
+      "path": "scripts/innovation/screening_artifacts.py",
+      "role": "frozen_scientific_source",
+      "bytes": 13056,
+      "sha256": "5c10652207e87acbd2934173bfd4747b724f0a3cb99d2064e6100ed508e83330"
+    },
+    {
+      "path": "scripts/innovation/select_best_model.py",
+      "role": "frozen_scientific_source",
+      "bytes": 19442,
+      "sha256": "9ccf9266cb6829b592591c59d4ef6c693d08015dc87c757bf6bcb717a371fbf1"
+    },
+    {
+      "path": "scripts/innovation/slurm_check.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6648,
+      "sha256": "e850efd1a71badcdc32bf0f1ca80523c7a1a991b39bb3056faa55667b0d945b8"
+    },
+    {
+      "path": "scripts/innovation/smoke.py",
+      "role": "frozen_scientific_source",
+      "bytes": 3058,
+      "sha256": "349a9d01466208e45cec8a56ec03359b91fcc298de28de9cb935e7951bd5ee68"
+    },
+    {
+      "path": "scripts/innovation/source_snapshot.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9270,
+      "sha256": "523362cc30b51569c123acf00b958606f7580ddeac2a27bb2b3f0d396ac4711f"
+    },
+    {
+      "path": "scripts/innovation/storage_policy.py",
+      "role": "frozen_scientific_source",
+      "bytes": 8281,
+      "sha256": "1e6d54f11459a8e924c5826d9fce97994457e19ba59a69de51f287983620ba1f"
+    },
+    {
+      "path": "scripts/innovation/storage_verification.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9718,
+      "sha256": "40c2f30677f8bc63070e61ba8d8fb410271752ff515ddcc211ab4b4d5e2f15ab"
+    },
+    {
+      "path": "scripts/innovation/trainer.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6344,
+      "sha256": "bcd05285daef1cd4fe2ce88784d4288e3a0de0e2003fedda38e718397ccfacd0"
+    },
+    {
+      "path": "scripts/innovation/verify_205_rows.py",
+      "role": "frozen_scientific_source",
+      "bytes": 8422,
+      "sha256": "7a2f21217e778613986649e39547a41eb2f5389b3e2cdcbbea1e2c0711549d3b"
+    },
+    {
+      "path": "scripts/innovation/verify_gpt2_contract_fix.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9592,
+      "sha256": "ad623c104a830b1a70b95aa2e44bd8aa2c1d70260d29db510a1236b9f4013a02"
+    },
+    {
+      "path": "scripts/innovation/verify_source_snapshot.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7916,
+      "sha256": "1ec41dcf4a8e26609612b31f625b8a60d4ccb1c57b91005ca3bc1852fdb0ce99"
+    },
+    {
+      "path": "scripts/make_advisor_qa_figures.py",
+      "role": "frozen_scientific_source",
+      "bytes": 12731,
+      "sha256": "c55f4117f4d1fb39d8e14d5c560866a643bf20ee964f7492cb4f6c4d596be4f1"
+    },
+    {
+      "path": "scripts/make_attention_heatmap.py",
+      "role": "frozen_scientific_source",
+      "bytes": 8245,
+      "sha256": "3f86835a463d9ec27877239585551b985f03166a0c8945b2cf8db69cb6ffc646"
+    },
+    {
+      "path": "scripts/make_miflu_evaluation_figure.py",
+      "role": "frozen_scientific_source",
+      "bytes": 20413,
+      "sha256": "776750b4872b386490b5446f7d918700b65242f8a27245e225eefd8c65e7ef82"
+    },
+    {
+      "path": "scripts/make_q4_causality_figures.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7441,
+      "sha256": "81e2bb87ccea4c9a0d040012ed4e92fd89a6bc257938f1e3b88c7a050c2019c6"
+    },
+    {
+      "path": "scripts/make_q4_overlay_figure.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4290,
+      "sha256": "ff05d95425380070c8f0381854bfd14b93323195c3f50b34b708e69186a5c2aa"
+    },
+    {
+      "path": "scripts/make_submission_figures.py",
+      "role": "frozen_scientific_source",
+      "bytes": 22626,
+      "sha256": "b41c413a256dc96331e26eb414a54b953b7012a5411534ebd71e317b7a6b4c03"
+    },
+    {
+      "path": "scripts/md_to_docx.py",
+      "role": "frozen_scientific_source",
+      "bytes": 23383,
+      "sha256": "71a2429945cea310ca29efcab97eb528bba7e40e4cc838d63c78ad726e45f3e4"
+    },
+    {
+      "path": "scripts/miflu_model.py",
+      "role": "frozen_scientific_source",
+      "bytes": 27160,
+      "sha256": "0e6bdb61213bfdcc72e6a5b2733fc891a613baeb3dc52b514997c1507bfc15ef"
+    },
+    {
+      "path": "scripts/moe_extension.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6562,
+      "sha256": "a8bd6dc8eadefcfaa172d17a1a5c94aaee73911935b7c96dccde823f9e46cb5a"
+    },
+    {
+      "path": "scripts/plot_attention_proof.py",
+      "role": "frozen_scientific_source",
+      "bytes": 8661,
+      "sha256": "7b479a14caabcfee7115956f4457febb9723f21b15387eb833deacc5bc207365"
+    },
+    {
+      "path": "scripts/pull_artifacts.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2246,
+      "sha256": "c14c8eea2a8b8512074f83913270693f683bcca5e292e60a7a7eae1da297ec73"
+    },
+    {
+      "path": "scripts/q1_step_sweep.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7702,
+      "sha256": "c1b2b87cbeac49047d3aa6f89eb090ecc20a16a935ddee85010b73d06853725c"
+    },
+    {
+      "path": "scripts/q2_alignment_check.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7833,
+      "sha256": "b4dd755b97e4e6c46e59e88d31e0827e7bfa7dcdb9ae6825ba25bd11f243938d"
+    },
+    {
+      "path": "scripts/q3_scaler_sanity_check.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6858,
+      "sha256": "78d396651a568cd4fe62dca7cfd3427b14862a99aebd50504bdf4c708a3d3813"
+    },
+    {
+      "path": "scripts/q4_recipe_comparison.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6529,
+      "sha256": "00e0ccffa11cdb4f8b5163d5f100204674f9355f08f385e6119a150467b7f7cc"
+    },
+    {
+      "path": "scripts/q6_ablation_significance.py",
+      "role": "frozen_scientific_source",
+      "bytes": 5192,
+      "sha256": "1b920cebac28f64eececa4ab848846a1c5a83af19a0b9278153dce28ea7bad0e"
+    },
+    {
+      "path": "scripts/q6_text_attention_audit.py",
+      "role": "frozen_scientific_source",
+      "bytes": 13952,
+      "sha256": "e66abba90199b3913acee0713418f9032b5c520acac1deebf41d23aa2269e16e"
+    },
+    {
+      "path": "scripts/quick_test.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2789,
+      "sha256": "a2647ff377bf698c63be6b3ab087053e7b2776ce5c8e5fed0b080901822d1d80"
+    },
+    {
+      "path": "scripts/recipes.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7275,
+      "sha256": "329daf7227cea4ced3c4e0217ae1ce6957e42728318afd1c16f798310d01dcb1"
+    },
+    {
+      "path": "scripts/run_journal_experiments.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4880,
+      "sha256": "9b964c128578b13a8de14a76cec62ab54648f1d52f1a7717b26d1e02bb054dd6"
+    },
+    {
+      "path": "scripts/scaler_utils.py",
+      "role": "frozen_scientific_source",
+      "bytes": 10915,
+      "sha256": "e02324bd3f341be68e11a87a8ac886832611f2c894dce5f9b0362fd03bab16f4"
+    },
+    {
+      "path": "scripts/summarize_regional_table_vi.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4357,
+      "sha256": "fcfcf9c0a8b59f1c7cf100f967b658493ef94be33847424f9e70b4b5dfb1f57a"
+    },
+    {
+      "path": "scripts/test_moe_shapes.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2079,
+      "sha256": "b60d2498e345155cf84d780d372827757b5a930b82612113c4a4332890e9867f"
+    },
+    {
+      "path": "scripts/textual_embedder.py",
+      "role": "frozen_scientific_source",
+      "bytes": 13234,
+      "sha256": "fc52226fca7fa3165d13221a9d744b0bdb8fc29d56d8cfe848a42f018fc002a0"
+    },
+    {
+      "path": "scripts/train_ablation.py",
+      "role": "frozen_scientific_source",
+      "bytes": 38079,
+      "sha256": "22ef8ac74d3e57f5cfa28e6bea0a73eda4a5bacf0a6d9c2abc53a1797356b4c0"
+    },
+    {
+      "path": "scripts/train_baseline.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9310,
+      "sha256": "3c1b1c6208a2608077cc37060883568b36fec05b070381404331c3aeeb410a4a"
+    },
+    {
+      "path": "scripts/train_miflu.py",
+      "role": "frozen_scientific_source",
+      "bytes": 30546,
+      "sha256": "a36aa336b1306f836ca0b054a12e063e26ed267e8a0485ff3f59c3bc07941f4e"
+    },
+    {
+      "path": "scripts/train_regional_baseline.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9226,
+      "sha256": "2ed1fe35b22e6948d209664d063bfeeba8e2cacc14f7e10e084aa81441cbaeb3"
+    },
+    {
+      "path": "scripts/train_regional_miflu.py",
+      "role": "frozen_scientific_source",
+      "bytes": 11639,
+      "sha256": "d4b1f3922dcd5258ff6a01332888512cbd69bc4ced8ed2f09f5a5e180c1eee37"
+    },
+    {
+      "path": "scripts/v3/build_completion_gate_v2.py",
+      "role": "frozen_scientific_source",
+      "bytes": 15557,
+      "sha256": "8194c58e8bb1112a6dc384a0b9022bd282a7d425be1b6cfb5d86abf09bd1fdfc"
+    },
+    {
+      "path": "scripts/v3/build_d5_gate_status.py",
+      "role": "frozen_scientific_source",
+      "bytes": 20712,
+      "sha256": "311814f916c9040b2afe8209beb3a1fe18ba6046bb7a103c36cc14d2ec993223"
+    },
+    {
+      "path": "scripts/v3/build_d6_audit.py",
+      "role": "frozen_scientific_source",
+      "bytes": 15457,
+      "sha256": "72cddff1d7d6f7ae7c77cc623d49d1c019f2f08ca74799c5639aa7f4a59e91d2"
+    },
+    {
+      "path": "scripts/v3/build_deterministic_bundle.py",
+      "role": "frozen_scientific_source",
+      "bytes": 1583,
+      "sha256": "96e48a80fc36f2663a7e16a5da566a2da3bd0398c6a121776261564ae171a72f"
+    },
+    {
+      "path": "scripts/v3/build_final_gate_status.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9572,
+      "sha256": "dbf4eef84aeba0908ed45ffa9aa015b5f5a6b73fc989a1b69e405e95a9ff941d"
+    },
+    {
+      "path": "scripts/v3/build_g1g2_harness_audit.py",
+      "role": "frozen_scientific_source",
+      "bytes": 13648,
+      "sha256": "0f39de7aea4156101e19c7ef57c11cf3ca013893f8e58c8d61cd7b7dc4791986"
+    },
+    {
+      "path": "scripts/v3/build_implementation_reports.py",
+      "role": "frozen_scientific_source",
+      "bytes": 15086,
+      "sha256": "bb0c8d0ce938af451e0ee3f47e4a1c9565d7d87e8d436cf081170146ee417263"
+    },
+    {
+      "path": "scripts/v3/build_phase05.py",
+      "role": "frozen_scientific_source",
+      "bytes": 26034,
+      "sha256": "f010e3734d9303b1275b7475857334e40a490089ed8aab45e7d9a5a4d2b73a7a"
+    },
+    {
+      "path": "scripts/v3/build_phase05b.py",
+      "role": "frozen_scientific_source",
+      "bytes": 33655,
+      "sha256": "9d32e8bb33936d256390a583289a16f9e940b5a7417537cf1b6d23503d460eb0"
+    },
+    {
+      "path": "scripts/v3/build_phase06.py",
+      "role": "frozen_scientific_source",
+      "bytes": 22468,
+      "sha256": "a83e0ea24525253a7fc4af0b90f692821ffac357ee7278266742fc44625163f0"
+    },
+    {
+      "path": "scripts/v3/build_pilot_completion.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9443,
+      "sha256": "2e2c9d3db14a6dc808f9b6073c11cf7fae47d3a7aafa6bb72b1bd2dd520b17f1"
+    },
+    {
+      "path": "scripts/v3/build_prepilot_gate_status.py",
+      "role": "frozen_scientific_source",
+      "bytes": 15793,
+      "sha256": "7390b8231f2bc55cfbeb37f9c2a778f008731c9ca4996c56319334243c94d659"
+    },
+    {
+      "path": "scripts/v3/build_prereg_status_and_reconcile.py",
+      "role": "frozen_scientific_source",
+      "bytes": 15483,
+      "sha256": "9e491bd2f1bac57e8e4c15df0504a3a479ab3aa173259bcbe1137f31e7fa4a11"
+    },
+    {
+      "path": "scripts/v3/build_preregistration.py",
+      "role": "frozen_scientific_source",
+      "bytes": 37762,
+      "sha256": "05e9daff8853b8ab66183c417fda2ea4a45cd36943f7726325a07923d5d44ae4"
+    },
+    {
+      "path": "scripts/v3/build_protocol_correction.py",
+      "role": "frozen_scientific_source",
+      "bytes": 7283,
+      "sha256": "395209dc05594ea18fb268fedea786dacd6bc33d86585c20eeb3a9f22e82d704"
+    },
+    {
+      "path": "scripts/v3/build_screening_closure.py",
+      "role": "frozen_scientific_source",
+      "bytes": 18375,
+      "sha256": "2c3d153d23be79696efc6f86b0da57c0b98c26c4685c1ea2ef5962ffae5ad826"
+    },
+    {
+      "path": "scripts/v3/build_screening_figures.py",
+      "role": "frozen_scientific_source",
+      "bytes": 17986,
+      "sha256": "8f3bc76d7ed527eddbbbe78b25d34356a190b72b51c15b628ddcca7ce3c18207"
+    },
+    {
+      "path": "scripts/v3/build_screening_freeze.py",
+      "role": "frozen_scientific_source",
+      "bytes": 21562,
+      "sha256": "f48c63a19828f5f84af7540968f9c74b7ac3d8e7cb0b88f416c7a8a86fc0f395"
+    },
+    {
+      "path": "scripts/v3/build_screening_outcome.py",
+      "role": "frozen_scientific_source",
+      "bytes": 15107,
+      "sha256": "6fc8be18f1c88abeb55c2c5dff7a47f76a29489bc5e0b81685a758575f0ee71c"
+    },
+    {
+      "path": "scripts/v3/build_screening_specs.py",
+      "role": "frozen_scientific_source",
+      "bytes": 21010,
+      "sha256": "69222e066191083ad663179c2d4d16c787252c4ca3df24d32e69aa0c863cb864"
+    },
+    {
+      "path": "scripts/v3/build_v3_5_repair.py",
+      "role": "frozen_scientific_source",
+      "bytes": 13556,
+      "sha256": "6e21e240da5c20fdd4519c90845f15d6ef3acf9982ec984fed23561c9b1ba294"
+    },
+    {
+      "path": "scripts/v3/figure_style.py",
+      "role": "frozen_scientific_source",
+      "bytes": 11766,
+      "sha256": "db3005c6ba5d7d16c3e78060eb0fe0b7e4d54dd0e0aeecc273592c63eb5d66ba"
+    },
+    {
+      "path": "scripts/v3/screening_baselines.py",
+      "role": "frozen_scientific_source",
+      "bytes": 9461,
+      "sha256": "ae544c162898ddcd60649993aec064680d45929244555344c75e81f0b10fd469"
+    },
+    {
+      "path": "scripts/v3/verify_restoration.py",
+      "role": "frozen_scientific_source",
+      "bytes": 8500,
+      "sha256": "63db08eee875429c087776d220d25d1b792e9b0425c733b484e7a10bc4b89329"
+    },
+    {
+      "path": "scripts/verify_dataset.py",
+      "role": "frozen_scientific_source",
+      "bytes": 8165,
+      "sha256": "7dc2c1661f7dc14d502116634ad0f9a04774425a6026d17ef7f1ef5ac26429a5"
+    },
+    {
+      "path": "scripts/verify_metrics.py",
+      "role": "frozen_scientific_source",
+      "bytes": 4333,
+      "sha256": "1c23931a8ae1cef7f6b1f8dcf3c0357c633a134939ae9a6491705f1d8bc67264"
+    },
+    {
+      "path": "scripts/verify_precovid_mse.py",
+      "role": "frozen_scientific_source",
+      "bytes": 2311,
+      "sha256": "e2778fb939a83fca8ad4e73b649f36296c2fb87d15d401835cef90b5f2755161"
+    },
+    {
+      "path": "scripts/verify_report_parity.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6877,
+      "sha256": "27d1d27d14959d0ac5798ae01e3b4fc0f5098d24b49e47d377b86aa9f909efbb"
+    },
+    {
+      "path": "scripts/verify_us_region.py",
+      "role": "frozen_scientific_source",
+      "bytes": 6070,
+      "sha256": "7a1530d96f0f8e5740858b3dfab1f1d5348ad672a542fdb569780ba61f336f8d"
+    }
+  ]
+}

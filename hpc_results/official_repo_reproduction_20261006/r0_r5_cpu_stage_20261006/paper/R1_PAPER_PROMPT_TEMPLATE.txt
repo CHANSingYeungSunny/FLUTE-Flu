@@ -1,0 +1,92 @@
+================================================================================
+R1_PAPER_PROMPT_TEMPLATE.txt
+Source paper: MIFlu: Large Language Model-Based Multimodal Influenza Forecasting
+Scheme. IEEE J. Biomed. Health Inform., vol. 29, no. 10, pp. 7790-7801, Oct. 2025.
+PDF SHA-256: 7735a4388145dd2aced536417f7a4f50dafe21ed0d4fca64baa2b20f2e27885c (12 pages)
+Extraction: IMAGE_MANUALLY_VERIFIED (transcribed from the 200 dpi renders) and
+cross-checked against the PDF text layer where the text layer carries the string.
+================================================================================
+
+--------------------------------------------------------------------------------
+PART 1 - TABLE I : TEMPLATE OF AN INPUT TEXT PROMPT  (PDF page 4 / journal p7793)
+Read from: page_04.png   |   Caption verbatim: "TABLE I  TEMPLATE OF AN INPUT TEXT PROMPT"
+--------------------------------------------------------------------------------
+
+[Dataset information]
+ <Description of dataset>
+ Below (1) to (N) is the information about each feature:
+ ***
+[Input variable description]
+ (1) <Description of variable 1> + <Statistics: Max, Min> + <Domain knowledge from
+experts/users of variable 1>
+ ...
+ (i) <Description of variable i> + <Statistics: Max, Min> + <Domain knowledge from
+experts/users of variable i>
+ ...
+ (N) <Description of variable N> + <Statistics: Max, Min> + <Domain knowledge from
+experts/users of variable N>
+ ***
+[Task instruction]
+ Predict the next <L> steps given the previous <T> steps for the information attached.
+
+NOTE ON LINE WRAPPING: In the printed table the three "variable" lines wrap over two
+lines each; the continuation "variable 1>", "variable i>", "variable N>" belongs to the
+preceding "<Domain knowledge from experts/users of ...>" clause. Reproduced above as a
+single logical line. The heading tokens "[Dataset information]", "[Input variable
+description]" and "[Task instruction]" are printed in bold.
+
+--------------------------------------------------------------------------------
+PART 2 - TABLE X : EXAMPLE OF AN INPUT TEXT PROMPT  (PDF page 11 / journal p7800)
+Read from: page_11.png   |   Caption verbatim: "TABLE X  EXAMPLE OF AN INPUT TEXT PROMPT"
+The identical text is ALSO present verbatim in the PDF text layer (PAGE 11 marker),
+so this transcription is doubly verified (image + text layer).
+--------------------------------------------------------------------------------
+
+[Dataset information]
+This multivariate time series dataset includes 7 features that recorded influenza
+patients data from Centers for Disease Control and Prevention of the United States
+between 2002 and 2021.
+Below (1) to (7) is the information about each feature:
+***
+
+[Input variable description]
+(1) Percentage of patient visits in the healthcare system attributed to influenza,
+adjusted for the proportion of each reporting centers total patient visits. Minimum
+value: <min(X1train)>, maximum value: <max(X1train)>. This variable peaks 1 time for
+1 year.
+(2) Percentage of unweighted influenza, not adjusted for the proportion of each
+reporting total patient visits. Minimum value: <min(X2train)>, maximum value:
+<max(X2train)>. This variable peaks 1 time for 1 year.
+(3) Total number of influenza patients between age 0 and 4. Minimum value:
+<min(X3train)>, maximum value: <max(X3train)>. This variable peaks 1 time for 1 year.
+(4) Total number of influenza patients between age 5 and 24. Minimum value:
+<min(X4train)>, maximum value: <max(X4train)>. This variable peaks 1 time for 1 year.
+(5) Total number of influenza patients. Minimum value: <min(X5train)>, maximum value:
+<max(X5train)>. This variable peaks 1 time for 1 year.
+(6) A number of influenza providers. Minimum value: <min(X6train)>, maximum value:
+<max(X6train)>. This variable peaks 1 time for 1 year. The overall trend is upward.
+(7) 'OT' feature for long-term forecasting task. Minimum value: <min(X7train)>,
+maximum value: <max(X7train)>. This variable peaks 2 times for 1 year. The overall
+trend is upward.
+***
+
+[Task instruction]
+Predict the next 24 steps given the previous 104 steps for the information attached.
+
+--------------------------------------------------------------------------------
+PROVENANCE NOTES
+--------------------------------------------------------------------------------
+* Table I is introduced on PDF page 4 in Section IV-A ("Textual Input Embedder"):
+  "We construct a text prompt template for influenza forecasting that includes the
+  dataset information, task instructions, and description of the input variables,
+  following the template of [18]."  The shape of the template is therefore borrowed
+  from Time-LLM [18]; the instantiated template is the authors' own METHOD_SPECIFICATION.
+* Table X is the concrete instantiation for the National-Illness dataset, given in the
+  Appendix: "Table X presents the actual example of input text prompt in the case of
+  National-illness dataset."  Its task instruction ("next 24 steps ... previous 104
+  steps") is exactly the national setting of Table IV (L=24, T=104).
+* The <min(Xntrain)> / <max(Xntrain)> placeholders are filled at run time from the
+  TRAINING split only. The paper does not publish the filled values anywhere, so the
+  concrete prompt for a reproduction must be regenerated from the training data
+  (the National-Illness split is 70:10:20 - see Section V-A).
+* No cell in either table is UNREADABLE; both were fully legible in the renders.

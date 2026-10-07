@@ -1,0 +1,120 @@
+{
+  "generated_utc": "2026-09-17T03:30:00Z",
+  "audit_type": "READ_ONLY v2 champion-selection equivalence audit",
+  "verdict": "NOT_EQUIVALENT",
+  "decision": "V3_V2_PROTOCOL_EQUIVALENCE_REVIEW_REQUIRED",
+  "no_action_taken": {
+    "old_v3_archived": false,
+    "results_v3_clean_created": false,
+    "new_hpc_root_created": false,
+    "clean_rerun_started": false,
+    "hpc_jobs_submitted_this_turn": 0,
+    "contamination_scan_run": false,
+    "reason": "the proposed primary endpoint is NOT equivalent to v2's actual NLinear champion-selection endpoint; the prompt requires an immediate stop in that case"
+  },
+  "proposed_primary_endpoint": {
+    "primary": "ILITOTAL fixed_step=0 validation MSE",
+    "secondary": ["ILITOTAL fixed_step=0 MAE",
+                  "ILITOTAL fixed steps 1/2/3 MSE and MAE (reported separately)",
+                  "ILITOTAL full-horizon MSE/MAE per horizon L"],
+    "literature_metrics": {
+      "PTE": "|predicted peak week - true peak week|",
+      "PIE": "|predicted peak intensity - true peak intensity| / true peak intensity",
+      "criteria": ["PTE <= 1 week", "PIE <= 25%"]
+    },
+    "explicitly_forbidden": ["Peak Hit Rate", "custom 20% PIE", "2-week timing",
+                             "+/-2-week matching window",
+                             "peak-aware checkpoint gate"]
+  },
+  "actual_v2_nlinear_selection_endpoint": {
+    "source_of_truth": [
+      "scripts/innovation/select_best_model.py (docstring line 23-26 and the scoring/ranking body)",
+      "MIFlu_innovation_plan_v2.md lines 86-89",
+      "results/innovation/model_selection_audit.json"
+    ],
+    "primary_score": "mean over the FOUR horizons {24,36,48,60} of the per-L ratio (mean over seeds of the candidate's best validation MSE) / (mean over seeds of the gpt2_miflu baseline's best validation MSE)",
+    "metric_used": "best_val_mse from run_status.json == the full 7-variable, full-horizon validation MSE; NOT ILITOTAL-only and NOT a single fixed step",
+    "reference_denominator": "the gpt2_miflu model (BASELINE_MODEL = 'gpt2_miflu', select_best_model.py line 53)",
+    "hard_gate": "peak_not_below_baseline: a candidate whose validation peak_hit_ratio is below the baseline's is deprioritised (a peak-aware gate)",
+    "tie_breakers": ["validation MAE", "peak_hit_ratio", "trainable parameters",
+                     "training time"],
+    "tie_tolerance": "1%",
+    "code_evidence": {
+      "line_191": "baseline = [r for r in rows if r[\"model\"] == BASELINE_MODEL]",
+      "line_210": "cand = _mean([r[\"best_val_mse\"] for r in rows ...",
+      "line_218": "peak = _mean([r[\"peak_hit_ratio\"] for r in rows if r[\"model\"] == m])",
+      "line_223": "\"primary_score\": float(np.mean(list(per_L.values())))",
+      "line_226_227": "\"peak_not_below_baseline\": bool(peak is None or base_peak is None or peak >= base_peak)",
+      "line_236": "tie window = TIE_TOL (0.01) applied to primary_score",
+      "line_238_240": "tie-break sort keys include peak_not_below_baseline then -(peak_hit_ratio)"
+    }
+  },
+  "material_non_equivalences": [
+    {
+      "id": "NE1_reference_denominator",
+      "proposed": "reference = last_value_naive (a naive baseline)",
+      "v2_actual": "reference = the gpt2_miflu model (BASELINE_MODEL)",
+      "material": true
+    },
+    {
+      "id": "NE2_metric_scope",
+      "proposed": "ILITOTAL channel only",
+      "v2_actual": "full 7-variable validation MSE (mse_all_z / best_val_mse)",
+      "material": true
+    },
+    {
+      "id": "NE3_step_semantics",
+      "proposed": "fixed_step = 0 (1-week-ahead) as the primary endpoint",
+      "v2_actual": "the complete multi-step horizon; no fixed-step endpoint is used in selection",
+      "material": true
+    },
+    {
+      "id": "NE4_horizon_set_and_weighting",
+      "proposed": "Screening used horizons {24,60}",
+      "v2_actual": "four horizons {24,36,48,60}, equally averaged",
+      "material": true
+    },
+    {
+      "id": "NE5_peak_aware_gate",
+      "proposed": "FORBIDDEN: peak-aware checkpoint gate, Peak Hit Rate",
+      "v2_actual": "peak_hit_ratio is BOTH a hard gate (peak_not_below_baseline) and an explicit tie-breaker in champion selection",
+      "material": true,
+      "conflict": "the proposed protocol explicitly forbids a construct that v2 actually used"
+    },
+    {
+      "id": "NE6_matched_peak_window",
+      "proposed": "FORBIDDEN: +/-2-week matching window",
+      "v2_actual": "scripts/innovation/metrics.py series_peak_metrics(..., match_tol=2) implements a +/-2-week matched-peak window (retained for the numeric cross-check)",
+      "material": true,
+      "conflict": "the forbidden window exists in the v2-derived metric layer"
+    },
+    {
+      "id": "NE7_relaxed_timing_variant",
+      "proposed": "FORBIDDEN: 2-week timing tolerance",
+      "v2_actual": "scripts/compute_miflu_indicators.py documents a 'Timing PTE <= 2.0 wk (RELAXED vs the literature's 1 week)' variant in the original pipeline",
+      "material": true,
+      "conflict": "a relaxed 2-week timing rule exists in the v2 original pipeline"
+    }
+  ],
+  "what_does_match": {
+    "peak_thresholds_in_the_v3_innovation_metric_layer": {
+      "PEAK_PTE_MAX_WEEKS": 1,
+      "PEAK_PIE_MAX_PCT": 25.0,
+      "source": "scripts/innovation/metrics.py lines 43-44",
+      "note": "these DO match the literature (PTE <= 1 week, PIE <= 25%), but they govern the reported peak criterion, NOT v2 champion selection"
+    },
+    "note": "the peak thresholds matching is NOT sufficient: the selection endpoint, its reference denominator, its metric scope, its step semantics, its horizon weighting and its peak-aware gate all differ"
+  },
+  "conclusion": "The proposed primary endpoint (ILITOTAL fixed_step=0 validation MSE with a last_value_naive reference) is NOT equivalent to v2's actual NLinear champion-selection endpoint (per-L full-7-variable validation MSE ratio against the gpt2_miflu baseline, equally averaged over horizons {24,36,48,60}, with a peak-aware gate and a Peak-Hit-Ratio tie-breaker). Because equivalence cannot be proven, the protocol requires an immediate stop: no v3 archival, no results/v3_clean/, no new HPC root, no clean rerun, and no contamination scan.",
+  "required_review_decisions": [
+    "Decide whether the new primary endpoint is intended to SUPERSEDE v2 selection semantics (a protocol change) or to REPRODUCE them (which would require reverting to the v2 endpoint).",
+    "If superseding: state explicitly that the new endpoint is a protocol revision, and reconcile the v2-to-v3 champion continuity claim (nlinear was chosen under a DIFFERENT rule).",
+    "Resolve the explicit conflict that the proposed protocol forbids constructs (Peak Hit Rate, peak-aware gate, +/-2-week window, 2-week timing) that v2 actually used.",
+    "Confirm whether horizons remain {24,60} or are restored to {24,36,48,60} for comparability with v2.",
+    "Confirm the reference denominator for normalisation (last_value_naive vs the gpt2_miflu baseline)."
+  ],
+  "test_access_count": 0,
+  "holdout_access_count": 0,
+  "champion_frozen": false,
+  "full_validation_submitted": false
+}

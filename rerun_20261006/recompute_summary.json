@@ -1,0 +1,36 @@
+{
+  "generated": "2026-10-06",
+  "track_A": {
+    "n_cells": 116,
+    "avg": {
+      "calf_llm": 5.515299653735161,
+      "dlinear": 2.347831572351338,
+      "itransformer": 3.984698809487912,
+      "last_value_naive": 7.165831080979441,
+      "miflu": 2.0415193342995615,
+      "nlinear": 2.049549558169138,
+      "notext": 1.9221576817518269,
+      "patchtst": 3.920470489824683,
+      "qwen_time_llm": 5.21955450442476,
+      "seasonal_naive": 2.2687992002653146,
+      "timecma_llm": 2.670008999864343
+    }
+  },
+  "track_B": {
+    "avg": {
+      "calf_llm": 1.7648712774010926,
+      "dlinear": 1.1709330614104076,
+      "gpt2_miflu": 0.7708721562796242,
+      "itransformer": 1.2529821517131419,
+      "nlinear": 1.0697672040053035,
+      "patchtst": 1.0759512350833647,
+      "qwen_time_llm": 1.2530956837735059,
+      "timecma_llm": 1.181448910823054
+    }
+  },
+  "score_matrix_crosscheck": {
+    "match": 116,
+    "mismatch": 0,
+    "max_rel": 1.527399876176954e-07
+  }
+}

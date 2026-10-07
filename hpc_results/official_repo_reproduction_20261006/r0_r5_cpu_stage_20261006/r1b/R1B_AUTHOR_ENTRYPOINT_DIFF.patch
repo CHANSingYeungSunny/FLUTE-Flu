@@ -1,0 +1,43 @@
+--- a/models/GPT4TS_lora.py    (author release, commit 6ed210150b8819313947cf607eb1821c87b1bee3)
++++ b/r1b/r1b_model.py          (R1-B, append-only; the author's file is NOT modified)
+#
+# The R1-B implementation does not patch the author's file in place. It SUBCLASSES
+# it, so the author's tree stays byte-identical. This diff shows the two semantic
+# edits that the subclass applies inside its own forward(), expressed against the
+# author's lines so a reader can see exactly what changed and where.
+#
+# Scope of the diff: ONLY B-2 (the text pathway). The other five corrections are
+# structural rather than line edits:
+#   B-1 seven channels  -> the data side (R1BDataset), not the model
+#   B-3 PEFT=1          -> a config flag passed to the author's own __init__
+#   B-4 effective freeze-> an added method, no author line changed
+#   B-5 selection       -> the trainer, not the model
+#   B-6 persistence     -> the trainer, not the model
+
+@@ author forward(), the multimodal block @@
+-            outputs = torch.cat((outputs, text_emb_tensor), axis = 1)
++            outputs = torch.cat((te, outputs), axis=1)          # B-2 EDIT 1: text FIRST
+@@ author forward(), the readout @@
+-        outputs = outputs[:, :self.patch_num,:]
++        outputs = outputs[:, text_len:text_len + patch_num, :]   # B-2 EDIT 2: read after text
+
+# Context around EDIT 1 (author lines 130-141):
+#           if self.multimodal == 1:
+#               if self.textmodel == 'gpt2':
+#                   text_emb = np.loadtxt('./dataset/illness/text_emb/text_emb_label_0507_'+str(self.pred_len)+'.txt')
+#               else:
+#                   text_emb = np.loadtxt('./dataset/illness/text_emb/'+self.textmodel+'text_emb_label_0527_'+str(self.pred_len)+'.txt')
+#               # print(text_emb)
+#               text_emb = np.tile(text_emb, (B, 1, 1))
+#               text_emb_tensor = torch.tensor(text_emb, dtype=torch.float32, device=outputs.device)
+#   
+#               outputs = torch.cat((outputs, text_emb_tensor), axis = 1)
+#               # torch.Size([16, 42+token size, 768])
+#   
+
+# Context around EDIT 2 (author lines 143-147):
+#               outputs = self.llmmodel(inputs_embeds=outputs).last_hidden_state
+#           #################
+#           outputs = outputs[:, :self.patch_num,:]
+#           outputs = self.out_layer(outputs.reshape(B*M, -1))
+#           

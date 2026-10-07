@@ -1,0 +1,171 @@
+{
+  "phase": "final_test",
+  "n_runs": 84,
+  "n_dataset_rows": 3944304,
+  "terminal_audit": {
+    "audit": "terminal_test_audit",
+    "passed": true,
+    "n_checks": 25,
+    "n_failed": 0,
+    "family_composition": {
+      "gpt2_miflu": 40,
+      "nlinear": 40,
+      "seasonal_naive": 4
+    },
+    "sacct_te_eval_jobs": 84,
+    "checks": [
+      {
+        "name": "01_keys_84",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "02_keys_unique",
+        "passed": true,
+        "detail": "unique=84"
+      },
+      {
+        "name": "03_family_composition_40_40_4",
+        "passed": true,
+        "detail": "{'gpt2_miflu': 40, 'nlinear': 40, 'seasonal_naive': 4}"
+      },
+      {
+        "name": "04_no_unauthorized_comparator",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "05_ledger_84",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "06_ledger_keys_match_authorized",
+        "passed": true,
+        "detail": "ledger=84 keys=84"
+      },
+      {
+        "name": "07_ledger_keys_unique",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "08_counts_84_84_84",
+        "passed": true,
+        "detail": "sub=84 cmp=84 suc=84"
+      },
+      {
+        "name": "09_no_85th_job",
+        "passed": true,
+        "detail": "sacct_te_eval=84"
+      },
+      {
+        "name": "10_slurm_all_completed",
+        "passed": true,
+        "detail": "['COMPLETED']"
+      },
+      {
+        "name": "11_slurm_all_exit_0_0",
+        "passed": true,
+        "detail": "['0:0']"
+      },
+      {
+        "name": "12_result_dirs_84",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "13_result_dirs_match_keys",
+        "passed": true,
+        "detail": "dirs=84 keys=84"
+      },
+      {
+        "name": "14_manifests_84",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "15_predictions_84_nonempty",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "16_metrics_4_each_84",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "17_status_completed_84",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "18_restoration_evidence_84",
+        "passed": true,
+        "detail": "n=84"
+      },
+      {
+        "name": "19_first_test_target_abs_week_820",
+        "passed": true,
+        "detail": "min=820 (want 820)"
+      },
+      {
+        "name": "20_no_target_overlap_with_validation",
+        "passed": true,
+        "detail": "overlap=0"
+      },
+      {
+        "name": "21_test_target_max_consistent",
+        "passed": true,
+        "detail": "max=1024 (want 1024)"
+      },
+      {
+        "name": "22_test_eval_py_hash_frozen",
+        "passed": true,
+        "detail": "93a1338bfac30096"
+      },
+      {
+        "name": "23_driver_normal_exit",
+        "passed": true,
+        "detail": "ALL_DONE present in driver log"
+      },
+      {
+        "name": "24_lock_released",
+        "passed": true,
+        "detail": "[]"
+      },
+      {
+        "name": "25_queue_no_residual_test_job",
+        "passed": true,
+        "detail": "Last update in 0 seconds ago"
+      }
+    ]
+  },
+  "access_ledger_summary": {
+    "ledger": "final_test_access_ledger",
+    "authorized_models": [
+      "gpt2_miflu",
+      "nlinear",
+      "seasonal_naive"
+    ],
+    "expected_job_count": {
+      "gpt2_miflu": 40,
+      "nlinear": 40,
+      "seasonal_naive": 4
+    },
+    "observed_job_count": 84,
+    "all_completed": true,
+    "all_exit_0_0": true,
+    "n_fail": 0,
+    "job_ids_unique": true
+  },
+  "artifacts": {
+    "final_test_analysis_dataset.csv": "concatenated 84 test_predictions.csv + run_key",
+    "final_test_metrics.json": "primary/secondary/PTE-PIE/confirmatory/gap",
+    "final_test_seed_level.csv": "per-run scalar metrics",
+    "final_peak_metrics.csv": "per (model,horizon,lead,season) PTE/PIE",
+    "final_peak_hit_rates.csv": "per (model,horizon,lead) hit rates",
+    "final_generalization_comparison.csv": "validation vs test gap",
+    "final_test_access_ledger.jsonl": "84 reconciled access records"
+  }
+}

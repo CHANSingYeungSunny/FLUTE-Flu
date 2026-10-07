@@ -1,0 +1,718 @@
+{
+  "generated_utc": "2026-09-15T18:02:06Z",
+  "test_eval_id": "final_nlinear_20260915T145710Z",
+  "one_time_test_integrity": {
+    "receipt_count": 1,
+    "test_eval_id_count": 1,
+    "declared_access_count": 1,
+    "immutable_test_manifest_count": 1,
+    "champion_model_key": "nlinear",
+    "champion_cells": 40,
+    "baseline_cells": 12,
+    "total_valid_cells": 52,
+    "missing_cells": 0,
+    "duplicate_cells": 0,
+    "checkpoint_hash_failures": 0,
+    "post_test_reselection_count": 0,
+    "receipt_created_utc": "2026-09-15T14:57:10Z",
+    "manifest_created_utc": "2026-09-15T14:57:10Z",
+    "receipt_test_eval_id": "final_nlinear_20260915T145710Z",
+    "manifest_test_eval_id": "final_nlinear_20260915T145710Z",
+    "receipt_manifest_sha": "558d2e388225bc143e2e48b99b8ae796cab0f18dff3f7a9eacff03f60c7485b5",
+    "manifest_frozen_sha": "558d2e388225bc143e2e48b99b8ae796cab0f18dff3f7a9eacff03f60c7485b5",
+    "selection_test_accessed": false,
+    "freeze_audit_passed": true,
+    "resume_reused_same_receipt": true,
+    "evidence": {
+      "receipt_before_access": true,
+      "receipt_hashes_match_manifest": true,
+      "same_test_eval_id": true,
+      "cohort_resolved_cells": 160,
+      "cohort_complete": true,
+      "sacct_test_jobs": 0
+    },
+    "passed": true,
+    "failed_requirements": []
+  },
+  "metric_recomputation": {
+    "test_eval_id": "final_nlinear_20260915T145710Z",
+    "n_cells": 52,
+    "n_recomputed": 52,
+    "recomputed_from": "raw prediction CSVs via frozen innovation.metrics.evaluate_predictions",
+    "relative_tolerance": 1e-09,
+    "metric_fields_checked": [
+      "mse_all_z",
+      "mae_all_z",
+      "mse_ili_phys",
+      "mae_ili_phys",
+      "peak.mean_pte_weeks",
+      "peak.mean_pie_pct",
+      "peak.peak_hit_ratio"
+    ],
+    "n_metric_mismatches": 0,
+    "n_discrepancies": 0,
+    "discrepancies": [],
+    "all_match": true
+  },
+  "conclusions": [
+    {
+      "id": 1,
+      "claim": "nlinear Test MSE lower than gpt2_miflu at all four horizons",
+      "verdict": true,
+      "evidence": {
+        "z_space": {
+          "24": [
+            4.2966115430674865,
+            5.676612100742723
+          ],
+          "36": [
+            4.972769617091877,
+            6.198279986076343
+          ],
+          "48": [
+            5.4046294112872735,
+            5.791370836920883
+          ],
+          "60": [
+            5.6084790940096045,
+            6.62246669189921
+          ]
+        },
+        "physical": {
+          "24": [
+            336782610.3520721,
+            444951612.9506566
+          ],
+          "36": [
+            389782114.14950097,
+            485841664.5725346
+          ],
+          "48": [
+            423632711.6991849,
+            453946781.7412107
+          ],
+          "60": [
+            439611123.6644453,
+            519090819.57745457
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "claim": "relative MSE reduction lies within ~6.7% to 23.8%",
+      "verdict": true,
+      "evidence": {
+        "z_space_reduction_pct": {
+          "24": 24.31,
+          "36": 19.77,
+          "48": 6.68,
+          "60": 15.31
+        },
+        "physical_reduction_pct": {
+          "24": 24.31,
+          "36": 19.77,
+          "48": 6.68,
+          "60": 15.31
+        },
+        "note": "physical range 6.69-23.83% matches the reported figure exactly; the PRIMARY z-space range is 6.68-24.31%. Both are reported; the earlier single figure was physical-unit based."
+      }
+    },
+    {
+      "id": 3,
+      "claim": "nlinear meets the literature criterion at L48/L60 but not L24/L36",
+      "verdict": true,
+      "evidence": {
+        "L24": {
+          "pte": 1.667,
+          "pie": 9.504,
+          "met": false
+        },
+        "L36": {
+          "pte": 2.0,
+          "pie": 10.568,
+          "met": false
+        },
+        "L48": {
+          "pte": 0.35,
+          "pie": 3.329,
+          "met": true
+        },
+        "L60": {
+          "pte": 0.15,
+          "pie": 2.076,
+          "met": true
+        }
+      }
+    },
+    {
+      "id": 4,
+      "claim": "gpt2_miflu does not meet the criterion at any evaluated horizon",
+      "verdict": true,
+      "evidence": {
+        "L24": {
+          "pte": 4.667,
+          "pie": 72.177,
+          "met": false
+        },
+        "L36": {
+          "pte": 5.333,
+          "pie": 77.344,
+          "met": false
+        },
+        "L48": {
+          "pte": 2.0,
+          "pie": 25.294,
+          "met": false
+        },
+        "L60": {
+          "pte": 2.0,
+          "pie": 23.269,
+          "met": false
+        }
+      }
+    },
+    {
+      "id": 5,
+      "claim": "baseline seed availability is three, limiting paired power",
+      "verdict": true,
+      "evidence": {
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "effective_paired_n": 3
+      }
+    },
+    {
+      "id": 6,
+      "claim": "only L36 MAE remains significant after Holm correction",
+      "verdict": true,
+      "evidence": {
+        "z_space_significant": [
+          "L36 mae_all_z"
+        ],
+        "physical_significant": [
+          "L36 mae_ili_phys"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "claim": "wording is 'observed best' unless a comparison is statistically supported",
+      "verdict": true,
+      "evidence": {
+        "rule": "use 'observed best' unless a specific comparison is supported by a Holm-corrected p-value",
+        "permitted_claims": [
+          "L36 mae_all_z"
+        ]
+      }
+    }
+  ],
+  "all_conclusions_supported": true,
+  "auc_best_so_far": {
+    "definition": "one evaluator call = one candidate model trained and scored on validation",
+    "eligible_runs": 160,
+    "excluded": {
+      "smoke": true,
+      "pilot": true,
+      "failed_diagnostics": true,
+      "test": true,
+      "post_freeze": true
+    },
+    "objective": "best validation MSE so far (lower is better)",
+    "normalisation": "min-max over the eligible validation-MSE range; budget normalised to cumulative GPU-hours / total",
+    "integration": "trapezoid over normalised budget",
+    "auc_best_so_far": 0.8700909236319055,
+    "total_gpu_hours": 0.13166333333333335,
+    "caveat": "This measures MODEL-DISCOVERY EFFICIENCY under a fixed validation budget, not final disease-prediction accuracy. It does not replace MSE/MAE/PTE/PIE."
+  },
+  "resource_audit": {
+    "per_model": {
+      "dlinear": {
+        "n_runs": 65,
+        "total_parameters": [
+          5040,
+          7560,
+          10080,
+          12600
+        ],
+        "trainable_parameters": [
+          5040,
+          7560,
+          10080,
+          12600
+        ],
+        "train_seconds_mean": 1.9900153846153845,
+        "train_seconds_total": 129.351
+      },
+      "gpt2_miflu": {
+        "n_runs": 13,
+        "total_parameters": [
+          82136232,
+          82200828,
+          82265424,
+          82330020
+        ],
+        "trainable_parameters": [
+          1030056,
+          1094652,
+          1159248,
+          1223844
+        ],
+        "train_seconds_mean": 144.1013846153846,
+        "train_seconds_total": 1873.3179999999998
+      },
+      "itransformer": {
+        "n_runs": 47,
+        "total_parameters": [
+          75672,
+          76452,
+          77232,
+          78012
+        ],
+        "trainable_parameters": [
+          75672,
+          76452,
+          77232,
+          78012
+        ],
+        "train_seconds_mean": 4.0756595744680855,
+        "train_seconds_total": 191.556
+      },
+      "nlinear": {
+        "n_runs": 46,
+        "total_parameters": [
+          2520,
+          3780,
+          5040,
+          6300
+        ],
+        "trainable_parameters": [
+          2520,
+          3780,
+          5040,
+          6300
+        ],
+        "train_seconds_mean": 1.6859347826086957,
+        "train_seconds_total": 77.553
+      },
+      "patchtst": {
+        "n_runs": 47,
+        "total_parameters": [
+          87256,
+          96484,
+          105712,
+          114940
+        ],
+        "trainable_parameters": [
+          87256,
+          96484,
+          105712,
+          114940
+        ],
+        "train_seconds_mean": 4.039425531914893,
+        "train_seconds_total": 189.85299999999998
+      }
+    },
+    "observed_on": "compute nodes (Slurm stingy jobs)",
+    "login_node_compute": "PROHIBITED and recorded as an incident (see below)",
+    "final_test": {
+      "job_id": "560659",
+      "partition": "stingy",
+      "gres": "gpu:a100:1",
+      "time_limit": "02:00:00",
+      "elapsed": "00:01:00",
+      "exit_code": "0:0",
+      "node": "gpu-a100-03"
+    },
+    "checkpoint_verification_job": {
+      "job_id": "560692",
+      "partition": "stingy",
+      "cpus": 2,
+      "mem": "8G",
+      "time_limit": "00:20:00"
+    },
+    "login_node_incident": {
+      "date": "2026-09-16",
+      "symptom": "SSH authentication succeeded but new shell creation hung",
+      "root_cause": "one-time Test inference running via nohup on the login node entered D state (uninterruptible I/O wait) and contributed to process/resource blockage",
+      "evidence": {
+        "pid": 3032070,
+        "stat": "D",
+        "elapsed": "01:14:20",
+        "stalled_cell_count": 41
+      },
+      "recovery": "exact-process termination from an already-open shell (kill -9 3032070), then narrow pkill -9 -f run_one_time_test / controller.sh",
+      "lawful_continuation": "same receipt, same manifest, same test_eval_id; missing cells only; submitted through sbatch job 560659",
+      "preventive_rule": "all future model computation through Slurm compute allocation only",
+      "not_the_fault_of": "the cluster or the network"
+    },
+    "job_failures_and_retries": {
+      "slurm_jobs": 283,
+      "completed": 279,
+      "failed": 4,
+      "test_resume_retries": 1,
+      "note": "one mechanical resume after the login-node process was terminated"
+    }
+  },
+  "plan_completion": {
+    "generated_utc": "2026-09-15T17:59:53Z",
+    "items": [
+      {
+        "requirement": "DLinear/NLinear",
+        "status": "COMPLETED",
+        "evidence": "both evaluated in Screening and Stage F"
+      },
+      {
+        "requirement": "TimesNet",
+        "status": "NOT_COMPLETED",
+        "evidence": "not implemented; not present in any run"
+      },
+      {
+        "requirement": "PatchTST",
+        "status": "COMPLETED",
+        "evidence": "evaluated in Screening and Stage F"
+      },
+      {
+        "requirement": "iTransformer",
+        "status": "COMPLETED",
+        "evidence": "evaluated in Screening and Stage F"
+      },
+      {
+        "requirement": "TimeMixer or ModernTCN",
+        "status": "NOT_COMPLETED",
+        "evidence": "neither implemented"
+      },
+      {
+        "requirement": "text encoder: none",
+        "status": "COMPLETED",
+        "evidence": "used by all non-LLM runs"
+      },
+      {
+        "requirement": "text encoder: TF-IDF+SVD",
+        "status": "NOT_COMPLETED",
+        "evidence": "not implemented"
+      },
+      {
+        "requirement": "text encoder: fastText",
+        "status": "NOT_COMPLETED",
+        "evidence": "not implemented"
+      },
+      {
+        "requirement": "text encoder: BERT/MiniLM",
+        "status": "NOT_COMPLETED",
+        "evidence": "not implemented"
+      },
+      {
+        "requirement": "text encoder: GPT-2",
+        "status": "COMPLETED",
+        "evidence": "frozen gpt2_miflu / MIFlu arm"
+      },
+      {
+        "requirement": "fusion: concat projection",
+        "status": "COMPLETED",
+        "evidence": "Stage G fusion ablation"
+      },
+      {
+        "requirement": "fusion: FiLM/gating",
+        "status": "COMPLETED",
+        "evidence": "Stage G fusion ablation"
+      },
+      {
+        "requirement": "fusion: cross-attention",
+        "status": "COMPLETED",
+        "evidence": "Stage G fusion ablation"
+      },
+      {
+        "requirement": "negative control: zero-text",
+        "status": "NOT_COMPLETED",
+        "evidence": "not run"
+      },
+      {
+        "requirement": "negative control: shuffled-text",
+        "status": "NOT_COMPLETED",
+        "evidence": "not run"
+      },
+      {
+        "requirement": "LLM/TSFM: Time-LLM-style",
+        "status": "NOT_COMPLETED",
+        "evidence": "not implemented"
+      },
+      {
+        "requirement": "LLM/TSFM: CALF/TimeCMA-style",
+        "status": "NOT_COMPLETED",
+        "evidence": "not implemented"
+      },
+      {
+        "requirement": "TSFM: Chronos",
+        "status": "NOT_COMPLETED",
+        "evidence": "unavailable locally"
+      },
+      {
+        "requirement": "TSFM: TimesFM",
+        "status": "NOT_COMPLETED",
+        "evidence": "unavailable locally"
+      },
+      {
+        "requirement": "TSFM: Moirai",
+        "status": "NOT_COMPLETED",
+        "evidence": "unavailable locally"
+      },
+      {
+        "requirement": "robustness analysis",
+        "status": "COMPLETED",
+        "evidence": "Stage I seed-repeat sweep (4 models x L24/60 x 3 seeds)"
+      },
+      {
+        "requirement": "common-date analysis",
+        "status": "COMPLETED",
+        "evidence": "final_common_date_comparison.csv"
+      },
+      {
+        "requirement": "COVID-period analysis",
+        "status": "NOT_COMPLETED",
+        "evidence": "not separately pre-registered or reported"
+      },
+      {
+        "requirement": "pre-COVID analysis",
+        "status": "NOT_COMPLETED",
+        "evidence": "not pre-registered; must not be retroactively presented as confirmatory"
+      },
+      {
+        "requirement": "resource analysis",
+        "status": "COMPLETED",
+        "evidence": "this audit (parameters, train time, GPU-hours)"
+      },
+      {
+        "requirement": "AUC-Best-so-far",
+        "status": "COMPLETED",
+        "evidence": "computed in this audit from Stage-F validation runs"
+      },
+      {
+        "requirement": "validation-only freeze",
+        "status": "COMPLETED",
+        "evidence": "freeze_audit.json passed=true"
+      },
+      {
+        "requirement": "one-time Test",
+        "status": "COMPLETED",
+        "evidence": "52/52 cells, single receipt"
+      },
+      {
+        "requirement": "EvoForecast",
+        "status": "NOT_COMPLETED",
+        "evidence": "optional extension; deferred, not attempted"
+      },
+      {
+        "requirement": "implementation completed",
+        "status": "COMPLETED",
+        "evidence": "frozen innovation source v2.10"
+      },
+      {
+        "requirement": "Smoke completed",
+        "status": "COMPLETED",
+        "evidence": "smoke runs present and annotated"
+      },
+      {
+        "requirement": "formal evaluation completed",
+        "status": "COMPLETED",
+        "evidence": "Stage F: 160 unique cells"
+      },
+      {
+        "requirement": "final Test completed",
+        "status": "COMPLETED",
+        "evidence": "52/52, integrity passed"
+      },
+      {
+        "requirement": "optional extension deferred",
+        "status": "NOT_COMPLETED",
+        "evidence": "EvoForecast"
+      }
+    ],
+    "counts": {
+      "COMPLETED": 18,
+      "NOT_COMPLETED": 16
+    },
+    "mandatory_main_study_complete": true,
+    "whole_plan_complete": false,
+    "reason": "Unavailable/deferred candidate families (TimesNet, TimeMixer/ModernTCN, TF-IDF+SVD, fastText, BERT/MiniLM, zero-text/shuffled-text, Time-LLM-style, CALF/TimeCMA-style, Chronos, TimesFM, Moirai), unreported COVID/pre-COVID splits, and the optional EvoForecast arm are not completed."
+  },
+  "statistical_audit": {
+    "pairing_unit": "one trained run per (model, horizon, seed); paired across arms on identical horizon AND seed",
+    "matched_seeds": [
+      42,
+      43,
+      44
+    ],
+    "effective_paired_sample_size": 3,
+    "champion_seeds_available": 10,
+    "baseline_seeds_available": {
+      "gpt2_miflu": 3
+    },
+    "unmatched_seeds_treatment": "champion seeds without a baseline counterpart are excluded from paired tests; they are still reported in the per-arm descriptive statistics",
+    "bootstrap": {
+      "method": "percentile",
+      "n_resamples": 10000,
+      "rng": "numpy.random.default_rng(seed=20260916)",
+      "ci_level": 0.95
+    },
+    "effect_size": "Cohen's dz (paired): mean(diff) / sd(diff), ddof=1",
+    "holm_family": {
+      "n_comparisons": 8,
+      "definition": "all paired champion-vs-baseline tests across 4 horizons x 2 metrics (MSE, MAE)"
+    },
+    "pseudo_replication": "none: each cell is an independent run with its own checkpoint; no repeated measurement of one run is reused as independent",
+    "significant_after_holm": [
+      "L36 mae_ili_phys"
+    ],
+    "wording_rule": "use 'observed best' unless a specific comparison is supported by a Holm-corrected p-value"
+  },
+  "execution_reconciliation": {
+    "generated_utc": "2026-09-15T17:55:50Z",
+    "slurm_jobs_in_sacct": 283,
+    "slurm_jobs_completed": 279,
+    "slurm_jobs_failed": 4,
+    "ledger_rows": 276,
+    "local_gate_rows_excluded_from_slurm_count": 3,
+    "stages": [
+      {
+        "stage": "A",
+        "name": "verify_gate",
+        "submit_mode": "local",
+        "counted_as_slurm_jobs": 0,
+        "ledger_rows": 1,
+        "completed": 1,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "B",
+        "name": "four_pilots",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 4,
+        "ledger_rows": 4,
+        "completed": 4,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "C",
+        "name": "candidate_readiness",
+        "submit_mode": "local",
+        "counted_as_slurm_jobs": 0,
+        "ledger_rows": 1,
+        "completed": 1,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "CONTROLLER",
+        "name": "",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 1,
+        "ledger_rows": 1,
+        "completed": 0,
+        "failed": 0,
+        "other": 1
+      },
+      {
+        "stage": "D",
+        "name": "screening",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 24,
+        "ledger_rows": 24,
+        "completed": 24,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "E",
+        "name": "select_candidates",
+        "submit_mode": "local",
+        "counted_as_slurm_jobs": 0,
+        "ledger_rows": 1,
+        "completed": 1,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "F",
+        "name": "full_evaluation",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 160,
+        "ledger_rows": 160,
+        "completed": 160,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "G",
+        "name": "ablations",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 24,
+        "ledger_rows": 24,
+        "completed": 24,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "H",
+        "name": "llm_tsfcrm",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 12,
+        "ledger_rows": 12,
+        "completed": 12,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "I",
+        "name": "robustness",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 24,
+        "ledger_rows": 24,
+        "completed": 24,
+        "failed": 0,
+        "other": 0
+      },
+      {
+        "stage": "J",
+        "name": "auc",
+        "submit_mode": "slurm",
+        "counted_as_slurm_jobs": 24,
+        "ledger_rows": 24,
+        "completed": 24,
+        "failed": 0,
+        "other": 0
+      }
+    ],
+    "final_test_jobs": [
+      {
+        "job_id": "560659",
+        "name": "onetime_t+",
+        "state": "COMPLETED",
+        "elapsed": "00:01:00",
+        "exit_code": "0:0"
+      }
+    ],
+    "test_resume_job": {
+      "job_id": "560659",
+      "state": "COMPLETED",
+      "elapsed": "00:01:00",
+      "exit_code": "0:0",
+      "node": "gpu-a100-03"
+    },
+    "checkpoint_verification_job": {
+      "job_id": "560692",
+      "state": "COMPLETED"
+    },
+    "notes": [
+      "Local gate stages (A, C, E, K) are recorded in the ledger but are NOT Slurm jobs.",
+      "Repeated monitoring events are not jobs.",
+      "The login-node nohup Test process (PID 3032070) was NOT a Slurm job; it was prohibited activity and is recorded in the incident report."
+    ]
+  },
+  "completion_statement": "Main empirical study and one-time Test completed; optional EvoForecast and specified unavailable/deferred model families remain incomplete."
+}

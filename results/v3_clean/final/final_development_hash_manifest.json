@@ -1,0 +1,24 @@
+{
+  "closure_package": "final_development_evidence_freeze",
+  "generated_utc": "2026-09-21T02:52:38Z",
+  "package_files": {
+    "final_development_evidence_freeze.json": "d5d75bd388d645f890e78bb345484ca211ab0031d504b76631220475d0bffc74",
+    "final_development_evidence_freeze.md": "0183070c0d3d0c800cb782bd2807f15a86c389f142c6c3856e6ad89f196ac4f7",
+    "final_development_artifact_inventory.csv": "daeae28be4c7ff83b2c5e893d6238b129899737db079d32d7eca233c486e2267"
+  },
+  "row_counts": {
+    "total": 598,
+    "wave1_durable": 580,
+    "defectA_equivalent": 12,
+    "defectB_rebound": 6
+  },
+  "upstream_governance_hashes": {
+    "results/v3_clean/final/wave1_final_freeze_manifest.json": "dbe727f2878efb8773b0037e7cef079ab7a9102359f526f19f6310c98a419768",
+    "results/v3_clean/final/wave1_final_artifact_inventory.csv": "5831d8efe45c58fffaa062e019ef5f5877a08a20493bd9fd1db5e02d96f7edd2",
+    "results/v3_clean/implementation/source_manifest.json": "95e30137f53d3d3a10a6453f0912883e7361afaada24593bd4bce4db3ac5b313",
+    "results/v3_clean/runs/complete_specs_598.json": "a44aedce01e8c37a02792dea113ff2b3f118b37e236871f24dfbae896e4bcd0b",
+    "results/v3_clean/preregistration/paper_aligned_selection_rule.json": "afa7a780010aeed20fd7a2d361300ae2ce4411baeed1d458581538d3df359325",
+    "results/v3_clean/preregistration/DEFERRED_CONTROLS_PROTOCOL_AMENDMENT.json": "fa47e35e458ef150c00d0f20dd89e98fb764c2f1a6b5ea875b878125687f40b8",
+    "results/v3_clean/analysis/frozen_analysis_protocol.json": "cd229790fd0693334d79a1d63a38f06be8faf8cf30d83eb45c70603bc580fb6f"
+  }
+}

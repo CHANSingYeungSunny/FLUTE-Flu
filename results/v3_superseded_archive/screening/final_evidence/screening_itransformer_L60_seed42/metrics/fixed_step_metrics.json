@@ -1,0 +1,88 @@
+{
+  "contract_version": "v3.4-fixed-step-metrics",
+  "channel": "ILITOTAL",
+  "primary_step": 0,
+  "supplementary_steps": [
+    1,
+    2,
+    3
+  ],
+  "steps_never_averaged": true,
+  "peak_criterion": {
+    "PTE_max_weeks": 1,
+    "PIE_max_pct": 25.0,
+    "expression": "PTE <= 1 week AND PIE <= 25%"
+  },
+  "step_lead_weeks": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4
+  },
+  "steps": {
+    "0": {
+      "step": 0,
+      "lead_weeks": 1,
+      "available": true,
+      "n_points": 103,
+      "mse_z": 0.8940175452332112,
+      "mae_z": 0.4829137395814206,
+      "mse_phys": 70076049.95902558,
+      "mae_phys": 4275.445198725728,
+      "pte_weeks": 1.0,
+      "pie_pct": 35.231506105735605,
+      "n_seasons_evaluable": 1,
+      "n_hits": 0,
+      "peak_hit_ratio": 0.0,
+      "peak_criterion_pass_all": false
+    },
+    "1": {
+      "step": 1,
+      "lead_weeks": 2,
+      "available": true,
+      "n_points": 103,
+      "mse_z": 1.4325379152756959,
+      "mae_z": 0.569655700622904,
+      "mse_phys": 112287052.19313686,
+      "mae_phys": 5043.409487826153,
+      "pte_weeks": 3.0,
+      "pie_pct": 39.81984254779669,
+      "n_seasons_evaluable": 1,
+      "n_hits": 0,
+      "peak_hit_ratio": 0.0,
+      "peak_criterion_pass_all": false
+    },
+    "2": {
+      "step": 2,
+      "lead_weeks": 3,
+      "available": true,
+      "n_points": 103,
+      "mse_z": 1.9427015138238912,
+      "mae_z": 0.6404287447628466,
+      "mse_phys": 152275361.67336026,
+      "mae_phys": 5669.994017369539,
+      "pte_weeks": 2.0,
+      "pie_pct": 40.75061203077641,
+      "n_seasons_evaluable": 1,
+      "n_hits": 0,
+      "peak_hit_ratio": 0.0,
+      "peak_criterion_pass_all": false
+    },
+    "3": {
+      "step": 3,
+      "lead_weeks": 4,
+      "available": true,
+      "n_points": 103,
+      "mse_z": 2.5366090644836685,
+      "mae_z": 0.788169909991975,
+      "mse_phys": 198827796.12147054,
+      "mae_phys": 6978.010628413228,
+      "pte_weeks": 1.0,
+      "pie_pct": 44.62924778503148,
+      "n_seasons_evaluable": 1,
+      "n_hits": 0,
+      "peak_hit_ratio": 0.0,
+      "peak_criterion_pass_all": false
+    }
+  }
+}

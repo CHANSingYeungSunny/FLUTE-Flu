@@ -1,0 +1,665 @@
+{
+  "created_utc": "2026-09-19T10:40:45Z",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version": "innov-v3.19-baseline-no-checkpoint-finalization",
+  "protocol_version": "innov-v2.0",
+  "repository_head": "1f6563f7ea52620354a4fa0666b813b6a9f9cc51",
+  "repository_head_short": "1f6563f",
+  "working_tree_dirty": true,
+  "authoritative_plan": {
+    "path": "MIFlu_innovation_plan_v2.md",
+    "sha256": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+  },
+  "n_files": 123,
+  "total_bytes": 994467,
+  "files": [
+    {
+      "path": "MIFlu_innovation_plan_v2.md",
+      "size": 8138,
+      "sha256": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+    },
+    {
+      "path": "hpc_scripts/innovation_worker.sh",
+      "size": 5628,
+      "sha256": "135f63c6cbc019e06985c58777c286477295b266dd4affc1e4b1929b62d8a5f3"
+    },
+    {
+      "path": "hpc_scripts/pilot_calf_llm_L24_seed42.sh",
+      "size": 5281,
+      "sha256": "868ed5eec6e1cb35b6061bb3da663c3718d5fd088da656ec82006b9874a078a2"
+    },
+    {
+      "path": "hpc_scripts/pilot_dlinear_L24_seed42.sh",
+      "size": 5244,
+      "sha256": "13cef4171d23ddc9487e50c421add4be1bec735c565458f3b94063f8e9a99f06"
+    },
+    {
+      "path": "hpc_scripts/pilot_gpt2_miflu_L24_seed42.sh",
+      "size": 5262,
+      "sha256": "34a6ecf70d3af3b8aa46633584be66c19505eb0507b41bb09e734a5e53149d69"
+    },
+    {
+      "path": "hpc_scripts/pilot_itransformer_L24_seed42.sh",
+      "size": 5259,
+      "sha256": "95e6f48b90622e1a2e6b24f1acee865a98928e834404b4a7879c0e73b7b1fd72"
+    },
+    {
+      "path": "hpc_scripts/pilot_nlinear_L24_seed42.sh",
+      "size": 5244,
+      "sha256": "17ad10dbba22c58a4a57fa7c9e1a963b46b80579670e549ce3be824bc4ee1c58"
+    },
+    {
+      "path": "hpc_scripts/pilot_patchtst_L24_seed42.sh",
+      "size": 5247,
+      "sha256": "3770571c5ef3f551f0e4ef1bfb813a21b20a40aba509746876d853949269a48e"
+    },
+    {
+      "path": "hpc_scripts/pilot_qwen_time_llm_L24_seed42.sh",
+      "size": 5309,
+      "sha256": "cbda3d46923e37242b33c09ad3e1789761b8e5b81e461195fb6d057183f27967"
+    },
+    {
+      "path": "hpc_scripts/pilot_timecma_llm_L24_seed42.sh",
+      "size": 5290,
+      "sha256": "68f3fe014822422f7268e439f80a36e787060bbb776a69d4b4627356d3616317"
+    },
+    {
+      "path": "hpc_scripts/submit_innovation_full.sh",
+      "size": 10164,
+      "sha256": "ff0c8153a47333a29c6c682d5de40b7c6b8cc5f69810526b0c23d78eb3af0057"
+    },
+    {
+      "path": "hpc_scripts/submit_innovation_pilot.sh",
+      "size": 4578,
+      "sha256": "d121662ecb8f687c7b560129a4464ba64d62158a5306cf02f38fbaf91861c7a8"
+    },
+    {
+      "path": "hpc_scripts/submit_innovation_screening.sh",
+      "size": 4290,
+      "sha256": "256b382dc8ad72ead719634138124008ed0bcfbb91ef04eb9852513c84130565"
+    },
+    {
+      "path": "hpc_scripts/submit_innovation_smoke.sh",
+      "size": 3440,
+      "sha256": "be70adbf9ccb2bdf0f3a33e8b0e7029945c266317519756aa7be01a2f1c7a224"
+    },
+    {
+      "path": "scripts/cdc_calendar.py",
+      "size": 10991,
+      "sha256": "963751eec162a8eefa133c2eb29764b5a8791920d3a99cddf08f8d3d02e593ad"
+    },
+    {
+      "path": "scripts/compute_miflu_indicators.py",
+      "size": 24398,
+      "sha256": "bf72d37ce9eaa21cb052f18568764d913163caf237ba9ce0cf76f15d98f46c0f"
+    },
+    {
+      "path": "scripts/configs.py",
+      "size": 11206,
+      "sha256": "5b64ad545a621b6b9e4eace67976ad80548bb1792ac41668af096968b02ac481"
+    },
+    {
+      "path": "scripts/early_stopping.py",
+      "size": 7202,
+      "sha256": "be75264643f24c7d8fd5be890a83b465cde7aefe6cec297ae6bb951a15b70558"
+    },
+    {
+      "path": "scripts/innovation/__init__.py",
+      "size": 1043,
+      "sha256": "a9179d9463fae99e6d717ad3b8804f19b56ffb53f12f556e42beebf24601691b"
+    },
+    {
+      "path": "scripts/innovation/architecture_contract.py",
+      "size": 11319,
+      "sha256": "434ef74fa672e618bd4441a6bd28b0bde926e9b25d7c614e8cd847f49b81d12c"
+    },
+    {
+      "path": "scripts/innovation/assets.py",
+      "size": 7377,
+      "sha256": "89c0de99c8c59abee7a178086d81d0d456beb73b217ac84890d9886f4ccf6f1b"
+    },
+    {
+      "path": "scripts/innovation/audit_repo.py",
+      "size": 6657,
+      "sha256": "0af9fb7ef2b312999e4cb582d4bee112be29e3b59eb4886f01c46feaa2d24f58"
+    },
+    {
+      "path": "scripts/innovation/backbones/__init__.py",
+      "size": 2494,
+      "sha256": "32f4c7f0b6fee98ec2a3ba2a16bc20378173463dcfa8bee4bc49a55a9435367d"
+    },
+    {
+      "path": "scripts/innovation/backbones/dlinear.py",
+      "size": 5904,
+      "sha256": "b4868652eb73feefec71726fb878441a9040aeab74d1ad819500c0c03c21c66f"
+    },
+    {
+      "path": "scripts/innovation/backbones/fusion_forecaster.py",
+      "size": 3977,
+      "sha256": "d434c75d2724299fe3656d5c5855d78445e4de2fc7c260dc36020238cf1d9521"
+    },
+    {
+      "path": "scripts/innovation/backbones/gpt2_miflu_adapter.py",
+      "size": 4125,
+      "sha256": "7170c37badc2487adf7c0b0b789c461a5a26a7db727ec4490d675571e3fedae1"
+    },
+    {
+      "path": "scripts/innovation/backbones/itransformer.py",
+      "size": 4404,
+      "sha256": "40dcc8691bbe122d93ceba61b8b1c3939a8ac085d8881e6c7556574128d83443"
+    },
+    {
+      "path": "scripts/innovation/backbones/llm_inspired.py",
+      "size": 18187,
+      "sha256": "5c1e744b0cdab2ad1c0965ff8c62c832bb62ad474afec0619052d15ac4d7ee37"
+    },
+    {
+      "path": "scripts/innovation/backbones/patchtst.py",
+      "size": 5069,
+      "sha256": "fb0db9160b0ace28ec597557430f650f078f53dbcda458218ef28f2ae7c77e67"
+    },
+    {
+      "path": "scripts/innovation/backbones/registry.py",
+      "size": 1075,
+      "sha256": "9051f72ec9192ca1d5615bf4cdf481ea7bd836d9fdcccee9dffc7435640b95d6"
+    },
+    {
+      "path": "scripts/innovation/baseline_finalize.py",
+      "size": 10512,
+      "sha256": "b70c4841d82bc62bf11c56a800102d656f9ec3d2f305bb74a8539604b7821a13"
+    },
+    {
+      "path": "scripts/innovation/ckpt_schema_probe.py",
+      "size": 4254,
+      "sha256": "9020fc960251ead9ca5d1a6daadf0dc434e7d74e6d6a1ddcee8d872ea17f4a18"
+    },
+    {
+      "path": "scripts/innovation/clean_gate.py",
+      "size": 25442,
+      "sha256": "ea24df3ba433813371d995e825220ae877a051763944d6db1fcec969b9ffaa7c"
+    },
+    {
+      "path": "scripts/innovation/clean_metrics.py",
+      "size": 13586,
+      "sha256": "3cba1572fe87be979fe8e8ad7527472a3548e560f66b7f252e707e45b680477b"
+    },
+    {
+      "path": "scripts/innovation/clean_runner.py",
+      "size": 20495,
+      "sha256": "2d5e96e177abe5f8ec44cc5e574782cb626943f943049a89f87031cb9046f0ef"
+    },
+    {
+      "path": "scripts/innovation/compact_checkpoint.py",
+      "size": 20464,
+      "sha256": "1c312721cb894f1bb5f198787dc9e489949f31ca00b3cb8f3ad753876a4cc1a1"
+    },
+    {
+      "path": "scripts/innovation/data_pipeline.py",
+      "size": 5908,
+      "sha256": "0990853b43286b16c26cbdca19a824687e12a2a6f8e0754f963886223499f396"
+    },
+    {
+      "path": "scripts/innovation/encoders/__init__.py",
+      "size": 901,
+      "sha256": "6e336f20a4baa3f09e1199a10d9269e5e3f66bc6396ca3d9120a071999bdf3d2"
+    },
+    {
+      "path": "scripts/innovation/encoders/gpt2_encoder.py",
+      "size": 4038,
+      "sha256": "4e79b9f88539863c4f17edca392d4262eed41fff326740cb4ac9093309f4717c"
+    },
+    {
+      "path": "scripts/innovation/encoders/none_encoder.py",
+      "size": 594,
+      "sha256": "9eef6c2a04fbbf54709503e7970c10395834383c5c6340aa4de6ab1931143fd9"
+    },
+    {
+      "path": "scripts/innovation/encoders/registry.py",
+      "size": 962,
+      "sha256": "419c62fc3951d174c0d00d75204aa9b636e3d26837b3d24df5c75ae3cc9338c8"
+    },
+    {
+      "path": "scripts/innovation/encoders/tfidf_svd.py",
+      "size": 3552,
+      "sha256": "0d62f130b8f909eda6915511ae00084c2658c6f4e35595dc55fed6e97dc0a1f5"
+    },
+    {
+      "path": "scripts/innovation/fidelity.py",
+      "size": 1386,
+      "sha256": "efc71477c42cc9a4eb024c693b238b4d4e996963ba0b51a71936c3de8c52f0bb"
+    },
+    {
+      "path": "scripts/innovation/figures.py",
+      "size": 4446,
+      "sha256": "94464de5ecb4aa33b917fca4d1b617051edd374a505022166d5f3cc20bcabe54"
+    },
+    {
+      "path": "scripts/innovation/finalize_row.py",
+      "size": 16558,
+      "sha256": "66f11d3428f75ce7e9f4ec1e9dbd001f546dd8350af99198f15eda09b5881ef0"
+    },
+    {
+      "path": "scripts/innovation/fusion/__init__.py",
+      "size": 1057,
+      "sha256": "03fc9267d4adfcd82d04b15ecf136f6ecfc88d192b7f235b5ae9f89cef46a5f7"
+    },
+    {
+      "path": "scripts/innovation/fusion/concat_projection.py",
+      "size": 784,
+      "sha256": "8a1b32681e36ac5870f2c6f84922d5da3cad414d6f50e70285a2b4fd97db6484"
+    },
+    {
+      "path": "scripts/innovation/fusion/cross_attention.py",
+      "size": 870,
+      "sha256": "0d742a1932bfb382f820a5ba4b393a5963fe9eb638514c423fac606e5c12fac5"
+    },
+    {
+      "path": "scripts/innovation/fusion/film_gate.py",
+      "size": 738,
+      "sha256": "f7f3d29c4ff5f90d3acec89e30ec1188b9874e1ced8c86b7974c25056bfdb591"
+    },
+    {
+      "path": "scripts/innovation/fusion/identity.py",
+      "size": 299,
+      "sha256": "5b0ccc491be83dcc144891591d3c7d2c2e57b08e57923c2641ed10097ebf305e"
+    },
+    {
+      "path": "scripts/innovation/fusion/registry.py",
+      "size": 673,
+      "sha256": "75094044f0cee432c1101037fc0d3a385a34dda58e998bccb57b4092ccc0b691"
+    },
+    {
+      "path": "scripts/innovation/governance.py",
+      "size": 20485,
+      "sha256": "6fa95e293ea935e790ff6bea0279aef626e27e336c4e4fffaa119af40d62e2fa"
+    },
+    {
+      "path": "scripts/innovation/gpt2_contract_audit.py",
+      "size": 5280,
+      "sha256": "6a581120b079cae2e4d684003d3384b142c1031380e7a42c94c6c0ca01fa63c0"
+    },
+    {
+      "path": "scripts/innovation/hpc_specs.py",
+      "size": 19547,
+      "sha256": "cec0a592bc65c4e38450d218fce6b51d63780fc2a86a9bc6c56d5420fe08be6f"
+    },
+    {
+      "path": "scripts/innovation/interfaces.py",
+      "size": 3217,
+      "sha256": "d79b517485f07f00071c9cb3e499e17449035b187c696035cd1ac8da6b90a322"
+    },
+    {
+      "path": "scripts/innovation/inventory_205_rows.py",
+      "size": 7307,
+      "sha256": "7f817582f9feca11f7235096215d599601cb97b4854a57699fb5c97f2760803d"
+    },
+    {
+      "path": "scripts/innovation/metadata_chain.py",
+      "size": 10354,
+      "sha256": "fa558dd4bdc4074d973e7ea9897f24a1d9936a34e9f2ee18cc9c2a97db3a242c"
+    },
+    {
+      "path": "scripts/innovation/metrics.py",
+      "size": 12677,
+      "sha256": "789fe1bede202f57e82bfafbcdc5cb0988f8259e05b0b49cf7ac69a2ac25a616"
+    },
+    {
+      "path": "scripts/innovation/migrate_accepted_rows.py",
+      "size": 10160,
+      "sha256": "b52c1a4eae5e586d2bf4a0bab4731d33a9921920a30d0aaca718fd329afd0da1"
+    },
+    {
+      "path": "scripts/innovation/paths.py",
+      "size": 17032,
+      "sha256": "364256288aa2b9d17b87b1b8ffe6f9bf53de4c61b73a3758c44e4a0125673767"
+    },
+    {
+      "path": "scripts/innovation/prehpc_report.py",
+      "size": 29172,
+      "sha256": "2dd57d5ff3c1a74d02948adf3c1d4081cc21d82561e3cc5820c9d8da8167a729"
+    },
+    {
+      "path": "scripts/innovation/probe_gpt2_identity.py",
+      "size": 5578,
+      "sha256": "f69af56d5d5d1c2138ce9c081a9c0bfef70e3351b7b8cda7c97ded9f16e58c8a"
+    },
+    {
+      "path": "scripts/innovation/reproduce.sh",
+      "size": 2333,
+      "sha256": "b039f0e9a463eb2d272345f6c9c59409ab5001b18330381f3573d543037c1e45"
+    },
+    {
+      "path": "scripts/innovation/run_artifacts.py",
+      "size": 11024,
+      "sha256": "4edb2727ab8ecb52f47a71e2766abb092dccfc9bed3443c144389dac7343cf10"
+    },
+    {
+      "path": "scripts/innovation/run_id.py",
+      "size": 2963,
+      "sha256": "b51781061aca67fded4ad4efbce7861bbd702449faaee8073b477f2f17178c76"
+    },
+    {
+      "path": "scripts/innovation/runner.py",
+      "size": 30223,
+      "sha256": "cbe94b7927b884746f2eae91db98c014ca1c0f38662b48c6cfae87841ef0377d"
+    },
+    {
+      "path": "scripts/innovation/runtime_guard.py",
+      "size": 4786,
+      "sha256": "4c3eaeef75195ffde3df7c0d2b65578458696b924b6a195a1d42650d72bbf947"
+    },
+    {
+      "path": "scripts/innovation/same_source_invariant.py",
+      "size": 6400,
+      "sha256": "bbeec3071a60d79858311e2868ccb8b94f01e0e395e8173f2e9f998e8dce2362"
+    },
+    {
+      "path": "scripts/innovation/screening_artifacts.py",
+      "size": 13056,
+      "sha256": "5c10652207e87acbd2934173bfd4747b724f0a3cb99d2064e6100ed508e83330"
+    },
+    {
+      "path": "scripts/innovation/select_best_model.py",
+      "size": 19442,
+      "sha256": "22304a2747e453e8a915f0aec5806b81d47994683fde8bed65e2f0ba01b87a34"
+    },
+    {
+      "path": "scripts/innovation/slurm_check.py",
+      "size": 6648,
+      "sha256": "7ec3525c9afdcc8e1836beecae9b32a7aca3b844ba4e606ca6be59806f68dc4c"
+    },
+    {
+      "path": "scripts/innovation/smoke.py",
+      "size": 3058,
+      "sha256": "7bd3e26772a0bc37ad92bf867230d4aa47d0386b69a2d4cfbca23cbdceb778c0"
+    },
+    {
+      "path": "scripts/innovation/source_snapshot.py",
+      "size": 9270,
+      "sha256": "90c5db53b890a8cd8837c19242271cfad83ad09b8a17c8d41e83d100e0cd7fe4"
+    },
+    {
+      "path": "scripts/innovation/storage_policy.py",
+      "size": 8281,
+      "sha256": "af5fcf887b8950e4fd98e18b33aa0daa80e9b4bc920c9d1225b8200b448ad179"
+    },
+    {
+      "path": "scripts/innovation/storage_verification.py",
+      "size": 9718,
+      "sha256": "2239a5f4ab22c7ece2067939428d206625ee01bebe7d1c62d0206df326eae10e"
+    },
+    {
+      "path": "scripts/innovation/trainer.py",
+      "size": 6344,
+      "sha256": "45e0b1c5c315e76bd623c9ab8b09debdffd2fd197467ed1907e547e79557bd79"
+    },
+    {
+      "path": "scripts/innovation/verify_205_rows.py",
+      "size": 8422,
+      "sha256": "d24e1e10430f01cd6d81ab948c62824cd66e3c63a6c6207eb1617e2eb21b456d"
+    },
+    {
+      "path": "scripts/innovation/verify_gpt2_contract_fix.py",
+      "size": 9592,
+      "sha256": "d41c7ffb4c92b5efa2c2e137bbdd0b0c857962415a9925b529687e24c1a2f120"
+    },
+    {
+      "path": "scripts/innovation/verify_source_snapshot.py",
+      "size": 7916,
+      "sha256": "783ae2768e8863627208dafe1e1bc411456120d6df126f87e986a5d9772e3111"
+    },
+    {
+      "path": "scripts/miflu_model.py",
+      "size": 27160,
+      "sha256": "0e6bdb61213bfdcc72e6a5b2733fc891a613baeb3dc52b514997c1507bfc15ef"
+    },
+    {
+      "path": "scripts/scaler_utils.py",
+      "size": 10915,
+      "sha256": "efac4e58ca85563012c55e5c9e74ab61035a7f7c578fb17658a1870a84462f2e"
+    },
+    {
+      "path": "scripts/textual_embedder.py",
+      "size": 13234,
+      "sha256": "55022ebba7e9d437fb970c8f9d80ca61a36fac74d130424c91533b9aef860d89"
+    },
+    {
+      "path": "tests/innovation/_bootstrap.py",
+      "size": 408,
+      "sha256": "2e421275933c93ee169a5c8691ec12197cc58110079f415c5c1d2e70904884a5"
+    },
+    {
+      "path": "tests/innovation/_repro.py",
+      "size": 7065,
+      "sha256": "6a61cb99cb0ff520264ac37a9dcf379ae09dd9089321694a7d816b6597bb4f61"
+    },
+    {
+      "path": "tests/innovation/test_aggregation_regression.py",
+      "size": 5442,
+      "sha256": "5130fe94018f3c4eba00bfeba57442f508d3d4e1e182ff5dd08f88ecd6943065"
+    },
+    {
+      "path": "tests/innovation/test_architecture_equivalence.py",
+      "size": 5101,
+      "sha256": "dd03fecfc81f815825761cd1026a0e0f30b300b5ff9b4144bda5909c4c81f92d"
+    },
+    {
+      "path": "tests/innovation/test_artifact_dirs.py",
+      "size": 9787,
+      "sha256": "a7faa51f82b3efd33c8a9074a3082b2b5d66c161fa01b9a724f5f84e4557f824"
+    },
+    {
+      "path": "tests/innovation/test_autonomous_controller.py",
+      "size": 18881,
+      "sha256": "f4713b63addb2dbef60654dc893ee8c988c77a8c923673b52c41e039ae678e05"
+    },
+    {
+      "path": "tests/innovation/test_backbone_shapes.py",
+      "size": 2518,
+      "sha256": "e84cdb130a305c0a1f456628e7d7afe72397f4bfd2ec2947f5476e9277e98ec0"
+    },
+    {
+      "path": "tests/innovation/test_canonical_indicator.py",
+      "size": 3913,
+      "sha256": "097f1c6ef474c2f26b1ec54201bf596bc53246234029e4e5b7ba6d8254d83d6d"
+    },
+    {
+      "path": "tests/innovation/test_canonical_tensor_hash.py",
+      "size": 7579,
+      "sha256": "5dbdc92ef9332d91d0e6d75331844d5976f4ae2d7f460397895bfd844ceb7f7a"
+    },
+    {
+      "path": "tests/innovation/test_checkpoint_resume.py",
+      "size": 1859,
+      "sha256": "215cf961c6e962be88848f31c38eb5d25f4dddc089293797e566e27b3839e03e"
+    },
+    {
+      "path": "tests/innovation/test_clean_ablations_controls.py",
+      "size": 6393,
+      "sha256": "847db33d246bc3aea0b491d4dafd893fcb33c7811e9d448eea2978a6a68f2997"
+    },
+    {
+      "path": "tests/innovation/test_clean_gate.py",
+      "size": 7530,
+      "sha256": "1010c39f0ecdae44075b02a8a4604c7dd781fb81513bd29723ff0839860cceaf"
+    },
+    {
+      "path": "tests/innovation/test_clean_metrics.py",
+      "size": 10153,
+      "sha256": "252d82cc1dfb0d599ab22773b5c54fdad8860784a0dde907674cfdf7d0d1d021"
+    },
+    {
+      "path": "tests/innovation/test_clean_runner.py",
+      "size": 7546,
+      "sha256": "90ef549feecfa46b370a5206183c10027bac45d91f8c4c9b5b97eec8da160f7f"
+    },
+    {
+      "path": "tests/innovation/test_compact_input_normalization.py",
+      "size": 7416,
+      "sha256": "0e7f8a732de734c76b025b3f7c628d4555470f96f39c45ec93dd23ebbc99cb89"
+    },
+    {
+      "path": "tests/innovation/test_d15_storage_predicate.py",
+      "size": 10375,
+      "sha256": "071610f9eae157da10629d0e71ad1be22d5be74c17695343096f1e0cf7480583"
+    },
+    {
+      "path": "tests/innovation/test_d16_fail_closed_gate.py",
+      "size": 9489,
+      "sha256": "4fe7a84af93746c4f26ee696df3fffe330e8c1296c69baacd9d371e59906d916"
+    },
+    {
+      "path": "tests/innovation/test_d5_asset_resolution.py",
+      "size": 8503,
+      "sha256": "26d7bb7db1ac41d17130282fdc771e470e6b012d2537fc27b589461c140846e1"
+    },
+    {
+      "path": "tests/innovation/test_d6_gpt2_padding.py",
+      "size": 10684,
+      "sha256": "4a48622a35fb00323d1d3e727d1b3d26c9561cf2a1d72a47e53f033618bf45cb"
+    },
+    {
+      "path": "tests/innovation/test_deployment_completeness.py",
+      "size": 7092,
+      "sha256": "1a844faf8179c41bb27451dc4e63b7e2f26ebc75a2e4adfa6336ee940676d459"
+    },
+    {
+      "path": "tests/innovation/test_eligibility_gate.py",
+      "size": 4214,
+      "sha256": "acb6dc1216381f5c20ba515c8064e93f93a706d88544e0e49bee3ed6950d723d"
+    },
+    {
+      "path": "tests/innovation/test_finalize_baseline.py",
+      "size": 23790,
+      "sha256": "5f18051948a5a6f972a41490b55613eb2d11b30b082651c4550e8ff52914b657"
+    },
+    {
+      "path": "tests/innovation/test_g1_g2_harness.py",
+      "size": 8301,
+      "sha256": "eaa4b54dd67eb8840621ad8587809796ce15724e99b7d6d736e24fd07592d8e3"
+    },
+    {
+      "path": "tests/innovation/test_gate_validator.py",
+      "size": 14891,
+      "sha256": "50b9b76d0045a66c4e323a71ea6b6c9ee67d8f400b868a194885ca572cb17afc"
+    },
+    {
+      "path": "tests/innovation/test_gpt2_control_repro.py",
+      "size": 3975,
+      "sha256": "f68242a57f6aae595c4b8d9d1590720db0c270fa363b086c4ddb469effda3d87"
+    },
+    {
+      "path": "tests/innovation/test_make_backbone_kwargs.py",
+      "size": 4540,
+      "sha256": "4bc7d4235dfe4dea188aeb6bcf8c30916bb87d05489b0592dd837a57be8dd246"
+    },
+    {
+      "path": "tests/innovation/test_metadata_chain.py",
+      "size": 11298,
+      "sha256": "595e999f72e998b3960039ad763af37d00ae36d87b4c9f07d9475db3710d1327"
+    },
+    {
+      "path": "tests/innovation/test_no_overwrite.py",
+      "size": 1581,
+      "sha256": "bc9dedff2021212ed4999011357cfddcdb7b0eb28949a72b55f1e7c572b417fd"
+    },
+    {
+      "path": "tests/innovation/test_parentage_correction.py",
+      "size": 6953,
+      "sha256": "571064aa244e135fa47233f24e203d5be30383a26721ae3e3458faef3e4af7ef"
+    },
+    {
+      "path": "tests/innovation/test_peak_criteria.py",
+      "size": 2615,
+      "sha256": "407e134b60e9acd1ffa1199e7d9584fee554609c6252f86b5c00dd85700d98e6"
+    },
+    {
+      "path": "tests/innovation/test_pilot_spec_metadata.py",
+      "size": 9021,
+      "sha256": "28e449dd124406b412b5ea964a1e9903fcbd527e8c43c2cfdce350d16a5f5d86"
+    },
+    {
+      "path": "tests/innovation/test_pipeline_regression_endtoend.py",
+      "size": 5765,
+      "sha256": "0e6a6870fc10cc9bfb277b61db082839afc024bb950cdc9fa11281124353d7df"
+    },
+    {
+      "path": "tests/innovation/test_run_id.py",
+      "size": 1594,
+      "sha256": "17ca79aa993f8b746dfa55bb31aa27087e47ac9b37a94d00463568a3b9fc06d9"
+    },
+    {
+      "path": "tests/innovation/test_runner_import_path.py",
+      "size": 3820,
+      "sha256": "4e4705a7ca70d9297c7e306d986fc7bc64a0d03350e7cff8eab4a49f74c13116"
+    },
+    {
+      "path": "tests/innovation/test_runtime_path_guard.py",
+      "size": 4249,
+      "sha256": "90b7a1efb7f076339fec121c1a0ca3158e2de56646339f97f799fe15decf4ad6"
+    },
+    {
+      "path": "tests/innovation/test_script_safety.py",
+      "size": 13516,
+      "sha256": "fdf5a87929ff7331dea5f3d2adc4829a0b45e07592be8cbcbd41e160926574c2"
+    },
+    {
+      "path": "tests/innovation/test_selection_model_key.py",
+      "size": 5092,
+      "sha256": "4842688b3bdde808dbb3ccaa29cc1c7a78339f108944ccb886b1975009f92f60"
+    },
+    {
+      "path": "tests/innovation/test_source_snapshot_gate.py",
+      "size": 9583,
+      "sha256": "fcd049e2ea66c693a29369fc4c227ed7d952092f1d70804aa604c90e5bb44ef7"
+    },
+    {
+      "path": "tests/innovation/test_stage_f_cohort.py",
+      "size": 6209,
+      "sha256": "d134491658ecf15a91a3d6bac08a079c94bb5fc7d420505d809c37e3a87a0de5"
+    },
+    {
+      "path": "tests/innovation/test_storage_policy.py",
+      "size": 9651,
+      "sha256": "6cdf44ee97da947412844ec36f68693a67836328247b9a47457911e2b7c9a94d"
+    },
+    {
+      "path": "tests/innovation/test_test_gate.py",
+      "size": 3160,
+      "sha256": "ae58d9bf0825e55796208ff37eebd5d5930ad46ce90fce0afe752065274cb663"
+    }
+  ],
+  "excluded_from_hash": [
+    "hpc_scripts/pilot_specs.json"
+  ],
+  "controlled_scope": {
+    "include_dirs": [
+      "scripts/innovation",
+      "tests/innovation"
+    ],
+    "hpc_script_prefixes": [
+      "innovation_",
+      "pilot_",
+      "submit_innovation_"
+    ],
+    "include_files": [
+      "MIFlu_innovation_plan_v2.md"
+    ],
+    "dependency_files": [
+      "scripts/configs.py",
+      "scripts/scaler_utils.py",
+      "scripts/miflu_model.py",
+      "scripts/textual_embedder.py",
+      "scripts/compute_miflu_indicators.py",
+      "scripts/cdc_calendar.py",
+      "scripts/early_stopping.py"
+    ],
+    "exclude": [
+      "hpc_scripts/pilot_specs.json"
+    ]
+  },
+  "aggregate_scheme": "sha256 of sorted '<path>:<sha256>' lines joined by '\\n'",
+  "aggregate_sha256": "128902532c5c0d04c984daca39baf786de941e2afff65fad66950ce596040f5c",
+  "snapshot_dir": "results/innovation/source_snapshot",
+  "note": "content-addressed immutable snapshot of the UNCOMMITTED source; pilot specs carry aggregate_sha256 and the pilot startup check aborts on any deployed-file difference"
+}

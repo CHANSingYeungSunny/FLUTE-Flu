@@ -1,0 +1,82 @@
+{
+  "generated": "2026-09-21",
+  "updated": "2026-09-21 (English figures + PTE/PIE joint-hit answer + Figure H layout fix + split sentence corrected)",
+  "purpose": "Final QA for the 4 retained deliverables (Addendum §8 item 6).",
+  "checks": {
+    "figure_text_language": "English (all titles/axes/legends/annotations and caption alt-text)",
+    "headline_values_cross_check": {
+      "wave1_validation_champion": "gpt2_miflu = 0.770872",
+      "best_validation_nonllm": "nlinear = 1.069767",
+      "final_test_order": {
+        "nlinear": 2.739,
+        "gpt2_miflu": 3.051,
+        "seasonal_naive": 4.279
+      },
+      "required_conclusion_present": true,
+      "forbidden_claims_present": false
+    },
+    "pte_pie_joint_hit_answer_added": {
+      "nlinear": "both hit (4/4 horizons)",
+      "gpt2_miflu": "both fail (0/4)",
+      "seasonal_naive": "PIE hit but PTE fail (52 wk) (0/4)",
+      "caveat_recorded": "per-season granularity: no model hits 100%; nlinear 75% L24-L48, 100% L60 lead-1/2"
+    },
+    "split_sentence_corrected": {
+      "was_wrong": "训练 717 / 验证 102 / 测试 1025 个窗口",
+      "now": "1025 周时间点；训练 717 / 验证 102 / 测试 206 时间点；窗口 613 / 103 / (206-L)",
+      "date_fix": "2018-01-28 至 2022 年 -> 2018-01-28 至 2021-12-26",
+      "verified_in_pdf": true,
+      "audit_ref": "split_and_figure_semantics_audit.json"
+    },
+    "final_prediction_curves_source": {
+      "split": "Test/Holdout target window [abs_week 820..1024]",
+      "ground_truth_style": "solid",
+      "prediction_style": "dashed",
+      "scale": "inverse-transformed ILITOTAL original",
+      "validation_curve_used_as_final": false,
+      "training_curve_used_as_final": false,
+      "provenance_hard_conditions": {
+        "input_target_overlap_count": 0,
+        "future_target_leakage_count": 0,
+        "scaler_fit_split": "Training",
+        "checkpoint_selection_split": "Validation",
+        "plotted_target_split": "Test/Holdout"
+      }
+    }
+  },
+  "per_file_visual_qa": [
+    {
+      "file": "MIFlu_非LLM与LLM流感预测最终报告_中文版.docx",
+      "bytes": 1371264,
+      "sha256": "e95fd966dc349b9a51664576ead5cb2f615994a88009545fb869c4349dfaf4ff",
+      "embedded_images": 12,
+      "pte_pie_table_present": true,
+      "english_figure_captions_present": true,
+      "result": "PASS"
+    },
+    {
+      "file": "MIFlu_非LLM与LLM流感预测最终报告_中文版.pdf",
+      "bytes": 1683225,
+      "sha256": "40f83f4bc51c14c49e9d7090bd7a04418b5d0e444815ca3092faf5485c666f4c",
+      "pages": 10,
+      "blank_pages": 0,
+      "result": "PASS"
+    },
+    {
+      "file": "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Wave1_Updated_DRAFT.docx",
+      "bytes": 533448,
+      "sha256": "ac5c3e9e8c2082dbc9b774643de63ab513d2ec797f72673aa15e86ce8c4e94d9",
+      "embedded_images": 2,
+      "result": "PASS"
+    },
+    {
+      "file": "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Wave1_Updated_DRAFT.pdf",
+      "bytes": 599077,
+      "sha256": "8da262b5c85aaf3f0c142db840b0c5fe06c5ce36bad23d01d21f67f82ca5910d",
+      "pages": 5,
+      "blank_pages": 0,
+      "result": "PASS"
+    }
+  ],
+  "overall": "PASS"
+}

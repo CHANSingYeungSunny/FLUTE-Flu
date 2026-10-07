@@ -1,0 +1,105 @@
+[a0gpu] compat layer sha256:
+  378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4  /scratch/sychan552/a0_compat_shim/a0_compat.py
+  381064b2fc37e46fdfbb3b17832a619d9aa3d9a1f21236a6eb3b41b929fa9c79  /scratch/sychan552/a0_compat_shim/sitecustomize.py
+[a0gpu] mode=0 tag=default job=587054 start=2026-09-26T10:21:06Z
+[a0gpu] gpu: NVIDIA A100-SXM4-80GB, 81920 MiB
+utc=2026-09-26T10:21:06Z
+slurm_job=587054
+author_commit=6ed210150b8819313947cf607eb1821c87b1bee3
+author_source_modified=0 non-pyc entries
+author_src_main_ILI_lora.py=eda73ba196f625620cee8f2c9e2d4270d4ce4504c5198f4b1d485622c49ad29c
+author_src_models_GPT4TS_lora.py=6ef9108eea3c068badb7f8a60efba9717b4e7fe969b46365ac7c26da560c6365
+author_src_models_GPT4TS.py=b146a0dd144dddc94e77267a332deca1d8329d3adc6daf986cc7e2498c414280
+author_src_data_provider_data_loader.py=1274c00bbc6886bcd6a48efb840ec017a591b8873fff77d82fe44eaef0b64f6e
+author_src_data_provider_data_factory.py=a5576e445d4a9a56ae9bf77024eeca9b435ed973613ddc7b78e57d7c8070b8da
+compat_layer_sha256=378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4
+compat_sitecustomize_sha256=381064b2fc37e46fdfbb3b17832a619d9aa3d9a1f21236a6eb3b41b929fa9c79
+compat_non_behavioural_evidence=np.Inf restored as the IDENTICAL np.inf object (asserted at import); peft symbol appears only inside a comment in the released code; DataEmbedding imported but never referenced
+data_sha256=2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+text_asset_sha256=837502311354c9ddf71e42fbdf5689b6bbbbd2f00c71055d0d226c3c1f44c0c8
+config=ALL ARGUMENTS ARE THE AUTHOR'S ARGPARSE DEFAULTS (main_ILI_lora.py L34-85)
+mode=0 multimodal=0 train_epochs=1 learning_rate=0.0001 batch_size=16 itr=1 pred_len=24
+note=AUTHOR CODE REPLAYED VERBATIM under a recorded compatibility layer;
+     NOT the A2 corrected reconstruction; NOT comparable to Table V or A2
+/scratch/sychan552/a0_compat_shim/sitecustomize.py:47: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+/scratch/sychan552/a0_compat_shim/sitecustomize.py:47: FutureWarning: In the future `np.str` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+Args in experiment:
+Namespace(model_id='a0_default', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=0, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+train 3843
+val 518
+test 170
+llmmodel = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-5): 6 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+0it [00:00, ?it/s]1it [00:00,  1.18it/s]6it [00:00,  8.14it/s]11it [00:01, 15.19it/s]17it [00:01, 23.29it/s]23it [00:01, 30.23it/s]29it [00:01, 35.91it/s]35it [00:01, 40.35it/s]41it [00:01, 43.75it/s]47it [00:01, 46.27it/s]53it [00:01, 48.11it/s]59it [00:01, 49.46it/s]65it [00:02, 50.29it/s]71it [00:02, 51.05it/s]77it [00:02, 51.51it/s]83it [00:02, 51.90it/s]89it [00:02, 52.14it/s]95it [00:02, 52.33it/s]101it [00:02, 52.47it/s]107it [00:02, 52.56it/s]113it [00:02, 52.60it/s]119it [00:03, 52.66it/s]125it [00:03, 52.69it/s]131it [00:03, 52.68it/s]137it [00:03, 52.70it/s]143it [00:03, 52.69it/s]149it [00:03, 52.73it/s]155it [00:03, 52.71it/s]161it [00:03, 52.71it/s]167it [00:04, 52.72it/s]173it [00:04, 52.71it/s]179it [00:04, 52.74it/s]185it [00:04, 52.70it/s]191it [00:04, 52.74it/s]197it [00:04, 52.54it/s]203it [00:04, 52.62it/s]209it [00:04, 52.67it/s]215it [00:04, 52.69it/s]221it [00:05, 52.74it/s]227it [00:05, 52.82it/s]233it [00:05, 52.85it/s]239it [00:05, 52.88it/s]240it [00:05, 43.71it/s]
+Epoch: 1 cost time: 7.8231964111328125
+0it [00:00, ?it/s]1it [00:00,  4.45it/s]10it [00:00, 37.48it/s]24it [00:00, 71.92it/s]32it [00:00, 52.48it/s]
+0it [00:00, ?it/s]10it [00:00, 49.15it/s]
+test shape: (10, 16, 24, 1) (10, 16, 24, 1)
+test shape: (160, 24, 1) (160, 24, 1)
+mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+Epoch: 1, Steps: 240 | Train Loss: 0.4220130 Vali Loss: 0.2803148
+lr_adjust = {1: 0.0001}
+Updating learning rate to 0.0001
+------------------------------------
+0it [00:00, ?it/s]10it [00:00, 49.26it/s]
+test shape: (10, 16, 24, 1) (10, 16, 24, 1)
+test shape: (160, 24, 1) (160, 24, 1)
+mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+Traceback (most recent call last):
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 270, in <module>
+    train()
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 251, in train
+    results_df.to_csv('./results/'+setting+'.csv', index=False)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/generic.py", line 3989, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 251, in save
+    with get_handle(
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'results'
+
+[a0gpu] released entry point exit=1  2026-09-26T10:21:27Z
+[a0gpu] files produced under /scratch/sychan552/a0_runs/runs:
+  /scratch/sychan552/a0_runs/runs/default_provenance.txt
+
+[a0gpu] ---- key evidence lines from the released run ----
+  5:Args in experiment:
+  6:Namespace(model_id='a0_default', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=0, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+  35:Epoch: 1 cost time: 7.8231964111328125
+  40:mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+  41:Epoch: 1, Steps: 240 | Train Loss: 0.4220130 Vali Loss: 0.2803148
+  48:mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+
+[a0gpu] REMINDER: whatever this prints is (a) feature-0 Test only,
+          (b) selected by Test MSE, (c) 1 epoch at lr 1e-4, and
+          (d) therefore NOT comparable to the paper's Table V nor to A2.

@@ -1,0 +1,53 @@
+{
+  "generated_utc": "2026-09-17T01:45:38Z",
+  "reference": "last_value_naive",
+  "tie_window": 0.01,
+  "rankings": {
+    "group_a": {
+      "observed_ranking": [
+        "nlinear",
+        "dlinear",
+        "patchtst",
+        "itransformer"
+      ],
+      "advanced": [
+        "nlinear",
+        "dlinear",
+        "patchtst"
+      ],
+      "tie_analyses": [
+        {
+          "pair": [
+            "dlinear",
+            "patchtst"
+          ],
+          "relative_diff": 0.002806070883242718,
+          "tie_breaker_applied": "lower_mean_full_horizon_normalized_MAE",
+          "values": {
+            "dlinear": 0.8410493458955757,
+            "patchtst": 0.7776445849352109
+          },
+          "prefer": "lower",
+          "winner": "patchtst",
+          "resolved": true
+        }
+      ]
+    },
+    "group_b": {
+      "observed_ranking": [
+        "gpt2_miflu",
+        "qwen_time_llm",
+        "timecma_llm",
+        "calf_llm"
+      ],
+      "advanced": [
+        "gpt2_miflu",
+        "qwen_time_llm",
+        "timecma_llm"
+      ],
+      "tie_analyses": []
+    }
+  },
+  "not_champions": true,
+  "requires_full_validation": true
+}

@@ -1,0 +1,23 @@
+{
+  "split": "val",
+  "n_rows": 6180,
+  "mse_all_z": 1.7926456945549103,
+  "mae_all_z": 0.7465121941797701,
+  "mse_ili_phys": 140513491.73226342,
+  "mae_ili_phys": 6609.1968869304965,
+  "peak": {
+    "n_seasons_total": 3,
+    "n_seasons_evaluable": 1,
+    "n_seasons_incomplete": 2,
+    "n_hits": 0,
+    "peak_hit_ratio": 0.0,
+    "mean_pte_weeks": 4.0,
+    "mean_pie_pct": 38.38157477704593,
+    "thresholds": {
+      "PTE_max_weeks": 1,
+      "PIE_max_pct": 25.0
+    }
+  },
+  "best_epoch": 8,
+  "best_val_mse_from_stopper": 0.8717381954193115
+}

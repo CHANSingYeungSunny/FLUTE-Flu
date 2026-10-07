@@ -1,0 +1,109 @@
+[slurm] python: /home/sychan552/.conda/envs/mlflu_hpc/bin/python
+[slurm] PWD=/gpfs1/scratch/sychan552/CHATTIME/Chattime
+==============================================================
+[regen-loop] L=24
+[regen] L=24  ckpt=/gpfs1/scratch/sychan552/CHATTIME/Chattime/checkpoints/best_miflu_L24.pth
+[17:52:02] Data: 1025 total | Train=717 | Val=102 | Test=206
+[regen] prompt cache tokens=369
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[17:52:11]   [CSV] L=24: predictions written -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L24_paper_protocol.csv (train=14712, val=2472, test=4368 rows)
+[space] plotting in physical (raw ILITOTAL patient count)
+[compare] GT   min=5497.0  max=113921.0
+[compare] PRED min=3150.3  max=87377.1
+[peak] GT  peak @ abs_week 1024 (epiweek 202152)
+[peak] PRED peak @ abs_week 979 (epiweek 202107) -> offset -45 weeks
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_continuous_L24.png
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_diagnostics_L24.png
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_window1001_trajectory_L24.png
+[OK ] plotted TEST split only (205 weeks) for L=24
+[regen] wrote candidate -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L24_paper_protocol.csv
+[self-check] HEAD rows=21552  NEW rows=21552  merged=21552
+[self-check] ground_truth_ili: max_abs_diff=0.00e+00  mismatched_rows=0/21552
+[self-check] prediction_ili: max_abs_diff=0.00e+00  mismatched_rows=0/21552
+[regen] verified & moved -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L24_paper_protocol.csv
+[regen] invoking figure: /home/sychan552/.conda/envs/mlflu_hpc/bin/python /gpfs1/scratch/sychan552/CHATTIME/Chattime/scripts/make_miflu_evaluation_figure.py --pred_csv /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L24_paper_protocol.csv --L 24
+[regen-loop] L=24 OK
+==============================================================
+[regen-loop] L=36
+[regen] L=36  ckpt=/gpfs1/scratch/sychan552/CHATTIME/Chattime/checkpoints/best_miflu_L36.pth
+[17:52:21] Data: 1025 total | Train=717 | Val=102 | Test=206
+[regen] prompt cache tokens=369
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+[17:52:29]   [CSV] L=36: predictions written -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L36_paper_protocol.csv (train=22068, val=3708, test=6120 rows)
+[space] plotting in physical (raw ILITOTAL patient count)
+[compare] GT   min=5497.0  max=113921.0
+[compare] PRED min=0.0  max=99534.4
+[peak] GT  peak @ abs_week 1024 (epiweek 202152)
+[peak] PRED peak @ abs_week 924 (epiweek 202005) -> offset -100 weeks
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_continuous_L36.png
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_diagnostics_L36.png
+[OK ] plotted TEST split only (205 weeks) for L=36
+[regen] wrote candidate -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L36_paper_protocol.csv
+[self-check] HEAD rows=31896  NEW rows=31896  merged=31896
+[self-check] ground_truth_ili: max_abs_diff=0.00e+00  mismatched_rows=0/31896
+[self-check] prediction_ili: max_abs_diff=0.00e+00  mismatched_rows=0/31896
+[regen] verified & moved -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L36_paper_protocol.csv
+[regen] invoking figure: /home/sychan552/.conda/envs/mlflu_hpc/bin/python /gpfs1/scratch/sychan552/CHATTIME/Chattime/scripts/make_miflu_evaluation_figure.py --pred_csv /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L36_paper_protocol.csv --L 36
+[regen-loop] L=36 OK
+==============================================================
+[regen-loop] L=48
+[regen] L=48  ckpt=/gpfs1/scratch/sychan552/CHATTIME/Chattime/checkpoints/best_miflu_L48.pth
+[17:52:36] Data: 1025 total | Train=717 | Val=102 | Test=206
+[regen] prompt cache tokens=369
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+[17:52:45]   [CSV] L=48: predictions written -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L48_paper_protocol.csv (train=29424, val=4944, test=7584 rows)
+[space] plotting in physical (raw ILITOTAL patient count)
+[compare] GT   min=5497.0  max=113921.0
+[compare] PRED min=4806.1  max=83785.5
+[peak] GT  peak @ abs_week 1024 (epiweek 202152)
+[peak] PRED peak @ abs_week 926 (epiweek 202007) -> offset -98 weeks
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_continuous_L48.png
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_diagnostics_L48.png
+[OK ] plotted TEST split only (205 weeks) for L=48
+[regen] wrote candidate -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L48_paper_protocol.csv
+[self-check] HEAD rows=41952  NEW rows=41952  merged=41952
+[self-check] ground_truth_ili: max_abs_diff=0.00e+00  mismatched_rows=0/41952
+[self-check] prediction_ili: max_abs_diff=0.00e+00  mismatched_rows=0/41952
+[regen] verified & moved -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L48_paper_protocol.csv
+[regen] invoking figure: /home/sychan552/.conda/envs/mlflu_hpc/bin/python /gpfs1/scratch/sychan552/CHATTIME/Chattime/scripts/make_miflu_evaluation_figure.py --pred_csv /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L48_paper_protocol.csv --L 48
+[regen-loop] L=48 OK
+==============================================================
+[regen-loop] L=60
+[regen] L=60  ckpt=/gpfs1/scratch/sychan552/CHATTIME/Chattime/checkpoints/best_miflu_L60.pth
+[17:52:52] Data: 1025 total | Train=717 | Val=102 | Test=206
+[regen] prompt cache tokens=369
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+[17:53:00]   [CSV] L=60: predictions written -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L60_paper_protocol.csv (train=36780, val=6180, test=8760 rows)
+[space] plotting in physical (raw ILITOTAL patient count)
+[compare] GT   min=5497.0  max=113921.0
+[compare] PRED min=0.0  max=92291.8
+[peak] GT  peak @ abs_week 1024 (epiweek 202152)
+[peak] PRED peak @ abs_week 924 (epiweek 202005) -> offset -100 weeks
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_continuous_L60.png
+[fig] -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/results/ili/figures/fig_miflu_eval_diagnostics_L60.png
+[OK ] plotted TEST split only (205 weeks) for L=60
+[regen] wrote candidate -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/_regen_scratch/predictions_miflu_L60_paper_protocol.csv
+[self-check] HEAD rows=51720  NEW rows=51720  merged=51720
+[self-check] ground_truth_ili: max_abs_diff=0.00e+00  mismatched_rows=0/51720
+[self-check] prediction_ili: max_abs_diff=0.00e+00  mismatched_rows=0/51720
+[regen] verified & moved -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L60_paper_protocol.csv
+[regen] invoking figure: /home/sychan552/.conda/envs/mlflu_hpc/bin/python /gpfs1/scratch/sychan552/CHATTIME/Chattime/scripts/make_miflu_evaluation_figure.py --pred_csv /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L60_paper_protocol.csv --L 60
+[regen-loop] L=60 OK
+==============================================================
+[regen-loop] done (FAIL=0)
+-rw-r--r--  1 sychan552 sychan552 1594899 Aug 28 17:52 predictions_miflu_L24_paper_protocol.csv
+-rw-r--r--  1 sychan552 sychan552 2363980 Aug 28 17:52 predictions_miflu_L36_paper_protocol.csv
+-rw-r--r--  1 sychan552 sychan552 3117065 Aug 28 17:52 predictions_miflu_L48_paper_protocol.csv
+-rw-r--r--  1 sychan552 sychan552 3843529 Aug 28 17:53 predictions_miflu_L60_paper_protocol.csv

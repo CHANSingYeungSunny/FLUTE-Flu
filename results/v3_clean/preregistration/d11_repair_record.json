@@ -1,0 +1,35 @@
+{
+  "generated_utc": "2026-09-18T05:58:45Z",
+  "defect": "D11",
+  "applied_now": true,
+  "classification": "BEHAVIOR_NEUTRAL_ARTIFACT_DIRECTORY_INITIALIZATION_FIX",
+  "file": "scripts/innovation/clean_runner.py",
+  "pre_repair_sha256": "a5bf6183fcbcb7b137d812b2628d53a84495eb78cb2f94ece14485dcf3c19614",
+  "post_repair_sha256": "2d5e96e177abe5f8ec44cc5e574782cb626943f943049a89f87031cb9046f0ef",
+  "diff_bytes": 2565,
+  "diff_sha256": "3a1296b61c509005cde366378fff3cb4ae3f1820da5c48c0539d232bcc8321e3",
+  "lines_added": 40,
+  "lines_removed": 1,
+  "changed_line_classification": "ALL lines are artifact-directory initialization or its safety guards; 0 scientific lines",
+  "scientific_lines_changed": 0,
+  "patch_results": [
+    "scripts/innovation/clean_runner.py: applied",
+    "scripts/innovation/clean_runner.py: applied"
+  ],
+  "shared_initializer": "ensure_run_dirs(run_dir, out_root)",
+  "called_once_per_run": true,
+  "idempotent": true,
+  "run_subdirs": [
+    "logs",
+    "predictions",
+    "metrics",
+    "checkpoints"
+  ],
+  "safety": {
+    "direct_child_only": true,
+    "symlink_escape_rejected": true,
+    "path_traversal_rejected": true,
+    "no_path_outside_out_root": true
+  },
+  "formal_rows_submitted": "0/598"
+}

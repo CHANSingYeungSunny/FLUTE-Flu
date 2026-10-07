@@ -1,0 +1,23 @@
+{
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964",
+  "resolved_deployment_root": "/gpfs1/scratch/sychan552/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964",
+  "manifest": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964/results/innovation/source_snapshot_manifest.json",
+  "script_path": "/gpfs1/scratch/sychan552/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964/scripts/innovation/verify_source_snapshot.py",
+  "verification_mode": "explicit_root",
+  "ok": true,
+  "abort": false,
+  "exit_status": 0,
+  "reason": null,
+  "expected_file_count": 69,
+  "verified_file_count": 69,
+  "missing_files": [],
+  "mismatched_files": [],
+  "unexpected_files_in_controlled_scope": [],
+  "expected_aggregate_sha256": "dc7ee9649c8d840a0453c9728b417059e5bc86fa7d859f224b5e3a67d43c07b4",
+  "actual_aggregate_sha256": "dc7ee9649c8d840a0453c9728b417059e5bc86fa7d859f224b5e3a67d43c07b4",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version": "innov-v2.1",
+  "repository_head_short": "1f6563f",
+  "expect_argument": "dc7ee9649c8d840a0453c9728b417059e5bc86fa7d859f224b5e3a67d43c07b4",
+  "checked_utc": "2026-09-14T18:02:11Z"
+}

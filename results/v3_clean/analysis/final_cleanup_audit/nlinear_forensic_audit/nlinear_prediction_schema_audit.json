@@ -1,0 +1,35 @@
+{
+  "audit": "column-level prediction-schema audit (Mandate C section 8)",
+  "verdict": "PASS (one cosmetic label misalignment, no functional impact)",
+  "source_of_truth": {
+    "per_seed_file": "results/v3_clean/test_eval/results/primary__nlinear__L{L}__seed{s}__w1/predictions/test_predictions.csv",
+    "columns": [
+      "model_key", "horizon", "seed_or_rep", "split", "forecast_origin", "target_date",
+      "step", "lead_weeks", "variable", "variable_index", "y_true_z", "y_pred_z",
+      "y_true_physical", "y_pred_physical"
+    ],
+    "written_by": "scripts/innovation/test_eval.py build_test_prediction_frame",
+    "writer_logic": "target_date=int(origin+T_WINDOW+k); step=k; lead_weeks=k+1; y_true_physical=tz*std_v+mean_v; y_pred_physical=pz*std_v+mean_v (SHARED inverse transform)",
+    "n_rows_L24_seed42": 30576,  // 182 windows x 24 steps x 7 vars
+    "variable_index_values": [0, 1, 2, 3, 4, 5, 6],
+    "ili_variable_index": 4
+  },
+  "variable_name_misalignment": {
+    "found": true,
+    "severity": "cosmetic only",
+    "detail": "The human-readable 'variable' name column is off-by-two relative to the actual data array. The array holds the 7 MIFlu features in order [% WEIGHTED ILI, % UNWEIGHTED ILI, AGE 0-4, AGE 5-24, ILITOTAL, NUM. OF PROVIDERS, OT], but the 'variable' label list is ['epiweek','release_date','% WEIGHTED ILI','% UNWEIGHTED ILI','AGE 0-4','AGE 5-24','ILITOTAL'] (the first 7 raw CSV column names, i.e. the two ID columns epiweek/release_date included and the last two features shifted).",
+    "why_harmless": "All selection and metric code keys on variable_index (==4 for ILITOTAL), never on the 'variable' string. The y_true_physical at variable_index 4 equals raw ILITOTAL exactly (max|d|=0.0039), confirming index 4 holds ILITOTAL data.",
+    "evidence": "variable_index 4 y_true_physical at target 820 = 85985.002458 == raw ILITOTAL[820] = 85985."
+  },
+  "figure_source_csv": {
+    "file": "results/v3_clean/final/final_test_curve_source_data/fig_test_nlinear_L{L}.csv",
+    "columns": ["figure_id", "model", "horizon", "abs_week", "epiweek", "week_start_date", "y_true_physical", "y_pred_physical_seed_mean_lead1"],
+    "written_by": "scripts/v3_clean/final_test_figures.py (load_seed_mean_curves -> lead1_curve)",
+    "reproduced_byte_exact": true,
+    "reproduce_max_abs_diff": 0.0
+  },
+  "no_truth_in_prediction_column": {
+    "exact_equality_rate": 0.0,
+    "note": "y_pred_physical never equals y_true_physical; no label column accidentally stored in prediction column."
+  }
+}

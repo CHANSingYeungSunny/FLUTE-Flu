@@ -1,0 +1,29 @@
+model,category,horizon,device,fits,gpu_required,gpus_per_fit,expected_elapsed_s,expected_gpu_hours,expected_cpu_hours,expected_peak_ram_gb,expected_peak_vram_gb,expected_checkpoint_mb,expected_prediction_kb,expected_log_kb,basis
+miflu,LLM multimodal (corrected text-active),24,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,110,60,"stage3 measured 20 epochs x 8 s = 162 s; +30 s load/startup; params 1.03M trainable / 82.7M total"
+miflu,LLM multimodal (corrected text-active),36,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,160,60,same basis
+miflu,LLM multimodal (corrected text-active),48,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,210,60,same basis
+miflu,LLM multimodal (corrected text-active),60,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,265,60,same basis
+notext,LLM unimodal (matched no-text),24,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,110,60,"identical architecture and budget to miflu minus the text branch"
+notext,LLM unimodal (matched no-text),36,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,160,60,same basis
+notext,LLM unimodal (matched no-text),48,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,210,60,same basis
+notext,LLM unimodal (matched no-text),60,gpu,1,YES,1,192,0.05333,0.02,8,6,3.9,265,60,same basis
+nlinear,dedicated non-LLM,24,cpu,1,NO,0,40,0.00000,0.0111,4,0,"<1",110,20,"stage6 measured median 4 s per 20-epoch fit; +30 s startup; run on CPU per F1 design"
+nlinear,dedicated non-LLM,36,cpu,1,NO,0,40,0.00000,0.0111,4,0,<1,160,20,same basis
+nlinear,dedicated non-LLM,48,cpu,1,NO,0,40,0.00000,0.0111,4,0,<1,210,20,same basis
+nlinear,dedicated non-LLM,60,cpu,1,NO,0,40,0.00000,0.0111,4,0,<1,265,20,same basis
+dlinear,dedicated non-LLM,24,cpu,1,NO,0,40,0.00000,0.0111,4,0,<1,110,20,"stage6 measured median 4 s per fit; identical treatment to nlinear"
+dlinear,dedicated non-LLM,36,cpu,1,NO,0,40,0.00000,0.0111,4,0,<1,160,20,same basis
+dlinear,dedicated non-LLM,48,cpu,1,NO,0,40,0.00000,0.0111,4,0,<1,210,20,same basis
+dlinear,dedicated non-LLM,60,cpu,1,NO,0,40,0.00000,0.0111,4,0,<1,265,20,same basis
+last_value_naive,naive reference,24,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,110,10,"deterministic, numpy only; +15 s startup"
+last_value_naive,naive reference,36,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,160,10,same basis
+last_value_naive,naive reference,48,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,210,10,same basis
+last_value_naive,naive reference,60,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,265,10,same basis
+seasonal_naive_leakage_safe,naive reference,24,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,110,10,"deterministic; uses naive_leakage_safe.seasonal_naive (ref = ts-52+(s mod 52))"
+seasonal_naive_leakage_safe,naive reference,36,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,160,10,same basis
+seasonal_naive_leakage_safe,naive reference,48,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,210,10,same basis
+seasonal_naive_leakage_safe,naive reference,60,cpu,1,NO,0,15,0.00000,0.0042,3,0,0,265,10,"8 leads use the repeating cycle instead of actual target rows; see F1_PREFLIGHT_REPORT"
+independent_scoring,scoring,all,4,cpu,1,NO,0,60,0.00000,0.0167,6,0,0,0,40,"single CPU job over all 24 artefacts; validates keys then recomputes metrics"
+TOTAL_GPU_FITS,,,,8,,,1536,0.42667,,,,,,,
+TOTAL_CPU_FITS,,,,16,,,700,,0.19444,,,,,,,
+TOTAL_SCORING,,,,1,,,60,,0.01667,,,,,,,

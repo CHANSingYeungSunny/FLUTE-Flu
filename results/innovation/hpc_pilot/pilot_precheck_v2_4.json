@@ -1,0 +1,69 @@
+{
+  "generated_utc": "2026-09-14T21:05:00Z",
+  "status": "PILOT_PRECHECK_V2_4_PASS",
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.4_5a4c3247",
+  "expected_runtime_aggregate_sha256": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version": "innov-v2.4",
+  "checks": {
+    "v2_4_source_deployment_verified": true,
+    "pilot_worker_submit_have_no_forbidden_cd": true,
+    "explicit_deployment_root_enforced": true,
+    "source_hash_matches": true,
+    "runtime_guard_passes": true,
+    "strict_offline_gpt2_passes": true,
+    "pilot_specs_exactly_four": true,
+    "five_layer_metadata_chain_complete": true,
+    "four_pilots_selection_ineligible": true,
+    "four_pilots_paper_result_ineligible": true,
+    "four_pilots_test_ineligible": true,
+    "submit_references_only_the_four_pilots": true,
+    "dependency_is_afterok_not_afterany": true,
+    "fail_stop_verified": true,
+    "test_seal_valid": true,
+    "frozen_winner_absent": true,
+    "full_sweep_still_blocked": true
+  },
+  "evidence": {
+    "explicit_root_verification": {"expected_files": 77, "verified_files": 77, "mode": "explicit_root", "exit": 0},
+    "runtime_guard": {"paths_checked": 11, "violations": 0},
+    "gpt2_offline_load": "OK",
+    "bash_n": {"pilots": 4, "worker": 1, "submit": 1, "all_ok": true},
+    "forbidden_string_occurrences": "only as the FORBIDDEN_ROOT_RAW comparison constant (line 34 of each script); the only cd is `cd \"$DEPLOYMENT_ROOT\"`",
+    "fail_closed_dry_runs": {
+      "missing_INNOVATION_DEPLOYMENT_ROOT": {"exit": 1, "submitted": 0},
+      "missing_CONFIRM_INNOVATION_SUBMIT": {"exit": 0, "submission_attempted": false, "submitted": 0}
+    },
+    "fail_stop_simulation": {"success_scenario_submissions": 4, "failed_predecessor_submissions": 1, "exit_non_zero": true},
+    "pilot_specs": {
+      "count": 4,
+      "model_keys": ["gpt2_miflu", "dlinear", "patchtst", "itransformer"],
+      "experiment_stage": "pilot",
+      "purpose": "infrastructure_verification_only",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "protocol_version": "innov-v2.0",
+      "implementation_source_version": "innov-v2.4",
+      "source_snapshot_sha256": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d"
+    },
+    "test_seal": {
+      "frozen_winners_json": "absent",
+      "test_evaluations": "empty",
+      "test_artifacts_under_runs": 0,
+      "test_access_count": 0
+    },
+    "full_sweep_submission_ready": false,
+    "unit_tests": {"run": 17, "passed": 17, "failed": 0}
+  },
+  "gate": {
+    "pilot_precheck": "PASS",
+    "pilot_submission_ready": true,
+    "full_sweep_submission_ready": false,
+    "test_sealed": true,
+    "frozen_winner_exists": false,
+    "historical_original_repository_integrity_verified": false,
+    "pilot_execution_verified": false,
+    "authorization_note": "pilot_submission_ready=true reflects infrastructure readiness only; no pilot was submitted and no sbatch was invoked in this turn"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "run_key": "primary__nlinear__L48__seed47__w1",
+  "model": "nlinear",
+  "arm": "primary",
+  "horizon": 48,
+  "seed": 47,
+  "wave": 1,
+  "split": {
+    "train": 717,
+    "validation": 102,
+    "test": 206
+  },
+  "n_test_windows": 158,
+  "test_target_abs_week_min": 820,
+  "test_target_abs_week_max": 1024,
+  "started_utc": "2026-09-21T05:28:58Z",
+  "checkpoint_applicable": true,
+  "stochastic_seed_applicable": true,
+  "compact_sha256": "b7a7c8bf3f51dda9db917fa9eb595da1acf8c136098fd0652321266fd5d4fab4",
+  "canonical_tensor_sha256": "c2609f03270379d27658dc174404bacc25bcbba33fdb998ce0f4977ef88caadd",
+  "canonical_hash_schema": "canonical-tensor-v1",
+  "base_model": "nlinear",
+  "text_encoder": "none",
+  "restoration": {
+    "strict_load_ok": true,
+    "missing_keys": [],
+    "unexpected_keys": []
+  },
+  "device": "cuda",
+  "elapsed_seconds": 3.318,
+  "metrics_written": [
+    "ilitotal_fixed_step_metrics.json",
+    "ilitotal_full_horizon_metrics.json",
+    "paper_aligned_full_output_metrics.json",
+    "pte_pie_metrics.json"
+  ]
+}

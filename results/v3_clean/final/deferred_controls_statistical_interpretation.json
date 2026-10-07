@@ -1,0 +1,259 @@
+{
+  "generated_utc": "2026-09-21T00:00:00Z",
+  "purpose": "Finalized statistical interpretation of the deferred controls after DEFERRED_CONTROLS_PROTOCOL_AMENDMENT_2026-09-21 closure. Family A (descriptive equivalents) and Family B (confirmatory newly executed controls) are kept strictly separate; matched-parent paired comparisons only.",
+  "family_A": {
+    "label": "DESCRIPTIVE / EXPLORATORY (equivalents, no rerun, no new observation)",
+    "parent_model": "gpt2_miflu",
+    "controls": {
+      "zero_text": {
+        "label": "zero_text",
+        "per_horizon": {
+          "24": {
+            "n_pairs": 3,
+            "mean_delta": -0.032518951601935076,
+            "median_delta": 0.02621676912492399,
+            "sample_sd": 0.11131398405730582,
+            "sem": 0.06426715866005522,
+            "ci95_low": -0.30903821724043673,
+            "ci95_high": 0.24400031403656658,
+            "cohens_dz": -0.29213716387326427,
+            "paired_t": -0.5059964106075688,
+            "p_value": 0.6631203532782487,
+            "mean_parent_mse": 0.7429799109679337,
+            "mean_control_mse": 0.7104609593659986,
+            "relative_change_pct": -4.376827841760928,
+            "paired_differences": [
+              -0.1608988788,
+              0.0371252549,
+              0.0262167691
+            ]
+          },
+          "60": {
+            "n_pairs": 3,
+            "mean_delta": -0.09320172759589425,
+            "median_delta": -0.17096871187914708,
+            "sample_sd": 0.14322042263227283,
+            "sem": 0.08268834956019469,
+            "ci95_low": -0.4489809805451347,
+            "ci95_high": 0.2625775253533462,
+            "cohens_dz": -0.6507572445530019,
+            "paired_t": -1.1271446109593242,
+            "p_value": 0.37673096387402005,
+            "mean_parent_mse": 0.8689000796044919,
+            "mean_control_mse": 0.7756983520085976,
+            "relative_change_pct": -10.726403390170944,
+            "paired_differences": [
+              0.0720791995,
+              -0.1709687119,
+              -0.1807156705
+            ]
+          }
+        },
+        "pooled": {
+          "n_pairs": 6,
+          "mean_delta": -0.06286033959891467,
+          "median_delta": -0.06734105483972497,
+          "sample_sd": 0.11943984591823076,
+          "sem": 0.04876111290938492,
+          "ci95_low": -0.18820477072919095,
+          "ci95_high": 0.0624840915313616,
+          "cohens_dz": -0.5262928724970831,
+          "paired_t": -1.2891489928814999,
+          "p_value": 0.2537617159727426,
+          "mean_parent_mse": 0.8059399952862129,
+          "mean_control_mse": 0.7430796556872982,
+          "relative_change_pct": -7.7996302412800755,
+          "paired_differences": [
+            -0.1608988788,
+            0.0371252549,
+            0.0262167691,
+            0.0720791995,
+            -0.1709687119,
+            -0.1807156705
+          ]
+        }
+      },
+      "shuffled_text": {
+        "label": "shuffled_text",
+        "per_horizon": {
+          "24": {
+            "n_pairs": 3,
+            "mean_delta": 0.11837208158764279,
+            "median_delta": 0.2592196842701934,
+            "sample_sd": 0.24413278956327739,
+            "sem": 0.14095013177237248,
+            "ci95_low": -0.48808738763378656,
+            "ci95_high": 0.7248315508090721,
+            "cohens_dz": 0.48486760749916236,
+            "paired_t": 0.8398153311329135,
+            "p_value": 0.48940459538086045,
+            "mean_parent_mse": 0.7429799109679337,
+            "mean_control_mse": 0.8613519925555765,
+            "relative_change_pct": 15.93207028080085,
+            "paired_differences": [
+              -0.1635281571,
+              0.2592196843,
+              0.2594247176
+            ]
+          },
+          "60": {
+            "n_pairs": 3,
+            "mean_delta": 0.043104903528672654,
+            "median_delta": -0.06834643366388848,
+            "sample_sd": 0.2255494786546421,
+            "sem": 0.13022105221683736,
+            "ci95_low": -0.5171910622560064,
+            "ci95_high": 0.6034008693133518,
+            "cohens_dz": 0.19111063251302932,
+            "paired_t": 0.33101332537919137,
+            "p_value": 0.7720977959863082,
+            "mean_parent_mse": 0.8689000796044919,
+            "mean_control_mse": 0.9120049831331646,
+            "relative_change_pct": 4.960858508413677,
+            "paired_differences": [
+              0.3026847281,
+              -0.0683464337,
+              -0.1050235838
+            ]
+          }
+        },
+        "pooled": {
+          "n_pairs": 6,
+          "mean_delta": 0.08073849255815772,
+          "median_delta": 0.09543662530315244,
+          "sample_sd": 0.21421694361655788,
+          "sem": 0.0874537010198535,
+          "ci95_low": -0.1440684027426467,
+          "ci95_high": 0.3055453878589621,
+          "cohens_dz": 0.3769005905652229,
+          "paired_t": 0.9232141306384356,
+          "p_value": 0.39825919503224405,
+          "mean_parent_mse": 0.8059399952862129,
+          "mean_control_mse": 0.8866784878443705,
+          "relative_change_pct": 10.017928509613812,
+          "paired_differences": [
+            -0.1635281571,
+            0.2592196843,
+            0.2594247176,
+            0.3026847281,
+            -0.0683464337,
+            -0.1050235838
+          ]
+        }
+      }
+    }
+  },
+  "family_B": {
+    "label": "CONFIRMATORY (6 newly executed + ACCEPTED rows)",
+    "parent_model": "timecma_llm",
+    "control": "llm_removed_or_alignment_only",
+    "horizons": [
+      24,
+      60
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "comparisons": {
+      "L24": {
+        "n_pairs": 3,
+        "mean_delta": 0.023534058115770362,
+        "median_delta": 0.004215516349296733,
+        "sample_sd": 0.048644163974879494,
+        "sem": 0.028084721165400974,
+        "ci95_low": -0.09730474406929715,
+        "ci95_high": 0.14437286030083787,
+        "cohens_dz": 0.48380023815238493,
+        "paired_t": 0.8379665931938534,
+        "p_value": 0.49023627958182747,
+        "mean_parent_mse": 1.071999932529128,
+        "mean_control_mse": 1.0955339906448984,
+        "relative_change_pct": 2.195341380315889,
+        "paired_differences": [
+          -0.012483253,
+          0.0042155163,
+          0.078869911
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ]
+      },
+      "L60": {
+        "n_pairs": 3,
+        "mean_delta": 0.09376685178952864,
+        "median_delta": 0.0945608086993801,
+        "sample_sd": 0.006304991136142533,
+        "sem": 0.0036401883296900963,
+        "ci95_low": 0.0781043855361795,
+        "ci95_high": 0.10942931804287777,
+        "cohens_dz": 14.87184514059385,
+        "paired_t": 25.75879138580486,
+        "p_value": 0.0015037255761055168,
+        "mean_parent_mse": 1.2363228157831665,
+        "mean_control_mse": 1.3300896675726952,
+        "relative_change_pct": 7.58433400989455,
+        "paired_differences": [
+          0.0996372602,
+          0.0945608087,
+          0.0871024865
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ]
+      },
+      "pooled": {
+        "n_pairs": 6,
+        "mean_delta": 0.0586504549526495,
+        "median_delta": 0.08298619877687297,
+        "sample_sd": 0.049418585906346305,
+        "sem": 0.020175053213407436,
+        "ci95_low": 0.006788829629268293,
+        "ci95_high": 0.11051208027603071,
+        "cohens_dz": 1.186809656265734,
+        "paired_t": 2.907078079658944,
+        "p_value": 0.033513429330858595,
+        "mean_parent_mse": 1.1541613741561472,
+        "mean_control_mse": 1.2128118291087966,
+        "relative_change_pct": 5.081651168193976,
+        "paired_differences": [
+          -0.012483253,
+          0.0042155163,
+          0.078869911,
+          0.0996372602,
+          0.0945608087,
+          0.0871024865
+        ]
+      }
+    },
+    "multiple_comparison": {
+      "method": "Holm-Bonferroni (step-down)",
+      "family": "Family B confirmatory horizon-specific paired t-tests (m=2)",
+      "alpha": 0.05,
+      "tests": {
+        "familyB_L60": {
+          "raw_p": 0.0015037255761055168,
+          "holm_p": 1.0,
+          "rank": 1,
+          "m": 2
+        },
+        "familyB_L24": {
+          "raw_p": 0.49023627958182747,
+          "holm_p": 1.0,
+          "rank": 2,
+          "m": 2
+        }
+      }
+    },
+    "interpretation": {
+      "L24": "Removing the LLM/text branch does not significantly change short-horizon 7-variable z-space MSE (small, non-significant positive delta).",
+      "L60": "Removing the LLM/text branch significantly increases long-horizon 7-variable z-space MSE; interpreted as evidence supporting a long-horizon contribution of the text/LLM branch, NOT proof of a universal causal mechanism.",
+      "caveat": "n=3 per horizon; paired t-tests have low power. Treat as supporting evidence, not conclusive causal proof."
+    }
+  }
+}

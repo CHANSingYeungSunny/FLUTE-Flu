@@ -1,0 +1,20 @@
+track,dataset,rows,model,family,new_or_reused,horizons,n_seeds,cells,average_MSE_4L,average_MAE_4L,evidence_path,note
+A,author_966,966,miflu,llm,REUSED (A2),24;36;48;60,3,12,2.041519,,hpc_results/stage5_a2/scoring/average_mse_4L.csv,GPT-2 backbone with LoRA text path; identical value in stage5 and stage6
+A,author_966,966,notext,control,REUSED (A2),24;36;48;60,3,12,1.922158,,hpc_results/stage5_a2/scoring/average_mse_4L.csv,text-path removed; beats full miflu on this protocol
+A,author_966,966,nlinear,non_llm,REUSED (A2),24;36;48;60,3,12,2.049550,,hpc_results/stage5_a2/scoring/average_mse_4L.csv,
+A,author_966,966,dlinear,non_llm,NEW (stage6),24;36;48;60,3,12,2.347832,,hpc_results/stage6/scoring/average_mse_4L.csv,newly implemented for this audit
+A,author_966,966,timecma_llm,llm,NEW (stage6),24;36;48;60,3,12,2.670009,,hpc_results/stage6/scoring/average_mse_4L.csv,
+A,author_966,966,patchtst,non_llm,NEW (stage6),24;36;48;60,3,12,3.920470,,hpc_results/stage6/scoring/average_mse_4L.csv,
+A,author_966,966,itransformer,non_llm,NEW (stage6),24;36;48;60,3,12,3.984699,,hpc_results/stage6/scoring/average_mse_4L.csv,
+A,author_966,966,qwen_time_llm,llm,NEW (stage6),24;36;48;60,3,12,5.219555,,hpc_results/stage6/scoring/average_mse_4L.csv,
+A,author_966,966,calf_llm,llm,NEW (stage6),24;36;48;60,3,12,5.515300,,hpc_results/stage6/scoring/average_mse_4L.csv,
+A,author_966,966,seasonal_naive,baseline,NEW (stage6),24;36;48;60,1,4,2.268799,,hpc_results/stage6/scoring/average_mse_4L.csv,no training; deterministic per L
+A,author_966,966,last_value_naive,baseline,NEW (stage6),24;36;48;60,1,4,7.165831,,hpc_results/stage6/scoring/average_mse_4L.csv,no training; deterministic per L
+B,july2026_snapshot,1025,gpt2_miflu,llm,NEW (v319),24;36;48;60,10,40,0.770872,0.487004,results/v3_clean/analysis/model_ranking.csv,rank 1 of 8 by MSE
+B,july2026_snapshot,1025,nlinear,non_llm,NEW (v319),24;36;48;60,10,40,1.069767,0.563583,results/v3_clean/analysis/model_ranking.csv,rank 2
+B,july2026_snapshot,1025,patchtst,non_llm,NEW (v319),24;36;48;60,10,40,1.075951,0.556060,results/v3_clean/analysis/model_ranking.csv,rank 3
+B,july2026_snapshot,1025,dlinear,non_llm,NEW (v319),24;36;48;60,10,40,1.170933,0.603146,results/v3_clean/analysis/model_ranking.csv,rank 4
+B,july2026_snapshot,1025,timecma_llm,llm,NEW (v319),24;36;48;60,10,40,1.181449,0.613624,results/v3_clean/analysis/model_ranking.csv,rank 5
+B,july2026_snapshot,1025,itransformer,non_llm,NEW (v319),24;36;48;60,10,40,1.252982,0.597948,results/v3_clean/analysis/model_ranking.csv,rank 6
+B,july2026_snapshot,1025,qwen_time_llm,llm,NEW (v319),24;36;48;60,10,40,1.253096,0.648887,results/v3_clean/analysis/model_ranking.csv,rank 7
+B,july2026_snapshot,1025,calf_llm,llm,NEW (v319),24;36;48;60,10,40,1.764871,0.773146,results/v3_clean/analysis/model_ranking.csv,rank 8

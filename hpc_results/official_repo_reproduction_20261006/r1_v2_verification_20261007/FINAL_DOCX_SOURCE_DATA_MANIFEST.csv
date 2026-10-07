@@ -1,0 +1,17 @@
+source_file,bytes,sha256_16,role
+SEED42_EIGHT_MODEL_GATE_REPORT.md,2060,ea8977bd6bb3b01d,validated Track C result consumed by the DOCX generator
+SEED42_EIGHT_MODEL_GATE_RESULTS.csv,1659,f5a7b82a53d14903,validated Track C result consumed by the DOCX generator
+STRICT_966_KEY_VALIDATION.md,665,7ddd992b792ff069,validated Track C result consumed by the DOCX generator
+TRACK_C_CELL_CLASSIFICATION.csv,13723,5c884cbaa63cac92,validated Track C result consumed by the DOCX generator
+TRACK_C_COST_SUMMARY.csv,315,841f54cdc590fcbc,validated Track C result consumed by the DOCX generator
+TRACK_C_COST_SUMMARY.json,1042,6a41f9f6901b980c,validated Track C result consumed by the DOCX generator
+TRACK_C_FILE_INTEGRITY_REPORT.md,1136,c08a72a9ca15e373,validated Track C result consumed by the DOCX generator
+TRACK_C_LLM_NONLLM_GROUP_SUMMARY.csv,87,805ec6341f41be30,validated Track C result consumed by the DOCX generator
+TRACK_C_MIFLU_RUN_MATRIX.csv,3210,b85653aa4ef561df,validated Track C result consumed by the DOCX generator
+TRACK_C_PAIRWISE_STATS_CORRECTED.csv,514,3fd3b9cd888b2459,validated Track C result consumed by the DOCX generator
+TRACK_C_PER_HORIZON_CHAMPIONS.csv,1686,1bca33a9b3cce5b1,validated Track C result consumed by the DOCX generator
+TRACK_C_PER_SEED_RANKINGS.csv,1342,cc318bde26eac070,validated Track C result consumed by the DOCX generator
+TRACK_C_RETRY_LOG.csv,617,d16c5bbfc165dccc,validated Track C result consumed by the DOCX generator
+TRACK_C_SHA256_MANIFEST.txt,2889,546a24df54d27ff2,validated Track C result consumed by the DOCX generator
+TRACK_C_TEST_MAE_RANKING.csv,441,4230edcc46e63c31,validated Track C result consumed by the DOCX generator
+TRACK_C_TEST_MSE_RANKING.csv,695,71c49bf68ca6059a,validated Track C result consumed by the DOCX generator

@@ -16,12 +16,23 @@ Full MIFlu Model: Text Embedder + Time Embedder → Concatenate → GPT2+LoRA �
 Reference: MIFlu paper, Section IV-B, IV-C, V-C.
 """
 
+import os
+import sys
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import math
 from transformers import GPT2Model, GPT2Config
 import numpy as np
+
+# ── Centralised configuration (single source of truth) ──
+# Every architectural default below now comes from configs.py instead of being
+# a literal in this file. Values are IDENTICAL to the previous literals, so
+# this is a pure refactor: the parameter counts must not move.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from configs import CONFIG, N_HEADS
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -128,7 +139,8 @@ class TimeSeriesEmbedder(nn.Module):
         D: target embedding dimension (768 for GPT2-small)
     """
 
-    def __init__(self, N=7, T=104, Lp=24, S=2, D=768):
+    def __init__(self, N=CONFIG["N"], T=CONFIG["T"], Lp=CONFIG["Lp"],
+                 S=CONFIG["S"], D=CONFIG["D"]):
         super().__init__()
         self.N = N
         self.T = T
@@ -202,6 +214,43 @@ class TimeSeriesEmbedder(nn.Module):
 # Step 4: Forecasting LLM with LoRA
 # ═══════════════════════════════════════════════════════════════════════════
 
+class ModalityAligner(nn.Module):
+    """
+    ModalityAligner — Gated cross-modal injection (the "Third Way" architecture).
+
+    Aligns the text modality into the time-series stream *before* the forecasting
+    LLM via a cross-attention where the time patches are queries and the text
+    tokens are keys/values. A single learnable scalar gate (sigmoid) controls how
+    much aligned text context is injected, and the result is LayerNorm-ed.
+
+    Replaces the default `[htext || htime]` concatenation for the `gated_inject`
+    variant, so no text prefix is fed to the LLM and cross-modal attention is
+    activated inside the aligner itself.
+
+    Args:
+        D: embedding dimension (768)
+        n_heads: number of attention heads
+    """
+
+    def __init__(self, D=CONFIG["D"], n_heads=N_HEADS):
+        super().__init__()
+        self.cross_attn = nn.MultiheadAttention(D, n_heads, batch_first=True)
+        self.gate = nn.Parameter(torch.zeros(1))  # sigmoid -> ~0.5 at init
+        self.ln = nn.LayerNorm(D)
+
+    def forward(self, htime, htext):
+        """
+        Args:
+            htime: (batch, total_patches, D) — time-series stream (queries)
+            htext: (batch, text_tokens, D)  — text stream (keys/values)
+        Returns:
+            fused: (batch, total_patches, D)
+        """
+        aligned, _ = self.cross_attn(query=htime, key=htext, value=htext)
+        g = torch.sigmoid(self.gate)
+        return self.ln(htime + g * aligned)
+
+
 class ForecastingLLM(nn.Module):
     """
     Forecasting LLM (Section IV-C).
@@ -218,13 +267,21 @@ class ForecastingLLM(nn.Module):
         total_patches: total time-series tokens (N × num_patches)
     """
 
-    def __init__(self, K=6, D=768, lora_r=4, L=24, N=7, total_patches=294):
+    def __init__(self, K=CONFIG["K"], D=CONFIG["D"], lora_r=CONFIG["lora_r"],
+                 lora_alpha=CONFIG["lora_alpha"], L=CONFIG["L_list"][0],
+                 N=CONFIG["N"], total_patches=294, use_text_ln=True,
+                 use_lora=True, gated_inject=False, unfreeze_first_k=0):
         super().__init__()
         self.K = K
         self.D = D
         self.N = N
         self.L = L
         self.total_patches = total_patches
+        # ── Purity flags (defaults = exactly the ORIGINAL behaviour) ──
+        self.use_text_ln = use_text_ln
+        self.use_lora = use_lora
+        self.gated_inject = gated_inject
+        self.unfreeze_first_k = unfreeze_first_k
 
         # Load pretrained GPT2
         gpt2_full = GPT2Model.from_pretrained("gpt2")
@@ -244,26 +301,40 @@ class ForecastingLLM(nn.Module):
 
         for i in range(K):
             block = gpt2_full.h[i]
-            # Freeze all block parameters
-            for param in block.parameters():
-                param.requires_grad = False
-
-            # Unfreeze LayerNorm (trainable per Section IV-C)
-            for param in block.ln_1.parameters():
-                param.requires_grad = True
-            for param in block.ln_2.parameters():
-                param.requires_grad = True
-
-            # Apply LoRA to multi-head attention
-            lora = apply_lora_to_gpt2_attention(block, r=lora_r)
-            self.lora_modules.append(lora)
-
+            if i < unfreeze_first_k:
+                # BRANCH A: Fully Unfreeze (NO LoRA allowed here!)
+                for param in block.parameters():
+                    param.requires_grad = True
+            else:
+                # BRANCH B: Freeze backbone, apply LoRA conditionally
+                for param in block.parameters():
+                    param.requires_grad = False
+                block.ln_1.weight.requires_grad = True
+                block.ln_1.bias.requires_grad = True
+                block.ln_2.weight.requires_grad = True
+                block.ln_2.bias.requires_grad = True
+                if use_lora:
+                    lora = apply_lora_to_gpt2_attention(block, r=lora_r, alpha=lora_alpha)
+                    self.lora_modules.append(lora)
             self.blocks.append(block)
 
         # ── Text Embedding Normalization ──
         # GPT2 last_hidden_state has no output LayerNorm → raw scale ~9.73 std
-        # Normalize to match time embedding scale (~0.59 std) for stable fusion
-        self.text_ln = nn.LayerNorm(D, eps=gpt2_full.config.layer_norm_epsilon)
+        # Normalize to match time embedding scale (~0.59 std) for stable fusion.
+        # Disabled (Identity) when use_text_ln=False (ablation) OR when the
+        # ModalityAligner handles alignment instead (gated_inject).
+        if use_text_ln and not gated_inject:
+            self.text_ln = nn.LayerNorm(D, eps=gpt2_full.config.layer_norm_epsilon)
+        else:
+            self.text_ln = nn.Identity()
+
+        # ── ModalityAligner (gated cross-modal injection) ──
+        # Only instantiated for the gated_inject variant. When active, text is
+        # aligned into the time-series stream BEFORE the forecasting LLM, so no
+        # text prefix is concatenated in forward().
+        self.modality_aligner = (
+            ModalityAligner(D, n_heads=N_HEADS) if gated_inject else None
+        )
 
         # ── Final LayerNorm ──
         self.final_ln = nn.LayerNorm(D, eps=gpt2_full.config.layer_norm_epsilon)
@@ -292,13 +363,17 @@ class ForecastingLLM(nn.Module):
         batch_size = htime.shape[0]
         text_len = htext.shape[1]
 
-        # ── Concatenate embeddings ──
-        # TEXT FIRST so time patches can attend to text via causal attention
-        # Paper Section IV-C: hfuse = [htext || htime]
-        # Normalize text to match time embedding scale (std ratio was 16.5x)
-        # GPT2 last_hidden_state has no output LayerNorm — raw hidden states
-        htext = self.text_ln(htext)
-        hfuse = torch.cat([htext, htime], dim=1)  # (batch, text_len + total_patches, D)
+        # ── Concatenate / fuse embeddings ──
+        if self.gated_inject and self.modality_aligner is not None:
+            # Gated cross-modal injection: text aligned into time stream.
+            # No text prefix is concatenated (text is already fused in).
+            hfuse = self.modality_aligner(htime, htext)  # (batch, total_patches, D)
+        else:
+            # TEXT FIRST so time patches can attend to text via causal attention
+            # Paper Section IV-C: hfuse = [htext || htime]
+            # Normalize text to match time embedding scale (std ratio was 16.5x)
+            htext = self.text_ln(htext) if self.use_text_ln else htext
+            hfuse = torch.cat([htext, htime], dim=1)  # (batch, text_len + total_patches, D)
         total_len = hfuse.shape[1]
 
         # ── Add positional encodings ──
@@ -324,9 +399,13 @@ class ForecastingLLM(nn.Module):
 
         hidden = self.final_ln(hidden)
 
-        # ── Discard text tokens, keep time-series portion ──
-        # Text came first, so time patches are at the END
-        hforecast = hidden[:, -self.total_patches:, :]  # (batch, total_patches, D)
+        # ── Extract the forecast portion ──
+        if self.gated_inject and self.modality_aligner is not None:
+            # No text prefix was concatenated → keep the FULL sequence.
+            hforecast = hidden[:, :self.total_patches, :]  # (batch, total_patches, D)
+        else:
+            # Text came first, so time patches are at the END
+            hforecast = hidden[:, -self.total_patches:, :]  # (batch, total_patches, D)
 
         # ── Output Projection ──
         # Aggregate patches via mean, then project D → N*L
@@ -416,8 +495,10 @@ class MIFlu(nn.Module):
     """
 
     def __init__(
-        self, N=7, T=104, L=24, Lp=24, S=2, K=6, lora_r=4, D=768,
-        device="cpu"
+        self, N=CONFIG["N"], T=CONFIG["T"], L=CONFIG["L_list"][0],
+        Lp=CONFIG["Lp"], S=CONFIG["S"], K=CONFIG["K"], lora_r=CONFIG["lora_r"],
+        D=CONFIG["D"], device="cpu", use_text_ln=True, use_lora=True,
+        gated_inject=False, unfreeze_first_k=0
     ):
         super().__init__()
         self.N = N
@@ -431,7 +512,9 @@ class MIFlu(nn.Module):
 
         # ── Forecasting LLM ──
         self.forecasting_llm = ForecastingLLM(
-            K=K, D=D, lora_r=lora_r, L=L, N=N, total_patches=total_patches
+            K=K, D=D, lora_r=lora_r, L=L, N=N, total_patches=total_patches,
+            use_text_ln=use_text_ln, use_lora=use_lora,
+            gated_inject=gated_inject, unfreeze_first_k=unfreeze_first_k
         )
 
         self.to(device)
@@ -549,7 +632,7 @@ if __name__ == "__main__":
     model = MIFlu(N=7, T=104, L=24, Lp=24, S=2, K=6, lora_r=4, device=device)
     model.count_parameters()
 
-    y_hat, means, stdevs = model(x_dummy, htext_dummy)
+    y_hat, y_phys, means, stdevs = model(x_dummy, htext_dummy)
     print(f"y_hat shape: {y_hat.shape}   expected: (2, 7, 24)")
     assert y_hat.shape == (2, 7, 24)
     print("\n[PASS] Full MIFlu model forward pass successful!")

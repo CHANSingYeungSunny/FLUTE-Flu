@@ -1,0 +1,66 @@
+{
+  "reconciliation_ok": true,
+  "controller_stopped_at": "K",
+  "test_access_count": 0,
+  "test_artifact_count": 0,
+  "frozen_winner_present": false,
+  "slurm_jobs_completed": 272,
+  "unique_job_ids": 275,
+  "duplicate_job_ids": 0,
+  "per_stage": {
+    "A": {
+      "kind": "local",
+      "completed": 1
+    },
+    "B": {
+      "kind": "slurm",
+      "expected": 4,
+      "completed": 4,
+      "failed": 0
+    },
+    "C": {
+      "kind": "local",
+      "completed": 1
+    },
+    "D": {
+      "kind": "slurm",
+      "expected": 24,
+      "completed": 24,
+      "failed": 0
+    },
+    "E": {
+      "kind": "local",
+      "completed": 1
+    },
+    "F": {
+      "kind": "slurm",
+      "expected": 160,
+      "completed": 160,
+      "failed": 0
+    },
+    "G": {
+      "kind": "slurm",
+      "expected": 24,
+      "completed": 24,
+      "failed": 0
+    },
+    "H": {
+      "kind": "slurm",
+      "expected": 12,
+      "completed": 12,
+      "failed": 0
+    },
+    "I": {
+      "kind": "slurm",
+      "expected": 24,
+      "completed": 24,
+      "failed": 0
+    },
+    "J": {
+      "kind": "slurm",
+      "expected": 24,
+      "completed": 24,
+      "failed": 0
+    }
+  }
+}

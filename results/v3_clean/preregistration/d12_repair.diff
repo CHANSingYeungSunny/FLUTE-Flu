@@ -1,0 +1,154 @@
+--- a/scripts/innovation/clean_gate.py
++++ b/scripts/innovation/clean_gate.py
+@@ -86,17 +86,27 @@
+     return p.returncode
+ 
+ 
+-REQUIRED_FILES = [
++# v3.12 (D12): ARM-AWARE artifact schemas. A single shared list could not
++# work: deterministic baselines never train, so they can never produce
++# `logs/train_history.csv` or checkpoint artifacts.
++COMMON_REQUIRED = [
+     "config_resolved.yaml", "environment.txt", "git_commit.txt",
+     "source_manifest.json", "split_manifest.json", "scaler_metadata.json",
+     "prompt_statistics_metadata.json",
+-    "checkpoints/checkpoint_manifest.json", "logs/train_history.csv",
+     "predictions/validation_predictions.csv",
+     "metrics/paper_aligned_full_output_metrics.json",
+     "metrics/ilitotal_fixed_step_metrics.json",
+     "metrics/ilitotal_full_horizon_metrics.json",
+     "metrics/pte_pie_metrics.json", "run_status.json", "resource_usage.json",
+ ]
++# Training history + the manifest-declared checkpoint are STOCHASTIC-ONLY.
++STOCHASTIC_ONLY_REQUIRED = [
++    "logs/train_history.csv", "checkpoints/checkpoint_manifest.json",
++]
++ARM_REQUIRED = {
++    "stochastic": COMMON_REQUIRED + STOCHASTIC_ONLY_REQUIRED,
++    "baseline": list(COMMON_REQUIRED),
++}
+ 
+ 
+ def _load(run_dir: Path, rel: str) -> dict:
+@@ -108,12 +118,70 @@
+         return {}
+ 
+ 
++def _sha256_path(p: Path) -> str:
++    import hashlib as _h
++    h = _h.sha256()
++    with open(p, "rb") as f:
++        for chunk in iter(lambda: f.read(1 << 20), b""):
++            h.update(chunk)
++    return h.hexdigest()
++
++
++def declared_checkpoint(run_dir: Path, manifest: dict) -> dict:
++    """Resolve the checkpoint the MANIFEST declares (never a hard-coded name).
++
++    Fail-closed on: missing/blank declaration, absolute path, traversal or
++    symlink escape outside the run directory, absent file, missing or
++    mismatching SHA-256.
++    """
++    out = {"declared": None, "contained": False, "present": False,
++           "sha256_ok": False, "reason": ""}
++    declared = manifest.get("checkpoint_file")
++    out["declared"] = declared
++    if not isinstance(declared, str) or not declared.strip():
++        out["reason"] = "manifest declares no checkpoint_file"
++        return out
++    if os.path.isabs(declared):
++        out["reason"] = "absolute checkpoint path rejected"
++        return out
++
++    target = run_dir / declared
++    real_run = run_dir.resolve()
++    try:
++        real_target = target.resolve()
++    except OSError as e:                                   # pragma: no cover
++        out["reason"] = f"unresolvable checkpoint path: {e}"
++        return out
++    if real_run != real_target and real_run not in real_target.parents:
++        out["reason"] = "checkpoint path escapes the run directory"
++        return out
++    if target.is_symlink():
++        out["reason"] = "symlinked checkpoint rejected"
++        return out
++    out["contained"] = True
++    if not real_target.is_file():
++        out["reason"] = "declared checkpoint file is missing"
++        return out
++    out["present"] = True
++
++    expected = manifest.get("sha256_file")
++    if not isinstance(expected, str) or not expected:
++        out["reason"] = "manifest declares no sha256_file"
++        return out
++    if _sha256_path(real_target) != expected:
++        out["reason"] = "checkpoint sha256 mismatch"
++        return out
++    out["sha256_ok"] = True
++    out["reason"] = "ok"
++    return out
++
++
+ def verify_run(run_dir: Path, is_baseline: bool) -> dict:
+     res = {"run_dir": str(run_dir), "checks": {}}
+-    # Deterministic baselines carry NO checkpoint by design, so checkpoint
+-    # artifacts are not required for them (and must be ABSENT).
+-    required = [f for f in REQUIRED_FILES
+-                if not (is_baseline and f.startswith("checkpoints/"))]
++    # v3.12 (D12): arm-aware completeness. Stochastic checks are NOT weakened.
++    schema = ARM_REQUIRED["baseline" if is_baseline else "stochastic"]
++    res["arm"] = "baseline" if is_baseline else "stochastic"
++    required = list(schema)
+     missing = [f for f in required if not (run_dir / f).exists()]
+     res["checks"]["artifact_completeness"] = not missing
+     res["missing"] = missing
+@@ -162,17 +230,41 @@
+         ru = _load(run_dir, "resource_usage.json")
+         res["checks"]["baseline_seed_not_applicable"] = \
+             ru.get("stochastic_seed_applicable") is False
+-        res["checks"]["baseline_no_checkpoint"] = \
+-            ru.get("checkpoint_applicable") is False and not (
+-                run_dir / "checkpoints").exists()
++        # v3.12 (D12): an EMPTY checkpoints/ directory is valid (D11 creates a
++        # uniform tree). Assert the SEMANTIC property instead of its absence:
++        # both applicability flags false, no checkpoint FILE, no manifest
++        # claiming a checkpoint, and no restoration evidence.
++        ckpt_dir = run_dir / "checkpoints"
++        files_in_ckpt = ([p for p in ckpt_dir.rglob("*") if p.is_file()]
++                         if ckpt_dir.exists() else [])
++        res["checks"]["baseline_no_checkpoint_file"] = not files_in_ckpt
++        res["checks"]["baseline_no_checkpoint_manifest"] = not (
++            ckpt_dir / "checkpoint_manifest.json").exists()
++        res["checks"]["baseline_no_training_history"] = not (
++            run_dir / "logs" / "train_history.csv").exists()
++        res["checks"]["baseline_no_restoration_evidence"] = not any(
++            p.name.startswith("restore") for p in files_in_ckpt)
++        res["checks"]["baseline_no_checkpoint"] = (
++            ru.get("checkpoint_applicable") is False
++            and ru.get("stochastic_seed_applicable") is False
++            and not files_in_ckpt
++            and not (ckpt_dir / "checkpoint_manifest.json").exists()
++        )
+     else:
+         ck = run_dir / "checkpoints" / "checkpoint_manifest.json"
+         res["checks"]["checkpoint_manifest"] = ck.exists()
+         cm = _load(run_dir, "checkpoints/checkpoint_manifest.json")
+         res["checks"]["checkpoint_restore_ok"] = ck.exists() and bool(
+             (cm.get("restore_test") or {}).get("ok"))
+-        res["checks"]["checkpoint_file_present"] = (
+-            run_dir / "checkpoints" / "best_validation.pt").exists()
++        # v3.12 (D12): resolve the checkpoint from the MANIFEST, not a
++        # hard-coded filename. Path containment, existence and SHA-256 are
++        # all required (fail-closed).
++        dc = declared_checkpoint(run_dir, cm)
++        res["checks"]["checkpoint_path_contained"] = dc["contained"]
++        res["checks"]["checkpoint_file_present"] = dc["present"]
++        res["checks"]["checkpoint_sha256_matches"] = dc["sha256_ok"]
++        res["checkpoint_declared"] = dc["declared"]
++        res["checkpoint_reason"] = dc["reason"]
+     res["passed"] = all(res["checks"].values())
+     return res
+ 

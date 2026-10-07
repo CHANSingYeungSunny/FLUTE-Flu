@@ -1,0 +1,4 @@
+                         Block Limits                                    |     File Limits
+Filesystem type             KB      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+home       USR        28166992   52428800  104857600    1007168     none |    91236       0        0      197     none 
+scratch    USR       433264576  314572800 1073741824          0  expired |    46304       0        0        0     none 

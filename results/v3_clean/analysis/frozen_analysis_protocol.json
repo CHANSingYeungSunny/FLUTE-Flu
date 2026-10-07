@@ -1,0 +1,96 @@
+{
+  "generated_utc": "2026-09-20T06:10:00Z",
+  "purpose": "Frozen protocol snapshot restored BEFORE any Wave-1 result analysis. This file is the machine-readable statement of exactly which rules and evidence the Wave-1 analysis is bound by.",
+  "authorization": {
+    "source_document": "CodeBuddy_MIFlu_Wave1_Final_Analysis_Supervisor_Report_and_Project_Summary_Evidence_Pack.md",
+    "hpc_guide_sha256": "1CD21A653ED1C754E30BB0B5C2CFBEA10C8A1C34E5F5E8E74C167",
+    "hpc_guide_sha256_verified": true,
+    "note": "SHA-256 of HPC_GUIDE.md verified via Get-FileHash before analysis."
+  },
+  "wave1_completion_status": {
+    "accepted": 580, "order": 580, "durable": 580,
+    "breakdown": {
+      "primary_8x4x10": 320,
+      "baselines_2x4": 8,
+      "ablations_6x4x10": 240,
+      "negative_control_fixed_parent": 12
+    },
+    "deferred_controls_pending": 18,
+    "ledger_fail_events": 0,
+    "controller_exit": "normal (not fail-stop)",
+    "test_access": 0, "holdout_access": 0
+  },
+  "selection_rule": {
+    "source": "results/v3_clean/preregistration/paper_aligned_selection_rule.json",
+    "ranking_metric": "average_MSE_4L (seven-variable, full-horizon, z-space)",
+    "lower_is_better": true,
+    "normalisation": "none",
+    "tie_break_order": ["average_MSE_4L", "average_MAE_4L", "resource cost"],
+    "forbidden": [
+      "peak_hit_ratio tie-breaker",
+      "PTE/PIE tie-breaker",
+      "baseline-relative ratio",
+      "(r24+r60)/2"
+    ],
+    "forbidden_aggregates": [
+      "(r24+r60)/2",
+      "GPT-relative ratio",
+      "any baseline-relative ratio"
+    ],
+    "equivalence_policy": "report a top equivalence set instead of manufacturing a unique champion when leading models are statistically or practically indistinguishable"
+  },
+  "primary_champion_selector": {
+    "metric": "mse_all_7vars_full_horizon_z",
+    "per_L": "mean across frozen 10 repetitions (seeds 42..51) for each L in {24,36,48,60}",
+    "aggregate": "average_MSE_4L = arithmetic mean of the four per-L means"
+  },
+  "key_secondary": {
+    "metric": "mae_all_7vars_full_horizon_z",
+    "aggregate": "average_MAE_4L",
+    "rule": "reported as key secondary; MUST NOT be combined with MSE into an invented weighted score"
+  },
+  "family_membership": {
+    "non_llm": ["nlinear", "dlinear", "patchtst", "itransformer"],
+    "llm": ["gpt2_miflu", "qwen_time_llm", "calf_llm", "timecma_llm"]
+  },
+  "horizons": [24, 36, 48, 60],
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+  "baselines": ["last_value_naive", "seasonal_naive"],
+  "ablations": [
+    "without_dataset_information",
+    "without_task_instruction",
+    "without_input_variable_description",
+    "without_lora",
+    "without_multimodality",
+    "without_lora_and_multimodality"
+  ],
+  "executed_negative_controls": ["zero_text", "shuffled_text"],
+  "deferred_controls_parent_binding": {
+    "source": "results/v3_clean/preregistration/deferred_parent_binding_rule.json",
+    "deferred_parent": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+    "binding_rule": "LLM with lowest average_MSE_4L becomes parent of the 18 deferred controls",
+    "status": "deferred controls NOT run in Wave-1; binding reported but not executed here"
+  },
+  "scope_restrictions": {
+    "primary_ranking_uses_only_320_primary_rows": true,
+    "ablations_controls_baselines_never_in_primary_ranking": true,
+    "test_holdout_never_accessed": true,
+    "selection_rule_never_mutated": true,
+    "endpoints_never_redefined_post_hoc": true,
+    "wave1_winner_is_not_final_publication_champion": true
+  },
+  "data_source": {
+    "durable_root": "/home/sychan552/innovation_durable/screening",
+    "aggregated_jsonl": "results/v3_clean/analysis/wave1_analysis_dataset.jsonl",
+    "rows_aggregated": 580,
+    "metric_files_per_run": [
+      "metrics/paper_aligned_full_output_metrics.json",
+      "metrics/ilitotal_fixed_step_metrics.json",
+      "metrics/ilitotal_full_horizon_metrics.json",
+      "metrics/pte_pie_metrics.json"
+    ]
+  },
+  "known_limitation": {
+    "pte_pie_unavailable": "PTE/PIE fields are null in Wave-1 durable evidence because validation_predictions.csv stores target_date=None, so the seasonal peak detector cannot aggregate per target week. Reported explicitly, never silently imputed."
+  }
+}

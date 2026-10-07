@@ -1,0 +1,44 @@
+{
+  "generated_utc": "2026-09-16T21:06:49Z",
+  "hpc_guide": {
+    "path": "HPC_GUIDE.md",
+    "sha256": "1cd21a655907d137914c695bf04637d8da2f09358a0732c961e739dd8e74c167",
+    "expected_sha256": "1cd21a655907d137914c695bf04637d8da2f09358a0732c961e739dd8e74c167",
+    "matches": true,
+    "changed": false,
+    "acknowledgement_created": false
+  },
+  "gate": {
+    "job_id": "565869",
+    "name": "v3_prepilot_gate",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:00:16",
+    "node": "gpu-a100-03",
+    "models_ok": "8/8",
+    "partition": "stingy",
+    "excluded_node": "gpu-a100-05"
+  },
+  "pilots": {
+    "n": 8,
+    "all_completed": true,
+    "run_keys": [
+      "national-ili__nlinear__none__identity__L24__seed42__20260916T164310Z__nogit",
+      "national-ili__dlinear__none__identity__L24__seed42__20260916T164642Z__nogit",
+      "national-ili__patchtst__none__identity__L24__seed42__20260916T164943Z__nogit",
+      "national-ili__itransformer__none__identity__L24__seed42__20260916T165144Z__nogit",
+      "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260916T165315Z__nogit",
+      "national-ili__qwen-time-llm__none__identity__L24__seed42__20260916T170450Z__nogit",
+      "national-ili__calf-llm__none__identity__L24__seed42__20260916T171227Z__nogit",
+      "national-ili__timecma-llm__none__identity__L24__seed42__20260916T171554Z__nogit"
+    ]
+  },
+  "test_access_count": 0,
+  "holdout_access_count": 0,
+  "screening_jobs_submitted_before_authorization": 0,
+  "screening_started": false,
+  "full_validation_started": false,
+  "negative_controls_run": false,
+  "champion_frozen": false,
+  "decision": "SCREENING_AUTHORIZED_TO_BEGIN"
+}

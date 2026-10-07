@@ -1,0 +1,109 @@
+[a0gpu] compat layer sha256:
+  378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4  /scratch/sychan552/a0_compat_shim/a0_compat.py
+  381064b2fc37e46fdfbb3b17832a619d9aa3d9a1f21236a6eb3b41b929fa9c79  /scratch/sychan552/a0_compat_shim/sitecustomize.py
+[a0gpu] mode=1 tag=multimodal1 job=587068 start=2026-09-26T10:29:05Z
+[a0gpu] gpu: NVIDIA A100-SXM4-80GB, 81920 MiB
+utc=2026-09-26T10:29:05Z
+slurm_job=587068
+author_commit=6ed210150b8819313947cf607eb1821c87b1bee3
+author_source_modified=0 non-pyc entries
+author_src_main_ILI_lora.py=eda73ba196f625620cee8f2c9e2d4270d4ce4504c5198f4b1d485622c49ad29c
+author_src_models_GPT4TS_lora.py=6ef9108eea3c068badb7f8a60efba9717b4e7fe969b46365ac7c26da560c6365
+author_src_models_GPT4TS.py=b146a0dd144dddc94e77267a332deca1d8329d3adc6daf986cc7e2498c414280
+author_src_data_provider_data_loader.py=1274c00bbc6886bcd6a48efb840ec017a591b8873fff77d82fe44eaef0b64f6e
+author_src_data_provider_data_factory.py=a5576e445d4a9a56ae9bf77024eeca9b435ed973613ddc7b78e57d7c8070b8da
+compat_layer_sha256=378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4
+compat_sitecustomize_sha256=381064b2fc37e46fdfbb3b17832a619d9aa3d9a1f21236a6eb3b41b929fa9c79
+compat_non_behavioural_evidence=np.Inf restored as the IDENTICAL np.inf object (asserted at import); peft symbol appears only inside a comment in the released code; DataEmbedding imported but never referenced
+data_sha256=2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+text_asset_sha256=837502311354c9ddf71e42fbdf5689b6bbbbd2f00c71055d0d226c3c1f44c0c8
+config=ALL ARGUMENTS ARE THE AUTHOR'S ARGPARSE DEFAULTS (main_ILI_lora.py L34-85)
+mode=1 multimodal=1 train_epochs=1 learning_rate=0.0001 batch_size=16 itr=1 pred_len=24
+note=AUTHOR CODE REPLAYED VERBATIM under a recorded compatibility layer;
+     NOT the A2 corrected reconstruction; NOT comparable to Table V or A2
+/scratch/sychan552/a0_compat_shim/sitecustomize.py:47: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+/scratch/sychan552/a0_compat_shim/sitecustomize.py:47: FutureWarning: In the future `np.str` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+Args in experiment:
+Namespace(model_id='a0_multimodal1', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=1, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+train 3843
+val 518
+test 170
+llmmodel = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-5): 6 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+0it [00:00, ?it/s]1it [00:00,  2.52it/s]2it [00:00,  3.90it/s]3it [00:00,  4.13it/s]4it [00:01,  4.23it/s]5it [00:01,  4.31it/s]6it [00:01,  4.36it/s]7it [00:01,  4.38it/s]8it [00:01,  4.41it/s]9it [00:02,  4.43it/s]10it [00:02,  4.44it/s]11it [00:02,  4.44it/s]12it [00:02,  4.45it/s]13it [00:03,  4.46it/s]14it [00:03,  4.46it/s]15it [00:03,  4.47it/s]16it [00:03,  4.47it/s]17it [00:03,  4.47it/s]18it [00:04,  4.47it/s]19it [00:04,  4.47it/s]20it [00:04,  4.47it/s]21it [00:04,  4.47it/s]22it [00:05,  4.47it/s]23it [00:05,  4.47it/s]24it [00:05,  4.47it/s]25it [00:05,  4.47it/s]26it [00:05,  4.47it/s]27it [00:06,  4.47it/s]28it [00:06,  4.47it/s]29it [00:06,  4.47it/s]30it [00:06,  4.47it/s]31it [00:07,  4.48it/s]32it [00:07,  4.48it/s]33it [00:07,  4.47it/s]34it [00:07,  3.93it/s]35it [00:08,  4.08it/s]36it [00:08,  4.19it/s]37it [00:08,  4.27it/s]38it [00:08,  4.33it/s]39it [00:08,  4.37it/s]40it [00:09,  4.40it/s]41it [00:09,  4.42it/s]42it [00:09,  4.44it/s]43it [00:09,  4.45it/s]44it [00:10,  4.46it/s]45it [00:10,  4.46it/s]46it [00:10,  4.46it/s]47it [00:10,  4.47it/s]48it [00:10,  4.47it/s]49it [00:11,  4.47it/s]50it [00:11,  4.47it/s]51it [00:11,  4.47it/s]52it [00:11,  4.47it/s]53it [00:12,  4.47it/s]54it [00:12,  4.47it/s]55it [00:12,  4.38it/s]56it [00:12,  4.41it/s]57it [00:12,  4.42it/s]58it [00:13,  4.43it/s]59it [00:13,  4.44it/s]60it [00:13,  4.45it/s]61it [00:13,  4.46it/s]62it [00:14,  4.46it/s]63it [00:14,  4.47it/s]64it [00:14,  4.47it/s]65it [00:14,  4.46it/s]66it [00:14,  4.47it/s]67it [00:15,  4.47it/s]68it [00:15,  4.47it/s]69it [00:15,  4.47it/s]70it [00:15,  4.47it/s]71it [00:16,  4.47it/s]72it [00:16,  4.47it/s]73it [00:16,  4.46it/s]74it [00:16,  4.46it/s]75it [00:17,  4.45it/s]76it [00:17,  4.46it/s]77it [00:17,  4.46it/s]78it [00:17,  4.46it/s]79it [00:17,  4.46it/s]80it [00:18,  4.47it/s]81it [00:18,  4.47it/s]82it [00:18,  4.47it/s]83it [00:18,  4.47it/s]84it [00:19,  4.47it/s]85it [00:19,  4.47it/s]86it [00:19,  4.47it/s]87it [00:19,  4.47it/s]88it [00:19,  4.47it/s]89it [00:20,  4.47it/s]90it [00:20,  4.47it/s]91it [00:20,  4.47it/s]92it [00:20,  4.47it/s]93it [00:21,  4.47it/s]94it [00:21,  4.47it/s]95it [00:21,  4.47it/s]96it [00:21,  4.46it/s]97it [00:21,  4.47it/s]98it [00:22,  4.47it/s]99it [00:22,  4.47it/s]100it [00:22,  4.29it/s]101it [00:22,  4.11it/s]102it [00:23,  4.21it/s]103it [00:23,  4.29it/s]104it [00:23,  4.34it/s]105it [00:23,  4.38it/s]106it [00:24,  4.41it/s]107it [00:24,  4.43it/s]108it [00:24,  4.44it/s]109it [00:24,  4.45it/s]110it [00:24,  4.45it/s]111it [00:25,  4.46it/s]112it [00:25,  4.46it/s]113it [00:25,  4.46it/s]114it [00:25,  4.47it/s]115it [00:26,  4.46it/s]116it [00:26,  4.47it/s]117it [00:26,  4.47it/s]118it [00:26,  4.47it/s]119it [00:26,  4.47it/s]120it [00:27,  4.46it/s]121it [00:27,  4.47it/s]122it [00:27,  4.47it/s]123it [00:27,  4.47it/s]124it [00:28,  4.47it/s]125it [00:28,  4.47it/s]126it [00:28,  4.47it/s]127it [00:28,  4.47it/s]128it [00:28,  4.47it/s]129it [00:29,  4.47it/s]130it [00:29,  4.47it/s]131it [00:29,  4.47it/s]132it [00:29,  4.47it/s]133it [00:30,  4.46it/s]134it [00:30,  4.47it/s]135it [00:30,  4.47it/s]136it [00:30,  4.47it/s]137it [00:30,  4.47it/s]138it [00:31,  4.47it/s]139it [00:31,  4.47it/s]140it [00:31,  4.47it/s]141it [00:31,  4.47it/s]142it [00:32,  4.47it/s]143it [00:32,  4.47it/s]144it [00:32,  4.47it/s]145it [00:32,  4.47it/s]146it [00:33,  4.29it/s]147it [00:33,  4.34it/s]148it [00:33,  4.38it/s]149it [00:33,  4.41it/s]150it [00:33,  4.43it/s]151it [00:34,  4.44it/s]152it [00:34,  4.45it/s]153it [00:34,  4.45it/s]154it [00:34,  4.46it/s]155it [00:35,  4.47it/s]156it [00:35,  4.47it/s]157it [00:35,  4.47it/s]158it [00:35,  4.47it/s]159it [00:35,  4.47it/s]160it [00:36,  4.46it/s]161it [00:36,  4.46it/s]162it [00:36,  4.46it/s]163it [00:36,  4.46it/s]164it [00:37,  4.47it/s]165it [00:37,  4.47it/s]166it [00:37,  4.47it/s]167it [00:37,  3.94it/s]168it [00:38,  4.09it/s]169it [00:38,  4.19it/s]170it [00:38,  4.27it/s]171it [00:38,  4.33it/s]172it [00:38,  4.37it/s]173it [00:39,  4.40it/s]174it [00:39,  4.42it/s]175it [00:39,  4.44it/s]176it [00:39,  4.45it/s]177it [00:40,  4.45it/s]178it [00:40,  4.46it/s]179it [00:40,  4.46it/s]180it [00:40,  4.46it/s]181it [00:40,  4.46it/s]182it [00:41,  4.47it/s]183it [00:41,  4.47it/s]184it [00:41,  4.47it/s]185it [00:41,  4.47it/s]186it [00:42,  4.47it/s]187it [00:42,  4.47it/s]188it [00:42,  4.47it/s]189it [00:42,  4.47it/s]190it [00:42,  4.47it/s]191it [00:43,  4.28it/s]192it [00:43,  4.34it/s]193it [00:43,  4.38it/s]194it [00:43,  4.41it/s]195it [00:44,  4.42it/s]196it [00:44,  4.44it/s]197it [00:44,  4.45it/s]198it [00:44,  4.46it/s]199it [00:44,  4.46it/s]200it [00:45,  4.47it/s]201it [00:45,  4.47it/s]202it [00:45,  4.47it/s]203it [00:45,  4.47it/s]204it [00:46,  4.47it/s]205it [00:46,  4.47it/s]206it [00:46,  4.47it/s]207it [00:46,  4.47it/s]208it [00:47,  4.47it/s]209it [00:47,  4.47it/s]210it [00:47,  4.47it/s]211it [00:47,  4.47it/s]212it [00:47,  4.47it/s]213it [00:48,  4.47it/s]214it [00:48,  4.47it/s]215it [00:48,  4.47it/s]216it [00:48,  4.47it/s]217it [00:49,  4.47it/s]218it [00:49,  4.48it/s]219it [00:49,  4.48it/s]220it [00:49,  4.48it/s]221it [00:49,  4.48it/s]222it [00:50,  4.47it/s]223it [00:50,  4.47it/s]224it [00:50,  4.47it/s]225it [00:50,  4.47it/s]226it [00:51,  4.47it/s]227it [00:51,  4.47it/s]228it [00:51,  4.47it/s]229it [00:51,  4.47it/s]230it [00:51,  4.47it/s]231it [00:52,  4.47it/s]232it [00:52,  4.47it/s]233it [00:52,  4.39it/s]234it [00:52,  4.14it/s]235it [00:53,  4.24it/s]236it [00:53,  4.26it/s]237it [00:53,  4.37it/s]238it [00:53,  4.40it/s]239it [00:54,  4.42it/s]240it [00:54,  4.43it/s]240it [00:54,  4.42it/s]
+Epoch: 1 cost time: 56.54020428657532
+0it [00:00, ?it/s]1it [00:00,  5.31it/s]2it [00:00,  5.74it/s]3it [00:00,  6.09it/s]4it [00:00,  6.33it/s]5it [00:00,  6.46it/s]6it [00:00,  6.55it/s]7it [00:01,  6.61it/s]8it [00:01,  6.64it/s]9it [00:01,  6.67it/s]10it [00:01,  6.70it/s]11it [00:01,  6.72it/s]12it [00:01,  6.78it/s]13it [00:01,  6.80it/s]14it [00:02,  6.85it/s]15it [00:02,  6.88it/s]16it [00:02,  6.91it/s]17it [00:02,  6.93it/s]18it [00:02,  6.95it/s]19it [00:02,  6.96it/s]20it [00:02,  6.97it/s]21it [00:03,  6.95it/s]22it [00:03,  6.94it/s]23it [00:03,  6.94it/s]24it [00:03,  6.94it/s]25it [00:03,  6.82it/s]26it [00:03,  6.85it/s]27it [00:04,  6.87it/s]28it [00:04,  6.88it/s]29it [00:04,  6.88it/s]30it [00:04,  6.89it/s]31it [00:04,  6.90it/s]32it [00:04,  6.90it/s]32it [00:04,  6.60it/s]
+0it [00:00, ?it/s]1it [00:00,  5.83it/s]2it [00:00,  5.54it/s]3it [00:00,  6.00it/s]4it [00:00,  6.26it/s]5it [00:00,  6.39it/s]6it [00:00,  6.52it/s]7it [00:01,  6.60it/s]8it [00:01,  6.66it/s]9it [00:01,  6.70it/s]10it [00:01,  6.72it/s]10it [00:01,  6.00it/s]
+test shape: (10, 16, 24, 1) (10, 16, 24, 1)
+test shape: (160, 24, 1) (160, 24, 1)
+mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+Epoch: 1, Steps: 240 | Train Loss: 0.4489474 Vali Loss: 0.2929663
+lr_adjust = {1: 0.0001}
+Updating learning rate to 0.0001
+------------------------------------
+0it [00:00, ?it/s]1it [00:00,  5.85it/s]2it [00:00,  5.86it/s]3it [00:00,  5.25it/s]4it [00:00,  4.80it/s]5it [00:00,  5.35it/s]6it [00:01,  5.71it/s]7it [00:01,  5.97it/s]8it [00:01,  6.11it/s]9it [00:01,  6.26it/s]10it [00:01,  6.36it/s]10it [00:01,  5.49it/s]
+test shape: (10, 16, 24, 1) (10, 16, 24, 1)
+test shape: (160, 24, 1) (160, 24, 1)
+mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+Results saved to 'results.csv'.
+mse_mean = 0.8581, mse_std = 0.0000
+mae_mean = 0.6780, mae_std = 0.0000
+Best performance in iteration 0: Epoch 0 with MSE = 0.8581 and MAE = 0.6780
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 270, in <module>
+    train()
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 267, in train
+    test_vis(model, test_data, test_loader, args, device, 1)
+  File "/gpfs1/scratch/sychan552/a0_replay/utils/tools.py", line 346, in test_vis
+    batch_x = batch_x.float().to(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[a0gpu] released entry point exit=1  2026-09-26T10:30:25Z
+[a0gpu] files produced under /scratch/sychan552/a0_runs/runs:
+  /scratch/sychan552/a0_runs/runs/default_provenance.txt
+  /scratch/sychan552/a0_runs/runs/a0_multimodal1_multimodal1_gpt2_gpt2_sl104_ll18_pl24_dm768_nh4_el3_gl6_df768_ebtimeF_itr0/checkpoint.pth
+  /scratch/sychan552/a0_runs/runs/multimodal1_provenance.txt
+
+[a0gpu] ---- key evidence lines from the released run ----
+  5:Args in experiment:
+  6:Namespace(model_id='a0_multimodal1', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=1, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+  35:Epoch: 1 cost time: 56.54020428657532
+  40:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+  41:Epoch: 1, Steps: 240 | Train Loss: 0.4489474 Vali Loss: 0.2929663
+  48:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+  50:mse_mean = 0.8581, mse_std = 0.0000
+  52:Best performance in iteration 0: Epoch 0 with MSE = 0.8581 and MAE = 0.6780
+
+[a0gpu] REMINDER: whatever this prints is (a) feature-0 Test only,
+          (b) selected by Test MSE, (c) 1 epoch at lr 1e-4, and
+          (d) therefore NOT comparable to the paper's Table V nor to A2.
+[a0gpu] charged 00:01:22 (job 587068) appended to /scratch/sychan552/a2_stage5/results/stage7/GPU_LEDGER_stage7.tsv

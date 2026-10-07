@@ -1,0 +1,11 @@
+[topup] dispatcher started 2026-09-25T16:00:28Z pid=2856043
+[topup] submitted notext L=24 job=585865 at 2026-09-25T16:00:28Z
+[topup] job=585865 notext L=24 state=COMPLETED elapsed=00:02:16
+[topup] submitted notext L=36 job=585874 at 2026-09-25T16:03:14Z
+[topup] job=585874 notext L=36 state=COMPLETED elapsed=00:02:13
+[topup] submitted notext L=48 job=585875 at 2026-09-25T16:05:31Z
+[topup] job=585875 notext L=48 state=COMPLETED elapsed=00:02:08
+[topup] submitted notext L=60 job=585876 at 2026-09-25T16:08:02Z
+[topup] job=585876 notext L=60 state=COMPLETED elapsed=00:02:06
+[topup] queue finished at 2026-09-25T16:10:34Z
+[topup] lock released

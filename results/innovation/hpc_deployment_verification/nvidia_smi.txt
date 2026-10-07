@@ -1,0 +1,20 @@
+hpc_env_check.sh output — GPU section
+=====================================
+host: hpclogin02 (LOGIN NODE — no GPU allocation, SLURM_JOB_ID=none)
+
+$ nvidia-smi
+nvidia-smi: unavailable
+
+Python probe (inside the mlflu_hpc environment):
+    cuda_available False
+    cuda_device_count 0
+
+Interpretation
+--------------
+CUDA is NOT available on the login node because no GPU resource is allocated
+to this session. This is expected and is reported as LOGIN_NODE_GPU_NOT_EXPECTED.
+It is NOT a pilot-readiness failure by itself.
+
+An A100 allocation can only be observed inside an allocated Slurm job or an
+approved interactive GPU allocation. No such allocation was requested or
+submitted in this turn (no sbatch was called).

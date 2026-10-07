@@ -1,0 +1,95 @@
+run_id: "national-ili__patchtst__none__identity__L60__seed43__20260916T220718Z__nogit"
+dataset: "national_ili"
+protocol_version: "innov-v2.0"
+experiment_stage: "screening"
+selection_eligible: true
+device_requested: "auto"
+device_actual: "cuda"
+device_name: "NVIDIA A100-SXM4-80GB"
+plan_sha256: "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+plan_sha256_expected: "AA4AB1C8842E893A4690787E17ADD0CA193C86825FFF9FD89F46952C7F9E7961"
+git_sha: "nogit"
+config:
+  T: 104
+  L_list:
+    - 24
+    - 36
+    - 48
+    - 60
+  N: 7
+  Lp: 24
+  S: 2
+  K: 6
+  lora_r: 4
+  lora_alpha: 4.0
+  D: 768
+  attn_heads: 8
+  batch_size: 16
+  learning_rate: 0.0005
+  epochs: 20
+  num_repetitions: 10
+  seed: 43
+  model: "patchtst"
+  text_encoder: "none"
+  fusion: "identity"
+  horizon: 60
+  L: 60
+  patience: 7
+  device: "cuda"
+components:
+  backbone: "patchtst"
+  text_encoder: "none"
+  fusion: "identity"
+  encoder_available: true
+  encoder_context_dim: null
+limits:
+  train: null
+  val: null
+trainable_parameters: 114940
+total_parameters: 114940
+architecture_report:
+  name: "patchtst"
+  display_name: "PatchTST-inspired (supervised, reduced-capacity re-implementation)"
+  published: "PatchTST (Nie et al., ICLR 2023)"
+  fidelity: "INSPIRED_SIMPLIFICATION"
+  patch_len: 16
+  stride: 8
+  d_model: 64
+  n_patches: 12
+  evidence:
+    - "backbones/patchtst.py:54-55 channel-independent patching via unfold"
+    - "backbones/patchtst.py:43 shared Linear(patch_len -> d_model) patch embedding"
+    - "backbones/patchtst.py:44 learnable per-patch positional embedding"
+    - "backbones/patchtst.py:45-49 TransformerEncoder (dim_feedforward=2*d_model, gelu)"
+    - "backbones/patchtst.py:50,58 flatten head Linear(n_patches*d_model -> L)"
+  deviations:
+    -
+      component: "training regime"
+      deviation: "no self-supervised pretraining (paper: pretrain + fine-tune)"
+      file_line: "backbones/patchtst.py:14-19,68-71"
+      disclosed: true
+    -
+      component: "instance normalisation"
+      deviation: "no RevIN / InstanceNorm applied before patching"
+      file_line: "backbones/patchtst.py:53-55"
+      disclosed: true
+    -
+      component: "patching"
+      deviation: "no end-padding to cover the tail of the series"
+      file_line: "backbones/patchtst.py:41"
+      disclosed: true
+    -
+      component: "capacity"
+      deviation: "d_model=64, n_heads=4, n_layers=2 (below paper scale)"
+      file_line: "backbones/patchtst.py:33-35"
+      disclosed: true
+  notes: "core mechanism (channel-independent patches + Transformer encoder + flatten head) matches PatchTST, but it is trained from scratch with reduced capacity and no RevIN -> labelled '-inspired', NOT the pretrained reference model"
+purpose: "model_screening"
+paper_result_eligible: "screening_only"
+test_access_allowed: false
+implementation_source_version: "innov-v3.5-context-dim-null-safe"
+source_snapshot_sha256: "1856817016d84f75fce90073da51fe38414f1f59be98698490c5b52ba2bd39e3"
+authoritative_plan_sha256: "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+model_key: "patchtst"
+display_name: "PatchTST-inspired"
+architecture_fidelity: "INSPIRED_SIMPLIFICATION"

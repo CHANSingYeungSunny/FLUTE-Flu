@@ -1,0 +1,37 @@
+{
+  "run_key": "primary__gpt2_miflu__L24__seed42__w1",
+  "model": "gpt2_miflu",
+  "arm": "primary",
+  "horizon": 24,
+  "seed": 42,
+  "wave": 1,
+  "split": {
+    "train": 717,
+    "validation": 102,
+    "test": 206
+  },
+  "n_test_windows": 182,
+  "test_target_abs_week_min": 820,
+  "test_target_abs_week_max": 1024,
+  "started_utc": "2026-09-21T05:00:21Z",
+  "checkpoint_applicable": true,
+  "stochastic_seed_applicable": true,
+  "compact_sha256": "acace30755848ea741da4102e3556c35aea31497568f17a9168ac80a634483ef",
+  "canonical_tensor_sha256": "4e342cfed1a0c71823dbab2f64192e81539beeb6b5da2fc829bdd5d92a7f9cc7",
+  "canonical_hash_schema": "canonical-tensor-v1",
+  "base_model": "gpt2_miflu",
+  "text_encoder": "gpt2",
+  "restoration": {
+    "strict_load_ok": true,
+    "missing_keys": [],
+    "unexpected_keys": []
+  },
+  "device": "cuda",
+  "elapsed_seconds": 7.26,
+  "metrics_written": [
+    "ilitotal_fixed_step_metrics.json",
+    "ilitotal_full_horizon_metrics.json",
+    "paper_aligned_full_output_metrics.json",
+    "pte_pie_metrics.json"
+  ]
+}

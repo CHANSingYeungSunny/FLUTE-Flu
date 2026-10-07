@@ -1,0 +1,169 @@
+SUBMITTED primary__gpt2_miflu__L24__seed42__w1 job=577227
+DONE primary__gpt2_miflu__L24__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed43__w1 job=577228
+DONE primary__gpt2_miflu__L24__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed44__w1 job=577230
+DONE primary__gpt2_miflu__L24__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed45__w1 job=577231
+DONE primary__gpt2_miflu__L24__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed46__w1 job=577234
+DONE primary__gpt2_miflu__L24__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed47__w1 job=577235
+DONE primary__gpt2_miflu__L24__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed48__w1 job=577237
+DONE primary__gpt2_miflu__L24__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed49__w1 job=577238
+DONE primary__gpt2_miflu__L24__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed50__w1 job=577243
+DONE primary__gpt2_miflu__L24__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L24__seed51__w1 job=577248
+DONE primary__gpt2_miflu__L24__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed42__w1 job=577251
+DONE primary__gpt2_miflu__L36__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed43__w1 job=577252
+DONE primary__gpt2_miflu__L36__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed44__w1 job=577254
+DONE primary__gpt2_miflu__L36__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed45__w1 job=577255
+DONE primary__gpt2_miflu__L36__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed46__w1 job=577259
+DONE primary__gpt2_miflu__L36__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed47__w1 job=577266
+DONE primary__gpt2_miflu__L36__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed48__w1 job=577269
+DONE primary__gpt2_miflu__L36__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed49__w1 job=577270
+DONE primary__gpt2_miflu__L36__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed50__w1 job=577272
+DONE primary__gpt2_miflu__L36__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L36__seed51__w1 job=577273
+DONE primary__gpt2_miflu__L36__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed42__w1 job=577275
+DONE primary__gpt2_miflu__L48__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed43__w1 job=577277
+DONE primary__gpt2_miflu__L48__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed44__w1 job=577279
+DONE primary__gpt2_miflu__L48__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed45__w1 job=577280
+DONE primary__gpt2_miflu__L48__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed46__w1 job=577282
+DONE primary__gpt2_miflu__L48__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed47__w1 job=577283
+DONE primary__gpt2_miflu__L48__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed48__w1 job=577286
+DONE primary__gpt2_miflu__L48__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed49__w1 job=577288
+DONE primary__gpt2_miflu__L48__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed50__w1 job=577291
+DONE primary__gpt2_miflu__L48__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L48__seed51__w1 job=577293
+DONE primary__gpt2_miflu__L48__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed42__w1 job=577295
+DONE primary__gpt2_miflu__L60__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed43__w1 job=577296
+DONE primary__gpt2_miflu__L60__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed44__w1 job=577299
+DONE primary__gpt2_miflu__L60__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed45__w1 job=577300
+DONE primary__gpt2_miflu__L60__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed46__w1 job=577303
+DONE primary__gpt2_miflu__L60__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed47__w1 job=577305
+DONE primary__gpt2_miflu__L60__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed48__w1 job=577308
+DONE primary__gpt2_miflu__L60__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed49__w1 job=577310
+DONE primary__gpt2_miflu__L60__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed50__w1 job=577312
+DONE primary__gpt2_miflu__L60__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__gpt2_miflu__L60__seed51__w1 job=577313
+DONE primary__gpt2_miflu__L60__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed42__w1 job=577314
+DONE primary__nlinear__L24__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed43__w1 job=577315
+DONE primary__nlinear__L24__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed44__w1 job=577317
+DONE primary__nlinear__L24__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed45__w1 job=577318
+DONE primary__nlinear__L24__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed46__w1 job=577320
+DONE primary__nlinear__L24__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed47__w1 job=577321
+DONE primary__nlinear__L24__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed48__w1 job=577323
+DONE primary__nlinear__L24__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed49__w1 job=577324
+DONE primary__nlinear__L24__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed50__w1 job=577327
+DONE primary__nlinear__L24__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L24__seed51__w1 job=577328
+DONE primary__nlinear__L24__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed42__w1 job=577330
+DONE primary__nlinear__L36__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed43__w1 job=577331
+DONE primary__nlinear__L36__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed44__w1 job=577333
+DONE primary__nlinear__L36__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed45__w1 job=577335
+DONE primary__nlinear__L36__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed46__w1 job=577337
+DONE primary__nlinear__L36__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed47__w1 job=577339
+DONE primary__nlinear__L36__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed48__w1 job=577341
+DONE primary__nlinear__L36__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed49__w1 job=577342
+DONE primary__nlinear__L36__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed50__w1 job=577345
+DONE primary__nlinear__L36__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L36__seed51__w1 job=577346
+DONE primary__nlinear__L36__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed42__w1 job=577349
+DONE primary__nlinear__L48__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed43__w1 job=577350
+DONE primary__nlinear__L48__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed44__w1 job=577352
+DONE primary__nlinear__L48__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed45__w1 job=577353
+DONE primary__nlinear__L48__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed46__w1 job=577355
+DONE primary__nlinear__L48__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed47__w1 job=577356
+DONE primary__nlinear__L48__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed48__w1 job=577360
+DONE primary__nlinear__L48__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed49__w1 job=577361
+DONE primary__nlinear__L48__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed50__w1 job=577363
+DONE primary__nlinear__L48__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L48__seed51__w1 job=577364
+DONE primary__nlinear__L48__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed42__w1 job=577366
+DONE primary__nlinear__L60__seed42__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed43__w1 job=577368
+DONE primary__nlinear__L60__seed43__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed44__w1 job=577369
+DONE primary__nlinear__L60__seed44__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed45__w1 job=577370
+DONE primary__nlinear__L60__seed45__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed46__w1 job=577372
+DONE primary__nlinear__L60__seed46__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed47__w1 job=577373
+DONE primary__nlinear__L60__seed47__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed48__w1 job=577375
+DONE primary__nlinear__L60__seed48__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed49__w1 job=577376
+DONE primary__nlinear__L60__seed49__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed50__w1 job=577378
+DONE primary__nlinear__L60__seed50__w1 state=COMPLETED rc=0:0
+SUBMITTED primary__nlinear__L60__seed51__w1 job=577380
+DONE primary__nlinear__L60__seed51__w1 state=COMPLETED rc=0:0
+SUBMITTED baseline__seasonal_naive__L24__seedna__w1 job=577381
+DONE baseline__seasonal_naive__L24__seedna__w1 state=COMPLETED rc=0:0
+SUBMITTED baseline__seasonal_naive__L36__seedna__w1 job=577382
+DONE baseline__seasonal_naive__L36__seedna__w1 state=COMPLETED rc=0:0
+SUBMITTED baseline__seasonal_naive__L48__seedna__w1 job=577386
+DONE baseline__seasonal_naive__L48__seedna__w1 state=COMPLETED rc=0:0
+SUBMITTED baseline__seasonal_naive__L60__seedna__w1 job=577388
+DONE baseline__seasonal_naive__L60__seedna__w1 state=COMPLETED rc=0:0
+ALL_DONE

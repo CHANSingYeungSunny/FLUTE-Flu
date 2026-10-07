@@ -1,0 +1,46 @@
+[00:09:29] ==================================================================
+[00:09:29]   Table VIII Ablation: w/o multimodality
+[00:09:29] ==================================================================
+[00:09:29]   Variant         : no_multi  (use_text=False, use_lora=True, use_text_ln=True, gated_inject=False, unfreeze_first_k=0)
+[00:09:29]   Recipe          : baseline  -> adam, lr=0.0005, wd=0, loss=mse, betas=(0.9, 0.999) eps=1e-08
+[00:09:29]   Early stopping  : False (patience=5)
+[00:09:29]   Config          : T=104, K=6, Lp=24, S=2
+[00:09:29]                     batch=16, epochs=20, reps=1, seed=44
+[00:09:29]   Data profile    : author_966 (966 rows, between 2002 and 2020, split 676/773)
+[00:09:29]   Output          : results/stage5/author_966/notext/
+[00:09:29] 
+[00:09:29] Scaler: FIT on train[:676] ONLY — agrees with persisted /gpfs1/scratch/sychan552/a2_stage5/data/scaler_miflu_author966.json (no test-set refit)
+[00:09:29] Data: 966 total (profile=author_966) | Train=676 | Val=97 | Test=193
+[00:09:29] 
+[00:09:29] 
+[00:09:29]   [RESUME] 11 (L, rep, seed) fits already complete (locked checkpoint present): [(24, 1, 42), (24, 1, 43), (24, 1, 44), (36, 1, 42), (36, 1, 43), (36, 1, 44), (48, 1, 42), (48, 1, 43), (48, 1, 44), (60, 1, 42), (60, 1, 43)]
+[00:09:29] ──────────────────────────────────────────────────
+[00:09:29]   HORIZON L=60
+[00:09:29] ──────────────────────────────────────────────────
+[00:09:29]   [L=60] Rep 1/1 ...
+[00:09:29]   L=60: train=513 val=38 test=134 windows
+[00:09:29] [PARAM AUDIT] Variant: no_multi | Total Trainable: 1,223,844 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[00:09:32]     ep  1/20 | train_loss=0.847125 | val_mse=0.509301(All) 0.7609(ILI) | val_mae=0.544329 | 2.8s
+[00:09:35]     ep  2/20 | train_loss=0.660956 | val_mse=0.347189(All) 0.5174(ILI) | val_mae=0.468786 | 2.7s
+[00:09:37]     ep  3/20 | train_loss=0.549264 | val_mse=0.259401(All) 0.3692(ILI) | val_mae=0.402078 | 2.7s
+[00:09:40]     ep  4/20 | train_loss=0.503697 | val_mse=0.212639(All) 0.3047(ILI) | val_mae=0.350177 | 2.7s
+[00:09:43]     ep  5/20 | train_loss=0.440098 | val_mse=0.175330(All) 0.2303(ILI) | val_mae=0.303526 | 2.7s
+[00:09:45]     ep  6/20 | train_loss=0.391700 | val_mse=0.185241(All) 0.2527(ILI) | val_mae=0.305288 | 2.7s
+[00:09:48]     ep  7/20 | train_loss=0.354691 | val_mse=0.179891(All) 0.2630(ILI) | val_mae=0.289368 | 2.7s
+[00:09:51]     ep  8/20 | train_loss=0.327401 | val_mse=0.186356(All) 0.2576(ILI) | val_mae=0.297305 | 2.7s
+[00:09:53]     ep  9/20 | train_loss=0.284276 | val_mse=0.158873(All) 0.2313(ILI) | val_mae=0.280409 | 2.7s
+[00:09:56]     ep 10/20 | train_loss=0.257726 | val_mse=0.146391(All) 0.2072(ILI) | val_mae=0.274333 | 2.7s
+[00:09:59]     ep 11/20 | train_loss=0.237704 | val_mse=0.144916(All) 0.2115(ILI) | val_mae=0.270123 | 2.7s
+[00:10:01]     ep 12/20 | train_loss=0.213432 | val_mse=0.148424(All) 0.2144(ILI) | val_mae=0.270157 | 2.7s
+[00:10:04]     ep 13/20 | train_loss=0.204199 | val_mse=0.150634(All) 0.2256(ILI) | val_mae=0.275437 | 2.7s
+[00:10:07]     ep 14/20 | train_loss=0.182562 | val_mse=0.150572(All) 0.2233(ILI) | val_mae=0.280445 | 2.7s
+[00:10:09]     ep 15/20 | train_loss=0.169474 | val_mse=0.135202(All) 0.1975(ILI) | val_mae=0.263642 | 2.7s
+[00:10:12]     ep 16/20 | train_loss=0.169748 | val_mse=0.168840(All) 0.2635(ILI) | val_mae=0.291994 | 2.7s
+[00:10:15]     ep 17/20 | train_loss=0.154284 | val_mse=0.141387(All) 0.2106(ILI) | val_mae=0.271224 | 2.7s
+[00:10:17]     ep 18/20 | train_loss=0.138366 | val_mse=0.157107(All) 0.2431(ILI) | val_mae=0.285758 | 2.7s
+[00:10:20]     ep 19/20 | train_loss=0.130897 | val_mse=0.164130(All) 0.2507(ILI) | val_mae=0.294471 | 2.7s
+[00:10:23]     ep 20/20 | train_loss=0.124283 | val_mse=0.160696(All) 0.2504(ILI) | val_mae=0.287932 | 2.7s
+[00:10:23]   [ablation] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[00:10:23]   [DEFER_TEST] prediction export skipped (locked-batch step)
+[00:10:23] 
+[00:10:23]   [ablation] validation-only fit complete; Test scoring deferred to the locked-batch scoring entry.

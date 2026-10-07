@@ -1,0 +1,40 @@
+{
+  "generated_utc": "2026-09-21T04:51:03Z",
+  "pre_test_freeze_audit": "ALL GREEN required before Test access",
+  "checks": {
+    "wave1_accepted_580": true,
+    "deferred_resolved_18_of_18": true,
+    "equivalent_mappings_12_of_12": true,
+    "new_controls_accepted_6_of_6": true,
+    "final_candidate_frozen": true,
+    "mandatory_comparators_frozen": true,
+    "analysis_plan_frozen": true,
+    "pte_pie_spec_frozen": true,
+    "date_event_audit_passed": true,
+    "test_figure_plan_frozen": true,
+    "test_scripts_frozen": true,
+    "source_deployment_spec_data_scaler_hashes_recorded": true,
+    "queue_empty": true,
+    "controller_absent": true,
+    "lock_free": true,
+    "test_access": 0,
+    "holdout_access": 0
+  },
+  "test_script": {
+    "path": "scripts/innovation/test_eval.py",
+    "sha256": "93a1338bfac30096a95448830bb2867d9966e3625df9a51c91453b86ae7dae0b"
+  },
+  "note": "queue_empty/controller_absent/lock_free are filled from the authoritative HPC state check (performed separately, immediately before Test access).",
+  "hpc_state_verification": {
+    "verified_utc": "2026-09-21T04:51:03Z",
+    "queue_jobs": 0,
+    "controller_pid_files": {
+      "wave1_controller.pid": "3343935 (stale, not running)",
+      "_v319b_controller.pid": "543743 (stale)"
+    },
+    "lock_files": "none",
+    "recent_sacct": "576502..576513 COMPLETED (defect-B training), 576727 COMPLETED (amB finalize)"
+  },
+  "test_access": 0,
+  "holdout_access": 0
+}

@@ -1,0 +1,17 @@
+asset,path,class,why_protected
+author_repo,/gpfs1/home/sychan552/official_repo_reproduction_20261006/,PROTECTED_REQUIRED,author's released repository - the object of reproduction; must stay byte-for-byte unmodified
+author_dataset,/scratch/sychan552/a0_replay/dataset/illness/national_illness.csv,PROTECTED_REQUIRED,sha256 2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5 - read by the running R1-B pilot
+text_embeddings,/scratch/sychan552/a0_replay/dataset/illness/text_emb/,PROTECTED_REQUIRED,author's precomputed GPT-2 prompt embeddings per horizon - read by the pilot
+gpt2_snapshot,/gpfs1/home/sychan552/.cache/huggingface,PROTECTED_REQUIRED,frozen backbone needed to reconstruct every locked compact checkpoint; pilot runs TRANSFORMERS_OFFLINE=1 against it
+r1b_corrected_code,/gpfs1/home/sychan552/official_repo_reproduction_20261006/r0_r5_cpu_stage_20261006/r1b/,PROTECTED_REQUIRED,r1b_model.py 487e4cea... and r1b_train.py b07894593b... - the corrected trainer that produced the current pilot
+r1b_v2_namespace,/gpfs1/home/sychan552/official_repo_reproduction_20261006/r1_v2_20261007/,PROTECTED_REQUIRED,corrected pilot outputs - the only valid R1-B results
+r1_failed_namespace,/gpfs1/home/sychan552/official_repo_reproduction_20261006/r1/,PROTECTED_REQUIRED,engineering evidence for jobs 607969_0 / 607984_1 - INVALID results, retained on purpose
+wave1_durable,/gpfs1/home/sychan552/innovation_durable/screening/,PROTECTED_REQUIRED,578 durable compact checkpoints + predictions + metrics; the recovery anchor for every superseded root
+wave1_durable_runs,/gpfs1/home/sychan552/innovation_durable/runs/,PROTECTED_REQUIRED,second durable run store
+active_deploy_root,/scratch/sychan552/innovation_deploy_root_v3_clean14,PROTECTED_REQUIRED,ACTIVE deploy root (amendment B); excluded from cleanup outright
+a2_durable,/gpfs1/home/sychan552/stage5_a2_durable,PROTECTED_REQUIRED,36/36 verified A2 checkpoints
+f1_frozen,/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_execution_20261006/,PROTECTED_REQUIRED,F1 frozen as EXPLORATORY_A2F_CORRECTED_CONTRACT_PILOT - supplementary only
+original_docx,local: MIFlu_非LLM与LLM流感预测最终报告_中文版.docx,PROTECTED_REQUIRED,sha256 9c573f48fb65e590c7973223d6cb5e0ab74e2dfa4f6df11ec936f980a6b50ead - must remain unchanged
+historical_4v4_results,local: results/v3_clean/,PROTECTED_REQUIRED,the frozen Wave-1 validation ranking and one-time Test evidence
+seven_fixed_models,local: results/ + hpc_results/stage5_a2/,PROTECTED_REQUIRED,qwen_time_llm calf_llm timecma_llm nlinear dlinear patchtst itransformer - predictions reused, not retrained
+cleanup_audit_trail,/gpfs1/home/sychan552/official_repo_reproduction_20261006/r1_v2_verification_20261007/,PROTECTED_REQUIRED,classifier + plan + executed record + dry run for the 2026-10-07 cleanup

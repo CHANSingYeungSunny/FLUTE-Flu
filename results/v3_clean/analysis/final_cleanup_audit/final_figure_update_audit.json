@@ -1,0 +1,234 @@
+{
+  "generated": "2026-09-21",
+  "purpose": "Figure inventory + update audit for the final Chinese deliverables (Addendum §1 and §8).",
+  "summary": {
+    "already_current": [
+      "Figure A (Validation 8-architecture ranking)",
+      "Figure F (12 Test/Holdout prediction panels + gallery)"
+    ],
+    "stale_or_validation_only": [
+      "Wave-1 Validation prediction-vs-ground-truth curves (fig9/fig10) — NOT embedded, archived"
+    ],
+    "regenerated_from_final_test": [
+      "Figure B",
+      "Figure C",
+      "Figure D",
+      "Figure E",
+      "Figure G",
+      "Figure H"
+    ],
+    "embedded_in_chinese_report": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F(gallery + 4 panels)",
+      "G",
+      "H"
+    ],
+    "embedded_in_project_summary": [
+      "Figure B (Final Test comparison)",
+      "Figure F gallery (prediction vs ground truth)"
+    ]
+  },
+  "figures": [
+    {
+      "id": "figA",
+      "label": "Figure A — Validation 8-architecture ranking",
+      "path": "results/v3_clean/analysis/figures/fig1_model_ranking_ci.png",
+      "source_data": "results/v3_clean/analysis/selection_outcome.json",
+      "figure_sha256": "be95da2887623f54c2a4d5a10b62cbebb6ac75b1f7359d186a8aff7285a4b9fb",
+      "source_sha256": "f93e711288023703b7c6ed7818009e7598c70f6dc9ed4c9274691ea16f667dc4",
+      "split": "Validation (Wave-1)",
+      "models": "8 architectures (4 Non-LLM + 4 LLM)",
+      "metric": "average_MSE_4L with 95% CI",
+      "status": "already current",
+      "validation_only_label_required": true,
+      "embedded_in": [
+        "chinese_report"
+      ]
+    },
+    {
+      "id": "figB",
+      "label": "Figure B — Final Test/Holdout comparison",
+      "path": "results/v3_clean/final/final_report_figures/figB_final_test_comparison.png",
+      "source_data": "results/v3_clean/final/final_test_metrics.json",
+      "figure_sha256": "0a88652395ba9a65f0bb4c8876a2956e46e5a5d65eae9fac56675a062a967760",
+      "source_sha256": "613cfd52178298f8c0c135e5aa616035cf8b2ff52063593a1d3161551d4b5baf",
+      "split": "Test/Holdout",
+      "models": [
+        "nlinear",
+        "gpt2_miflu",
+        "seasonal_naive"
+      ],
+      "metric": "average_MSE_4L (2.739 / 3.051 / 4.279)",
+      "status": "regenerated_from_final_test",
+      "embedded_in": [
+        "chinese_report",
+        "project_summary"
+      ],
+      "figure_text_language": "English"
+    },
+    {
+      "id": "figC",
+      "label": "Figure C — Validation-to-Test reversal",
+      "path": "results/v3_clean/final/final_report_figures/figC_validation_to_test_reversal.png",
+      "source_data": "final_test_metrics.json + selection_outcome.json + baseline_comparison.csv",
+      "figure_sha256": "1d4596067f495f063ed5bfd6dddf142d35ca6c18b3feac9e9f78f31f6d3969c6",
+      "source_sha256": "613cfd52178298f8c0c135e5aa616035cf8b2ff52063593a1d3161551d4b5baf",
+      "split": "Validation (light) + Test/Holdout (dark), visually separated",
+      "models": [
+        "nlinear",
+        "gpt2_miflu",
+        "seasonal_naive"
+      ],
+      "metric": "average_MSE_4L",
+      "status": "regenerated_from_final_test",
+      "embedded_in": [
+        "chinese_report"
+      ],
+      "figure_text_language": "English"
+    },
+    {
+      "id": "figD",
+      "label": "Figure D — Test MSE/MAE by horizon",
+      "path": "results/v3_clean/final/final_report_figures/figD_test_mse_mae_by_horizon.png",
+      "source_data": "results/v3_clean/final/final_test_metrics.json",
+      "figure_sha256": "e9ce1a51cda833f32e89ee8e1389656e58dc7dd20e09b607a4f63ca5bf0d3fa3",
+      "source_sha256": "613cfd52178298f8c0c135e5aa616035cf8b2ff52063593a1d3161551d4b5baf",
+      "split": "Test/Holdout",
+      "models": [
+        "nlinear",
+        "gpt2_miflu",
+        "seasonal_naive"
+      ],
+      "horizons": [
+        24,
+        36,
+        48,
+        60
+      ],
+      "metric": "per-horizon MSE / MAE",
+      "status": "regenerated_from_final_test",
+      "embedded_in": [
+        "chinese_report"
+      ],
+      "figure_text_language": "English"
+    },
+    {
+      "id": "figE",
+      "label": "Figure E — Test PTE/PIE by horizon",
+      "path": "results/v3_clean/final/final_report_figures/figE_test_pte_pie_by_horizon.png",
+      "source_data": "results/v3_clean/final/final_peak_hit_rates.csv",
+      "figure_sha256": "b14609f056a967568970bcda02e77c675d5f66d9d857540bc24622ae25549772",
+      "source_sha256": "9dbd74dca88f57037155714aba763c76b7b9cefba9af750b5b1f9eebbc2e15b4",
+      "split": "Test/Holdout",
+      "models": [
+        "nlinear",
+        "gpt2_miflu",
+        "seasonal_naive"
+      ],
+      "horizons": [
+        24,
+        36,
+        48,
+        60
+      ],
+      "metric": "PTE (weeks) / PIE (%) — hit thresholds: PTE<=1wk, PIE<=25%",
+      "status": "regenerated_from_final_test",
+      "embedded_in": [
+        "chinese_report"
+      ],
+      "figure_text_language": "English"
+    },
+    {
+      "id": "figF",
+      "label": "Figure F — Test prediction vs ground truth (gallery + 4 panels)",
+      "path": "results/v3_clean/final/final_test_prediction_gallery/final_test_prediction_gallery.png",
+      "source_data": "final_test_curve_source_data/ (12 CSVs) + final_test_window_provenance.csv",
+      "figure_sha256": "197089f939d6ea60469d81f8df096ff8c4a0688b9f12cc39151674354185906d",
+      "source_sha256": "f08205f748db40f0f4fa31f5d91ed56f6ee7b6b8be27b3d6e9adcf6851f7df93",
+      "split": "Test/Holdout target window ONLY [820..1024]",
+      "models": [
+        "nlinear",
+        "gpt2_miflu",
+        "seasonal_naive"
+      ],
+      "horizons": [
+        24,
+        36,
+        48,
+        60
+      ],
+      "metric": "ILITOTAL (inverse-transformed); GT solid / prediction dashed; peak markers",
+      "status": "already current",
+      "provenance_asserted": {
+        "input_target_overlap_count": 0,
+        "future_target_leakage_count": 0,
+        "scaler_fit_split": "Training",
+        "checkpoint_selection_split": "Validation",
+        "plotted_target_split": "Test/Holdout"
+      },
+      "embedded_in": [
+        "chinese_report",
+        "project_summary"
+      ]
+    },
+    {
+      "id": "figG",
+      "label": "Figure G — Deferred controls (Family A vs Family B, separate)",
+      "path": "results/v3_clean/final/final_report_figures/figG_deferred_controls_familyAB.png",
+      "source_data": "results/v3_clean/final/deferred_controls_statistical_interpretation.json",
+      "figure_sha256": "3fd6de0ef3d1a0c2e617d01f3b132c2895f97b77b86b944a6d3d17fcb80f1631",
+      "source_sha256": "f145de69bcaac23799aa457bc22f312c18a43b7eddbe773811c0696cd054e523",
+      "split": "controls (descriptive Family A + confirmatory Family B)",
+      "metric": "delta MSE relative to parent model (not pooled)",
+      "status": "regenerated_from_final_test",
+      "embedded_in": [
+        "chinese_report"
+      ],
+      "figure_text_language": "English"
+    },
+    {
+      "id": "figH",
+      "label": "Figure H — Final workflow + evidence integrity",
+      "path": "results/v3_clean/final/final_report_figures/figH_final_workflow.png",
+      "source_data": "terminal audit ledger (25/25 passed, isolation violation = 0)",
+      "figure_sha256": "e863c1e6e6f7f60ac8108318de7853a360fa53215af6e7bf90252d1a2d707d53",
+      "source_sha256": null,
+      "split": "workflow schematic (not a data split)",
+      "models": "n/a",
+      "metric": "n/a",
+      "status": "regenerated_from_final_test",
+      "embedded_in": [
+        "chinese_report"
+      ],
+      "figure_text_language": "English"
+    }
+  ],
+  "individual_prediction_panels_sha256": {
+    "fig_test_nlinear_L24.png": "2c84506a3f37cb88974873ede59c6c989d785f2aeb0905a3e16cec89837d957f",
+    "fig_test_nlinear_L36.png": "fdc53d58bcfb271c448e36690336716bac8cbd13c89d548306060ea6d1c6c12c",
+    "fig_test_nlinear_L48.png": "5e820abf7522547c510a1decc540466dbec154e8eefddc748b54a74353610082",
+    "fig_test_nlinear_L60.png": "5d700c10d57ab682c8d42e121e5745049b0b205ad077ee2dd347b353c2e9572a",
+    "fig_test_gpt2_miflu_L24.png": "0a2e8906702a1c571e6ec2c53cd40f336a7fc0dfedfc97189b3627df9ab2e4f3",
+    "fig_test_gpt2_miflu_L36.png": "83f2014c61fd2d1e3127fc02f7ad7f257193d2fd4415f8d0ab970ca72e0405be",
+    "fig_test_gpt2_miflu_L48.png": "b04162cd64fe9b01b73be593bfd52ba8d7318c0a15fa8db14df25932670f2407",
+    "fig_test_gpt2_miflu_L60.png": "c74553013f4236f2484e24c76890a7294a1fc32a13aa3e253719993e6ac97a55",
+    "fig_test_seasonal_naive_L24.png": "dd1a5ce4f283e1fba0c775c81e3441c6f6c3aeb404202b498355b4bc48260177",
+    "fig_test_seasonal_naive_L36.png": "637abe418e336125448164dec62124ea219ad22fa46e42d41aa71b06087025f7",
+    "fig_test_seasonal_naive_L48.png": "ea6643a8c18f7a9a4a6297b23ea5d7e8a01b0e8b150b4a72359ebd39922066e3",
+    "fig_test_seasonal_naive_L60.png": "f85bf2f51f140c65ed793ba36ec4d07098cda0ebdb7d0ff5856d54a886bd300e"
+  },
+  "panels_embedded_in_chinese_report": [
+    "fig_test_nlinear_L24.png",
+    "fig_test_nlinear_L60.png",
+    "fig_test_gpt2_miflu_L24.png",
+    "fig_test_gpt2_miflu_L60.png"
+  ],
+  "figure_text_language": "English (all figures: titles, axes, legends, annotations, captions)",
+  "figH_layout_fix": "vertical flow, no overlapping text, arrows never cross labels",
+  "pte_pie_joint_hit_added_to_report": true,
+  "updated": "2026-09-21 (English regeneration + figH layout fix + PTE/PIE joint-hit answer)"
+}

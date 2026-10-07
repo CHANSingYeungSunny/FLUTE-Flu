@@ -1,0 +1,33 @@
+{
+  "reference_csv": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\data\\predictions_miflu_L24_paper_protocol.csv",
+  "tolerances": {
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "pte_pie_abs": 1e-09
+  },
+  "row_count_existing": 182,
+  "row_count_innovation": 182,
+  "row_count_equal": true,
+  "abs_week_equal": true,
+  "date_index_equal": true,
+  "date_start": "2018-01-28",
+  "date_end": "2021-07-18",
+  "y_true_max_abs_diff": 0.0,
+  "y_pred_max_abs_diff": 0.0,
+  "y_pred_mean_abs_diff": 0.0,
+  "mse_existing": 244345300.3600282,
+  "mse_innovation": 244345300.3600282,
+  "mse_diff": 0.0,
+  "mae_existing": 9904.792338276957,
+  "mae_innovation": 9904.792338276957,
+  "mae_diff": 0.0,
+  "pte_existing": 1.5,
+  "pte_innovation": 1.5,
+  "pte_equal": true,
+  "pie_existing": 19.489857508005123,
+  "pie_innovation": 19.489857508005123,
+  "pie_diff": 0.0,
+  "n_true_peaks_equal": true,
+  "n_hit_equal": true,
+  "all_agree": true
+}

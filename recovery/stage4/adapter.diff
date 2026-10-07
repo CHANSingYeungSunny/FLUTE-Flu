@@ -1,0 +1,359 @@
+--- recovery/stage4/before/configs.py	2026-09-24 11:22:25.791190900 +0800
++++ scripts/configs.py	2026-09-24 11:22:58.958138700 +0800
+@@ -78,10 +78,86 @@
+ TRAIN_END = 717
+ VAL_END = 819
+ 
++# ──────────────────────────────────────────────────────────────────────────
++# Immutable dataset profiles (Stage 4 adapter — additive, hash-pinned)
++# ──────────────────────────────────────────────────────────────────────────
++# The project 1025-row path is byte-for-byte unchanged. `author_966` is a
++# SEPARATE profile so track A (author 966-row vintage) and track B (July 1025
++# snapshot) can never be silently conflated. Each profile pins its own data
++# hash, split rule, scaler path and prompt date-range; nothing is inferred
++# from file contents alone. No profile deletes the 1025-row guard — the default
++# profile still refuses a truncated CSV.
++DATA_PROFILES = {
++    "project_1025": {
++        "data_path": RAW_DATA_PATH,
++        "sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
++        "n_rows": 1025,
++        "split_rule": "project_70_10_20",
++        "train_end": 717,
++        "val_end": 819,
++        "date_range_string": "between 2002 and 2021",
++        "scaler_path": SCALER_PATH,
++    },
++    "author_966": {
++        "data_path": os.path.join(DATA_DIR, "raw",
++                                  "national_illness_raw_paper_exact.csv"),
++        "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
++        "n_rows": 966,
++        "split_rule": "author_676_97_193",
++        "train_end": 676,
++        "val_end": 773,
++        "date_range_string": "between 2002 and 2020",
++        "scaler_path": os.path.join(DATA_DIR, "scaler_miflu_author966.json"),
++    },
++}
++
+ # Priority subset for the journal submission (no prompt ablations).
+ CORE_VARIANTS = ("full", "no_lora", "no_text_ln", "gated_inject")
+ 
+ 
++def resolve_profile(name: str) -> dict:
++    """Return a copy of the immutable profile, or raise on an unknown name."""
++    if name not in DATA_PROFILES:
++        raise ValueError(f"unknown data profile {name!r}; "
++                         f"known={sorted(DATA_PROFILES)}")
++    return dict(DATA_PROFILES[name])
++
++
++def split_for_profile(name: str, n_rows: int) -> tuple[int, int]:
++    """Recompute (train_end, val_end) for a named profile and assert it matches.
++
++    project_1025 keeps the historical 70/10/20 convention; author_966 uses the
++    author's num_vali=remainder convention (676/97/193).
++    """
++    p = resolve_profile(name)
++    n = int(n_rows)
++    if n != p["n_rows"]:
++        raise ValueError(f"profile {name!r} expects {p['n_rows']} rows, got {n}")
++    if p["split_rule"] == "author_676_97_193":
++        train_end = int(n * TRAIN_FRAC)      # 676
++        test_n = int(n * 0.20)               # 193
++        val_end = n - test_n                 # 773 (num_vali = remainder)
++    else:
++        train_end = int(n * TRAIN_FRAC)
++        val_end = train_end + int(n * VAL_FRAC)
++    if (train_end, val_end) != (p["train_end"], p["val_end"]):
++        raise ValueError(f"profile {name!r} split drift: got "
++                         f"({train_end},{val_end}) expected "
++                         f"({p['train_end']},{p['val_end']})")
++    return train_end, val_end
++
++
++def verify_profile_hash(name: str) -> str:
++    """Verify the profile's data file hash; return it on success."""
++    import hashlib
++    p = resolve_profile(name)
++    h = hashlib.sha256(open(p["data_path"], "rb").read()).hexdigest()
++    if h != p["sha256"]:
++        raise ValueError(f"profile {name!r} hash mismatch: expected "
++                         f"{p['sha256']} got {h}")
++    return h
++
++
+ def assert_full_window(n_rows: int) -> int:
+     """Crash loudly if the CSV is not the complete 2002-2021 window.
+ 
+@@ -221,6 +297,13 @@
+     # The two configs must not have been silently merged.
+     assert NATIONAL_CONFIG["T"] == 104 and REGIONAL_CONFIG["T"] == 20
+     assert CONFIG is NATIONAL_CONFIG
++    # Dataset profiles: distinct, hash-pinned, split-correct.
++    assert split_for_profile("project_1025", 1025) == (717, 819)
++    assert split_for_profile("author_966", 966) == (676, 773)
++    assert resolve_profile("project_1025")["data_path"] != \
++        resolve_profile("author_966")["data_path"]
++    assert resolve_profile("project_1025")["scaler_path"] != \
++        resolve_profile("author_966")["scaler_path"]
+     print("[configs] self-check OK")
+     print(f"  window: FULL_ROWS={FULL_ROWS} train_end={TRAIN_END} "
+           f"val_end={VAL_END}")
+--- recovery/stage4/before/textual_embedder.py	2026-09-24 11:22:25.848224600 +0800
++++ scripts/textual_embedder.py	2026-09-24 11:23:14.464189500 +0800
+@@ -162,11 +162,18 @@
+ 
+ 
+ def build_prompt(train_df, T=104, L=24,
+-                 components=DEFAULT_MIFLU_PROMPT_COMPONENTS):
+-    """Primary 7-variable prompt (N=7, OT included), section-selectable."""
++                 components=DEFAULT_MIFLU_PROMPT_COMPONENTS,
++                 date_range_string="between 2002 and 2021"):
++    """Primary 7-variable prompt (N=7, OT included), section-selectable.
++
++    `date_range_string` is the [Dataset information] span; it is a DESCRIPTIVE
++    label only (the min/max statistics are already train-only and carry no
++    target values). It is parameterised so the author 966-row profile can say
++    "between 2002 and 2020" without touching the project 1025-row default.
++    """
+     template = build_miflu_prompt_template(components)
+     return _format_prompt(template, train_df, T=T, L=L,
+-                          var_cols=VAR_COLS)
++                          var_cols=VAR_COLS, date_range_string=date_range_string)
+ 
+ 
+ # ── legacy fixed-template entry point (kept for provenance) ────────────────
+@@ -190,7 +197,8 @@
+                           var_cols=VAR_COLS_6)
+ 
+ 
+-def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6):
++def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6,
++                   date_range_string="between 2002 and 2021"):
+     stats = compute_prompt_stats(train_df, var_cols=var_cols)
+     fmt_stats = {}
+     for k, v in stats.items():
+@@ -199,6 +207,7 @@
+         else:          # absolute counts
+             fmt_stats[k] = f"{v:.0f}"
+     fmt_stats["L"] = L
++    template = template.replace("between 2002 and 2021", date_range_string)
+     return template.format(**fmt_stats)
+ 
+ 
+--- recovery/stage4/before/train_miflu.py	2026-09-24 11:22:25.902158000 +0800
++++ scripts/train_miflu.py	2026-09-24 11:24:11.482875900 +0800
+@@ -33,7 +33,8 @@
+ #   NOTE: 论文 Table X 仅称 "'OT' feature for long-term forecasting task"，未给公式、
+ #   未称黑箱。OT=num_patients（全量）是基于 Fig 2(a) 图表量级反推出的实现选择，
+ #   非论文明文定义；训练代码从未做 /100 缩放；StandardScaler 使常数缩放不影响训练。
+-from configs import CONFIG, VAR_COLS, set_seed
++from configs import (CONFIG, VAR_COLS, set_seed,
++                     resolve_profile, split_for_profile, verify_profile_hash)
+ 
+ BASE_DIR = os.path.dirname(__file__)
+ PROJECT_ROOT = os.path.dirname(BASE_DIR)
+@@ -49,6 +50,8 @@
+                             f"results_miflu_paper_protocol_{TS}.csv")
+ DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "national_illness_raw.csv")
+ CKPT_DIR = os.path.join(PROJECT_ROOT, "checkpoints")
++ACTIVE_PROFILE = "project_1025"           # overridden from --profile in main()
++SCALER_PATH = DEFAULT_SCALER_PATH         # overridden from the profile in main()
+ 
+ _log_file = None
+ 
+@@ -82,11 +85,12 @@
+     # Full 2002-2021 data — distribution shift makes text embeddings valuable
+     data = df[VAR_COLS].values.astype(np.float32)
+     n = len(data)
+-    t_end, v_end = int(n * 0.70), int(n * 0.70) + int(n * 0.10)
++    # Profile-aware split: project_1025 -> 717/819, author_966 -> 676/773.
++    t_end, v_end = split_for_profile(ACTIVE_PROFILE, n)
+ 
+     bundle = ScalerBundle.fit_from_train(df, VAR_COLS, train_end=t_end, val_end=v_end)
+-    bundle.save_json(DEFAULT_SCALER_PATH)
+-    log(f"Scaler persisted -> {DEFAULT_SCALER_PATH} "
++    bundle.save_json(SCALER_PATH)
++    log(f"Scaler persisted -> {SCALER_PATH} "
+         f"(train_end={bundle.train_end}, val_end={bundle.val_end})")
+ 
+     train_mean = bundle.mean_.reshape(1, -1).astype(np.float32)
+@@ -354,7 +358,9 @@
+         "ground_truth_ili_phys", "prediction_ili_phys"])
+     # Attach the REAL CDC calendar (epiweek + week_start_date). This replaces the
+     # buggy synthetic `2002w01 + abs_week weeks` mapping, which drifted ~19 weeks.
+-    out_df = attach_calendar(out_df, abs_week_col="abs_week")
++    # raw_csv follows the active profile so abs_week indices map to the RIGHT
++    # calendar (author 966-row file vs project 1025-row file).
++    out_df = attach_calendar(out_df, abs_week_col="abs_week", raw_csv=DATA_PATH)
+     out_df = out_df[["split", "abs_week", "step", "epiweek", "week_start_date",
+                      "ground_truth_ili", "prediction_ili",
+                      "ground_truth_ili_phys", "prediction_ili_phys"]]
+@@ -390,6 +396,10 @@
+     ap.add_argument("--batch", type=int, default=CONFIG["batch_size"],
+                     help="Batch size (default 16, per essay Table IV). Lower (e.g. 8) if OOM on HPC.")
+     ap.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility.")
++    ap.add_argument("--profile", default="project_1025",
++                    choices=sorted(("project_1025", "author_966")),
++                    help="Immutable dataset profile (project 1025-row snapshot "
++                         "or author 966-row vintage).")
+     ap.add_argument("--export-dir", default=None,
+                     help="Where the per-horizon prediction CSVs are written "
+                          "(default: <project>/data). Smoke tests and the "
+@@ -402,6 +412,14 @@
+     # ── Deterministic execution: seed every RNG before touching any data ──
+     set_seed(args.seed)
+ 
++    # ── Profile selection: hash-verified data path + split rule + scaler path ──
++    global DATA_PATH, ACTIVE_PROFILE, SCALER_PATH
++    ACTIVE_PROFILE = args.profile
++    _prof = resolve_profile(args.profile)
++    verify_profile_hash(args.profile)
++    DATA_PATH = _prof["data_path"]
++    SCALER_PATH = _prof["scaler_path"]
++
+     # Module-level output dirs are consumed by train_L()/export_prediction_csv().
+     global CKPT_DIR
+     if args.ckpt_dir:
+@@ -447,7 +465,8 @@
+     all_rows, t_start, saved_ckpts, best_rep_info = [], time.time(), [], {}
+     for L in L_list:
+         # ── Build L-specific prompt (each L has different task instruction) ──
+-        prompt = build_prompt(data_dict["train_df"], T=eff["T"], L=L)
++        prompt = build_prompt(data_dict["train_df"], T=eff["T"], L=L,
++                              date_range_string=_prof["date_range_string"])
+         prompt_cache = text_embedder(prompt)  # (1, 367, 768)
+         log(f"  Prompt built for L={L}: {prompt_cache.shape[1]} tokens")
+         log(f"{'─'*50}"); log(f"  HORIZON L={L}"); log(f"{'─'*50}")
+--- recovery/stage4/before/train_ablation.py	2026-09-24 11:22:25.971906900 +0800
++++ scripts/train_ablation.py	2026-09-24 11:27:16.473715800 +0800
+@@ -66,11 +66,19 @@
+ # Hyper-parameters, channel list, data-window constants and the deterministic
+ # `set_seed()` helper now live in configs.py. Nothing below re-declares them.
+ from configs import (
+-    CONFIG, VAR_COLS, SCALER_PATH, RAW_DATA_PATH as DATA_PATH,
++    CONFIG, VAR_COLS, SCALER_PATH as DEFAULT_SCALER_PATH,
++    RAW_DATA_PATH as DEFAULT_DATA_PATH,
+     FULL_ROWS, TRAIN_END, VAL_END, CORE_VARIANTS,
+     assert_full_window, derive_split, set_seed,
++    resolve_profile, split_for_profile, verify_profile_hash,
+     JOURNAL_EVIDENCE_ROOT,
+ )
++
++# Active dataset profile (Stage 4): reassigned by --profile in main().
++# Defaults keep the historical 1025-row behavior byte-for-byte.
++ACTIVE_PROFILE = "project_1025"
++DATA_PATH = DEFAULT_DATA_PATH
++SCALER_PATH = DEFAULT_SCALER_PATH
+ from miflu_model import MIFlu
+ from textual_embedder import TextualInputEmbedder, build_prompt
+ from scaler_utils import ScalerBundle
+@@ -84,23 +92,23 @@
+ 
+ # ── Prompt variant builders ────────────────────────────────────────────────
+ 
+-def build_prompt_no_dataset(train_df, T, L):
++def build_prompt_no_dataset(train_df, T, L, date_range_string="between 2002 and 2021"):
+     """Remove [Dataset information] section."""
+-    prompt = build_prompt(train_df, T, L)
++    prompt = build_prompt(train_df, T, L, date_range_string=date_range_string)
+     idx = prompt.find("***")
+     return prompt[idx:] if idx > 0 else prompt
+ 
+ 
+-def build_prompt_no_task(train_df, T, L):
++def build_prompt_no_task(train_df, T, L, date_range_string="between 2002 and 2021"):
+     """Remove [Task instruction] section."""
+-    prompt = build_prompt(train_df, T, L)
++    prompt = build_prompt(train_df, T, L, date_range_string=date_range_string)
+     idx = prompt.rfind("*** [Task instruction]")
+     return prompt[:idx].rstrip() if idx > 0 else prompt
+ 
+ 
+-def build_prompt_no_vardesc(train_df, T, L):
++def build_prompt_no_vardesc(train_df, T, L, date_range_string="between 2002 and 2021"):
+     """Remove [Input variable description] section, keep only headers."""
+-    prompt = build_prompt(train_df, T, L)
++    prompt = build_prompt(train_df, T, L, date_range_string=date_range_string)
+     parts = prompt.split("***")
+     if len(parts) >= 3:
+         return parts[0] + "***\n" + parts[2]
+@@ -156,9 +164,13 @@
+     """
+     df = pd.read_csv(DATA_PATH)
+     data = df[VAR_COLS].values.astype(np.float32)
+-    n = assert_full_window(len(data))          # guard: no 966-row truncation
+-    t_end, v_end = derive_split(n)             # guard: split is exactly 717/819
+-    assert (t_end, v_end) == (TRAIN_END, VAL_END)
++    n = len(data)
++    t_end, v_end = split_for_profile(ACTIVE_PROFILE, n)
++    if ACTIVE_PROFILE == "project_1025":
++        # Retain the historical guards verbatim for the DEFAULT profile only.
++        assert_full_window(n)                  # guard: no 966-row truncation
++        assert derive_split(n) == (t_end, v_end)
++        assert (t_end, v_end) == (TRAIN_END, VAL_END)
+ 
+     # ── FIT ON TRAIN ONLY: data[:717] ──
+     bundle = ScalerBundle.fit_from_train(df, VAR_COLS, train_end=t_end, val_end=v_end)
+@@ -183,7 +195,7 @@
+     # NOTE: `transform` semantics only — the SAME train-derived statistics are
+     # applied to every split below. No refit on val/test occurs anywhere.
+     data_norm = (data - train_mean) / train_std
+-    log(f"Data: {n} total (FULL {FULL_ROWS}-row window) | "
++    log(f"Data: {n} total (profile={ACTIVE_PROFILE}) | "
+         f"Train={t_end} | Val={v_end-t_end} | Test={n-v_end}")
+     return {"data_norm": data_norm, "train_end": t_end, "val_end": v_end,
+             "train_df": df.iloc[:t_end], "train_mean": train_mean,
+@@ -586,6 +598,11 @@
+     parser.add_argument("--epochs", type=int, default=CONFIG["epochs"])
+     parser.add_argument("--batch", type=int, default=CONFIG["batch_size"])
+     parser.add_argument("--seed", type=int, default=42)
++    parser.add_argument("--profile", type=str, default="project_1025",
++                        choices=("project_1025", "author_966"),
++                        help="Dataset profile: hash-pinned data path + split rule "
++                             "+ scaler path. project_1025 = historical 1025-row "
++                             "window; author_966 = author 676/97/193 vintage.")
+     parser.add_argument("--force", action="store_true",
+                         help="Ignore existing results and retrain ALL (L, rep) "
+                              "pairs from scratch (disables resume). Use for a "
+@@ -598,6 +615,14 @@
+     # ── Deterministic execution: seed every RNG before touching any data ──
+     set_seed(args.seed)
+ 
++    # ── Dataset profile selection (Stage 4): hash-verified, split-aware ──
++    global ACTIVE_PROFILE, DATA_PATH, SCALER_PATH
++    ACTIVE_PROFILE = args.profile
++    _prof = resolve_profile(args.profile)
++    verify_profile_hash(args.profile)
++    DATA_PATH = _prof["data_path"]
++    SCALER_PATH = _prof["scaler_path"]
++
+     # Run-time config: CLI overrides MUST actually reach the trainer.
+     # (Previously the module-level `CONFIG` was handed to train_L verbatim, so
+     #  `--epochs` / `--batch` were printed in the run header but silently
+@@ -652,7 +677,9 @@
+         f"(patience={args.patience})")
+     log(f"  Config          : T={CONFIG['T']}, K={CONFIG['K']}, Lp={CONFIG['Lp']}, S={CONFIG['S']}")
+     log(f"                    batch={args.batch}, epochs={args.epochs}, reps={args.reps}, seed={args.seed}")
+-    log(f"  Data window     : FULL 1025 rows (200201-202152) — matches MIFlu §V-A")
++    log(f"  Data profile    : {ACTIVE_PROFILE} "
++        f"({_prof['n_rows']} rows, {_prof['date_range_string']}, "
++        f"split {_prof['train_end']}/{_prof['val_end']})")
+     log(f"  Output          : {EXPORT_ROOT}")
+     log()
+ 
+@@ -694,7 +721,8 @@
+ 
+         prompt_cache = None
+         if v['use_text'] and v['prompt_fn'] is not None:
+-            prompt = v['prompt_fn'](data_dict["train_df"], T=CONFIG["T"], L=L)
++            prompt = v['prompt_fn'](data_dict["train_df"], T=CONFIG["T"], L=L,
++                                    date_range_string=_prof["date_range_string"])
+             prompt_cache = text_embedder(prompt)
+ 
+         best_rep, best_val = None, float("inf")
+--- new runner files ---
+scripts/train_nlinear_966.py (NEW): 46c855c63af1a41e
+scripts/train_naive_966.py (NEW): 434857f812deceff

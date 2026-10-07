@@ -1,0 +1,26 @@
+{
+  "generated_utc": "2026-09-17T15:52:55Z",
+  "deferred_parent": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+  "binding_permitted_only_after": "the complete clean-v3 primary validation phase finishes",
+  "steps": [
+    "compare ONLY the four LLM primary candidates",
+    "use the full seven-variable, full-horizon z-space MSE",
+    "average over seeds 42..51 within each L",
+    "then take the arithmetic average over L = {24,36,48,60}",
+    "the LLM with the lowest average_MSE_4L becomes the parent of the deferred controls"
+  ],
+  "forbidden_for_binding": [
+    "old v3 ranking",
+    "old v3 checkpoint",
+    "old v3 prediction",
+    "old candidate list",
+    "ILITOTAL fixed-step metrics",
+    "PTE/PIE",
+    "resource cost",
+    "GPT-relative ratio",
+    "naive-relative ratio",
+    "(r24+r60)/2"
+  ],
+  "equivalence_policy": "if the result is a top-equivalence set, STOP and await adjudication; do not arbitrarily pick one LLM",
+  "before_binding": "the 18 deferred rows are non-submittable"
+}

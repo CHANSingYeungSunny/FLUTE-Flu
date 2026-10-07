@@ -1,0 +1,55 @@
+{
+  "contract": "ilitotal_fixed_step",
+  "channel": "ILITOTAL",
+  "channel_index": 4,
+  "steps_never_averaged": true,
+  "never_pooled_into_champion_score": true,
+  "step_lead_weeks": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4
+  },
+  "steps": {
+    "0": {
+      "step": 0,
+      "lead_weeks": 1,
+      "available": true,
+      "n": 146,
+      "mse_z": 2.3278911048722155,
+      "mae_z": 1.1095321855877769,
+      "mse_physical": 182467795.43232125,
+      "mae_physical": 9823.170608757207
+    },
+    "1": {
+      "step": 1,
+      "lead_weeks": 2,
+      "available": true,
+      "n": 146,
+      "mse_z": 2.0307669021601926,
+      "mae_z": 1.0122112853018796,
+      "mse_physical": 159178218.81725663,
+      "mae_physical": 8961.54638575211
+    },
+    "2": {
+      "step": 2,
+      "lead_weeks": 3,
+      "available": true,
+      "n": 146,
+      "mse_z": 2.099117458690456,
+      "mae_z": 0.9770488084536301,
+      "mse_physical": 164535761.2472038,
+      "mae_physical": 8650.237697646004
+    },
+    "3": {
+      "step": 3,
+      "lead_weeks": 4,
+      "available": true,
+      "n": 146,
+      "mse_z": 2.0464385926502393,
+      "mae_z": 0.9595728845986193,
+      "mse_physical": 160406617.69228625,
+      "mae_physical": 8495.515749239903
+    }
+  }
+}

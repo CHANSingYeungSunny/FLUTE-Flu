@@ -1,0 +1,16 @@
+--- a/scripts/innovation/clean_runner.py
++++ b/scripts/innovation/clean_runner.py
+@@ -304,8 +304,12 @@
+                                   seed=42)
+         ctx_fn = (lambda bsz: encoder.encode(bsz, device=device,
+                                              horizon=horizon))
++        # `make_backbone` forwards every keyword to the backbone constructor,
++        # which accepts only T/N/L plus its own kwargs. `device` is NOT part of
++        # that signature (Gate 568988 D9); the model is moved with `.to(device)`
++        # immediately below.
+         model = make_backbone(base_model, T=T_WINDOW, N=N_VARIABLES,
+-                              L=horizon, device=device, **bkw)
++                              L=horizon, **bkw)
+         if hasattr(model, "set_train_statistics"):
+             model.set_train_statistics({"target_name": "ILITOTAL",
+                                         "horizon": horizon,

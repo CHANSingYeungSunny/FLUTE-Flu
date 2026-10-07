@@ -1,0 +1,24 @@
+{
+  "generated_utc": "2026-09-16T21:31:17Z",
+  "defect": "D7",
+  "classification": "BEHAVIOR_NEUTRAL_OPTIONAL_METADATA_SERIALIZATION_FIX",
+  "runtime_version_before": "innov-v3.4-screening-artifact-contract",
+  "runtime_version_after": "innov-v3.5-context-dim-null-safe",
+  "source_aggregate_before": "8597d08e603048d4f86642ba4b1fb56689c54c64a630f72e2db313aec7603c91",
+  "source_file_count_before": 90,
+  "failing_gate": {
+    "job_id": "566029",
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "node": "gpu-a100-03",
+    "models_ok": "1/8",
+    "only_passing_model": "gpt2_miflu",
+    "root_cause": "int(encoder.context_dim()) raised TypeError because context_dim() returns None for --text-encoder none"
+  },
+  "pre_repair_sha256": {
+    "scripts/innovation/screening_artifacts.py": "4ae1c1e9cdf34137a379ddc95d4e09210368e37da66d8125e819ce0e227855ad",
+    "scripts/innovation/paths.py": "bb780e116d5c3b9b296a4f70d4c9aa8600628df5caa0aad82211a9ec4e35933b",
+    "scripts/v3/build_screening_specs.py": "add8db590ab2b04e35492d4aedb0841ddd24dafb3bb11307398b1df8f7fea20d"
+  },
+  "note": "recorded BEFORE any edit (prompt section 2)"
+}

@@ -1,7 +1,7 @@
 # MIFlu Paper Analysis & Defense Q&A (English)
 
 > Purpose: answer the supervisor's actual questions only, clearly and thoroughly. All claims are anchored to `MIFlu_paper.md` (the authoritative full PDF→markdown conversion, IEEE JBHI 2025). The former `MIFlu_Complete_Extraction.md` was deleted on 2026-08-17 (it contained fabricated content) and is no longer referenced.
-> Reproduction status (verified): training/eval now strictly follows the paper protocol `L∈{24,36,48,60}` (four independent runs), static `70:10:20` split, `shuffle=False`, scaler fit on train only; the L=52 walk-forward path is deprecated/isolated (ChatTime Phase-2 only). Current L=24 National (train-only space, 10-rep mean) MSE=5.056, MAE=1.500; paper Table V reports MSE=1.542, MAE=0.726 (3.28× / 2.07×). Exact digit-for-digit reproduction is not achieved (paper did not release lr/epoch, code, or data snapshot); protocol is aligned, residual gap discussed in §5.
+> Reproduction status (verified): training/eval now strictly follows the paper protocol `L∈{24,36,48,60}` (four independent runs), static `70:10:20` split, `shuffle=False`, scaler fit on train only; the L=52 walk-forward path is deprecated/isolated (ChatTime Phase-2 only). On the **paper-comparable 7-channel metric** (test split, 10 seeds), our L=24 MSE=2.750 / MAE=1.094 vs paper Table V MSE=1.542 / MAE=0.726 → **1.78× / 1.51×**; averaged over L∈{24,36,48,60}: **2.12× / 1.55×**. (An earlier "3.28×" figure wrongly compared our ILITOTAL-only MSE with the paper's 7-channel average and is withdrawn — see §5.0.) Exact digit-for-digit reproduction is not achieved (paper did not release lr/epoch, code, or data snapshot); protocol is aligned, residual gap discussed in §5.
 > All tables/figures/axis labels are in English for top-journal submission.
 
 ---
@@ -44,10 +44,10 @@ MIFlu predicts **future L weeks (L∈{24,36,48,60}) of national ILITOTAL** from 
 
 - GPT2 output → linear projection → normalized forecast for future L steps.
 - Inverse-normalize → real patient counts, `clamp ≥ 0`.
-- Only **ILITOTAL** is taken as final output (model internally used all 7 channels).
+- The model outputs **all 7 channels** as one `N×L` block (paper Eq. (1); `scripts/miflu_model.py` L347 `nn.Linear(D, N*L)`). **ILITOTAL is only our reporting/plotting channel** — the paper's own metric is the **7-channel mean**, and its single ILITOTAL curve (Fig. 7) is explicitly qualitative.
 - Output projection: discard text tokens, keep time patches, mean-pool over patches, project to `N×L` (`scripts/miflu_model.py` L334-336). **This mean-pooling is the standard GPT4TS replication, NOT a bug that destroys temporal structure.**
 
-**One line:** all 7 channels feed the model; it uses their history + text domain knowledge to forecast the 1 ILITOTAL curve — that is the paper's "Multimodal."
+**One line:** all 7 channels feed the model; it forecasts all 7 channels (`N×L`); we report the **7-channel MSE/MAE** (the paper-comparable number) and show the **ILITOTAL curve** as the disease-specific view — that is the paper's "Multimodal."
 
 ---
 
@@ -134,12 +134,34 @@ Only PROVIDERS shows a significant one-way lead on ILITOTAL (reverse not signifi
 
 ## §5 National deviation tracing (MSE/MAE audit)
 
-**Verified current state:**
-- Protocol aligned to paper: `L∈{24,36,48,60}` independent, 70:10:20 static, scaler train-only (no leakage).
-- Current L=24 National (train-only, 10-rep mean): **MSE=5.056 ± 1.583, MAE=1.500 ± 0.121**.
-- Paper Table V (L=24): **MSE=1.542, MAE=0.726** → current is **3.28× (MSE), 2.07× (MAE)**.
+### §5.0 Scope correction first — the paper's metric is a 7-channel average, NOT ILITOTAL-only
 
-> Diagnostic figure (L=24, train-only space, 10-rep mean): per-channel / per-error breakdown in `results/ili/figures/fig_miflu_eval_diagnostics_L24.png`.
+Verified directly against the PDF (`reference_papers/MIFlu_Large_Language_Model-Based_Multimodal_Influenza_Forecasting_Scheme.pdf`, pp. 7792–7795):
+
+- **§III-A:** "National ILI forecasting predicts **not only the ILI for the entire country (i.e., national ILI), but also several variables that represent sub-indicators of national ILI**."
+- **Eq. (1):** `X_input ∈ ℝ^{N×T}` → `Ŷ = [Ŷ_{t+L}, …, Ŷ_{t+1}]` — the output carries **all N variables** over all L steps.
+- **Output projection:** one linear layer onto the full `N×L` — i.e. the GPT4TS head. (The ablation "MIFlu w/o LoRA+multimodality … is the same as GPT4TS" confirms the head.)
+- **ILITOTAL alone** appears only in §VI-F few-shot: "in a **qualitative** manner … the last two seasons of 'ILITOTAL' variable in the National-Illness dataset … Fig. 7" — a figure, not a metric. (Fig. 4 is the US-Region task, RMSE/PCC.)
+
+⇒ **Table V's MSE/MAE are averaged over all 7 channels.** Our primary metric `mse_all_7vars_full_horizon_z` is therefore the paper-comparable quantity; ILITOTAL-only is a **disease-specific secondary** metric and is ~1.9–2.0× larger, so it must never be compared against Table V. Earlier drafts of this document did exactly that and reported a "3.28× gap" — **that number is withdrawn** (see §5.1 for the like-for-like figure).
+
+### §5.1 Verified current state (like-for-like, 7-channel)
+
+- Protocol aligned: `L∈{24,36,48,60}` independent runs, 70:10:20 static split, `shuffle=False`, scaler fit on train only (no leakage).
+- Source: `results/v3_clean/test_eval` — **test** split (206 weeks, 182 windows, seeds 42–51, n = 182 × L × 7 elements); artefact files `metrics/paper_aligned_full_output_metrics.json` and `metrics/ilitotal_full_horizon_metrics.json`.
+- Our MIFlu replication = `gpt2_miflu`. All values are StandardScaler z-space, 10-seed mean.
+
+| L | Ours — MSE (7-var) | Paper Table V MSE | Ratio | Ours — MAE (7-var) | Paper MAE | Ratio |
+|---|---|---|---|---|---|---|
+| 24 | 2.750 | 1.542 | **1.78×** | 1.094 | 0.726 | 1.51× |
+| 36 | 3.182 | 1.422 | 2.24× | 1.156 | 0.779 | 1.48× |
+| 48 | 3.189 | 1.414 | 2.26× | 1.188 | 0.757 | 1.57× |
+| 60 | 3.081 | 1.364 | 2.26× | 1.184 | 0.719 | 1.65× |
+| **mean** | **3.051** | **1.436** | **2.12×** | **1.156** | **0.745** | **1.55×** |
+
+Secondary reference (NOT comparable to Table V): ILITOTAL-only MSE = 5.386 / 6.319 / 6.244 / 5.825 (mean 5.944) — about **1.9–2.0× the 7-channel mean**, because AGE 0-4 and ILITOTAL are the two hardest channels.
+
+> Diagnostic figure (L=24, per-channel / per-error breakdown): `results/ili/figures/fig_miflu_eval_diagnostics_L24.png`.
 
 ![](results/ili/figures/fig_miflu_eval_diagnostics_L24.png)
 
@@ -148,10 +170,10 @@ Only PROVIDERS shows a significant one-way lead on ILITOTAL (reverse not signifi
 2. **Ruled out:** scaler leakage (fit on train only, leakage audit exists), other-6-channel inflation. **Partially addressed / NOT fully closed:** data-version mismatch — the specific "2024→2026 retroactive CDC revision" hypothesis is invalid (no 2024+ weeks in our file, both cover 2002–2021), BUT CDC's routine retrospective revisions *within* the 2002–2021 span (ILINet weekly data periodically re-weighted/revised) remain an unexcluded candidate (Option 3).
 3. **"Forecasting-head patch pooling destroys temporal structure" hypothesis — WITHDRAWN:** reading `miflu_model.py` confirms the patch mean-pool is the standard GPT4TS replication, not a bug.
 4. **Unconfirmed residual candidates:**
-   - *Scaler fit range:* paper unspecified train-only vs pooled. Linearly rescaling current train-only predictions to a hypothetical pooled space (no retrain) gives MSE≈1.61 (~4% off paper), MAE≈0.85 (~17% off). Linear scaling applies the **same ratio to every error point** (e'=e·σ_t/σ_p; MSE'=MSE·(σ_t/σ_p)²; MAE'=MAE·(σ_t/σ_p)) — there is **no "large errors contracted more"** non-linearity. So pooled-fit is only an **unconfirmed partial explanation**, not a confirmed root cause.
+   - *Scaler fit range (recalibrated 2026-09-22):* paper unspecified train-only vs pooled. Linear scaling still applies the **same ratio to every error point** (e'=e·σ_t/σ_p; MSE'=MSE·(σ_t/σ_p)²; MAE'=MAE·(σ_t/σ_p)) — there is **no "large errors contracted more"** non-linearity. But the old numeric estimate (MSE≈1.61, "~4% off paper") was derived from the ILITOTAL-only baseline 5.056 and is **void**. Applying the same algebraic factor to the like-for-like 7-channel figure (L=24) gives **MSE≈0.876** (43% *better* than the paper's 1.542) and **MAE≈0.620** (15% better than 0.726) — i.e. the pooled-fit hypothesis now **overshoots** rather than landing on the paper. It stays an unconfirmed candidate, but it can no longer be presented as an explanation that "reproduces the paper to within 4%."
    - *CDC within-span retrospective revisions:* we only excluded 2024+ incremental weeks; 2002–2021 in-span CDC revisions remain an unexcluded candidate (Option 3).
    - *Paper's undisclosed implementation:* lr/epoch not released ("set empirically"), no official code/data snapshot; RevIN config and text-fusion detail unknown — unresolvable without the paper's artifacts.
-5. **Expectation management:** exact digit match is unrealistic; reasonable goal is "same order of magnitude, same trend, same conclusion" (error within 1–2×, comparable peak capture). Align this with the supervisor upfront.
+5. **Expectation management:** exact digit match is unrealistic; the agreed goal is "same order of magnitude, same trend, same conclusion." On the like-for-like 7-channel metric we are at **1.78× (L=24)** and **2.12× (mean over L)** in MSE, **1.55×** in MAE — i.e. same order of magnitude, still a real gap. Report it that way to the supervisor; do not quote the old 3.28× figure, which mixed a 1-channel number with a 7-channel number.
 
 ---
 
@@ -191,7 +213,7 @@ Left-good/right-bad is a genuine generalization limitation (drift + COVID), defe
 
 **3. Why the old 0.0 disappeared and now it is trustworthy.** The old 0.0 came from the misused ChatTime protocol misaligning peak timing so only 1/4 peaks matched and that one had Δt=0, averaging to 0.0 and hiding 3 misses. Now, under the paper protocol + fixed logic: peaks detected on the correct test window, misses explicitly marked, Timing averages only hits with the miss-count forced alongside. Current L=24 measured Timing ≈ **0.5 weeks** (Hit 2/4), honestly reflecting "good peak timing in normal seasons, missed/wrong peaks in the COVID anomaly."
 
-**4. Physical meaning (not just math).** Timing must be read with Peak Hit. Current Peak Hit only 2/4 means the model **invented two false peaks** in the COVID anomaly (truth flat) — those are misses/errors, an **extrapolation failure**, not a metric bug. Normal seasons (2018–2020 start) are timed accurately (small Timing). This is an honest limitation and the motivation for later "add anomaly detection / more domain knowledge" innovation.
+**4. Physical meaning (not just math).** PTE must be read together with the matched-peak count. Only 2 of 4 true peaks are matched (2/4) — the model **invented two false peaks** in the COVID anomaly (truth flat); those are misses/errors, an **extrapolation failure**, not a metric bug. (The Peak Hit *rate* indicator was removed in 2026-09; the count survives only as the sample-size qualifier for PTE/PIE.) Normal seasons (2018–2020 start) are timed accurately (small Timing). This is an honest limitation and the motivation for later "add anomaly detection / more domain knowledge" innovation.
 
 **To the supervisor (current-state statement):**
 > "Timing (|Δt|) is now computed under the paper protocol: on test-only curves with identical peak detection, matching predicted peaks within ±2-week tolerance; Timing averages |time offset| over hits only, and the missed-peak count is always reported (e.g., 2/4 matched), with 0 hits → null not 0. The earlier 0.0 was a ChatTime-protocol artifact and is fixed; current L=24 Timing ≈ 0.5 weeks, honestly reflecting missed/wrong peaks in the COVID anomaly (extrapolation failure)."

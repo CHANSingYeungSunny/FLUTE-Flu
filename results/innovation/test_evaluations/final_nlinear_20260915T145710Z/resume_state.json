@@ -1,0 +1,13 @@
+{
+  "test_eval_id": "final_nlinear_20260915T145710Z",
+  "expected_cells": 52,
+  "completed_cells": 52,
+  "valid_cells": 52,
+  "missing_cells": 0,
+  "duplicate_cells": 0,
+  "failed_cells": 0,
+  "active_pid": null,
+  "last_progress_utc": "2026-09-15T17:30:53Z",
+  "completion_gate_passed": true,
+  "resumed_via": "sbatch job 560659 (stingy, gpu:a100:1)"
+}

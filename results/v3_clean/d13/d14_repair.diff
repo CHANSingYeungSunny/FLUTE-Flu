@@ -1,0 +1,171 @@
+--- a/scripts/innovation/compact_checkpoint.py
++++ b/scripts/innovation/compact_checkpoint.py
+@@ -42,13 +42,108 @@
+ QWEN_ID = "Qwen/Qwen2.5-1.5B"
+ GPT2_ID = "gpt2"
+ 
+-
+-def _bkw_for(spec_name: str):
+-    """Reproduce the runner's backbone-kwarg resolution EXACTLY."""
+-    if spec_name in CR.VARIANTS:
+-        base_model, enc_name, bkw, ekw = CR.VARIANTS[spec_name]
++# The immutable 598-row registry is the ONLY authority for run-key meaning.
++REGISTRY_REL = ("results", "v3_clean", "runs", "complete_specs_598.json")
++
++
++class CompactInputError(ValueError):
++    """Raised for any malformed, unknown, ambiguous, deferred or path-like
++    compact-checkpoint input. Never silently coerced."""
++
++
++def _registry_path(deployment_root: str | None = None) -> Path:
++    from pathlib import Path as _P
++    root = deployment_root or os.environ.get("INNOVATION_DEPLOYMENT_ROOT")
++    if not root:
++        raise CompactInputError(
++            "INNOVATION_DEPLOYMENT_ROOT must be set to resolve a run key")
++    p = _P(root).joinpath(*REGISTRY_REL)
++    if not p.is_file():
++        raise CompactInputError(f"immutable registry not found: {p}")
++    return p
++
++
++def _load_registry(deployment_root: str | None = None) -> dict:
++    import json
++    return json.loads(_registry_path(deployment_root).read_text(encoding="utf-8"))
++
++
++def _reject_path_like(k: str) -> None:
++    """Requirement: reject path-like input before any registry lookup."""
++    if ("/" in k or "\\" in k or ".." in k or k.startswith(".")
++            or os.path.isabs(k) or os.sep in k):
++        raise CompactInputError(f"path-like run key rejected: {k!r}")
++
++
++def resolve_run_key(run_key: str, deployment_root: str | None = None) -> dict:
++    """Authoritative, registry-backed run-key resolution.
++
++    Returns {run_key, model, arm, horizon, seed, wave}. Raises
++    CompactInputError for malformed / unknown / ambiguous / deferred input.
++    """
++    if not isinstance(run_key, str):
++        raise CompactInputError("run key must be a string")
++    k = run_key.strip()
++    if not k:
++        raise CompactInputError("empty run key")
++    _reject_path_like(k)
++
++    reg = _load_registry(deployment_root)
++    specs = [s for s in reg.get("specs", []) if s.get("run_key") == k]
++    if not specs:
++        raise CompactInputError(f"unknown run key: {k}")
++    if len(specs) > 1:
++        raise CompactInputError(f"ambiguous run key: {k} ({len(specs)} matches)")
++    s = specs[0]
++    if s.get("wave") == 2 or not s.get("submittable") \
++            or not s.get("executable_binding"):
++        raise CompactInputError(f"deferred run key not executable: {k}")
++    for field in ("model", "horizon", "arm"):
++        if field not in s:
++            raise CompactInputError(f"malformed spec {k}: missing {field}")
++    return {"run_key": k, "model": s["model"], "arm": s["arm"],
++            "horizon": int(s["horizon"]), "seed": s.get("seed"),
++            "wave": s.get("wave")}
++
++
++def normalise_spec_input(spec_input: str,
++                         horizon: int | None = None,
++                         deployment_root: str | None = None) -> dict:
++    """THE single normalisation entry point (D14).
++
++    Order of authority:
++      1. a run key present in the immutable registry  -> fully resolved
++      2. a bare model name that is provably a member of PRIMARY_MODELS or
++         VARIANTS (verified alias, never guessed)      -> needs a horizon
++    Anything else is rejected. No fragile string splitting is used anywhere.
++    """
++    if not isinstance(spec_input, str) or not spec_input.strip():
++        raise CompactInputError("spec input must be a non-empty string")
++    k = spec_input.strip()
++    _reject_path_like(k)
++
++    try:
++        return resolve_run_key(k, deployment_root)
++    except CompactInputError as primary_err:
++        known = set(CR.PRIMARY_MODELS) | set(CR.VARIANTS)
++        if k in known:
++            if horizon is None:
++                raise CompactInputError(
++                    f"bare model name {k!r} requires an explicit horizon"
++                ) from primary_err
++            return {"run_key": None, "model": k,
++                    "arm": "ablation" if k in CR.VARIANTS else "primary",
++                    "horizon": int(horizon), "seed": None, "wave": None}
++        raise
++
++
++def _bkw_for(model_name: str):
++    """Reproduce the runner's backbone-kwarg resolution EXACTLY.
++    `model_name` must already be a normalised model token."""
++    if model_name in CR.VARIANTS:
++        base_model, enc_name, bkw, ekw = CR.VARIANTS[model_name]
+     else:
+-        base_model, enc_name, bkw, ekw = spec_name, CR.PRIMARY_MODELS[spec_name], {}, {}
++        base_model, enc_name, bkw, ekw = model_name, CR.PRIMARY_MODELS[model_name], {}, {}
+     if base_model == "qwen_time_llm":
+         bkw = dict(bkw, model_id=QWEN_ID, load_backbone=True)
+     elif base_model in ("calf_llm", "timecma_llm"):
+@@ -56,7 +151,12 @@
+     return base_model, enc_name, bkw
+ 
+ 
+-def build_base_model(spec_name: str, horizon: int, device: str = "cpu"):
++def build_base_model(spec_name: str, horizon: int | None = None,
++                     device: str = "cpu"):
++    # D14: the SAME unique entry point is used by every caller (CLI, Gate,
++    # migration), so a full run key can never reach PRIMARY_MODELS[...] again.
++    info = normalise_spec_input(spec_name, horizon)
++    spec_name, horizon = info["model"], int(info["horizon"])
+     base_model, enc_name, bkw = _bkw_for(spec_name)
+     model = make_backbone(base_model, T=CR.T_WINDOW, N=CR.N_VARIABLES,
+                           L=horizon, **bkw)
+@@ -118,9 +218,11 @@
+         return "torch.save"
+ 
+ 
+-def export_compact(run_dir: str, ckpt: str, spec_name: str, horizon: int,
++def export_compact(run_dir: str, ckpt: str, spec_name: str, horizon: int | None,
+                    out_path: str) -> dict:
+     t0 = time.time()
++    info = normalise_spec_input(spec_name, horizon)      # D14 shared entry
++    spec_name, horizon = info["model"], int(info["horizon"])
+     full_sd = _load_sd(ckpt)
+     model, base_model, enc_name, bkw = build_base_model(spec_name, horizon)
+     base_sd = {k: v.detach().cpu() for k, v in model.state_dict().items()}
+@@ -179,10 +281,12 @@
+     return rep
+ 
+ 
+-def restore_and_compare(run_dir: str, spec_name: str, horizon: int,
++def restore_and_compare(run_dir: str, spec_name: str, horizon: int | None,
+                         compact_path: str) -> dict:
+     """Rebuild from the compact state alone and compare against the original
+     checkpoint loaded into a fresh model — strict key accounting."""
++    info = normalise_spec_input(spec_name, horizon)      # D14 shared entry
++    spec_name, horizon = info["model"], int(info["horizon"])
+     model, base_model, _, _ = build_base_model(spec_name, horizon)
+     full_sd = _load_sd(os.path.join(run_dir, "checkpoints", "best_val_mse.pt"))
+     comp = _load_compact(compact_path)
+@@ -249,9 +353,9 @@
+                 print(f"[schema]   {k}: FAILED {v['error']}", flush=True)
+         return 0 if ok == len(rep) else 1
+ 
+-    spec = a.spec
+-    if "__" in spec:                       # a run key -> the model token
+-        spec = spec.split("__")[1]
++    # D14: the CLI delegates to the SAME resolution entry point; the old
++    # fragile `spec.split("__")[1]` string cut is gone.
++    spec = normalise_spec_input(a.spec, a.horizon)["model"]
+     ckpt = os.path.join(a.run_dir, "checkpoints", "best_val_mse.pt")
+     rep = export_compact(a.run_dir, ckpt, spec, a.horizon, a.out)
+     if a.mode == "export-verify":

@@ -1,0 +1,27 @@
+claim,value,source_file,source_locator,classification,is_it_a_gpu_hour_budget,confidence
+2.3 GPU-hour cap,2.3 GPU-h,CodeBuddy_Authorization_and_Final_Execution_ZH.md,"line 11: 本指令批准新增累计最多 2.3 GPU-hours",USER_INSTRUCTION,YES - it is the only GPU-hour budget that exists,VERIFIED
+2.3 sub-budget A0,0.5 GPU-h,CodeBuddy_Authorization_and_Final_Execution_ZH.md,line 11,USER_INSTRUCTION,YES - sub-budget allocated to A0 minimal diagnostic,VERIFIED
+2.3 sub-budget eight models,1.8 GPU-h,CodeBuddy_Authorization_and_Final_Execution_ZH.md,line 11,USER_INSTRUCTION,YES - sub-budget allocated to the remaining 72 fits + scoring,VERIFIED
+2.3 non-additivity rule,"must NOT be added to the A2 remainder 0.8464 to make 3.1464",CodeBuddy_Authorization_and_Final_Execution_ZH.md,line 11,USER_INSTRUCTION,constraint on budgets,VERIFIED
+A2 round cap,2.0 GPU-h,recovery/STATE.md,"line 223: Round 1 (A2) cap 2.0 GPU-hours; used 1.1536",USER_INSTRUCTION,YES - a separate earlier round-scoped budget,VERIFIED
+A2 round used,1.1536 GPU-h,recovery/stage5/results_report_zh.md,line 28 table row,LOG_INFERRED,YES - historical consumption,VERIFIED
+Stage 6 round used,1.12555 GPU-h,postrun_audit_20261006/GPU_LEDGER_VERIFICATION.csv,recomputed from live sacct,MEASURED,YES - consumption,VERIFIED
+2026-10-06 continuation used,1.11806 GPU-h,postrun_audit_20261006/GPU_LEDGER_VERIFICATION.csv,recomputed from live sacct,MEASURED,YES - consumption,VERIFIED
+total consumed against the 2.3 grant,2.24361 GPU-h,postrun_audit_20261006/GPU_LEDGER_VERIFICATION.csv,39 GPU jobs (stage6 + continuation),MEASURED,YES - consumption,VERIFIED
+remaining under the 2.3 grant,0.05639 GPU-h,derived,2.3 - 2.24361,DERIVED,YES - remaining,VERIFIED
+4 hours,"stingy QOS wall-clock cap per job (04:00:00 per the guide; 06:00:00 live)",HPC_GUIDE.md,"section 3 Partition Policy: HARD RULE - stingy QOS wall-clock cap = 04:00:00 (4h)",DOCUMENTED_RULE,NO - per-job wall-clock limit,VERIFIED
+4 hours enforcement,"QOSMaxWallDurationPerJobLimit on --time > cap",HPC_GUIDE.md,section 3,SYSTEM_LIMIT,NO - per-job wall-clock,VERIFIED
+live stingy MaxWall,06:00:00,sacctmgr show qos partition-stingy,MaxWall field,SYSTEM_LIMIT,NO - per-job wall; guide is outdated,VERIFIED
+live stingy MaxTRESMins,"cpu=46080,gres/gpu=2880",sacctmgr show qos partition-stingy,MaxTRESMins field,SYSTEM_LIMIT,"NO - per-JOB GPU-minutes = 48 GPU-h per job, not a budget",VERIFIED
+live stingy GrpTRESMins,empty,sacctmgr show qos partition-stingy,GrpTRESMins field,SYSTEM_LIMIT,NO - no group-level budget exists,VERIFIED
+live stingy MaxSubmitJobs / MaxJobsPU,"1 / 1",sacctmgr show qos partition-stingy,concurrency fields,SYSTEM_LIMIT,NO - concurrency limit,VERIFIED
+account GrpTRESMins,empty,sacctmgr show assoc account=ga_bms_kkhchan,GrpTRESMins field,SYSTEM,NO - no account-level GPU allocation,VERIFIED
+user association limits,all empty (GrpTRESMins / GrpTRESRunMins / MaxTRES / MaxTRESMins / MaxJobs / MaxSubmit),sacctmgr show assoc user=sychan552,all limit fields,SYSTEM,NO - no user-level GPU allocation,VERIFIED
+QOS held by the account,"normal (no MaxTRESMins, no GrpTRESMins)",sacctmgr show assoc user=sychan552,QOS field,SYSTEM,NO - no account GPU allocation,VERIFIED
+QOS actually used by our GPU jobs,normal,"sacct -j 606365 606378 606385 606412",QOS field,MEASURED,NO,VERIFIED
+fyp QOS,"exists (MaxWall 1-00:00:00, MaxTRESMins gres/gpu=2880) but the account does NOT hold it",sacctmgr show qos fyp + show assoc user=sychan552,Flags/DenyOnLimit,SYSTEM,NO - unavailable to this account,VERIFIED
+supervisor-approved GPU cap,NONE,"EE4080_MIFlu_Research_Recovery_Plan.md","line 360: Set a supervisor-approved GPU-hour cap and stop rules before launching the full matrix",RECOMMENDATION_ONLY,"NO - recommended, never set",VERIFIED
+planning upper bound,280 GPU-h,MIFlu_innovation_plan_v3.md,line 217 (Phase 3 full validation upper bound),PLANNING_ESTIMATE,NO - a planning figure never converted into an authorization,VERIFIED
+SELF-IMPOSED conservative rule,kept total <= 2.3 by stopping at 0.05639,this project's ledgers,postrun_audit_20261006/GPU_LEDGER_VERIFICATION.md,PROJECT_PRACTICE,"YES - a self-imposed stopping rule layered ON TOP of the user grant",VERIFIED
+F1 base estimate,0.42664 GPU-h,f1_preflight_20261006/F1_RESOURCE_ESTIMATE_BY_MODEL.csv,sum of 8 GPU fits,ESTIMATE,request target,VERIFIED
+F1 recommended request,0.60 GPU-h,f1_preflight_20261006/F1_GPU_BUDGET_REQUEST.md,section 1,REQUEST,request target,VERIFIED

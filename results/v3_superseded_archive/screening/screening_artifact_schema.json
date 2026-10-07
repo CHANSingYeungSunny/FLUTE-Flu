@@ -1,0 +1,88 @@
+{
+  "generated_utc": "2026-09-16T21:06:49Z",
+  "frozen_before_first_submission": true,
+  "required_artifacts": [
+    "config_resolved.yaml",
+    "environment.txt",
+    "git_commit.txt",
+    "split_manifest.json",
+    "scaler_metadata.json",
+    "prompt_statistics_metadata.json",
+    "checkpoints/best_val_mse.pt",
+    "checkpoints/checkpoint_manifest.json",
+    "logs/train_history.csv",
+    "predictions/validation_predictions.csv",
+    "metrics/validation_metrics.json",
+    "metrics/fixed_step_metrics.json",
+    "metrics/peak_metrics_by_season.csv",
+    "run_status.json",
+    "resource_usage.json"
+  ],
+  "figures_directory_required": true,
+  "predictions_layout": {
+    "decision": "single long-format file per run, columns extended",
+    "file": "predictions/validation_predictions.csv",
+    "required_columns": [
+      "model_key",
+      "horizon",
+      "seed",
+      "split",
+      "step",
+      "lead_weeks",
+      "target_date",
+      "variable",
+      "y_true",
+      "y_pred"
+    ],
+    "existing_columns": [
+      "split",
+      "abs_week",
+      "step",
+      "epiweek",
+      "week_start_date",
+      "ground_truth_ili",
+      "prediction_ili",
+      "ground_truth_ili_phys",
+      "prediction_ili_phys"
+    ],
+    "added_columns": [
+      "model_key",
+      "horizon",
+      "seed",
+      "variable",
+      "lead_weeks"
+    ],
+    "column_mapping": {
+      "target_date": "week_start_date",
+      "y_true": "ground_truth_ili (z-space)",
+      "y_pred": "prediction_ili (z-space)",
+      "variable": "ILITOTAL (fixed)",
+      "lead_weeks": "step + 1"
+    },
+    "separate_step_files_required": false,
+    "rationale": "Every row carries the full key set, so each step can be reconstructed independently; the pre-existing week_start_date/step columns already support this."
+  },
+  "step_mapping": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4
+  },
+  "steps_never_averaged": true,
+  "provenance_chain_required": {
+    "source_aggregate_sha256": true,
+    "canonical_data_sha256": true,
+    "split_scaler_prompt_provenance": true,
+    "model_asset_revisions_and_hashes": true,
+    "slurm_job_id_and_node": true,
+    "resolved_model_identity": true,
+    "architecture_fidelity_label": true,
+    "checkpoint_file_sha256": true,
+    "state_dict_sha256": true,
+    "selection_eligible_true": true,
+    "test_access_count_zero": true,
+    "holdout_access_count_zero": true
+  },
+  "create_only": true,
+  "write_once": true
+}

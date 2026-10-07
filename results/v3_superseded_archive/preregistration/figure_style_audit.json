@@ -1,0 +1,22 @@
+{
+  "generated_utc": "2026-09-15T19:25:49Z",
+  "style_guide_located": true,
+  "reference_figure_located": true,
+  "style_guide_sha256": "4e2ee958bb1561e41155e735c8b2bdd6a2c6ee2270e66e06568077c6de070741",
+  "reference_figure_sha256": "06d8622152ef2bf00017278fb6925283445e8c604d7973a6d35a4798b1399d70",
+  "shared_module_sha256": "c604b4718403fd4dedd9640735d5580cdf5752f820516d438886d00055df2b78",
+  "shared_module_api_ok": true,
+  "step_lead_labels": {
+    "0": "1-week ahead",
+    "1": "2-week ahead",
+    "2": "3-week ahead",
+    "3": "4-week ahead"
+  },
+  "all_primary_models_have_identity": true,
+  "naive_baselines_have_identity": true,
+  "controls_have_identity": true,
+  "distinct_colours": 10,
+  "n_identities": 13,
+  "figures_generated_this_turn": 0,
+  "passed": true
+}

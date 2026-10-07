@@ -1,0 +1,5 @@
+#,stage,failure_mode,classification,fix,attempts,outcome
+1,canonical keys,split label from input origin,key contract,label from target range + regression assertion,1,fixed
+2,scorer,O(n) reindex + login-node execution,environment / rule violation,merge instead of reindex; moved to sbatch,1,fixed
+3,Track C MIFlu,stray/duplicate submission risk,workflow,verified single-owner chain; cancelled one stray Track H job,1,fixed
+4,finalize cost summary,all_jobs_rc_zero reported False on a fully successful matrix,code (scorer/report parsing),ledger stores rc as the string 'rc=0'; strip the prefix before comparing,1,fixed

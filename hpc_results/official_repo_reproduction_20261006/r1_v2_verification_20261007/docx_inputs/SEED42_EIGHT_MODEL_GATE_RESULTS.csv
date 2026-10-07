@@ -1,0 +1,23 @@
+#,check,result,detail
+1,all eight model identities correct,PASS,miflu + qwen_time_llm + calf_llm + timecma_llm + nlinear + dlinear + patchtst + itransformer
+3,canonical author-966 dataset hash matches,PASS,2a96dfed7db532f0
+4,676/97/193 split matches,PASS,n=966
+5,strict-containment assertions hold on the canonical keys,PASS,"{24: 28560, 36: 39816, 48: 49056, 60: 56280}"
+2,all four horizons complete for every model,PASS,32/32 cells present
+10,all Test predictions and targets exist,PASS,
+11,all eight Test key sets match the canonical set exactly,PASS,
+12,no missing keys,PASS,
+13,no duplicate keys,PASS,
+14,"independent scorer accepts every cell (finite, aligned)",PASS,
+6,scaler fitted on Train only (train-only standardisation recorded),PASS,
+7,Validation chooses checkpoints,PASS,
+8,Test does not affect checkpoint selection,PASS,
+9,Test evaluated once (no per-epoch Test read),PASS,
+15,MIFlu text pathway wired (author text asset present),PASS,
+16,MIFlu LoRA installed in the intended c_attn modules,PASS,12 tensors per cell
+17,MIFlu backbone freezing correct,PASS,trainable < 5%
+18,MIFlu locked checkpoint + frozen-key sidecar present and consistent,PASS,
+19,stage-6 MIFlu identified as the project reconstruction (rejected),PASS,"A2 miflu sha 76b81b5b0dfa5bde — this is why the 12 MIFlu cells are retrained, not reused"
+21,no output written to an unapproved filesystem,PASS,/gpfs1/home/sychan552/official_repo_reproduction_20261006/strict966_championship_20261007
+22,no invalid or superseded output enters the ranking,PASS,0 superseded paths present but excluded
+20,storage preflight/postflight passes (>=5 GB free on $HOME),PASS,102849.2 GiB free

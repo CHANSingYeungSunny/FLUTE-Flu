@@ -1,0 +1,46 @@
+JOB start Tue Sep  1 16:29:27 HKT 2026 on gpu-a100-09 | variant=gated_inject
+[16:29:31] ==================================================================
+[16:29:31]   Table VIII Ablation: ModalityAligner (gated injection)
+[16:29:31] ==================================================================
+[16:29:31]   Variant         : gated_inject  (use_text=True, use_lora=True, use_text_ln=True, gated_inject=True, unfreeze_first_k=2)
+[16:29:31]   Recipe          : baseline  -> adam, lr=0.0005, wd=0, loss=mse, betas=(0.9, 0.999) eps=1e-08
+[16:29:31]   Early stopping  : False (patience=5, peak_hit_threshold=0.7)
+[16:29:31]   Config          : T=104, K=6, Lp=24, S=2
+[16:29:31]                     batch=16, epochs=20, reps=10, seed=42
+[16:29:31]   Data window     : FULL 1025 rows (200201-202152) — matches MIFlu §V-A
+[16:29:31]   Output          : hpc_results/journal_evidence/gated_inject/reps_1_to_10
+[16:29:31] 
+[16:29:31] Scaler: FIT on train[:717] ONLY — agrees with persisted /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/scaler_miflu_national.json (no test-set refit)
+[16:29:31] Data: 1025 total (FULL 1025-row window) | Train=717 | Val=102 | Test=206
+[16:29:31] 
+[16:29:31] Loading GPT2 text embedder...
+[16:29:33] 
+[16:29:33]   [RESUME] 10 (L, rep) pairs already complete
+[16:29:33] ──────────────────────────────────────────────────
+[16:29:33]   HORIZON L=24
+[16:29:33] ──────────────────────────────────────────────────
+[16:29:33]   [L=24] Rep 1/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 2/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 3/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 4/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 5/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 6/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 7/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 8/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 9/10 ... already done, skipping
+[16:29:33]   [L=24] Rep 10/10 ... already done, skipping
+[16:29:33]   [L=24] FINAL over 10 reps: MSE_AllVars=3.038770 MSE_ILITotal=5.980208
+[16:29:33] 
+[16:29:33] ==================================================================
+[16:29:33]   ABLATION COMPLETE: ModalityAligner (gated injection) | recipe=baseline
+[16:29:33] ==================================================================
+[16:29:33]     mse_all_mean  mse_all_std  mae_all_mean  mae_all_std  mse_ili_mean  mse_ili_std  mse_ili_phys_mean  mae_ili_phys_mean
+L                                                                                                                        
+24       3.03877     0.178256      1.164691     0.046367      5.980208     0.509164        467527945.6       14651.711328
+[16:29:33]   Avg MSE_AllVars across L: 3.038770
+[16:29:33]   Total time: 0.0 min
+[16:29:33]   Per-rep metrics : hpc_results/journal_evidence/gated_inject/reps_1_to_10/metrics.csv
+[16:29:33]   Summary         : hpc_results/journal_evidence/gated_inject/reps_1_to_10/summary.csv
+
+ABLATION_RESULT: variant=gated_inject recipe=baseline mse_all=3.038770
+JOB DONE Tue Sep  1 16:29:34 HKT 2026 | variant=gated_inject

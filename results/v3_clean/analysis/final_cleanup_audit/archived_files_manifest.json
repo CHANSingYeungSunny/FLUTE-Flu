@@ -1,0 +1,196 @@
+{
+  "generated_utc": "2026-09-21T07:44:24Z",
+  "n_archived": 38,
+  "files": [
+    {
+      "filename": "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Final_Updated_DRAFT.docx",
+      "sha256": "8461de01684cbf3c051385a74e4145e916ab99d1450b8e598f6c9b74c26aff78",
+      "bytes": 41403
+    },
+    {
+      "filename": "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Final_Updated_DRAFT.md",
+      "sha256": "9d33b1883a7e876b99b4b44f33e7f9bbd05774b5293c01a02b5a52f29bd7d652",
+      "bytes": 7840
+    },
+    {
+      "filename": "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Final_Updated_DRAFT.pdf",
+      "sha256": "78d75ba25e49e1228eccc0c4ac618db3b727d3af3e1c13c44b9372646ce79da4",
+      "bytes": 40583
+    },
+    {
+      "filename": "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Wave1_Updated_DRAFT.md",
+      "sha256": "dbfa0d60cd18835c7b53c23b4a0f202b1253aedf49a1565354d859c6e3549a6a",
+      "bytes": 8371
+    },
+    {
+      "filename": "MIFlu_Final_Supervisor_Report_EN.docx",
+      "sha256": "1ecddc17fd76123b0d8f94159a992b70bac107fdb088b314d897683559f3c1f1",
+      "bytes": 865854
+    },
+    {
+      "filename": "MIFlu_Final_Supervisor_Report_EN.md",
+      "sha256": "2a0bb879c99e4f947ed78688ef5b0fdbae0e8cdd31d917438101d1ab57396121",
+      "bytes": 20215
+    },
+    {
+      "filename": "MIFlu_Final_Supervisor_Report_EN.pdf",
+      "sha256": "294057cba75ad6242e690a26e312518911f419c86a6b517ddd756e8b21b46817",
+      "bytes": 971558
+    },
+    {
+      "filename": "MIFlu_Final_Supervisor_Report_ZH.docx",
+      "sha256": "a8c14088f5331df48c1733af502f18206607a6d1697f6a665155ee1da65e2ee7",
+      "bytes": 866573
+    },
+    {
+      "filename": "MIFlu_Final_Supervisor_Report_ZH.md",
+      "sha256": "eea51766b8182034efed6d7f99f5e40c851258109122c2c0851b50a49a3cebbf",
+      "bytes": 19265
+    },
+    {
+      "filename": "MIFlu_Final_Supervisor_Report_ZH.pdf",
+      "sha256": "0c46188ab7f6d3331e4fa6a115aae878683ac991354c89be60790a047c67d6e3",
+      "bytes": 1101384
+    },
+    {
+      "filename": "MIFlu_Final_Tutor_Meeting_Brief_EN.docx",
+      "sha256": "b6baa44d10b0e034cdc101def9bf41b901588b7d757219a508bd413dd51ee457",
+      "bytes": 39238
+    },
+    {
+      "filename": "MIFlu_Final_Tutor_Meeting_Brief_EN.md",
+      "sha256": "ee5a04c95838810d47baa6cbfb1108a8eb667cd5ac1b2055a0570d0b54a783b5",
+      "bytes": 3694
+    },
+    {
+      "filename": "MIFlu_Final_Tutor_Meeting_Brief_EN.pdf",
+      "sha256": "869b6d56233fcd9fa6f3e230a0d85d137e8a1d220a149130b18294399d7c30f7",
+      "bytes": 35007
+    },
+    {
+      "filename": "MIFlu_Final_Tutor_Meeting_Brief_ZH.docx",
+      "sha256": "bd68e8d6754f422c5e8e96058ff908f554d8c0be819e167d3ce8b55a3e991104",
+      "bytes": 39495
+    },
+    {
+      "filename": "MIFlu_Final_Tutor_Meeting_Brief_ZH.md",
+      "sha256": "399793d88b939a983f3a3b834e1cdd7954c064417dcd6806ae086888f0e164a8",
+      "bytes": 3506
+    },
+    {
+      "filename": "MIFlu_Final_Tutor_Meeting_Brief_ZH.pdf",
+      "sha256": "42f6301d244a409ebe5979b517d2867bd37aeb533b4fa1faf8b26d0873d96b9d",
+      "bytes": 90309
+    },
+    {
+      "filename": "MIFlu_Wave1_Final_Supervisor_Report.docx",
+      "sha256": "daecb56a254c3731f79239fae855e81c1b1340149859c28e4b44da931e3d6521",
+      "bytes": 1181065
+    },
+    {
+      "filename": "MIFlu_Wave1_Final_Supervisor_Report.pdf",
+      "sha256": "0b285be8501413e9c3a2a2104c8cb207a2d0ba45f04fee9161c0e6b7858b8ab5",
+      "bytes": 1315808
+    },
+    {
+      "filename": "MIFlu_Wave1_Final_Supervisor_Report_EN.md",
+      "sha256": "0c4ce61463bdc5147bd741399303a30157000657be76c35ca7650fd44960767f",
+      "bytes": 23675
+    },
+    {
+      "filename": "MIFlu_Wave1_Final_Supervisor_Report_ZH.docx",
+      "sha256": "5ed20cbc3f316fe56b0c43db4f17965a186f17ece0fe0d974ce38c45ed66d6a8",
+      "bytes": 1181315
+    },
+    {
+      "filename": "MIFlu_Wave1_Final_Supervisor_Report_ZH.md",
+      "sha256": "5d6c7df57c121e1d80c12847a7d22a08a4e124de86c2a9fe9157e3488032ecce",
+      "bytes": 21539
+    },
+    {
+      "filename": "MIFlu_Wave1_Final_Supervisor_Report_ZH.pdf",
+      "sha256": "693a599462b279268abeb2e1998953774364592c6b93f7952a3a6a4196ecdb0a",
+      "bytes": 1441610
+    },
+    {
+      "filename": "MIFlu_Wave1_Tutor_Meeting_Brief_EN.md",
+      "sha256": "a2839d5a69b5e1a2a1ac3297e87e51f7161099a63d55268ce9d3300a3a2d233e",
+      "bytes": 3466
+    },
+    {
+      "filename": "MIFlu_Wave1_Tutor_Meeting_Brief_ZH.md",
+      "sha256": "3573e49a676fc02463966e912dd9447acd21c63392ced412e5632ace784d40bb",
+      "bytes": 3520
+    },
+    {
+      "filename": "MIFlu_非LLM与LLM流感预测最终报告_中文版.md",
+      "sha256": "bfc0461ab9233ffc28bdc31d9d943f12093bea8a808dfbab1b7bdff4e5d01971",
+      "bytes": 17031
+    },
+    {
+      "filename": "Project_Summary_Update_Change_Map.md",
+      "sha256": "8a54f3ce8c0eb775b00fa08a9976793f9e1b59925a3a4dfe7eedb72333b3a0a8",
+      "bytes": 6546
+    },
+    {
+      "filename": "Project_Summary_Update_Evidence_Pack.json",
+      "sha256": "8037d9649e279d8523f263e15fd77582126ed158014d0a373ee9e106fd17fb05",
+      "bytes": 7570
+    },
+    {
+      "filename": "Project_Summary_Update_Evidence_Pack.md",
+      "sha256": "17648bab8a291675d2c990d639e7cb67dae41c13ef501ee69082e25897918226",
+      "bytes": 6081
+    },
+    {
+      "filename": "Project_Summary_and_Planning_Chart_Wave1_Updated_DRAFT.md",
+      "sha256": "da89d96c6fa521ddc4c22fff9118d65e87105ca04a058553caa568cb120c9c40",
+      "bytes": 5556
+    },
+    {
+      "filename": "archived_files_manifest.json",
+      "sha256": "83e36f13ba6dc4fa2c30756a4f696b451ad07aecad7f5b7c3bf9bb2ae2eee5bc",
+      "bytes": 6952
+    },
+    {
+      "filename": "figure_inventory_before.csv",
+      "sha256": "83df1d0cbbc8ac859730ca5c982d40a43401064bc87fec91e2e28d5203e1cef5",
+      "bytes": 196381
+    },
+    {
+      "filename": "figure_inventory_before.json",
+      "sha256": "23e88a3fe0f0ac38b72091e8b778f5c5dc0b72499ceefb1b7295d0a6b8724df1",
+      "bytes": 352794
+    },
+    {
+      "filename": "final_report_artifact_manifest.json",
+      "sha256": "c57afdd8339d287d61da77babc4497bc2587133f1da68526a26f5144512e8fa2",
+      "bytes": 8045
+    },
+    {
+      "filename": "final_report_qa.json",
+      "sha256": "489ce522e9754aaef487abd20c827a2bc95b72b973e6bc244be6e0ee9edd6d22",
+      "bytes": 5553
+    },
+    {
+      "filename": "report_inventory_before.csv",
+      "sha256": "9702bf727cfa7542a5a669df07949db1e41f29cafd231493162f6b0f91272976",
+      "bytes": 10429
+    },
+    {
+      "filename": "report_inventory_before.json",
+      "sha256": "aba88154f3802dc23911e1a5583a3d2a801750fd4a2237ffc312f7b5c0bae5cd",
+      "bytes": 18982
+    },
+    {
+      "filename": "wave1_report_artifact_manifest.json",
+      "sha256": "3ffa39016015db9a23392d4e3cf98d2d72ee556441f1ce3706ac2f45ff7c2688",
+      "bytes": 9228
+    },
+    {
+      "filename": "wave1_report_qa.json",
+      "sha256": "1200c2ea840773ed1b534dfafebf5ae921dd76c29364ab8edd3b9f34f67a0c6b",
+      "bytes": 4355
+    }
+  ]
+}

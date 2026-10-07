@@ -1,71 +1,163 @@
-# MLFlu Project — Long-Term Memory
+# MEMORY — MIFlu / ChatTime journal reproducibility project
 
-## HPC Deployment (CityUHK Burgundy)
-- **Login FQDN: `burgundy.hpc.cityu.edu.hk`** (this is the correct host; `hpclogin02` is WRONG/deprecated — do NOT use it). SSH alias `cityu` maps to this. Backup IP `144.214.138.99` if DNS fails.
-- User: `sychan552`; scratch workspace: `$HOME/scratch/CHATTIME` (symlink to `/gpfs1/scratch/sychan552/CHATTIME`); project code at `/home/sychan552/scratch/CHATTIME/Chattime/`. (Verified 2026-08-16 — the earlier `MLFlu_Q1` path is WRONG/obsolete.)
-- **⚠️ Remote dir map (verified 2026-08-16)**:
-  - `/home/sychan552/scratch/CHATTIME/Chattime/` = **AUTHORITATIVE Phase-1 working dir** (MIFlu paper-protocol scripts uploaded, HPC_GUIDE §6 aligned). Train here.
-  - `/home/sychan552/scratch/MLFLU/` = **LEGACY / DO-NOT-USE** (old L=52 workspace, `L_list=[52]`, incomplete checkpoints L24/L36/L52 only). Historical leftover; NOT deleted, but never submit training from here or read its ckpts as Phase-1 results.
-  - `/home/sychan552/scratch/MLFlu_Q1/` = **DOES NOT EXIST** (obsolete path reference).
-- **Mandatory after maintenance**: `module unload default && module load old_modules` before any other module.
-- Module `anaconda3` NO LONGER EXISTS. Use `miniconda/python-3.9` (or `anaconda/3-2024.02`).
-- **Reliable conda activation in SLURM**: do NOT rely on `module load miniconda` + `conda activate` (fails on GPU compute nodes intermittently, and `conda.sh` is not at standard path). Instead prepend absolute PATH:
-  `export PATH=/home/sychan552/.conda/envs/mlflu_hpc/bin:$PATH`
-  Env lives at `/home/sychan552/.conda/envs/mlflu_hpc` (visible from compute nodes too).
-- **SLURM pitfall**: `#SBATCH --output=$HOME/...` does NOT expand `$HOME` in directives → creates nested literal `$HOME` dir. Use absolute paths in `--output`/`--error`.
-- Cache to scratch: `export HF_HOME=/gpfs1/scratch/sychan552/CHATTIME/.cache; export TRANSFORMERS_CACHE=$HF_HOME` (protect 50GB home quota).
-- Conda env: `mlflu_hpc` python3.9, PyTorch 2.5.1 CUDA11.8, transformers 4.57.6, peft, scipy, matplotlib, pandas, numpy.
+## Recovery track (A/B/C) — author-966 reproduction
+- Tracks: A = author 966-row reproduction (676/97/193; `author_966` profile), B = refreshed 1025-row
+  benchmark (717/819; v3_clean results, already frozen), C = holdout generalization.
+- **A2 is COMPLETE and REPORTED (2026-09-26).** 36/36 fits, 8/8 baselines, 36 checkpoints locked
+  (SHA-256) *before* any Test inference, 44/44 unified Test evaluations, primary metric independently
+  recomputed from prediction NPZs (max Δ 4.44e-16, PASS). Reports: `recovery/stage5/results_report_zh.md`,
+  `supervisor_brief_zh.md`, `results_tables_zh.md`, `execution_ledger.md`. Artefacts: `hpc_results/stage5_a2/`
+  (local) + `/home/sychan552/stage5_a2_durable` (remote durable). **A0 still BLOCKED/未执行.**
+- **Result:** `average_MSE_4L` (7-var z MSE) notext **1.922** < miflu **2.042** ≈ nlinear **2.050** <
+  seasonal_naive 2.269 ≪ last_value 7.166. Text pathway shows **no confirmed benefit**; paired-by-seed
+  signs flip across L (miflu−notext +0.119±0.275). MIFlu≈NLinear is *not resolvable* at 3 seeds —
+  do NOT write it up as "equivalent". Corrected reconstruction, NOT a paper reproduction.
+- **Budget:** 2.0 GPU-h cumulative cap for the whole round; **used 1.1536** (4153 GPU-s, `sacct -X`),
+  **remaining 0.8464**. Rebuild with `recovery/stage5/build_ledger.sh`, never estimate.
+- **Window rule defect (fixed, and it was real):** runners assigned windows by TARGET START only, so at
+  L=60 train targets spilled into validation and validation targets into Test (contaminating checkpoint
+  selection). `--containment strict` (whole target inside its split) gives 549/74/170, 537/62/158,
+  525/50/146, 513/38/134. Default stays `start` for legacy comparability.
+- **DEFER_TEST=1 pattern:** learned fits run with `DEFER_TEST=1` so `evaluate`/`export_prediction_csv`
+  are skipped; per-(L,seed) best-val checkpoints are written to `--ckpt-dir`; a single later
+  `score_test_stage5.py` pass does all Test scoring. Beware: any summary that does
+  `np.mean([r['mse_all'] ...])` crashes with `TypeError: NoneType` under DEFER_TEST — that crashed
+  4 no-text jobs after their training had already succeeded.
+- **Resume-guard trap:** a "done" test that reads a metric column which is *absent under DEFER_TEST*
+  marks every existing row complete. Key resume on `(L, rep, seed)` + per-seed checkpoint existence,
+  never on a deferred metric. Symptom here: jobs COMPLETED in ~16 s having trained nothing.
+- `run_task.sh` pipes each seed's output through `tail -40`, which destroyed per-epoch traces (20 epochs
+  → 3 lines). MIFlu's runner writes a full per-run log; the ablation/nlinear runners do not, so
+  `best_epoch` is unrecoverable for them. Don't `grep` those logs to "recover" epochs — it mis-attributes
+  seeds. `best_val` is the selection quantity and IS recorded for all 36.
+- Actual executed code hashes: `recovery/stage5/hashes_stage5_executed.json` (supersedes
+  `hashes_stage5.json`, which predates the DEFER_TEST wiring — keep the old file as history).
 
-## Training / Figure Scripts (current equivalents — verified 2026-08-16)
-> **DELETED (2026-08-14) — do NOT reference these anymore**: `make_forecast_figure.py`,
-> `figure_q1.sh`, `figure_q1_L36/L48/L60.sh`, `train_q1_L24/L36/L48/L60.sh`, `train_q1_L52.sh`,
-> `infer_walkforward_L52.sh`. If a future session looks for them, they no longer exist.
-- `scripts/train_miflu.py`: **authoritative MIFlu training entry point**. Single horizon via
-  `--horizon L` (else full sweep `L_list=[24,36,48,60]`); 10 reps; static 70:10:20 split (no shuffle);
-  scaler fit on TRAIN only; test target start strictly > val end. Saves `best_miflu_L{L}.pth`
-  (best val_loss rep) + `data/results_miflu_paper_protocol_*.csv` + `data/predictions_miflu_L{L}_paper_protocol.csv`.
-- `scripts/submit_miflu_paper_protocol.sh`: **authoritative SLURM submit** (replaces the deleted
-  `train_q1_L*.sh`). `stingy` + `gpu:a100:1` + `--time=04:00:00` + PATH-prepend conda(`mlflu_hpc`)
-  + HF cache(scratch). Submit four horizons independently:
-  `for L in 24 36 48 60; do MIFLU_HORIZON=$L sbatch .../scripts/submit_miflu_paper_protocol.sh; done`
-- `scripts/make_miflu_evaluation_figure.py`: **authoritative figure script** (replaces deleted
-  `make_forecast_figure.py`). Reads the per-L split-CSV, plots **test only**, emits
-  `fig_miflu_eval_continuous_L{L}.png` etc. Deprecated L=52 branch gated behind `--walkforward_csv`
-  and emits `*_DEPRECATED` artifacts.
-- `scripts/compute_miflu_indicators.py`: per-horizon peak/trend indicators (Timing/Peak-Hit/
-  Peak-Intensity, Fix-Brief #3 semantics) on the paper-protocol CSVs.
-- `scripts/feature_verification.py`: 3-tier feature check (Granger/RF/SHAP) for N=7.
+## Stage 6 — A0 / A1 / eight-model (2026-09-26). New GPU used: 0.0000
+- **Every Stage-6/A0 job was CPU-only**: submitted to `stingy` with **no `--gres`**, so it costs
+  **zero** GPU-hours. `sacct` shows `billing=5,cpu=N,mem=NG,node=1` with no `gres/gpu`.
+  This is how to do audits/archives/preflight at no budget cost. `coursework` is NOT available to
+  this account; `batch` demands a bigger CPU/mem floor; `stingy` accepts CPU-only jobs.
+- **A0 verdict (executed, CPU, job 587002):** text→output max diff = **exactly 0**; text gradient norm
+  = **exactly 0**; 6/12 GPT-2 blocks; **LoRA never applied** (`PEFT=0`); **`freeze` is a no-op** →
+  82,705,944 / 82,705,944 = **100% trainable**; forward is per-feature `(B,104,1)→(B,24,1)`;
+  **Test covers feat_id=[0] only** (170→160 after drop_last); split **676/97/193 identical to A2**;
+  Test read every epoch and used to pick + save the checkpoint; early stopping commented out.
+  A0's three import blockers (`einops`, `embed.py`, peft symbol) are all **dead imports** — resolved by
+  `recovery/a0/a0_compat.py` in a separate sys.path dir, author's tree byte-for-byte untouched.
+- **A1 headline:** the paper **never states epochs or lr** ("set empirically", L298). Three incompatible
+  configs: paper *unspecified* / released default 1 @ 1e-4 / project A2 20 @ 5e-4. And the paper's
+  **token order is self-contradictory** (L205 `len(token)+num(patches)` vs L219 `num(patches)+len(token)`
+  vs L225's index) — so "the code is wrong" is NOT the right claim; the code matches L222's prose
+  ("the token portion is discarded"). The formula is what cannot be resolved.
+- **Eight models:** runner `scripts/train_backbone_966.py` imports A2's `build_windows` /
+  `load_and_normalize` / `eval_mse` **directly**, so protocol identity is by construction
+  (verified: "reuses the SAME objects: True True True"). Six backbones self-check OK with **real**
+  frozen backbones; trainable counts match the B track exactly (qwen 370,376 / calf 1,981,608 /
+  timecma 1,391,016) → B-track timings are a valid cost basis. 96 final fits = **24 reused**
+  (MIFlu+NLinear) + 72 new; measured **1.3221 GPU-h** pure training → **~1.8** with overheads.
+- **PENDING-QUOTA (the only blocker):** A0 GPU ~0.5 + eight-model ~1.8 = **~2.3 GPU-h**, 26 jobs.
+  A2's remaining 0.8464 was deliberately **not** spent. Cheap-first ordering means 5 models = 0.193
+  GPU-h fits almost any grant; Qwen alone is 1.13.
+- Frozen text-backbone tensors are **not** stored in the `.pth` (key set → `.frozen_keys.json`
+  sidecar, values rebuilt from the pinned snapshot) — keeps 72 checkpoints under ~2 GB instead of ~40 GB.
+- A2 checkpoints **archived + re-verified 36/36** against the FIRST lock at
+  `/home/sychan552/stage5_a2_durable/checkpoints/` (7.4 G); scratch originals kept.
+- `dispatch.sh` pattern worth reusing: with no `--run` it only prints the plan and exits, it owns an
+  `EXEC_LOCK` it refuses to steal, and it checks consumed GPU-hours **before every submission**
+  (`BUDGET_GPU_H`) so a stop leaves the remaining matrix recorded.
 
-## Bugs Fixed (2026-08-06 run)
-1. **L=36 first training (job 491036) → all NaN**: caused by concurrent training jobs sharing one GPU node (`gpu-v100s-06`); re-submitting L=36 alone (491106) trained fine (loss normal from ep1). Lesson: avoid submitting multiple training jobs concurrently on same node; submit sequentially or ensure separate GPUs.
-2. **`make_forecast_figure.py` crash `IndexError: index 202008`** at false-peak annotation (line ~306): `falsep` list stores **epiweek values** (e.g. 202008) but drawing code used them as array indices. Fixed by resolving epiweek→index via `np.where(fc_epiweeks==pp)`. Only triggers when a horizon has a "false peak" (L=48 did; L=24/60 had empty falsep so escaped). Applies to all L; fixed globally.
+## 🔴 PERMANENT RULES
+- **NEVER run compute jobs on the HPC login node** (2026-09-16 incident: `nohup python &` D-stated and blocked sshd
+  forking; needed `kill -9`). All train/infer/eval/finalize via `sbatch`. Login node = submit/poll/small-file only.
+- **GOLDEN RULE OF ARTIFACT ISOLATION:** every run saves to an immutable hierarchy; never share a checkpoint dir
+  across horizons/variants.
+- **Test/holdout isolation:** test & holdout access must remain 0/0 until champion lawfully frozen. Never mutate the
+  frozen selection rule or raw `data/` beyond read.
 
-## Cross-Reference Convention (2026-08-14, UPDATED 2026-08-17)
-- **唯一交叉参考 = `MIFlu_paper.md`**（论文 PDF 的**直接 markdown 转换**，IEEE JBHI 2025，Moon et al.）。这是当前唯一权威的论文口径来源。
-- ⚠️ **旧 `MIFlu_Complete_Extraction.md` 已删除（2026-08-17）**。它含**至少一处编造内容**（如声称 OT 为"黑箱 best guess"、prompt 用 `{min1}`..`{max7}` 占位符等，与 PDF Table X 实际 `<min(X1_train)>` 等不符），**不得再引用**。任何源自该旧文件的结论都必须用 `MIFlu_paper.md` 重新核对后才能采用。
-- 已删除：`miflu_ground_truth.json`、3 个提取 .txt、旧 `REPRODUCTION_PROOF_V2_ZH.md`、`MLFlu_forecast_figure.md`、`MIFlu_Complete_Extraction.md`。核对论文口径只用 `MIFlu_paper.md`，不引用任何提取 .txt/json/旧 md。
+## HPC environment (CityUHK Burgundy)
+- Login: `ssh sychan552@burgundy.hpc.cityu.edu.hk` (ed25519 key). From Windows PowerShell the working
+  incantation is `ssh -n -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519 -o PreferredAuthentications=publickey cityu <cmd>`;
+  without `PreferredAuthentications=publickey` the key is offered but the server falls through to
+  keyboard-interactive and BatchMode fails. `scratch -> /scratch/sychan552`; `/home/sychan552` -> `/gpfs1/home/sychan552`.
+- PowerShell → `ssh` strips `"` `'` `(` `)` **and expands `$var` locally** → never pass a bash `for` loop or
+  `$d` inline (dies as a PowerShell parse error, e.g. `wc : term not recognized`). Write the remote script to a
+  local file, `scp` it, `sed -i 's/\r$//'`, then `bash` it.
+- **QOS RULE (non-negotiable):** `stingy` caps `Jobs=1` + `Submit-Job=1` → max 1 running + 1 pending.
+  Default: `#SBATCH --partition=stingy --gres=gpu:a100:1 --time=04:00:00` (never bare `--gres=gpu:1` → V100 OOM;
+  never `--time>04:00:00`). Avoid congested `gpu_a100`. Chain jobs via auto-submit polling `squeue -u $USER -h -p stingy`.
+- Stack: py3.9, torch 2.5.1, transformers 4.57.6. Conda env `mlflu_hpc`
+  (`/home/sychan552/.conda/envs/mlflu_hpc/bin/python`); login default python lacks torch.
+- Storage quota: home 50/100 GiB; scratch 300/1024 GiB, 10-day grace.
 
-## Evaluation Protocol (current — AUTHORITATIVE)
-- **唯一权威协议 = MIFlu 论文协议**: `L ∈ {24, 36, 48, 60}` 四档**独立**训练/评估，每档 10 reps，
-  **静态 70:10:20 切分**（shuffle=False，不重叠窗口），scaler 仅 fit 于 TRAIN，test target 起点
-  严格 > val 终点。N=7 (OT=num_patients（CDC 总就诊人次/分母，全量未缩放），是**我们自己的实现选择**，论文 Table X 仅称其为
-  "'OT' feature for long-term forecasting task"，未给公式、未称黑箱)。T=104。
-- 4 指标阈值: Peak Hit≥0.75 / Timing≤2.0 / Peak Intensity≤20.0 / Direction≥0.60（per-horizon 计算）。
-- **L=52 walk-forward 已废弃**: 曾在 2026-08-14~08-16 短暂作为主协议，现**已废弃并隔离到
-  `scripts/chattime_variant/generate_walkforward.py`**，**仅作 Phase 2 ChatTime 对照参考**，
-  **不得再作为 MIFlu 复现的主结论来源**。其产物（`results/ili/miflu_fulltest_walkforward.csv`、
-  连续图、peak metrics）一律标记 DEPRECATED，与论文协议表/图**禁止混用**。
+## Paper ground truth: output shape & metric scope (verified 2026-09-22 from PDF)
+- MIFlu predicts **all N=7 variables** (N×L), not ILITOTAL only. Eq.(1) X∈R^{N×T}→Ŷ; head = `nn.Linear(D, N*L)`
+  (same as GPT4TS; ablation "w/o LoRA+multimodality ≡ GPT4TS").
+- Table V MSE/MAE are **7-channel averages** in StandardScaler z-space. ILITOTAL alone is used only for the
+  qualitative Fig. 7. Primary metric = `mse_all_7vars_full_horizon_z`; ILITOTAL metrics secondary-only.
+- **Trap:** never compare ILITOTAL-only MSE against Table V (it is ≈1.9–2.0× the 7-var average on our test eval).
 
-## Protocol History / Flip-Flop Warning
-- **时间线（一句话）**: 2026-08 初定 L=24/36/48/60 四档独立协议 → 2026-08-14 一度删除四档、
-  改成 L=52 连续 walk-forward 作主协议 → 2026-08-16 经审计确认后**重建四档独立协议为唯一权威**，
-  L=52 降级为废弃隔离项。
-- **🔴 硬性规则（不可绕过）**: 未来任何要把主协议**改回 L=52** 或**任何非论文原版协议**
-  （如改切分比例、改 N、改独立档为滚动窗口等）的改动，**必须先获得用户显式确认**，且**必须同步更新
-  本文件（MEMORY.md）、两端 `HPC_GUIDE.md`（本地+远端）、`PROJECT_STATE.md` 三处，缺一不可**。
-  缺任一处的协议变更视为未完成、无效，禁止据此提交训练或下结论。
+## Key model internals
+- `MIFlu.forward(x, htext)`; `x`=(B,N,T) train-only z-space; `htext` from `TextualInputEmbedder`(gpt2) over a prompt.
+- `gated_inject`: `use_text_ln=True, use_lora=True, gated_inject=True, unfreeze_first_k=2`.
+- `ModalityAligner` at `model.forecasting_llm.modality_aligner`; its `cross_attn` discards weights → recover via
+  forward hook (`need_weights=True`).
+- Test window: input `data[k:k+T]`, target `data[k+T:k+T+L]`; T=104, val_end=819.
+- gpt2_miflu full params=1,030,056; LoRA=73,728.
 
-## Results (2026-08-06)
-- All 4 horizons (L=24/36/48/60) trained + figured successfully.
-- Local copy: `hpc_results/data/` (16 PNGs + 4 CSVs + 4 .pth checkpoints).
-- Notable result: L=24 COVID Wave 1 peak (epiweek 202006 = 111,361) flagged as **GT (missed)** by model (pred ~47,962, -56.9%) → this is the Missed peak the Peak Ledger (Fig B2) is designed to surface for retrospective revision.
+## "clean v3" execution + acceptance contract
+- Version chain (tooling only; protocol frozen): …→ v3.19 `compact-durable` finalize. Active root
+  `/scratch/sychan552/innovation_deploy_root_v3_clean14` (amendment B). Superseded roots + Gate jobs are IMMUTABLE.
+- **Acceptance contract:** row job (train/infer/metrics) THEN finalize (compact→restore→predictions+4 metric artefacts
+  reconcile→atomic durable publish→delete full ckpt). `COMPLETED 0:0` ≠ accepted; needs fail-closed
+  `storage-verification-v1` + ACCEPTED ledger event. Finalize skips `export_compact` for deterministic baselines.
+- **Compact checkpoint (bit-exact):** keep keys where `k not in base_sd or not torch.equal(v, base_sd[k])`.
+  Read with `safetensors.torch.load_file` (NOT `torch.load` → UnpicklingError).
+- **Ledger gotchas:** JSONL has NO spaces; never `sort` the frozen order file (reorders matrix); `scp` from
+  space-containing paths silently splits → stage to a no-space dir.
+- `clean_runner.py` (~345) forces `model_id="gpt2", load_backbone=True` for timecma_llm, so "removed" mode still
+  stores frozen gpt2 → 503MB/checkpoint (compact removes).
+
+## Wave-1 (frozen) — shape, selection rule, results
+- **Shape:** 598 = 580 (Wave 1) + 18 deferred (Wave 2). Order = 320 primary + 8 baseline + 240 ablation + 12
+  negative_control. deleted=0, duplicated=0. Durable: `/home/sychan552/innovation_durable/screening/`.
+- **Per-run metrics (4 families):** `paper_aligned_full_output_metrics.json`, `ilitotal_fixed_step_metrics.json`,
+  `ilitotal_full_horizon_metrics.json`, `pte_pie_metrics.json`.
+- **Frozen selection rule:** rank `average_MSE_4L` (mean of per-L means over seeds 42..51, L∈{24,36,48,60},
+  7-var full-horizon z, lower better). Secondary `average_MAE_4L`. Forbidden tie-breaks: peak-hit, PTE/PIE,
+  baseline-relative ratio, `(r24+r60)/2`. Report top equivalence set (no manufactured unique champion).
+- **Results (avg_MSE_4L):** gpt2_miflu 0.771 (winner) < nlinear 1.070 < patchtst 1.076 < dlinear 1.171 < timecma_llm
+  1.181 < itransformer 1.253 ≈ qwen_time_llm 1.253 < calf_llm 1.765. Non-LLM (1.142) beats LLM (1.243); win driven by
+  gpt2_miflu alone (SD 0.071 vs nlinear 0.003). seasonal_naive beats gpt2_miflu on L24/36/48. Ablation: only
+  `without_dataset_information` significant (+12.8%, p=0.004); zero_text −0.063, shuffled_text +0.081.
+- **PTE/PIE (secondary only):** `validation_predictions.csv` has `target_date=None` → target week =
+  `forecast_origin+104+step`. patchtst PTE=1.61 wk best; gpt2_miflu mid-table (PTE 2.12 wk, PIE 41.5%).
+
+## Deferred controls amendment (DONE — 2026-09-21)
+- Append-only amendment `DEFERRED_CONTROLS_PROTOCOL_AMENDMENT_2026-09-21` resolves 18 deferred:
+  defect-A (12) zero_text/shuffled_text = exact duplicates of accepted Wave-1 rows → equivalent, no rerun;
+  defect-B (6) `llm_removed_or_alignment_only` rebound to timecma_llm.
+- Registry `results/v3_clean/runs/complete_specs_amended.json`. Rebound jobs 576502/576507/576509 (L24),
+  576510/576512/576513 (L60) all COMPLETED 0:0.
+- Source edits: `compact_checkpoint.py` honours `INNOVATION_REGISTRY_REL`, drops `wave==2` disqualifier, carries
+  `control`/`parent_model`/`amended_action`; `finalize_row.py` manifest gains provenance + `--amendment-id`.
+  HPC originals backed up as `*.pre_amendmentB`.
+- **FINALIZED (`_v319b` controller): 6/6 ACCEPTED**, `_w2` durable dirs published (compact ~5.3MB each,
+  n_keys_unequal=0), full ckpt deleted. **Global reconcile CLOSED: 598 = 580 + 12 + 6**; Test/holdout=0/0.
+- **Paired analysis (seeds 42-44, primary metric):** L24 removed 1.0955 vs timecma 1.0720 (+2.2%, p=0.490 ns);
+  L60 removed 1.3301 vs timecma 1.2363 (+7.6%, p=0.002 significant) → LLM/text branch matters at long horizon.
+
+## Local ↔ HPC gotchas
+- PowerShell → `ssh` strips `"` `'` `(` `)` → remote one-liners use NO quotes/parens; use `grep -i word`,
+  `cut -d_ -f1`, bare words; here-docs also lose quotes → use no-quote Python or pure bash.
+- `scp` to a Windows path must NOT end with backslash. Safe-delete guard blocks `del`/`rmdir` → quarantine by `move`.
+- Checkpoint `state_dict` cross-version: load `strict=False`, guard rejecting any other missing key (legacy
+  `attn.bias`/`masked_bias` safe to ignore).
+- Windows `write_to_file` writes CRLF → breaks remote token match → `sed -i 's/\r$//'`.
+- `sacct -X` elapsed is `HH:MM:SS` with **no** day field unless >24 h; a naive `partition("-")` on it
+  puts the whole string in the day part and throws. Handle both forms. `AllocTRES` shows
+  `gres/gpu:a100=1` (not `gpu:a100:1`) — match on `gres/gpu=`.
+- Finalize controller per-row `du -sh` D-stated the login node → strip it.
+- Local env: py3.9, torch 2.6.0+cu124 (CPU), transformers 4.25.0; gpt2 in local HF cache → offline rebuild/inference.
+  **python-docx + reportlab installed locally**; `scripts/v3_clean/md2docs.py` renders Markdown→DOCX/PDF.
+- `git status --porcelain` with CJK filenames → UnicodeDecodeError under cp950 → use `encoding="utf-8", errors="replace"`.

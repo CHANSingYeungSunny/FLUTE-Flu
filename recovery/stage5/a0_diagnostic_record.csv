@@ -1,0 +1,2 @@
+run_id,track,variant,scientific_question,horizon,seed,T,data_profile,split_convention,selection,entry_point,class,status,blocked_by,containment,gpu_hours_est,notes
+A0-01,A,author_released_code,Does the released author code reproduce its own Table V?,24,42,104,author_966,author_676_97_193,author Test MSE (as released),recovery/author_repo/main_ILI_lora.py,BLOCKED,BLOCKED,D-a0-env (GPU node + author gpt2 cache + author repo data path),n/a (released code),"unknown (full fine-tune, never run)",quoted-field fix retained; not counted in the 44-row A2 matrix

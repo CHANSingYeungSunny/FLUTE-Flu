@@ -1,0 +1,29 @@
+{
+  "generated_utc": "2026-09-16T16:10:53Z",
+  "gate_kind": "PREPILOT_GATE",
+  "job_id": "565844",
+  "state": "FAILED",
+  "exit_code": "1:0",
+  "elapsed": "00:00:36",
+  "node": "gpu-a100-03",
+  "partition": "stingy",
+  "excluded_node": "gpu-a100-05",
+  "alloc": "cpu=8,mem=32G,gres/gpu:a100=1",
+  "models_ok": 7,
+  "models_total": 8,
+  "per_model": {
+    "nlinear": "OK",
+    "dlinear": "OK",
+    "patchtst": "OK",
+    "itransformer": "OK",
+    "gpt2_miflu": "OK",
+    "qwen_time_llm": "FAILED",
+    "calf_llm": "OK",
+    "timecma_llm": "OK"
+  },
+  "qwen_offline_load": "SUCCEEDED (verified snapshot path)",
+  "remaining_failure": "G1/G2 gate-harness defects",
+  "pilots_submitted": 0,
+  "retries_remaining_in_this_prompt": 0,
+  "decision": "STOP \u2014 no Pilot may be submitted"
+}

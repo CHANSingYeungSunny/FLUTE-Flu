@@ -1,0 +1,18 @@
+{
+  "generated_utc": "2026-09-18T20:23:15Z",
+  "status": "SUPERSEDED_FOR_EXECUTION_DEPLOYMENT_INCOMPLETENESS",
+  "version": "innov-v3.14-compact-input-normalization-fix",
+  "bundle_sha256": "ada959427ce7c949086cd3bfd63887ecf01fd7d2c86aac4aebb921e093b07bb1",
+  "failed_deployment": "/scratch/sychan552/innovation_deploy_root_v3_clean1",
+  "gate_job": "568959",
+  "gate_result": "FAILED ExitCode 1:0",
+  "failure_stage": "before clean_runner.py could execute",
+  "reason": "the v3.7 bundle contained only scripts/*.py; the frozen 598-spec registry, hpc_scripts and canonical data were never deployed",
+  "classification": "deployment-completeness defect (NOT a model/data/training/metric or clean_runner scientific defect)",
+  "preserved": true,
+  "must_not": [
+    "rerun 568959",
+    "patch v3_clean1 in place and retry"
+  ],
+  "successor": "innov-v3.15-storage-predicate-applicability-fix"
+}

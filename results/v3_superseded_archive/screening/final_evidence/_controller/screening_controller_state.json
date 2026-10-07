@@ -1,0 +1,12 @@
+{
+  "updated": "2026-09-16T23:09:54Z",
+  "total": 48, "accepted": 48, "attempted": 48,
+  "current_run_key": "screening_timecma_llm_L60_seed44",
+  "current_job_id": "566135",
+  "current_state": "COMPLETED",
+  "stopped": false,
+  "stop_reason": "",
+  "final_status": "ALL_ACCEPTED",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_5",
+  "durable_root": "/home/sychan552/innovation_durable/screening"
+}

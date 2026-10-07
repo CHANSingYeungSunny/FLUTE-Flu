@@ -1,0 +1,59 @@
+{
+  "generated_utc": "2026-09-18T06:03:05Z",
+  "runtime_version": "innov-v3.10-backbone-kwarg-fix",
+  "executable_status": "SUPERSEDED_FOR_EXECUTION_ARTIFACT_DIRECTORY_INITIALIZATION_FAILURE",
+  "superseded_by": "innov-v3.11-artifact-directory-initialization",
+  "gate_569016": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:24:33",
+    "node": "gpu-a100-06",
+    "passed": "1/19",
+    "n_runtime_paths_failed": 18
+  },
+  "observed": {
+    "stochastic_paths_failed_at": "logs/train_history.csv",
+    "n_stochastic_paths": 16,
+    "baseline_paths_failed_at": "predictions/validation_predictions.csv",
+    "n_baseline_paths": 2,
+    "training_completed_for_stochastic_paths": true,
+    "best_checkpoint_existed_for_stochastic_paths": true,
+    "four_metric_artifacts_existed_for_baseline_paths": true,
+    "formal_rows_submitted": "0/598",
+    "test_access": 0,
+    "holdout_access": 0,
+    "scientific_protocol_changed": false
+  },
+  "confirmed_working_after_previous_repairs": {
+    "D8_import_path": true,
+    "D9_backbone_kwarg": true,
+    "D10_gate_run_key": true
+  },
+  "root_cause": {
+    "id": "D11",
+    "summary": "clean_runner.py never creates the per-run artifact sub-directories before writing into them; `logs/` and `predictions/` are absent.",
+    "classification": "ARTIFACT_DIRECTORY_CREATION (authorised scope)",
+    "failing_line": [
+      263,
+      330
+    ],
+    "two_call_sites": {
+      "primary/ablation/control": "logs/train_history.csv (line 330)",
+      "baseline": "predictions/validation_predictions.csv"
+    }
+  },
+  "missing_directories": [
+    "logs",
+    "predictions"
+  ],
+  "signature_count": {
+    "paths": 18,
+    "distinct_signatures": 2,
+    "call_sites": [
+      263,
+      330
+    ]
+  },
+  "not_scientific_results": true,
+  "gate_outputs_are_infrastructure_only": true
+}

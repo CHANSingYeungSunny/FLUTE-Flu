@@ -1,0 +1,105 @@
+[f1cpu] host=gpu-v100s-01 job=607631 start=2026-10-06T11:20:24Z
+[f1cpu] GPU REQUIRED: NO   (no gres/gpu in this job's AllocTRES by construction)
+[f1cpu] === Phase 3: Test evaluation + prediction dump ===
+  [SKIP] qwen_time_llm L=48 s=44: missing
+  [SKIP] calf_llm L=48 s=42: missing
+  [SKIP] calf_llm L=48 s=43: missing
+  [SKIP] calf_llm L=48 s=44: missing
+  [SKIP] timecma_llm L=48 s=42: missing
+  [SKIP] timecma_llm L=48 s=43: missing
+  [SKIP] timecma_llm L=48 s=44: missing
+  last_value_naive   L=48: mse_all=7.851274 mse_ili=17.054823 (clamped=0)
+  seasonal_naive     L=48: mse_all=2.142457 mse_ili=4.335677 (clamped=0)
+
+=== L=60: test=134 train=513 val=38 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  miflu    L=60 s=42: mse_all=2.172755 mse_ili=4.082272 pcc=0.7089
+  [SKIP] miflu L=60 s=43: missing
+  [SKIP] miflu L=60 s=44: missing
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=42: mse_all=2.349777 mse_ili=4.646272 pcc=0.6620
+  [SKIP] notext L=60 s=43: missing
+  [SKIP] notext L=60 s=44: missing
+  nlinear  L=60 s=42: mse_all=1.984557 mse_ili=3.904797 pcc=0.7760
+  [SKIP] nlinear L=60 s=43: missing
+  [SKIP] nlinear L=60 s=44: missing
+  dlinear  L=60 s=42: mse_all=2.488979 mse_ili=4.695544 pcc=0.7893
+  [SKIP] dlinear L=60 s=43: missing
+  [SKIP] dlinear L=60 s=44: missing
+  [SKIP] patchtst L=60 s=42: missing
+  [SKIP] patchtst L=60 s=43: missing
+  [SKIP] patchtst L=60 s=44: missing
+  [SKIP] itransformer L=60 s=42: missing
+  [SKIP] itransformer L=60 s=43: missing
+  [SKIP] itransformer L=60 s=44: missing
+  [SKIP] qwen_time_llm L=60 s=42: missing
+  [SKIP] qwen_time_llm L=60 s=43: missing
+  [SKIP] qwen_time_llm L=60 s=44: missing
+  [SKIP] calf_llm L=60 s=42: missing
+  [SKIP] calf_llm L=60 s=43: missing
+  [SKIP] calf_llm L=60 s=44: missing
+  [SKIP] timecma_llm L=60 s=42: missing
+  [SKIP] timecma_llm L=60 s=43: missing
+  [SKIP] timecma_llm L=60 s=44: missing
+  last_value_naive   L=60: mse_all=6.884903 mse_ili=14.658813 (clamped=0)
+  seasonal_naive     L=60: mse_all=2.103470 mse_ili=4.284679 (clamped=0)
+
+artefacts: 3648 origin rows -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/test_manifest.csv
+
+=== average_MSE_4L (7-var standardized MSE, mean seeds then mean L) ===
+  notext             1.887035
+  nlinear            2.035117
+  miflu              2.048389
+  seasonal_naive     2.268799
+  dlinear            2.352137
+  last_value_naive   7.165831
+
+DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring/score_matrix.csv, score_summary.csv, average_mse_4L.csv
+[f1cpu] === Phase 3: independent scoring ===
+[f1cpu] /home/sychan552/.conda/envs/mlflu_hpc/bin/python -u /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/f1_score_all.py --pred-root /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds --out-dir /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring --expect-seed 42
+[f1score] artefacts found : 32
+[f1score] accepted         : 32
+[f1score] REJECTED         : 0
+[f1score] missing (model,horizon) cells: 0
+[f1score] forecast-key violations: 0
+[f1score] models with off-contract seeds: 0
+
+[f1score] ranking (equal-weight four-horizon average MSE, lower better)
+     1. notext               1.887035
+     2. nlinear              2.035117
+     3. miflu                2.048389
+     4. seasonal_naive       2.245545
+     5. dlinear              2.352137
+     6. last_value_naive     7.165831
+
+[f1score] paired statistics (A wins iff diff < 0)
+                 miflu - notext               mean=+0.1614 t=+0.87 A wins 2/4 (B 2, ties 0)
+                 miflu - nlinear              mean=+0.0133 t=+0.08 A wins 2/4 (B 2, ties 0)
+                 miflu - dlinear              mean=-0.3037 t=-1.91 A wins 3/4 (B 1, ties 0)
+                notext - nlinear              mean=-0.1481 t=-0.85 A wins 3/4 (B 1, ties 0)
+                notext - dlinear              mean=-0.4651 t=-4.25 A wins 4/4 (B 0, ties 0)
+               nlinear - dlinear              mean=-0.3170 t=-4.66 A wins 4/4 (B 0, ties 0)
+                 miflu - seasonal_naive       mean=-0.2204 t=-1.77 A wins 3/4 (B 1, ties 0)
+                 miflu - last_value_naive     mean=-5.1174 t=-9.25 A wins 4/4 (B 0, ties 0)
+
+[f1score] SUCCESS GATES
+    [PASS] G1_all_six_models_present
+    [PASS] G2_all_four_horizons_present
+    [PASS] G3_no_rejected_artefacts
+    [PASS] G4_forecast_keys_consistent
+    [PASS] G5_single_pilot_seed_only
+    [PASS] G6_no_missing_cells
+    [PASS] G7_partition_invariant_holds
+
+[f1score] integrity gates (G3,G4,G5) ok : True
+[f1score] completeness gates (G1,G2,G6) ok : True
+[f1score] F1 STATUS = COMPLETE
+[f1score] REMINDER: one seed only - no significance, no robustness, no 'best model' claim. See F1_SUCCESS_GATES.md.
+[f1cpu] failures=0
+[f1cpu] end=2026-10-06T11:25:19Z

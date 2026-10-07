@@ -1,0 +1,27 @@
+field,Historical_Track_B_self_built,July2026_dataset_track,A0-R_released_code_replay,A1-P_paper_reconstruction,A2-F_fair_benchmark,compatible_pairwise,verdict
+repository,project FLUTE-Flu self-built,not applicable - dataset axis,https://github.com/Jmoon3108/MIFlu,https://github.com/Jmoon3108/MIFlu,https://github.com/Jmoon3108/MIFlu,only within the official-repo lineage,NOT_DIRECTLY_COMPARABLE
+commit,1f6563f with uncommitted model changes,n/a,6ed210150b8819313947cf607eb1821c87b1bee3,6ed210150b8819313947cf607eb1821c87b1bee3,6ed210150b8819313947cf607eb1821c87b1bee3,official-repo tracks share a commit,NOT_DIRECTLY_COMPARABLE
+implementation,self-built scripts/miflu_model.py,n/a,author released code verbatim,author repo plus declared reconstruction,corrected implementation,no,NOT_DIRECTLY_COMPARABLE
+dataset,NOT UNIFORM across the 19 deploy dirs - UNRECOVERED per run,July-2026 1025-row snapshot,author 966-row file,author 966-row file,author 966-row file,only the three 966-row tracks,NOT_DIRECTLY_COMPARABLE
+row_count,UNRECOVERED per run,1025,966,966,966,966 only,NOT_DIRECTLY_COMPARABLE
+data_dates,UNRECOVERED,2002-2021 incl. July revision,2002-2021 stored labels,2002-2021 stored labels,2002-2021 stored labels,966-row tracks only,NOT_DIRECTLY_COMPARABLE
+variables,UNRECOVERED,7,7 declared but 1 evaluated,7,7,no,NOT_DIRECTLY_COMPARABLE
+target,UNRECOVERED,z-space,channel 0 only (percent weighted ILI),7-variable declared,7-variable,no,NOT_DIRECTLY_COMPARABLE
+split,UNRECOVERED,not the 676/97/193 rule,676/97/193,676/97/193,676/97/193,official-repo tracks only,NOT_DIRECTLY_COMPARABLE
+scaler,UNRECOVERED,UNKNOWN,fit on train rows [0,676),fit on train rows [0,676),fit on train rows [0,676),official-repo tracks only,NOT_DIRECTLY_COMPARABLE
+input_length,UNRECOVERED,104,104,104,104,official-repo tracks only,NOT_DIRECTLY_COMPARABLE
+horizons,24/36/48/60 (path evidence),24/36/48/60,24/36/48/60,24/36/48/60,24/36/48/60,all,COMPARABLE_FIELD
+origins,UNRECOVERED,not strict-containment,released rule with drop_last,strict containment,strict containment (S7),A1-P and A2-F only,NOT_DIRECTLY_COMPARABLE
+leads,UNRECOVERED,1..L,1..L,1..L,1..L,official-repo tracks only,COMPARABLE_FIELD
+feature_coverage,UNRECOVERED,7,1,7,7,no,NOT_DIRECTLY_COMPARABLE
+seeds,UNRECOVERED,42-51,fix_seed=2021 set once,declared list,declared list,no,NOT_DIRECTLY_COMPARABLE
+epochs,UNRECOVERED,UNKNOWN,code default 1,20 reconstructed,declared,no,NOT_DIRECTLY_COMPARABLE
+learning_rate,UNRECOVERED,UNKNOWN,code default 1e-4,5e-4 reconstructed,declared,no,NOT_DIRECTLY_COMPARABLE
+scheduler,UNRECOVERED,UNKNOWN,type1 hard-coded 0.9 from epoch 4,none declared,declared,no,NOT_DIRECTLY_COMPARABLE
+checkpoint_rule,UNRECOVERED,validation selection,Test MSE selection,validation-only intended,validation-only by contract,no,NOT_DIRECTLY_COMPARABLE
+test_exposure,UNVERIFIED_BY_RECOMPUTATION,exposed,exposed and Test-selected,one-shot intended,one-shot by contract,no,NOT_DIRECTLY_COMPARABLE
+text_path_behaviour,UNRECOVERED,not verified on this model,VERIFIED INACTIVE (deterministic probe),declared,VERIFIED ACTIVE on the corrected model,no,NOT_DIRECTLY_COMPARABLE
+lora_behaviour,UNRECOVERED,UNKNOWN,PEFT=0 by default so LoRA never applied,PEFT=1 applied,applied and parameter-counted,no,NOT_DIRECTLY_COMPARABLE
+metric_computation,CSV only - no predictions saved,seed-level CSV,feature-0 standardized MSE,declared,7-variable standardized MSE with independent scorer,no,NOT_DIRECTLY_COMPARABLE
+independent_scoring_status,IMPOSSIBLE - no .npy anywhere,re-aggregated from seed-level CSV,IMPOSSIBLE - np.save commented out,POSSIBLE by design,POSSIBLE by design,only A1-P and A2-F,NOT_DIRECTLY_COMPARABLE
+overall_pairwise_verdict,INCOMPATIBLE,INCOMPATIBLE,INCOMPATIBLE_WITH_TRACK_B,INCOMPATIBLE_WITH_TRACK_B,INCOMPATIBLE_WITH_TRACK_B,only A1-P vs A2-F share a basis AND still differ in contract,INCOMPATIBLE_ACROSS_TRACKS_UNLESS_PROVEN_OTHERWISE

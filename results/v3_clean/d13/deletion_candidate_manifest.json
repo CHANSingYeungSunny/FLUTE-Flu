@@ -1,0 +1,322 @@
+{
+  "generated_utc": "2026-09-18T13:58:47Z",
+  "policy": "create-only; dry-run first; quarantine before delete; never delete unknown/shared/active/audit-required material",
+  "quarantine_root_proposed": "/gpfs1/scratch/sychan552/_d13_quarantine",
+  "n_candidates": 38,
+  "candidate_bytes": 54834019060,
+  "candidate_gib": 51.07,
+  "candidates": [
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L60_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 6178027969,
+      "gib": 5.754,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L60_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 6178027969,
+      "gib": 5.754,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L60_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 6178027969,
+      "gib": 5.754,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L24_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 6176478657,
+      "gib": 5.752,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L24_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 6176478657,
+      "gib": 5.752,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L24_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 6176478657,
+      "gib": 5.752,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__qwen_time_llm__L24__seed46__w1/checkpoints/best_val_mse.pt",
+      "bytes": 5460983808,
+      "gib": 5.086,
+      "classification": "H_PARTIAL_FAILED_COPY",
+      "action": "quarantine_then_delete",
+      "proof": "interrupted durable copy of a COMPLETED run; scratch source is intact and restorable"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L60_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 506520032,
+      "gib": 0.472,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L60_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 506520032,
+      "gib": 0.472,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L60_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 506520032,
+      "gib": 0.472,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L24_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 505744864,
+      "gib": 0.471,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L24_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 505744864,
+      "gib": 0.471,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L24_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 505744864,
+      "gib": 0.471,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L60_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 504156890,
+      "gib": 0.47,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L60_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 504156890,
+      "gib": 0.47,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L60_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 504156890,
+      "gib": 0.47,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L24_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 503381722,
+      "gib": 0.469,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L24_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 503381722,
+      "gib": 0.469,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L24_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 503381722,
+      "gib": 0.469,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L60_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 329360870,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L60_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 329360870,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L60_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 329360870,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L60__seed42__20260915T030458Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 329360870,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L60__seed43__20260915T030754Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 329360870,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L60__seed44__20260915T031155Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 329360870,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L48__seed44__20260915T030052Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 329102502,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L48__seed43__20260915T025621Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 329102502,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L48__seed42__20260915T025321Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 329102502,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L36__seed42__20260915T024318Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 328844070,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L36__seed43__20260915T024719Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 328844070,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L36__seed44__20260915T025020Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 328844070,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L24_seed43/checkpoints/best_val_mse.pt",
+      "bytes": 328585702,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L24_seed42/checkpoints/best_val_mse.pt",
+      "bytes": 328585702,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L24_seed44/checkpoints/best_val_mse.pt",
+      "bytes": 328585702,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed43__20260915T023717Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 328585702,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260915T023509Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 328585702,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed44__20260915T024018Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 328585702,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T225532Z__nogit/checkpoints/best_val_mse.pt",
+      "bytes": 328585702,
+      "gib": 0.306,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "action": "quarantine_large_weights_keep_small_evidence",
+      "proof": "v3.3-era per-row copy of a frozen backbone that also exists in the shared HF cache; manifests/metrics/predictions/logs are preserved"
+    }
+  ],
+  "explicitly_preserved": {
+    "wave1_accepted_rows": 205,
+    "job_571472_scratch": "preserved and used for recovery, not retrained",
+    "canonical_data_and_bundles": "preserved",
+    "gate_and_controller_evidence": "preserved",
+    "chattime_and_other_project": "preserved",
+    "unknown_paths": "preserved and reported for review"
+  }
+}

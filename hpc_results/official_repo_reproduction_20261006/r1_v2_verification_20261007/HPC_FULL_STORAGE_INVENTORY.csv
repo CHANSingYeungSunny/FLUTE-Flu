@@ -1,0 +1,31 @@
+location,path,bytes,files,class,note
+home,/gpfs1/home/sychan552/.conda,13958643712,,REGENERABLE_CACHE,conda env mlflu_hpc - rebuildable but required by every run; retained
+home,/gpfs1/home/sychan552/stage5_a2_durable,7945682481,,PROTECTED_REQUIRED,verified 36/36 A2 durable checkpoints
+home,/gpfs1/home/sychan552/official_repo_reproduction_20261006,5690831667,,PROTECTED_REQUIRED,active R0-R10 evidence root
+home,/gpfs1/home/sychan552/innovation_durable,4617089843,,PROTECTED_REQUIRED,Wave-1 durable compact checkpoints + predictions + metrics
+home,/gpfs1/home/sychan552/.cache,685768704,,PROTECTED_REQUIRED,HF_HOME used by the running R1-B pilot (gpt2 snapshot); never delete
+home,/gpfs1/home/sychan552/ili_ilitotal_extract.csv.gz,66729883,1,PROTECTED_REQUIRED,ILITOTAL extract evidence
+home,/gpfs1/home/sychan552/.nv,63963136,,REGENERABLE_CACHE,NVIDIA cache
+home,/gpfs1/home/sychan552/.burgundy_vibe,8806400,,PROTECTED_UNCERTAIN,cluster tooling state
+home,/gpfs1/home/sychan552/Documents,1363148,,PROTECTED_UNCERTAIN,unknown purpose - retained
+home,/gpfs1/home/sychan552/hpc_results,215040,,PROTECTED_REQUIRED,local mirror of HPC evidence
+scratch,/scratch/sychan552/CHATTIME,203565095831,2257,PROTECTED_UNCERTAIN,190G: Chattime 73G + .ollama/models 77G + .cache 27G + weights 13G; no active script references it
+scratch,/scratch/sychan552/innovation_deploy_root_v3_5,53687091200,,PROTECTED_UNCERTAIN,56 full .pt (52.6 GiB) with NO durable manifest match - retained pending proof
+scratch,/scratch/sychan552/innovation_deploy_root_v3_clean14,11811160064,,PROTECTED_REQUIRED,ACTIVE deploy root (amendment B) - never delete
+scratch,/scratch/sychan552/a2_stage5,8452133189,1105,PROTECTED_UNCERTAIN,scratch working copy; durable archive exists at home/stage5_a2_durable
+scratch,/scratch/sychan552/innovation_deploy_root_v3_4,7623566950,,PROTECTED_UNCERTAIN,full .pt not matched to a durable manifest
+scratch,/scratch/sychan552/innovation_deploy_root_v3_3,7623566950,,PROTECTED_UNCERTAIN,full .pt not matched to a durable manifest
+scratch,/scratch/sychan552/innovation_deploy_root_v2_8,4509715660,,PROTECTED_UNCERTAIN,218 .pt from the pre-v3 track - no durable manifest
+scratch,/scratch/sychan552/v3_cache,3650161334,33,REGENERABLE_CACHE,HF cache (gpt2 + Qwen2.5-1.5B); network verified reachable; retained this pass
+scratch,/scratch/sychan552/MLFLU,1238491277,67,PROTECTED_UNCERTAIN,repo snapshot on scratch
+scratch,/scratch/sychan552/innovation_deploy_root_v3_clean6,802160640,,PROTECTED_REQUIRED,post-cleanup remainder: predictions/metrics/logs retained; full .pt removed
+scratch,/scratch/sychan552/a0_runs,661800321,19,PROTECTED_UNCERTAIN,A0 replay runs
+scratch,/scratch/sychan552/a0_replay,412577041,95,PROTECTED_REQUIRED,R1-B pilot reads its dataset + text_embeddings here; never delete
+scratch,/scratch/sychan552/_test_phase,632233731,772,REGENERABLE_INTERMEDIATE,test/staging phase output
+scratch,/scratch/sychan552/innovation_deploy_root_v2_7,356515840,,PROTECTED_UNCERTAIN,pre-v3 track
+scratch,/scratch/sychan552/_v318d,228909868,581,REGENERABLE_INTERMEDIATE,controller version scratch
+scratch,/scratch/sychan552/_v315d,83694707,51,REGENERABLE_INTERMEDIATE,controller version scratch
+scratch,/scratch/sychan552/_v313,21463825,35,REGENERABLE_INTERMEDIATE,controller version scratch
+scratch,/scratch/sychan552/v3_final_evidence.tgz,18104012,1,PROTECTED_REQUIRED,final v3 evidence archive
+scratch,/scratch/sychan552/_d13_quarantine,336204,2,FAILED_RUN_TEMPORARY,quarantine
+scratch,/scratch/sychan552/_d15_quarantine,12812,2,FAILED_RUN_TEMPORARY,quarantine

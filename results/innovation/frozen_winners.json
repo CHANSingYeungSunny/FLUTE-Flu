@@ -1,0 +1,23 @@
+{
+  "frozen_utc": "2026-09-15T14:47:32Z",
+  "basis": "select_best_model.py (validation-only, eligibility-gated)",
+  "selection_audit": "model_selection_audit.json",
+  "winners": [
+    {
+      "model": "nlinear",
+      "primary_score": 1.4791731409178228,
+      "per_L_ratio": {
+        "24": 1.246590065304556,
+        "36": 1.323111603276361,
+        "48": 1.8272866582097076,
+        "60": 1.519704236880666
+      },
+      "val_mae": 0.8114879490501558,
+      "peak_hit_ratio": 1.0,
+      "baseline_peak_hit_ratio": 0.16666666666666666,
+      "peak_not_below_baseline": true,
+      "trainable_parameters": 4410.0,
+      "train_seconds": 1.698075
+    }
+  ]
+}

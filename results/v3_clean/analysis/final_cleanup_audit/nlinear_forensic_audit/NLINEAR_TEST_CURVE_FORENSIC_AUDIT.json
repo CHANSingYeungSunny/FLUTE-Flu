@@ -1,0 +1,105 @@
+{
+  "audit_title": "MIFlu NLinear Data-Leakage and Prediction-Curve Forensic Audit",
+  "mandate": "CodeBuddy_MIFlu_NLinear_Leakage_and_Prediction_Curve_Forensic_Audit.md",
+  "generated": "2026-09-21",
+  "mode": "read-only (no figure/DOCX/PDF edits, no retrain, no rerun Test, no deletions)",
+  "overall_verdict": "NLINEAR_TEST_CURVES_AND_SPLIT_VERIFIED",
+
+  "headline_answer": {
+    "why_curve_close": "The displayed curve is a rolling one-week-ahead (lead-1 / step-0) seed-mean slice, NOT a fixed-origin full L-week forecast. ILI is highly autocorrelated (lag-1 corr 0.971) and NLinear anchors its output at the last observed input value (last = x[:,:,-1:]; y = Linear(s) + last). A 1-week-ahead forecast of a highly persistent series is therefore naturally close to ground truth.",
+    "not_leakage": true
+  },
+
+  "twelve_questions": {
+    "1_why_close": {
+      "verdict": "PASS WITH CLARIFICATION",
+      "answer": "Lead-1 (1-week-ahead) rolling seed-mean + high ILI autocorrelation + NLinear last-value anchoring. corr(pred,truth)=0.977 (L24) / 0.980 (L60); corr(pred,truth[t-1])=0.994 (the anchor). This is legitimate strong short-horizon performance, not leakage."
+    },
+    "2_rolling_lead1_vs_full_L": {
+      "verdict": "PASS",
+      "answer": "Rolling lead-1, NOT a single fixed-origin full L24/L60 forecast. Each target week has exactly one forecast origin (origin = target - 104), aggregated only across 10 seeds."
+    },
+    "3_step0_equals_lead1": {
+      "verdict": "PASS",
+      "answer": "Yes. Zero-based step 0 == one-based lead_weeks 1 == 1-week-ahead. Confirmed in test_eval.py (lead_weeks = step + 1) and final_test_figures.py (lead1_curve filters lead_weeks == 1)."
+    },
+    "4_seed_mean_improvement": {
+      "verdict": "PASS",
+      "answer": "Seed-mean reduces lead-1 ILITOTAL MSE by 11.5% (L24), 14.2% (L36), 13.1% (L48), 13.7% (L60) relative to the mean of individual-seed MSEs, via error cancellation. This is a genuine, modest smoothing, not artificial."
+    },
+    "5_input_contains_target": {
+      "verdict": "PASS",
+      "answer": "No. Input = [origin, origin+103]; target starts at origin+104. max(input_timestamp) < target_timestamp strictly. input_target_overlap_count = 0, future_target_leakage_count = 0."
+    },
+    "6_scaler_train_only": {
+      "verdict": "PASS",
+      "answer": "Yes. ScalerBundle.fit_from_train uses data[:717] only (population std ddof=0 + 1e-8, float32). Fresh fit == persisted scaler exactly; assert_consistent_with passes; _self_check asserts train_end==717."
+    },
+    "7_checkpoint_val_only": {
+      "verdict": "PASS",
+      "answer": "Yes. Checkpoint = best_val_mse (validation MSE), best_epoch=1, patience=7, early stopping on validation loss only. Test (819..1024) never influences checkpoint/seed/hyperparameters. test_eval.py performs inference only (no optimizer step)."
+    },
+    "8_plot_reads_truth_twice": {
+      "verdict": "PASS",
+      "answer": "No. final_test_figures.py lead1_curve plots y_true_physical (solid) and y_pred_physical_seed_mean_lead1 (dashed) as separate columns from the figure-source CSV. The source CSV's y_pred is the seed-mean of per-seed predictions, not a copy of truth."
+    },
+    "9_predictions_equal_or_shifted_truth": {
+      "verdict": "PASS",
+      "answer": "No. exact_equality_rate = 0.0 (pred never equals truth). corr signature proves anchoring, not copying: corr(pred, truth[t-1]) 0.994 > corr(pred, truth) 0.977 > corr(pred, truth[t+1]) 0.920 > corr(pred, lag52) 0.49-0.82. A copy would give corr=1.0 with equality."
+    },
+    "10_pte_pie_official_or_representative": {
+      "verdict": "PASS WITH CLARIFICATION",
+      "answer": "REPRESENTATIVE displayed-curve (seed-mean lead-1) metric, NOT the official season/event-level PTE/PIE. L24 PTE=1wk PIE=0.17%; L60 PTE=1wk PIE=0.97%. The report §5.4 already frames these as representative-curve ('代表曲线') values. The official season-level PTE/PIE and joint-hit rates live in final_peak_metrics.csv / final_peak_hit_rates.csv."
+    },
+    "11_matches_fig_q1_step_sweep_step0": {
+      "verdict": "PASS",
+      "answer": "EQUIVALENT WITH DOCUMENTED DIFFERENCE. Same semantics (rolling lead-1 / step-0 seed-mean ILITOTAL physical), different model (NLinear vs MIFlu GPT-2) and cosmetic style (colors/peak markers)."
+    },
+    "12_report_fix_needed": {
+      "verdict": "PASS WITH CLARIFICATION",
+      "answer": "YES, wording only (no leakage). The individual NLinear L24/L60 panel captions say only 'solid = ground truth, dashed = prediction'; they should state 'lead-1 (1-week-ahead) rolling seed-mean'. Prepared as remediation_plan_if_needed.md; NOT executed per the no-modification rule."
+    }
+  },
+
+  "required_conclusions": {
+    "1_why_accurate": "PASS WITH CLARIFICATION — rolling lead-1 + high autocorrelation + NLinear last-value anchoring",
+    "2_full_L_or_rolling": "PASS — rolling lead-1 reconstruction, not a single fixed-origin full-L forecast",
+    "3_seed_averaging": "PASS — yes; 11-14% MSE reduction via error cancellation (modest, genuine)",
+    "4_input_contains_future": "PASS — no; overlap=0, leakage=0",
+    "5_scaler_train_only": "PASS — data[:717] only",
+    "6_checkpoint_val_only": "PASS — best_val_mse early stopping on validation",
+    "7_split_counts": "PASS — 717/102/206 timestamps; windows 613/103/(206-L); 1025 = TOTAL timestamps",
+    "8_semantics_match_step0": "PASS — EQUIVALENT WITH DOCUMENTED DIFFERENCE",
+    "9_pte_pie_official_or_illustrative": "PASS WITH CLARIFICATION — representative displayed-curve metric",
+    "10_any_leakage": "PASS — none found",
+    "11_report_correction": "PASS WITH CLARIFICATION — caption wording should note lead-1 rolling seed-mean (prepared, not executed)"
+  },
+
+  "classification_against_audit_taxonomy": {
+    "A_genuine_strong_short_horizon_performance": true,
+    "B_valid_rolling_fixed_lead_evaluation": true,
+    "C_plotting_makes_look_better_than_full_L": "PARTIAL — the displayed lead-1 curve is genuinely easier than the official full-L metric (full-L ILITOTAL MSE is 13.9-16.8x the lead-1 MSE); this is disclosed in the report's '代表曲线' caveat but the individual panel captions should state 'lead-1' explicitly",
+    "D_target_leakage": false,
+    "E_split_or_scaler_leakage": false,
+    "F_inverse_transform_or_column_error": "NONE affecting metrics; one cosmetic 'variable' name label misalignment (off-by-two) that has no functional impact",
+    "G_truth_as_prediction": false,
+    "H_validation_reused_as_test": false,
+    "I_seed_mean_artificially_smooths": false,
+    "J_incorrect_pte_pie_or_misleading_annotation": "PARTIAL — PTE/PIE on the figure are representative-curve values; correct if labelled as such (report already caveats this)"
+  },
+
+  "evidence_files": {
+    "split_counts": "nlinear_audit_split_counts.csv",
+    "split_boundaries": "nlinear_audit_split_boundaries.json",
+    "provenance_L24": "nlinear_L24_displayed_curve_provenance.csv",
+    "provenance_L60": "nlinear_L60_displayed_curve_provenance.csv",
+    "identity": "nlinear_prediction_identity_audit.csv",
+    "full_vs_displayed": "nlinear_full_horizon_vs_displayed_curve_metrics.csv",
+    "per_lead": "nlinear_per_lead_error_profiles.csv",
+    "seed_aggregation": "nlinear_seed_aggregation_audit.csv",
+    "peak": "nlinear_displayed_curve_peak_audit.json",
+    "preprocessing": "nlinear_preprocessing_leakage_audit.json",
+    "checkpoint": "nlinear_checkpoint_selection_audit.json",
+    "reconstruction": "nlinear_independent_reconstruction_audit.json"
+  }
+}

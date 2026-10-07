@@ -1,0 +1,2 @@
+season,n_weeks,status,hit,gt_peak_week,gt_peak_value,pred_peak_week,pred_peak_value,pte_weeks,pie_pct
+2015,15,incomplete_season,False,,,,,,

@@ -1,0 +1,33 @@
+==========================================================================
+SCORER ACCEPTANCE TESTS  (all arrays SYNTHETIC - no model results)
+==========================================================================
+
+A. the scorer must REJECT malformed artefacts
+
+  [PASS] A1 missing prediction arrays rejected  -- bad_missing.npz: missing array 'pred'
+  [PASS] A2 wrong variable count rejected  -- pred_m_L24_s42.npz: expected 7 variables, got 6
+  [PASS] A3 NaN rejected  -- pred_m_L24_s42.npz: non-finite values in pred (1 cells)
+  [PASS] A4 Inf rejected  -- pred_m_L24_s42.npz: non-finite values in pred (1 cells)
+  [PASS] A5 pred/target shape mismatch rejected  -- pred_m_L24_s42.npz: pred(5, 7, 24) != target(4, 7, 24)
+  [PASS] A6 duplicate (model,L,seed) keys detected  -- 1 duplicated key group(s)
+  [PASS] A7 expected-but-absent model reported  -- ['never_trained']
+  [PASS] A8 incomplete horizon set yields NO aggregate  -- aggregate keys=[]
+  [PASS] A9 unbalanced seed counts flagged  -- {24: 2, 36: 1, 48: 1, 60: 1}
+  [PASS] A10 Historical Track B artefact rejected  -- pred_m_L24_s42.npz: REJECTED - Historical Track B artefact (profile='historical_track_b')
+  [PASS] A11 incompatible scaling space rejected  -- pred_m_L24_s42.npz: REJECTED - scaling space 'physical' != F1 space 'standardized_train_fit_z'
+  [PASS] A12 non-strict containment rejected  -- pred_m_L24_s42.npz: REJECTED - containment 'start' != 'strict'
+  [PASS] A13 Test-selected checkpoint metadata rejected  -- pred_m_L24_s42.npz: REJECTED - checkpoint_selection='best TEST mse' indicates Test-assisted selection
+  [PASS] A14 missing variable keys rejected  -- pred_m_L24_s42.npz: missing var_cols (variable keys undefined)
+  [PASS] A15 mixed seed identifiers across models detectable for pairing  -- {'m': {42}, 'other': {43}}
+
+B. the scorer must COMPUTE correctly
+
+  [PASS] B1 MSE/MAE hand-computed (all-ones error -> 1.0/1.0)  -- mse=1.000000 mae=1.000000
+  [PASS] B2 per-variable MSE list length == n_vars  -- 7 entries
+  [PASS] B3 per-lead MSE list length == the lead dimension  -- 24 entries
+  [PASS] B4 equal-weight 4-horizon average (expect 2.5)  -- got 2.500000, expected 2.500000
+  [PASS] B5 per-horizon values are kept separately (aggregation is the equal-weight mean of four horizon means, not a flat mean over cells)  -- L_mse={24: 1.0, 36: 2.0, 48: 3.0, 60: 4.0}
+
+==========================================================================
+RESULT: 20/20 checks passed
+==========================================================================

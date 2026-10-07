@@ -1,0 +1,465 @@
+{
+  "generated_utc": "2026-09-14T21:01:33Z",
+  "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T210119Z__1f6563f",
+  "run_dir": "results/innovation/runs/national-ili__dlinear__none__identity__L24__seed42__20260914T210119Z__1f6563f",
+  "model_key": "dlinear",
+  "run_stage": "smoke",
+  "layers": [
+    "pilot_specs.json",
+    "config_resolved.yaml",
+    "run_status.json",
+    "checkpoint_manifest.json",
+    "registry_v2.csv"
+  ],
+  "required_fields": [
+    "experiment_stage",
+    "purpose",
+    "selection_eligible",
+    "paper_result_eligible",
+    "test_access_allowed",
+    "protocol_version",
+    "implementation_source_version",
+    "source_snapshot_sha256",
+    "authoritative_plan_sha256",
+    "model_key",
+    "display_name",
+    "architecture_fidelity"
+  ],
+  "fields": [
+    {
+      "field": "experiment_stage",
+      "values": {
+        "pilot_specs.json": "pilot",
+        "config_resolved.yaml": "smoke",
+        "run_status.json": "smoke",
+        "checkpoint_manifest.json": "smoke",
+        "registry_v2.csv": "smoke"
+      },
+      "layers_compared": [
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "smoke"
+      ],
+      "agree": true,
+      "note": "stage-specific: compared on the run layers because the pilot-spec layer describes a pilot run"
+    },
+    {
+      "field": "purpose",
+      "values": {
+        "pilot_specs.json": "infrastructure_verification_only",
+        "config_resolved.yaml": "runtime_metadata_contract_verification",
+        "run_status.json": "runtime_metadata_contract_verification",
+        "checkpoint_manifest.json": "runtime_metadata_contract_verification",
+        "registry_v2.csv": "runtime_metadata_contract_verification"
+      },
+      "layers_compared": [
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "runtime_metadata_contract_verification"
+      ],
+      "agree": true,
+      "note": "stage-specific: compared on the run layers because the pilot-spec layer describes a pilot run"
+    },
+    {
+      "field": "selection_eligible",
+      "values": {
+        "pilot_specs.json": "false",
+        "config_resolved.yaml": "false",
+        "run_status.json": "false",
+        "checkpoint_manifest.json": "false",
+        "registry_v2.csv": "false"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "false"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "paper_result_eligible",
+      "values": {
+        "pilot_specs.json": "false",
+        "config_resolved.yaml": "false",
+        "run_status.json": "false",
+        "checkpoint_manifest.json": "false",
+        "registry_v2.csv": "false"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "false"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "test_access_allowed",
+      "values": {
+        "pilot_specs.json": "false",
+        "config_resolved.yaml": "false",
+        "run_status.json": "false",
+        "checkpoint_manifest.json": "false",
+        "registry_v2.csv": "false"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "false"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "protocol_version",
+      "values": {
+        "pilot_specs.json": "innov-v2.0",
+        "config_resolved.yaml": "innov-v2.0",
+        "run_status.json": "innov-v2.0",
+        "checkpoint_manifest.json": "innov-v2.0",
+        "registry_v2.csv": "innov-v2.0"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "innov-v2.0"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "implementation_source_version",
+      "values": {
+        "pilot_specs.json": "innov-v2.4",
+        "config_resolved.yaml": "innov-v2.4",
+        "run_status.json": "innov-v2.4",
+        "checkpoint_manifest.json": "innov-v2.4",
+        "registry_v2.csv": "innov-v2.4"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "innov-v2.4"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "source_snapshot_sha256",
+      "values": {
+        "pilot_specs.json": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+        "config_resolved.yaml": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+        "run_status.json": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+        "checkpoint_manifest.json": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+        "registry_v2.csv": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "authoritative_plan_sha256",
+      "values": {
+        "pilot_specs.json": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+        "config_resolved.yaml": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+        "run_status.json": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+        "checkpoint_manifest.json": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+        "registry_v2.csv": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "model_key",
+      "values": {
+        "pilot_specs.json": "dlinear",
+        "config_resolved.yaml": "dlinear",
+        "run_status.json": "dlinear",
+        "checkpoint_manifest.json": "dlinear",
+        "registry_v2.csv": "dlinear"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "dlinear"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "display_name",
+      "values": {
+        "pilot_specs.json": "DLinear",
+        "config_resolved.yaml": "DLinear",
+        "run_status.json": "DLinear",
+        "checkpoint_manifest.json": "DLinear",
+        "registry_v2.csv": "DLinear"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "DLinear"
+      ],
+      "agree": true,
+      "note": ""
+    },
+    {
+      "field": "architecture_fidelity",
+      "values": {
+        "pilot_specs.json": "REFERENCE_FAITHFUL",
+        "config_resolved.yaml": "REFERENCE_FAITHFUL",
+        "run_status.json": "REFERENCE_FAITHFUL",
+        "checkpoint_manifest.json": "REFERENCE_FAITHFUL",
+        "registry_v2.csv": "REFERENCE_FAITHFUL"
+      },
+      "layers_compared": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_present": [
+        "pilot_specs.json",
+        "config_resolved.yaml",
+        "run_status.json",
+        "checkpoint_manifest.json",
+        "registry_v2.csv"
+      ],
+      "layers_missing": [],
+      "distinct_values": [
+        "REFERENCE_FAITHFUL"
+      ],
+      "agree": true,
+      "note": ""
+    }
+  ],
+  "pilot_spec_layer_ok": true,
+  "pilot_spec_layer_check": [
+    {
+      "field": "experiment_stage",
+      "expected_pilot_value": "pilot",
+      "pilot_spec_value": "pilot",
+      "match": true
+    },
+    {
+      "field": "purpose",
+      "expected_pilot_value": "infrastructure_verification_only",
+      "pilot_spec_value": "infrastructure_verification_only",
+      "match": true
+    },
+    {
+      "field": "selection_eligible",
+      "expected_pilot_value": "false",
+      "pilot_spec_value": "false",
+      "match": true
+    },
+    {
+      "field": "paper_result_eligible",
+      "expected_pilot_value": "false",
+      "pilot_spec_value": "false",
+      "match": true
+    },
+    {
+      "field": "test_access_allowed",
+      "expected_pilot_value": "false",
+      "pilot_spec_value": "false",
+      "match": true
+    },
+    {
+      "field": "protocol_version",
+      "expected_pilot_value": "innov-v2.0",
+      "pilot_spec_value": "innov-v2.0",
+      "match": true
+    },
+    {
+      "field": "implementation_source_version",
+      "expected_pilot_value": "innov-v2.4",
+      "pilot_spec_value": "innov-v2.4",
+      "match": true
+    },
+    {
+      "field": "source_snapshot_sha256",
+      "expected_pilot_value": "",
+      "pilot_spec_value": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+      "match": true
+    },
+    {
+      "field": "authoritative_plan_sha256",
+      "expected_pilot_value": "",
+      "pilot_spec_value": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+      "match": true
+    },
+    {
+      "field": "model_key",
+      "expected_pilot_value": "dlinear",
+      "pilot_spec_value": "dlinear",
+      "match": true
+    },
+    {
+      "field": "display_name",
+      "expected_pilot_value": "",
+      "pilot_spec_value": "DLinear",
+      "match": true
+    },
+    {
+      "field": "architecture_fidelity",
+      "expected_pilot_value": "",
+      "pilot_spec_value": "REFERENCE_FAITHFUL",
+      "match": true
+    }
+  ],
+  "runtime_metadata_chain_complete": true,
+  "note": "complete only if every required field is present and equal across the layers that can legitimately be equal, the pilot-spec layer carries exactly the values a pilot run would emit, and no conclusion is drawn from run_status.json alone"
+}

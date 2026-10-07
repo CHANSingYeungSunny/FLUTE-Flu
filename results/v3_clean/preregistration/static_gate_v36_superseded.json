@@ -1,0 +1,8 @@
+{
+  "generated_utc": "2026-09-17T16:03:40Z",
+  "status": "SUPERSEDED_FOR_EXECUTION_ENTRYPOINT_INCOMPLETENESS",
+  "superseded_file": "static_gate.json",
+  "superseded_file_untouched": true,
+  "reason": "v3.6 was frozen without scripts/innovation/clean_runner.py, so it cannot be deployed or executed",
+  "replacement": "static_gate_v2.json"
+}

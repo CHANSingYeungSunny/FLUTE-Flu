@@ -1,0 +1,99 @@
+{
+  "spec": "final_test_figure_plan.json",
+  "n_figures": 12,
+  "convention": "single prediction curve per (model, horizon) = seed-mean lead-1 (step 0) ILITOTAL over Test target weeks [820, 1025-L]",
+  "display_rules": {
+    "ground_truth": "solid",
+    "prediction": "dashed",
+    "scale": "inverse-transformed ILITOTAL original",
+    "omitted": [
+      "historical-input tail",
+      "training/validation curves",
+      "input/forecast boundary"
+    ]
+  },
+  "hard_conditions": {
+    "input_target_overlap_count": 0,
+    "future_target_leakage_count": 0,
+    "scaler_fit_split": "Training",
+    "checkpoint_selection_split": "Validation",
+    "plotted_target_split": "Test/Holdout"
+  },
+  "figures": [
+    {
+      "figure_id": "fig_test_gpt2_miflu_L24",
+      "model": "gpt2_miflu",
+      "horizon": 24,
+      "path": "final_test_prediction_figures/fig_test_gpt2_miflu_L24.png"
+    },
+    {
+      "figure_id": "fig_test_gpt2_miflu_L36",
+      "model": "gpt2_miflu",
+      "horizon": 36,
+      "path": "final_test_prediction_figures/fig_test_gpt2_miflu_L36.png"
+    },
+    {
+      "figure_id": "fig_test_gpt2_miflu_L48",
+      "model": "gpt2_miflu",
+      "horizon": 48,
+      "path": "final_test_prediction_figures/fig_test_gpt2_miflu_L48.png"
+    },
+    {
+      "figure_id": "fig_test_gpt2_miflu_L60",
+      "model": "gpt2_miflu",
+      "horizon": 60,
+      "path": "final_test_prediction_figures/fig_test_gpt2_miflu_L60.png"
+    },
+    {
+      "figure_id": "fig_test_nlinear_L24",
+      "model": "nlinear",
+      "horizon": 24,
+      "path": "final_test_prediction_figures/fig_test_nlinear_L24.png"
+    },
+    {
+      "figure_id": "fig_test_nlinear_L36",
+      "model": "nlinear",
+      "horizon": 36,
+      "path": "final_test_prediction_figures/fig_test_nlinear_L36.png"
+    },
+    {
+      "figure_id": "fig_test_nlinear_L48",
+      "model": "nlinear",
+      "horizon": 48,
+      "path": "final_test_prediction_figures/fig_test_nlinear_L48.png"
+    },
+    {
+      "figure_id": "fig_test_nlinear_L60",
+      "model": "nlinear",
+      "horizon": 60,
+      "path": "final_test_prediction_figures/fig_test_nlinear_L60.png"
+    },
+    {
+      "figure_id": "fig_test_seasonal_naive_L24",
+      "model": "seasonal_naive",
+      "horizon": 24,
+      "path": "final_test_prediction_figures/fig_test_seasonal_naive_L24.png"
+    },
+    {
+      "figure_id": "fig_test_seasonal_naive_L36",
+      "model": "seasonal_naive",
+      "horizon": 36,
+      "path": "final_test_prediction_figures/fig_test_seasonal_naive_L36.png"
+    },
+    {
+      "figure_id": "fig_test_seasonal_naive_L48",
+      "model": "seasonal_naive",
+      "horizon": 48,
+      "path": "final_test_prediction_figures/fig_test_seasonal_naive_L48.png"
+    },
+    {
+      "figure_id": "fig_test_seasonal_naive_L60",
+      "model": "seasonal_naive",
+      "horizon": 60,
+      "path": "final_test_prediction_figures/fig_test_seasonal_naive_L60.png"
+    }
+  ],
+  "gallery": "final_test_prediction_gallery/final_test_prediction_gallery.png",
+  "provenance_csv": "final_test_window_provenance.csv",
+  "source_data_dir": "final_test_curve_source_data/"
+}

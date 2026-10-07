@@ -1,0 +1,75 @@
+{
+  "paper": {
+    "role": "PRIMARY TARGET SOURCE - the original MIFlu paper",
+    "absolute_path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\reference_papers\\MIFlu_Large_Language_Model-Based_Multimodal_Influenza_Forecasting_Scheme.pdf",
+    "sha256": "7735a4388145dd2aced536417f7a4f50dafe21ed0d4fca64baa2b20f2e27885c",
+    "bytes": 2956545,
+    "pages": 12,
+    "text_layer": "present on all 12 pages (55,606 chars extracted)",
+    "tables_extractable_as_tables": false,
+    "table_engine": "fitz page.find_tables() returns 0 tables on every page",
+    "table_values_in_text_layer": false,
+    "evidence_table_values_absent": "the strings 1.542, 1.422, 1.414, 1.364, 1.4355, 0.74525 and 0.726 have ZERO occurrences in the extracted text",
+    "consequence": "all table cell values must be read from rendered page images",
+    "pages_requiring_image_inspection": [
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "rendered_images": "paper/page_03.png .. page_11.png at 200 dpi",
+    "alternate_copies_in_project": [
+      {
+        "path": "MIFlu_paper.md",
+        "sha256": "1259c0c67dcbb19f5745f105bc43619cfed95b9bb09a54d9f6964c861bb0fd38",
+        "relation": "PROJECT TRANSCRIPTION, not byte-identical to the PDF; a markdown rendering",
+        "critical_defect": "it OMITS Table IV's numeric rows entirely, which caused an earlier wrong conclusion about epochs/lr (see R0_EVIDENCE_FREEZE.md section 5)"
+      },
+      {
+        "path": "audit_20260930/paper_text.txt",
+        "sha256": "702ec97fbba42b9c267abfb80f7749c649a34e3f5aff3b89d46dd1fcec78e0f9",
+        "relation": "PDF text-layer extraction from a previous round; contains no table values for the same reason"
+      }
+    ],
+    "download_stamp": "Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore",
+    "journal": "IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS, VOL. 29, NO. 10, OCTOBER 2025"
+  },
+  "official_repo": {
+    "local_path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\recovery\\author_repo",
+    "remote": "origin\thttps://github.com/Jmoon3108/MIFlu.git (fetch) [blob:none]\norigin\thttps://github.com/Jmoon3108/MIFlu.git (push)",
+    "commit": "6ed210150b8819313947cf607eb1821c87b1bee3",
+    "clone_date": "2026-09-24T09:54:29+08:00 (from .git/logs/HEAD line 1)",
+    "hpc_path": "/scratch/sychan552/a0_replay",
+    "hpc_commit": "6ed210150b8819313947cf607eb1821c87b1bee3 (same)"
+  },
+  "datasets": [
+    {
+      "path": "recovery/author_repo/dataset/illness/national_illness.csv",
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+      "rows": 966,
+      "role": "the file the released code loads by default"
+    },
+    {
+      "path": "recovery/author_repo/dataset/illness/national_illness_orig.csv",
+      "sha256": "8594cecb98c6f2f9dc014eca11c4d5d1e38ad5ce6ed0592d4abe65b146fce395",
+      "rows": 966,
+      "role": "the author's other copy"
+    },
+    {
+      "path": "data/raw/national_illness_raw_paper_exact.csv",
+      "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+      "rows": 966,
+      "role": "the A2/F1 analysis file (CDC column names)"
+    },
+    {
+      "path": "data/raw/national_illness_raw.csv",
+      "sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+      "rows": 1025,
+      "role": "July-2026 snapshot - HISTORICAL TRACK B ONLY"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "updated_utc": "2026-09-14T11:07:21Z",
+  "run_id": "national-ili__fusion-forecaster__gpt2__film-gate__L24__seed42__20260914T110702Z__1f6563f",
+  "status": "ok",
+  "phase": "validation",
+  "best_epoch": 1,
+  "best_val_mse": 4.471024036407471,
+  "n_val_windows": 16,
+  "n_train_windows": 32,
+  "checkpoint_sha256": "ff5e4c8b009fa9f467027f9efa2ddfd5e763484d2029d2cedb79806204026c7f",
+  "state_dict_sha256": "26012919419f5264ae1287245d2c9e9d4e56ab044e63f6eb38c39d06e084c1b2",
+  "restore_ok": true,
+  "val_mse_all_z": 4.394954561348069,
+  "val_mse_ili_phys": 344491059.6840413,
+  "peak_hit_ratio": null,
+  "val_mae_all_z": 1.7245366001467726,
+  "trainable_parameters": 961960,
+  "total_parameters": 961960,
+  "train_seconds": 2.81,
+  "truncated_by_time_limit": false,
+  "test_artifacts_written": false
+}

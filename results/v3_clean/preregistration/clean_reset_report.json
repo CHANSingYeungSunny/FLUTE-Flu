@@ -1,0 +1,35 @@
+{
+  "generated_utc": "2026-09-17T15:10:53Z",
+  "moved": {
+    "performed": true,
+    "reason": "archive already present; old v3 not currently active"
+  },
+  "n_archive_files": 1321,
+  "archive_aggregate_sha256": "aacd86e3cca6e1b5f1a86bb6a6a5d5641e60b43a4d858a2bdc9c99b3296c672c",
+  "separation_proof": {
+    "old_active_path_removed": true,
+    "archive_path": "results/v3_superseded_archive",
+    "active_path": "results/v3_clean",
+    "active_globs_target_v3_clean_only": true,
+    "registry_csv_inside_archive_only": true,
+    "superseded_marker_written": true,
+    "archive_marked_eligible_anywhere": false
+  },
+  "protocol_verified": true,
+  "N": 7,
+  "T": 104,
+  "HORIZONS": [
+    24,
+    36,
+    48,
+    60
+  ],
+  "ILI_CHANNEL": 4,
+  "matrix_rows": 598,
+  "matrix_breakdown": {
+    "primary_8x4x10": 320,
+    "baselines": 8,
+    "ablations": 240,
+    "negative_controls": 30
+  }
+}

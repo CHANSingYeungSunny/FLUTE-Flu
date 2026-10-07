@@ -1,0 +1,13 @@
+figure_id,model,horizon,forecast_origin,input_start_date,input_end_date,test_target_start_date,test_target_end_date,input_target_overlap_count,future_target_leakage_count,scaler_fit_split,checkpoint_selection_split,plotted_target_split,MSE,MAE,PTE,PIE,PTE_hit,PIE_hit,joint_hit
+fig_test_gpt2_miflu_L24,gpt2_miflu,24,716..897,2016-01-31,2021-07-11,2018-01-28,2021-07-18,0,0,Training,Validation,Test/Holdout,205899451.3164,9500.0378,3.0,31.6473,False,False,False
+fig_test_gpt2_miflu_L36,gpt2_miflu,36,716..885,2016-01-31,2021-04-18,2018-01-28,2021-04-25,0,0,Training,Validation,Test/Holdout,203977776.225,9399.3562,2.0,32.1853,False,False,False
+fig_test_gpt2_miflu_L48,gpt2_miflu,48,716..873,2016-01-31,2021-01-24,2018-01-28,2021-01-31,0,0,Training,Validation,Test/Holdout,158571880.32,8326.3018,2.0,26.572,False,False,False
+fig_test_gpt2_miflu_L60,gpt2_miflu,60,716..861,2016-01-31,2020-11-01,2018-01-28,2020-11-08,0,0,Training,Validation,Test/Holdout,150513250.5761,8211.2526,2.0,34.3949,False,False,False
+fig_test_nlinear_L24,nlinear,24,716..897,2016-01-31,2021-07-11,2018-01-28,2021-07-18,0,0,Training,Validation,Test/Holdout,24202928.0869,2928.8917,1.0,0.1709,True,True,True
+fig_test_nlinear_L36,nlinear,36,716..885,2016-01-31,2021-04-18,2018-01-28,2021-04-25,0,0,Training,Validation,Test/Holdout,24070444.2595,2889.337,0.0,0.4592,True,True,True
+fig_test_nlinear_L48,nlinear,48,716..873,2016-01-31,2021-01-24,2018-01-28,2021-01-31,0,0,Training,Validation,Test/Holdout,25591597.495,2995.2631,0.0,1.204,True,True,True
+fig_test_nlinear_L60,nlinear,60,716..861,2016-01-31,2020-11-01,2018-01-28,2020-11-08,0,0,Training,Validation,Test/Holdout,26133563.8874,2975.1433,1.0,0.9658,True,True,True
+fig_test_seasonal_naive_L24,seasonal_naive,24,716..897,2016-01-31,2021-07-11,2018-01-28,2021-07-18,0,0,Training,Validation,Test/Holdout,619637467.2613,14960.989,52.0,0.0,False,True,False
+fig_test_seasonal_naive_L36,seasonal_naive,36,716..885,2016-01-31,2021-04-18,2018-01-28,2021-04-25,0,0,Training,Validation,Test/Holdout,658028469.5632,15452.247,52.0,0.0,False,True,False
+fig_test_seasonal_naive_L48,seasonal_naive,48,716..873,2016-01-31,2021-01-24,2018-01-28,2021-01-31,0,0,Training,Validation,Test/Holdout,511248768.1984,13504.0063,52.0,0.0,False,True,False
+fig_test_seasonal_naive_L60,seasonal_naive,60,716..861,2016-01-31,2020-11-01,2018-01-28,2020-11-08,0,0,Training,Validation,Test/Holdout,247555131.6252,10026.0342,52.0,21.1349,False,True,False

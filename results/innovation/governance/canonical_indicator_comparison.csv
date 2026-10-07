@@ -1,0 +1,12 @@
+metric,expected_value,recomputed_value,absolute_difference,relative_difference,tolerance,pass_fail,reference_provenance
+mse,244345300.3600282,244345300.3600282,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+mae,9904.792338276957,9904.792338276957,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+pte,1.5,1.5,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+pie,19.489857508005123,19.489857508005123,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+row_count,182,182,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+date_start,2018-01-28,2018-01-28,,,exact string,PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+date_end,2021-07-18,2021-07-18,,,exact string,PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+n_true_peaks,3,3,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+n_hit,2,2,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+literature_peak_hit,False,False,0.0,0.0,"rtol=1e-09, atol=1e-12",PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json
+fixed_step_aggregation,fixed_step:step=0,fixed_step:step=0,,,exact string,PASS,results/innovation/audit/aggregation_regression_report.json; results/ili/metrics/miflu_L24_ili_peak_trend_summary.json

@@ -1,0 +1,7 @@
+# author repo checkout
+drwx------ 10 sychan552 sychan552 4096 2026-09-26 18:29:05.293504000 +0800 /scratch/sychan552/a0_replay
+6ed210150b8819313947cf607eb1821c87b1bee3 2025-03-21T15:24:23+09:00
+# earliest appearance of the official repo checkout (mtime of .git/HEAD)
+/scratch/sychan552/a0_replay/.git/HEAD 2026-09-26 17:15:28.324456134 +0800
+# a0_replay file count
+11

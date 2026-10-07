@@ -1,0 +1,33 @@
+{
+  "generated_utc": "2026-09-15T20:00:06Z",
+  "n_components_compared": 12,
+  "unique_defining_components": {
+    "qwen_time_llm": [
+      "prototype reprogramming into LLM space",
+      "Prompt-as-Prefix (declarative prefix)"
+    ],
+    "calf_llm": [
+      "cross-modal matching (shared-space projection)",
+      "intermediate feature regularization",
+      "output consistency objective"
+    ],
+    "timecma_llm": [
+      "cross-modality retrieval (similarity)",
+      "last-token / cached prompt representation"
+    ]
+  },
+  "shared_components": [
+    "frozen LLM backbone",
+    "forecast projection head",
+    "temporal target branch (CALF, TimeCMA)"
+  ],
+  "verdict": "MATERIALLY_DISTINCT",
+  "verification_required_before_feasible": [
+    "shape tests",
+    "gradient-flow tests",
+    "architecture-equivalence report",
+    "test that no module is shared between the three implementations"
+  ],
+  "status": "SPECIFIED_NOT_IMPLEMENTED",
+  "note": "Contracts are frozen at preregistration. If the eventual implementation omits a defining mechanism, the model must be marked NOT_YET_FAITHFULLY_SPECIFIED."
+}

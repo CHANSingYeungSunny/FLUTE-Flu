@@ -1,0 +1,41 @@
+{
+  "generated_utc": "2026-09-15T20:00:06Z",
+  "assumption": "GPU-hours per run including startup and queue overhead: Non-LLM 0.15, LLM 1.0, naive 0.01. Planning figures, to be replaced by Pilot measurements.",
+  "download_and_storage": {
+    "new_weight_download_gb": 3.1,
+    "cached_gpt2_reuse": true,
+    "per_run_artifacts_mb": 12,
+    "fixed_step_multiplier": 4,
+    "per_run_with_steps_mb": 48,
+    "canonical_template_reuse": true,
+    "no_phase06_holdout_storage": true
+  },
+  "gpu_hours": {
+    "pilot_upper_bound": 7.0,
+    "screening": 42.0,
+    "full_validation_preferred_320": 280.0,
+    "full_validation_fallback_160": 140.0,
+    "negative_controls": 36.0
+  },
+  "stingy_queue_reality": {
+    "per_user_running_jobs": 1,
+    "per_user_pending_jobs": 1,
+    "consequence": "jobs execute effectively serially, so wall-clock is close to the sum of per-run times plus queue wait",
+    "expected_wall_clock_days": {
+      "screening": 2.27,
+      "full_validation_preferred_320": 15.17,
+      "full_validation_fallback_160": 7.58
+    }
+  },
+  "durable_storage_gb": {
+    "full_validation_preferred_320_runs": 34.0,
+    "note": "two durable copies of fixed-step artifacts plus Qwen weight/cache and environment headroom; no holdout values stored"
+  },
+  "fairness_statement": "LLM and Non-LLM runs do NOT have comparable cost and this is not claimed. Fairness rests on a preregistered protocol, identical information/budget disclosure and transparent reporting, not on equal runtime.",
+  "partition_policy": {
+    "partition": "stingy",
+    "gres": "gpu:a100:1",
+    "time_limit": "<= 04:00:00",
+    "bare_gres_forbidden": true
+  }
+}

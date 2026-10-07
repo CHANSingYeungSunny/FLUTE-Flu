@@ -1,0 +1,28 @@
+technique,status,evidence
+optimizer state removal,EVIDENCE_SUPPORTED,"best_val_mse.pt exists alongside compact.safetensors; the compact export is orders of magnitude smaller, consistent with dropping optimizer moment buffers (2x params for Adam)"
+scheduler state removal,EVIDENCE_SUPPORTED,no scheduler state file exists in the family; only model-like .pt/.safetensors artifacts
+best-checkpoint-only retention,EVIDENCE_SUPPORTED,every training run dir contains exactly one best_val_mse.pt; no per-epoch checkpoints are present
+intermediate checkpoint removal,EVIDENCE_SUPPORTED,no epoch_*.pt or last.pt anywhere in the 594 checkpoint files
+LoRA adapter-only saving,LIKELY,"compact exports for gpt2-based models are ~3.94 MiB, matching a small parameter delta rather than an 82.7M-parameter model (313 MiB)"
+LoRA adapter merging,UNKNOWN,cannot be determined without loading tensors; must not be assumed
+base-model deduplication,EVIDENCE_SUPPORTED,"qwen compact export is 1.41 MiB against a 5.75 GiB full checkpoint, so the 1.5B base is evidently NOT inside the export"
+symbolic links,RULED_OUT,0 symlinks across the entire family (audit job 606430)
+hard links,RULED_OUT,0 files with link count > 1 across 594 checkpoint files (verified by inode link count)
+shared Hugging Face model cache,PLAUSIBLE_BUT_UNVERIFIED,no cache directory inside the family; HF_HOME was set externally in the sbatch scripts. Not verified in this round
+fp32 to fp16 conversion,UNKNOWN,file sizes alone cannot distinguish; would need a dtype header read
+fp32 to bf16 conversion,UNKNOWN,same
+fp16 to bf16 conversion,UNKNOWN,same
+INT8 quantization,NOT_EVIDENCED,no .gguf/.onnx/.quant artifacts; only .pt and .safetensors
+INT4 quantization,NOT_EVIDENCED,same
+GPTQ,NOT_EVIDENCED,no GPTQ artifacts
+AWQ,NOT_EVIDENCED,no AWQ artifacts
+bitsandbytes,NOT_EVIDENCED,no bnb artifacts
+safetensors conversion,EVIDENCE_SUPPORTED,147 .safetensors exist alongside 447 .pt; compact exports are safetensors
+checkpoint shard consolidation,NOT_EVIDENCED,no index.json / shard files
+inference-only export,EVIDENCE_SUPPORTED,the 'durable_sim/.../compact.safetensors' naming and tiny sizes indicate inference-only packaging
+tokenizer deduplication,UNKNOWN,0 files matching tokenizer*; tokenizers are evidently external - an unverified external dependency
+configuration deduplication,UNKNOWN,0 files literally named config.json; configuration is not self-contained in the family
+external base-model dependency,EVIDENCE_SUPPORTED,qwen compact = 1.41 MiB means the base model must be supplied externally at load time
+custom checkpoint filtering,EVIDENCE_SUPPORTED,only two checkpoint naming patterns exist: best_val_mse.pt and compact*.safetensors
+removal of unused training tensors,LIKELY,"consistent with the size gap, but not directly verified"
+retention of one model checkpoint per run,EVIDENCE_SUPPORTED,each run directory holds a single best_val_mse.pt

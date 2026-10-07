@@ -1,0 +1,74 @@
+/gpfs1/home/sychan552/official_repo_reproduction_20261006/hpc_compat/sitecustomize.py:47: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+/gpfs1/home/sychan552/official_repo_reproduction_20261006/hpc_compat/sitecustomize.py:47: FutureWarning: In the future `np.str` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+llmmodel = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-5): 6 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/peft/tuners/lora/layer.py:2174: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+[r1b] L=24 rep=0 total=82,779,672 trainable=1,673,496 (2.02%) lora_tensors=12 text=prefixed
+[r1b] origins train/val/test = 652/73/169
+[r1b] epoch 1/20 train=0.632366 val=1.346325
+[r1b] epoch 2/20 train=0.439507 val=1.430761
+[r1b] epoch 3/20 train=0.378165 val=1.397009
+[r1b] epoch 4/20 train=0.323432 val=1.555864
+[r1b] epoch 5/20 train=0.313212 val=1.244278
+[r1b] epoch 6/20 train=0.283698 val=1.416500
+[r1b] epoch 7/20 train=0.259035 val=1.190940
+[r1b] epoch 8/20 train=0.218964 val=1.177589
+[r1b] epoch 9/20 train=0.194644 val=1.349490
+[r1b] epoch 10/20 train=0.169281 val=1.023438
+[r1b] epoch 11/20 train=0.158195 val=1.118149
+[r1b] epoch 12/20 train=0.151306 val=1.108681
+[r1b] epoch 13/20 train=0.152144 val=1.071317
+[r1b] epoch 14/20 train=0.142660 val=0.863939
+[r1b] epoch 15/20 train=0.124050 val=0.970259
+[r1b] epoch 16/20 train=0.113021 val=0.937327
+[r1b] epoch 17/20 train=0.109747 val=0.823461
+[r1b] epoch 18/20 train=0.124270 val=0.878766
+[r1b] epoch 19/20 train=0.111569 val=0.843594
+[r1b] epoch 20/20 train=0.093765 val=0.764173
+Traceback (most recent call last):
+  File "/gpfs1/home/sychan552/official_repo_reproduction_20261006/r0_r5_cpu_stage_20261006/r1b/r1b_train.py", line 327, in <module>
+    raise SystemExit(main())
+  File "/gpfs1/home/sychan552/official_repo_reproduction_20261006/r0_r5_cpu_stage_20261006/r1b/r1b_train.py", line 249, in main
+    for xb, yb, ob in dl_te:
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 398, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 211, in collate
+    return [
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 212, in <listcomp>
+    collate(samples, collate_fn_map=collate_fn_map)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 155, in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 272, in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+RuntimeError: stack expects each tensor to be equal size, but got [24, 7] at entry 0 and [23, 7] at entry 2

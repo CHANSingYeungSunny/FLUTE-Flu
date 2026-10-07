@@ -1,0 +1,41 @@
+[task] MODEL=notext L=60 job=585827 start=2026-09-25T15:15:31Z
+[23:15:35]   L=60: train=513 val=38 test=134 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+[23:15:35] [PARAM AUDIT] Variant: no_multi | Total Trainable: 1,223,844 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[23:15:38]     ep  1/20 | train_loss=0.858045 | val_mse=0.615287(All) 0.9013(ILI) | val_mae=0.599271 | 2.8s
+[23:15:41]     ep  2/20 | train_loss=0.681044 | val_mse=0.272984(All) 0.4017(ILI) | val_mae=0.388042 | 2.7s
+[23:15:43]     ep  3/20 | train_loss=0.542529 | val_mse=0.209364(All) 0.2751(ILI) | val_mae=0.342801 | 2.7s
+[23:15:46]     ep  4/20 | train_loss=0.477853 | val_mse=0.222036(All) 0.3448(ILI) | val_mae=0.361857 | 2.7s
+[23:15:49]     ep  5/20 | train_loss=0.414056 | val_mse=0.263995(All) 0.4354(ILI) | val_mae=0.403187 | 2.7s
+[23:15:51]     ep  6/20 | train_loss=0.373058 | val_mse=0.243485(All) 0.3748(ILI) | val_mae=0.362115 | 2.7s
+[23:15:54]     ep  7/20 | train_loss=0.359716 | val_mse=0.172751(All) 0.2537(ILI) | val_mae=0.291770 | 2.7s
+[23:15:57]     ep  8/20 | train_loss=0.300321 | val_mse=0.178412(All) 0.2776(ILI) | val_mae=0.293166 | 2.7s
+[23:15:59]     ep  9/20 | train_loss=0.262419 | val_mse=0.192796(All) 0.3015(ILI) | val_mae=0.311916 | 2.7s
+[23:16:02]     ep 10/20 | train_loss=0.235059 | val_mse=0.193301(All) 0.3093(ILI) | val_mae=0.313574 | 2.7s
+[23:16:05]     ep 11/20 | train_loss=0.208667 | val_mse=0.188305(All) 0.2933(ILI) | val_mae=0.303568 | 2.7s
+[23:16:07]     ep 12/20 | train_loss=0.189091 | val_mse=0.195518(All) 0.3108(ILI) | val_mae=0.312731 | 2.7s
+[23:16:10]     ep 13/20 | train_loss=0.172814 | val_mse=0.172698(All) 0.2711(ILI) | val_mae=0.298983 | 2.7s
+[23:16:13]     ep 14/20 | train_loss=0.159552 | val_mse=0.170567(All) 0.2696(ILI) | val_mae=0.289269 | 2.7s
+[23:16:15]     ep 15/20 | train_loss=0.144933 | val_mse=0.185369(All) 0.3020(ILI) | val_mae=0.314082 | 2.7s
+[23:16:18]     ep 16/20 | train_loss=0.132132 | val_mse=0.159653(All) 0.2511(ILI) | val_mae=0.282972 | 2.7s
+[23:16:21]     ep 17/20 | train_loss=0.124714 | val_mse=0.207695(All) 0.3364(ILI) | val_mae=0.325007 | 2.7s
+[23:16:23]     ep 18/20 | train_loss=0.121543 | val_mse=0.200176(All) 0.3323(ILI) | val_mae=0.318237 | 2.7s
+[23:16:26]     ep 19/20 | train_loss=0.111008 | val_mse=0.183102(All) 0.2951(ILI) | val_mae=0.303961 | 2.7s
+[23:16:29]     ep 20/20 | train_loss=0.101023 | val_mse=0.166419(All) 0.2627(ILI) | val_mae=0.295176 | 2.7s
+[23:16:29]   [ablation] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[23:16:29]   [DEFER_TEST] prediction export skipped (locked-batch step)
+Traceback (most recent call last):
+  File "/gpfs1/scratch/sychan552/a2_stage5/scripts/train_ablation.py", line 863, in <module>
+    main()
+  File "/gpfs1/scratch/sychan552/a2_stage5/scripts/train_ablation.py", line 833, in main
+    f"MSE_AllVars={np.mean([r['mse_all'] for r in ok]):.6f} "
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/numpy/_core/fromnumeric.py", line 3596, in mean
+    return _methods._mean(a, axis=axis, dtype=dtype,
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/numpy/_core/_methods.py", line 140, in _mean
+    ret = ret / rcount
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+Command exited with non-zero status 1
+notext_L60_S42 wall=59.28 s

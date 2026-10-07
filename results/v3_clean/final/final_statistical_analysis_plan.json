@@ -1,0 +1,22 @@
+{
+  "generated_utc": "2026-09-21T04:47:43Z",
+  "frozen_before_test_access": true,
+  "confirmatory_tests": [
+    {
+      "id": "C1",
+      "test": "gpt2_miflu vs nlinear Test MSE (paired t over 10 seeds), per L and average_MSE_4L"
+    },
+    {
+      "id": "C2",
+      "test": "gpt2_miflu vs seasonal_naive Test MSE (paired t over 10 seeds), per L and average_MSE_4L"
+    },
+    {
+      "id": "C3",
+      "test": "nlinear vs seasonal_naive Test MSE"
+    }
+  ],
+  "effect_sizes": "Cohen's d_z (paired) for each confirmatory comparison",
+  "multiple_comparison": "Holm-Bonferroni across C1/C2/C3 (family of confirmatory tests, alpha=0.05)",
+  "pte_pie_hit_rates": "PTE<=1wk / PIE<=25% / joint, per eligible season and lead, aggregated per horizon",
+  "exploratory_labels": "PTE/PIE are labeled secondary/public-health application; they never revise the Wave-1 selection"
+}

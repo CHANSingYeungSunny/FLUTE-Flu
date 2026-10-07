@@ -105,6 +105,32 @@ sbatch --partition=stingy --gres=gpu:a100:1 --time=04:00:00 \
   /home/sychan552/scratch/CHATTIME/Chattime/submit_ili_fulltest.sh
 ```
 
+### 3b. Per-partition QOS / concurrency limits (verified 2026-09-01)
+The two GPU partitions behave VERY differently — confusing them wastes hours:
+
+| Partition | Per-user running-job limit | Per-user pending-submit limit | Idle A100s usually? | Start latency |
+|---|---|---|---|---|
+| `gpu_a100` | **unlimited** (ran 4 at once) | unlimited | **0** — all 6 nodes `mix`/allocated by others | `PD(Priority)`, backfill estimate ~3.5 h — BUT a queued job grabs a node within ~1 min once ANY A100 frees (incl. the one your own job just released) |
+| `stingy` | **1** (`Jobs=1` QOS) | **1** (`Submit-Job=1` QOS) | often several idle (`gpu-a100-03` has 3 free, `gpu-a100-05` has 4 free) | fast once the single slot is free |
+
+- **`gpu_a100` has NO submission cap** → you CAN `sbatch` many variants there in parallel.
+  The catch is *congestion*: when all 6 nodes are held by others you sit in `PD` for
+  hours **unless** a node frees. Practical tip: submit to `gpu_a100` right after one of
+  YOUR jobs ends — the freed node is handed to your next queued `gpu_a100` job within
+  ~1 min (observed: job 520147 grabbed `gpu-a100-09` the instant job 520091 finished).
+- **`stingy` caps at 1 concurrent job** → a 2nd *pending* job is rejected with
+  `QOSMaxSubmitJobPerUserLimit`. You cannot "queue" 2 on stingy at once; submit the next
+  variant only AFTER the running one finishes (poll `squeue -u $USER -p stingy` and
+  resubmit, or run a background auto-submit loop). Its idle A100s make each job start
+  instantly once the slot opens.
+- **Fastest multi-variant sweep** (used for the 4-variant Table VIII run):
+  submit variant A to `stingy` (idle A100, instant start) **and** submit variants B/C/D
+  to `gpu_a100` (no cap) so they grab freed `gpu_a100` nodes in parallel. Net result:
+  **1 job on `stingy` + N jobs on `gpu_a100` simultaneously**.
+- Gotcha: do NOT submit to `gpu_a100` *expecting* an immediate start during peak — it will
+  be `PD` for hours. Only rely on `gpu_a100` for parallelism when you already have a job
+  there that is about to free a node, or when other users' jobs are clearly ending.
+
 ## 4. Environment (conda `mlflu_hpc`, Python 3.9.25)
 
 - **Activate via PATH-prepend, NOT `conda activate`** (fails on GPU nodes):

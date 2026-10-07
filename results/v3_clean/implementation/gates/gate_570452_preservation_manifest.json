@@ -1,0 +1,101 @@
+{
+  "generated_utc": "2026-09-18T07:45:56Z",
+  "gate_job_id": "570452",
+  "gate_state": "FAILED",
+  "gate_exit_code": "1:0",
+  "gate_passed": "1/19",
+  "runners_rc0": "18/18",
+  "classification": "VALIDATOR_ONLY_FALSE_FAILURE",
+  "not_a_model_performance_result": true,
+  "preserved": [
+    {
+      "path": "results/v3_clean/implementation/source_manifest.json",
+      "bytes": 21907,
+      "sha256": "a5703d2931d21fb645824aaf020953f301c4a201a024eabc8da05accc22811f8"
+    },
+    {
+      "path": "results/v3_clean/implementation/deployment_manifest.json",
+      "bytes": 182983,
+      "sha256": "4ebe00dcb348595b6d664489ade2662c48188f81136447fb4225a38012d1bfad"
+    },
+    {
+      "path": "results/v3_clean/implementation/bundle_a.zip",
+      "bytes": 6954149,
+      "sha256": "ddad44a5d5fae46ed31543f0371906d416ee229b72fc4b2876a51413fec31626"
+    },
+    {
+      "path": "results/v3_clean/implementation/bundle_b.zip",
+      "bytes": 6954149,
+      "sha256": "ddad44a5d5fae46ed31543f0371906d416ee229b72fc4b2876a51413fec31626"
+    },
+    {
+      "path": "results/v3_clean/implementation/deterministic_bundle_report.json",
+      "bytes": 738,
+      "sha256": "99fd237c0e26be9c5364fc4d1e016ba392e1739e018453a5d74615b3a3836c2f"
+    },
+    {
+      "path": "results/v3_clean/implementation/v311_SUPERSEDED.json",
+      "bytes": 907,
+      "sha256": "0673606eab09f36cc8b90b0ce0ea3e2cdbf9dbd9100599f28ed37a7251e8c265"
+    },
+    {
+      "path": "results/v3_clean/runs/gate_570452_report.json",
+      "bytes": 19876,
+      "sha256": "b59d17b2f43e472473b91b57184753536b38e6d7358c6ebcdceaa8e12d2894b2"
+    },
+    {
+      "path": "results/v3_clean/runs/gate_570452_failure_signature_matrix.json",
+      "bytes": 11280,
+      "sha256": "8a8a4b14822d31348415692116ca78feee9e41829002edd2ec181d86b6b8c629"
+    },
+    {
+      "path": "results/v3_clean/runs/gate_570452_failure_signature_matrix.md",
+      "bytes": 2913,
+      "sha256": "7ed3dc9804a45d3d8802cfea3f645f0267e56a25aa688b5ad85396d4965a835a"
+    },
+    {
+      "path": "results/v3_clean/runs/v3_clean_reconciliation_ledger.jsonl",
+      "bytes": 1579,
+      "sha256": "af84395dab4fb61a3741b5569fcecebfcc3a11fc27d4f43a2c9a4ae7d27d1f08"
+    },
+    {
+      "path": "results/v3_clean/runs/gate_569016_report.json",
+      "bytes": 4584,
+      "sha256": "39bec5ba5dea9937bfaa39b183cf531d40fd33896d1dc144b8360c254a776b70"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d11_pre_repair_manifest.json",
+      "bytes": 1858,
+      "sha256": "6416645f5167d1fe6bb36c1a546fb4528233e507eb17afc4c71e522b04bc8acd"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d11_repair.diff",
+      "bytes": 2622,
+      "sha256": "db2c526060049be432880a08a07b72d3abb306a6cd7791c54c44458dbdaf2c82"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d12_pre_repair_manifest.json",
+      "bytes": 1402,
+      "sha256": "f075da2d0605ee37b353c3923a34d340380bb6062487671d85d6837afc4e3d0b"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d12_repair.diff",
+      "bytes": 6979,
+      "sha256": "eabd9885e5ee1ffc9a564064f0bab65017646813ff83689348ec23e0c46d7e72"
+    },
+    {
+      "path": "results/v3_clean/preregistration/d12_repair_record.json",
+      "bytes": 1351,
+      "sha256": "f0999895ed6bdfb455e86c64199d48bcf9bf3d979543a5792ea448fac6ba4641"
+    }
+  ],
+  "n_preserved": 16,
+  "missing": [],
+  "remote_evidence": {
+    "root": "/scratch/sychan552/innovation_deploy_root_v3_clean5",
+    "gate_dir": "/scratch/sychan552/innovation_deploy_root_v3_clean5/results/v3_clean/implementation/gate_570452",
+    "slurm_out": "/scratch/sychan552/innovation_deploy_root_v3_clean5/hpc_results/innovation/logs/slurm_570452_clean_gate.out",
+    "note": "left untouched; never rerun, never overwritten"
+  },
+  "rerun_forbidden": true
+}

@@ -1,0 +1,18 @@
+{
+  "generated_utc": "2026-09-16T00:00:00Z",
+  "purpose": "pre-remediation immutable local evidence before Phase 1 repairs",
+  "hpc_access_before_manifest": false,
+  "records": [
+    {"path":"MIFlu_innovation_plan_v3.md","bytes":13156,"mtime_utc":"2026-09-16T08:08:49.8579738Z","sha256":"78de98f611029faffd9b82dc5f8830f683613e4f6067e339cd5e8520d08090ed"},
+    {"path":"HPC_GUIDE.md","bytes":22651,"mtime_utc":"2026-09-01T10:32:08.4600965Z","sha256":"1cd21a655907d137914c695bf04637d8da2f09358a0732c961e739dd8e74c167"},
+    {"path":"results/v3/implementation/phase1_preflight_incident.json","bytes":869,"mtime_utc":"2026-09-16T08:19:27.1242090Z","sha256":"b1572df4679202756a10809ba1960d8575517d633bbf08180e16defc6fcf8046"},
+    {"path":"results/v3/preregistration/preregistration_gate.json","bytes":3834,"mtime_utc":"2026-09-16T08:21:47.3638838Z","sha256":"cb1cc2cf4519f768550f65ded644bb4d5d0862e4e4bec5618a2d10391204448e"},
+    {"path":"scripts/innovation/hpc_specs.py","bytes":19547,"mtime_utc":"2026-09-16T08:19:22.2951259Z","sha256":"cec0a592bc65c4e38450d218fce6b51d63780fc2a86a9bc6c56d5420fe08be6f"},
+    {"path":"scripts/innovation/runner.py","bytes":26937,"mtime_utc":"2026-09-16T08:18:01.8850697Z","sha256":"21cd751e839b0a8d2ce13bfd2cfbb6db83eeab169022228f8d50fe8f6a6fb893"},
+    {"path":"scripts/innovation/backbones/llm_inspired.py","bytes":9278,"mtime_utc":"2026-09-16T08:20:22.0517625Z","sha256":"166bc20c338bbbe8f828cd5ff312722c2d65a234567bccb22ba5c23cddb02a88"},
+    {"path":"tests/innovation/test_architecture_equivalence.py","bytes":5101,"mtime_utc":"2026-09-16T08:21:07.5092355Z","sha256":"dd03fecfc81f815825761cd1026a0e0f30b300b5ff9b4144bda5909c4c81f92d"},
+    {"path":"tests/innovation/test_pilot_spec_metadata.py","bytes":9021,"mtime_utc":"2026-09-16T08:20:22.0680239Z","sha256":"28e449dd124406b412b5ea964a1e9903fcbd527e8c43c2cfdce350d16a5f5d86"},
+    {"path":"data/raw/national_illness_raw.csv","bytes":72100,"mtime_utc":"2026-07-18T11:24:52.4236660Z","sha256":"c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d"},
+    {"path":"data/scaler_miflu_national.json","bytes":557,"mtime_utc":"2026-08-31T17:21:27.6129100Z","sha256":"905a346384d313e5fc1b0f4f5acc44d8c79c2749c7f1a4c3296b365bb9bed534"}
+  ]
+}

@@ -1,0 +1,80 @@
+[task] MODEL=notext L=36 job=585844 start=2026-09-25T15:31:01Z
+[A2] run_config containment=strict profile=author_966 horizon=36 seed=42
+[23:31:05] ==================================================================
+[23:31:05]   Table VIII Ablation: w/o multimodality
+[23:31:05] ==================================================================
+[23:31:05]   Variant         : no_multi  (use_text=False, use_lora=True, use_text_ln=True, gated_inject=False, unfreeze_first_k=0)
+[23:31:05]   Recipe          : baseline  -> adam, lr=0.0005, wd=0, loss=mse, betas=(0.9, 0.999) eps=1e-08
+[23:31:05]   Early stopping  : False (patience=5)
+[23:31:05]   Config          : T=104, K=6, Lp=24, S=2
+[23:31:05]                     batch=16, epochs=20, reps=1, seed=42
+[23:31:05]   Data profile    : author_966 (966 rows, between 2002 and 2020, split 676/773)
+[23:31:05]   Output          : results/stage5/author_966/notext/
+[23:31:05] 
+[23:31:05] Scaler: FIT on train[:676] ONLY — agrees with persisted /gpfs1/scratch/sychan552/a2_stage5/data/scaler_miflu_author966.json (no test-set refit)
+[23:31:05] Data: 966 total (profile=author_966) | Train=676 | Val=97 | Test=193
+[23:31:05] 
+[23:31:05] 
+[23:31:05]   [RESUME] 4 (L, rep) pairs already complete
+[23:31:05] ──────────────────────────────────────────────────
+[23:31:05]   HORIZON L=36
+[23:31:05] ──────────────────────────────────────────────────
+[23:31:05]   [L=36] Rep 1/1 ... already done, skipping
+[23:31:05] 
+[23:31:05]   [ablation] validation-only fit complete; Test scoring deferred to the locked-batch scoring entry.
+
+ABLATION_RESULT: variant=no_multi recipe=baseline test_deferred=1
+notext_L36_S42 wall=4.79 s
+[A2] run_config containment=strict profile=author_966 horizon=36 seed=43
+[23:31:10] ==================================================================
+[23:31:10]   Table VIII Ablation: w/o multimodality
+[23:31:10] ==================================================================
+[23:31:10]   Variant         : no_multi  (use_text=False, use_lora=True, use_text_ln=True, gated_inject=False, unfreeze_first_k=0)
+[23:31:10]   Recipe          : baseline  -> adam, lr=0.0005, wd=0, loss=mse, betas=(0.9, 0.999) eps=1e-08
+[23:31:10]   Early stopping  : False (patience=5)
+[23:31:10]   Config          : T=104, K=6, Lp=24, S=2
+[23:31:10]                     batch=16, epochs=20, reps=1, seed=43
+[23:31:10]   Data profile    : author_966 (966 rows, between 2002 and 2020, split 676/773)
+[23:31:10]   Output          : results/stage5/author_966/notext/
+[23:31:10] 
+[23:31:10] Scaler: FIT on train[:676] ONLY — agrees with persisted /gpfs1/scratch/sychan552/a2_stage5/data/scaler_miflu_author966.json (no test-set refit)
+[23:31:10] Data: 966 total (profile=author_966) | Train=676 | Val=97 | Test=193
+[23:31:10] 
+[23:31:10] 
+[23:31:10]   [RESUME] 4 (L, rep) pairs already complete
+[23:31:10] ──────────────────────────────────────────────────
+[23:31:10]   HORIZON L=36
+[23:31:10] ──────────────────────────────────────────────────
+[23:31:10]   [L=36] Rep 1/1 ... already done, skipping
+[23:31:10] 
+[23:31:10]   [ablation] validation-only fit complete; Test scoring deferred to the locked-batch scoring entry.
+
+ABLATION_RESULT: variant=no_multi recipe=baseline test_deferred=1
+notext_L36_S43 wall=4.77 s
+[A2] run_config containment=strict profile=author_966 horizon=36 seed=44
+[23:31:14] ==================================================================
+[23:31:14]   Table VIII Ablation: w/o multimodality
+[23:31:14] ==================================================================
+[23:31:14]   Variant         : no_multi  (use_text=False, use_lora=True, use_text_ln=True, gated_inject=False, unfreeze_first_k=0)
+[23:31:14]   Recipe          : baseline  -> adam, lr=0.0005, wd=0, loss=mse, betas=(0.9, 0.999) eps=1e-08
+[23:31:14]   Early stopping  : False (patience=5)
+[23:31:14]   Config          : T=104, K=6, Lp=24, S=2
+[23:31:14]                     batch=16, epochs=20, reps=1, seed=44
+[23:31:14]   Data profile    : author_966 (966 rows, between 2002 and 2020, split 676/773)
+[23:31:14]   Output          : results/stage5/author_966/notext/
+[23:31:14] 
+[23:31:14] Scaler: FIT on train[:676] ONLY — agrees with persisted /gpfs1/scratch/sychan552/a2_stage5/data/scaler_miflu_author966.json (no test-set refit)
+[23:31:14] Data: 966 total (profile=author_966) | Train=676 | Val=97 | Test=193
+[23:31:14] 
+[23:31:14] 
+[23:31:14]   [RESUME] 4 (L, rep) pairs already complete
+[23:31:14] ──────────────────────────────────────────────────
+[23:31:14]   HORIZON L=36
+[23:31:14] ──────────────────────────────────────────────────
+[23:31:14]   [L=36] Rep 1/1 ... already done, skipping
+[23:31:14] 
+[23:31:14]   [ablation] validation-only fit complete; Test scoring deferred to the locked-batch scoring entry.
+
+ABLATION_RESULT: variant=no_multi recipe=baseline test_deferred=1
+notext_L36_S44 wall=4.80 s
+[task] MODEL=notext L=36 end=2026-09-25T15:31:15Z

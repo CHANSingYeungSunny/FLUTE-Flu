@@ -1,0 +1,49 @@
+{
+  "generated_utc": "2026-09-21T04:51:03Z",
+  "freeze_files": {
+    "date_mapping_and_leakage_audit.json": "0b84b190f8778fe18fcf35d516f62656767b7d79a8a8b12f50bb229c900ae23b",
+    "deferred_controls_statistical_interpretation.json": "f145de69bcaac23799aa457bc22f312c18a43b7eddbe773811c0696cd054e523",
+    "deferred_controls_statistical_interpretation.md": "f3068e1d6e00813a92e37a81705568e6a33ebc76a63b2ef28e807e18fc629e7b",
+    "deferred_parent_binding.json": "13121b8bd140fb7ba108b66f9b7c7cdf9213911a24b37bbb0d1959fece5cc971",
+    "deferred_parent_binding.md": "2199b1035fed137905ae66f39a1935d7f922c4394296a0feca271ee7a3125673",
+    "deferred_parent_binding_hash_manifest.json": "eed6686d141ea71e78d69b14da39872046ac43d981c879d295ed9f0dc6614b1a",
+    "final_candidate_freeze.json": "2aab994151ea610e4708994b4b85516d4b5467f4b2204e872adde2d228180a62",
+    "final_candidate_freeze.md": "c2baa7a3dce04929972ffd02d5b1d2024afd0d490f3da63796884c5a15bd0aeb",
+    "final_candidate_hash_manifest.json": "84234f053c9e2bfde91e3c1ad4da0ff6b8a09e087ad233b415f5d42f54d76a7e",
+    "final_comparator_freeze.json": "c5c7f5e3eb38c0d286a0f55553712674dbcc5060acbfd0e18fdcaa7b85cf605d",
+    "final_development_artifact_inventory.csv": "daeae28be4c7ff83b2c5e893d6238b129899737db079d32d7eca233c486e2267",
+    "final_development_evidence_freeze.json": "d5d75bd388d645f890e78bb345484ca211ab0031d504b76631220475d0bffc74",
+    "final_development_evidence_freeze.md": "0183070c0d3d0c800cb782bd2807f15a86c389f142c6c3856e6ad89f196ac4f7",
+    "final_development_hash_manifest.json": "ec5c7a8de10856d3d779fb5aa650fb029c801dd9dfed588e97a9add288f9fcbb",
+    "final_evaluation_plan.json": "c0834dd8cae4bb7b6240e83f6759e41bc259b9655705795f6311ff4519f4479f",
+    "final_evaluation_plan.md": "4ec88bd1b19f6371d3dd22cea4eddd9b933433d55eb8a6b55566c2f390c603d5",
+    "final_statistical_analysis_plan.json": "a589cd73030ac84756d5bddc5a4899b35417bdad4e6101e86a160a2feb7ac9d2",
+    "final_test_figure_plan.json": "d8b00f68332c147cbc2b4cc43d91e7709c6897d152e128116f2224a36956a95b",
+    "peak-evaluation-v1.json": "045a25286eb3172113323cd9c9b150091f2b36f63feb0ab5f545a300f49be781",
+    "peak-evaluation-v1.md": "e198b295431486bdb17dde031c4b50d166d539e8268452ef8d307db2b58f1781",
+    "pre_test_authorization_record.json": "86ee4860e367506055b3a27ebf4164a37e8dd1bd0420350b37c90f96a9828deb",
+    "pre_test_freeze_audit.json": "bbf8f9d25496b26a2d189dfe7f39a5fc692c94b426633b02c4428dd34c672379",
+    "pre_test_freeze_manifest.json": "17c3aec37acdcfd8ffed061a19ce87543aea2e8934923e58e176673b7e6d7722",
+    "wave1_final_artifact_inventory.csv": "5831d8efe45c58fffaa062e019ef5f5877a08a20493bd9fd1db5e02d96f7edd2",
+    "wave1_final_freeze_manifest.json": "dbe727f2878efb8773b0037e7cef079ab7a9102359f526f19f6310c98a419768",
+    "wave1_final_freeze_manifest.md": "26187638409ed70b29619988e830df46c83671c16a4a97cf1dc828c00594dfd1",
+    "wave1_final_hash_manifest.json": "8065a4b4504255ac7e90b5f4c2a24b56c850f4862d57663141f2e5acc05c1787"
+  },
+  "test_script_sha256": "93a1338bfac30096a95448830bb2867d9966e3625df9a51c91453b86ae7dae0b",
+  "identities": {
+    "hpc_guide_sha256": "1cd21a655907d137914c695bf04637d8da2f09358a0732c961e739dd8e74c167",
+    "source_version": "innov-v3.19-baseline-no-checkpoint-finalization",
+    "source_aggregate_sha256": "ae75b958b750e97c1ec9c0317ac80bf6fdc94ef979cfa280570540b0d889efaa",
+    "deployment_aggregate_sha256": "05581a557158c0c19bb8e6caa1a5fb35fad889b774195616632cf62d9f4bcff6",
+    "canonical_raw_data_sha256_prefix": "0a0648000066e12f",
+    "scaler_sha256_prefix": "6b28b2d101309a80",
+    "durable_root": "/home/sychan552/innovation_durable/screening"
+  },
+  "governance_hashes": {
+    "selection_rule": "afa7a780010aeed20fd7a2d361300ae2ce4411baeed1d458581538d3df359325",
+    "selection_outcome": "f93e711288023703b7c6ed7818009e7598c70f6dc9ed4c9274691ea16f667dc4",
+    "frozen_analysis_protocol": "cd229790fd0693334d79a1d63a38f06be8faf8cf30d83eb45c70603bc580fb6f",
+    "source_manifest": "95e30137f53d3d3a10a6453f0912883e7361afaada24593bd4bce4db3ac5b313",
+    "complete_specs_598": "a44aedce01e8c37a02792dea113ff2b3f118b37e236871f24dfbae896e4bcd0b"
+  }
+}

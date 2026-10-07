@@ -1,0 +1,17 @@
+[task] MODEL=nlinear L=48 job=585832 start=2026-09-25T15:18:01Z
+[A2] run_config containment=strict profile=author_966 horizon=48 seed=42
+  [nlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[nlinear] L=48 seed=42 TEST DEFERRED best_val=0.228420 best_epoch=12 (1.7s)
+[nlinear] DONE -> results/stage5/author_966/nlinear/metrics.csv
+nlinear_L48_S42 wall=3.86 s
+[A2] run_config containment=strict profile=author_966 horizon=48 seed=43
+  [nlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[nlinear] L=48 seed=43 TEST DEFERRED best_val=0.235613 best_epoch=19 (1.6s)
+[nlinear] DONE -> results/stage5/author_966/nlinear/metrics.csv
+nlinear_L48_S43 wall=3.79 s
+[A2] run_config containment=strict profile=author_966 horizon=48 seed=44
+  [nlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[nlinear] L=48 seed=44 TEST DEFERRED best_val=0.233224 best_epoch=14 (1.6s)
+[nlinear] DONE -> results/stage5/author_966/nlinear/metrics.csv
+nlinear_L48_S44 wall=3.81 s
+[task] MODEL=nlinear L=48 end=2026-09-25T15:18:12Z

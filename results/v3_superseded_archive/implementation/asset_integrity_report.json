@@ -1,0 +1,25 @@
+{
+  "generated_utc": "2026-09-16T15:48:10Z",
+  "qwen": {
+    "id": "Qwen/Qwen2.5-1.5B",
+    "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "license": "Apache-2.0",
+    "gated": false,
+    "downloaded": true,
+    "n_files": 7,
+    "total_bytes": 3098955511,
+    "approx_gib": 2.89,
+    "cache": "/gpfs1/scratch/sychan552/v3_cache/models--Qwen--Qwen2.5-1.5B/snapshots/8faed761d45a263340a0528343f099c05c9a4323",
+    "download_job": "563498",
+    "load_status": "FAILED_TO_RESOLVE_AT_FROM_PRETRAINED",
+    "root_cause": "The pinned revision is present in the hub cache, but from_pretrained resolves the model without the explicit revision / local snapshot path and therefore falls back to a network lookup that the compute node cannot complete.",
+    "remedy": "Pass revision=QWEN_REV (or the local snapshot directory) to the text-backbone loader, or set local_files_only=True after cache preparation. Requires a source change and a fresh Gate run."
+  },
+  "gpt2": {
+    "source": "existing verified MIFlu/GPT-2 asset path",
+    "new_download": false,
+    "load_status": "OK on compute node (job 565800)"
+  },
+  "file_hashes": [],
+  "note": "File-level SHA-256 values were computed by the Gate into weight_and_asset_manifest.json on the deployment root."
+}

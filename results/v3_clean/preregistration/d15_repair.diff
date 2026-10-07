@@ -1,0 +1,907 @@
+--- a/scripts/innovation/storage_verification.py
++++ b/scripts/innovation/storage_verification.py
+@@ -1,4 +1,4 @@
+-"""storage_verification.py — v3.17 authoritative storage-verification schema.
++"""storage_verification.py — v3.19 authoritative storage-verification schema.
+ 
+ WHY (D16): the v3.16 Gate wrote `canonical_invariant_vs_durable` into the
+ storage result (`res`) while `storage_verdict(rep, rest, ...)` read the
+@@ -6,13 +6,24 @@
+ used `rest.get("canonical_invariant_vs_durable", True)` — a MISSING FIELD
+ DEFAULTED TO PASS, so the check was never actually enforced.
+ 
++WHY (D15): the schema was checkpoint-only. Deterministic baselines are FROZEN
++to carry no checkpoint (`checkpoint_applicable=false`), so a baseline record
++can never provide `compact_file_present` & friends as True — and silently
++omitting them would recreate exactly the D16 "missing defaults to pass" bug.
++The fix: an EXPLICIT `not_applicable` sentinel. A checkpoint-only check on a
++baseline row must be present AND carry the sentinel; anything missing is a
++hard fail, and the sentinel is only ever accepted on the arm-appropriate side.
++
+ This module removes that whole failure class:
+   * ONE versioned, strongly-typed result object
+   * `verdict()` reads ONLY that object
+   * EVERY required check must be present; a missing key is a HARD FAIL that
+     reports `MISSING_REQUIRED_STORAGE_CHECK`
+-  * a check counts as passed only when its value is literally `True`
++  * a check counts as passed only when its value is literally `True`, or when
++    it is the `not_applicable` sentinel on the arm-appropriate side
+   * there is no `.get(name, True)` anywhere in the verdict path
++  * `arm=None` keeps the exact LEGACY contract (the 13 checkpoint-era checks),
++    so the 320 already-accepted records still validate unchanged
+ """
+ from __future__ import annotations
+ 
+@@ -20,10 +31,22 @@
+ 
+ SCHEMA = "storage-verification-v1"
+ 
+-# Every one of these MUST be present in `checks` — absence is a hard failure.
+-REQUIRED_CHECKS = (
++# The explicit, non-boolean marker for a check that provably does not apply.
++NOT_APPLICABLE = "not_applicable"
++BASELINE_REASON = "deterministic_baseline_no_checkpoint"
++STOCHASTIC_ARMS = ("primary", "ablation", "negative_control")
++BASELINE_ARM = "baseline"
++VALID_ARMS = (None,) + STOCHASTIC_ARMS + (BASELINE_ARM,)
++
++# ---- arm-independent checks -------------------------------------------
++COMMON_CHECKS = (
+     "artifact_completeness",
+     "run_status_completed",
++    "atomic_publish_ok",
++    "contained",
++)
++# True for stochastic rows; NOT_APPLICABLE for deterministic baselines.
++CHECKPOINT_ONLY_CHECKS = (
+     "compact_file_present",
+     "compact_file_sha256_matches_manifest",
+     "canonical_tensor_sha256_present",
+@@ -32,58 +55,134 @@
+     "strict_missing_keys_zero",
+     "strict_unexpected_keys_zero",
+     "no_frozen_backbone_duplication",
+-    "atomic_publish_ok",
+-    "contained",
+     "same_source_invariant_ok",
+ )
++# True for deterministic baselines; NOT_APPLICABLE for stochastic rows.
++BASELINE_ONLY_CHECKS = (
++    "no_unexpected_checkpoint",
++    "checkpoint_applicable_false",
++    "stochastic_seed_applicable_false",
++    "resource_usage_semantics_ok",
++    "provenance_complete",
++)
++
++LEGACY_REQUIRED_CHECKS = COMMON_CHECKS + CHECKPOINT_ONLY_CHECKS
++REQUIRED_CHECKS = COMMON_CHECKS + CHECKPOINT_ONLY_CHECKS + BASELINE_ONLY_CHECKS
++
++# ---- evidence ----------------------------------------------------------
++COMMON_EVIDENCE = (
++    "run_key", "model", "horizon",
++    "source_run_key", "source_job_id", "source_training_attempt",
++    "export_implementation_version", "comparison_mode",
++)
++CHECKPOINT_ONLY_EVIDENCE = (
++    "file_sha256", "canonical_tensor_sha256",
++    "source_full_checkpoint_sha256", "canonical_hash_schema",
++)
++BASELINE_ONLY_EVIDENCE = (
++    "reason", "checkpoint_applicable", "stochastic_seed_applicable",
++)
++LEGACY_REQUIRED_EVIDENCE = COMMON_EVIDENCE + CHECKPOINT_ONLY_EVIDENCE
++REQUIRED_EVIDENCE = (COMMON_EVIDENCE + CHECKPOINT_ONLY_EVIDENCE
++                     + BASELINE_ONLY_EVIDENCE)
+ 
+ MISSING = "MISSING_REQUIRED_STORAGE_CHECK"
+ FAILED = "FAILED_STORAGE_CHECK"
+ OK = "OK"
+ 
+-# evidence fields the audit trail must carry (not pass/fail, but required to exist)
+-REQUIRED_EVIDENCE = (
+-    "run_key", "model", "horizon",
+-    "file_sha256", "canonical_tensor_sha256", "canonical_hash_schema",
+-    "source_full_checkpoint_sha256", "source_run_key", "source_job_id",
+-    "source_training_attempt", "export_implementation_version",
+-    "comparison_mode",
+-)
+-
+ 
+ class StorageVerificationError(ValueError):
+     """Raised when a result is constructed with an unusable shape."""
+ 
+ 
++def _sentinel_side(arm):
++    """Which check family carries `not_applicable` for this arm."""
++    if arm == BASELINE_ARM:
++        return CHECKPOINT_ONLY_CHECKS
++    return BASELINE_ONLY_CHECKS          # stochastic arms
++
++
+ class StorageVerification:
+     """The ONLY structure `storage_verdict` is allowed to read."""
+ 
+-    __slots__ = ("checks", "evidence", "schema")
+-
+-    def __init__(self, checks: dict, evidence: dict):
++    __slots__ = ("checks", "evidence", "schema", "arm", "reason")
++
++    def __init__(self, checks: dict, evidence: dict,
++                 arm: str | None = None, reason: str | None = None):
+         if not isinstance(checks, dict) or not isinstance(evidence, dict):
+             raise StorageVerificationError("checks and evidence must be dicts")
++        if arm not in VALID_ARMS:
++            raise StorageVerificationError(f"unknown arm: {arm!r}")
++        if arm == BASELINE_ARM and reason != BASELINE_REASON:
++            raise StorageVerificationError(
++                f"baseline arm requires reason={BASELINE_REASON!r}")
+         extra = sorted(set(checks) - set(REQUIRED_CHECKS))
+         if extra:
+             raise StorageVerificationError(f"unknown check ids: {extra}")
+-        # values must be real booleans -> no truthy coercion, no None
+-        bad = [k for k, v in checks.items() if not isinstance(v, bool)]
+-        if bad:
+-            raise StorageVerificationError(f"non-boolean check values: {bad}")
++        sentinel_side = _sentinel_side(arm)
++        # values must be real booleans (or the explicit sentinel on the
++        # arm-appropriate side) -> no truthy coercion, no None, no defaults
++        for k, v in checks.items():
++            if isinstance(v, bool):
++                continue
++            if v == NOT_APPLICABLE and arm is not None and k in sentinel_side:
++                continue
++            raise StorageVerificationError(
++                f"non-boolean check value for {k!r}: {v!r}")
+         self.schema = SCHEMA
+         self.checks = dict(checks)
+         self.evidence = dict(evidence)
++        self.arm = arm
++        self.reason = reason
+ 
+     # ---- the single authoritative verdict -------------------------------
+     def verdict(self) -> tuple:
+         """(passed, code, detail) — fails CLOSED on anything missing."""
+-        missing = [c for c in REQUIRED_CHECKS if c not in self.checks]
++        if self.arm is None:
++            required = LEGACY_REQUIRED_CHECKS
++        else:
++            required = REQUIRED_CHECKS
++        missing = [c for c in required if c not in self.checks]
+         if missing:
+             return False, MISSING, ",".join(missing)
+-        missing_ev = [e for e in REQUIRED_EVIDENCE if e not in self.evidence]
++        required_ev = (LEGACY_REQUIRED_EVIDENCE if self.arm is None
++                       else REQUIRED_EVIDENCE)
++        missing_ev = [e for e in required_ev if e not in self.evidence]
+         if missing_ev:
+             return False, MISSING, "evidence:" + ",".join(missing_ev)
+-        failed = [c for c in REQUIRED_CHECKS if self.checks[c] is not True]
++        if self.arm == BASELINE_ARM:
++            if self.evidence.get("reason") != BASELINE_REASON:
++                return False, FAILED, "evidence:reason"
++            if self.evidence.get("checkpoint_applicable") is not False:
++                return False, FAILED, "evidence:checkpoint_applicable"
++            if self.evidence.get("stochastic_seed_applicable") is not False:
++                return False, FAILED, "evidence:stochastic_seed_applicable"
++            for e in CHECKPOINT_ONLY_EVIDENCE:
++                if self.evidence.get(e) != NOT_APPLICABLE:
++                    return False, FAILED, f"evidence:{e}:not_applicable"
++        elif self.arm is not None:
++            for e in CHECKPOINT_ONLY_EVIDENCE:
++                v = self.evidence.get(e)
++                if not isinstance(v, str) or not v or v == NOT_APPLICABLE:
++                    return False, FAILED, f"evidence:{e}"
++            for e in BASELINE_ONLY_EVIDENCE:
++                if self.evidence.get(e) != NOT_APPLICABLE:
++                    return False, FAILED, f"evidence:{e}:not_applicable"
++        sentinel_side = _sentinel_side(self.arm) if self.arm is not None else ()
++        failed = []
++        for c in required:
++            v = self.checks[c]
++            if self.arm is None:
++                if v is not True:
++                    failed.append(c)
++            elif c in sentinel_side:
++                # must be EXACTLY the sentinel — True here would be an
++                # inconsistent claim (e.g. a baseline asserting
++                # compact_file_present)
++                if v != NOT_APPLICABLE:
++                    failed.append(c)
++            elif v is not True:
++                failed.append(c)
+         if failed:
+             return False, FAILED, ",".join(failed)
+         return True, OK, ""
+@@ -95,12 +194,12 @@
+     def to_dict(self) -> dict:
+         passed, code, detail = self.verdict()
+         return {"schema": self.schema, "passed": passed, "code": code,
+-                "detail": detail, "checks": dict(self.checks),
+-                "evidence": dict(self.evidence)}
++                "detail": detail, "arm": self.arm, "reason": self.reason,
++                "checks": dict(self.checks), "evidence": dict(self.evidence)}
+ 
+ 
+ def storage_verdict(result) -> bool:
+-    """v3.17: the ONLY entry point. Accepts a StorageVerification (or its
++    """v3.17+: the ONLY entry point. Accepts a StorageVerification (or its
+     serialized dict). Anything else — including a plain dict missing fields —
+     fails closed. No default-to-pass behaviour exists."""
+     if isinstance(result, StorageVerification):
+@@ -108,15 +207,16 @@
+     if isinstance(result, dict):
+         try:
+             return StorageVerification(result.get("checks"),
+-                                       result.get("evidence")).passed
++                                       result.get("evidence"),
++                                       arm=result.get("arm"),
++                                       reason=result.get("reason")).passed
+         except Exception:                                      # noqa: BLE001
+             return False
+-        return False
+     return False
+ 
+ 
+ def load_result(path: str):
+     with open(path, encoding="utf-8") as f:
+-        return StorageVerification(**(lambda d: {"checks": d["checks"],
+-                                                 "evidence": d["evidence"]})(
+-                                                    json.load(f)))
++        d = json.load(f)
++    return StorageVerification(d["checks"], d["evidence"],
++                               arm=d.get("arm"), reason=d.get("reason"))
+--- a/scripts/innovation/clean_gate.py
++++ b/scripts/innovation/clean_gate.py
+@@ -284,8 +284,37 @@
+ 
+     res: dict = {"mode": "compact"}
+     if arm == "baseline":
+-        res.update({"passed": True, "mode": "baseline_no_checkpoint",
+-                    "note": "deterministic baseline carries no checkpoint"})
++        # v3.19 (D15): prove the REAL deterministic-baseline no-checkpoint
++        # finalization path (innovation.finalize_row.finalize_baseline) instead
++        # of vacuous-passing. The durable root is the Gate-local simulation
++        # root — the real home durable is never touched.
++        res["mode"] = "baseline_no_checkpoint"
++        try:
++            import types
++            from innovation import finalize_row as FR
++            from innovation import compact_checkpoint as CCX
++            info = CCX.resolve_run_key(run_key)
++            rec_path = stage_root / (run_key + ".storage_verification.json")
++            a = types.SimpleNamespace(
++                run_key=run_key,
++                deployment_root=os.environ.get("INNOVATION_DEPLOYMENT_ROOT"),
++                run_dir=str(run_dir), durable_root=str(stage_root),
++                out=str(rec_path), original_job_id=None)
++            rc = FR.finalize_baseline(a, run_key, info, run_dir,
++                                      stage_root / run_key,
++                                      stage_root / (run_key + ".staging"),
++                                      None)
++            if rec_path.is_file():
++                rec = json.loads(rec_path.read_text(encoding="utf-8"))
++                res["verification"] = rec
++                res["passed"] = bool(rec.get("passed")) and rc == 0
++                res["reason"] = rec.get("reason")
++            else:
++                res["passed"] = False
++                res["error"] = "baseline finalization produced no record"
++        except Exception as e:                                     # noqa: BLE001
++            res["passed"] = False
++            res["error"] = f"baseline_finalize {type(e).__name__}: {e}"
+         return res
+     ck = run_dir / "checkpoints" / "best_val_mse.pt"
+     if not ck.exists():
+--- a/scripts/innovation/baseline_finalize.py (absent in v3.18)
++++ b/scripts/innovation/baseline_finalize.py
+@@ -0,0 +1,234 @@
++"""baseline_finalize.py — v3.19 deterministic-baseline no-checkpoint finalization.
++
++D15 root cause: the per-row finalize driver assumed EVERY row carries a
++checkpoint. Deterministic baselines are FROZEN to carry none
++(`checkpoint_applicable=false`, `stochastic_seed_applicable=false`), so the
++driver died with FileNotFoundError on `checkpoints/best_val_mse.pt`.
++
++This module implements the baseline acceptance path as PURE logic (no torch,
++no model): it verifies everything a baseline row must prove, builds the
++durable manifest, and re-verifies an already-published package (idempotent
++repair-finalize). The checkpoint path (export / restoration / hashes /
++cleanup) is deliberately ABSENT from this module.
++
++Nothing here touches model, loss, optimizer, early stopping, checkpoint
++selection, data, split, scaler, prompt statistics, metrics, horizon, seed,
++matrix, ablation/control semantics or endpoint hierarchy.
++"""
++from __future__ import annotations
++
++import json
++import os
++from pathlib import Path
++
++BASELINE_REASON = "deterministic_baseline_no_checkpoint"
++MANIFEST_NAME = "finalize_manifest.json"
++
++# A deterministic baseline never trains, so it never produces a training
++# history (D12 lesson: artifact schemas are arm-aware).
++BASELINE_REQUIRED = (
++    "predictions/validation_predictions.csv",
++    "run_status.json",
++    "resource_usage.json",
++    "split_manifest.json",
++    "scaler_metadata.json",
++    "prompt_statistics_metadata.json",
++    "source_manifest.json",
++    "config_resolved.yaml",
++    "environment.txt",
++    "git_commit.txt",
++)
++BASELINE_METRICS = (
++    "paper_aligned_full_output_metrics.json",
++    "ilitotal_fixed_step_metrics.json",
++    "ilitotal_full_horizon_metrics.json",
++    "pte_pie_metrics.json",
++)
++_PROVENANCE_JSON = ("source_manifest.json", "split_manifest.json",
++                    "scaler_metadata.json", "prompt_statistics_metadata.json")
++_PROVENANCE_TEXT = ("config_resolved.yaml", "environment.txt", "git_commit.txt")
++
++VERIFICATION_KEYS = (
++    "artifact_completeness",
++    "run_status_completed",
++    "no_unexpected_checkpoint",
++    "checkpoint_applicable_false",
++    "stochastic_seed_applicable_false",
++    "resource_usage_semantics_ok",
++    "provenance_complete",
++)
++
++
++def _read_json(p: Path):
++    try:
++        return json.loads(p.read_text(encoding="utf-8")), None
++    except Exception as e:                                     # noqa: BLE001
++        return None, f"{type(e).__name__}: {e}"
++
++
++def checkpoint_entries(src) -> list:
++    """Every file under checkpoints/ — an EMPTY list is the only legal state
++    for a baseline (the D11 uniform tree creates the empty directory)."""
++    ck = Path(src) / "checkpoints"
++    if not ck.exists():
++        return []
++    out = []
++    for dp, _, fs in os.walk(ck):
++        for f in fs:
++            rel = os.path.relpath(os.path.join(dp, f), str(Path(src)))
++            out.append(rel.replace(os.sep, "/"))
++    return sorted(out)
++
++
++def verify_baseline_run(src, info: dict) -> dict:
++    """Verify a completed baseline run directory. Returns
++    {<VERIFICATION_KEYS> as bools, 'facts', 'failures', 'unexpected'}.
++    NEVER reads, creates or hashes any checkpoint file."""
++    src = Path(src)
++    checks: dict = {k: False for k in VERIFICATION_KEYS}
++    failures: list = []
++    facts: dict = {}
++
++    # ---- artifact completeness (arm-aware: NO train history required) ----
++    missing = [r for r in BASELINE_REQUIRED if not (src / r).is_file()]
++    missing += [f"metrics/{m}" for m in BASELINE_METRICS
++                if not (src / "metrics" / m).is_file()]
++    checks["artifact_completeness"] = not missing
++    if missing:
++        failures.append("missing_artifacts:" + ",".join(missing))
++
++    # ---- run_status ------------------------------------------------------
++    rs, err = _read_json(src / "run_status.json")
++    if not isinstance(rs, dict):
++        failures.append(f"run_status_unreadable:{err}")
++    else:
++        facts["run_status_state"] = rs.get("state")
++        facts["run_status_arm"] = rs.get("spec", {}).get("arm")
++        checks["run_status_completed"] = rs.get("state") == "COMPLETED"
++        if not checks["run_status_completed"]:
++            failures.append(f"run_status_state={rs.get('state')!r}")
++        if rs.get("spec", {}).get("arm") not in (None, "baseline"):
++            failures.append(f"run_status_arm={rs.get('spec', {}).get('arm')!r}")
++
++    # ---- no unexpected checkpoint (fail closed, never silent) ------------
++    entries = checkpoint_entries(src)
++    checks["no_unexpected_checkpoint"] = not entries
++    if entries:
++        failures.append("unexpected_checkpoint:" + ",".join(entries))
++
++    # ---- resource_usage structure + semantics ----------------------------
++    ru, err = _read_json(src / "resource_usage.json")
++    if not isinstance(ru, dict):
++        failures.append(f"resource_usage_unreadable:{err}")
++    else:
++        facts["resource_usage"] = ru
++        flags_ok = (ru.get("checkpoint_applicable") is False
++                    and ru.get("stochastic_seed_applicable") is False)
++        train_s, gpu_h = ru.get("train_seconds"), ru.get("gpu_hours")
++        numbers_ok = (isinstance(train_s, (int, float))
++                      and isinstance(gpu_h, (int, float)))
++        # a baseline never trains: both must be present and zero
++        zeros_ok = numbers_ok and float(train_s) == 0.0 and float(gpu_h) == 0.0
++        checks["resource_usage_semantics_ok"] = flags_ok and numbers_ok \
++            and zeros_ok
++        if not flags_ok:
++            failures.append("resource_usage_flags_not_false")
++        if not numbers_ok:
++            failures.append("resource_usage_missing_numbers")
++        elif not zeros_ok:
++            failures.append("resource_usage_nonzero_training")
++
++    # ---- applicable flags in BOTH run_status and resource_usage ----------
++    if isinstance(rs, dict) and isinstance(ru, dict):
++        checks["checkpoint_applicable_false"] = (
++            rs.get("checkpoint_applicable") is False
++            and ru.get("checkpoint_applicable") is False)
++        checks["stochastic_seed_applicable_false"] = (
++            rs.get("stochastic_seed_applicable") is False
++            and ru.get("stochastic_seed_applicable") is False)
++        if not checks["checkpoint_applicable_false"]:
++            failures.append("checkpoint_applicable_not_false")
++        if not checks["stochastic_seed_applicable_false"]:
++            failures.append("stochastic_seed_applicable_not_false")
++
++    # ---- provenance (source / spec / data / scaler / prompt / env / git) --
++    prov_fail = []
++    for r in _PROVENANCE_JSON:
++        d, e = _read_json(src / r)
++        if not isinstance(d, dict) or not d:
++            prov_fail.append(f"{r}:{e or 'not_a_nonempty_object'}")
++    for r in _PROVENANCE_TEXT:
++        p = src / r
++        if not p.is_file() or p.stat().st_size == 0:
++            prov_fail.append(f"{r}:empty_or_missing")
++    # spec provenance: the immutable registry is the authority and the caller
++    # must have resolved the key through it (info is required below)
++    if not isinstance(info, dict) or info.get("arm") != "baseline":
++        prov_fail.append("spec:not_resolved_from_registry_as_baseline")
++    checks["provenance_complete"] = not prov_fail
++    if prov_fail:
++        failures.append("provenance:" + ",".join(prov_fail))
++
++    return {"checks": checks, "facts": facts, "failures": failures,
++            "unexpected_checkpoint_entries": entries}
++
++
++def build_baseline_manifest(key: str, info: dict, src, stage,
++                            verification: dict, original_job_id=None) -> dict:
++    """The durable manifest for a baseline row. Contains NO checkpoint fields
++    beyond explicit not_applicable markers."""
++    src, stage = Path(src), Path(stage)
++    artifacts = sorted(
++        os.path.relpath(os.path.join(dp, f), str(stage))
++        for dp, _, fs in os.walk(stage) for f in fs)
++    return {
++        "run_key": key, "model": info["model"], "arm": info["arm"],
++        "horizon": info["horizon"], "wave": info["wave"],
++        "policy": "v3.19-baseline-no-checkpoint-durable",
++        "reason": BASELINE_REASON,
++        "checkpoint_applicable": False,
++        "stochastic_seed_applicable": False,
++        "finalized_utc": __import__("time").strftime(
++            "%Y-%m-%dT%H:%M:%SZ", __import__("time").gmtime()),
++        "source_dir": str(src),
++        "original_job_id": original_job_id,
++        "checkpoint_file_sha256": "not_applicable",
++        "checkpoint_canonical_tensor_sha256": "not_applicable",
++        "compact_bytes": 0,
++        "removed_full_scratch_checkpoint_bytes": 0,
++        "verification_failures": verification["failures"],
++        "artifacts": artifacts,
++    }
++
++
++def verify_baseline_package(durable, key: str) -> tuple:
++    """Re-verify an ALREADY PUBLISHED baseline durable package (idempotent
++    repair-finalize). Returns (ok, manifest)."""
++    durable = Path(durable)
++    mpath = durable / MANIFEST_NAME
++    if not mpath.is_file():
++        return False, None
++    m, err = _read_json(mpath)
++    if not isinstance(m, dict):
++        return False, None
++    if m.get("run_key") != key or m.get("reason") != BASELINE_REASON:
++        return False, m
++    if m.get("checkpoint_applicable") is not False:
++        return False, m
++    needed = list(BASELINE_REQUIRED) + [f"metrics/{x}" for x in BASELINE_METRICS]
++    for r in needed:
++        if not (durable / r).is_file():
++            return False, m
++    return True, m
++
++
++def isolation_probe(deployment_root) -> dict:
++    """Test/holdout isolation: the deployment root must expose NO test or
++    holdout evaluation directory, and the run directory must contain no
++    test/holdout-named artifacts."""
++    root = Path(deployment_root)
++    ev = root / "results" / "innovation"
++    test_access = 1 if (ev / "test_evaluations").exists() else 0
++    holdout_access = 1 if (ev / "holdout_evaluations").exists() else 0
++    return {"test_access": test_access, "holdout_access": holdout_access,
++            "archive_read": 1 if (root / "results" / "v3").exists() else 0}
+--- a/scripts/innovation/finalize_row.py (absent in v3.18)
++++ b/scripts/innovation/finalize_row.py
+@@ -0,0 +1,372 @@
++"""finalize_row.py — v3.19 per-row durable finalization (compute node).
++
++Runs AFTER a formal row's training job reaches COMPLETED 0:0. It performs the
++only steps that may turn a finished run into an ACCEPTED row.
++
++The acceptance path is decided by the FROZEN SPEC's `arm`
++(`CC.resolve_run_key` -> the immutable 598-row registry):
++
++  arm != "baseline"  (checkpoint_applicable = true) — unchanged since v3.18:
++      resolve run key from the immutable registry
++      locate the row's published run directory + full scratch checkpoint
++      export the compact reconstruction-complete state  -> staging
++      restore through the canonical resolver and require STRICT accounting
++          (missing = 0, unexpected = 0, all compared tensors equal)
++      verify predictions + the four metric artifacts + provenance
++      write the final manifest LAST
++      atomically rename staging -> final durable path
++      THEN remove the redundant full scratch checkpoint
++
++  arm == "baseline"  (checkpoint_applicable = false, D15) — new in v3.19:
++      deterministic baseline no-checkpoint branch (innovation.baseline_finalize)
++      NEVER reads or creates best_val_mse.pt
++      NEVER calls export_compact / restore_and_compare
++      NEVER computes checkpoint file_sha256 or canonical_tensor_sha256
++      NEVER deletes anything from checkpoints/
++      verifies predictions + the four metrics + run_status=COMPLETED +
++          checkpoint_applicable=false + stochastic_seed_applicable=false +
++          resource_usage structure/semantics + full provenance
++      fails CLOSED on any unexpected checkpoint file (never silently ignored)
++      staging -> manifest-LAST -> atomic rename
++
++`COMPLETED 0:0` alone is NEVER acceptance: acceptance requires this script's
++exit status 0 AND a fully-passing storage-verification-v1 record.
++"""
++from __future__ import annotations
++
++import argparse
++import hashlib
++import json
++import os
++import shutil
++import sys
++import time
++from pathlib import Path
++
++import torch
++
++sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
++
++from innovation import compact_checkpoint as CC                 # noqa: E402
++from innovation import storage_policy as SP                     # noqa: E402
++from innovation import storage_verification as SV               # noqa: E402
++from innovation import baseline_finalize as BF                  # noqa: E402
++from innovation import paths as IP                              # noqa: E402
++
++METRICS = ("paper_aligned_full_output_metrics.json",
++           "ilitotal_fixed_step_metrics.json",
++           "ilitotal_full_horizon_metrics.json",
++           "pte_pie_metrics.json")
++SMALL = ("predictions/validation_predictions.csv", "run_status.json",
++         "resource_usage.json", "split_manifest.json", "scaler_metadata.json",
++         "prompt_statistics_metadata.json", "source_manifest.json",
++         "config_resolved.yaml", "environment.txt", "git_commit.txt",
++         "logs/train_history.csv")
++
++
++def sha(p):
++    h = hashlib.sha256()
++    with open(p, "rb") as f:
++        for c in iter(lambda: f.read(1 << 20), b""):
++            h.update(c)
++    return h.hexdigest()
++
++
++def sha_safe(p):
++    try:
++        return sha(p)
++    except Exception:                                          # noqa: BLE001
++        return ""
++
++
++def spec_checkpoint_applicable(info: dict) -> bool:
++    """THE single authority: the frozen spec's arm. Deterministic baselines
++    are the only arm frozen to `checkpoint_applicable=false`
++    (`stochastic_seed_applicable=false` likewise)."""
++    return info.get("arm") != "baseline"
++
++
++def quarantine_stale_staging(stage: Path, durable_root: str):
++    """A stale staging directory is EVIDENCE, never a reusable workspace:
++    move it aside (refuse + quarantine) instead of silently deleting it."""
++    if not stage.exists():
++        return None
++    qroot = Path(durable_root) / ".stale_staging"
++    qroot.mkdir(parents=True, exist_ok=True)
++    ts = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
++    dest = qroot / (stage.name + ".stale." + ts)
++    i = 0
++    while dest.exists():
++        dest = qroot / (stage.name + f".stale.{ts}.{i}")
++        i += 1
++    shutil.move(str(stage), str(dest))
++    return str(dest)
++
++
++def atomic_publish(stage: Path, durable: Path, durable_root: str) -> None:
++    if not SP.is_contained(str(durable), durable_root):
++        raise SystemExit("containment failed")
++    tmp = Path(str(durable) + ".publish")
++    if tmp.exists():
++        shutil.rmtree(tmp)
++    os.replace(str(stage), str(tmp))
++    os.replace(str(tmp), str(durable))
++
++
++def _common_evidence(key, info, a, original_job_id):
++    return {
++        "run_key": key, "model": info["model"], "horizon": info["horizon"],
++        "source_run_key": key,
++        "source_job_id": original_job_id or os.environ.get("SLURM_JOB_ID"),
++        "source_training_attempt": 1,
++        "export_implementation_version":
++            getattr(IP, "IMPLEMENTATION_SOURCE_VERSION", "unknown"),
++    }
++
++
++def _write_record(path, payload):
++    Path(path).write_text(json.dumps(payload, indent=2), encoding="utf-8")
++
++
++# ---------------------------------------------------------------- baseline
++def finalize_baseline(a, key, info, src, durable, stage, original_job_id):
++    """deterministic_baseline_no_checkpoint acceptance path (D15)."""
++    v = BF.verify_baseline_run(src, info)
++    failures = list(v["failures"])
++    iso = BF.isolation_probe(a.deployment_root)
++    if iso["test_access"] or iso["holdout_access"]:
++        failures.append("isolation_violation:" + json.dumps(iso))
++    ok = all(v["checks"].values()) and not (iso["test_access"]
++                                            or iso["holdout_access"])
++
++    checks = dict(v["checks"])
++    checks["contained"] = SP.is_contained(str(durable), a.durable_root)
++    checks.update({c: SV.NOT_APPLICABLE for c in SV.CHECKPOINT_ONLY_CHECKS})
++    evidence = _common_evidence(key, info, a, original_job_id)
++    evidence.update({
++        "comparison_mode": "baseline_no_checkpoint",
++        "file_sha256": SV.NOT_APPLICABLE,
++        "canonical_tensor_sha256": SV.NOT_APPLICABLE,
++        "source_full_checkpoint_sha256": SV.NOT_APPLICABLE,
++        "canonical_hash_schema": SV.NOT_APPLICABLE,
++        "reason": BF.BASELINE_REASON,
++        "checkpoint_applicable": False,
++        "stochastic_seed_applicable": False,
++    })
++
++    if not ok:
++        # fail closed BEFORE creating any staging; still emit the full record
++        checks["atomic_publish_ok"] = False
++        sv = SV.StorageVerification(checks, evidence, arm="baseline",
++                                    reason=BF.BASELINE_REASON)
++        payload = sv.to_dict()
++        payload["failures"] = failures
++        payload["unexpected_checkpoint_entries"] = \
++            v["unexpected_checkpoint_entries"]
++        payload["isolated"] = iso
++        _write_record(a.out, payload)
++        print(f"[finalize] {key} BASELINE FAIL-CLOSED "
++              f"failures={failures}", flush=True)
++        return 1
++
++    # ---- idempotent repair-finalize --------------------------------------
++    if durable.is_dir():
++        pkg_ok, _m = BF.verify_baseline_package(durable, key)
++        if pkg_ok:
++            checks["atomic_publish_ok"] = True
++            sv = SV.StorageVerification(checks, evidence, arm="baseline",
++                                        reason=BF.BASELINE_REASON)
++            payload = sv.to_dict()
++            payload["idempotent"] = True
++            payload["isolated"] = BF.isolation_probe(a.deployment_root)
++            _write_record(a.out, payload)
++            print(f"[finalize] {key} BASELINE idempotent-ok "
++                  f"passed={sv.passed}", flush=True)
++            return 0 if sv.passed else 1
++
++    # ---- staging -> copy evidence -> manifest LAST -> atomic rename -------
++    quarantined = quarantine_stale_staging(stage, a.durable_root)
++    stage.mkdir(parents=True)
++    for r in BF.BASELINE_REQUIRED:
++        d = stage / os.path.dirname(r)
++        d.mkdir(parents=True, exist_ok=True)
++        shutil.copy2(str(src / r), str(stage / r))
++    for m in BF.BASELINE_METRICS:
++        (stage / "metrics").mkdir(exist_ok=True)
++        shutil.copy2(str(src / "metrics" / m), str(stage / "metrics" / m))
++    manifest = BF.build_baseline_manifest(key, info, src, stage, v,
++                                          original_job_id=original_job_id)
++    # manifest written LAST (atomic publication contract)
++    (stage / BF.MANIFEST_NAME).write_text(
++        json.dumps(manifest, indent=2), encoding="utf-8")
++
++    atomic_publish(stage, durable, a.durable_root)
++    published = (durable / BF.MANIFEST_NAME).is_file()
++    # NO checkpoint deletion: a baseline has none, and checkpoints/ is left
++    # exactly as the runner left it (empty by the frozen semantics).
++
++    checks["atomic_publish_ok"] = published
++    sv = SV.StorageVerification(checks, evidence, arm="baseline",
++                                reason=BF.BASELINE_REASON)
++    payload = sv.to_dict()
++    payload["quarantined_stale_staging"] = quarantined
++    payload["isolated"] = BF.isolation_probe(a.deployment_root)
++    payload["unexpected_checkpoint_entries"] = \
++        v["unexpected_checkpoint_entries"]
++    _write_record(a.out, payload)
++    print(f"[finalize] {key} BASELINE passed={sv.passed} "
++          f"code={payload['code']} published={published}", flush=True)
++    return 0 if sv.passed else 1
++
++
++# ------------------------------------------------------------- stochastic
++def finalize_stochastic(a, key, info, src, durable, stage, original_job_id):
++    """checkpoint_applicable=true path — behaviour unchanged from v3.18."""
++    ckpt = src / "checkpoints" / "best_val_mse.pt"
++    checks, evidence, detail = {}, {}, {}
++    checks["artifact_completeness"] = all(
++        (src / r).exists() for r in SMALL + tuple("metrics/" + m
++                                                  for m in METRICS))
++    checks["run_status_completed"] = (
++        json.loads((src / "run_status.json").read_text(encoding="utf-8"))
++        .get("state") == "COMPLETED") if (src / "run_status.json").is_file() \
++        else False
++
++    quarantined = quarantine_stale_staging(stage, a.durable_root)
++    stage.mkdir(parents=True)
++
++    compact = stage / "compact.safetensors"
++    rep = CC.export_compact(str(src), str(ckpt), key, info["horizon"],
++                            str(compact))
++    rest = CC.restore_and_compare(str(src), key, info["horizon"],
++                                  str(compact))
++    for r in SMALL:
++        if (src / r).is_file():
++            d = stage / os.path.dirname(r)
++            d.mkdir(parents=True, exist_ok=True)
++            shutil.copy2(str(src / r), str(stage / r))
++    for m in METRICS:
++        p = src / "metrics" / m
++        if p.is_file():
++            (stage / "metrics").mkdir(exist_ok=True)
++            shutil.copy2(str(p), str(stage / "metrics" / m))
++
++    manifest = {
++        "run_key": key, "model": info["model"], "arm": info["arm"],
++        "horizon": info["horizon"], "wave": info["wave"],
++        "policy": "v3.19-compact-durable",
++        "finalized_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
++        "source_dir": str(src),
++        "original_job_id": original_job_id,
++        "source_full_checkpoint_sha256": sha(str(ckpt)),
++        "source_full_checkpoint_bytes": os.path.getsize(str(ckpt)),
++        "compact_bytes": rep["compact_bytes"],
++        "compact_sha256": rep["compact_sha256"],
++        "canonical_tensor_sha256": rep["canonical_tensor_sha256"],
++        "canonical_hash_schema": CC.CANONICAL_HASH_SCHEMA,
++        "has_pretrained_backbone": rep["has_pretrained_backbone"],
++        "no_frozen_backbone_duplication":
++            rep["no_frozen_backbone_duplication"],
++        "reconstruction_exact": rep["reconstruction_exact"],
++        "restoration_exact": rest["restoration_exact"],
++        "n_keys_unequal": rest["n_keys_unequal"],
++        "missing_keys": rest["missing_keys"],
++        "unexpected_keys": rest["unexpected_keys"],
++        "artifacts": sorted(
++            os.path.relpath(os.path.join(dp, f), str(stage))
++            for dp, _, fs in os.walk(stage) for f in fs),
++    }
++    # manifest written LAST (atomic publication contract)
++    (stage / "compact_manifest.json").write_text(
++        json.dumps(manifest, indent=2), encoding="utf-8")
++
++    atomic_publish(stage, durable, a.durable_root)
++    published = (durable / "compact.safetensors").is_file()
++
++    # only NOW remove the redundant full scratch checkpoint
++    removed = 0
++    if ckpt.is_file():
++        removed = os.path.getsize(str(ckpt))
++        os.remove(str(ckpt))
++
++    checks.update({
++        "compact_file_present": published,
++        "compact_file_sha256_matches_manifest":
++            (manifest["compact_sha256"]
++             == sha_safe(str(durable / "compact.safetensors"))),
++        "canonical_tensor_sha256_present":
++            bool(manifest["canonical_tensor_sha256"]),
++        "reconstruction_exact": bool(rep["reconstruction_exact"]),
++        "restoration_exact": bool(rest["restoration_exact"]),
++        "strict_missing_keys_zero": len(rest["missing_keys"]) == 0,
++        "strict_unexpected_keys_zero": len(rest["unexpected_keys"]) == 0,
++        "no_frozen_backbone_duplication":
++            bool(rep["no_frozen_backbone_duplication"]),
++        "atomic_publish_ok": published,
++        "contained": True,
++        "same_source_invariant_ok": bool(
++            rep["reconstruction_exact"] and rest["restoration_exact"]
++            and rest["n_keys_unequal"] == 0),
++        # v3.19: baseline-only checks are explicitly not applicable here
++        "no_unexpected_checkpoint": SV.NOT_APPLICABLE,
++        "checkpoint_applicable_false": SV.NOT_APPLICABLE,
++        "stochastic_seed_applicable_false": SV.NOT_APPLICABLE,
++        "resource_usage_semantics_ok": SV.NOT_APPLICABLE,
++        "provenance_complete": SV.NOT_APPLICABLE,
++    })
++    evidence.update(_common_evidence(key, info, a, original_job_id))
++    evidence.update({
++        "comparison_mode": "same_source",
++        "file_sha256": sha_safe(str(durable / "compact.safetensors")),
++        "canonical_tensor_sha256": manifest["canonical_tensor_sha256"],
++        "canonical_hash_schema": CC.CANONICAL_HASH_SCHEMA,
++        "source_full_checkpoint_sha256":
++            manifest["source_full_checkpoint_sha256"],
++        "reason": SV.NOT_APPLICABLE,
++        "checkpoint_applicable": SV.NOT_APPLICABLE,
++        "stochastic_seed_applicable": SV.NOT_APPLICABLE,
++    })
++    sv = SV.StorageVerification(checks, evidence, arm=info["arm"])
++    payload = sv.to_dict()
++    payload["removed_full_scratch_checkpoint_bytes"] = removed
++    payload["quarantined_stale_staging"] = quarantined
++    payload["isolated"] = {"test_access": 0, "holdout_access": 0,
++                           "archive_read": 0}
++    _write_record(a.out, payload)
++    print(f"[finalize] {key} passed={sv.passed} code={payload['code']} "
++          f"compact={manifest['compact_bytes']} "
++          f"removed_ckpt={removed}", flush=True)
++    print(f"[finalize] canonical={manifest['canonical_tensor_sha256'][:16]}",
++          flush=True)
++    return 0 if sv.passed else 1
++
++
++def main(argv=None):
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--run-key", required=True)
++    ap.add_argument("--deployment-root", required=True)
++    ap.add_argument("--run-dir", required=True,
++                    help="the row's run directory in the deployment root")
++    ap.add_argument("--durable-root", required=True)
++    ap.add_argument("--out", required=True)
++    ap.add_argument("--original-job-id", default=None,
++                    help="the row's TRAINING job id (provenance retention); "
++                         "e.g. 572649 for a repair-finalize")
++    a = ap.parse_args(argv)
++
++    key = a.run_key
++    info = CC.resolve_run_key(key)
++    src = Path(a.run_dir)
++    durable = Path(a.durable_root) / key
++    os.makedirs(a.durable_root, exist_ok=True)
++    stage = Path(str(durable) + ".staging")
++
++    if spec_checkpoint_applicable(info):
++        return finalize_stochastic(a, key, info, src, durable, stage,
++                                   a.original_job_id)
++    return finalize_baseline(a, key, info, src, durable, stage,
++                             a.original_job_id)
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())

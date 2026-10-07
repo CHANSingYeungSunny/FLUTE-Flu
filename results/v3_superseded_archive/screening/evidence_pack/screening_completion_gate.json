@@ -1,0 +1,64 @@
+{
+  "generated_utc": "2026-09-17T01:45:38Z",
+  "checks": [
+    {
+      "id": "accepted_primary_runs_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "unique_run_keys_48",
+      "passed": true
+    },
+    {
+      "id": "unresolved_cells_zero",
+      "passed": true
+    },
+    {
+      "id": "durable_copies_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "checkpoint_manifests_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "restoration_verification_passed",
+      "passed": true
+    },
+    {
+      "id": "naive_baselines_complete",
+      "passed": true
+    },
+    {
+      "id": "test_access_count_zero",
+      "passed": true
+    },
+    {
+      "id": "holdout_access_count_zero",
+      "passed": true
+    },
+    {
+      "id": "pilot_metrics_excluded",
+      "passed": true
+    },
+    {
+      "id": "screening_cells_not_rerun",
+      "passed": true
+    },
+    {
+      "id": "frozen_selection_rule_unchanged",
+      "passed": true
+    }
+  ],
+  "n_passed": 12,
+  "n_checks": 12,
+  "all_passed": true,
+  "reference_baseline": "last_value_naive",
+  "tie_window": 0.01,
+  "n_accepted": 48,
+  "test_access_count": 0,
+  "holdout_access_count": 0,
+  "champion_frozen": false,
+  "full_validation_submitted": false,
+  "decision": "PHASE2_SCREENING_COMPLETE"
+}

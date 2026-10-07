@@ -1,0 +1,64 @@
+{
+  "generated_utc": "2026-09-15T19:59:40Z",
+  "v2_test_is_known": true,
+  "v2_test_may_be_relabelled_as_v3_holdout": false,
+  "options": [
+    {
+      "priority": 1,
+      "option": "future ILI weeks not used or inspected in v2",
+      "raw_file": "data/raw/national_illness_raw.csv",
+      "raw_latest_release_date": "2023-10-06",
+      "v2_test_prediction_max_date": "2021-12-26",
+      "apparent_unused_weeks": false,
+      "status": "ELIMINATED",
+      "conflict": "The v2 split_manifest declares test_end == full_rows, which nominally covers the whole file, yet no v2 Test prediction is dated after 2021-12-26. The row-index to calendar-date mapping must be resolved before these weeks can be declared untouched.",
+      "verification_required": [
+        "map split row indices to calendar weeks",
+        "confirm whether rows dated after 2021-12-26 entered any v2 split",
+        "confirm scaler/prompt statistics excluded them"
+      ],
+      "elimination_reason": "no row in the file has epiweek > 202152"
+    },
+    {
+      "priority": 2,
+      "option": "external region / jurisdiction or surveillance source",
+      "status": "NOT_ACQUIRED",
+      "user_action_required": true,
+      "note": "Would require acquisition, licence check and SHA-256 recording. Nothing downloaded in Phase 0."
+    },
+    {
+      "priority": 3,
+      "option": "another locked influenza dataset",
+      "status": "NOT_SELECTED",
+      "user_action_required": true,
+      "note": "Requires a scientific decision and evidence it did not influence v3 design."
+    }
+  ],
+  "conclusion": "NO_UNTOUCHED_INTERVAL_AVAILABLE_INTERNAL",
+  "consequence": "v3 proceeds validation-only; final holdout evaluation is blocked until external/future data is acquired and registered.",
+  "corrected_2026_09_16": {
+    "release_date_is_not_observation_date": true,
+    "epiweek_max": 202152,
+    "rows_after_202152": 0,
+    "apparent_unused_weeks": false,
+    "error_corrected": "previous 'apparent_unused_weeks' was an artefact of reading release_date as the time axis"
+  },
+  "decision": "REJECTED",
+  "external_options": [
+    {
+      "option": "acquire newer CDC/FluView ILI weeks released after the v2 cut-off",
+      "requires": "user download + licence/terms record + raw SHA-256",
+      "status": "USER_ACTION"
+    },
+    {
+      "option": "external jurisdiction or surveillance source (e.g. another national/regional ILI series)",
+      "requires": "source selection, licence check, access record",
+      "status": "USER_ACTION"
+    },
+    {
+      "option": "another locked influenza dataset not used to design v3",
+      "requires": "scientific decision + evidence it did not influence v3 design",
+      "status": "USER_ACTION"
+    }
+  ]
+}

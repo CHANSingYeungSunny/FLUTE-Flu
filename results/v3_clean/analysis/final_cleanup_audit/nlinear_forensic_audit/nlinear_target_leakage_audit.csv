@@ -1,0 +1,5 @@
+L,test_windows,first_origin,last_origin,input_last_index_max,target_first_index_min,input_target_overlap_count,future_target_leakage_count,labels_in_input,future_covariates_use_target,rolling_stat_uses_future,interpolation_backfill_from_future,seasonal_feature_uses_future
+24,182,716,897,1000,820,0,0,False,False,False,False,False
+36,170,716,885,988,820,0,0,False,False,False,False,False
+48,158,716,873,976,820,0,0,False,False,False,False,False
+60,146,716,861,964,820,0,0,False,False,False,False,False

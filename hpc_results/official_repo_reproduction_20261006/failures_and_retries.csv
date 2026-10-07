@@ -1,0 +1,12 @@
+jobid,state,cause,product_damage,resolution
+587048,FAILED,A0 import blocker,none,"compat layer applied, resubmitted"
+587054,FAILED,--checkpoints dir did not exist,none,"directory created, resubmitted"
+587059,FAILED,itr loop index out of range,none,"itr fixed, resubmitted"
+587068,FAILED (old wrapper),author code returns rc=1; old wrapper mapped it straight to FAILED,NONE - the 82 s replay completed; product valid,"wrapper fixed at 18:33:19, between 587068 end and 587091 submit"
+587373,FAILED,build_lock_stage5.py line 115 FileNotFoundError 'results/stage6/lock_templates.json',none - scoring never started,"path fixed, resubmitted as 587385"
+587385,exit 3,"closing assertion expected 104 rows, found 116 (stale expectation)",NONE - the full 116-row score matrix was written,expectation updated; verification re-run PASS (max dev 8.9e-16)
+587243,CANCELLED,"cancelled by 90731875, which does not exist in this cluster's accounting",none - superseded duplicate,no product depends on it
+606361_0,COMPLETED (author rc=1),"A1 passed --target_modules 'c_attn' on the command line; the author's argparse declares it type=str with a LIST default, so the override arrived as a bare string and peft raised 'Target modules c_attn not found'",none - died in model construction before any training,"removed the override (author's own list default now applies); diagnosed with CPU job 606362, which tested 7 spellings for 0 GPU-h"
+606363_0,CANCELLED,submitted before the target_modules fix landed; cancelled to avoid burning GPU time on a known-bad configuration,"none - cancelled while still PENDING, never started",resubmitted as 606365 after the fix
+n/a (sbatch rejected),REJECTED,"QOSMaxSubmitJobPerUserLimit - stingy sets MaxSubmit=1, MaxJobsPU=1, and --array=1-2 counts as two submissions",none - submission never accepted,each A1 horizon submitted as its own single-element array and awaited before the next
+n/a (scp),FAILED,"Disk quota exceeded on /gpfs1/scratch (413 GB used against a 300 GB user quota, grace expired)",none - only the upload failed,all outputs relocated to /gpfs1/home/sychan552/; scratch used read-only for the author checkout

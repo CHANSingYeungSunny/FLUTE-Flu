@@ -1,0 +1,9 @@
+model,family,ilitotal_full_mse_z_4L_mean
+gpt2_miflu,llm,1.608321901048883
+nlinear,non_llm,2.3328584641004797
+dlinear,non_llm,2.5263638986018204
+patchtst,non_llm,2.544483567244538
+timecma_llm,llm,2.6349298219161916
+qwen_time_llm,llm,2.6579046943715796
+itransformer,non_llm,2.877298763139979
+calf_llm,llm,3.676629015351305

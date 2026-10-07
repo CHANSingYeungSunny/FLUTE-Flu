@@ -1,0 +1,73 @@
+{
+  "n_cells": 116,
+  "n_unique_keys": 116,
+  "duplicated_keys": [],
+  "models_present": [
+    "calf_llm",
+    "dlinear",
+    "itransformer",
+    "last_value_naive",
+    "miflu",
+    "nlinear",
+    "notext",
+    "patchtst",
+    "qwen_time_llm",
+    "seasonal_naive",
+    "timecma_llm"
+  ],
+  "models_expected_but_absent": [],
+  "seeds_by_model": {
+    "last_value_naive": [
+      42
+    ],
+    "miflu": [
+      42,
+      43,
+      44
+    ],
+    "nlinear": [
+      42,
+      43,
+      44
+    ],
+    "notext": [
+      42,
+      43,
+      44
+    ],
+    "seasonal_naive": [
+      42
+    ],
+    "calf_llm": [
+      42,
+      43,
+      44
+    ],
+    "dlinear": [
+      42,
+      43,
+      44
+    ],
+    "itransformer": [
+      42,
+      43,
+      44
+    ],
+    "patchtst": [
+      42,
+      43,
+      44
+    ],
+    "qwen_time_llm": [
+      42,
+      43,
+      44
+    ],
+    "timecma_llm": [
+      42,
+      43,
+      44
+    ]
+  },
+  "integrity_errors": []
+}

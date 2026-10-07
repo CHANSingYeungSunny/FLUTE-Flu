@@ -1,0 +1,24 @@
+{
+  "note": "Configs for the two NEW runners required by A2 that do not yet exist as entry points on the 966-row author data. Both are BLOCKED_PENDING_PATCH.",
+  "nlinear": {
+    "model": "NLinear (Zeng et al., AAAI 2023) — subtract last observed input value, one linear map T->L per variable (channel-agnostic), add back",
+    "reference_impl": "scripts/innovation/backbones/dlinear.py class NLinear (verified against Zeng et al. in its own provenance block)",
+    "horizons": [24, 36, 48, 60],
+    "seeds": [42, 43, 44],
+    "T": 104,
+    "optimizer": "adam, lr 5e-4 (matched to MIFlu for a fair control; assumption label: baseline-relative lr not disclosed)",
+    "epochs": 20,
+    "batch": 16,
+    "selection": "val-MSE, seven-variable z-space",
+    "gap_in_harness": "NLinear currently runs ONLY via scripts/innovation/clean_runner.py, which is bound to the frozen 598-spec 1025-row registry and its own metric code. It cannot run on the author 966-row data under the train_miflu protocol without a new runner."
+  },
+  "naive": {
+    "deterministic": true,
+    "last_value_naive": "repeat the last observed input value over the whole horizon, per variable",
+    "seasonal_naive": "value 52 ROWS before each target week, per variable; clamp to window edge and record seasonal_reference_clamped provenance",
+    "horizons": [24, 36, 48, 60],
+    "seeds_note": "deterministic; computed once per horizon and mapped to seed cells (stochastic_seed_applicable=false)",
+    "seasonal_lag_weeks": 52,
+    "calendar_validity_on_966": "lag-52 by ROW == 52 calendar weeks everywhere (966-row data is dense; no gap)"
+  }
+}

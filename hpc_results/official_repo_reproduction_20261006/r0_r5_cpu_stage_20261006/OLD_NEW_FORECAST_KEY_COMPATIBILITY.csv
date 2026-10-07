@@ -1,0 +1,8 @@
+axis,historical,r1b,identical,consequence
+origins,derived from the 1025-row window rule,strict containment on 966 rows,NO,an author-966 prediction cannot be scored on historical origins
+leads,1..L,1..L,YES,
+feature_keys,7 channels,7 channels,YES,
+horizon_set,24/36/48/60,24/36/48/60,YES,
+prediction_format,test_predictions.csv per run,"NPZ (pred, target, target_start_row, ...)",NO,format conversion needed if re-scoring
+scoring_implementation,clean_metrics.py,independent scorer,NO,must use ONE scorer for both sides
+OVERALL,,,NO,DIRECT_REPLACEMENT_INVALID for Stage C/D; MIFLU_RETRAIN_ON_OLD_CONTRACT_REQUIRED

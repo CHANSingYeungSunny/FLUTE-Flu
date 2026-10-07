@@ -1,0 +1,28 @@
+{
+  "generated_utc": "2026-09-18T07:33:54Z",
+  "defect": "D12",
+  "applied_now": true,
+  "classification": "BEHAVIOR_NEUTRAL_GATE_VALIDATOR_SCHEMA_ALIGNMENT_FIX",
+  "file": "scripts/innovation/clean_gate.py",
+  "scientific_runtime_modified": false,
+  "clean_runner_sha256_unchanged": true,
+  "pre_repair_sha256": "acd57d8250117f4e118cb764cd78e0d53b8bc377f62131e80ec22d45ad8e3ece",
+  "post_repair_sha256": "2073d722a875d42f28eb318a4d57be3875c7940621daf0a81004ca95de0433ae",
+  "diff_bytes": 6825,
+  "diff_sha256": "2cbba8a9260341ca37007d2f056cc0bc53c6e82a24663843a698e1538ffc9ade",
+  "lines_added": 103,
+  "lines_removed": 11,
+  "patch_results": [
+    "A_arm_aware_schemas: already applied",
+    "B_manifest_driven_checkpoint: already applied",
+    "C_semantic_baseline: already applied"
+  ],
+  "gate_harness_aggregate": "e6987aad8112e92ed24e09276b7ada800ad676acc65d5e137b092af60f24168e",
+  "gate_harness_files": [
+    "scripts/innovation/clean_gate.py"
+  ],
+  "scientific_source_aggregate": "15efccd3a087d9f978feb59044b1f5b16cf1ad1b971e19774f8f2caafee0d4ad",
+  "note": "scientific_source_aggregate excludes the Gate harness, so it must be identical to v3.11's (science unchanged).",
+  "v311_scientific_source_aggregate": "67a3d80666941bba55f765409c0e671983811ad53c9b7a0c07a124b1ae0c7b98",
+  "formal_rows_submitted": "0/598"
+}

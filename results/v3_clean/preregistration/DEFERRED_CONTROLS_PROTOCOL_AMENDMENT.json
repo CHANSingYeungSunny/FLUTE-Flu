@@ -1,0 +1,272 @@
+{
+  "amendment_id": "DEFERRED_CONTROLS_PROTOCOL_AMENDMENT_2026-09-21",
+  "generated_utc": "2026-09-21T00:52:00Z",
+  "status": "AMENDMENT_RECORDED_HUMAN_AUTHORIZED",
+  "authority": "explicit human-authorized protocol amendment resolving the two deterministic defects exposed by the pre-execution intervention-mechanism verification",
+  "append_only": true,
+  "no_new_scientific_result": true,
+  "supersedes": "results/v3_clean/preregistration/DEFERRED_CONTROLS_EXECUTION_STOP.json",
+  "references": {
+    "authoritative_binding": "results/v3_clean/final/deferred_parent_binding.json",
+    "binding_rule_sha256": "d0f708796e353017f1212ce4e2a4244d47582937117116049da2e0da5dae6b13",
+    "selection_rule_sha256": "afa7a780010aeed20fd7a2d361300ae2ce4411baeed1d458581538d3df359325",
+    "wiring_v2": "results/v3_clean/implementation/ablation_control_wiring_v2.json",
+    "frozen_registry": "results/v3_clean/runs/complete_specs_598.json"
+  },
+  "test_holdout_isolation": {
+    "test_access": 0,
+    "holdout_access": 0,
+    "no_post_hoc_selection": true,
+    "selection_rule_never_mutated": true,
+    "binding_rule_never_mutated": true,
+    "frozen_598_matrix_never_edited": true
+  },
+
+  "defect_A": {
+    "title": "12 of 18 deferred controls are exact duplicates of already-ACCEPTED Wave-1 controls",
+    "resolution": "amendment_A: re-scope the 12 zero_text/shuffled_text Wave-2 rows as exact equivalents of the 12 accepted Wave-1 negative_control rows (do NOT silently delete; do NOT re-run as independent).",
+    "duplicate_basis": "for each row the tuple (control, parent_model=gpt2_miflu, horizon, seed) is IDENTICAL between the accepted Wave-1 row and the deferred Wave-2 row. Wave-1 fixed-parent rows used parent_model=gpt2_miflu; the deferred rows resolved BEST_VALIDATION_LLM_AFTER_SCREENING -> gpt2_miflu, collapsing the two parent buckets into one."
+  },
+
+  "defect_B": {
+    "title": "6 llm_removed_or_alignment_only controls are un-executable on gpt2_miflu and scientifically meaningless there",
+    "resolution": "amendment_B: re-bind the 6 llm_removed_or_alignment_only controls to timecma_llm (a lawful member of the control's applies_to set), with an explicit decision rationale. Register the variant in the runner and fix the TimeCMAInspired 'removed' bypass so the control executes."
+  },
+
+  "amendment_A_equivalence_mapping": [
+    {
+      "wave2_run_key": "negative_control__zero_text__L24__seed42__w2",
+      "wave2_order": 581,
+      "equivalent_wave1_run_key": "negative_control__zero_text__L24__seed42__w1",
+      "wave1_job_id": "574528",
+      "wave1_compact_sha256": "57d62485a75e653471a30d552a8698bbcc6af65c226b94092b7d4ed1604389dd",
+      "wave1_source_full_checkpoint_sha256": "42734b2e7bd87dc80529655d14eb118d7fd1edd9e7c07a01221c9510fe20edd7",
+      "wave1_canonical_tensor_sha256": "6b6699452cf3d892e2f0cf7e55e8dad97085941247ac35b6da176add59b093ae",
+      "equivalence_basis": "control=zero_text, parent_model=gpt2_miflu, horizon=24, seed=42"
+    },
+    {
+      "wave2_run_key": "negative_control__zero_text__L24__seed43__w2",
+      "wave2_order": 582,
+      "equivalent_wave1_run_key": "negative_control__zero_text__L24__seed43__w1",
+      "wave1_job_id": "574533",
+      "wave1_compact_sha256": "b8c2e3131943b8ab6d3f210f53f3bf00e6374ebf62f838039d15cb0c70ad990c",
+      "wave1_source_full_checkpoint_sha256": "db76f9fdc877cb96f634bfa4cfe0fbb2750d347bdfc8054b641f655203f02555",
+      "wave1_canonical_tensor_sha256": "f448dac02db5bfecac8a759c9bec9304ee81c59c849171b4d2aed239458ea4a2",
+      "equivalence_basis": "control=zero_text, parent_model=gpt2_miflu, horizon=24, seed=43"
+    },
+    {
+      "wave2_run_key": "negative_control__zero_text__L24__seed44__w2",
+      "wave2_order": 583,
+      "equivalent_wave1_run_key": "negative_control__zero_text__L24__seed44__w1",
+      "wave1_job_id": "574571",
+      "wave1_compact_sha256": "c02f5ba7be2c6af338a67c1f8a01f9e449ea2bdc2145e4d6d04cf2482a5d3eca",
+      "wave1_source_full_checkpoint_sha256": "01f5b4a5ecbdaf17edb29589a3fa4e9bf6d042bde5b4da9db4a3b5414b81cadb",
+      "wave1_canonical_tensor_sha256": "0739cff094d8c87352c9b92b55c02f74d571581e0e94ce4ab490d3a8e45e9217",
+      "equivalence_basis": "control=zero_text, parent_model=gpt2_miflu, horizon=24, seed=44"
+    },
+    {
+      "wave2_run_key": "negative_control__zero_text__L60__seed42__w2",
+      "wave2_order": 584,
+      "equivalent_wave1_run_key": "negative_control__zero_text__L60__seed42__w1",
+      "wave1_job_id": "574578",
+      "wave1_compact_sha256": "9aae79e0dec29e7d35e3ebbea0bf194d102a5e0e3a92b84fd2b518aa26e12b21",
+      "wave1_source_full_checkpoint_sha256": "d8d6a7300e3cb5b90240179114aa3a7fba1e437d865beeb4a366811985659f9c",
+      "wave1_canonical_tensor_sha256": "83933c21a54e8f98587d508eec9c6d02664f6bda61d6b035eeca3e21c002c600",
+      "equivalence_basis": "control=zero_text, parent_model=gpt2_miflu, horizon=60, seed=42"
+    },
+    {
+      "wave2_run_key": "negative_control__zero_text__L60__seed43__w2",
+      "wave2_order": 585,
+      "equivalent_wave1_run_key": "negative_control__zero_text__L60__seed43__w1",
+      "wave1_job_id": "574598",
+      "wave1_compact_sha256": "25933431459efad3b9efdfb7b4b831bdcf6207c3b9e8cc9a944ca55dc341aad2",
+      "wave1_source_full_checkpoint_sha256": "b83f1a57819d2514b56a9eb63581db0568c32cf192fb342658fbc186c9188049",
+      "wave1_canonical_tensor_sha256": "b8cd0437fa77bf33dbc237e20177e6a3076ece346baded249df79c6c36ec5db8",
+      "equivalence_basis": "control=zero_text, parent_model=gpt2_miflu, horizon=60, seed=43"
+    },
+    {
+      "wave2_run_key": "negative_control__zero_text__L60__seed44__w2",
+      "wave2_order": 586,
+      "equivalent_wave1_run_key": "negative_control__zero_text__L60__seed44__w1",
+      "wave1_job_id": "574617",
+      "wave1_compact_sha256": "d4453c38c0cc9630f34dc310712c7998145aa0a061e7ab27cc7a141543ac5f04",
+      "wave1_source_full_checkpoint_sha256": "e7caa8f5d09e7221072ea0917911474fb623b91ee96e19f5cc83389ac1ec51e7",
+      "wave1_canonical_tensor_sha256": "04f7a93bced87eb53adc79d90de2e39d4b9f55a45a78fcbc6294571ebb20dadc",
+      "equivalence_basis": "control=zero_text, parent_model=gpt2_miflu, horizon=60, seed=44"
+    },
+    {
+      "wave2_run_key": "negative_control__shuffled_text__L24__seed42__w2",
+      "wave2_order": 587,
+      "equivalent_wave1_run_key": "negative_control__shuffled_text__L24__seed42__w1",
+      "wave1_job_id": "574635",
+      "wave1_compact_sha256": "9295f48c8fc5ba210c334737cf26a98aa48a7c7d2e8b40dec85b5a4aee618b97",
+      "wave1_source_full_checkpoint_sha256": "aba96805daa032b355d80c3edca18e2ca15c337c85473d841c6452cde1d651ae",
+      "wave1_canonical_tensor_sha256": "74925e0b9e4128fa3034395248a6abc679b5fd2f1ff2ddbc209c13579f479bc0",
+      "equivalence_basis": "control=shuffled_text, parent_model=gpt2_miflu, horizon=24, seed=42"
+    },
+    {
+      "wave2_run_key": "negative_control__shuffled_text__L24__seed43__w2",
+      "wave2_order": 588,
+      "equivalent_wave1_run_key": "negative_control__shuffled_text__L24__seed43__w1",
+      "wave1_job_id": "574647",
+      "wave1_compact_sha256": "4ab80bb7dfd7b73974b8dd9b9b9f243454d310ea933a6a0ff53b90b380966800",
+      "wave1_source_full_checkpoint_sha256": "3f1b059e965a95c4e6d023857ee1ce51e19f6941243ff57f469f8d3a79a6015d",
+      "wave1_canonical_tensor_sha256": "fd5cc1c4694d390a0388aaedbf0253bc2fb38fd5847bfad14fff73e6fd45699c",
+      "equivalence_basis": "control=shuffled_text, parent_model=gpt2_miflu, horizon=24, seed=43"
+    },
+    {
+      "wave2_run_key": "negative_control__shuffled_text__L24__seed44__w2",
+      "wave2_order": 589,
+      "equivalent_wave1_run_key": "negative_control__shuffled_text__L24__seed44__w1",
+      "wave1_job_id": "574685",
+      "wave1_compact_sha256": "cb40598c214774d3e3de9a4284330001579af5b7bd6f673bbb3f5e563596032c",
+      "wave1_source_full_checkpoint_sha256": "d40b8d0849a8f0e33d538029d74e7284b406fefed5d6ed11131c92d87410a437",
+      "wave1_canonical_tensor_sha256": "9a55a66fdcc3bce5771a6e3ebdd4479baf64b8a230743c83d8c7be47f1c038a3",
+      "equivalence_basis": "control=shuffled_text, parent_model=gpt2_miflu, horizon=24, seed=44"
+    },
+    {
+      "wave2_run_key": "negative_control__shuffled_text__L60__seed42__w2",
+      "wave2_order": 590,
+      "equivalent_wave1_run_key": "negative_control__shuffled_text__L60__seed42__w1",
+      "wave1_job_id": "574690",
+      "wave1_compact_sha256": "eebdb4cc16ec2bb82807df3c200e15e17180afdcb28859f75c206f0b96e4baae",
+      "wave1_source_full_checkpoint_sha256": "4714849c14e74cf1b3bb0b2095d42db60447bea3311ed2d477a44b8f62f0694a",
+      "wave1_canonical_tensor_sha256": "d21f4956503c5095e2bd206559a8541a0573147617e94d60abe4818236e931f1",
+      "equivalence_basis": "control=shuffled_text, parent_model=gpt2_miflu, horizon=60, seed=42"
+    },
+    {
+      "wave2_run_key": "negative_control__shuffled_text__L60__seed43__w2",
+      "wave2_order": 591,
+      "equivalent_wave1_run_key": "negative_control__shuffled_text__L60__seed43__w1",
+      "wave1_job_id": "574708",
+      "wave1_compact_sha256": "c1f8ee102aba8359a3e0ff9156579b8226d77ae764c4e18f5ea219faf17dd8af",
+      "wave1_source_full_checkpoint_sha256": "e92f5d717d4f0f9f06d28c0642bf7b6db8a636fd5f1b539bcf4c980b0491124a",
+      "wave1_canonical_tensor_sha256": "6dfc4cee20c5fa42270ab41ab37185f4c7554d683bb774da8bafbdff9b9745e9",
+      "equivalence_basis": "control=shuffled_text, parent_model=gpt2_miflu, horizon=60, seed=43"
+    },
+    {
+      "wave2_run_key": "negative_control__shuffled_text__L60__seed44__w2",
+      "wave2_order": 592,
+      "equivalent_wave1_run_key": "negative_control__shuffled_text__L60__seed44__w1",
+      "wave1_job_id": "574714",
+      "wave1_compact_sha256": "4aafbd3bd0d93c9e1f5da0fbba51336ded5964249af0447c25b9f6063e911384",
+      "wave1_source_full_checkpoint_sha256": "97bf8cf88b9c3f9f722ed76d0395cb7da7c6284d2154a487c23a14547486f88d",
+      "wave1_canonical_tensor_sha256": "400ece5d5746556ed39cd5e6468101278c531ed19b3419b06d272262e7909ed1",
+      "equivalence_basis": "control=shuffled_text, parent_model=gpt2_miflu, horizon=60, seed=44"
+    }
+  ],
+
+  "amendment_B_rebind_controls": [
+    {
+      "run_key": "negative_control__llm_removed_or_alignment_only__L24__seed42__w2",
+      "order": 593,
+      "control": "llm_removed_or_alignment_only",
+      "horizon": 24,
+      "seed": 42,
+      "rebound_parent_model": "timecma_llm",
+      "intervention": "text_mode=removed (bypass cross-modality retrieval branch; forecast from time-series branch alone)"
+    },
+    {
+      "run_key": "negative_control__llm_removed_or_alignment_only__L24__seed43__w2",
+      "order": 594,
+      "control": "llm_removed_or_alignment_only",
+      "horizon": 24,
+      "seed": 43,
+      "rebound_parent_model": "timecma_llm",
+      "intervention": "text_mode=removed"
+    },
+    {
+      "run_key": "negative_control__llm_removed_or_alignment_only__L24__seed44__w2",
+      "order": 595,
+      "control": "llm_removed_or_alignment_only",
+      "horizon": 24,
+      "seed": 44,
+      "rebound_parent_model": "timecma_llm",
+      "intervention": "text_mode=removed"
+    },
+    {
+      "run_key": "negative_control__llm_removed_or_alignment_only__L60__seed42__w2",
+      "order": 596,
+      "control": "llm_removed_or_alignment_only",
+      "horizon": 60,
+      "seed": 42,
+      "rebound_parent_model": "timecma_llm",
+      "intervention": "text_mode=removed"
+    },
+    {
+      "run_key": "negative_control__llm_removed_or_alignment_only__L60__seed43__w2",
+      "order": 597,
+      "control": "llm_removed_or_alignment_only",
+      "horizon": 60,
+      "seed": 43,
+      "rebound_parent_model": "timecma_llm",
+      "intervention": "text_mode=removed"
+    },
+    {
+      "run_key": "negative_control__llm_removed_or_alignment_only__L60__seed44__w2",
+      "order": 598,
+      "control": "llm_removed_or_alignment_only",
+      "horizon": 60,
+      "seed": 44,
+      "rebound_parent_model": "timecma_llm",
+      "intervention": "text_mode=removed"
+    }
+  ],
+
+  "rebind_decision_rationale": {
+    "control_semantics": "llm_removed_or_alignment_only removes the LLM/cross-modality branch and keeps only the numeric/alignment branch. It is meaningful only for backbones that superimpose an LLM branch on a separate numeric branch.",
+    "lawful_applies_to": ["calf_llm", "timecma_llm"],
+    "excluded_models": {
+      "gpt2_miflu": "backbone IS the LLM (GPT2); no independent numeric branch remains after removal",
+      "qwen_time_llm": "backbone IS the LLM (Qwen); no independent numeric branch remains after removal"
+    },
+    "parent_selection": "within the lawful applies_to set {calf_llm, timecma_llm}, apply the frozen paper-aligned selection rule (average_MSE_4L, seven-variable full-horizon z-space, lower is better), consistent with the deferred-parent binding rule's 'lowest average_MSE_4L becomes the parent' step.",
+    "candidate_average_mse_4l": {
+      "timecma_llm": 1.1814489108,
+      "calf_llm": 1.7648712774
+    },
+    "selected_parent": "timecma_llm",
+    "selection_source": "results/v3_clean/analysis/model_ranking.csv (verified by independent recomputation from results/v3_clean/analysis/primary_seed_level.csv)"
+  },
+
+  "implementation_changes": {
+    "purpose": "register the missing variant and make the already-specified 'removed' bypass actually executable on TimeCMAInspired. No scientific metric or selection rule is changed.",
+    "change_1": {
+      "file": "scripts/innovation/clean_runner.py",
+      "location": "VARIANTS dict (after shuffled_text)",
+      "addition": "\"llm_removed_or_alignment_only\": (\"timecma_llm\", \"none\", {\"text_mode\": \"removed\"}, {})",
+      "effect": "resolve_spec now maps the control to TimeCMAInspired with text_mode=removed and the no-op text encoder"
+    },
+    "change_2": {
+      "file": "scripts/innovation/backbones/llm_inspired.py",
+      "location": "TimeCMAInspired.forward",
+      "problem": "forward calls apply_text_mode(prompt_tokens, self.text_mode) at line 328 BEFORE the 'removed' bypass at line 330-332; apply_text_mode raises ValueError for 'removed'",
+      "fix": "short-circuit the text branch when self.text_mode == 'removed': return self.forecast_head(series_repr).reshape(...) immediately after computing series_repr, before encode_prompt/apply_text_mode"
+    },
+    "change_3": {
+      "file": "scripts/innovation/clean_runner.py",
+      "location": "load_registry",
+      "problem": "load_registry hard-codes the frozen registry path, so an append-only amended execution registry cannot be selected without editing the frozen matrix",
+      "fix": "honour the INNOVATION_REGISTRY_REL environment variable (default unchanged: results/v3_clean/runs/complete_specs_598.json) so the 6 rebound llm_removed rows resolve against the amended registry while the frozen 598 file stays byte-identical"
+    }
+  },
+
+  "execution_plan": {
+    "amendment_A_rows": 12,
+    "amendment_A_action": "mark accepted as exact equivalents of the 12 accepted Wave-1 rows (no new HPC jobs; reuse Wave-1 durable evidence + job ids)",
+    "amendment_B_rows": 6,
+    "amendment_B_action": "submit exactly 6 llm_removed_or_alignment_only rows on timecma_llm (L24/L60 x seed 42/43/44)",
+    "total_new_hpc_jobs": 6,
+    "order": "record amendment -> register variant -> fix forward -> rebuild amended execution registry (append-only) -> deploy -> submit 6"
+  },
+
+  "what_was_not_done": {
+    "frozen_598_matrix_edited": false,
+    "binding_rule_edited": false,
+    "selection_rule_edited": false,
+    "control_rows_deleted": false,
+    "deferred_rows_submitted_before_amendment": 0,
+    "test_or_holdout_accessed": false,
+    "champion_frozen": false
+  }
+}

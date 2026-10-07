@@ -1,0 +1,12 @@
+{
+  "contract": "ilitotal_full_horizon",
+  "channel": "ILITOTAL",
+  "channel_index": 4,
+  "horizon": 36,
+  "mse_z": 4.937442582678715,
+  "mae_z": 1.5226172086712753,
+  "mse_physical": 387013061.41401577,
+  "mae_physical": 13480.39183260299,
+  "n": 6120,
+  "note": "disease-specific secondary; never replaces the seven-variable paper-aligned selector"
+}

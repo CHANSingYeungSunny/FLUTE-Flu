@@ -1,0 +1,25 @@
+{
+  "paper_source": "MIFlu_paper.md, Sections V-A to V-C and Table V",
+  "canonical_local_sources": ["scripts/configs.py", "scripts/miflu_model.py", "scripts/textual_embedder.py", "scripts/train_miflu.py", "results/innovation/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T110754Z__1f6563f/split_manifest.json"],
+  "items": [
+    {"item":"dataset period","paper":"2002-2021","local":"epiweek 200201..202152, 1025 rows","classification":"EXACT_MATCH"},
+    {"item":"variable count","paper":7,"local":7,"classification":"EXACT_MATCH"},
+    {"item":"split","paper":"chronological 70:10:20","local":"train_end=717, val_end=819, test_end=1025","classification":"EXACT_MATCH"},
+    {"item":"horizons","paper":[24,36,48,60],"local":[24,36,48,60],"classification":"EXACT_MATCH"},
+    {"item":"repetitions","paper":10,"local":"formal v3 seeds 42..51","classification":"PROTOCOL_MATCH_WITH_LOCAL_REPRODUCIBILITY_CHOICE"},
+    {"item":"input window","paper":104,"local":104,"classification":"EXACT_MATCH"},
+    {"item":"patch length","paper":24,"local":24,"classification":"EXACT_MATCH"},
+    {"item":"patch stride","paper":2,"local":2,"classification":"EXACT_MATCH"},
+    {"item":"forecasting GPT2 layers","paper":"6 national","local":6,"classification":"EXACT_MATCH"},
+    {"item":"LoRA rank","paper":4,"local":4,"classification":"EXACT_MATCH"},
+    {"item":"output formulation","paper":"seven-variable National-Illness forecasting input/output; total national ILI is variable 5","local":"N=7 model output with ILITOTAL channel index 4; runner exports ILITOTAL metrics plus all-channel training output","classification":"PROTOCOL_MATCH_WITH_LOCAL_REPRODUCIBILITY_CHOICE"},
+    {"item":"national metrics","paper":"MSE/MAE after StandardScaler normalization","local":"z-space MSE/MAE primary; physical ILITOTAL MSE/MAE supplementary","classification":"EXACT_MATCH"},
+    {"item":"Table-V-style aggregation","paper":"mean over 10 repetitions for each horizon","local":"per-run metrics then seed aggregation; fixed-step 0-3 are separate supplementary exports and are never averaged across steps","classification":"PROTOCOL_MATCH_WITH_LOCAL_REPRODUCIBILITY_CHOICE"},
+    {"item":"prompt statistics","paper":"prompt min/max from training protocol","local":"train-only prompt statistics","classification":"EXACT_MATCH"}
+  ],
+  "resolved_questions": {
+    "does_local_model_forecast_all_seven_variables": "YES; the MIFlu model is N=7 and produces N x L output; ILITOTAL is the primary reported channel",
+    "are_table_v_metrics_only_ilitotal_or_all_output": "The paper's national metric equations are generic M-point metrics, while the local v3 protocol reports ILITOTAL primary channel metrics and retains the seven-channel output for training. This is a disclosed local reporting choice, not an unverified claim of exact Table-V aggregation over every channel."
+  },
+  "scientific_blocker": false
+}

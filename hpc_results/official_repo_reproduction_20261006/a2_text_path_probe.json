@@ -1,0 +1,83 @@
+{
+  "checkpoint": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\hpc_results\\checkpoints\\best_miflu_L24.pth",
+  "missing_keys": 12,
+  "unexpected_keys": 0,
+  "model_eval_mode": true,
+  "dropout_training": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "text_shape_L24": [
+    1,
+    369,
+    768
+  ],
+  "text_shape_L60": [
+    1,
+    369,
+    768
+  ],
+  "equal_length_available": true,
+  "variants": {
+    "original": [
+      1,
+      369,
+      768
+    ],
+    "different_prompt_same_length": [
+      1,
+      369,
+      768
+    ],
+    "row_permuted_same_multiset": [
+      1,
+      369,
+      768
+    ]
+  },
+  "same_shape_all_variants": true,
+  "input_shape": [
+    1,
+    7,
+    104
+  ],
+  "prediction_differences": {
+    "different_prompt_same_length": {
+      "max_abs_prediction_difference": 59.6875,
+      "mean_abs_prediction_difference": 3.618860960006714,
+      "n_differing_elements": 168,
+      "n_elements": 168
+    },
+    "row_permuted_same_multiset": {
+      "max_abs_prediction_difference": 6308.3125,
+      "mean_abs_prediction_difference": 526.1170654296875,
+      "n_differing_elements": 168,
+      "n_elements": 168
+    }
+  },
+  "gradients": {
+    "loss": 91809710080.0,
+    "text_embedding_grad_norm": 713007616.0,
+    "text_embedding_grad_max_abs": 87364416.0
+  },
+  "tolerance": 1e-06,
+  "verdict": "text_active",
+  "verdict_reason": "max|\u0394pred| over equal-length text swaps = 6.308312e+03 (tol 1.0e-06); |grad_text| = 713007616.0",
+  "scope": "A2 corrected reconstruction (miflu_model.py), which is the implementation the LLM-vs-non-LLM benchmark reports. This is NOT the author's released code - see TEXT_PATH_RESOLUTION.md for that, where the verdict was text_inert."
+}

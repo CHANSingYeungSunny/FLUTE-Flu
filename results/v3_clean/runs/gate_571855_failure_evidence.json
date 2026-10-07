@@ -1,0 +1,87 @@
+{
+  "generated_utc": "2026-09-19T03:05:00Z",
+  "event": "V3_CLEAN_WAVE1_FAILURE_REQUIRES_REVIEW",
+  "round": "CodeBuddy_MIFlu_v3_14_Reconcile_Gate_571855_Migrate_and_Resume_Wave1.md",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_clean8",
+  "runtime_version": "innov-v3.14-compact-input-normalization-fix",
+  "reconciliation_first": {
+    "squeue": "empty before any action",
+    "sacct_571855": "FAILED 1:0",
+    "note": "Gate 571855 was already terminal when reconciled; no second Gate was submitted"
+  },
+  "gate": {
+    "job_id": "571855",
+    "slurm_state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:26:14",
+    "node": "gpu-a100-04",
+    "n_passed": 15,
+    "n_paths": 19,
+    "all_passed": false
+  },
+  "root_cause": {
+    "id": "D15",
+    "classification": "V314_GATE_ASSERTION_FROZEN_BACKBONE_EXCLUDED_IS_VACUOUSLY_FALSE_FOR_BACKBONE_FREE_SCHEMAS",
+    "location": "clean_gate.py verify_storage() -> res['passed'] requires rep['frozen_backbone_excluded']",
+    "detail": "The four non-LLM families (nlinear, dlinear, patchtst, itransformer) load NO pretrained backbone at all: their whole checkpoint IS their own trainable state (11,638 / 22,328 / 359,652 / 313,252 bytes). There is therefore no frozen backbone to exclude, so export_compact() reports frozen_backbone_excluded=False by definition. The Gate asserted that flag must be True, so these four rows failed.",
+    "scientific_impact": "NONE",
+    "defect_owner": "my v3.13/v3.14 Gate assertion, not the compact design and not the runtime"
+  },
+  "evidence_that_compact_works_on_the_failed_rows": {
+    "reconstruction_exact": true,
+    "restoration_exact": true,
+    "n_keys_unequal": 0,
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "atomic_publish_ok": true,
+    "contained": true,
+    "source_vs_compact_bytes": {
+      "nlinear": [11638, 10224],
+      "dlinear": [22328, 20480],
+      "patchtst": [359652, 351704],
+      "itransformer": [313252, 305376]
+    },
+    "interpretation": "compression ratio ~1.0-1.14 is CORRECT here: with no frozen backbone there is nothing to strip; the compact file is reconstruction-complete and verified bit-exact"
+  },
+  "failed_rows": [
+    "primary__nlinear__L24__seed42__w1",
+    "primary__dlinear__L24__seed42__w1",
+    "primary__patchtst__L24__seed42__w1",
+    "primary__itransformer__L24__seed42__w1"
+  ],
+  "rows_that_passed_including_all_frozen_backbone_families": [
+    "primary__gpt2_miflu (x79.45)",
+    "primary__qwen_time_llm",
+    "primary__calf_llm",
+    "primary__timecma_llm",
+    "all 6 ablation schemas",
+    "both negative controls",
+    "both baselines (no-checkpoint path)",
+    "deferred_guard 18/18"
+  ],
+  "independent_confirmation": {
+    "job_id": "571631",
+    "result": "the same four families were already proven with frozen_excluded=False and reconstruction/restoration exact; the aggregate table explicitly recorded frozen_excluded=False for them",
+    "meaning": "the D14 fix worked (run-key resolution); only the Gate predicate is wrong"
+  },
+  "minimal_fix_proposed": [
+    "replace the predicate `frozen_backbone_excluded` with `no_frozen_backbone_duplication`",
+    "structural (non-heuristic) determination: a schema loads a pretrained backbone iff its backbone kwargs contain load_backbone / model_id",
+    "no_frozen_backbone_duplication = (not loads_pretrained_backbone) OR (dropped_frozen_bytes > 0)",
+    "export_compact() should expose both `loads_pretrained_backbone` and `dropped_frozen_bytes`",
+    "no scientific change"
+  ],
+  "required_next_authorization": [
+    "create a version later than v3.14, rebuild bundle A/B, deploy to a NEW never-used isolated root, run exactly one fresh Gate",
+    "v3_clean8 must NOT be patched in place"
+  ],
+  "actions_deliberately_not_taken": {
+    "migrated_204_accepted_rows": false,
+    "repair_accepted_571472": false,
+    "deleted_quarantine": false,
+    "started_controller": false,
+    "submitted_a_second_gate": false,
+    "modified_v3_14_or_v3_clean8": false
+  },
+  "isolation": {"test_access_count": 0, "holdout_access_count": 0, "archive_isolated": true}
+}

@@ -1,0 +1,14 @@
+utc=2026-10-05T21:27:05Z
+slurm_job=606412_3
+author_commit=6ed210150b8819313947cf607eb1821c87b1bee3
+author_source_modified=1 non-pyc entries
+data_sha256=2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+text_asset_sha256=fe98826fef910fd3e0316b67b823274b7991084db67524125ac0c4eda29f4ac0
+horizon=60 itr=1 multimodal=1 PEFT=1 lora_r=4
+epochs=20 epochs_provenance=RECONSTRUCTED_paper_discloses_no_value
+learning_rate=5e-4 lr_provenance=RECONSTRUCTED_paper_discloses_no_value
+batch_size=16 batch_provenance=released_default_and_A2_value
+itr_provenance=paper_says_mean_of_10_repetitions_author_harness_implements_itr
+known_defects_kept=Test-selects-checkpoint; early_stopping_call_commented_out; freeze_is_noop
+wall_seconds=942
+author_exit_code=1

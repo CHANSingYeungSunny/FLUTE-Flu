@@ -1,0 +1,39 @@
+# D7 model-free regression tests
+
+Generated 2026-09-16T21:31:17Z.
+
+- command: `python -m pytest tests/innovation -q` (exit 1)
+- unexpected v3-relevant failures: **1**
+- known stale legacy failures (NOT attributable to D7): 2
+
+No real model, dataset, Torch/CUDA workload or network access was used.
+
+## Tail
+
+```
+E             + innov-v3.4-screening-artifact-contract
+
+tests\innovation\test_script_safety.py:212: AssertionError
+============================== warnings summary ===============================
+tests/innovation/test_d5_asset_resolution.py::test_qwen_descriptor_fields
+  C:\Users\Asus\AppData\Roaming\Python\Python39\site-packages\tensorflow\python\framework\dtypes.py:246: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+    np.bool8: (False, True),
+
+tests/innovation/test_gpt2_control_repro.py::test_gpt2_adapter_matches_existing_miflu
+tests/innovation/test_gpt2_control_repro.py::test_gpt2_adapter_matches_existing_miflu
+tests/innovation/test_pipeline_regression_endtoend.py::test_pipeline_regression_endtoend
+tests/innovation/test_pipeline_regression_endtoend.py::test_pipeline_regression_endtoend
+  C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib\site-packages\huggingface_hub\file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/innovation/test_metadata_chain.py::test_pilot_specs_carry_every_governance_field
+FAILED tests/innovation/test_metadata_chain.py::test_ordinary_runs_create_no_test_artifacts_and_seal_holds
+FAILED tests/innovation/test_script_safety.py::test_eight_pilots_remain_ineligible
+3 failed, 139 passed, 2 skipped, 5 warnings in 54.75s
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib\site-packages\pytest_asyncio\plugin.py:252: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+```

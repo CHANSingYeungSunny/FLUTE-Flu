@@ -1,0 +1,85 @@
+{
+  "generated_utc": "2026-09-14T18:05:00Z",
+  "source_of_truth": "hpc_scripts/pilot_specs.json (deployed copy inside the isolated root)",
+  "expected_pilot_count": 4,
+  "observed_pilot_count": 4,
+  "model_keys_unmodified": true,
+  "required_metadata": {
+    "experiment_stage": "pilot",
+    "selection_eligible": false,
+    "test_access_allowed": false,
+    "horizon": 24,
+    "seed": 42,
+    "protocol_version": "innov-v2.0",
+    "implementation_source_version": "innov-v2.1",
+    "source_snapshot_sha256": "dc7ee9649c8d840a0453c9728b417059e5bc86fa7d859f224b5e3a67d43c07b4"
+  },
+  "pilots": [
+    {
+      "model_key": "gpt2_miflu",
+      "requested_display_label": "MIFlu GPT-2 control",
+      "recorded_display_name": "MIFlu (IEEE JBHI 2025) — exact adapter",
+      "architecture_fidelity": "REFERENCE_FAITHFUL",
+      "display_label_semantically_equivalent": true,
+      "display_label_byte_identical": false,
+      "spec": {"model": "gpt2_miflu", "text_encoder": "gpt2", "fusion": "concat_projection", "horizon": 24, "seed": 42},
+      "field_presence": {"experiment_stage": false, "selection_eligible": true, "test_access_allowed": false, "horizon": true, "seed": true, "protocol_version": false, "implementation_source_version": true, "source_snapshot_sha256": true}
+    },
+    {
+      "model_key": "dlinear",
+      "requested_display_label": "DLinear",
+      "recorded_display_name": "DLinear (Zeng et al., AAAI 2023)",
+      "architecture_fidelity": "REFERENCE_FAITHFUL",
+      "display_label_semantically_equivalent": true,
+      "display_label_byte_identical": false,
+      "spec": {"model": "dlinear", "text_encoder": "none", "fusion": "identity", "horizon": 24, "seed": 42},
+      "field_presence": {"experiment_stage": false, "selection_eligible": true, "test_access_allowed": false, "horizon": true, "seed": true, "protocol_version": false, "implementation_source_version": true, "source_snapshot_sha256": true}
+    },
+    {
+      "model_key": "patchtst",
+      "requested_display_label": "PatchTST-inspired",
+      "recorded_display_name": "PatchTST-inspired (supervised, reduced-capacity re-implementation)",
+      "architecture_fidelity": "INSPIRED_SIMPLIFICATION",
+      "display_label_semantically_equivalent": true,
+      "display_label_byte_identical": false,
+      "spec": {"model": "patchtst", "text_encoder": "none", "fusion": "identity", "horizon": 24, "seed": 42},
+      "field_presence": {"experiment_stage": false, "selection_eligible": true, "test_access_allowed": false, "horizon": true, "seed": true, "protocol_version": false, "implementation_source_version": true, "source_snapshot_sha256": true}
+    },
+    {
+      "model_key": "itransformer",
+      "requested_display_label": "iTransformer-aligned",
+      "recorded_display_name": "iTransformer (Liu et al., ICLR 2024) — aligned, with disclosed deviations",
+      "architecture_fidelity": "REFERENCE_ALIGNED_WITH_DISCLOSED_DEVIATIONS",
+      "display_label_semantically_equivalent": true,
+      "display_label_byte_identical": false,
+      "spec": {"model": "itransformer", "text_encoder": "none", "fusion": "identity", "horizon": 24, "seed": 42},
+      "field_presence": {"experiment_stage": false, "selection_eligible": true, "test_access_allowed": false, "horizon": true, "seed": true, "protocol_version": false, "implementation_source_version": true, "source_snapshot_sha256": true}
+    }
+  ],
+  "fidelity_requirement_met": true,
+  "bash_n_results": {
+    "hpc_scripts/pilot_gpt2_miflu_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_dlinear_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_patchtst_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_itransformer_L24_seed42.sh": "ok",
+    "hpc_scripts/innovation_worker.sh": "ok"
+  },
+  "not_executed": true,
+  "deficiencies": [
+    {
+      "id": "D1_pilot_spec_metadata",
+      "severity": "metadata_gap",
+      "missing_fields_per_spec": ["experiment_stage", "test_access_allowed", "protocol_version"],
+      "where": "hpc_scripts/pilot_specs.json (per-spec objects); the top-level object carries scientific_protocol_version but no per-spec protocol_version",
+      "runtime_mitigation": "the pilot scripts pass --experiment-stage pilot, so the RUN's run_status.json will carry experiment_stage=pilot and selection_eligible=false at execution time; test_access_allowed has no runtime field today",
+      "remediation": "emit these fields from scripts/innovation/hpc_specs.py, then re-run the v2.1 source cascade (snapshot rebuild + manifest/pilot-spec update + gate/checklist regeneration) and re-deploy; this is a FROZEN-SOURCE change and requires explicit authorization",
+      "applied_this_turn": false
+    },
+    {
+      "id": "D2_display_label_strings",
+      "severity": "cosmetic",
+      "detail": "recorded display names are semantically equivalent to the requested labels but not byte-identical (e.g. 'DLinear (Zeng et al., AAAI 2023)' vs 'DLinear')",
+      "applied_this_turn": false
+    }
+  ]
+}

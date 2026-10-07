@@ -1,0 +1,29 @@
+{
+  "gpu_jobs": 12,
+  "gpu_hours_total": 1.5083,
+  "cpu_scoring_jobs": 2,
+  "all_rc_zero": true,
+  "rc_values": [
+    0
+  ],
+  "storage": {
+    "command": "mmlsquota --block-size=G",
+    "raw": "                         Block Limits                                    |     File Limits\nFilesystem type             GB      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks\nhome       USR              31         50        100          1     none |    92027       0        0       80     none \nscratch    USR             285        300       1024          0     none |    45945       0        0        0     none \n",
+    "home": {
+      "used_GB": 31,
+      "soft_quota_GB": 50,
+      "hard_limit_GB": 100,
+      "grace": "none",
+      "headroom_to_soft_GB": 19,
+      "headroom_to_hard_GB": 69
+    },
+    "scratch": {
+      "used_GB": 285,
+      "soft_quota_GB": 300,
+      "hard_limit_GB": 1024,
+      "grace": "none",
+      "headroom_to_soft_GB": 15,
+      "headroom_to_hard_GB": 739
+    }
+  }
+}

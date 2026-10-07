@@ -1,0 +1,154 @@
+[2026-09-17 05:51:09] controller start: total=48 root=/scratch/sychan552/innovation_deploy_root_v3_5
+sbatch: error: Unable to open file hpc_scripts/v3_screening/screening_nlinear_L24_seed42.sh
+[2026-09-17 05:51:09] transient failure on screening_nlinear_L24_seed42.sh (SUBMIT_FAILED); one retry
+sbatch: error: Unable to open file hpc_scripts/v3_screening/screening_nlinear_L24_seed42.sh
+[2026-09-17 05:53:09] controller start: total=48 root=/scratch/sychan552/innovation_deploy_root_v3_5
+sbatch: error: Unable to open file hpc_scripts/v3_screening/screening_nlinear_L24_seed42.sh
+[2026-09-17 05:53:09] transient failure on screening_nlinear_L24_seed42.sh (SUBMIT_FAILED); one retry
+sbatch: error: Unable to open file hpc_scripts/v3_screening/screening_nlinear_L24_seed42.sh
+[2026-09-17 05:56:16] controller start: total=48 root=/scratch/sychan552/innovation_deploy_root_v3_5
+[2026-09-17 05:56:16] submitted screening_nlinear_L24_seed42 job=566051 attempt=1
+[2026-09-17 05:56:56] terminal screening_nlinear_L24_seed42 job=566051 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 05:56:56] ACCEPTED screening_nlinear_L24_seed42 (1/48) durable_files=21
+[2026-09-17 05:57:02] submitted screening_nlinear_L24_seed43 job=566052 attempt=1
+[2026-09-17 05:57:42] terminal screening_nlinear_L24_seed43 job=566052 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 05:57:42] ACCEPTED screening_nlinear_L24_seed43 (2/48) durable_files=21
+[2026-09-17 05:57:47] submitted screening_nlinear_L24_seed44 job=566053 attempt=1
+[2026-09-17 05:58:28] terminal screening_nlinear_L24_seed44 job=566053 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 05:58:28] ACCEPTED screening_nlinear_L24_seed44 (3/48) durable_files=21
+[2026-09-17 05:58:33] submitted screening_nlinear_L60_seed42 job=566054 attempt=1
+[2026-09-17 05:59:14] terminal screening_nlinear_L60_seed42 job=566054 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 05:59:14] ACCEPTED screening_nlinear_L60_seed42 (4/48) durable_files=21
+[2026-09-17 05:59:19] submitted screening_nlinear_L60_seed43 job=566055 attempt=1
+[2026-09-17 06:00:00] terminal screening_nlinear_L60_seed43 job=566055 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:00:00] ACCEPTED screening_nlinear_L60_seed43 (5/48) durable_files=21
+[2026-09-17 06:00:05] submitted screening_nlinear_L60_seed44 job=566056 attempt=1
+[2026-09-17 06:00:25] terminal screening_nlinear_L60_seed44 job=566056 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:00:25] ACCEPTED screening_nlinear_L60_seed44 (6/48) durable_files=21
+[2026-09-17 06:00:30] submitted screening_dlinear_L24_seed42 job=566057 attempt=1
+[2026-09-17 06:01:11] terminal screening_dlinear_L24_seed42 job=566057 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:01:11] ACCEPTED screening_dlinear_L24_seed42 (7/48) durable_files=21
+[2026-09-17 06:01:16] submitted screening_dlinear_L24_seed43 job=566058 attempt=1
+[2026-09-17 06:01:37] terminal screening_dlinear_L24_seed43 job=566058 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:01:37] ACCEPTED screening_dlinear_L24_seed43 (8/48) durable_files=21
+[2026-09-17 06:01:42] submitted screening_dlinear_L24_seed44 job=566059 attempt=1
+[2026-09-17 06:02:02] terminal screening_dlinear_L24_seed44 job=566059 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:02:03] ACCEPTED screening_dlinear_L24_seed44 (9/48) durable_files=21
+[2026-09-17 06:02:08] submitted screening_dlinear_L60_seed42 job=566060 attempt=1
+[2026-09-17 06:02:28] terminal screening_dlinear_L60_seed42 job=566060 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:02:28] ACCEPTED screening_dlinear_L60_seed42 (10/48) durable_files=21
+[2026-09-17 06:02:33] submitted screening_dlinear_L60_seed43 job=566062 attempt=1
+[2026-09-17 06:03:14] terminal screening_dlinear_L60_seed43 job=566062 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:03:14] ACCEPTED screening_dlinear_L60_seed43 (11/48) durable_files=21
+[2026-09-17 06:03:19] submitted screening_dlinear_L60_seed44 job=566063 attempt=1
+[2026-09-17 06:04:00] terminal screening_dlinear_L60_seed44 job=566063 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:04:00] ACCEPTED screening_dlinear_L60_seed44 (12/48) durable_files=21
+[2026-09-17 06:04:05] submitted screening_patchtst_L24_seed42 job=566064 attempt=1
+[2026-09-17 06:04:46] terminal screening_patchtst_L24_seed42 job=566064 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:04:46] ACCEPTED screening_patchtst_L24_seed42 (13/48) durable_files=21
+[2026-09-17 06:04:51] submitted screening_patchtst_L24_seed43 job=566065 attempt=1
+[2026-09-17 06:05:31] terminal screening_patchtst_L24_seed43 job=566065 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:05:31] ACCEPTED screening_patchtst_L24_seed43 (14/48) durable_files=21
+[2026-09-17 06:05:37] submitted screening_patchtst_L24_seed44 job=566066 attempt=1
+[2026-09-17 06:06:17] terminal screening_patchtst_L24_seed44 job=566066 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:06:17] ACCEPTED screening_patchtst_L24_seed44 (15/48) durable_files=21
+[2026-09-17 06:06:22] submitted screening_patchtst_L60_seed42 job=566067 attempt=1
+[2026-09-17 06:07:03] terminal screening_patchtst_L60_seed42 job=566067 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:07:03] ACCEPTED screening_patchtst_L60_seed42 (16/48) durable_files=21
+[2026-09-17 06:07:08] submitted screening_patchtst_L60_seed43 job=566068 attempt=1
+[2026-09-17 06:07:29] terminal screening_patchtst_L60_seed43 job=566068 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:07:29] ACCEPTED screening_patchtst_L60_seed43 (17/48) durable_files=21
+[2026-09-17 06:07:34] submitted screening_patchtst_L60_seed44 job=566069 attempt=1
+[2026-09-17 06:08:14] terminal screening_patchtst_L60_seed44 job=566069 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:08:15] ACCEPTED screening_patchtst_L60_seed44 (18/48) durable_files=21
+[2026-09-17 06:08:20] submitted screening_itransformer_L24_seed42 job=566070 attempt=1
+[2026-09-17 06:09:00] terminal screening_itransformer_L24_seed42 job=566070 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:09:00] ACCEPTED screening_itransformer_L24_seed42 (19/48) durable_files=21
+[2026-09-17 06:09:06] submitted screening_itransformer_L24_seed43 job=566071 attempt=1
+[2026-09-17 06:09:26] terminal screening_itransformer_L24_seed43 job=566071 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:09:26] ACCEPTED screening_itransformer_L24_seed43 (20/48) durable_files=21
+[2026-09-17 06:09:31] submitted screening_itransformer_L24_seed44 job=566072 attempt=1
+[2026-09-17 06:10:12] terminal screening_itransformer_L24_seed44 job=566072 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:10:12] ACCEPTED screening_itransformer_L24_seed44 (21/48) durable_files=21
+[2026-09-17 06:10:17] submitted screening_itransformer_L60_seed42 job=566073 attempt=1
+[2026-09-17 06:10:37] terminal screening_itransformer_L60_seed42 job=566073 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:10:38] ACCEPTED screening_itransformer_L60_seed42 (22/48) durable_files=21
+[2026-09-17 06:10:43] submitted screening_itransformer_L60_seed43 job=566074 attempt=1
+[2026-09-17 06:11:43] terminal screening_itransformer_L60_seed43 job=566074 state=COMPLETED exit=0:0 node=gpu-a100-04
+[2026-09-17 06:11:44] ACCEPTED screening_itransformer_L60_seed43 (23/48) durable_files=21
+[2026-09-17 06:11:49] submitted screening_itransformer_L60_seed44 job=566080 attempt=1
+[2026-09-17 06:12:09] terminal screening_itransformer_L60_seed44 job=566080 state=COMPLETED exit=0:0 node=gpu-a100-04
+[2026-09-17 06:12:09] ACCEPTED screening_itransformer_L60_seed44 (24/48) durable_files=21
+[2026-09-17 06:12:14] submitted screening_gpt2_miflu_L24_seed42 job=566082 attempt=1
+[2026-09-17 06:15:36] terminal screening_gpt2_miflu_L24_seed42 job=566082 state=COMPLETED exit=0:0 node=gpu-a100-04
+[2026-09-17 06:15:36] ACCEPTED screening_gpt2_miflu_L24_seed42 (25/48) durable_files=21
+[2026-09-17 06:15:41] submitted screening_gpt2_miflu_L24_seed43 job=566083 attempt=1
+[2026-09-17 06:19:03] terminal screening_gpt2_miflu_L24_seed43 job=566083 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:19:03] ACCEPTED screening_gpt2_miflu_L24_seed43 (26/48) durable_files=21
+[2026-09-17 06:19:09] submitted screening_gpt2_miflu_L24_seed44 job=566087 attempt=1
+[2026-09-17 06:22:30] terminal screening_gpt2_miflu_L24_seed44 job=566087 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:22:31] ACCEPTED screening_gpt2_miflu_L24_seed44 (27/48) durable_files=21
+[2026-09-17 06:22:36] submitted screening_gpt2_miflu_L60_seed42 job=566088 attempt=1
+[2026-09-17 06:25:17] terminal screening_gpt2_miflu_L60_seed42 job=566088 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:25:18] ACCEPTED screening_gpt2_miflu_L60_seed42 (28/48) durable_files=21
+[2026-09-17 06:25:23] submitted screening_gpt2_miflu_L60_seed43 job=566090 attempt=1
+[2026-09-17 06:27:44] terminal screening_gpt2_miflu_L60_seed43 job=566090 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:27:45] ACCEPTED screening_gpt2_miflu_L60_seed43 (29/48) durable_files=21
+[2026-09-17 06:27:50] submitted screening_gpt2_miflu_L60_seed44 job=566091 attempt=1
+[2026-09-17 06:30:51] terminal screening_gpt2_miflu_L60_seed44 job=566091 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:30:52] ACCEPTED screening_gpt2_miflu_L60_seed44 (30/48) durable_files=21
+[2026-09-17 06:30:57] submitted screening_qwen_time_llm_L24_seed42 job=566103 attempt=1
+[2026-09-17 06:35:39] terminal screening_qwen_time_llm_L24_seed42 job=566103 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:35:42] ACCEPTED screening_qwen_time_llm_L24_seed42 (31/48) durable_files=21
+[2026-09-17 06:35:48] submitted screening_qwen_time_llm_L24_seed43 job=566105 attempt=1
+[2026-09-17 06:39:09] terminal screening_qwen_time_llm_L24_seed43 job=566105 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:39:13] ACCEPTED screening_qwen_time_llm_L24_seed43 (32/48) durable_files=21
+[2026-09-17 06:39:18] submitted screening_qwen_time_llm_L24_seed44 job=566110 attempt=1
+[2026-09-17 06:43:40] terminal screening_qwen_time_llm_L24_seed44 job=566110 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:43:43] ACCEPTED screening_qwen_time_llm_L24_seed44 (33/48) durable_files=21
+[2026-09-17 06:43:48] submitted screening_qwen_time_llm_L60_seed42 job=566113 attempt=1
+[2026-09-17 06:48:30] terminal screening_qwen_time_llm_L60_seed42 job=566113 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:48:33] ACCEPTED screening_qwen_time_llm_L60_seed42 (34/48) durable_files=21
+[2026-09-17 06:48:38] submitted screening_qwen_time_llm_L60_seed43 job=566115 attempt=1
+[2026-09-17 06:53:41] terminal screening_qwen_time_llm_L60_seed43 job=566115 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:53:44] ACCEPTED screening_qwen_time_llm_L60_seed43 (35/48) durable_files=21
+[2026-09-17 06:53:49] submitted screening_qwen_time_llm_L60_seed44 job=566118 attempt=1
+[2026-09-17 06:58:51] terminal screening_qwen_time_llm_L60_seed44 job=566118 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:58:55] ACCEPTED screening_qwen_time_llm_L60_seed44 (36/48) durable_files=21
+[2026-09-17 06:59:00] submitted screening_calf_llm_L24_seed42 job=566122 attempt=1
+[2026-09-17 06:59:40] terminal screening_calf_llm_L24_seed42 job=566122 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 06:59:41] ACCEPTED screening_calf_llm_L24_seed42 (37/48) durable_files=21
+[2026-09-17 06:59:46] submitted screening_calf_llm_L24_seed43 job=566123 attempt=1
+[2026-09-17 07:00:47] terminal screening_calf_llm_L24_seed43 job=566123 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:00:47] ACCEPTED screening_calf_llm_L24_seed43 (38/48) durable_files=21
+[2026-09-17 07:00:52] submitted screening_calf_llm_L24_seed44 job=566125 attempt=1
+[2026-09-17 07:01:53] terminal screening_calf_llm_L24_seed44 job=566125 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:01:53] ACCEPTED screening_calf_llm_L24_seed44 (39/48) durable_files=21
+[2026-09-17 07:01:58] submitted screening_calf_llm_L60_seed42 job=566126 attempt=1
+[2026-09-17 07:02:39] terminal screening_calf_llm_L60_seed42 job=566126 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:02:39] ACCEPTED screening_calf_llm_L60_seed42 (40/48) durable_files=21
+[2026-09-17 07:02:44] submitted screening_calf_llm_L60_seed43 job=566128 attempt=1
+[2026-09-17 07:03:45] terminal screening_calf_llm_L60_seed43 job=566128 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:03:46] ACCEPTED screening_calf_llm_L60_seed43 (41/48) durable_files=21
+[2026-09-17 07:03:51] submitted screening_calf_llm_L60_seed44 job=566129 attempt=1
+[2026-09-17 07:04:31] terminal screening_calf_llm_L60_seed44 job=566129 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:04:32] ACCEPTED screening_calf_llm_L60_seed44 (42/48) durable_files=21
+[2026-09-17 07:04:37] submitted screening_timecma_llm_L24_seed42 job=566130 attempt=1
+[2026-09-17 07:05:18] terminal screening_timecma_llm_L24_seed42 job=566130 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:05:18] ACCEPTED screening_timecma_llm_L24_seed42 (43/48) durable_files=21
+[2026-09-17 07:05:23] submitted screening_timecma_llm_L24_seed43 job=566131 attempt=1
+[2026-09-17 07:06:04] terminal screening_timecma_llm_L24_seed43 job=566131 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:06:04] ACCEPTED screening_timecma_llm_L24_seed43 (44/48) durable_files=21
+[2026-09-17 07:06:09] submitted screening_timecma_llm_L24_seed44 job=566132 attempt=1
+[2026-09-17 07:06:50] terminal screening_timecma_llm_L24_seed44 job=566132 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:06:50] ACCEPTED screening_timecma_llm_L24_seed44 (45/48) durable_files=21
+[2026-09-17 07:06:55] submitted screening_timecma_llm_L60_seed42 job=566133 attempt=1
+[2026-09-17 07:07:36] terminal screening_timecma_llm_L60_seed42 job=566133 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:07:36] ACCEPTED screening_timecma_llm_L60_seed42 (46/48) durable_files=21
+[2026-09-17 07:07:41] submitted screening_timecma_llm_L60_seed43 job=566134 attempt=1
+[2026-09-17 07:08:42] terminal screening_timecma_llm_L60_seed43 job=566134 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:08:43] ACCEPTED screening_timecma_llm_L60_seed43 (47/48) durable_files=21
+[2026-09-17 07:08:48] submitted screening_timecma_llm_L60_seed44 job=566135 attempt=1
+[2026-09-17 07:09:48] terminal screening_timecma_llm_L60_seed44 job=566135 state=COMPLETED exit=0:0 node=gpu-a100-03
+[2026-09-17 07:09:49] ACCEPTED screening_timecma_llm_L60_seed44 (48/48) durable_files=21
+[2026-09-17 07:09:54] controller end: accepted=48/48 final=ALL_ACCEPTED reason=

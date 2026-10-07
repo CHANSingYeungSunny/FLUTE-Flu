@@ -1,0 +1,29 @@
+{
+  "run_key": "baseline__seasonal_naive__L60__seedna__w1",
+  "model": "seasonal_naive",
+  "arm": "baseline",
+  "horizon": 60,
+  "seed": "n/a",
+  "wave": 1,
+  "split": {
+    "train": 717,
+    "validation": 102,
+    "test": 206
+  },
+  "n_test_windows": 146,
+  "test_target_abs_week_min": 820,
+  "test_target_abs_week_max": 1024,
+  "started_utc": "2026-09-21T05:36:00Z",
+  "checkpoint_applicable": false,
+  "stochastic_seed_applicable": false,
+  "reason": "deterministic_baseline_no_checkpoint",
+  "compact_sha256": "not_applicable",
+  "canonical_tensor_sha256": "not_applicable",
+  "elapsed_seconds": 3.136,
+  "metrics_written": [
+    "ilitotal_fixed_step_metrics.json",
+    "ilitotal_full_horizon_metrics.json",
+    "paper_aligned_full_output_metrics.json",
+    "pte_pie_metrics.json"
+  ]
+}

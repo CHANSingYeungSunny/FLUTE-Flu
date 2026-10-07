@@ -1,0 +1,33 @@
+--- a/scripts/innovation/clean_gate.py
++++ b/scripts/innovation/clean_gate.py
+@@ -327,6 +327,30 @@
+     os.replace(str(stage), str(final))
+     published = (final / "compact.safetensors").exists()
+ 
++    # v3.16: canonical TENSOR-SEMANTIC identity, and invariance against the
++    # compact package produced by the pre-fix migration (if one exists).
++    can = None
++    try:
++        can = CC.canonical_tensor_sha256(CC._load_compact(str(compact)))
++    except Exception as e:                                     # noqa: BLE001
++        res["canonical_error"] = f"{type(e).__name__}: {e}"
++    res["canonical_tensor_sha256"] = can
++    res["canonical_hash_schema"] = CC.CANONICAL_HASH_SCHEMA
++    durable = Path("/home/sychan552/innovation_durable/screening") / run_key \
++        / "compact.safetensors"
++    if durable.is_file():
++        try:
++            res["durable_canonical_tensor_sha256"] = \
++                CC.canonical_tensor_sha256(CC._load_compact(str(durable)))
++            res["canonical_invariant_vs_durable"] = bool(
++                can is not None
++                and res["durable_canonical_tensor_sha256"] == can)
++        except Exception as e:                                 # noqa: BLE001
++            res["canonical_invariant_vs_durable"] = False
++            res["durable_error"] = f"{type(e).__name__}: {e}"
++    else:
++        res["canonical_invariant_vs_durable"] = True           # vacuous
++
+     res.update({
+         "source_bytes": rep["source_bytes"],
+         "compact_bytes": rep["compact_bytes"],

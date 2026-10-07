@@ -1,0 +1,286 @@
+{
+  "sources": {
+    "author_processed": {
+      "path": "recovery/author_repo/dataset/illness/national_illness.csv",
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+      "size_bytes": 62726,
+      "n_rows": 966,
+      "columns": [
+        "date",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "OT"
+      ]
+    },
+    "author_orig": {
+      "path": "recovery/author_repo/dataset/illness/national_illness_orig.csv",
+      "sha256": "8594cecb98c6f2f9dc014eca11c4d5d1e38ad5ce6ed0592d4abe65b146fce395",
+      "size_bytes": 66653,
+      "n_rows": 966,
+      "columns": [
+        "date",
+        "% WEIGHTED ILI",
+        "%UNWEIGHTED ILI",
+        "AGE 0-4",
+        "AGE 5-24",
+        "ILITOTAL",
+        "NUM. OF PROVIDERS",
+        "OT"
+      ]
+    },
+    "project_raw": {
+      "path": "data/raw/national_illness_raw.csv",
+      "sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+      "size_bytes": 72100,
+      "n_rows": 1025,
+      "columns": [
+        "epiweek",
+        "release_date",
+        "% WEIGHTED ILI",
+        "% UNWEIGHTED ILI",
+        "AGE 0-4",
+        "AGE 5-24",
+        "ILITOTAL",
+        "NUM. OF PROVIDERS",
+        "OT"
+      ]
+    },
+    "paper_exact": {
+      "path": "data/raw/national_illness_raw_paper_exact.csv",
+      "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+      "size_bytes": 73432,
+      "n_rows": 966,
+      "columns": [
+        "epiweek",
+        "release_date",
+        "% WEIGHTED ILI",
+        "% UNWEIGHTED ILI",
+        "AGE 0-4",
+        "AGE 5-24",
+        "ILITOTAL",
+        "NUM. OF PROVIDERS",
+        "OT"
+      ]
+    }
+  },
+  "checks": {
+    "author_966_parsed_identity": {
+      "n_rows": 966,
+      "numeric_cell_diffs": 0,
+      "max_abs_diff": 0.0,
+      "identical": true
+    },
+    "author_dates": {
+      "first": "2002-01-01 00:00:00",
+      "last": "2020-06-30 00:00:00",
+      "n_rows": 966,
+      "all_7day_cadence": true,
+      "distinct_deltas": [
+        7
+      ]
+    },
+    "paper_exact_equals_author_values": {
+      "cell_diffs": 0,
+      "identical": true
+    },
+    "paper_exact_epiweeks": {
+      "first": 200240,
+      "last": 202113,
+      "n": 966,
+      "strictly_increasing": true
+    },
+    "project_epiweeks": {
+      "first": 200201,
+      "last": 202152,
+      "n": 1025,
+      "strictly_increasing": true
+    },
+    "coverage": {
+      "project_unique": 1025,
+      "project_n": 1025,
+      "project_duplicates": 0,
+      "pex_unique": 966,
+      "pex_n": 966,
+      "pex_duplicates": 0,
+      "pex_minus_proj": [],
+      "proj_extra_at_start": [
+        200201,
+        200202,
+        200203,
+        200204,
+        200205,
+        200206,
+        200207,
+        200208,
+        200209,
+        200210,
+        200211,
+        200212,
+        200213,
+        200214,
+        200215,
+        200216,
+        200217,
+        200218,
+        200219,
+        200220,
+        202114,
+        202115,
+        202116,
+        202117,
+        202118,
+        202119,
+        202120,
+        202121,
+        202122,
+        202123,
+        202124,
+        202125,
+        202126,
+        202127,
+        202128,
+        202129,
+        202130,
+        202131,
+        202132,
+        202133,
+        202134,
+        202135,
+        202136,
+        202137,
+        202138,
+        202139,
+        202140,
+        202141,
+        202142,
+        202143
+      ],
+      "proj_extra_at_end": [
+        200210,
+        200211,
+        200212,
+        200213,
+        200214,
+        200215,
+        200216,
+        200217,
+        200218,
+        200219,
+        200220,
+        202114,
+        202115,
+        202116,
+        202117,
+        202118,
+        202119,
+        202120,
+        202121,
+        202122,
+        202123,
+        202124,
+        202125,
+        202126,
+        202127,
+        202128,
+        202129,
+        202130,
+        202131,
+        202132,
+        202133,
+        202134,
+        202135,
+        202136,
+        202137,
+        202138,
+        202139,
+        202140,
+        202141,
+        202142,
+        202143,
+        202144,
+        202145,
+        202146,
+        202147,
+        202148,
+        202149,
+        202150,
+        202151,
+        202152
+      ]
+    },
+    "overlap_per_variable": {
+      "% WEIGHTED ILI": {
+        "n_overlap": 966,
+        "exact_matches": 342,
+        "max_abs_diff": 0.011220000000000008,
+        "median_abs_diff": 0.0,
+        "n_rounding_only": 893,
+        "n_nontrivial": 72,
+        "first_diff_row": "201640"
+      },
+      "% UNWEIGHTED ILI": {
+        "n_overlap": 966,
+        "exact_matches": 347,
+        "max_abs_diff": 0.003230000000000066,
+        "median_abs_diff": 0.0,
+        "n_rounding_only": 892,
+        "n_nontrivial": 71,
+        "first_diff_row": "201640"
+      },
+      "AGE 0-4": {
+        "n_overlap": 966,
+        "exact_matches": 928,
+        "max_abs_diff": 161.0,
+        "median_abs_diff": 0.0,
+        "n_rounding_only": 928,
+        "n_nontrivial": 38,
+        "first_diff_row": "201640"
+      },
+      "AGE 5-24": {
+        "n_overlap": 966,
+        "exact_matches": 920,
+        "max_abs_diff": 246.0,
+        "median_abs_diff": 0.0,
+        "n_rounding_only": 920,
+        "n_nontrivial": 46,
+        "first_diff_row": "201640"
+      },
+      "ILITOTAL": {
+        "n_overlap": 966,
+        "exact_matches": 913,
+        "max_abs_diff": 687.0,
+        "median_abs_diff": 0.0,
+        "n_rounding_only": 913,
+        "n_nontrivial": 53,
+        "first_diff_row": "201640"
+      },
+      "NUM. OF PROVIDERS": {
+        "n_overlap": 966,
+        "exact_matches": 887,
+        "max_abs_diff": 274.0,
+        "median_abs_diff": 0.0,
+        "n_rounding_only": 887,
+        "n_nontrivial": 79,
+        "first_diff_row": "201640"
+      },
+      "OT": {
+        "n_overlap": 966,
+        "exact_matches": 889,
+        "max_abs_diff": 92675.0,
+        "median_abs_diff": 0.0,
+        "n_rounding_only": 889,
+        "n_nontrivial": 77,
+        "first_diff_row": "201640"
+      }
+    },
+    "unweighted_denominator_identity": {
+      "n": 966,
+      "max_resid": 4.994689128734464e-06,
+      "median_resid": 1.5891479772101036e-06
+    }
+  }
+}

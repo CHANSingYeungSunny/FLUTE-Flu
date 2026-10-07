@@ -1,0 +1,40 @@
+{
+  "generated_utc": "2026-09-21T00:09:30Z",
+  "freeze_package": "wave1_final_freeze",
+  "sha256_of_freeze_manifest_json": "dbe727f2878efb8773b0037e7cef079ab7a9102359f526f19f6310c98a419768",
+  "hpc_governance_artifacts": {
+    "accepted_keys.txt": "cb2f0c120053faad561052dc703d0ea9bfe556102e42afb770610ba565c63007",
+    "formal_execution_order_wave1.txt": "f037ae5b78e8ac37a9583bd3b5ae9f9639bf6333324477f7544d6396ee2f3262",
+    "wave1_ledger_v319.jsonl": "45527ff09badb7c67b3bbe701c310e41ac13100b89c7de0be288ea2c019d70b6",
+    "wave1_ledger_v318.jsonl": "7394faa1d0d0cc238260f178db4a7450f341c630bbac04679d6958129769d241",
+    "verify205_verification_ledger.jsonl": "03084d444783ce41877295ee18f73feafbc4141aa4ced658d30a06359d578483",
+    "migration_ledger.jsonl": "8b5188b388f88783d467dedcac352e8d2d65b41748b8e47d99f81525bfc5a0c8",
+    "bundle.zip": "0e0b9275fe092b0b4bf8846bab6d762642713a9637d1cea1c25697a12cfee9ca",
+    "deployment_manifest.json": "f10f81f66857f40d7ff1a0e453bfad5b68064666f4609901b57010b8933e5f40",
+    "controller_manifest.json": "0b1c7b1f241054a7ce2699bd9a8f79bee8f857024cedaa94a5e1c08976d757ec",
+    "deploy_audit_v319.json": "1ca29a13a0f8f06d9e96e823fcd34d349c947d9db509d158a7b0481b6dc08420"
+  },
+  "local_governance_artifacts": {
+    "results/v3_clean/implementation/source_manifest.json": "95e30137f53d3d3a10a6453f0912883e7361afaada24593bd4bce4db3ac5b313",
+    "results/v3_clean/runs/complete_specs_598.json": "a44aedce01e8c37a02792dea113ff2b3f118b37e236871f24dfbae896e4bcd0b",
+    "results/v3_clean/preregistration/paper_aligned_selection_rule.json": "afa7a780010aeed20fd7a2d361300ae2ce4411baeed1d458581538d3df359325",
+    "results/v3_clean/analysis/frozen_analysis_protocol.json": "cd229790fd0693334d79a1d63a38f06be8faf8cf30d83eb45c70603bc580fb6f"
+  },
+  "identities": {
+    "hpc_guide_sha256": "1cd21a655907d137914c695bf04637d8da2f09358a0732c961e739dd8e74c167",
+    "source_version": "innov-v3.19-baseline-no-checkpoint-finalization",
+    "source_n_files": 139,
+    "source_aggregate_sha256": "ae75b958b750e97c1ec9c0317ac80bf6fdc94ef979cfa280570540b0d889efaa",
+    "deployment_member_count": 766,
+    "deployment_aggregate_sha256": "05581a557158c0c19bb8e6caa1a5fb35fad889b774195616632cf62d9f4bcff6",
+    "canonical_raw_data_sha256_prefix": "0a0648000066e12f",
+    "scaler_sha256_prefix": "6b28b2d101309a80",
+    "specs_total": 598,
+    "specs_wave1": 580,
+    "specs_wave2_deferred": 18,
+    "deploy_root": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean14",
+    "durable_root": "/home/sychan552/innovation_durable/screening",
+    "deploy_audit_checks": 29,
+    "deploy_audit_passed": 29
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "sweep_counts": {
+    "24": [
+      549,
+      74,
+      170
+    ],
+    "36": [
+      537,
+      62,
+      158
+    ],
+    "48": [
+      525,
+      50,
+      146
+    ],
+    "60": [
+      513,
+      38,
+      134
+    ]
+  },
+  "expected_counts": {
+    "24": [
+      549,
+      74,
+      170
+    ],
+    "36": [
+      537,
+      62,
+      158
+    ],
+    "48": [
+      525,
+      50,
+      146
+    ],
+    "60": [
+      513,
+      38,
+      134
+    ]
+  },
+  "dataset_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "trainer_sha256": "b07894593b469f9c32bb02d9e7a78e1b21f2d80adde3562dab5085d1e18286f3",
+  "checks": [
+    {
+      "name": "1a dataset SHA-256 == recorded contract",
+      "ok": true,
+      "detail": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5"
+    },
+    {
+      "name": "1b deployed trainer SHA-256 matches the corrected version",
+      "ok": true,
+      "detail": "b07894593b469f9c32bb02d9e7a78e1b21f2d80adde3562dab5085d1e18286f3"
+    },
+    {
+      "name": "9a R1BDataset uses the corrected origin formula (o = last input idx)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "9b trainer imports/uses R1BDataset for all three splits",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "6a exactly 7 numeric channels",
+      "ok": true,
+      "detail": "['1', '2', '3', '4', '5', '6', 'OT']"
+    },
+    {
+      "name": "6b split boundaries are 676 / 773 / 966",
+      "ok": true,
+      "detail": "676/773/966"
+    },
+    {
+      "name": "4/5/6 L=24 train: every input is (104,7) and every target is (24,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=24 train: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=24 train: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=24 val: every input is (104,7) and every target is (24,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=24 val: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=24 val: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=24 test: every input is (104,7) and every target is (24,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=24 test: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=24 test: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "8  L=24 forecast-key counts == recorded contract (549, 74, 170)",
+      "ok": true,
+      "detail": "got (549, 74, 170)"
+    },
+    {
+      "name": "4/5/6 L=36 train: every input is (104,7) and every target is (36,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=36 train: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=36 train: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=36 val: every input is (104,7) and every target is (36,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=36 val: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=36 val: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=36 test: every input is (104,7) and every target is (36,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=36 test: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=36 test: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "8  L=36 forecast-key counts == recorded contract (537, 62, 158)",
+      "ok": true,
+      "detail": "got (537, 62, 158)"
+    },
+    {
+      "name": "4/5/6 L=48 train: every input is (104,7) and every target is (48,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=48 train: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=48 train: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=48 val: every input is (104,7) and every target is (48,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=48 val: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=48 val: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=48 test: every input is (104,7) and every target is (48,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=48 test: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=48 test: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "8  L=48 forecast-key counts == recorded contract (525, 50, 146)",
+      "ok": true,
+      "detail": "got (525, 50, 146)"
+    },
+    {
+      "name": "4/5/6 L=60 train: every input is (104,7) and every target is (60,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=60 train: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=60 train: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=60 val: every input is (104,7) and every target is (60,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=60 val: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=60 val: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "4/5/6 L=60 test: every input is (104,7) and every target is (60,7)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7  L=60 test: no target crosses a split boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "7b L=60 test: window == data[o-T+1:o+1] / data[o+1:o+1+L]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "8  L=60 forecast-key counts == recorded contract (513, 38, 134)",
+      "ok": true,
+      "detail": "got (513, 38, 134)"
+    },
+    {
+      "name": "2a OLD formula is reproduced and DOES produce short targets",
+      "ok": true,
+      "detail": "103 short window(s), e.g. o=839 -> 23 rows"
+    },
+    {
+      "name": "2b corrected L=24 test window's final target is exactly L rows",
+      "ok": true,
+      "detail": "24"
+    },
+    {
+      "name": "2c the in-class assertion REJECTS a short target (fail-closed)",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "n_pass": 49,
+  "n_fail": 0
+}

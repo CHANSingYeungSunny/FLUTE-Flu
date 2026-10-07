@@ -1,0 +1,54 @@
+{
+  "model_state": {
+    "checkpoint_sha256": "58faa97d248b102b84d3933f9f21111b96ca91550b8aa86055fff93ad72663fe",
+    "state_dicts_match": true
+  },
+  "context": {
+    "source": "gpt2_local_cache",
+    "shape": [
+      1,
+      369,
+      768
+    ]
+  },
+  "device": "cuda",
+  "row_count_old": 192,
+  "row_count_new": 192,
+  "row_count_equal": true,
+  "date_index_equal": true,
+  "date_start": "2016-02-07",
+  "date_end": "2016-09-04",
+  "y_true_diff": {
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "n": 192
+  },
+  "y_pred_z_diff": {
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "n": 192
+  },
+  "y_pred_phys_diff": {
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "n": 192
+  },
+  "mse_z_old": 0.7660857596197889,
+  "mse_z_new": 0.7660857596197889,
+  "mse_z_diff": 0.0,
+  "mae_z_old": 0.7570262817510715,
+  "mae_z_new": 0.7570262817510715,
+  "mae_z_diff": 0.0,
+  "pte_old": null,
+  "pte_new": null,
+  "pte_equal": true,
+  "pie_old": null,
+  "pie_new": null,
+  "pie_diff": null,
+  "tolerance": {
+    "z_max_abs_diff": 1e-05,
+    "phys_max_abs_diff": 0.01,
+    "mse_diff": 1e-06
+  },
+  "all_agree": true
+}

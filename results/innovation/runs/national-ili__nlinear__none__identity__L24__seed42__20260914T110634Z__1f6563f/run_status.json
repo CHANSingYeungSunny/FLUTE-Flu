@@ -1,0 +1,22 @@
+{
+  "updated_utc": "2026-09-14T11:06:37Z",
+  "run_id": "national-ili__nlinear__none__identity__L24__seed42__20260914T110634Z__1f6563f",
+  "status": "ok",
+  "phase": "validation",
+  "best_epoch": 1,
+  "best_val_mse": 1.043844223022461,
+  "n_val_windows": 16,
+  "n_train_windows": 32,
+  "checkpoint_sha256": "8f8262a905d0d12082e781705cd43f76bc7896d55b1bbdfd91d781f70f2cad64",
+  "state_dict_sha256": "ed2d6e7086215cf75d3c222d9be8340b8248b098ad08cf9f3f1cedeb9d153a30",
+  "restore_ok": true,
+  "val_mse_all_z": 1.6315830321090157,
+  "val_mse_ili_phys": 127888867.91094668,
+  "peak_hit_ratio": null,
+  "val_mae_all_z": 1.0231462371302769,
+  "trainable_parameters": 2520,
+  "total_parameters": 2520,
+  "train_seconds": 0.164,
+  "truncated_by_time_limit": false,
+  "test_artifacts_written": false
+}

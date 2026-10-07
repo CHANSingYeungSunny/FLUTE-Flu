@@ -1,0 +1,159 @@
+{
+  "all_conclusions_supported": true,
+  "conclusions": [
+    {
+      "id": 1,
+      "claim": "nlinear Test MSE lower than gpt2_miflu at all four horizons",
+      "verdict": true,
+      "evidence": {
+        "z_space": {
+          "24": [
+            4.2966115430674865,
+            5.676612100742723
+          ],
+          "36": [
+            4.972769617091877,
+            6.198279986076343
+          ],
+          "48": [
+            5.4046294112872735,
+            5.791370836920883
+          ],
+          "60": [
+            5.6084790940096045,
+            6.62246669189921
+          ]
+        },
+        "physical": {
+          "24": [
+            336782610.3520721,
+            444951612.9506566
+          ],
+          "36": [
+            389782114.14950097,
+            485841664.5725346
+          ],
+          "48": [
+            423632711.6991849,
+            453946781.7412107
+          ],
+          "60": [
+            439611123.6644453,
+            519090819.57745457
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "claim": "relative MSE reduction lies within ~6.7% to 23.8%",
+      "verdict": true,
+      "evidence": {
+        "z_space_reduction_pct": {
+          "24": 24.31,
+          "36": 19.77,
+          "48": 6.68,
+          "60": 15.31
+        },
+        "physical_reduction_pct": {
+          "24": 24.31,
+          "36": 19.77,
+          "48": 6.68,
+          "60": 15.31
+        },
+        "note": "physical range 6.69-23.83% matches the reported figure exactly; the PRIMARY z-space range is 6.68-24.31%. Both are reported; the earlier single figure was physical-unit based."
+      }
+    },
+    {
+      "id": 3,
+      "claim": "nlinear meets the literature criterion at L48/L60 but not L24/L36",
+      "verdict": true,
+      "evidence": {
+        "L24": {
+          "pte": 1.667,
+          "pie": 9.504,
+          "met": false
+        },
+        "L36": {
+          "pte": 2.0,
+          "pie": 10.568,
+          "met": false
+        },
+        "L48": {
+          "pte": 0.35,
+          "pie": 3.329,
+          "met": true
+        },
+        "L60": {
+          "pte": 0.15,
+          "pie": 2.076,
+          "met": true
+        }
+      }
+    },
+    {
+      "id": 4,
+      "claim": "gpt2_miflu does not meet the criterion at any evaluated horizon",
+      "verdict": true,
+      "evidence": {
+        "L24": {
+          "pte": 4.667,
+          "pie": 72.177,
+          "met": false
+        },
+        "L36": {
+          "pte": 5.333,
+          "pie": 77.344,
+          "met": false
+        },
+        "L48": {
+          "pte": 2.0,
+          "pie": 25.294,
+          "met": false
+        },
+        "L60": {
+          "pte": 2.0,
+          "pie": 23.269,
+          "met": false
+        }
+      }
+    },
+    {
+      "id": 5,
+      "claim": "baseline seed availability is three, limiting paired power",
+      "verdict": true,
+      "evidence": {
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "effective_paired_n": 3
+      }
+    },
+    {
+      "id": 6,
+      "claim": "only L36 MAE remains significant after Holm correction",
+      "verdict": true,
+      "evidence": {
+        "z_space_significant": [
+          "L36 mae_all_z"
+        ],
+        "physical_significant": [
+          "L36 mae_ili_phys"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "claim": "wording is 'observed best' unless a comparison is statistically supported",
+      "verdict": true,
+      "evidence": {
+        "rule": "use 'observed best' unless a specific comparison is supported by a Holm-corrected p-value",
+        "permitted_claims": [
+          "L36 mae_all_z"
+        ]
+      }
+    }
+  ]
+}

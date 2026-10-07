@@ -1,0 +1,19 @@
+item,gpu_hours,basis
+stage6 COMPLETED jobs,1.05,sacct -X; re-verified live on the cluster 2026-10-06
+stage6 FAILED attempts,0.0756,same; no result depends on them
+stage6 subtotal,1.1256,sum
+stage5 over-cap but billed,0.44,jobs 585540/585544/585555/585581/585843-585846
+2026-10-06 probe_text_path_gpu (job 606358),0.00833,sacct Elapsed 00:00:30 on gres/gpu:a100
+2026-10-06 a1_measure failed attempt (job 606361_0),0.00194,sacct Elapsed 00:00:07; peft target_modules crash
+2026-10-06 A1 L=24 (job 606365_0),0.29278,sacct Elapsed 00:17:34
+2026-10-06 A1 L=36 (job 606378_1),0.28167,sacct Elapsed 00:16:54
+2026-10-06 A1 L=48 (job 606385_2),0.27167,sacct Elapsed 00:16:18
+2026-10-06 A1 L=60 (job 606412_3),0.26167,sacct Elapsed 00:15:42
+"2026-10-06 CPU-only jobs (probe cpu, diag_peft, compare)",0.0,no gres/gpu requested - zero GPU-hours by construction
+2026-10-06 subtotal,1.11806,sum of the five sacct-verified a100 jobs
+authorised cumulative cap,2.3,user authorisation for the stage6 + continuation round
+cumulative used,2.24366,1.1256 (stage6) + 1.11806 (this round)
+headroom remaining,0.05634,cap - used; ~3.4 minutes of A100 time - hence no further A1 repetitions were submitted and the round stopped here
+"measured per-fit cost, A2 LoRA config (20 epochs)",0.0146,stage6: 1.05 GPU-h / 72 fits
+"measured per-fit cost, A1 author config (20 epochs, full GPT-2 trainable)",0.2817,mean of the three completed A1 fits; 19x the A2 cost because the author's freeze is a no-op so all 82.7M parameters train
+estimated cost of the full A1 run (4 horizons x 10 repetitions),11.27,40 fits x 0.2817 measured; this is the real price of the paper's 'mean of 10 repetitions' on the author's code

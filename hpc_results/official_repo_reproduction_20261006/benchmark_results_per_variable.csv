@@ -1,0 +1,78 @@
+track,model,group,variable,n_cells,mse_mean_over_cells
+A_author966,calf_llm,LLM,% UNWEIGHTED ILI,12,2.401962
+A_author966,calf_llm,LLM,% WEIGHTED ILI,12,1.856864
+A_author966,calf_llm,LLM,AGE 0-4,12,6.964939
+A_author966,calf_llm,LLM,AGE 5-24,12,6.118596
+A_author966,calf_llm,LLM,ILITOTAL,12,10.574791
+A_author966,calf_llm,LLM,NUM. OF PROVIDERS,12,4.431367
+A_author966,calf_llm,LLM,OT,12,6.258578
+A_author966,dlinear,non-LLM,% UNWEIGHTED ILI,12,1.128323
+A_author966,dlinear,non-LLM,% WEIGHTED ILI,12,0.846291
+A_author966,dlinear,non-LLM,AGE 0-4,12,3.453306
+A_author966,dlinear,non-LLM,AGE 5-24,12,2.889205
+A_author966,dlinear,non-LLM,ILITOTAL,12,4.399312
+A_author966,dlinear,non-LLM,NUM. OF PROVIDERS,12,1.570273
+A_author966,dlinear,non-LLM,OT,12,2.148111
+A_author966,itransformer,non-LLM,% UNWEIGHTED ILI,12,1.336647
+A_author966,itransformer,non-LLM,% WEIGHTED ILI,12,0.965547
+A_author966,itransformer,non-LLM,AGE 0-4,12,5.346976
+A_author966,itransformer,non-LLM,AGE 5-24,12,4.247351
+A_author966,itransformer,non-LLM,ILITOTAL,12,8.033162
+A_author966,itransformer,non-LLM,NUM. OF PROVIDERS,12,3.120385
+A_author966,itransformer,non-LLM,OT,12,4.842824
+A_author966,last_value_naive,baseline,% UNWEIGHTED ILI,4,5.365959
+A_author966,last_value_naive,baseline,% WEIGHTED ILI,4,4.458935
+A_author966,last_value_naive,baseline,AGE 0-4,4,11.659191
+A_author966,last_value_naive,baseline,AGE 5-24,4,10.699519
+A_author966,last_value_naive,baseline,ILITOTAL,4,15.475848
+A_author966,last_value_naive,baseline,NUM. OF PROVIDERS,4,0.965826
+A_author966,last_value_naive,baseline,OT,4,1.535539
+A_author966,miflu,LLM,% UNWEIGHTED ILI,12,1.221555
+A_author966,miflu,LLM,% WEIGHTED ILI,12,0.907060
+A_author966,miflu,LLM,AGE 0-4,12,3.375959
+A_author966,miflu,LLM,AGE 5-24,12,2.888193
+A_author966,miflu,LLM,ILITOTAL,12,3.898843
+A_author966,miflu,LLM,NUM. OF PROVIDERS,12,0.933025
+A_author966,miflu,LLM,OT,12,1.066000
+A_author966,nlinear,non-LLM,% UNWEIGHTED ILI,12,1.158871
+A_author966,nlinear,non-LLM,% WEIGHTED ILI,12,0.879665
+A_author966,nlinear,non-LLM,AGE 0-4,12,3.401833
+A_author966,nlinear,non-LLM,AGE 5-24,12,2.955283
+A_author966,nlinear,non-LLM,ILITOTAL,12,4.031023
+A_author966,nlinear,non-LLM,NUM. OF PROVIDERS,12,0.789154
+A_author966,nlinear,non-LLM,OT,12,1.131018
+A_author966,notext,CONTROL,% UNWEIGHTED ILI,12,1.166889
+A_author966,notext,CONTROL,% WEIGHTED ILI,12,0.866306
+A_author966,notext,CONTROL,AGE 0-4,12,3.180215
+A_author966,notext,CONTROL,AGE 5-24,12,2.689984
+A_author966,notext,CONTROL,ILITOTAL,12,3.608941
+A_author966,notext,CONTROL,NUM. OF PROVIDERS,12,0.885170
+A_author966,notext,CONTROL,OT,12,1.057600
+A_author966,patchtst,non-LLM,% UNWEIGHTED ILI,12,1.335681
+A_author966,patchtst,non-LLM,% WEIGHTED ILI,12,0.965940
+A_author966,patchtst,non-LLM,AGE 0-4,12,5.136476
+A_author966,patchtst,non-LLM,AGE 5-24,12,4.324632
+A_author966,patchtst,non-LLM,ILITOTAL,12,8.186206
+A_author966,patchtst,non-LLM,NUM. OF PROVIDERS,12,2.866298
+A_author966,patchtst,non-LLM,OT,12,4.628061
+A_author966,qwen_time_llm,LLM,% UNWEIGHTED ILI,12,2.593629
+A_author966,qwen_time_llm,LLM,% WEIGHTED ILI,12,2.119809
+A_author966,qwen_time_llm,LLM,AGE 0-4,12,6.650010
+A_author966,qwen_time_llm,LLM,AGE 5-24,12,6.047655
+A_author966,qwen_time_llm,LLM,ILITOTAL,12,9.950881
+A_author966,qwen_time_llm,LLM,NUM. OF PROVIDERS,12,3.786092
+A_author966,qwen_time_llm,LLM,OT,12,5.388805
+A_author966,seasonal_naive,baseline,% UNWEIGHTED ILI,4,1.403423
+A_author966,seasonal_naive,baseline,% WEIGHTED ILI,4,1.142053
+A_author966,seasonal_naive,baseline,AGE 0-4,4,3.843503
+A_author966,seasonal_naive,baseline,AGE 5-24,4,3.138718
+A_author966,seasonal_naive,baseline,ILITOTAL,4,4.603638
+A_author966,seasonal_naive,baseline,NUM. OF PROVIDERS,4,0.690960
+A_author966,seasonal_naive,baseline,OT,4,1.059299
+A_author966,timecma_llm,LLM,% UNWEIGHTED ILI,12,1.480868
+A_author966,timecma_llm,LLM,% WEIGHTED ILI,12,1.212524
+A_author966,timecma_llm,LLM,AGE 0-4,12,3.628071
+A_author966,timecma_llm,LLM,AGE 5-24,12,3.768065
+A_author966,timecma_llm,LLM,ILITOTAL,12,6.032729
+A_author966,timecma_llm,LLM,NUM. OF PROVIDERS,12,1.213802
+A_author966,timecma_llm,LLM,OT,12,1.354005

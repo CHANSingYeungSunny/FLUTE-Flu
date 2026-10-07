@@ -1,0 +1,9 @@
+track=R1-B PAPER-REPRODUCTION PILOT (1 repetition)
+slurm_job=607969_0 horizon=24 repetition=0
+dataset_sha256=2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+config: T=104 epochs=20 batch=16 lr=0.0005 PEFT=1 lora_r=4 c_attn freeze=1
+target: seven channels, z-space
+text pathway: functional (prefixed; patches read after the text) = B-2
+selection: best VALIDATION mse_all (B-5); Test evaluated once afterwards
+checkpoint: LOCKED path (trainable tensors + frozen-key sidecar), atomic write
+declared_unrecovered: pooling_axes optimizer scheduler selection_details seed_identity

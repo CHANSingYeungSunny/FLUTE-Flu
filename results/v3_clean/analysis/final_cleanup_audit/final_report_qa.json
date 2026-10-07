@@ -1,0 +1,55 @@
+{
+  "generated_utc": "2026-09-21T06:30:00Z",
+  "qa_scope": "Final (Test/Holdout) supervisor reports, tutor briefs, project summary, and their docx/pdf renders",
+  "status": "PASS",
+  "checks": {
+    "headline_numbers_cross_checked": {
+      "status": "pass",
+      "details": [
+        {"metric": "nlinear Test avg_MSE_4L", "report": 2.739, "source": 2.7389285645675674, "match": true},
+        {"metric": "gpt2_miflu Test avg_MSE_4L", "report": 3.051, "source": 3.0505309968134116, "match": true},
+        {"metric": "seasonal_naive Test avg_MSE_4L", "report": 4.279, "source": 4.279191802767025, "match": true},
+        {"metric": "nlinear Test avg_MAE_4L", "report": 1.139, "source": 1.138956915054377, "match": true},
+        {"metric": "gpt2_miflu Test avg_MAE_4L", "report": 1.156, "source": 1.1557680511481583, "match": true},
+        {"metric": "C1 gpt2 vs nlinear paired_t", "report": 5.46, "source": 5.460911019225788, "match": true},
+        {"metric": "C1 raw_p", "report": 4.0e-04, "source": 3.9995264656143544e-04, "match": true},
+        {"metric": "C2 gpt2 vs seasonal p", "report": 4.6e-09, "source": 4.575240702922065e-09, "match": true},
+        {"metric": "C3 nlinear vs seasonal p", "report": 7.7e-21, "source": 7.689778849613635e-21, "match": true},
+        {"metric": "gap nlinear", "report": 1.67, "source": 1.669161360562264, "match": true},
+        {"metric": "gap gpt2_miflu", "report": 2.28, "source": 2.2796588405337874, "match": true},
+        {"metric": "gap seasonal_naive", "report": 3.51, "source": 3.5085185966750556, "match": true},
+        {"metric": "nlinear ILITOTAL phys MSE", "report": 3.97e8, "source": 396884131.1552735, "match": true},
+        {"metric": "gpt2 ILITOTAL phys MSE", "report": 4.66e8, "source": 465867687.12633675, "match": true},
+        {"metric": "seasonal ILITOTAL phys MSE", "report": 6.60e8, "source": 659951134.9282207, "match": true},
+        {"metric": "nlinear L24 Test MSE", "report": 2.337, "source": 2.3367132666279566, "match": true},
+        {"metric": "nlinear L60 Test MSE", "report": 3.007, "source": 3.0068188756351164, "match": true},
+        {"metric": "gpt2 L24 Test MSE", "report": 2.750, "source": 2.750168477767016, "match": true},
+        {"metric": "gpt2 L60 Test MSE", "report": 3.081, "source": 3.0806078495326417, "match": true},
+        {"metric": "nlinear L24 PIE %", "report": 9.2, "source": 9.2, "match": true},
+        {"metric": "nlinear L60 PIE %", "report": 12.6, "source": 12.6, "match": true},
+        {"metric": "gpt2 L36 PIE %", "report": 61.5, "source": 61.5, "match": true},
+        {"metric": "seasonal L36 PIE %", "report": 123.9, "source": 123.9, "match": true}
+      ]
+    },
+    "tables_recomputed_from_source": {"status": "pass", "note": "all tables read directly from results/v3_clean/final/final_test_metrics.json (not retyped); per-L, CI, PTE/PIE, confirmatory, and gap values extracted programmatically"},
+    "confirmatory_tests_verbatim": {"status": "pass", "note": "C1/C2/C3 test types, df, mean_diff, t, p, Cohen's dz, and Holm-Bonferroni (m=3) values copied from final_test_metrics.json confirmatory_tests + multiple_comparison blocks"},
+    "figure_scope_verified": {"status": "pass", "note": "all 12 panels + gallery plot Test/Holdout target window ONLY; ground truth solid, prediction dashed, peaks marked, ILITOTAL original scale; historical-input tail / training-validation curves / input-forecast boundary omitted per final_test_figure_plan.json (asserted in final_test_window_provenance.csv)"},
+    "test_holdout_one_time_verified": {"status": "pass", "note": "terminal_test_audit.json 25/25 PASSED; 84/84 runs; no 85th job; frozen test_eval.py SHA-256 unchanged (93a1338b...); pre_test_freeze_audit.json test_access=0/holdout_access=0 before release"},
+    "ordering_reversal_stated": {"status": "pass", "note": "reports state the validation champion gpt2_miflu did not generalize; Test ordering nlinear (2.739) < gpt2_miflu (3.051) < seasonal_naive (4.279) is the headline"},
+    "model_family_labels_verified": {"status": "pass", "note": "family membership taken from final_test_artifact_manifest / test keys: gpt2_miflu=LLM (40 runs), nlinear=Non-LLM (40), seasonal_naive=baseline (4)"},
+    "report_statements_match_uncertainty": {"status": "pass", "note": "95% CIs (df=9) reported; 'significant' only where Holm-corrected p<0.05; L48/L60 C1 per-L noted as marginal/n.s.; deterministic baseline labelled as having no seed variance"},
+    "chinese_english_reports_agree": {"status": "pass", "note": "substantively equivalent (identical numbers; prose translated)"},
+    "render_docx_pdf_inspected": {"status": "pass", "note": "5 MD + 5 DOCX + 5 PDF rendered via md2docs.py; no 'image not found' warnings; gallery + 4 individual figures embedded in EN report; ZH report embeds same 5 figures"},
+    "no_fabrication_of_blank_fields": {"status": "pass", "note": "student/supervisor/course identity fields retained as [RETAIN original]; no blank field guessed"},
+    "family_a_b_not_pooled": {"status": "pass", "note": "LLM vs Non-LLM families kept distinct throughout; seasonal_naive reported as separate deterministic reference, never pooled into either family"}
+  },
+  "cautionary_labels_present": [
+    "Wave-1 validation champion frozen (gpt2_miflu)",
+    "Final Test best model (nlinear)",
+    "validation advantage did not generalize",
+    "single contiguous COVID-era Test window",
+    "distribution shift conflated with COVID",
+    "18 deferred controls pending Wave-2",
+    "DRAFT pending student/tutor sign-off"
+  ]
+}

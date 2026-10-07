@@ -1,0 +1,6 @@
+L,paper_MSE,reproduced_MSE_Lz,abs_diff,ratio,comparable,why_not_comparable
+24,1.542,2.4439,+0.9019,1.58x,NO,"paper does not disclose epochs/lr; our value is z-space 3-seed with a reconstructed recipe; the paper's is 10 repetitions with its own scaler. This table documents a gap, it does NOT demonstrate a reproduction."
+36,1.422,1.9360,+0.5140,1.36x,NO,"paper does not disclose epochs/lr; our value is z-space 3-seed with a reconstructed recipe; the paper's is 10 repetitions with its own scaler. This table documents a gap, it does NOT demonstrate a reproduction."
+48,1.414,1.7677,+0.3537,1.25x,NO,"paper does not disclose epochs/lr; our value is z-space 3-seed with a reconstructed recipe; the paper's is 10 repetitions with its own scaler. This table documents a gap, it does NOT demonstrate a reproduction."
+60,1.364,2.0184,+0.6544,1.48x,NO,"paper does not disclose epochs/lr; our value is z-space 3-seed with a reconstructed recipe; the paper's is 10 repetitions with its own scaler. This table documents a gap, it does NOT demonstrate a reproduction."
+mean(4L),1.4355,2.0415,+0.6060,1.42x,NO,see per-horizon rows

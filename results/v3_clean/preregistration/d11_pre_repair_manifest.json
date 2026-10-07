@@ -1,0 +1,62 @@
+{
+  "generated_utc": "2026-09-18T05:58:45Z",
+  "defect": "D11",
+  "classification": "BEHAVIOR_NEUTRAL_ARTIFACT_DIRECTORY_INITIALIZATION_FIX",
+  "runtime_version_before": "innov-v3.10-backbone-kwarg-fix",
+  "runtime_version_after": "innov-v3.11-artifact-directory-initialization",
+  "failing_gate": {
+    "job_id": "569016",
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:24:33",
+    "node": "gpu-a100-06",
+    "passed": "1/19",
+    "n_failing_paths": 18
+  },
+  "failure_signature": {
+    "exception": "OSError",
+    "message": "Cannot save file into a non-existent directory",
+    "single_root_cause": true,
+    "call_sites": [
+      {
+        "line": 330,
+        "fn": "main",
+        "file": "logs/train_history.csv",
+        "paths": 16,
+        "arms": [
+          "primary",
+          "ablation",
+          "negative_control"
+        ]
+      },
+      {
+        "line": 263,
+        "fn": "main",
+        "file": "predictions/validation_predictions.csv",
+        "paths": 2,
+        "arms": [
+          "baseline"
+        ]
+      }
+    ],
+    "missing_directories": [
+      "logs",
+      "predictions"
+    ],
+    "directories_that_existed": [
+      "metrics",
+      "checkpoints"
+    ],
+    "why": "_atomic_write_json/_write_text create the parent of the file they write; pandas .to_csv does not.",
+    "stage": "after training completed and checkpoint saved (stochastic) / after metrics written (baseline)",
+    "scientific_inputs_affected": false
+  },
+  "pre_repair_sha256": {
+    "scripts/innovation/clean_runner.py": "a5bf6183fcbcb7b137d812b2628d53a84495eb78cb2f94ece14485dcf3c19614"
+  },
+  "scientific_protocol_changed": false,
+  "formal_rows_submitted": "0/598",
+  "test_access": 0,
+  "holdout_access": 0,
+  "note": "Recorded BEFORE any edit, per prompt section 3."
+}

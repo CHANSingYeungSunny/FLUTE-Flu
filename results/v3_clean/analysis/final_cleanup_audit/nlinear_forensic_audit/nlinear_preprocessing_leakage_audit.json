@@ -1,0 +1,26 @@
+{
+  "audit": "split-leakage and preprocessing (Mandate C section 7)",
+  "verdict": "PASS",
+  "scaler": {
+    "fit_split": "Training only",
+    "fit_function": "ScalerBundle.fit_from_train (scripts/scaler_utils.py:89-116)",
+    "fit_rows": "data[:train_end] == data[:717]",
+    "formula": "mean_ = data[:717].mean(axis=0); scale_ = data[:717].std(axis=0) + 1e-8 (population std ddof=0)",
+    "dtype": "float32 (data = df[var_cols].values.astype(np.float32))",
+    "eps": 1e-8,
+    "ili_mean": 9368.2890625,
+    "ili_scale": 8853.4345703125,
+    "reproduced": "fresh fit_from_train == persisted data/scaler_miflu_national.json exactly (mean diff=0.0, scale diff=0.0)",
+    "consistency_guard": "load_scaler() re-fits from train and asserts fresh stats == persisted (assert_consistent_with, rtol 1e-5) -> PASS",
+    "self_check": "data_pipeline._self_check asserts scaler.train_end==717 and scaler.val_end==819 -> PASS"
+  },
+  "validation_test_influence": "none. Scaler is fit from data[:717] only; Validation (717..818) and Test (819..1024) rows are never seen by fit.",
+  "missing_value_imputation": "not applicable (raw national_illness_raw.csv has no NaN in the 7 feature columns)",
+  "feature_stats_in_prompts": "train-only by construction (NLinear has no text/prompt branch, text_encoder=none)",
+  "inverse_transform": "shared by truth and prediction: y_physical = z * scale + mean (same mean/scale for both)",
+  "truth_roundtrip": "y_true_physical == raw ILITOTAL exactly (max|d| = 0.0039, float32 rounding only)",
+  "input_crosses_split_boundary": {
+    "legal": true,
+    "note": "A Test target's 104-week input window may include trailing Validation weeks and Test timestamp 819 as CONTEXT. The target starts strictly AFTER the input ends (input=[origin, origin+103], target starts at origin+104). This is legal historical context, not leakage."
+  }
+}

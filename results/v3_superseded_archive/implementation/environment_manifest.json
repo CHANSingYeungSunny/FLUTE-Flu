@@ -1,0 +1,11 @@
+{
+  "source_version": "innov-v3.1-phase1-remediated",
+  "environments": [
+    {"name":"v3-core","python":"3.9.25","pytorch":"2.1.0-compatible with existing mlflu_hpc","transformers":"existing pinned v2-compatible release","cuda":"HPC old_modules / A100","cache": "/gpfs1/scratch/sychan552/CHATTIME/.cache"},
+    {"name":"v3-qwen-time-llm","python":"3.9.25","pytorch":"existing mlflu_hpc baseline","transformers":">=4.37.0; exact runtime check on compute node","cuda":"A100","cache":"/gpfs1/scratch/sychan552/CHATTIME/.cache"},
+    {"name":"v3-cross-modal-llm","python":"3.9.25","pytorch":"existing mlflu_hpc baseline","transformers":"GPT-2-compatible pinned release","cuda":"A100","cache":"/gpfs1/scratch/sychan552/CHATTIME/.cache"}
+  ],
+  "v2_environment_modified": false,
+  "real_model_load_required_on_compute_node": true,
+  "login_node_model_load_allowed": false
+}

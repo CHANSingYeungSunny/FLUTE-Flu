@@ -1,0 +1,121 @@
+{
+  "libraries": {
+    "torch": {
+      "available": true,
+      "version": "2.6.0+cu124"
+    },
+    "transformers": {
+      "available": true,
+      "version": "4.25.0"
+    },
+    "numpy": {
+      "available": true,
+      "version": "1.26.4"
+    },
+    "pandas": {
+      "available": true,
+      "version": "2.2.3"
+    },
+    "scipy": {
+      "available": true,
+      "version": "1.13.1"
+    },
+    "sklearn": {
+      "available": true,
+      "version": "1.6.1"
+    },
+    "statsmodels": {
+      "available": true,
+      "version": "0.14.6"
+    },
+    "matplotlib": {
+      "available": true,
+      "version": "3.9.4"
+    }
+  },
+  "models": {
+    "gpt2": {
+      "available": true,
+      "kind": "local HF cache"
+    },
+    "fasttext": {
+      "available": false,
+      "status": "UNAVAILABLE_LOCAL_DEPENDENCY",
+      "note": "deferred to batch 2; never downloaded"
+    },
+    "bert": {
+      "available": false,
+      "status": "UNAVAILABLE_LOCAL_DEPENDENCY",
+      "note": "deferred to batch 2; never downloaded"
+    },
+    "minilm": {
+      "available": false,
+      "status": "UNAVAILABLE_LOCAL_DEPENDENCY",
+      "note": "deferred to batch 2; never downloaded"
+    },
+    "chronos": {
+      "available": false,
+      "status": "UNAVAILABLE_LOCAL_DEPENDENCY",
+      "note": "deferred to batch 2; never downloaded"
+    },
+    "timesfm": {
+      "available": false,
+      "status": "UNAVAILABLE_LOCAL_DEPENDENCY",
+      "note": "deferred to batch 2; never downloaded"
+    },
+    "moirai": {
+      "available": false,
+      "status": "UNAVAILABLE_LOCAL_DEPENDENCY",
+      "note": "deferred to batch 2; never downloaded"
+    }
+  },
+  "unavailable": [],
+  "backbones": {
+    "dlinear": {
+      "note": "DLinear (Zeng et al., AAAI 2023) \u2014 re-implementation"
+    },
+    "nlinear": {
+      "note": "NLinear (Zeng et al., AAAI 2023) \u2014 re-implementation"
+    },
+    "patchtst": {
+      "note": "PatchTST supervised re-implementation (no pretraining)"
+    },
+    "itransformer": {
+      "note": "iTransformer (ICLR 2024) \u2014 re-implementation"
+    },
+    "fusion_forecaster": {
+      "note": "generic plugin testbed (NOT a paper architecture)"
+    },
+    "gpt2_miflu": {
+      "note": "MIFlu control group; gpt2 cache available=True"
+    }
+  },
+  "encoders": {
+    "none": {
+      "available": true,
+      "note": "no text (always available)"
+    },
+    "tfidf_svd": {
+      "available": true,
+      "note": "TF-IDF+SVD fixed contextual embedding (train-only fit)"
+    },
+    "gpt2": {
+      "available": true,
+      "note": "frozen GPT-2 textual embedder (needs local cache)"
+    }
+  },
+  "fusions": {
+    "identity": {
+      "note": "no-text passthrough"
+    },
+    "concat_projection": {
+      "note": "mean-pool text + concat + linear projection"
+    },
+    "film_gate": {
+      "note": "FiLM (gamma, beta) modulation"
+    },
+    "cross_attention": {
+      "note": "multi-head cross-attention (time queries, text keys/values)"
+    }
+  }
+}

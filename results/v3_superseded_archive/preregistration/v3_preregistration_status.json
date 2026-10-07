@@ -1,0 +1,165 @@
+{
+  "generated_utc": "2026-09-16T17:01:14Z",
+  "phase": "Phase 0 preregistration \u2014 authoritative status",
+  "supersedes_nothing": true,
+  "supersession_note": "results/v3/preregistration/preregistration_gate.json was overwritten by a later authorised phase (it now records the Phase-1 preflight halt, decision V3_IMPLEMENTATION_FAILURE_REQUIRES_REVIEW). It is retained as history and is NOT rewritten here; this file is the authoritative Phase-0 record.",
+  "checks": [
+    {
+      "id": "v2_evidence_preserved_untouched",
+      "passed": true
+    },
+    {
+      "id": "active_v3_forbidden_scope_violations_zero",
+      "passed": true
+    },
+    {
+      "id": "v3_plan_written",
+      "passed": true
+    },
+    {
+      "id": "eight_primary_candidates_frozen",
+      "passed": true
+    },
+    {
+      "id": "two_naive_baselines_declared_separately",
+      "passed": true
+    },
+    {
+      "id": "negative_controls_bounded_and_secondary",
+      "passed": true
+    },
+    {
+      "id": "official_sources_and_licences_recorded",
+      "passed": true
+    },
+    {
+      "id": "architecture_fidelity_and_contracts_recorded",
+      "passed": true
+    },
+    {
+      "id": "holdout_decision_explicit",
+      "passed": true
+    },
+    {
+      "id": "figure_style_guide_and_reference_located",
+      "passed": true
+    },
+    {
+      "id": "shared_figure_module_api_valid",
+      "passed": true
+    },
+    {
+      "id": "one_style_covers_4_non_llm_4_llm_2_naive_and_controls",
+      "passed": true
+    },
+    {
+      "id": "fixed_steps_0_3_retained",
+      "passed": true
+    },
+    {
+      "id": "step_lead_mapping_declared_1_to_4_weeks",
+      "passed": true
+    },
+    {
+      "id": "step0_is_primary_others_mandatory_supplementary",
+      "passed": true
+    },
+    {
+      "id": "no_cross_step_averaging_rule_present",
+      "passed": true
+    },
+    {
+      "id": "common_target_date_intersection_rule_present",
+      "passed": true
+    },
+    {
+      "id": "figures_from_saved_artifacts_only",
+      "passed": true
+    },
+    {
+      "id": "provenance_sidecar_required",
+      "passed": true
+    },
+    {
+      "id": "automated_figure_qa_required",
+      "passed": true
+    },
+    {
+      "id": "proposed_matrices_written",
+      "passed": true
+    },
+    {
+      "id": "no_v3_result_figures_generated_yet",
+      "passed": true
+    },
+    {
+      "id": "no_weights_downloaded_this_round",
+      "passed": true
+    },
+    {
+      "id": "no_model_loaded_this_round",
+      "passed": true
+    },
+    {
+      "id": "no_slurm_submitted_this_round",
+      "passed": true
+    },
+    {
+      "id": "no_holdout_accessed_this_round",
+      "passed": true
+    }
+  ],
+  "n_passed": 26,
+  "n_checks": 26,
+  "all_passed": true,
+  "preregistration_deliverable": "COMPLETE",
+  "figure_contract": {
+    "style_guide_sha256": "4e2ee958bb1561e41155e735c8b2bdd6a2c6ee2270e66e06568077c6de070741",
+    "reference_figure_sha256": "06d8622152ef2bf00017278fb6925283445e8c604d7973a6d35a4798b1399d70",
+    "shared_module_sha256": "c8ae38a2b2a99f21f0faaf488d91a581532ba106fc342cf42320c939e55f6cb1",
+    "steps": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "step_lead_weeks": {
+      "0": 1,
+      "1": 2,
+      "2": 3,
+      "3": 4
+    },
+    "primary_step": 0,
+    "n_model_identities": 13,
+    "figure_families_defined": 8,
+    "figures_generated": 0
+  },
+  "proposed_matrices_rows": {
+    "proposed_pilot_matrix.csv": 8,
+    "proposed_screening_matrix.csv": 48,
+    "proposed_full_validation_matrix.csv": 320,
+    "proposed_baseline_matrix.csv": 80,
+    "proposed_negative_control_matrix.csv": 30
+  },
+  "holdout": {
+    "decision": "REJECTED",
+    "conclusion": "NO_UNTOUCHED_INTERVAL_AVAILABLE_INTERNAL",
+    "option_status": {
+      "1": "ELIMINATED",
+      "2": "NOT_ACQUIRED",
+      "3": "NOT_SELECTED"
+    }
+  },
+  "v2_preservation": {
+    "records": 18,
+    "all_present": true,
+    "v2_test_prediction_files": 52
+  },
+  "scope_cleanup": {
+    "active_v3_violations": 0,
+    "counts": {
+      "SEALED_V2_HISTORICAL_EVIDENCE": 19,
+      "THIRD_PARTY_OR_CITATION_CONTEXT": 9
+    }
+  }
+}

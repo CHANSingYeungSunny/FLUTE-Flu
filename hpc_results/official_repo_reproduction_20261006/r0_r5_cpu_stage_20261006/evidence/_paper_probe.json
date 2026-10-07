@@ -1,0 +1,118 @@
+{
+ "absolute_path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\reference_papers\\MIFlu_Large_Language_Model-Based_Multimodal_Influenza_Forecasting_Scheme.pdf",
+ "sha256": "7735a4388145dd2aced536417f7a4f50dafe21ed0d4fca64baa2b20f2e27885c",
+ "bytes": 2956545,
+ "page_count": 12,
+ "metadata": {
+  "format": "PDF 1.4",
+  "title": "MIFlu: Large Language Model-Based Multimodal Influenza Forecasting Scheme",
+  "author": "",
+  "subject": "IEEE Journal of Biomedical and Health Informatics;2025;29;10;10.1109/JBHI.2025.3561214",
+  "keywords": "",
+  "creator": "LaTeX with hyperref package",
+  "producer": "Acrobat Distiller 11.0 (Windows); modified using iText\u00ae Core 7.2.4 (AGPL version) \u00a92000-2022 iText Group NV",
+  "creationDate": "D:20250916193932+05'30'",
+  "modDate": "D:20251004002417-04'00'",
+  "trapped": "",
+  "encryption": "None"
+ },
+ "encrypted": false,
+ "pages": [
+  {
+   "page": 1,
+   "chars": 6308,
+   "text_blocks": 18,
+   "images": 1,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 2,
+   "chars": 6652,
+   "text_blocks": 13,
+   "images": 0,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 3,
+   "chars": 5825,
+   "text_blocks": 36,
+   "images": 0,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 4,
+   "chars": 2567,
+   "text_blocks": 13,
+   "images": 1,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 5,
+   "chars": 4440,
+   "text_blocks": 12,
+   "images": 0,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 6,
+   "chars": 3870,
+   "text_blocks": 57,
+   "images": 1,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 7,
+   "chars": 3792,
+   "text_blocks": 14,
+   "images": 0,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 8,
+   "chars": 2736,
+   "text_blocks": 10,
+   "images": 1,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 9,
+   "chars": 3821,
+   "text_blocks": 14,
+   "images": 2,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 10,
+   "chars": 4628,
+   "text_blocks": 22,
+   "images": 1,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 11,
+   "chars": 4814,
+   "text_blocks": 20,
+   "images": 1,
+   "tables_found": 0,
+   "has_text_layer": true
+  },
+  {
+   "page": 12,
+   "chars": 5982,
+   "text_blocks": 34,
+   "images": 0,
+   "tables_found": 0,
+   "has_text_layer": true
+  }
+ ]
+}

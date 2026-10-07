@@ -1,0 +1,13 @@
+question,answer,average_MSE_4L,basis
+1. best overall among the eight core models,miflu,2.041519,"Track A, author 966 rows, z-space, 3 seeds x 4 horizons. The notext control scores lower still but is a CONTROL, not one of the eight models."
+1b. best overall INCLUDING the control,notext,1.922158,"notext keeps the GPT-2 forecasting backbone AND LoRA, so it is not a non-LLM model - reported separately on purpose."
+2. best LLM-based model,miflu,2.041519,"group = {miflu, timecma_llm, qwen_time_llm, calf_llm}"
+3. best non-LLM model,nlinear,2.049550,"group = {nlinear, dlinear, patchtst, itransformer}"
+4. matched mechanism: full MIFlu vs matched no-text,"notext - miflu = -0.1194, t = -1.50, 7/12 cells",1.9222 vs 2.0415,"same data, same protocol, same forecasting GPT-2 and LoRA; only the text path differs. NOT significant -> 'removing text is better' cannot be claimed. See paired_stats_corrected.csv."
+5. per-horizon winner L=24,notext,1.979595,"MSE at this horizon only; the winner flips between notext, miflu and nlinear across horizons, so no single-horizon result may be extrapolated."
+5. per-horizon winner L=36,notext,1.826842,"MSE at this horizon only; the winner flips between notext, miflu and nlinear across horizons, so no single-horizon result may be extrapolated."
+5. per-horizon winner L=48,miflu,1.767731,"MSE at this horizon only; the winner flips between notext, miflu and nlinear across horizons, so no single-horizon result may be extrapolated."
+5. per-horizon winner L=60,miflu,2.018403,"MSE at this horizon only; the winner flips between notext, miflu and nlinear across horizons, so no single-horizon result may be extrapolated."
+6. stability across horizons,miflu range 0.676 vs nlinear range 0.098,-,MIFlu's spread is 6.9x NLinear's; NLinear is markedly more stable. Per-seed values are in benchmark_results_per_seed.csv.
+7. cost,see cost_summary.csv,-,"measured per-fit GPU-hours; A1 author config costs 0.2817 h/fit vs 0.0146 h/fit for the A2 LoRA config (19x), because the author's freeze is a no-op so all 82.7M parameters train."
+NOT ANSWERABLE: a pre-specified one-time eight-model Test ranking,NO,-,"Track B's Test was already exposed before this round, and the four-implementations-per-group are fixed choices, not a random sample. Group means may be described but must not be read as inference about LLM / non-LLM families."

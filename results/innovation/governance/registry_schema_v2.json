@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "registry_file": "results/innovation/registry_v2.csv",
+  "legacy_registry_file": "results/innovation/registry.csv",
+  "created_utc": "2026-09-14T19:25:00Z",
+  "implementation_source_version": "innov-v2.3",
+  "scientific_protocol_version": "innov-v2.0",
+  "reason_for_new_file": "Adding 12 governance columns to the legacy registry.csv would make the existing 14 historical rows ambiguous (they predate the schema). A new versioned file keeps history byte-intact while giving every new run a complete record.",
+  "required_columns": [
+    "schema_version",
+    "run_id",
+    "status",
+    "run_dir",
+    "checkpoint_sha256",
+    "state_dict_sha256",
+    "best_val_mse",
+    "best_epoch",
+    "created_utc",
+    "git_sha",
+    "notes",
+    "experiment_stage",
+    "purpose",
+    "selection_eligible",
+    "paper_result_eligible",
+    "test_access_allowed",
+    "protocol_version",
+    "implementation_source_version",
+    "source_snapshot_sha256",
+    "authoritative_plan_sha256",
+    "model_key",
+    "display_name",
+    "architecture_fidelity"
+  ],
+  "column_types": {
+    "schema_version": "integer",
+    "run_id": "string",
+    "status": "enum(ok|failed|blocked|test_ok)",
+    "run_dir": "path",
+    "checkpoint_sha256": "hex64_or_empty",
+    "state_dict_sha256": "hex64_or_empty",
+    "best_val_mse": "float_or_empty",
+    "best_epoch": "integer_or_empty",
+    "created_utc": "iso8601_utc",
+    "git_sha": "string",
+    "notes": "string",
+    "experiment_stage": "enum(smoke|pilot|screening|full|validation|adhoc|test)",
+    "purpose": "string",
+    "selection_eligible": "boolean",
+    "paper_result_eligible": "boolean",
+    "test_access_allowed": "boolean",
+    "protocol_version": "string",
+    "implementation_source_version": "string",
+    "source_snapshot_sha256": "hex64",
+    "authoritative_plan_sha256": "hex64",
+    "model_key": "string",
+    "display_name": "string",
+    "architecture_fidelity": "enum(REFERENCE_FAITHFUL|REFERENCE_ALIGNED_WITH_DISCLOSED_DEVIATIONS|INSPIRED_SIMPLIFICATION)"
+  },
+  "allowed_values": {
+    "experiment_stage": ["smoke", "pilot", "screening", "full", "validation", "adhoc", "test"],
+    "architecture_fidelity": ["REFERENCE_FAITHFUL", "REFERENCE_ALIGNED_WITH_DISCLOSED_DEVIATIONS", "INSPIRED_SIMPLIFICATION"],
+    "test_access_allowed_by_stage": {
+      "smoke": false,
+      "pilot": false,
+      "screening": false,
+      "full": false,
+      "validation": false,
+      "adhoc": false,
+      "test": "only_with_frozen_winner_manifest + checkpoint_hash_match + explicit_authorization"
+    },
+    "selection_eligible_by_stage": {
+      "smoke": false, "pilot": false, "adhoc": false, "validation": false,
+      "screening": true, "full": true
+    },
+    "paper_result_eligible_by_stage": {
+      "smoke": false, "pilot": false, "adhoc": false, "validation": false,
+      "screening": true, "full": true
+    }
+  },
+  "fail_closed_defaults": {
+    "selection_eligible": false,
+    "paper_result_eligible": false,
+    "test_access_allowed": false
+  },
+  "legacy_handling": {
+    "legacy_file": "results/innovation/registry.csv",
+    "legacy_rows": 14,
+    "rewritten": false,
+    "policy": "select_best_model.py may read legacy records ONLY to exclude them; a missing eligibility field must never be inferred as true.",
+    "annotation_file": "results/innovation/governance/legacy_registry_annotation.json",
+    "legacy_smoke_and_failed_runs": "permanently ineligible"
+  },
+  "append_only_policy": {
+    "append_only": true,
+    "duplicate_run_id": "rejected",
+    "write_failure": "must not be silently ignored",
+    "history_rewriting": "forbidden"
+  }
+}

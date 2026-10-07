@@ -1,0 +1,30 @@
+{
+  "generated_utc": "2026-09-18T22:12:08Z",
+  "defect": "D15b",
+  "classification": "BEHAVIOR_NEUTRAL_ARCHITECTURE_STORAGE_CONTRACT_AND_CANONICAL_HASH_FIX",
+  "files": {
+    "architecture_contract.py": {
+      "pre_sha256": "cd1ccae09fc3341f20be8ea64713a1aa624e1914027d012152721b2cee990789",
+      "post_sha256": "434ef74fa672e618bd4441a6bd28b0bde926e9b25d7c614e8cd847f49b81d12c",
+      "pre_matches_v3_15_deployed": true,
+      "diff_bytes": 7309,
+      "diff_sha256": "e74f9c81f9a50382e9979b6815e6b31f575fa1ce30a29c489638de1f88f36103"
+    },
+    "compact_checkpoint.py": {
+      "pre_sha256": "0d97c7d14ea81fb267a5f3e6266249672d0e2807de463e9a3328c49d9c73d158",
+      "post_sha256": "1c312721cb894f1bb5f198787dc9e489949f31ca00b3cb8f3ad753876a4cc1a1",
+      "pre_matches_v3_15_deployed": true,
+      "diff_bytes": 2246,
+      "diff_sha256": "28a499f66ef5ad1fe40d96e7492846d6ecaa23724466b44dcccc4f4e72c1d3af"
+    },
+    "clean_gate.py": {
+      "pre_sha256": "0ff4fc105aed0cf5b67de35f0ec7d558ea6ca70f8c9616f63dd9615347c8ef29",
+      "post_sha256": "b296d0a7cea2e16e0084cc84bde3de9c6140c0026fad6ef3c1d2d5bd83fee145",
+      "pre_matches_v3_15_deployed": true,
+      "diff_bytes": 1539,
+      "diff_sha256": "1d7c1d3cfd21809aac06ee967131f63b7ba23a2e6a7c41d5b3bba088b7c32d5b"
+    }
+  },
+  "scientific_behaviour_changed": false,
+  "compact_tensor_selection_changed": false
+}

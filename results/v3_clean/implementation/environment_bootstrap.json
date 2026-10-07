@@ -1,0 +1,16 @@
+{
+  "generated_utc": "2026-09-19T10:41:53Z",
+  "version": "innov-v3.19-baseline-no-checkpoint-finalization",
+  "python": "3.9.0",
+  "conda_env": "mlflu_hpc",
+  "path_prepend": "/home/sychan552/.conda/envs/mlflu_hpc/bin",
+  "modules": "module unload default; module load old_modules",
+  "hf_home": "/gpfs1/scratch/sychan552/CHATTIME/.cache",
+  "matplotlib_backend": "Agg",
+  "slurm": {
+    "partition": "stingy",
+    "gres": "gpu:a100:1",
+    "exclude": "gpu-a100-05",
+    "max_time": "04:00:00"
+  }
+}

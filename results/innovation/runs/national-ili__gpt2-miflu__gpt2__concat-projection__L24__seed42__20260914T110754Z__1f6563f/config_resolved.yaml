@@ -1,0 +1,48 @@
+run_id: "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T110754Z__1f6563f"
+dataset: "national_ili"
+plan_sha256: "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+plan_sha256_expected: "AA4AB1C8842E893A4690787E17ADD0CA193C86825FFF9FD89F46952C7F9E7961"
+git_sha: "1f6563f"
+config:
+  T: 104
+  L_list:
+    - 24
+    - 36
+    - 48
+    - 60
+  N: 7
+  Lp: 24
+  S: 2
+  K: 6
+  lora_r: 4
+  lora_alpha: 4.0
+  D: 768
+  attn_heads: 8
+  batch_size: 8
+  learning_rate: 0.0005
+  epochs: 1
+  num_repetitions: 10
+  seed: 42
+  model: "gpt2_miflu"
+  text_encoder: "gpt2"
+  fusion: "concat_projection"
+  horizon: 24
+  L: 24
+  patience: 7
+  device: "cuda"
+components:
+  backbone: "gpt2_miflu"
+  text_encoder: "gpt2"
+  fusion: "concat_projection"
+  encoder_available: true
+  encoder_context_dim: 768
+limits:
+  train: 32
+  val: 16
+trainable_parameters: 1030056
+total_parameters: 82136232
+architecture_report:
+  name: "gpt2_miflu"
+  published: "MIFlu (IEEE JBHI 2025, DOI 10.1109/JBHI.2025.3561214)"
+  faithful: true
+  notes: "adapter around the repo's existing, already-validated MIFlu"

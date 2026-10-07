@@ -1,0 +1,60 @@
+{
+  "generated_utc": "2026-09-14T18:05:00Z",
+  "collected_by": "hpc_scripts/hpc_env_check.sh (facts only; submits nothing)",
+  "hostname": "hpclogin02",
+  "node_type": "login_node",
+  "slurm_job_id": "none",
+  "slurm_version": "23.11.10",
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964",
+  "operating_system": "Linux 5.14.0-687.41.1.el9_8.x86_64",
+  "python": {
+    "executable": "/home/sychan552/.conda/envs/mlflu_hpc/bin/python",
+    "version": "3.9.25"
+  },
+  "libraries": {
+    "torch": "2.5.1",
+    "transformers": "4.57.6",
+    "numpy": "2.0.1",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "sklearn": "1.6.1",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.9.4"
+  },
+  "cuda": {
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "device_names": [],
+    "torch_cuda_runtime": "not observable without an allocation",
+    "cudnn_version": "not observable without an allocation",
+    "cuda_visible_devices": null,
+    "nvidia_smi": "unavailable"
+  },
+  "gpu_assessment": "LOGIN_NODE_GPU_NOT_EXPECTED",
+  "gpu_assessment_note": "CUDA unavailable on the login node because no GPU is allocated; this is NOT automatically a pilot-readiness failure.",
+  "strict_offline_gpt2": {
+    "TRANSFORMERS_OFFLINE": "1",
+    "HF_HUB_OFFLINE": "1",
+    "HF_HOME": "/gpfs1/scratch/sychan552/CHATTIME/.cache",
+    "result": "gpt2_offline_load=OK"
+  },
+  "versions_vs_local": {
+    "local_torch": "2.6.0+cu124",
+    "hpc_torch": "2.5.1",
+    "local_transformers": "4.25.0",
+    "hpc_transformers": "4.57.6",
+    "local_numpy": "1.26.4",
+    "hpc_numpy": "2.0.1",
+    "risk_note": "the pilot will execute under the HPC library stack, which differs from the local smoke environment; this residual risk is to be validated BY the pilot, not assumed away"
+  },
+  "pilot_script_bash_n": {
+    "hpc_scripts/pilot_dlinear_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_gpt2_miflu_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_patchtst_L24_seed42.sh": "ok",
+    "hpc_scripts/pilot_itransformer_L24_seed42.sh": "ok",
+    "hpc_scripts/innovation_worker.sh": "ok"
+  },
+  "env_check_exit_code": 0,
+  "hpc_base_environment_verified": true,
+  "hpc_a100_allocation_verified": false
+}

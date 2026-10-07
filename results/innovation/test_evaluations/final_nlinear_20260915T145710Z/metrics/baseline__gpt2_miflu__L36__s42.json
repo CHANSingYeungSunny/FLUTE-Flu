@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "n_rows": 6120,
+  "mse_all_z": 6.517966783071166,
+  "mae_all_z": 1.6664762876544368,
+  "mse_ili_phys": 510899769.58765453,
+  "mae_ili_phys": 14754.038833358863,
+  "peak": {
+    "n_seasons_total": 4,
+    "n_seasons_evaluable": 3,
+    "n_seasons_incomplete": 1,
+    "n_hits": 0,
+    "peak_hit_ratio": 0.0,
+    "mean_pte_weeks": 5.0,
+    "mean_pie_pct": 58.952693158251,
+    "thresholds": {
+      "PTE_max_weeks": 1,
+      "PIE_max_pct": 25.0
+    }
+  },
+  "role": "baseline",
+  "model_key": "gpt2_miflu",
+  "horizon": 36,
+  "seed": 42,
+  "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L36__seed42__20260915T024318Z__nogit"
+}

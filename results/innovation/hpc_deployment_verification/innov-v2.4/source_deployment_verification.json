@@ -1,0 +1,30 @@
+{
+  "generated_utc": "2026-09-14T21:20:00Z",
+  "implementation_source_version": "innov-v2.4",
+  "scientific_protocol_version": "innov-v2.0",
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.4_5a4c3247",
+  "resolved_deployment_root": "/gpfs1/scratch/sychan552/CHATTIME/MIFlu_innovation_deployments/innov-v2.4_5a4c3247",
+  "verification_mode": "explicit_root",
+  "expected_file_count": 77,
+  "verified_file_count": 77,
+  "missing_files": 0,
+  "mismatched_files": 0,
+  "unexpected_files_in_controlled_scope": 0,
+  "expected_aggregate_sha256": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+  "actual_aggregate_sha256": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+  "aggregate_matches": true,
+  "exit_status": 0,
+  "archive_sha256": "bc6e8bff6f77c8b5e23634466f8d09b13927dd74198c67194c6befe28c4375ae",
+  "archive_members": 102,
+  "archive_deterministic_double_build": true,
+  "local_extraction_verification": {"files": 77, "matched": 77, "mode": "explicit_temp_root"},
+  "runtime_path_guard": {"paths_checked": 11, "violations": 0},
+  "strict_offline_gpt2_load": "OK",
+  "bash_n": {"scripts": 6, "all_ok": true},
+  "deployment_preconditions": {
+    "destination_did_not_exist_before_extraction": true,
+    "silent_overwrite": false,
+    "extracted_into_original_reproduction_repository": false
+  },
+  "source_of_evidence": "commands executed on the HPC login node against the isolated deployment root (read-only verification; no job submitted)"
+}

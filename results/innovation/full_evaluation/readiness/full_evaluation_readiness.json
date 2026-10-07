@@ -1,0 +1,10 @@
+{
+  "stage": "F",
+  "ready_to_submit": false,
+  "blocker": "AWAITING_EXPLICIT_USER_AUTHORIZATION_FOR_FULL_EVALUATION",
+  "screening_complete": true,
+  "job_count": 160,
+  "upper_bound_gpu_hours": 2.72,
+  "authorization_ceiling": "K",
+  "note": "Stage F was pre-registered in the controller matrix; the overnight run already executed it under the prior session's authorization. This package documents the exact matrix/budget; NO new Stage F job is submitted this turn."
+}

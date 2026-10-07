@@ -1,0 +1,14 @@
+{
+  "generated_utc": "2026-09-18T18:43:38Z",
+  "defect": "D14",
+  "classification": "BEHAVIOR_NEUTRAL_COMPACT_CHECKPOINT_LIBRARY_INPUT_NORMALIZATION_FIX",
+  "file": "scripts/innovation/compact_checkpoint.py",
+  "pre_repair_sha256": "a6ea45fd84e7163d48035e5e3a152e0794786e21018fa84d313aa05313b6a2c9",
+  "post_repair_sha256": "ca5c64ccd587d8fcca914ac8df0b24d9003f0672148c1ebee6ce33d609a9426c",
+  "pre_matches_v3_13_deployed": true,
+  "diff_bytes": 7560,
+  "diff_sha256": "8537036ba4457bab9b9a28a127dab0191be4a1963039080a3e1a189acb5d0fe5",
+  "lines_added": 116,
+  "lines_removed": 12,
+  "scientific_behaviour_changed": false
+}

@@ -1,0 +1,26 @@
+[task] MODEL=naive L=0 job=585836 start=2026-09-25T15:19:31Z
+[A2] run_config containment=strict profile=author_966 horizon=24 seed=42
+[naive] last_value_naive L=24 mse_all=6.213324 mse_ili=13.445924 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=24 seed=42
+[naive] seasonal_naive L=24 mse_all=2.563768 mse_ili=5.206944 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=36 seed=42
+[naive] last_value_naive L=36 mse_all=7.713823 mse_ili=16.743832 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=36 seed=42
+[naive] seasonal_naive L=36 mse_all=2.265501 mse_ili=4.587251 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=48 seed=42
+[naive] last_value_naive L=48 mse_all=7.851274 mse_ili=17.054823 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=48 seed=42
+[naive] seasonal_naive L=48 mse_all=2.142457 mse_ili=4.335677 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=60 seed=42
+[naive] last_value_naive L=60 mse_all=6.884903 mse_ili=14.658813 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=60 seed=42
+[naive] seasonal_naive L=60 mse_all=2.103470 mse_ili=4.284679 clamped=0
+[naive] DONE -> results/stage5/author_966/naive/metrics.csv
+[task] MODEL=naive L=0 end=2026-09-25T15:19:34Z

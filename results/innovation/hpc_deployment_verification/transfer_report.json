@@ -1,0 +1,34 @@
+{
+  "generated_utc": "2026-09-14T18:05:00Z",
+  "direction": "local_workstation_to_hpc",
+  "local_source_paths": [
+    "results/innovation/hpc_deployment/innovation_hpc_bundle.tar.gz",
+    "results/innovation/hpc_deployment/innovation_hpc_bundle.tar.gz.sha256"
+  ],
+  "remote_destination_dir": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/_incoming/",
+  "transfer_command_redacted": "scp -o BatchMode=yes <archive> <sidecar> sychan552@burgundy.hpc.cityu.edu.hk:/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/_incoming/",
+  "exit_status": 0,
+  "elapsed_seconds": 3.9,
+  "transferred_files": [
+    {"name": "innovation_hpc_bundle.tar.gz", "size_bytes": 130428, "local_size_bytes": 130428, "size_matches": true},
+    {"name": "innovation_hpc_bundle.tar.gz.sha256", "size_bytes": 95}
+  ],
+  "files_deliberately_NOT_transferred": [
+    "ssh private/public keys",
+    "credentials",
+    "local test artifacts (test_predictions.csv / test_metrics.json)",
+    "frozen_winners.json (does not exist)",
+    "test_evaluations/**",
+    "local model checkpoints",
+    "local caches (.git/, .codebuddy/, __pycache__/)"
+  ],
+  "remote_destination_creation": {
+    "created": true,
+    "isolated_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964",
+    "staging_dir": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/_incoming",
+    "preexisting_isolated_root": false,
+    "original_reproduction_dir_touched": false
+  },
+  "host": "hpclogin02",
+  "credentials_in_log": "none"
+}

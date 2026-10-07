@@ -1,0 +1,73 @@
+{
+  "generated_utc": "2026-09-14T18:05:00Z",
+  "hpc_guide": {
+    "path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\HPC_GUIDE.md",
+    "sha256": "1cd21a655907d137914c695bf04637d8da2f09358a0732c961e739dd8e74c167",
+    "mtime_utc": "2026-09-01T10:32:08Z",
+    "size_bytes": 22651,
+    "line_count": 322,
+    "read_completely": true
+  },
+  "extracted_operational_requirements": {
+    "login_fqdn": "burgundy.hpc.cityu.edu.hk",
+    "backup_ip": "144.214.138.99",
+    "username": "sychan552",
+    "auth": "passwordless ed25519 key auth ACTIVE (2026-08-14); assistant may drive ssh/scp non-interactively",
+    "vpn_required": false,
+    "ssh_config_alias_cityu": "password-based (fallback only; NOT used for automation)",
+    "scratch_root": "/home/sychan552/scratch/CHATTIME (symlink -> /gpfs1/scratch/sychan552/CHATTIME)",
+    "project_code_dir": "/home/sychan552/scratch/CHATTIME/Chattime",
+    "hf_cache": "/gpfs1/scratch/sychan552/CHATTIME/.cache",
+    "module_preamble": "module unload default && module load old_modules",
+    "python_env": "conda env mlflu_hpc (Python 3.9.25); activate via PATH-prepend, NOT `conda activate`",
+    "python_activation": "export PATH=\"/home/sychan552/.conda/envs/mlflu_hpc/bin:$PATH\"",
+    "hf_env_exports": ["HF_HOME=/gpfs1/scratch/sychan552/CHATTIME/.cache", "TRANSFORMERS_CACHE=$HF_HOME", "HF_DATASETS_CACHE=$HF_HOME"],
+    "partition_default": "stingy",
+    "gres_syntax": "--gres=gpu:a100:1 (NEVER bare --gres=gpu:1 -> may land on V100 -> OOM)",
+    "wall_clock_hard_cap_stingy": "04:00:00 (values >4h are rejected with QOSMaxWallDurationPerJobLimit)",
+    "stingy_qos": "Jobs=1, Submit-Job=1 (max ONE pending job per user; QOSMaxSubmitJobPerUserLimit)",
+    "gpu_a100_qos": "no submission cap but congested (PD(Priority))",
+    "resource_request_red_line": "never inflate resources (account suspension risk); self-check every sbatch",
+    "storage_retention": "scratch has NO backup and is purged; pull outputs back to local after each job",
+    "transfer_conventions": "rsync via Git Bash preferred; PowerShell scp fallback; uploads do NOT auto-sync",
+    "slurm_version": "23.11.10",
+    "known_env_note": "statsmodels/patsy historically MISSING (job 502105); observed PRESENT now (statsmodels 0.14.6)"
+  },
+  "conflicts_with_DEPLOY_AND_VERIFY": [
+    {
+      "id": "C1_deployment_location",
+      "hpc_guide_ref": "§2 project code dir; §12 scratch retention; and the task rule 'do not overwrite the original MIFlu reproduction directory'",
+      "deploy_doc_ref": "DEPLOY_AND_VERIFY.md §2 ('cd /home/sychan552/scratch/CHATTIME/Chattime' then extract)",
+      "nature": "the generated doc extracts INTO the original reproduction directory",
+      "resolution": "RESOLVED by isolation: extracted into /home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964 (original Chattime/ untouched)",
+      "precedence_used": "security/isolation > HPC_GUIDE > DEPLOY_AND_VERIFY"
+    },
+    {
+      "id": "C2_missing_env_activation",
+      "hpc_guide_ref": "§4 module preamble + PATH-prepend + HF_HOME exports",
+      "deploy_doc_ref": "DEPLOY_AND_VERIFY.md does not specify environment activation",
+      "nature": "generated doc calls bare `python`",
+      "resolution": "RESOLVED: followed HPC_GUIDE.md §4 (module load old_modules + PATH-prepend + HF_HOME/TRANSFORMERS_CACHE/HF_DATASETS_CACHE)",
+      "precedence_used": "HPC_GUIDE > DEPLOY_AND_VERIFY"
+    },
+    {
+      "id": "C3_python_interpreter",
+      "hpc_guide_ref": "§4 conda env mlflu_hpc Python 3.9.25",
+      "deploy_doc_ref": "bare `python` in DEPLOY_AND_VERIFY.md",
+      "nature": "login-node default python may differ from the project env",
+      "resolution": "RESOLVED: `which python` = /home/sychan552/.conda/envs/mlflu_hpc/bin/python (Python 3.9.25)",
+      "precedence_used": "HPC_GUIDE > DEPLOY_AND_VERIFY"
+    }
+  ],
+  "unresolved_conflicts": [],
+  "invariants_preserved": {
+    "test_sealing": true,
+    "source_hash_verification": true,
+    "pilot_selection_eligible_false": true,
+    "no_winner_created": true,
+    "no_model_ranking": true,
+    "no_sbatch_this_turn": true,
+    "full_sweep_blocked": true
+  },
+  "credentials_recorded": "NONE (no passwords, keys or tokens written to this report)"
+}

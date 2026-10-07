@@ -1,0 +1,51 @@
+--- a/scripts/innovation/compact_checkpoint.py
++++ b/scripts/innovation/compact_checkpoint.py
+@@ -175,6 +175,37 @@
+     with open(p, "rb") as f:
+         for c in iter(lambda: f.read(1 << 20), b""):
+             h.update(c)
++    return h.hexdigest()
++
++
++# ---- canonical TENSOR-SEMANTIC hash (v3.16) --------------------------------
++# `sha256_file` proves FILE-BYTE integrity. It is NOT stable across serializer
++# header/offset ordering: the same tensors written by safetensors can produce
++# different bytes (observed: identical values and byte length, different SHA).
++# `canonical_tensor_sha256` therefore hashes the TENSORS, not the container:
++#   sorted by key, and for each key: dtype, shape, byte length and the raw
++#   little-endian tensor buffer, each length-prefixed, under a schema version.
++# It never feeds pickle output into the digest.
++CANONICAL_HASH_SCHEMA = "canonical-tensor-v1"
++
++
++def canonical_tensor_sha256(sd: dict) -> str:
++    h = hashlib.sha256()
++    h.update(CANONICAL_HASH_SCHEMA.encode("utf-8") + b"\x00")
++    for k in sorted(sd):
++        t = sd[k]
++        if not torch.is_tensor(t):
++            continue
++        t = t.detach().cpu()
++        if not t.is_contiguous():
++            t = t.contiguous()
++        shape = ",".join(str(d) for d in tuple(t.shape)).encode("utf-8")
++        for blob in (k.encode("utf-8"), str(t.dtype).encode("utf-8"), shape):
++            h.update(len(blob).to_bytes(8, "big"))
++            h.update(blob)
++        raw = t.numpy().tobytes()
++        h.update(len(raw).to_bytes(8, "big"))
++        h.update(raw)
+     return h.hexdigest()
+ 
+ 
+@@ -290,6 +321,10 @@
+         "source_checkpoint": ckpt, "source_sha256": sha256_file(ckpt),
+         "source_bytes": full_bytes,
+         "compact_path": out_path, "compact_sha256": sha256_file(out_path),
++        # v3.16: file-byte hash AND tensor-semantic hash (both are reported)
++        "canonical_tensor_sha256": canonical_tensor_sha256(compact),
++        "canonical_hash_schema": CANONICAL_HASH_SCHEMA,
++        "canonical_key_count": len(compact),
+         "compact_bytes": comp_bytes,
+         "compression_ratio": round(full_bytes / max(comp_bytes, 1), 2),
+         "n_full_keys": len(full_sd), "n_base_keys": len(base_sd),

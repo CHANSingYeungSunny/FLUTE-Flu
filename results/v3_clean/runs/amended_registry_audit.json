@@ -1,0 +1,12 @@
+{
+  "generated_utc": "2026-09-21T00:42:51Z",
+  "frozen_edited": false,
+  "frozen_sha256_unchanged": true,
+  "n_specs": 598,
+  "n_executable_bindings": 586,
+  "n_equivalent_to_wave1": 12,
+  "n_rebound": 6,
+  "n_scripts_written": 6,
+  "crlf_scripts": 0,
+  "rebound_parent": "timecma_llm"
+}

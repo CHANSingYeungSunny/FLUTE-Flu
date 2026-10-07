@@ -1,0 +1,9 @@
+dataset,required_by,released_in_author_repo,available_elsewhere,verdict,consequence
+National-Illness (966 rows),"Table II, IV, V, VII, VIII, X, Fig. 3",YES - dataset/illness/national_illness.csv,also in the project as paper_exact,AVAILABLE,Tier-1 reachable
+National-Illness raw CDC fields,"OT identity, Table II verification",partially - the released CSV has numeric headers,yes - the project's paper_exact file has CDC names,AVAILABLE,
+US-Region dataset,"Table III, VI, IX, Figs 5, 6",NO,the paper cites ref [25]; not shipped,MISSING,"Table VI, Table IX and Figs 5-6 are BLOCKED_BY_MISSING_DATA"
+text_emb assets (GPT-2 0507),"Table VII GPT-2 row, R1-B text input",YES - dataset/illness/text_emb/text_emb_label_0507_<L>.txt,n/a,AVAILABLE,R1-B uses the author's own embeddings
+LLaMA2-7B embedder assets,Table VII LLaMA2 row,YES - LLAMAtext_emb_label_0617_<L>.txt,n/a,AVAILABLE,but the 0617 date suffix differs from the released default 0507
+BERT embedder assets,Table VII BERT row,YES - BERTtext_emb_label_0617_<L>.txt,n/a,AVAILABLE,same date-suffix caveat
+prompt template,"Table I, Table X",described in the paper,transcribed in both sources,AVAILABLE,
+regional preprocessing,Table VI,NO,not described in executable detail,MISSING,

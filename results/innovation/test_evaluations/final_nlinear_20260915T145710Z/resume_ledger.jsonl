@@ -1,0 +1,7 @@
+{"utc": "2026-09-15T14:57:10Z", "event": "receipt_created", "test_eval_id": "final_nlinear_20260915T145710Z", "note": "one-time authorization consumed"}
+{"utc": "2026-09-15T15:00Z", "event": "first_run_started", "mode": "nohup_login_node", "note": "INCIDENT: later entered D state"}
+{"utc": "2026-09-16T00:5x", "event": "process_found_stuck", "pid": 3032070, "stat": "D", "elapsed": "01:14:20", "cells": 41}
+{"utc": "2026-09-16T00:5x", "event": "process_killed", "pid": 3032070, "note": "killed from an already-open shell; new sessions were blocked"}
+{"utc": "2026-09-16T00:5x", "event": "leftover_workers_killed", "note": "pkill -9 -f run_one_time_test; pkill -9 -f controller.sh"}
+{"utc": "2026-09-16T01:19Z", "event": "resume_submitted", "job_id": 560659, "mode": "sbatch_stingy", "cells_before": 41}
+{"utc": "2026-09-16T01:25Z", "event": "resume_completed", "job_id": 560659, "cells_after": 52}

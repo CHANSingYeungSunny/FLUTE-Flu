@@ -1,0 +1,10 @@
+section_no,section_title,content,depends_on,old_miflu_dependency,seasonal_naive_dependency,must_be_rewritten,replacement_evidence_required
+一,这份报告如何评估模型性能（零基础导读）,"metric definition, IPO流程, average_MSE_4L",none,no,YES (safe formula - only if a value is quoted),NO,unchanged
+二,研究方法与冻结选型规则,"1025 rows, 717/102/206, seeds 42-51, frozen selection rule",the selection rule and the model set,no,YES (safe formula - only if a value is quoted),NO,unchanged
+三,Wave-1 验证阶段：8 个架构的筛选,the 8-model validation ranking; gpt2_miflu 1st at 0.771,"gpt2_miflu, and the whole ranking",YES,YES (safe formula - only if a value is quoted),YES,"rewrite the MIFlu row, the ranking and the narrative"
+四,"机制发现：LLM 的""创新点""到底有没有用",the text/LoRA mechanism discussion,gpt2_miflu and its ablations,YES,YES (safe formula - only if a value is quoted),LIKELY,rewrite once R1-B's mechanism results exist
+五,一次性 Test/Holdout 最终评估,"NLinear 2.739, GPT-2 MIFlu 3.051, Seasonal-Naive 4.279","gpt2_miflu, and the two-stage reversal",YES,YES (safe formula - only if a value is quoted),YES,rewrite with the new MIFlu Test value
+六,统计方法与确认性检验,paired tests and intervals,the gpt2_miflu comparisons,YES,YES (safe formula - only if a value is quoted),YES,re-run the paired tests; ALSO fix the inverted win-count convention
+七,最终工作流与证据完整性,the workflow and evidence chain,the MIFlu pipeline,YES,YES (safe formula - only if a value is quoted),PARTLY,add the R1-B lane; note the seasonal-naive correction
+八,诚实结论,the conclusion that the LLM advantage did not hold on Test,gpt2_miflu,YES,YES (safe formula - only if a value is quoted),YES,restate after the replacement; the answer may or may not change
+九,局限性,limitations,several,YES,YES (safe formula - only if a value is quoted),YES,ADD: the pooling axis is UNRECOVERED; the transferred run is not a paper reproduction

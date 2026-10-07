@@ -1,0 +1,67 @@
+--- a/scripts/innovation/compact_checkpoint.py
++++ b/scripts/innovation/compact_checkpoint.py
+@@ -38,6 +38,7 @@
+ 
+ from innovation.backbones.registry import make_backbone          # noqa: E402
+ from innovation import clean_runner as CR                        # noqa: E402
++from innovation import architecture_contract as AC               # noqa: E402
+ 
+ QWEN_ID = "Qwen/Qwen2.5-1.5B"
+ GPT2_ID = "gpt2"
+@@ -249,6 +250,35 @@
+     unequal = [k for k in full_sd if k in rebuilt
+                and not torch.equal(rebuilt[k], full_sd[k].detach().cpu())]
+     exact = not missing and not extra and not unequal
++
++    # ---- D15: structural backbone accounting + applicability-aware invariant
++    contract = AC.probe_contract(model, bkw)
++    bb_prefixes = AC.backbone_key_prefixes(model)
++    bb_keys = [k for k in full_sd if AC.is_backbone_key(k, bb_prefixes)]
++    bb_total = sum(full_sd[k].numel() * full_sd[k].element_size()
++                   for k in bb_keys)
++    bb_excluded = 0
++    bb_unexpected = 0
++    bb_changed_dropped = 0
++    for k in bb_keys:
++        nb = full_sd[k].numel() * full_sd[k].element_size()
++        if k in compact:
++            # a RETAINED backbone tensor must be provably CHANGED vs the base
++            if k in base_sd and torch.equal(full_sd[k].detach().cpu(),
++                                            base_sd[k]):
++                bb_unexpected += nb
++        else:
++            bb_excluded += nb
++            # a DROPPED backbone tensor must be provably UNCHANGED
++            if k in base_sd and not torch.equal(full_sd[k].detach().cpu(),
++                                                base_sd[k]):
++                bb_changed_dropped += nb
++    no_duplication = AC.evaluate_duplication(
++        contract["has_pretrained_backbone"], bb_unexpected, exact, True)
++    # a changed-yet-dropped backbone tensor would break reconstruction, so it
++    # must also be zero; guard it explicitly rather than relying on inference.
++    if bb_changed_dropped:
++        no_duplication = False
+ 
+     fmt = _save_compact(compact, out_path)
+     full_bytes = os.path.getsize(ckpt)
+@@ -271,6 +301,20 @@
+         "kept_trained": kept_trained,
+         "kept_trained_bytes": sum(x["bytes"] for x in kept_trained),
+         "frozen_backbone_excluded": len(dropped_frozen) > 0,
++        # --- D15 structured contract evidence ---
++        "has_pretrained_backbone": contract["has_pretrained_backbone"],
++        "pretrained_backbone_contract_source": contract["contract_source"],
++        "pretrained_backbone_module_paths":
++            contract["pretrained_backbone_module_paths"],
++        "base_model_id": contract["base_model_id"],
++        "base_model_revision": contract["base_model_revision"],
++        "frozen_backbone_key_count": contract["frozen_backbone_key_count"],
++        "frozen_backbone_bytes_total": int(bb_total),
++        "frozen_backbone_bytes_excluded": int(bb_excluded),
++        "unexpected_frozen_backbone_bytes_retained": int(bb_unexpected),
++        "changed_frozen_backbone_bytes_dropped": int(bb_changed_dropped),
++        "no_frozen_backbone_duplication": bool(no_duplication),
++        "predicate_applicable": contract["storage_predicate_applicable"],
+         "reconstruction_exact": exact,
+         "missing_keys": missing[:20], "extra_keys": extra[:20],
+         "unequal_keys": unequal[:20],

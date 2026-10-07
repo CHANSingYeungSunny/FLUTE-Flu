@@ -1,0 +1,29 @@
+{
+  "dataset": "national_ili",
+  "raw_csv": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_3/data/raw/national_illness_raw.csv",
+  "full_rows": 1025,
+  "expected_full_rows": 1025,
+  "train_end": 717,
+  "val_end": 819,
+  "test_end": 1025,
+  "train_frac": 0.7,
+  "val_frac": 0.1,
+  "horizon_L": 24,
+  "T": 104,
+  "n_channels": 7,
+  "var_cols": [
+    "% WEIGHTED ILI",
+    "% UNWEIGHTED ILI",
+    "AGE 0-4",
+    "AGE 5-24",
+    "ILITOTAL",
+    "NUM. OF PROVIDERS",
+    "OT"
+  ],
+  "ili_channel": 4,
+  "ili_col": "ILITOTAL",
+  "window_stride": 1,
+  "split_rule": "split by target start week; train if <train_end, val if <=val_end else test",
+  "scaler_fit": "train rows only (data[:train_end])",
+  "prompt_stats_fit": "train rows only"
+}

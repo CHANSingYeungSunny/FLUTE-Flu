@@ -1,0 +1,42 @@
+{
+  "generated_utc": "2026-09-16T21:06:49Z",
+  "frozen_before_first_submission": true,
+  "scratch_is_not_durable": true,
+  "durable_root": "/home/sychan552/innovation_durable/screening",
+  "per_run_subdir": "<run_key>",
+  "must_copy": [
+    "config_resolved.yaml",
+    "environment.txt",
+    "git_commit.txt",
+    "split_manifest.json",
+    "scaler_metadata.json",
+    "prompt_statistics_metadata.json",
+    "logs/train_history.csv",
+    "predictions/validation_predictions.csv",
+    "metrics/validation_metrics.json",
+    "metrics/fixed_step_metrics.json",
+    "metrics/peak_metrics_by_season.csv",
+    "figures/",
+    "run_status.json",
+    "resource_usage.json",
+    "checkpoints/checkpoint_manifest.json",
+    "hpc_results/innovation/logs/<slurm logs>"
+  ],
+  "trainable_weights_persisted_in_full": true,
+  "frozen_backbone_policy": "for frozen pretrained LLM backbones, persist repository id, exact revision, file manifest and hashes instead of duplicating immutable multi-gigabyte backbone files; trainable adapter / projection / alignment weights plus a restoration recipe are stored in full",
+  "run_not_accepted_until_durable_copy_verified": true,
+  "restoration_check": {
+    "requirement": "at least one compute-node restoration check per distinct architecture family, using only the durable Screening package plus verified immutable backbone assets",
+    "must_match": [
+      "checkpoint file sha256",
+      "state-dict sha256"
+    ],
+    "must_reproduce": "saved validation predictions within the preregistered numerical tolerance",
+    "tolerance_preregistered_before_submission": true,
+    "tolerance": {
+      "metric": "max_abs_diff",
+      "z_space_predictions": 1e-05,
+      "mse_all_z_relative": 1e-06
+    }
+  }
+}

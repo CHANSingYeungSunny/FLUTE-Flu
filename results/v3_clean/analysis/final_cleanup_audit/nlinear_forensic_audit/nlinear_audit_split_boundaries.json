@@ -1,0 +1,77 @@
+{
+  "total_raw_weekly_timestamps": 1025,
+  "raw_index_range": "0..1024 (abs_week)",
+  "calendar_date_range": "2001-12-30 .. 2021-12-26 (MMWR Sunday)",
+  "train": {
+    "count": 717,
+    "abs_week": "0..716",
+    "dates": "2001-12-30 .. 2016-01-31",
+    "pct": 69.95
+  },
+  "validation": {
+    "count": 102,
+    "abs_week": "717..818",
+    "dates": "2016-02-07 .. 2018-01-14",
+    "pct": 9.95
+  },
+  "test": {
+    "count": 206,
+    "abs_week": "819..1024",
+    "dates": "2018-01-21 .. 2021-12-26",
+    "pct": 20.1
+  },
+  "rounding_rule": "int(round(1025*0.7))=717 ; int(round(1025*0.1))=102 ; remainder 206 (20.1%)",
+  "chronological": true,
+  "is_717_102_205_true": "No. Test timestamps = 206 (not 205). 205 is only the count of FULL-horizon unique target weeks.",
+  "what_1025_represents": "TOTAL weekly timestamps, NOT Test windows. Test windows = 206 - L.",
+  "val_end": 819,
+  "first_test_target_abs_week": 820,
+  "input_crosses_boundary": true,
+  "input_crosses_boundary_note": "Legal historical context (a Test target's 104-week input may include trailing Validation weeks + Test timestamp 819 as CONTEXT); target starts strictly AFTER input ends. Not leakage.",
+  "per_horizon": {
+    "24": {
+      "T": 104,
+      "stride": 1,
+      "total_windows": 898,
+      "train_windows": 613,
+      "val_windows": 103,
+      "test_windows": 182,
+      "test_target_abs_week": "820..1001",
+      "first_origin": 716,
+      "last_origin": 897
+    },
+    "36": {
+      "T": 104,
+      "stride": 1,
+      "total_windows": 886,
+      "train_windows": 613,
+      "val_windows": 103,
+      "test_windows": 170,
+      "test_target_abs_week": "820..989",
+      "first_origin": 716,
+      "last_origin": 885
+    },
+    "48": {
+      "T": 104,
+      "stride": 1,
+      "total_windows": 874,
+      "train_windows": 613,
+      "val_windows": 103,
+      "test_windows": 158,
+      "test_target_abs_week": "820..977",
+      "first_origin": 716,
+      "last_origin": 873
+    },
+    "60": {
+      "T": 104,
+      "stride": 1,
+      "total_windows": 862,
+      "train_windows": 613,
+      "val_windows": 103,
+      "test_windows": 146,
+      "test_target_abs_week": "820..965",
+      "first_origin": 716,
+      "last_origin": 861
+    }
+  }
+}

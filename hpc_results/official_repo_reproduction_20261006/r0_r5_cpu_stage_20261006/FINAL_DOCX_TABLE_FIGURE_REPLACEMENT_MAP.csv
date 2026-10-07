@@ -1,0 +1,15 @@
+item,kind,current_content,depends_on_old_miflu,what_changes,regenerate_required,evidence_required
+Table 1 (in §一),table,the Test ranking: NLinear / GPT-2 MIFlu / Seasonal-Naive,YES,the new MIFlu Test value,YES,new MIFlu Test MSE + CI
+Table 2,table,Wave-1 validation ranking (8 models),YES,the new MIFlu validation value,YES,new MIFlu validation MSE
+Table 3,table,per-horizon results,YES,the new MIFlu row,YES,per-horizon MSE/MAE
+Table 4,table,statistical tests,YES,the gpt2_miflu comparisons,YES,corrected paired tests (win direction fixed)
+Table 5,table,cost / resource table,YES,MIFlu training cost,NO,new MIFlu GPU-hours and checkpoint size
+Figure I,figure,"workflow overview; captured as text, NO embedded image found",PARTLY,the pipeline,PARTLY,an updated workflow diagram including the R1-B lane
+Figure A,figure,Wave-1 validation ranking of 8 architectures,YES,the MIFlu bar,NO,regenerate from the new validation ranking
+Figure B,figure,final Test/Holdout comparison of 3 frozen models,YES,the MIFlu bar,NO,regenerate from the new Test values
+Figure C,figure,"validation vs final Test, two stages",YES,the MIFlu points,NO,regenerate; the two-stage story may change
+Figure D,figure,"Test MSE and MAE by horizon, three models",YES,the MIFlu series,NO,regenerate
+Figure E,figure,peak-timing and peak-intensity error,YES,the MIFlu series,NO,regenerate
+Figure F,figure,"prediction vs ground truth, 3 models x 4 horizons",YES,the MIFlu curves,NO,regenerate
+Figure G,figure,deferred controls (Family A negative controls),YES,the MIFlu control family,NO,regenerate if the controls change
+Figure H,figure,final workflow: training -> validation -> controls -> freeze,YES,the MIFlu pipeline,PARTLY,update to include R1-B

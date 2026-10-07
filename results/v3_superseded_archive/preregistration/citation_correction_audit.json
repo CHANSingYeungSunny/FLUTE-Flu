@@ -1,0 +1,106 @@
+{
+  "generated_utc": "2026-09-15T19:59:40Z",
+  "n_corrections": 6,
+  "scan_scope": "active v3 documents only; immutable v2 evidence untouched",
+  "active_v3_files_scanned": [
+    "MIFlu_innovation_plan_v3.md",
+    "results/v3/preregistration/candidate_feasibility_matrix.json",
+    "results/v3/preregistration/candidate_feasibility_matrix.md",
+    "results/v3/preregistration/architecture_fidelity_matrix.md",
+    "results/v3/preregistration/dependency_and_license_audit.json",
+    "results/v3/preregistration/untouched_holdout_feasibility.json",
+    "scripts/v3/figure_style.py"
+  ],
+  "corrections": [
+    {
+      "id": "C1",
+      "subject": "Time-LLM venue",
+      "before": "ICML 2024",
+      "after": "ICLR 2024",
+      "severity": "factual citation error",
+      "evidence": [
+        "GitHub API repo description: '[ICLR 2024] Official implementation of \"Time-LLM: Time Series Forecasting by Reprogramming Large Language Models\"'",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/hash/680b2a8135b9c71278a09cafb605869e-Abstract-Conference.html",
+        "https://mlanthology.org/iclr/2024/jin2024iclr-timellm/"
+      ],
+      "files_corrected": [
+        "results/v3/preregistration/candidate_feasibility_matrix.json",
+        "results/v3/preregistration/candidate_feasibility_matrix.md",
+        "results/v3/preregistration/architecture_fidelity_matrix.md",
+        "results/v3/preregistration/dependency_and_license_audit.json",
+        "results/v3/preregistration/official_source_ledger.json",
+        "results/v3/preregistration/official_source_ledger.md"
+      ]
+    },
+    {
+      "id": "C2",
+      "subject": "raw-data latest observation date",
+      "before": "raw data extends to 2023-10-06 (inferred from release_date)",
+      "after": "release_date is the dataset release stamp, NOT the observation date; the observation axis is epiweek, whose maximum is 202152 (2021 week 52)",
+      "severity": "material factual error that created a phantom unused interval",
+      "evidence": [
+        "release_date has only 8 distinct values over 1025 rows",
+        "epiweek has 1025 distinct values, range 200201..202152",
+        "no row has epiweek > 202152 (count = 0)"
+      ],
+      "files_corrected": [
+        "results/v3/preregistration/untouched_holdout_feasibility.json"
+      ]
+    },
+    {
+      "id": "C3",
+      "subject": "LTSF-Linear (NLinear/DLinear) license",
+      "before": "MIT (pending live verification)",
+      "after": "Apache-2.0",
+      "severity": "license misstatement",
+      "evidence": [
+        "https://api.github.com/repos/cure-lab/LTSF-Linear -> license.spdx_id = Apache-2.0"
+      ],
+      "files_corrected": [
+        "results/v3/preregistration/dependency_and_license_audit.json",
+        "results/v3/preregistration/official_source_ledger.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "subject": "PatchTST license",
+      "before": "MIT (pending live verification)",
+      "after": "Apache-2.0",
+      "severity": "license misstatement",
+      "evidence": [
+        "https://api.github.com/repos/yuqinie98/PatchTST -> license.spdx_id = Apache-2.0"
+      ],
+      "files_corrected": [
+        "results/v3/preregistration/dependency_and_license_audit.json",
+        "results/v3/preregistration/official_source_ledger.json"
+      ]
+    },
+    {
+      "id": "C5",
+      "subject": "iTransformer license",
+      "before": "MIT (pending live verification)",
+      "after": "MIT (confirmed)",
+      "severity": "confirmation",
+      "evidence": [
+        "https://api.github.com/repos/thuml/iTransformer -> license.spdx_id = MIT"
+      ],
+      "files_corrected": [
+        "results/v3/preregistration/dependency_and_license_audit.json"
+      ]
+    },
+    {
+      "id": "C6",
+      "subject": "TimeCMA license",
+      "before": "pending live verification",
+      "after": "NOASSERTION (Other) - manual review required",
+      "severity": "blocks unconditional use",
+      "evidence": [
+        "https://api.github.com/repos/ChenxiLiu-HNU/TimeCMA -> license.key = other, spdx_id = NOASSERTION"
+      ],
+      "files_corrected": [
+        "results/v3/preregistration/dependency_and_license_audit.json",
+        "results/v3/preregistration/model_access_action_items.md"
+      ]
+    }
+  ]
+}

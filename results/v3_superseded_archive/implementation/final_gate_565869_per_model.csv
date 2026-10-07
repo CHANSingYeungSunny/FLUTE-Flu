@@ -1,0 +1,9 @@
+model_key,result
+nlinear,OK
+dlinear,OK
+patchtst,OK
+itransformer,OK
+gpt2_miflu,OK
+qwen_time_llm,OK
+calf_llm,OK
+timecma_llm,OK

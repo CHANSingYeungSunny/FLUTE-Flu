@@ -1,0 +1,29 @@
+[recompute8] 116 prediction artefacts in results/stage6/scoring/predictions
+[recompute8] scaler fitted on train rows [0, 676) ONLY; vars=7; manifest rows=17632
+[recompute8] max |mse_all diff| = 8.882e-16  max |mae_all diff| = 2.220e-16
+[recompute8] coverage OK: 96 eight-model fits + 12 notext control + 8 baselines
+
+=== average_MSE_4L recomputed from artefacts (7-var z-space MSE) ===
+-- eight-model
+   miflu              2.041519
+   nlinear            2.049550
+   dlinear            2.347832
+   timecma_llm        2.670009
+   patchtst           3.920470
+   itransformer       3.984699
+   qwen_time_llm      5.219555
+   calf_llm           5.515300
+-- mechanism-control
+   notext             1.922158
+-- baseline
+   seasonal_naive     2.268799
+   last_value_naive   7.165831
+
+[recompute8] non-LLM mean average_MSE_4L = 3.075638 (n=4)
+[recompute8] LLM     mean average_MSE_4L = 3.861596 (n=4)
+[recompute8] NOTE: these are 4 fixed implementations chosen in advance,
+             NOT a random sample of 'all LLMs'. This is a descriptive
+             comparison of two named sets and carries no inferential
+             claim about LLM forecasters in general.
+
+[recompute8] PASS — eight-model primary metric independently reproduced

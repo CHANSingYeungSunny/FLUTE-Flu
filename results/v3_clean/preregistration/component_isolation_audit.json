@@ -1,0 +1,198 @@
+{
+  "generated_utc": "2026-09-17T15:31:15Z",
+  "purpose": "component-isolation audit for the 6 MIFlu ablations and 3 v3 negative controls",
+  "method": "constructor-signature and wiring-table inspection only; no weights loaded",
+  "constructor_signatures": {
+    "qwen_time_llm": [
+      "self",
+      "T",
+      "N",
+      "L",
+      "model_id",
+      "load_backbone",
+      "hidden_dim",
+      "patch_len",
+      "prompt_components",
+      "text_mode"
+    ],
+    "calf_llm": [
+      "self",
+      "T",
+      "N",
+      "L",
+      "model_id",
+      "load_backbone",
+      "hidden_dim",
+      "text_mode"
+    ],
+    "timecma_llm": [
+      "self",
+      "T",
+      "N",
+      "L",
+      "model_id",
+      "load_backbone",
+      "hidden_dim",
+      "text_mode"
+    ],
+    "gpt2_miflu": [
+      "self",
+      "T",
+      "N",
+      "L",
+      "device",
+      "K",
+      "lora_r",
+      "Lp",
+      "S",
+      "use_text_ln",
+      "use_lora",
+      "gated_inject",
+      "unfreeze_first_k"
+    ]
+  },
+  "n_variants": 9,
+  "n_isolation_ok": 9,
+  "all_passed": true,
+  "variants": [
+    {
+      "variant": "llm_removed_or_alignment_only",
+      "base": "llm_text_branch",
+      "target_component": "cross-modality / LLM branch",
+      "kwargs": {
+        "text_mode": "removed"
+      },
+      "single_component_changed": true,
+      "evidence": "text_mode accepted by QwenTimeLLM / CALFInspired / TimeCMAInspired",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "shuffled_text",
+      "base": "llm_text_branch",
+      "target_component": "text token order (permuted)",
+      "kwargs": {
+        "text_mode": "shuffle"
+      },
+      "single_component_changed": true,
+      "evidence": "text_mode accepted by QwenTimeLLM / CALFInspired / TimeCMAInspired",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "without_dataset_information",
+      "base": "qwen_time_llm",
+      "target_component": "Prompt-as-Prefix component",
+      "kwargs": {
+        "prompt_components": [
+          "task",
+          "variable"
+        ]
+      },
+      "single_component_changed": true,
+      "evidence": "QwenTimeLLM.__init__ accepts prompt_components; enabled = ['task', 'variable']",
+      "parameter_groups_touched": [
+        "prompt"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "without_input_variable_description",
+      "base": "qwen_time_llm",
+      "target_component": "Prompt-as-Prefix component",
+      "kwargs": {
+        "prompt_components": [
+          "dataset",
+          "task"
+        ]
+      },
+      "single_component_changed": true,
+      "evidence": "QwenTimeLLM.__init__ accepts prompt_components; enabled = ['dataset', 'task']",
+      "parameter_groups_touched": [
+        "prompt"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "without_lora",
+      "base": "gpt2_miflu",
+      "target_component": "LoRA module",
+      "kwargs": {
+        "use_lora": false
+      },
+      "single_component_changed": true,
+      "evidence": "GPT2MifluAdapter.__init__ accepts ['use_lora']; all present=True",
+      "parameter_groups_touched": [
+        "lora"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "without_lora_and_multimodality",
+      "base": "gpt2_miflu",
+      "target_component": "LoRA module + text/multimodal branch",
+      "kwargs": {
+        "use_lora": false,
+        "use_text_ln": false,
+        "gated_inject": false
+      },
+      "single_component_changed": true,
+      "evidence": "GPT2MifluAdapter.__init__ accepts ['gated_inject', 'use_lora', 'use_text_ln']; all present=True",
+      "parameter_groups_touched": [
+        "lora",
+        "text"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "without_multimodality",
+      "base": "gpt2_miflu",
+      "target_component": "LoRA module + text/multimodal branch",
+      "kwargs": {
+        "use_text_ln": false,
+        "gated_inject": false
+      },
+      "single_component_changed": true,
+      "evidence": "GPT2MifluAdapter.__init__ accepts ['gated_inject', 'use_text_ln']; all present=True",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "without_task_instruction",
+      "base": "qwen_time_llm",
+      "target_component": "Prompt-as-Prefix component",
+      "kwargs": {
+        "prompt_components": [
+          "dataset",
+          "variable"
+        ]
+      },
+      "single_component_changed": true,
+      "evidence": "QwenTimeLLM.__init__ accepts prompt_components; enabled = ['dataset', 'variable']",
+      "parameter_groups_touched": [
+        "prompt"
+      ],
+      "isolation_ok": true
+    },
+    {
+      "variant": "zero_text",
+      "base": "llm_text_branch",
+      "target_component": "text embeddings (zeroed)",
+      "kwargs": {
+        "text_mode": "zero"
+      },
+      "single_component_changed": true,
+      "evidence": "text_mode accepted by QwenTimeLLM / CALFInspired / TimeCMAInspired",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true
+    }
+  ]
+}

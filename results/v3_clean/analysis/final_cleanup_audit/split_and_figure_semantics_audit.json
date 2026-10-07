@@ -1,0 +1,104 @@
+{
+  "generated": "2026-09-21",
+  "purpose": "Read-only audit of (1) the frozen data split / window arithmetic and (2) the prediction-curve figure semantics, triggered by the suspicion that the report's sentence '训练 717 / 验证 102 / 测试 1025 个窗口' conflates timestamps, sliding-window count, and total rows.",
+  "verdict": {
+    "split_statement_in_report": "INCORRECT — '测试 1025 个窗口' is false; 1025 is the TOTAL number of weekly timestamps, not the Test window count",
+    "figure_semantics": "CONSISTENT — 'seed-mean lead-1' equals fig_q1 step0; both are rolling-origin lead-1 concatenations",
+    "action": "correct the report sentence with machine-extracted counts; figures already semantically correct (no regeneration); regenerate DOCX/PDF; re-QA",
+    "end_token": "SPLIT_AND_FIGURE_SEMANTICS_VERIFIED"
+  },
+  "sources_cross_checked": {
+    "paper_pdf": {
+      "file": "reference_papers/MIFlu_Large_Language_Model-Based_Multimodal_Influenza_Forecasting_Scheme.pdf",
+      "national_illness": "7 variables, United States 2002-2021, includes ages 0-4, number of providers, total national ILI",
+      "split": "training/validation/test at 70:10:20",
+      "lookback_T": "104 steps (prompt: 'Predict the next 24 steps given the previous 104 steps')",
+      "horizons": "L = 24, 36, 48, 60 (long-term, L >= 24)",
+      "repetitions": "mean of 10 repetitions",
+      "metric_space": "MSE and MAE computed after StandardScaler normalization of each input variable (z-space)"
+    },
+    "configs_py": {
+      "FULL_ROWS": 1025,
+      "TRAIN_END": 717,
+      "VAL_END": 819,
+      "T": 104,
+      "N_CHANNELS": 7,
+      "derive_split": "train_end = int(n*0.70); val_end = train_end + int(n*0.10) -> 717 / 819",
+      "assert_full_window": "refuses any n_rows != 1025 (rejects the 966-row truncated variant)"
+    },
+    "scaler_manifest": {"train_end": 717, "val_end": 819, "7 var_cols, ILITOTAL index 4"},
+    "split_manifest": {"full_rows": 1025, "train_end": 717, "val_end": 819, "test_end": 1025, "window_stride": 1, "split_rule": "split by target start week; train if <train_end, val if <=val_end else test", "scaler_fit": "train rows only (data[:train_end])"},
+    "raw_csv": {"file": "data/raw/national_illness_raw.csv", "rows": 1025, "epiweek": "200201..202152", "note": "data/raw/national_illness_raw_paper_exact.csv is 966 rows (200240..202113) and is REJECTED by assert_full_window"}
+  },
+  "split": {
+    "n_total_timestamps": 1025,
+    "abs_week_range": [0, 1024],
+    "date_range_mmwr_sunday": ["2001-12-30", "2021-12-26"],
+    "fraction": "70:10:20 chronological",
+    "timestamps": {
+      "train": {"n": 717, "abs_week": [0, 716], "dates": ["2001-12-30", "2016-01-31"], "fraction_of_total": "69.95%"},
+      "validation": {"n": 102, "abs_week": [717, 818], "dates": ["2016-02-07", "2018-01-14"], "fraction_of_total": "9.95%"},
+      "test": {"n": 206, "abs_week": [819, 1024], "dates": ["2018-01-21", "2021-12-26"], "fraction_of_total": "20.10%"}
+    },
+    "val_end": 819,
+    "first_test_target_abs_week": 820,
+    "first_test_target_date": "2018-01-28",
+    "note": "test TIMESTAMP 819 (2018-01-21) is input-context ONLY, never a target; the first target a test window can predict is 820.",
+    "sum_check": "717 + 102 + 206 = 1025"
+  },
+  "window_generation": {
+    "T_input": 104,
+    "stride": 1,
+    "n_channels": 7,
+    "ili_channel": 4,
+    "formula_n_windows": "nw = 1025 - 104 - L + 1 = 922 - L",
+    "split_rule": "split by target START week ts = origin + T; train if ts < 717, validation if 717 <= ts <= 819, test if ts > 819",
+    "input_crosses_split_boundary": true,
+    "input_crosses_explanation": "the input of a window is data[ts-104 : ts], which for test targets spans the most recent 104 weeks ending at ts-1 (this legitimately includes validation and even the first test timestamp 819 as CONTEXT; the target starts strictly after the input, so there is no leakage).",
+    "full_future_L_must_lie_inside_data": true,
+    "full_future_explanation": "a test window's L-step target [ts, ts+L-1] must satisfy ts <= 1025-L so the whole horizon fits in the data; hence test target starts are [820, 1025-L], and the last L-1 test timestamps (1026-L .. 1024) are reached only via step >= 1 of earlier windows, never as a window start."
+  },
+  "window_counts_by_horizon": {
+    "train_windows": 613,
+    "train_explanation": "target start ts in [104, 716] (L-independent)",
+    "validation_windows": 103,
+    "validation_explanation": "target start ts in [717, 819] (L-independent)",
+    "test_windows_formula": "206 - L",
+    "test_explanation": "target start ts in [820, 1025-L]",
+    "per_horizon": {
+      "24": {"n_windows_total": 898, "train": 613, "validation": 103, "test": 182},
+      "36": {"n_windows_total": 886, "train": 613, "validation": 103, "test": 170},
+      "48": {"n_windows_total": 874, "train": 613, "validation": 103, "test": 158},
+      "60": {"n_windows_total": 862, "train": 613, "validation": 103, "test": 146}
+    }
+  },
+  "test_target_weeks": {
+    "distinct_target_weeks_full_horizon": 205,
+    "distinct_target_explanation": "abs_week [820, 1024]; the full-horizon metric covers all L steps of every test window",
+    "lead1_reachable_formula": "206 - L",
+    "lead1_explanation": "the lead-1 (step 0) prediction curve covers only [820, 1025-L]",
+    "first_forecast_origin": 716,
+    "last_forecast_origin_by_horizon": {"24": 897, "36": 885, "48": 873, "60": 861}
+  },
+  "do_not_conflate": {
+    "total_timepoints": 1025,
+    "split_timepoints": "717 / 102 / 206",
+    "sliding_window_count": "613 / 103 / (206 - L) per horizon",
+    "unique_target_week_count": "205 (full horizon) or 206 - L (lead-1)",
+    "report_error": "the report wrote '训练 717 / 验证 102 / 测试 1025 个窗口': 717 and 102 are timestamp counts, and 1025 is the TOTAL timestamp count mislabeled as Test windows. Correct Test windows are 182/170/158/146 for L=24/36/48/60."
+  },
+  "figure_semantics": {
+    "reference": "scripts/q1_step_sweep.py: aggregate_lead_time(mode='fixed_step', step=0) -> keep step 0 (lead-1) rows, groupby(abs_week).mean()",
+    "final": "scripts/v3_clean/final_test_figures.py: load_seed_mean_curves (seed-mean) + lead1_curve (lead_weeks==1)",
+    "seed_mean_lead1_equals_step0": true,
+    "curve_type": "rolling-origin fixed-lead (lead-1) concatenation, NOT single-origin full-L-step forecast",
+    "multiplicity_resolution": "at fixed lead each target week has exactly one origin (origin = target_week - 104 - step); the only averaging is across 7 variables (filtered to ILITOTAL index 4) and 10 seeds (seed-mean)",
+    "consistent": true,
+    "reference_file": "results/v3_clean/analysis/final_cleanup_audit/reference_vs_final_figure_semantics.json"
+  },
+  "report_fixes_applied": {
+    "line_44_split_sentence": "replaced with machine-extracted timestamp/window counts",
+    "line_13_date": "corrected '至 2022 年' to '至 2021-12-26'",
+    "project_summary": "already correct (no split-count sentence; caption already says 'seed-mean lead-1') — no change required"
+  }
+}

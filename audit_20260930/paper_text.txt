@@ -1,0 +1,1032 @@
+
+
+=============== PAGE 1 ===============
+7790 IEEE JOURNAL OF BIOMEDICAL AND HEAL TH INFORMA TICS, VOL. 29, NO. 10, OCTOBER 2025
+MIFlu: Large Language Model-Based
+Multimodal Inﬂuenza Forecasting Scheme
+Jaeuk Moon , Member, IEEE , Jonghwa Shim , Eunbeen Kim , and Eenjun Hwang , Member, IEEE
+Abstract— In order to minimize the impact of inﬂuenza
+on public health, accurate early forecasting is essential.
+Various deep-learning-based models have been proposed
+to predict future inﬂuenza occurrences by capturing tempo-
+ral/regional patterns from past occurrence time-series data.
+However, the prediction performance of these unimodal ap-
+proaches is limited because they extract knowledge only
+from collected data, and users cannot input contextual in-
+formation and domain knowledge to them. Recently, large
+language models (LLMs) have demonstrated the potential
+to improve prediction accuracy by linking contextual text
+information to time-series predictions. In this paper, we
+propose MIFlu, a multimodal inﬂuenza forecasting scheme
+that can fuse contextual text information to time-series in-
+ﬂuenza occurrences using two LLMs. It ﬁrst extracts text
+embeddings from the user’s text prompts that contain con-
+textual information using a text-embedding LLM. Then, MI-
+Flu fuses the text embeddings and time-series embeddings
+and uses the fused embeddings to predict future occur-
+rences using a forecasting LLM. In extensive experiments
+using public national/regional inﬂuenza datasets, MIFlu
+outperforms other predictive models, improving prediction
+performance by up to 26.2% compared to state-of-the-art
+models. We also analyze the effect of various textual input
+embedders, hyperparameters, and the amount of training
+data on forecasting accuracy.
+Index Terms— Artiﬁcial neural network, deep learning, ILI
+prediction, large language models, multimodal forecasting.
+I. I NTRODUCTION
+I
+NFECTIOUS diseases transmitted through the respiratory
+tract have severe economic, social, and health impacts on
+society. The recent coronavirus disease (COVID-19) outbreak
+has clearly demonstrated the widespread negative consequences
+of infectious diseases, such as massive mortality and global
+economic disruption. Inﬂuenza is also a major public health chal-
+lenge, with the World Health Organization (WHO) estimating
+that inﬂuenza causes 3 to 5 million severe symptomatic illnesses
+and 290,000 to 650,000 deaths every year [1]. Early forecasting
+Received 18 November 2024; revised 21 March 2025 and 27 March
+2025; accepted 12 April 2025. Date of publication 15 April 2025; date of
+current version 7 October 2025. This work was supported by NRF (Na-
+tional Research Foundation of Korea) under Grant RS-2023-00252257
+and in part by the NRF Korean Government (MSIT) under Grant RS-
+2024-00397293. (Corresponding author: Eenjun Hwang.)
+The authors are with the School of Electrical Engineering, Korea
+University , Seoul 02841, South Korea (e-mail: jaewookmo@korea.ac.
+kr; indexlibrorum3822@korea.ac.kr; gichanac@korea.ac.kr; ehwang
+04@korea.ac.kr).
+Digital Object Identiﬁer 10.1109/JBHI.2025.3561214
+of inﬂuenza outbreaks can reduce the severity of impacts by
+allowing time for countermeasures such as vaccine manufactur-
+ing, implementation of prevention policies, and introduction of
+quarantine protocols before an outbreak occurs [2].
+To date, inﬂuenza forecasting has typically relied on mul-
+tivariate time-series forecasting approaches that predict future
+inﬂuenza occurrences in multiple regions/variables using only
+past occurrence data for those regions/variables. Here, exoge-
+nous data such as internet search or weather data are not utilized
+because of their limited availability and reliability [3], [4],
+[5]. To this end, researchers have attempted to capture tempo-
+ral patterns and interrelationships in inﬂuenza occurrence data
+across different regions/variables (i.e., regional patterns) using
+deep-learning-based models [3], [4], [5]. For example, graph
+neural networks (GNNs), which consider each region/variable
+as a graph node and represent regional patterns as an adja-
+cency matrix, have been used for inﬂuenza forecasting [3], [4].
+More recently, self-attention mechanisms, which assign higher
+weights to relatively important components in the input data,
+have replaced GNNs for the modeling of regional patterns [5].
+Domain knowledge such as disease characteristics, health
+policy changes, and task instructions (e.g., user prediction in-
+structions) can be effectively used for inﬂuenza forecasting.
+Nevertheless, conventional forecasting methods are very limited
+in leveraging this contextual information because they are based
+on unimodal models that capture time-series temporal/regional
+patterns in historical inﬂuenza occurrences. To address this
+problem, an effective way to fuse data from different modalities,
+such as contextual text information and historical time-series
+data, is needed. One option for this is large language models
+(LLM), which have been extensively studied in various ﬁelds
+such as natural language processing [6], computer vision [7],
+and time-series tasks [8], [9]. In particular, autoregressive LLM
+models (e.g., GPT and LLaMA) based on transformer decoders
+can be used for predictions by pre-training the LLM via causal
+language modeling to predict masked words that appear after the
+input text, thus making them suitable for time-series forecasting
+[8], [9]. Pre-trained LLMs can also adapt to new tasks with
+only a few data points based on their pre-trained background
+knowledge and have the ability to encode the meaning/sequential
+patterns of text as latent vectors. Therefore, contextual informa-
+tion can be expressed as text and incorporated into time-series
+forecasting.
+Based on this observation, in this paper, we propose MIFlu, a
+multimodal inﬂuenza forecasting scheme that can produce more
+accurate predictions by fusing contextual information expressed
+2168-2194 © 2025 IEEE. All rights reserved, including rights for text and data mining, and training of artiﬁcial intelligence and similar technologi es.
+Personal use is permitted, but republication/redistribution requires IEEE permission. See https://www.ieee.org/publications/rights/index. html
+for more information.
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 2 ===============
+MOON et al.: MIFLU: LARGE LANGUAGE MODEL-BASED MUL TIMODAL INFLUENZA FORECASTING SCHEME 7791
+in text format with time-series inﬂuenza occurrence data using
+two LLMs. MIFlu consists of three components: 1) a textual in-
+put embedder that outputs text embeddings using tokenizer and
+text-embedding LLM for text prompts containing forecasting
+instructions, statistical knowledge of data, dataset description,
+and domain knowledge from experts; 2) a time-series input
+embedder that normalizes time-series inﬂuenza occurrence data,
+divides it into patches, and outputs time-series input embed-
+dings; and 3) a forecasting LLM that predicts future inﬂuenza
+occurrences based on the fusion of the two embeddings by ﬁne-
+tuning only a few LLM parameters and additional parameters
+using a parameter-efﬁcient ﬁne-tuning (PEFT) technique. We
+compared the forecasting accuracy of MIFlu with comparative
+models using national/regional inﬂuenza forecasting tasks. We
+also analyze its forecasting performance when changes are made
+to the textual input embedder, hyperparameters, text prompt,
+and amount of training data. Finally, we investigate through an
+ablation study whether each component of MIFlu is essential.
+The main contributions of this study are as follows:
+r We propose a multimodal inﬂuenza forecasting model that
+fuses textual domain knowledge and time-series occur-
+rence data using two LLMs. To the best of our knowledge,
+this is the ﬁrst study to employ multimodal forecasting
+based on LLM for inﬂuenza forecasting.
+r We demonstrate through various experiments that the pro-
+posed model outperforms other state-of-the-art (SOTA)
+models in national/regional inﬂuenza forecasting tasks.
+r We present a prompt template that provides contextual
+information to the forecasting LLM to enrich its interpre-
+tation of time-series inﬂuenza occurrences.
+The remainder of this paper is organized as follows. SectionII
+presents related work, while Section III provides preliminaries.
+Section IV then describes the proposed model, Section V de-
+scribes the experimental settings, and SectionVI summarizes the
+results. Finally, Section VII concludes the paper and discusses
+limitations and future work.
+II. R ELA TEDWORK
+Regional inﬂuenza forecasting predicts future inﬂuenza oc-
+currences in multiple regions using only historical occurrence
+data from those regions. Here, exogenous data such as internet
+search (e.g., Google Trend) or weather data are not utilized
+because of their limited availability and reliability [3], [4],
+[5]. Due to the nature of infectious diseases, which spread
+rapidly across regions over time, researchers have focused on
+jointly capturing temporal and regional patterns of inﬂuenza
+outbreaks [10]. To achieve this, deep-learning models such as
+recurrent neural networks (RNNs) and GNNs have been widely
+used. RNNs and their variants, such as long short-term memory
+(LSTM) and gated recurrent units, are specialized for capturing
+temporal patterns. For example, Wu et al. [4] utilized an RNN
+to learn temporal patterns in speciﬁc regions and adopted a
+convolutional neural network (CNN) to fuse temporal patterns
+in multiple regions to capture regional patterns. They also added
+residual connections between time sequences to avoid overﬁtting
+during the training process. In contrast, GNNs consider each
+region as a graph node and can effectively represent regional
+patterns with an adjacency matrix. For example, Deng et al.
+[3] ﬁrst captured the temporal patterns of nodes using a tem-
+poral CNN and utilized these patterns in a node feature matrix.
+Subsequently, they used an RNN to extract features from each
+node and utilized these features to construct an adjacency matrix
+that represents regional patterns. The node feature matrix and
+adjacency matrix were incorporated using a GNN to predict
+future inﬂuenza occurrences.
+Self-attention mechanisms can also be used to capture re-
+gional patterns by assigning higher weights to relatively impor-
+tant components in the input data. For example, Jung et al. [5],
+[10] proposed the inﬂuenza forecasting model SAIFlu-Net using
+this mechanism. They ﬁrst used LSTM to obtain the temporal
+patterns of each region and used these patterns as a query
+and key for each region. The self-attention mechanism then
+calculated regional patterns for regional inﬂuenza forecasting.
+They demonstrated that SAIFlu-Net was superior to previous
+regional inﬂuenza forecasting models, including CNNRNN and
+Cola-GNN.
+Transformers, ﬁrst introduced by V aswani et al. [11],h a v e
+recently been used for multivariate time-series forecasting. The
+transformer architecture consists of two modules that rely heav-
+ily on self-attention: an encoder that understands the input
+data and a decoder that generates an output sequence based on
+knowledge from the encoder. The transformer[11] is suitable for
+capturing long-term temporal patterns due to its self-attention,
+which can capture temporal patterns over the entire period of
+the input data. Therefore, researchers have used transformers
+and their variants for long-term forecasting, including national
+inﬂuenza forecasting which predicts multiple different vari-
+ables that represent the inﬂuenza occurrence of one country.
+Kitaev et al. [12] proposed the long-term forecasting model
+Reformer, which was based on a transformer. They utilized
+locality-sensitive hashing to perform an approximate nearest
+neighbor search, which led to a more memory-efﬁcient trans-
+f o r m e r .W ue ta l .[13] also modiﬁed a transformer to develop a
+decomposition forecasting architecture. They decomposed the
+input time series into patches divided by the time axis and
+replaced self-attention with an auto-correlation module. This
+allowed the model to capture seasonal and cyclic temporal
+patterns.
+Recently, LLMs based on transformer architectures pre-
+trained on large-scale text databases have demonstrated remark-
+able performance in a variety of natural language processing
+(NLP) tasks, attempts have been made to utilize LLMs for
+time-series forecasting by aligning time-series features with text
+features. For example, Zhou et al.[9] proved that ﬁne-tuning only
+the ﬁrst several layers of the pre-trained GPT2 with an added
+output layer appropriate for the downstream task can outperform
+existing transformer-based models in various time-series tasks
+such as long- and short-term forecasting, classiﬁcation, and
+anomaly detection.
+These previous approaches are unimodal inﬂuenza forecast-
+ing models that are trained solely to predict future values by
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 3 ===============
+7792 IEEE JOURNAL OF BIOMEDICAL AND HEAL TH INFORMA TICS, VOL. 29, NO. 10, OCTOBER 2025
+capturing complicated temporal and regional patterns from his-
+torical time-series data. They cannot leverage expert domain
+knowledge or external information, which is mainly expressed in
+text. Fusing multiple types of knowledge from different modal-
+ities is very useful for improving the accuracy of epidemics
+prediction. For example, Papagiannopoulou et al.[14] attempted
+to incorporate a diverse range of exogenous data (e.g., meteo-
+rological and population data) based on self-attention in order
+to capture the variation in inﬂuenza occurrences. Despite the
+SOTA regional inﬂuenza forecasting accuracy, their approach
+represented the exogenous information as time-series data. In
+addition, for countries where exogenous data are not available,
+the forecasting model cannot be used because the input dimen-
+sions of the trained model differ for that country. This can be
+addressed by enriching the inﬂuenza occurrence information by
+adding textual prompts to the time-series data and using an LLM
+pre-trained on these multimodal data.
+III. P RELIMINARIES
+In this section, we formulate national and regional inﬂuenza-
+like illness forecasting tasks and brieﬂy review LLMs for ILI
+forecasting.
+A. Problem Formulation
+We formulate inﬂuenza forecasting as a multivariate time-
+series forecasting task that predicts the number of future ILI
+patients. Hereafter, we deﬁne “ILI” as the ILI patient count in
+both national and regional ILI forecasting. Here,N represents the
+number of variables, L represents the number of future weeks
+to predict, and T represents the time length of the input data.
+xit ∈ R denotes the ILI for the i-th variable at time t and Xi
+=[ x1
+i ,..., x T
+i ] ∈ RT is the set of ILIs in region i over the past
+T weeks. The undeﬁned notations in this section are described in
+detail later. Below is a description of two inﬂuenza forecasting
+tasks that differ in the conﬁguration of variables:
+1) National ILI Forecasting: National ILI forecasting pre-
+dicts not only the ILI for the entire country (i.e., national ILI), but
+also several variables that represent sub-indicators of national
+ILI. The variables can contain national ILI, ILI for speciﬁc age
+groups, and ILI adjusted for population size or the number of
+reporting providers (see Table II). Following [9], the goal of
+national ILI forecasting is to predict the ILI for L continuous
+future weeks based on N variables for a window size of the
+past T weeks, where Xinput ∈ RN×T is the input for forecasting
+model f (1):
+ˆY = ˆY t+L ..., ˆY t+1 = f (Xinput)
+= f
+(
+Xt−(T−1),..., X t−1,X t
+)
+= f
+⎛
+⎜⎜⎝
+xt−(T−1)
+1 ··· xt
+1
+... . . . ...
+xt−(T−1)
+N ··· xt
+N
+⎞
+⎟⎟⎠ (1)
+2) Regional ILI Forecasting: Unlike the national ILI fore-
+casting, the variables for this task consist of only ILI ofN regions.
+Following several studies [3], [4], [5], [14], the goal of regional
+ILI forecasting has been to forecast the ILI after L weeks in N
+regions by using Xinput as an input for f, as described in (2).
+ˆyt+L = f (Xinput) (2)
+B. LLM
+Most LLMs are based on a transformer that relies on a
+self-attention mechanism. In general, the transformer structure
+consists of an encoder and a decoder, leading to two main types
+of LLM: autoencoding models based on an encoder (e.g., BERT
+[15]) and autoregressive models based on an decoder (e.g., GPT
+[16] and a LLaMA [17]). Autoencoding models are widely used
+in downstream tasks in which understanding the input text is
+important, such as word/document classiﬁcation or sentiment
+analysis, while autoregressive models aim to generate text that is
+likely to follow the input text. Autoregressive models are trained
+on large volumes of unlabeled text data using self-supervised
+learning, in which they learn to predict the next masked word
+as the label of the input text. This predictive ability generated
+during the training process in causal language modeling makes
+LLMs suitable for time-series forecasting tasks [18].
+C. Parameter Efﬁcient Fine-T uning
+As LLMs are pre-trained with diverse and large amounts of
+data, ﬁne-tuning is essential to utilize LLM for a speciﬁc task.
+However, ﬁne-tuning all the layers of LLMs on small, domain-
+speciﬁc dataset can make LLM forget most of the pre-trained
+knowledge during the ﬁne-tuning process [22]. This problem is
+called catastrophic forgetting, which raises the importance of
+new training methods.
+PEFT [23] has emerged as an effective solution to this problem
+by selectively optimizing essential parameters while leaving the
+other parameters unchanged. Of the PEFT techniques that have
+been developed, we use low-rank adaptation (LoRA) [24] due
+to its adaptation performance. LoRA adds lightweight, fully
+connected layers in parallel to speciﬁc layers of the pre-trained
+LLM and updates only these added layers.
+IV . PROPOSED SCHEME
+A ss h o w ni nF i g .1, the overall structure of the proposed
+scheme consists of three modules: a textual input embedder,
+a time-series input embedder, and a forecasting LLM.
+A. T extual Input Embedder
+The textual input embedder constructs a text prompt contain-
+ing contextual information such as domain knowledge and task
+instructions and encodes the prompt into the text embeddings
+so that MIFlu can forecast future ILIs based on the richer infor-
+mation compared to the unimodal ILI forecasting. For example,
+MIFlu can take into account insights from infectious disease
+experts about future ILI patterns or changes in public health
+policy in its infectious disease forecasting. Also, text prompts
+provide real-time updates that enable forecasting models to
+quickly adapt to rapid changes of ILI patterns (e.g., emergence
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 4 ===============
+MOON et al.: MIFLU: LARGE LANGUAGE MODEL-BASED MUL TIMODAL INFLUENZA FORECASTING SCHEME 7793
+Fig. 1. Architecture of the proposed scheme.
+T ABLE I
+TEMPLA TE OF AN INPUT TEXT PROMPT
+of new strains, public health interventions, or changes in public
+behavior) [8].
+We construct a text prompt template for inﬂuenza forecasting
+that includes the dataset information, task instructions, and
+description of the input variables, following the template of[18].
+A template of the input text prompt is presented in Table I (full
+example is presented in Appendix). The dataset information pro-
+vides the essential background information for the dataset, such
+as the number of variables, the dataset domain, and the period
+of Xtrain
+i (i.e., training input data of region i) for the LLM. The
+description of the input variables used during the training period
+includes statistics (e.g., the minimum and maximum forXtrain
+i )
+and domain knowledge from the user. We use the overall trend
+for Xtrain
+i and the number of peak timings each year. Finally, the
+task instructions include details of the forecasting task, including
+lead time L and window size T.
+Textual input embedder consists of a tokenizer and text-
+embedding LLM. After constructing the input text prompt, we
+use the text-embedding LLM to obtain embedding vectors for
+the input prompt. To achieve this, we ﬁrst tokenize the text using
+a pre-trained tokenizer. Each token is then mapped to a unique
+numerical identiﬁer (ID) using a pre-deﬁned dictionary. This
+dictionary is built during the pre-training of the LLM. Finally,
+the LLM transforms each token into embedding vector D.T h e
+output of this module is the hidden states of the textual inputs
+htext ∈ R(len(token))×D , where len(token) and D∈ Rd represent
+the total token length of the text converted to tokens and the
+dimensions of the input and output of the LLM, respectively.
+B. Time-Series Input Embedder
+LLMs are usually pre-trained using text data, thus time-series
+ILI data need to be converted for use as input to the forecasting
+LLM to predict future ILIs. For this purpose, we use an input
+embedder consisting of three layers: instance normalization,
+patching, and linear embedder. The ILI distribution of a region
+or country varies over time, but excessive variation in the data
+distribution can lead to overﬁtting and unstable training. There-
+fore, to mitigate changes in the distribution over time, we impose
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 5 ===============
+7794 IEEE JOURNAL OF BIOMEDICAL AND HEAL TH INFORMA TICS, VOL. 29, NO. 10, OCTOBER 2025
+T ABLE II
+DESCRIPTIVE STAT I S T I C S O F T H ENAT I O N A L-ILLNESS DA T ASET
+T ABLE III
+DESCRIPTIVE STAT I S T I C S O F T H EUS-REGION DA T ASET
+reversible instance normalization [19] on each variable in Xinput
+by subtracting the mean Xinput from Xinput and dividing the
+result by the standard deviation of Xinput.
+In general, ILI data exhibits temporal patterns over various
+periods (e.g., weeks or months) and has a repetitive temporal
+pattern for the peak values in speciﬁc seasons every year.
+Therefore, we convert the normalized Xinput into patch-
+based tokens with patching Xinput that incorporates adjacent
+time steps. This process can better preserve short-term patterns
+and reduce the computational load of an LLM. The length
+of each patch is Lp and the total number of input patches is
+⌊(T − Lp)/S⌋+2 , where S represents the horizontal sliding
+stride. The output for instance normalization and the patching
+layer is ht ∈ R(num(patches))×P , where num(patches) is the
+number of total patches converted fromXinput and P is the patch
+size. Finally, we employ linear embedder to project processed
+time-series data ht onto the dimensions [ num(patches), D]r e -
+quired for input into the forecasting LLM. The linear embedder
+is trainable so that the forecasting LLM can appropriately uti-
+lize the time-series input. The output of this module is htime
+∈ R(num(patches))×D .
+C. Forecasting LLM
+The forecasting LLM module concatenates htime and
+htext obtained from the time-series input embedder and
+textual input embedder, respectively, to create hfuse ∈
+R(len(token)+num(patches))×D and predict future ILIs. We use an
+autoregressive LLM for forecasting model for several reasons.
+First, the autoregressive LLM employs causal language model-
+ing that allows masked words that follow the input text to be
+learned during training [18]. Second, the LLM contains mul-
+tiple decoders from the transformer, which have demonstrated
+outstanding performance in processing long-term temporal pat-
+terns [11]. The reason for conducting long-term forecasting is
+time-consuming nature of vaccine transportation/distribution,
+vaccination, policy decision, and budget allocation. Finally, the
+LLM can adapt to new tasks with small volumes of data via
+its pre-trained knowledge. This is important for ILI forecasting,
+where data are collected on a weekly basis rather than on a
+minute or second basis [20]. In other words, weekly patient
+counts would provide only about 520 data points after 10 years
+of data collection, which can lead to data shortage problems.
+The main components of the autoregressive LLM are the
+positional encoding layer (PE) and transformer blocks, which
+consist of multi-head attention, layer normalization, and feed-
+forward layers. Of these layers, we only ﬁne-tune the positional
+encoding and layer normalization layers following a standard
+training technique [9], [21]. However, unlike previous studies
+that conducted various time-series tasks using an LLM with
+unimodal data [9], MIFlu forecasts future ILIs with hfuse,a
+fused embedding of text and time-series information. Therefore,
+the multi-head attention layer also needs to be ﬁne-tuned to
+capture new relationships within the fused embedding. This
+leads to a signiﬁcant issue: because the multi-head attention and
+feed-forward layers contain most of the pre-trained knowledge,
+ﬁne-tuning these layers with small-scale ILI data can lead to the
+catastrophic forgetting problem in which most of the pre-trained
+knowledge is forgotten during the ﬁne-tuning process [22].T o
+address this problem, we employ LoRA only to the multi-head
+attention layer; therefore, the pre-trained LLM is allowed to
+learn new relationships in hfuse without compromising its infer-
+ence speed.
+After the transformer blocks, we obtain the forecasting em-
+beddings hforecast∈ R(num(patches)+len(token))×D (which has the
+same dimensions as hfuse) autoregressively. In other words,
+when the forecasting LLM takes the i-th token hfuse [i]a s
+input, the forecasting result for the hfuse [i]i s hforecast [i],
+which means that the order of the input and output tokens
+is the same. Because our goal is to predict future ILIs after
+the input of historical ILIs, we discard the token part hforecast
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 6 ===============
+MOON et al.: MIFLU: LARGE LANGUAGE MODEL-BASED MUL TIMODAL INFLUENZA FORECASTING SCHEME 7795
+[len(token):] ∈ R(len(token))×D from hforecast to make hforecast’
+∈ R(num(patches))×D . Afterward, we project hforecast’ to the ﬁ-
+nal forecasting result ˆyt+L (for regional ILI forecasting) or
+ˆyt+L, ..., ˆyt+1 (for national ILI forecasting) using the output
+projection, which is a linear embedder layer.
+V. E XPERIMENT ALSETTINGS
+Before describing the experiments to evaluate the effective-
+ness of MIFlu, we ﬁrst present the datasets, the evaluation met-
+rics, and the experimental settings we used in the experiments.
+A. Datasets
+The two datasets used in the experiments are
+r National-Illness [25]: This dataset includes seven vari-
+ables for national ILIs that occurred in the United States
+(US) between 2002 and 2021, including ILI occurrence for
+ages 0 to 4 years, number of outpatient providers, and total
+national ILI. This dataset has been widely used to compare
+the accuracy of long-term ILI forecasting (i.e., lead times
+L longer than 24 weeks) of transformer-based models.
+Following previous studies [9], [21], we split the data into
+training, validation, and test set at a ratio of 70:10:20.
+r US-Region [25]: The Department of Health and Human
+Services (HHS) divides the US into 10 regions by grouping
+related states within each region. This dataset contains ILI
+in those 10 HHS regions from week 40, 1997, to week 18,
+2020. Following [14] and our previous work[5],w ed i v i d e
+the data into training, validation, and test set at a ratio of
+50:10:40.
+Tables II and III present the descriptive statistics of each
+variable and region for the National-Illness and US-Region
+datasets, respectively. For the US-Region datasets, we also show
+statistics for the whole dataset. Fig.2(a) and (b) show boxen plots
+for each variable and region used in the national and regional
+ILI datasets, respectively.
+B. Evaluation Metrics
+We compare the national and regional ILI forecasting accu-
+racy using two widely used metrics for each task. For national
+ILI forecasting, all models have been compared through mean
+square error (MSE) and mean absolute error (MAE) [9], [26],
+[27], [28], [29], [30], [31], [32]. As can be seen from the
+Equations, MSE is sensitive to large errors, so it is suitable
+for comparing the peak intensity prediction performance of
+ILI. On the other hand, MAE uses the overall mean error to
+evaluate the general prediction performance of the model. We
+ﬁrst normalize each input variable to a normal distribution
+using StandardScaler. The mean square error (MSE) and mean
+absolute error (MAE) are then calculated using(3) and (4). These
+metrics reﬂect the mean difference between actual ILI Yi and
+predicted ILI ˆYi for M data points.
+For regional ILI forecasting, the root mean square error
+(RMSE) and Pearson correlation coefﬁcients (PCCs) have been
+widely used [3], [4], [5], [10], [14]. RMSE is more sensitive to
+large errors than MAE because it uses the square root of the
+Fig. 2. Boxen plots for the variables and regions used in the national-
+Illness and US-region datasets, respectively .
+mean squared error. PCC is useful for evaluating whether the
+forecasting model effectively captures the trend of ILI. Unlike
+national ILI forecasting, these metrics have been used after
+de-normalizing the values to reproduce the original range. The
+RMSE is calculated using (5), which measures the difference
+between Yi and ˆYi. The PCC is calculated using (6), where Yi
+and ˆY are the mean values of the actual and predicted ILIs,
+respectively.
+MSE = 1
+M
+M∑
+n =1
+(
+Yn − ˆYn
+)2
+(3)
+MAE = 1
+M
+M∑
+n =1
+⏐⏐⏐Yn − ˆYn
+⏐⏐⏐ (4)
+RMSE =
+√ 1
+M
+M∑
+n=1
+(
+Yn − ˆYn
+)2
+(5)
+PCC =
+∑ M
+n=1
+(
+ˆYn − ˆYn
+)(
+Yn − Yn
+)
+√ ∑ M
+n=1
+(
+ˆYn − ˆYn
+)2√ ∑ M
+n=1
+(
+Yn − Yn
+)2
+(6)
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 7 ===============
+7796 IEEE JOURNAL OF BIOMEDICAL AND HEAL TH INFORMA TICS, VOL. 29, NO. 10, OCTOBER 2025
+T ABLE IV
+AL IST OF COMP ARA TIVEMODELS AND HYPERP ARAMETERSUSED
+C. Experimental Details
+To compare the forecasting performance of our proposed
+model, we consider SOTA models proposed for ILI forecast-
+ing. Table IV presents the list of models we compare for na-
+tional/regional ILI forecasting and their hyperparameters. These
+settings are the same as those reported in previous studies [9],
+[14]. The results for the national and regional ILI forecasting
+models are taken from [9] and [14], respectively.
+In these papers, national ILI has been conducted for long-term
+forecasting (L≥ 24), while regional ILI has been conducted for
+rather short-term forecasting ( L ≤ 24). This is because, due to
+the rapid and irregular nature of inﬂuenza spread at the regional
+level, regional data are inherently volatile, making short-term
+forecasts more practical for immediate public health response.
+In contrast, national forecasts based on aggregated data from
+multiple regions suppress regional ﬂuctuations and focus on
+long-term, persistent seasonal patterns or trends.
+Three versions of the ReILIF model used for regional ILI
+forecasting have been developed: ReILIF NoC, which uses only
+ILI; ReILIFTV, which uses ILI and time-varying exogenous data
+(e.g., wind and temperature data); and ReILIF TV/S, which uses
+static exogenous data (e.g., population and population density).
+We present the results for ReILIF TV/S as the representative of
+ReILIF because MIFlu uses textual information that is static
+over time [14].
+We set the number of training epochs and the learning rate for
+MIFlu empirically because the hyperparameters vary depending
+on the base model. For our forecasting LLM, we use the ﬁrst K
+layers of the original GPT2 according to [9]. Here, K is set at
+6 for national ILI forecasting following [9], while K is set at
+4 for regional ILI forecasting based on the results presented in
+Section VI–D. In these layers, we set low-rank dimension r to
+4 following [36]. In addition, for national ILI forecasting, we
+set Lp and S to 24 and 2, respectively, according to [9], and for
+regional ILI forecasting, we set them to 4 and 2 based on the ratio
+of T and Lp and S in national ILI prediction. For the textual input
+embedder, we use full GPT2 to align the pre-trained knowledge
+with the forecasting LLM (see Section VI–C for more details).
+Here, SOTA LLMs like GPT4o cannot be considered because
+we cannot modify the structure of those models, and they must
+be trained using only text data with a ﬁxed template.
+We assess the forecasting performance by calculating the
+mean of 10 repetitions of the forecasting results. We implement
+the proposed model using Python 3.9.18 with PyTorch 2.1.0 and
+a GeForce RTX 3090.
+VI. E XPERIMENT ALRESUL TS
+To demonstrate the effectiveness of MIFlu, we conduct ex-
+periments using public national and regional ILI datasets. We
+ﬁrst compare the forecasting accuracy of MIFlu with SOTA
+ILI forecasting models for national and regional ILI forecast-
+ing. We then investigate the effect of textual input embedders
+and changes in hyperparameters on forecasting performance.
+Finally, we analyze the effectiveness of each MIFlu component
+through ablation study and evaluate the few-shot forecasting
+performance.
+A. National ILI Forecasting
+In this experiment, we compare the forecasting performance
+of MIFlu with that of previously reported models using the
+national ILI dataset. Table V presents the forecasting accuracy
+in terms of the MSE and MAE. The bold and underlined val-
+ues indicate the most and second-most accurate predictions,
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 8 ===============
+MOON et al.: MIFLU: LARGE LANGUAGE MODEL-BASED MUL TIMODAL INFLUENZA FORECASTING SCHEME 7797
+T ABLE V
+MSE AND MAE OF THE COMP ARA TIVEMODELS FOR NAT I O N A LILI FORECASTING
+T ABLE VI
+RMSE/PCC OF THE COMP ARA TIVEMODELS FOR REGIONAL ILI FORECASTING
+respectively. MIFlu outperforms the other models in all cases ex-
+cept for the MSE atL = 24. Because national ILI forecasting gen-
+erally involves long-term predictions, most of the previous mod-
+els are based on a transformer architecture that can effectively
+capture long-term temporal patterns. However, recent models
+such as TimesNet and DLinear do not rely on transformers to
+capture long-term temporal patterns in ILI, but they still produce
+an outstanding performance. Except for PatchTST, GPT4TS out-
+performs all of the other compared models due to its pre-trained
+knowledge of a large volume of textual data. However, PatchTST
+maximizes the performance of the transformer and achieves the
+second-best performance based on the average MSE/MAE for
+ILI predictions. MIFlu performs well because it incorporates
+the user’s prior knowledge via the textual input embedder and
+LoRA ﬁne-tuning to improve the forecasting performance of
+GPT2. Fig. 3 shows that MIFlu outperforms all comparative
+models in terms of the average forecasting performance of
+all L.
+B. Regional ILI Forecasting
+We also compare the forecasting accuracy of each model and
+lead time L for regional ILI forecasting using the US-Region
+dataset. Table VI presents the forecasting performance in terms
+of the RMSE and PCC. The bold and underlined values indicate
+the most and second-most accurate results, respectively. Follow-
+ing [5], [14], prediction results with a lead time L longer than
+5 are considered long-term and those less than or equal to 5
+Fig. 3. Comparison of average forecasting performance for L = 24,
+36, 48, 60.
+are considered short-term in regional ILI forecasting. Because
+inﬂuenza monitoring data are delayed by at least one week,
+forecasting results for L = 1 are not considered.
+MIFlu demonstrates the best performance in all cases.
+SAIFlu-Net, Cola-GNN, and ReILIF also perform well due to
+the use of attention mechanisms that capture regional patterns.
+ReILIF performs better than GPT4TS in some cases because
+ReILIF uses exogenous time-series data, while GPT4TS only
+uses ILI data. However, GPT4TS outperforms ReILIF in long-
+term forecasting (L = 15, 20) due to the architecture of the LLM,
+which consists of multiple transformer decoders. However, MI-
+Flu utilizes knowledge from experts in textual format with two
+LLMs to predict future ILI with multimodal data. Therefore,
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 9 ===============
+7798 IEEE JOURNAL OF BIOMEDICAL AND HEAL TH INFORMA TICS, VOL. 29, NO. 10, OCTOBER 2025
+Fig. 4. Comparison of the real and predicted ILIs for MIFlu using the
+US-Region dataset.
+MIFlu improves on the forecasting accuracy of GPT4TS and
+achieves a relative performance gain compared to the SOTA
+model of up to 26.2%. Before we applied GPT4TS in regional
+ILI forecasting, SOTA model for regional ILI forecasting was
+ReILIF and we achieves a relative gain compared to ReILIF of
+up to 43.0%.
+Fig. 4(a) and (b) present the actual and predicted ILIs for
+MIFlu during the test period for the US-Region dataset when L
+= 2 and 20, respectively. We measure the mean ILI of all regions
+after conducting multi-regional forecasting. The results show
+that MIFlu can predict unusual peak timing and peak intensity
+in short-term forecasting (L = 2), which is crucial for infectious
+disease experts looking to make informed decisions. MIFlu can
+also predict the actual ILI trends in long-term forecasting ( L =
+20).
+C. T extual Input Embedder Analysis
+In this experiment, we investigate the effects of the textual
+input embedder on the forecasting performance of MIFlu. Can-
+didates for the textual input embedder are BERT, LLaMA2-7B,
+and GPT2. TableVII presents the experimental results according
+to the textual input embedder on the National-Illness dataset.
+Here, X (did not use textual input embedder) and GPT2 de-
+noting the results for unimodal time-series GPT4TS and MI-
+Flu, respectively. The results show that all three textual input
+embedders improve the ILI forecasting performance compared
+to unimodal GPT2. LLaMA2-7B outperforms BERT, likely
+because LLaMA2-7B has 7 billion parameters compared to only
+110 million for BERT, while LLaMA2-7B is pre-trained on
+T ABLE VII
+FORECASTING ACCURACY (MSE/MAE) COMP ARISONDEPENDING ON
+TEXTUAL INPUT EMBEDDER
+Fig. 5. Changes in forecasting accuracy according to T .
+about 600 times more dataset tokens. However, even though
+both LLaMA2-7B and GPT2 operate based on the decoder of
+the transformer, they have different pre-trained knowledge and
+structure. Therefore, GPT2, the forecasting LLM, may have
+difﬁculty understanding the text embedding results by LLaMA2-
+7B. Thus, if GPT2 is also used as the forecasting LLM, the
+semantic information embedded by GPT2 in the previous stage
+may improve overall forecasting performance.
+D. Sensitivity Analysis
+We also analyze the effect of the hyperparameters on the
+forecasting accuracy of MIFlu. First, we test the effect of window
+size T of the input time series. Fig. 5(a) and (b) present the
+forecasting results when T varies between 10 and 50 for the
+US-Region dataset ( L = 20) in terms of the RMSE and PCC,
+respectively. When the target forecasting time is too far into the
+future, it is difﬁcult to achieve high prediction accuracy with a
+short input window size (e.g., T = 10). Up until T = 40, a larger
+input window size leads to higher forecasting performance,
+likely because the forecasting model can utilize more data during
+training. However, at T = 50, the excessive input data can lead
+to overﬁtting, which degrades forecasting accuracy.
+We also investigate the effect of the number of layers taken
+from the original GPT2 backbone (K) on the forecasting perfor-
+mance of MIFlu. In general, in a pre-trained LLM, layers close to
+the input contain generalizable information that can be applied
+to other tasks, and layers close to the output contain task/data-
+speciﬁc information [37]. Therefore, when a pre-trained LLM
+is utilized for another task such as time-series predictions, it is
+important to select the appropriate number of layers from the
+input. The original small GPT2 model has 12 layers, and Fig. 6
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 10 ===============
+MOON et al.: MIFLU: LARGE LANGUAGE MODEL-BASED MUL TIMODAL INFLUENZA FORECASTING SCHEME 7799
+Fig. 6. Changes in forecasting accuracy according to K.
+presents the forecasting results when K varies between 1 and
+7 for the US-Region dataset ( L = 20). Until K = 4, a higher K
+improves the forecasting performance, possibly because smaller
+models have a lower amount of pre-trained information, which
+means the number of parameters that can be adapted to new
+tasks is lower. In contrast, when there are more than six layers,
+text-speciﬁc information is more likely to be incorporated, which
+can reduce forecasting accuracy. Nevertheless, regardless of the
+number of layers used, the proposed MIFlu model achieves
+excellent forecasting accuracy, outperforming the SOTA model
+ReILIF, which has an RMSE of 2431.7 and a PCC of
+0.596.
+E. Ablation Study
+MIFlu has three core components: a text prompt template, a
+textual input embedder for multimodality, and a LoRA adapter
+for ﬁne-tuning. In addition, the text prompt template consists
+of three sections that describe the dataset, task instructions, and
+input variables. In the ablation study, we validate the efﬁcacy of
+these core components by removing each component from pure
+MIFlu and evaluating the forecasting performance of the model.
+For the text prompt template, we examine the effect of each
+section individually. We conduct this study using the National-
+Illness data.
+r MIFlu w/o Dataset information: MIFlu without Dataset
+information part of input text prompt.
+r MIFlu w/o Task instruction: MIFlu without Task instruc-
+tion part of input text prompt.
+r MIFlu w/o Input variable description: MIFlu without Input
+variable description part of input text prompt.
+r MIFlu w/o LoRA: MIFlu without the PEFT and ﬁne-tune
+the forecasting LLM only by updating PE and layer nor-
+malization layers.
+r MIFlu w/o multimodality: MIFlu without the textual input
+embedder and predict future ILI in unimodality.
+r MIFlu w/o LoRA+multimodality: MIFlu without the tex-
+tual input embedder (i.e., predict future ILI in unimodality)
+and LoRA. We ﬁne-tune the forecasting LLM only by
+updating PE and layer normalization layers. This setting
+is the same as GPT4TS [9].
+Table VIII shows the results of the ablation study in terms of
+average MSE and MAE for L = 24, 36, 48, and 60. As you can
+see from the table, removing each part of the input text prompt
+degrades the forecasting accuracy. This means that all parts of
+T ABLE VIII
+ABLA TIONSTUDY RESUL TSUSING THE NAT I O N A L-ILLNESS DA T ASET
+T ABLE IX
+TRAINING TIME OF REGIONAL ILI FORECASTING MODELS
+the prompt template in Table I are indispensable. Among the
+three parts, the input variable description part has the greatest
+impact on forecasting performance.
+In addition, we observe through MIFlu w/o LoRA that adding
+LoRA ﬁne-tuning techniques to forecasting LLM improves the
+forecasting accuracy of GPT4TS even though in unimodality.
+This seems to be because LLM is pre-trained mainly with text
+data; therefore, forecasting LLM requires ﬁne-tuning the multi-
+head self-attention layer using LoRA technique to capture the
+temporal patterns in historical time-series ILI. In addition, MIFlu
+w/o multimodal presents that multimodal forecasting improves
+forecasting performance as forecasting LLM can leverage con-
+textual information encoded by the textual input embedder.
+However, using both LoRA and multimodal forecasting yields
+signiﬁcant performance improvements.
+F . Few-shot Forecasting
+To demonstrate the data efﬁciency of MIFlu, we analyze
+few-shot forecasting performance in a qualitative manner using
+the last two seasons of ‘ILITOTAL’ variable in the National-
+Illness dataset. Fig. 7(a) and (b) present the normalized fore-
+casting results when using the ﬁrst 50% ( L = 48) and 10%
+(L = 24) time steps of training data, respectively. The ﬁgures
+demonstrate that MIFlu achieves signiﬁcantly better forecasting
+performance compared to GPT4TS even in the few-shot setting.
+Especially, MIFlu shows outstanding performance in predicting
+peak intensity and peak timing, which are extremely important
+for infectious disease-related decision-making.
+G. T raining Time
+Table IX shows the average training time of two regional ILI
+forecasting models (ReILIF and MIFlu) using the US-Region
+dataset. Considering the training time of ReILIF is 130 minutes,
+MIFlu took less time despite being a larger model.
+VII. C ONCLUSION
+In this paper, we propose MIFlu, a multimodal ILI forecasting
+scheme based on LLMs. MIFlu can integrate textual domain
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 11 ===============
+7800 IEEE JOURNAL OF BIOMEDICAL AND HEAL TH INFORMA TICS, VOL. 29, NO. 10, OCTOBER 2025
+Fig. 7. Few-shot forecasting comparison results using the National-
+Illness dataset.
+knowledge from infectious disease experts into a time-series
+forecasting LLM using a textual input embedder. Through ex-
+tensive experiments, we demonstrate that MIFlu outperforms
+other SOTA national/regional ILI forecasting models in most
+cases. In particular, the proposed scheme improves forecasting
+performance by up to 26.2% over SOTA models. We also ﬁnd
+that the most accurate forecasting performance is achieved when
+GPT2, which is used as the forecasting LLM, is also used as
+the textual input embedder. In addition, we analyze the impact
+of hyperparameters, such as the window size and the number
+of GPT2 layers, on forecasting accuracy and conﬁrm that the
+proposed scheme performs well even when changing the number
+of layers. Finally, we conﬁrm that all components are essential
+through the ablation study and prove that MIFlu can effectively
+enhance the forecasting performance of the unimodal model in
+the few-shot setting.
+Even though the proposed model outperforms previously
+reported models, we utilize a ﬁxed text embedding process from
+a pre-deﬁned text prompt. In the future, we plan to construct
+a forecasting model that can ﬁne-tune not only the forecasting
+LLM but also the textual input embedder to automatically gen-
+erate suitable text prompts from the input time-series data to
+further improve short-term ILI forecasting performance.
+APPENDIX
+EXAMPLE OF INPUT TEXT PROMPT
+Table X presents the actual example of input text prompt in
+the case of National-illness dataset.
+T ABLE X
+EXAMPLE OF AN INPUT TEXT PROMPT
+[Dataset information]
+This multivariate time series dataset includes 7 features 
+that recorded influenza patients data from Centers for 
+Disease Control and Prevention of the United States 
+between 2002 and 2021. 
+Below (1) to (7) is the information about each feature: 
+***
+[Input variable description]
+(1) Percentage of patient visits in the healthcare system 
+attributed to influenza, adjusted for the proportion of 
+each reporting centers total patient visits. Minimum 
+value: <min(X1train)>, maximum value: <max(X1train)>. 
+This variable peaks 1 time for 1 year.
+(2) Percentage of unweighted influenza, not adjusted 
+for the proportion of each reporting total patient visits. 
+Minimum value: <min(X2train)>, maximum value: 
+<max(X2train)>. This variable peaks 1 time for 1 year.
+(3) Total number of influenza patients between age 0 
+and 4. Minimum value: <min(X3train)>, maximum value: 
+<max(X3train)>. This variable peaks 1 time for 1 year.
+(4) Total number of influenza patients between age 5 
+and 24. Minimum value: <min(X4train)>, maximum 
+value: <max(X4train)>. This variable peaks 1 time for 1 
+year.
+(5) Total number of influenza patients. Minimum value: 
+<min(X5train)>, maximum value: <max(X5train)>. This 
+variable peaks 1 time for 1 year.
+(6) A number of influenza providers. Minimum value: 
+<min(X6train)>, maximum value: <max(X6train)>. This 
+variable peaks 1 time for 1 year. The overall trend is 
+upward.
+(7) ‘OT’ feature for long-term forecasting task. 
+Minimum value: <min(X7train)>, maximum value: 
+<max(X7train)>. This variable peaks 2 times for 1 year.
+The overall trend is upward.
+***
+[Task instruction]
+Predict the next 24 steps given the previous 104 steps for the 
+information attached.
+REFERENCES
+[1] WHO, “Seasonal inﬂuenza newsroom,” 2024. [Online]. Available: https:
+//www.who.int/en/news-room/fact-sheets/detail/inﬂuenza-(seasonal)
+[2] J. Moon, S. Jung, S. Park, and E. Hwang, “Machine learning-based
+two-stage data selection scheme for long-term inﬂuenza forecasting,”
+Comput. Materials Continua , vol. 68, no. 3, pp. 2945–2959, 2021,
+doi: 10.32604/cmc.2021.017435.
+[3] S. Deng, S. Wang, H. Rangwala, L. Wang, and Y . Ning, “Cola-GNN:
+Cross-location attention based graph neural networks for long-term ILI
+prediction,” in Proc. 29th ACM Int. Conf. Inform. Knowl. Manage. , 2020,
+pp. 245–254, doi: 10.1145/3340531.3411975.
+[4] Y . Wu, Y . Y ang, H. Nishiura, and M. Saitoh, “Deep learning for epidemi-
+ological predictions,” in Proc. 41st Int. ACM SIGIR Conf. Res. Develop.
+Inf. Retrieval, 2018, pp. 1085–1088, doi: 10.1145/3209978.3210077.
+[5] S. Jung, J. Moon, S. Park, and E. Hwang, “Self-attention-based deep learn-
+ing network for regional inﬂuenza forecasting,” IEEE J. Biomed. Health ,
+vol. 26, no. 2, pp. 922–933, Feb. 2021, doi: 10.1109/JBHI.2021.3093897.
+[6] A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever,
+“Language models are unsupervised multitask learners,” OpenAI Blog ,
+vol. 1, no. 8, 2019, Art. no. 9.
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 
+
+=============== PAGE 12 ===============
+MOON et al.: MIFLU: LARGE LANGUAGE MODEL-BASED MUL TIMODAL INFLUENZA FORECASTING SCHEME 7801
+[7] Z. Gu, B. Zhu, G. Zhu, Y . Chen, M. Tang, and J. Wang, “Anoma-
+lyGPT: Detecting industrial anomalies using large vision-language
+models,” in Proc. AAAI Conf. Artif. Intell. , 2024, pp. 1932–1940,
+doi: 10.1609/aaai.v38i3.27963.
+[8] H. Xue and F. D. Salim, “Promptcast: A new prompt-based
+learning paradigm for time series forecasting,” IEEE Trans.
+Knowl. Data Eng. , vol. 36, no. 11, pp. 6851–6864, Nov. 2024,
+doi: 10.1109/TKDE.2023.3342137.
+[9] T. Zhou, P . Niu, L. Sun, and R. Jin, “One ﬁts all: Power general time
+series analysis by pre-trained LM,” inProc. 37th Int. Conf. Neural Inform.
+Process. Syst., 2023, pp. 43322–43355.
+[10] J. Moon, S. Jung, S. Park, and E. Hwang, “RESEA T: Recurrent self-
+attention network for multi-regional inﬂuenza forecasting,” IEEE J.
+Biomed. Health Inform. , vol. 27, no. 5, pp. 2585–2596, May 2023,
+doi: 10.1109/JBHI.2023.3247687.
+[11] A. V aswani et al., “Attention is all you need,” in Proc. 31st Int. Conf.
+Neural Inform. Process. Syst., 2017, pp. 6000–6010.
+[12] N. Kitaev, Ł. Kaiser, and A. Levskaya, “Reformer: The efﬁcient trans-
+former,” 2020, arXiv:2001.04451.
+[13] H. Wu, J. Xu, J. Wang, and M. Long, “Autoformer: Decomposition trans-
+formers with auto-correlation for long-term series forecasting,” in Proc.
+35th Int. Conf. Neural Inform. Process. Syst. , 2021, pp. 22419–22430.
+[14] E. Papagiannopoulou, M. Bossa, N. Deligiannis, and H. Sahli, “Long-term
+regional inﬂuenza-like-illness forecasting using exogenous data,” IEEE
+J. Biomed. Health Inform. , vol. 28, no. 6, pp. 3781–3792, Jun. 2024,
+doi: 10.1109/JBHI.2024.3377529.
+[15] J. Devlin, M. W. Chang, K. Lee, and K. Toutanova, “BERT: Pre-training
+of deep bidirectional transformers for language understanding,” in Proc.
+ACL Int. Conf. North Amer . Comp. Ling., 2019, .
+[16] A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever, “Improving
+language understanding by generative pre-training,” OpenAI Blog,v o l .1 ,
+pp. 1–12, 2018.
+[17] H. Touvron et al., “Llama 2: Open foundation and ﬁne-tuned chat models,”
+2023, arXiv:2307.09288.
+[18] M. Jin et al., “Time-LLM: Time series forecasting by reprogramming large
+language models,” in Proc. 12th Int. Conf. Learn. Representations , 2023.
+[Online]. Available: https://openreview.net/forum?id=sHXLsv9AOw
+[19] T. Kim, J. Kim, Y . Tae, C. Park, J. -H. Choi, and J. Choo, “Reversible
+instance normalization for accurate timeseries forecasting against distri-
+bution shift,” in Proc. Int. Conf. Learn. Representations , 2022. [Online].
+Available: https://openreview.net/forum?id=cGDAkQo1C0p
+[20] J. Moon, S. Jung, S. Park, and E. Hwang, “Conditional tabular GAN-
+based two-stage data generation scheme for short-term load forecast-
+ing,” IEEE Access , vol. 8, pp. 205327–205339, 2020, doi: 10.1109/AC-
+CESS.2020.3037063.
+[21] N. Houlsby et al., “Parameter-efﬁcient transfer learning for NLP,” in Proc.
+36th Int. Conf. Mach. Learn. , 2019, pp. 2790–2799.
+[22] R. Kemker, M. McClure, A. Abitino, T. L. Hayes, and C. Kanan, “Measur-
+ing catastrophic forgetting in neural networks,” in Proc. AAAI Conf. Artif.
+Intell., 2018, pp. 3390–3398, doi: 10.1609/AAAI.V32I1.11651.
+[23] P . Y e et al., “Partial ﬁne-tuning: A successor to full ﬁne-tuning for vision
+transformers,” 2023, arXiv:2312.15681.
+[24] E. Hu et al., “LoRA: Low-rank adaptation of large language models,” 2021,
+arXiv:2106.09685.
+[25] Centers for Disease Control and Prevention (CDC), “National, regional,
+and state level outpatient illness and viral surceillance,” 2024. [Online].
+Available: https://gis.cdc.gov/grasp/ﬂuview/ﬂuportaldashboard.html
+[26] H. Wu, T. Hu, Y . Liu, H. Zhou, J. Wang, and M. Long, “TimesNet:
+Temporal 2D-variation modeling for general time series analysis,” 2022,
+arXiv:2210.02186.
+[27] G. Woo, C. Liu, D. Sahoo, A. Kumar, and S. Hoi, “ETSformer: Ex-
+ponential smoothing transformers for time-series forecasting,” 2022,
+arXiv:2202.01381.
+[28] T. Zhang et al., “Less is more: Fast multivariate time series forecasting
+with light sampling-oriented MLP structures,” 2022, arXiv:2207.01186.
+[29] A. Zeng, M. Chen, L. Zhang, and Q. Xu, “Are transformers effective
+for time series forecasting?” in Proc. AAAI Conf. Artif. Intell. , 2023,
+pp. 10906–10914.
+[30] T. Zhou, Z. Ma, Q. Wen, X. Wang, L. Sun, and R. Jin, “FEDformer:
+Frequency enhanced decomposed transformer for long-term series fore-
+casting,” in Proc. 39th Int. Conf. Mach. Learn. , 2022, pp. 27268–27286.
+[31] Y . Nie, N. H. Nguyen, P . Sinthong, and J. Kalagnanam, “A time series is
+worth 64 words: Long-term forecasting with transformers,” in Proc. 11th
+Int. Conf. Learn. Representations, 2023, .
+[32] Y . Liu, H. Wu, J. Wang, and M. Long, “Non-stationary transformers:
+Exploring the stationarity in time series forecasting,” in Proc. 36th Int.
+Conf. Neural Inform. Process. Syst. , 2022, pp. 9881–9893.
+[33] H. Zhou et al., “Informer: Beyond efﬁcient transformer for long se-
+quence time-series forecasting,” in Proc. AAAI Conf. Artif. Intell. , 2021,
+pp. 11106–11115.
+[34] B. Lim, S. O. Arık, N. Loeff, and T. Pﬁster, “Temporal fusion transformers
+for interpretable multi-horizon time series forecasting,”Int. J. F orecasting,
+vol. 37, no. 4, pp. 1748–1764, 2021, doi:10.1016/j.ijforecast.2021.03.012.
+[35] R. Wang, H. Wu, Y . Wu, J. Zheng, and Y . Li, “Improving in-
+ﬂuenza surveillance based on multi-granularity deep spatiotemporal neu-
+ral network,” Comput. Biol. Med. , vol. 134, 2021, Art. no. 104482,
+doi: 10.1016/j.compbiomed.2021.104482.
+[36] C. Chang, W. C. Peng, and T. F. Chen, “LLM4TS: Two-stage
+ﬁne-tuning for time-series forecasting with pre-trained LLMs,” 2023,
+arXiv:2308.08469.
+[37] L. Y ang, R. Y . Zhang, Y . Wang, and X. Xie, “MMA: Multi-modal adapter
+for vision-language models,” in Proc. IEEE/CVF Conf. Comput. Vis.
+Pattern Recognit., 2024, pp. 23826–23837.
+Authorized licensed use limited to: CITY UNIV OF HONG KONG. Downloaded on June 29,2026 at 12:56:06 UTC from IEEE Xplore.  Restrictions apply. 

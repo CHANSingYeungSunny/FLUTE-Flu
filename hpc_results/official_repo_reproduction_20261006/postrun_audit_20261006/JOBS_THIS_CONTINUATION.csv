@@ -1,0 +1,3 @@
+job_id,job_name,partition,state,elapsed,alloc_tres,gpu_hours,purpose,new_or_prior
+606430,audit_readonly,stingy,COMPLETED,00:01:29,"billing=5,cpu=4,mem=16G,node=1",0.00000,read-only metadata inventory of the 19 historical deployment dirs,NEW
+606432,audit_hash,stingy,COMPLETED,00:10:22,"billing=5,cpu=4,mem=8G,node=1",0.00000,full SHA-256 of 594 checkpoints and 20792 small files,NEW

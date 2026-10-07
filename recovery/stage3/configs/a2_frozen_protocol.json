@@ -1,0 +1,27 @@
+{
+  "protocol_id": "a2_frozen",
+  "scope": "A2 controlled author-data comparison (corrected MIFlu / no-text / NLinear / naive) on the author 966-row data",
+  "frozen_from": "scripts/configs.py + results/v3_clean/analysis/frozen_analysis_protocol.json",
+  "seeds": [42, 43, 44],
+  "seed_note": "first three of the frozen 10-seed list [42..51]; NOT chosen by result inspection",
+  "T": 104,
+  "patch_size": 24,
+  "stride": 2,
+  "gpt_layers_K": 6,
+  "d_model": 768,
+  "lora_r": 4,
+  "selection_metric": "average_MSE_4L = mean(mse_all) over L in {24,36,48,60}; seven-variable, full-horizon, z-space",
+  "selection_objective": "best VALIDATION MSE per (horizon, seed); Test evaluated once, after training",
+  "scaling": {
+    "scheme": "per-variable StandardScaler fit on TRAIN rows only (population std ddof=0, +1e-8, float32) + per-window instance norm (RevIN)",
+    "train_end": 676
+  },
+  "optimizer": "adam (betas 0.9/0.999, eps 1e-8), lr 5e-4, weight_decay 0.0, no scheduler, no grad clip",
+  "loss": "mse (z-space)",
+  "batch_size": 16,
+  "max_epochs": 20,
+  "repetitions": "3 seeds x 1 rep (NOT the 10-rep paper protocol; A2 is a minimum comparison, not a 10-rep reproduction)",
+  "test_exposure": "Test is NOT read during training or selection; no early stopping on Test; no Test-based seed choice",
+  "forbidden": ["peak_hit_ratio tie-breaker", "PTE/PIE tie-breaker", "baseline-relative ratio", "(r24+r60)/2"],
+  "no_text_definition": "no_multi variant = use_text=False, LoRA kept, prompt_cache=None -> single zero token. Removes the entire text pathway; sequence length and patch positions change. This is a WHOLE-PATHWAY contrast, not a matched-length content control; a same-length scrambled-text control is OPTIONAL and separate from the 36-fit minimum."
+}

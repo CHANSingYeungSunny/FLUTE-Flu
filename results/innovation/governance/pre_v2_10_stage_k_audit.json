@@ -1,0 +1,438 @@
+{
+  "created_utc": "2026-09-15T14:34:38Z",
+  "selection_split": "validation_only",
+  "test_accessed": false,
+  "protocol_version": "innov-v2.0",
+  "eligible_stages": [
+    "screening",
+    "full"
+  ],
+  "baseline_model": "gpt2_miflu",
+  "baseline_val_mse_by_L": {
+    "24": 0.790386418501536,
+    "36": 0.7928290565808614,
+    "48": 0.6030660172303518,
+    "60": 0.7559864719708761
+  },
+  "baseline_peak_hit_ratio": 0.16666666666666666,
+  "horizons_covered": 4,
+  "n_runs_scanned": 218,
+  "n_runs_eligible": 214,
+  "n_runs_excluded": 4,
+  "excluded_runs": [
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T225932Z__nogit",
+      "reasons": [
+        "stage_not_eligible (pilot)",
+        "selection_eligible is not True"
+      ]
+    },
+    {
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T225532Z__nogit",
+      "reasons": [
+        "stage_not_eligible (pilot)",
+        "selection_eligible is not True"
+      ]
+    },
+    {
+      "run_id": "national-ili__itransformer__none__identity__L24__seed42__20260914T230133Z__nogit",
+      "reasons": [
+        "stage_not_eligible (pilot)",
+        "selection_eligible is not True"
+      ]
+    },
+    {
+      "run_id": "national-ili__patchtst__none__identity__L24__seed42__20260914T230033Z__nogit",
+      "reasons": [
+        "stage_not_eligible (pilot)",
+        "selection_eligible is not True"
+      ]
+    }
+  ],
+  "n_models_eligible": 5,
+  "status": "ok",
+  "diagnostic": {
+    "ok": true,
+    "status": "ok",
+    "baseline_model": "gpt2_miflu",
+    "missing_baseline_horizons": [],
+    "duplicate_cells": [
+      {
+        "model": "dlinear",
+        "horizon": 24,
+        "seed": 42,
+        "n": 5
+      },
+      {
+        "model": "dlinear",
+        "horizon": 24,
+        "seed": 43,
+        "n": 5
+      },
+      {
+        "model": "dlinear",
+        "horizon": 24,
+        "seed": 44,
+        "n": 5
+      },
+      {
+        "model": "dlinear",
+        "horizon": 60,
+        "seed": 42,
+        "n": 5
+      },
+      {
+        "model": "dlinear",
+        "horizon": 60,
+        "seed": 43,
+        "n": 5
+      },
+      {
+        "model": "dlinear",
+        "horizon": 60,
+        "seed": 44,
+        "n": 5
+      },
+      {
+        "model": "itransformer",
+        "horizon": 24,
+        "seed": 42,
+        "n": 2
+      },
+      {
+        "model": "itransformer",
+        "horizon": 24,
+        "seed": 43,
+        "n": 2
+      },
+      {
+        "model": "itransformer",
+        "horizon": 24,
+        "seed": 44,
+        "n": 2
+      },
+      {
+        "model": "itransformer",
+        "horizon": 60,
+        "seed": 42,
+        "n": 2
+      },
+      {
+        "model": "itransformer",
+        "horizon": 60,
+        "seed": 43,
+        "n": 2
+      },
+      {
+        "model": "itransformer",
+        "horizon": 60,
+        "seed": 44,
+        "n": 2
+      },
+      {
+        "model": "nlinear",
+        "horizon": 24,
+        "seed": 42,
+        "n": 2
+      },
+      {
+        "model": "nlinear",
+        "horizon": 24,
+        "seed": 43,
+        "n": 2
+      },
+      {
+        "model": "nlinear",
+        "horizon": 24,
+        "seed": 44,
+        "n": 2
+      },
+      {
+        "model": "nlinear",
+        "horizon": 60,
+        "seed": 42,
+        "n": 2
+      },
+      {
+        "model": "nlinear",
+        "horizon": 60,
+        "seed": 43,
+        "n": 2
+      },
+      {
+        "model": "nlinear",
+        "horizon": 60,
+        "seed": 44,
+        "n": 2
+      },
+      {
+        "model": "patchtst",
+        "horizon": 24,
+        "seed": 42,
+        "n": 2
+      },
+      {
+        "model": "patchtst",
+        "horizon": 24,
+        "seed": 43,
+        "n": 2
+      },
+      {
+        "model": "patchtst",
+        "horizon": 24,
+        "seed": 44,
+        "n": 2
+      },
+      {
+        "model": "patchtst",
+        "horizon": 60,
+        "seed": 42,
+        "n": 2
+      },
+      {
+        "model": "patchtst",
+        "horizon": 60,
+        "seed": 43,
+        "n": 2
+      },
+      {
+        "model": "patchtst",
+        "horizon": 60,
+        "seed": 44,
+        "n": 2
+      }
+    ],
+    "n_eligible_candidates": 4,
+    "reason": "champion selected"
+  },
+  "missing_baseline_horizons": [],
+  "duplicate_cells": [
+    {
+      "model": "dlinear",
+      "horizon": 24,
+      "seed": 42,
+      "n": 5
+    },
+    {
+      "model": "dlinear",
+      "horizon": 24,
+      "seed": 43,
+      "n": 5
+    },
+    {
+      "model": "dlinear",
+      "horizon": 24,
+      "seed": 44,
+      "n": 5
+    },
+    {
+      "model": "dlinear",
+      "horizon": 60,
+      "seed": 42,
+      "n": 5
+    },
+    {
+      "model": "dlinear",
+      "horizon": 60,
+      "seed": 43,
+      "n": 5
+    },
+    {
+      "model": "dlinear",
+      "horizon": 60,
+      "seed": 44,
+      "n": 5
+    },
+    {
+      "model": "itransformer",
+      "horizon": 24,
+      "seed": 42,
+      "n": 2
+    },
+    {
+      "model": "itransformer",
+      "horizon": 24,
+      "seed": 43,
+      "n": 2
+    },
+    {
+      "model": "itransformer",
+      "horizon": 24,
+      "seed": 44,
+      "n": 2
+    },
+    {
+      "model": "itransformer",
+      "horizon": 60,
+      "seed": 42,
+      "n": 2
+    },
+    {
+      "model": "itransformer",
+      "horizon": 60,
+      "seed": 43,
+      "n": 2
+    },
+    {
+      "model": "itransformer",
+      "horizon": 60,
+      "seed": 44,
+      "n": 2
+    },
+    {
+      "model": "nlinear",
+      "horizon": 24,
+      "seed": 42,
+      "n": 2
+    },
+    {
+      "model": "nlinear",
+      "horizon": 24,
+      "seed": 43,
+      "n": 2
+    },
+    {
+      "model": "nlinear",
+      "horizon": 24,
+      "seed": 44,
+      "n": 2
+    },
+    {
+      "model": "nlinear",
+      "horizon": 60,
+      "seed": 42,
+      "n": 2
+    },
+    {
+      "model": "nlinear",
+      "horizon": 60,
+      "seed": 43,
+      "n": 2
+    },
+    {
+      "model": "nlinear",
+      "horizon": 60,
+      "seed": 44,
+      "n": 2
+    },
+    {
+      "model": "patchtst",
+      "horizon": 24,
+      "seed": 42,
+      "n": 2
+    },
+    {
+      "model": "patchtst",
+      "horizon": 24,
+      "seed": 43,
+      "n": 2
+    },
+    {
+      "model": "patchtst",
+      "horizon": 24,
+      "seed": 44,
+      "n": 2
+    },
+    {
+      "model": "patchtst",
+      "horizon": 60,
+      "seed": 42,
+      "n": 2
+    },
+    {
+      "model": "patchtst",
+      "horizon": 60,
+      "seed": 43,
+      "n": 2
+    },
+    {
+      "model": "patchtst",
+      "horizon": 60,
+      "seed": 44,
+      "n": 2
+    }
+  ],
+  "candidates": [
+    {
+      "model": "patchtst",
+      "primary_score": 1.47461954646469,
+      "per_L_ratio": {
+        "24": 1.2485491387585483,
+        "36": 1.33967813268078,
+        "48": 1.8077025974089511,
+        "60": 1.5025483170104812
+      },
+      "val_mae": 0.7835295068489286,
+      "peak_hit_ratio": 0.13043478260869565,
+      "baseline_peak_hit_ratio": 0.16666666666666666,
+      "peak_not_below_baseline": false,
+      "trainable_parameters": 101098.0,
+      "train_seconds": 4.0691304347826085
+    },
+    {
+      "model": "nlinear",
+      "primary_score": 1.4803946966761687,
+      "per_L_ratio": {
+        "24": 1.2457662491999097,
+        "36": 1.323111603276361,
+        "48": 1.8272866582097076,
+        "60": 1.525414276018697
+      },
+      "val_mae": 0.811609196793472,
+      "peak_hit_ratio": 1.0,
+      "baseline_peak_hit_ratio": 0.16666666666666666,
+      "peak_not_below_baseline": true,
+      "trainable_parameters": 4410.0,
+      "train_seconds": 1.6859347826086957
+    },
+    {
+      "model": "dlinear",
+      "primary_score": 1.614913750556715,
+      "per_L_ratio": {
+        "24": 1.3431231875561118,
+        "36": 1.4396531178910552,
+        "48": 1.997180023863298,
+        "60": 1.6796986729163943
+      },
+      "val_mae": 0.8378977962185015,
+      "peak_hit_ratio": 0.3125,
+      "baseline_peak_hit_ratio": 0.16666666666666666,
+      "peak_not_below_baseline": true,
+      "trainable_parameters": 8820.0,
+      "train_seconds": 1.9894999999999998
+    },
+    {
+      "model": "itransformer",
+      "primary_score": 1.732620158628697,
+      "per_L_ratio": {
+        "24": 1.4496853281232465,
+        "36": 1.5668655027530427,
+        "48": 2.1498310307643087,
+        "60": 1.7640987728741895
+      },
+      "val_mae": 0.8661085799669468,
+      "peak_hit_ratio": 0.0,
+      "baseline_peak_hit_ratio": 0.16666666666666666,
+      "peak_not_below_baseline": false,
+      "trainable_parameters": 76842.0,
+      "train_seconds": 4.098869565217392
+    }
+  ],
+  "winner": {
+    "model": "nlinear",
+    "primary_score": 1.4803946966761687,
+    "per_L_ratio": {
+      "24": 1.2457662491999097,
+      "36": 1.323111603276361,
+      "48": 1.8272866582097076,
+      "60": 1.525414276018697
+    },
+    "val_mae": 0.811609196793472,
+    "peak_hit_ratio": 1.0,
+    "baseline_peak_hit_ratio": 0.16666666666666666,
+    "peak_not_below_baseline": true,
+    "trainable_parameters": 4410.0,
+    "train_seconds": 1.6859347826086957
+  },
+  "note": "winner frozen; test evaluation now permitted"
+}

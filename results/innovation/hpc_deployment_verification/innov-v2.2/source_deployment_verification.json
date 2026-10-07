@@ -1,0 +1,36 @@
+{
+  "generated_utc": "2026-09-14T18:25:00Z",
+  "implementation_source_version": "innov-v2.2",
+  "scientific_protocol_version": "innov-v2.0",
+  "verified_on": "HPC login node (no GPU; login-node base environment)",
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18",
+  "resolved_deployment_root": "/gpfs1/scratch/sychan552/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18",
+  "manifest": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18/results/innovation/source_snapshot_manifest.json",
+  "script_path": "/gpfs1/scratch/sychan552/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18/scripts/innovation/verify_source_snapshot.py",
+  "verification_mode": "explicit_root",
+  "expected_file_count": 70,
+  "verified_file_count": 70,
+  "missing_files": 0,
+  "mismatched_files": 0,
+  "unexpected_files_in_controlled_scope": 0,
+  "expected_aggregate_sha256": "06b83e18e4bb66d69ae457087fa5024bb4a50884bca3c080ca51af35de575e86",
+  "actual_aggregate_sha256": "06b83e18e4bb66d69ae457087fa5024bb4a50884bca3c080ca51af35de575e86",
+  "aggregate_matches": true,
+  "exit_status": 0,
+  "python_interpreter": "/home/sychan552/.conda/envs/mlflu_hpc/bin/python",
+  "python_version": "3.9.25",
+  "assertions": {
+    "deployment_root_is_not_nested_source_snapshot": true,
+    "nested_snapshot_self_verification_used": false,
+    "verifier_script_inside_actual_runtime_tree": true,
+    "manifest_is_the_deployed_manifest": true,
+    "isolated_from_original_reproduction_dir": true
+  },
+  "source_deployment_verified": true,
+  "comparison_to_v2.1": {
+    "v2.1": {"file_count": 69, "aggregate_sha256": "dc7ee9649c8d840a0453c9728b417059e5bc86fa7d859f224b5e3a67d43c07b4"},
+    "v2.2": {"file_count": 70, "aggregate_sha256": "06b83e18e4bb66d69ae457087fa5024bb4a50884bca3c080ca51af35de575e86"},
+    "delta": "+1 file: tests/innovation/test_pilot_spec_metadata.py (the new D1 regression test); content changes limited to paths.py / hpc_specs.py / source_snapshot.py / runner.py / reproduce.sh"
+  },
+  "note": "verification was executed twice with identical results: once standalone with --expect, and once inside hpc_scripts/hpc_env_check.sh"
+}

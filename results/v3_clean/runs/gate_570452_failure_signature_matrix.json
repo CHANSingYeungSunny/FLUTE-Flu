@@ -1,0 +1,373 @@
+{
+  "generated_utc": "2026-09-18T07:27:22Z",
+  "gate_job_id": "570452",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_clean5",
+  "runtime_version": "innov-v3.11-artifact-directory-initialization",
+  "slurm": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:26:38",
+    "node": "gpu-a100-03",
+    "n_paths": 19,
+    "n_passed": 1
+  },
+  "headline": "ALL 18 runners returned rc=0; every scientific check passes. Only 3 Gate-harness assertions fail (D12).",
+  "n_runners_rc0": 18,
+  "n_runners_rc_nonzero": 0,
+  "failing_checks_by_name": {
+    "checkpoint_file_present": {
+      "n": 16,
+      "paths": [
+        "primary__nlinear__L24__seed42__w1",
+        "primary__dlinear__L24__seed42__w1",
+        "primary__patchtst__L24__seed42__w1",
+        "primary__itransformer__L24__seed42__w1",
+        "primary__gpt2_miflu__L24__seed42__w1",
+        "primary__qwen_time_llm__L24__seed42__w1",
+        "primary__calf_llm__L24__seed42__w1",
+        "primary__timecma_llm__L24__seed42__w1",
+        "ablation__without_dataset_information__L24__seed42__w1",
+        "ablation__without_task_instruction__L24__seed42__w1",
+        "ablation__without_input_variable_description__L24__seed42__w1",
+        "ablation__without_lora__L24__seed42__w1",
+        "ablation__without_multimodality__L24__seed42__w1",
+        "ablation__without_lora_and_multimodality__L24__seed42__w1",
+        "negative_control__zero_text__L24__seed42__w1",
+        "negative_control__shuffled_text__L24__seed42__w1"
+      ]
+    },
+    "artifact_completeness": {
+      "n": 2,
+      "paths": [
+        "baseline__last_value_naive__L24__seedna__w1",
+        "baseline__seasonal_naive__L24__seedna__w1"
+      ]
+    },
+    "baseline_no_checkpoint": {
+      "n": 2,
+      "paths": [
+        "baseline__last_value_naive__L24__seedna__w1",
+        "baseline__seasonal_naive__L24__seedna__w1"
+      ]
+    }
+  },
+  "root_cause": {
+    "id": "D12",
+    "classification": "GATE_HARNESS_VERIFICATION_DEFECT (not a runner defect, not scientific)",
+    "parts": [
+      {
+        "assertion": "checkpoint_file_present",
+        "gate_expects": "checkpoints/best_validation.pt",
+        "runner_actually_writes": "checkpoints/best_val_mse.pt",
+        "evidence": "checkpoint_manifest=True and checkpoint_restore_ok=True on all 16 stochastic paths, so a real checkpoint exists and loads",
+        "affected_paths": 16
+      },
+      {
+        "assertion": "baseline_no_checkpoint",
+        "gate_expects": "not (run_dir/'checkpoints').exists()",
+        "reality": "the D11 initializer intentionally creates all four sub-directories for EVERY run, including baselines (explicitly permitted by the prompt: an empty checkpoints dir is allowed if every writer and audit supports it). The audit must therefore assert the SEMANTIC property instead: checkpoint_applicable == False and no checkpoint FILE written.",
+        "affected_paths": 2
+      },
+      {
+        "assertion": "artifact_completeness",
+        "gate_expects": "a single shared required-artifact list including stochastic-only checkpoint artifacts",
+        "reality": "the list is not baseline-aware, so baselines can never satisfy it",
+        "affected_paths": 2
+      }
+    ],
+    "scientific_protocol_changed": false,
+    "runner_defect": false
+  },
+  "scientific_checks_confirmed_passing_on_all_18_paths": {
+    "seven_variable_full_horizon_output": true,
+    "T_104": true,
+    "split_717_102_206": true,
+    "ili_index_4": true,
+    "scaler_train_only": true,
+    "prompt_stats_train_only": true,
+    "primary_mse_present": true,
+    "secondary_mae_present": true,
+    "fixed_steps_0_3_present": true,
+    "steps_never_averaged": true,
+    "lead_weeks_mapping": true,
+    "pte_1_week_pie_25_pct": true,
+    "unsupported_peak_logic_absent": true,
+    "checkpoint_manifest": true,
+    "checkpoint_restore_ok": true,
+    "run_status_completed": true
+  },
+  "isolation": {
+    "archive_isolated": true,
+    "test_access_count": 0,
+    "holdout_access_count": 0,
+    "formal_rows_submitted": "0/598"
+  },
+  "per_path": [
+    {
+      "path_key": "deferred_guard",
+      "kind": "deferred_guard",
+      "passed": true,
+      "n_deferred": 18,
+      "n_refused": 18,
+      "failing_checks": []
+    },
+    {
+      "path_key": "primary__nlinear__L24__seed42__w1",
+      "kind": "primary",
+      "model": "nlinear",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "primary__dlinear__L24__seed42__w1",
+      "kind": "primary",
+      "model": "dlinear",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "primary__patchtst__L24__seed42__w1",
+      "kind": "primary",
+      "model": "patchtst",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "primary__itransformer__L24__seed42__w1",
+      "kind": "primary",
+      "model": "itransformer",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "primary__gpt2_miflu__L24__seed42__w1",
+      "kind": "primary",
+      "model": "gpt2_miflu",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "primary__qwen_time_llm__L24__seed42__w1",
+      "kind": "primary",
+      "model": "qwen_time_llm",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "primary__calf_llm__L24__seed42__w1",
+      "kind": "primary",
+      "model": "calf_llm",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "primary__timecma_llm__L24__seed42__w1",
+      "kind": "primary",
+      "model": "timecma_llm",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "baseline__last_value_naive__L24__seedna__w1",
+      "kind": "baseline",
+      "model": "last_value_naive",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "artifact_completeness",
+        "baseline_no_checkpoint"
+      ],
+      "n_checks": 17,
+      "n_failing": 2,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": [
+        "logs/train_history.csv"
+      ]
+    },
+    {
+      "path_key": "baseline__seasonal_naive__L24__seedna__w1",
+      "kind": "baseline",
+      "model": "seasonal_naive",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "artifact_completeness",
+        "baseline_no_checkpoint"
+      ],
+      "n_checks": 17,
+      "n_failing": 2,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": [
+        "logs/train_history.csv"
+      ]
+    },
+    {
+      "path_key": "ablation__without_dataset_information__L24__seed42__w1",
+      "kind": "ablation",
+      "model": "without_dataset_information",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "ablation__without_task_instruction__L24__seed42__w1",
+      "kind": "ablation",
+      "model": "without_task_instruction",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "ablation__without_input_variable_description__L24__seed42__w1",
+      "kind": "ablation",
+      "model": "without_input_variable_description",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "ablation__without_lora__L24__seed42__w1",
+      "kind": "ablation",
+      "model": "without_lora",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "ablation__without_multimodality__L24__seed42__w1",
+      "kind": "ablation",
+      "model": "without_multimodality",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "ablation__without_lora_and_multimodality__L24__seed42__w1",
+      "kind": "ablation",
+      "model": "without_lora_and_multimodality",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "negative_control__zero_text__L24__seed42__w1",
+      "kind": "negative_control",
+      "model": "zero_text",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    },
+    {
+      "path_key": "negative_control__shuffled_text__L24__seed42__w1",
+      "kind": "negative_control",
+      "model": "shuffled_text",
+      "rc": 0,
+      "passed": false,
+      "failing_checks": [
+        "checkpoint_file_present"
+      ],
+      "n_checks": 18,
+      "n_failing": 1,
+      "scientific_checks_all_pass": true,
+      "missing_artifacts": []
+    }
+  ]
+}

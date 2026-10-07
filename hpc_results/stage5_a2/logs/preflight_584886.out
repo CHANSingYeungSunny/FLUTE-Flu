@@ -1,0 +1,101 @@
+[00:47:34] Scaler persisted -> /gpfs1/scratch/sychan552/a2_stage5/data/scaler_miflu_author966.json (train_end=676, val_end=773)
+[00:47:34] Data: 966 total | Train=676 | Val=97 | Test=193
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+{
+  "profile": "author_966",
+  "horizon": 24,
+  "containment": "strict",
+  "checks": {
+    "profile": {
+      "name": "author_966",
+      "train_end": 0,
+      "val_end": 0,
+      "profiles_known": [
+        "author_966",
+        "project_1025"
+      ],
+      "ACTIVE_PROFILE_set": {
+        "train_miflu": true,
+        "train_ablation": false
+      },
+      "data_path": "/gpfs1/scratch/sychan552/a2_stage5/data/raw/national_illness_raw_paper_exact.csv"
+    },
+    "gpt2_cache": {
+      "HF_HOME": "/home/sychan552/.cache/huggingface",
+      "exists": true
+    },
+    "gpt2_offline": {
+      "status": "PASS",
+      "n_layer": 12,
+      "n_embd": 768
+    },
+    "data": {
+      "n": 966,
+      "train_end": 676,
+      "val_end": 773
+    },
+    "windows": {
+      "train": 549,
+      "val": 74,
+      "test": 170,
+      "containment": "strict"
+    },
+    "text_embed_sensitivity": {
+      "tokens_p1": 376,
+      "tokens_p2": 379,
+      "max_abs_diff_common_prefix": 491.5842590332031,
+      "max_abs_diff_pooled": 0.9575271606445312,
+      "verdict": "PASS"
+    },
+    "miflu_forward": {
+      "output_shape": [
+        4,
+        7,
+        24
+      ],
+      "expected": [
+        4,
+        7,
+        24
+      ],
+      "shape_ok": true,
+      "output_delta_on_text_change": 0.0016081929206848145,
+      "verdict": "PASS"
+    },
+    "params": {
+      "trainable": 1030056,
+      "frozen": 81106176,
+      "lora_modules": [
+        "LoRALinear"
+      ]
+    },
+    "loss_7var": 0.3583860695362091,
+    "ckpt_roundtrip": {
+      "identical": true,
+      "sha256_16": "e692b6dcdb5712d3"
+    },
+    "no_text_definition": {
+      "variant": "no_multi",
+      "use_text": false,
+      "prompt_cache": null,
+      "train_ablation_importable": "No module named 'early_stopping'",
+      "note": "removes the WHOLE text pathway; sequence length / patch positions change (WHOLE-PATHWAY contrast, not a matched-length content control)"
+    },
+    "resources": {
+      "peak_mem_bytes": 1430896128,
+      "seconds_per_forward_batch4": 0.0272,
+      "covers": "forward only (batch 4, no backward/optimizer)"
+    }
+  },
+  "env": {
+    "python": "3.9.25",
+    "torch": "2.5.1",
+    "cuda_available": true,
+    "device": "NVIDIA A100-SXM4-80GB"
+  },
+  "test_access": "NONE \u2014 only train/validation windows were used"
+}
+[preflight] done

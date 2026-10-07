@@ -1,0 +1,12 @@
+{
+  "protocol_version": "innov-v2.0",
+  "implementation_source_version": "innov-v2.5",
+  "passed": false,
+  "note": "Validation-only champion freeze audit. Populated by the freeze stage (K). Until then the one-time Test evaluation remains closed.",
+  "checks": [
+    {"id": "no_test_access_during_selection", "description": "No Test split was read during candidate generation or selection", "passed": false},
+    {"id": "frozen_winners_written", "description": "frozen_winners.json exists before any Test access", "passed": false},
+    {"id": "champion_definition_frozen", "description": "Champion run IDs, checkpoint hashes, plan hash, source hash, protocol version frozen", "passed": false},
+    {"id": "metadata_chain_complete", "description": "Runtime metadata chain complete across all five evidence layers for every selected run", "passed": false}
+  ]
+}

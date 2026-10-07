@@ -1,0 +1,46 @@
+run_id,track,variant,horizon,seed,data_profile,split_convention,reuse_class,reason
+A0-01,A,released_code,24,42,author_tslib_966,author_676_97_193,BLOCKED,released-code replay never run; needs GPU node + author gpt2 cache + author-repo env (D-a0-env)
+A2-MIFlu-L24-S42,A,corrected_miflu,24,42,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L24-S43,A,corrected_miflu,24,43,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L24-S44,A,corrected_miflu,24,44,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L36-S42,A,corrected_miflu,36,42,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L36-S43,A,corrected_miflu,36,43,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L36-S44,A,corrected_miflu,36,44,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L48-S42,A,corrected_miflu,48,42,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L48-S43,A,corrected_miflu,48,43,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L48-S44,A,corrected_miflu,48,44,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L60-S42,A,corrected_miflu,60,42,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L60-S43,A,corrected_miflu,60,43,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-MIFlu-L60-S44,A,corrected_miflu,60,44,author_966,author_676_97_193,NEW_FIT,"job 514859 = TSLib 966 split 676/96/194, 10 reps, fixed-20-epoch; proposed 676/97/193 + 3-seed val-selection unrun; 7-var per-window predictions/checkpoints not stored locally"
+A2-NOTEXT-L24-S42,A,no_text,24,42,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L24-S43,A,no_text,24,43,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L24-S44,A,no_text,24,44,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L36-S42,A,no_text,36,42,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L36-S43,A,no_text,36,43,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L36-S44,A,no_text,36,44,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L48-S42,A,no_text,48,42,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L48-S43,A,no_text,48,43,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L48-S44,A,no_text,48,44,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L60-S42,A,no_text,60,42,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L60-S43,A,no_text,60,43,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NOTEXT-L60-S44,A,no_text,60,44,author_966,author_676_97_193,NEW_FIT,no_multi (no-text) never run on author 966
+A2-NLIN-L24-S42,A,nlinear,24,42,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L24-S43,A,nlinear,24,43,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L24-S44,A,nlinear,24,44,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L36-S42,A,nlinear,36,42,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L36-S43,A,nlinear,36,43,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L36-S44,A,nlinear,36,44,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L48-S42,A,nlinear,48,42,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L48-S43,A,nlinear,48,43,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L48-S44,A,nlinear,48,44,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L60-S42,A,nlinear,60,42,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L60-S43,A,nlinear,60,43,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-NLIN-L60-S44,A,nlinear,60,44,author_966,author_676_97_193,NEW_FIT,NLinear never run on author 966 via train_miflu protocol (innovation harness NLinear is 1025-row 598-spec)
+A2-LV-L24,A,last_value,24,42,author_966,author_676_97_193,NEW_FIT,"deterministic last-value eval, not yet computed on author 966"
+A2-LV-L36,A,last_value,36,42,author_966,author_676_97_193,NEW_FIT,"deterministic last-value eval, not yet computed on author 966"
+A2-LV-L48,A,last_value,48,42,author_966,author_676_97_193,NEW_FIT,"deterministic last-value eval, not yet computed on author 966"
+A2-LV-L60,A,last_value,60,42,author_966,author_676_97_193,NEW_FIT,"deterministic last-value eval, not yet computed on author 966"
+A2-SN-L24,A,seasonal_naive,24,42,author_966,author_676_97_193,NEW_FIT,"deterministic seasonal-naive eval, not yet computed on author 966"
+A2-SN-L36,A,seasonal_naive,36,42,author_966,author_676_97_193,NEW_FIT,"deterministic seasonal-naive eval, not yet computed on author 966"
+A2-SN-L48,A,seasonal_naive,48,42,author_966,author_676_97_193,NEW_FIT,"deterministic seasonal-naive eval, not yet computed on author 966"
+A2-SN-L60,A,seasonal_naive,60,42,author_966,author_676_97_193,NEW_FIT,"deterministic seasonal-naive eval, not yet computed on author 966"

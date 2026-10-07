@@ -1,0 +1,122 @@
+[task] MODEL=miflu L=60 job=585813 start=2026-09-25T15:03:37Z
+[23:04:23]     ep  6/20 | train_loss=0.382119 | val_mse=0.225913(All) 0.3565(ILI) | val_mae=0.333502 | 6.7s | GPU=1.21GB
+[23:04:30]     ep  7/20 | train_loss=0.337047 | val_mse=0.210768(All) 0.3308(ILI) | val_mae=0.307978 | 6.7s | GPU=1.21GB
+[23:04:36]     ep  8/20 | train_loss=0.295797 | val_mse=0.258075(All) 0.4169(ILI) | val_mae=0.345765 | 6.7s | GPU=1.21GB
+[23:04:43]     ep  9/20 | train_loss=0.261933 | val_mse=0.215695(All) 0.3473(ILI) | val_mae=0.320614 | 6.7s | GPU=1.21GB
+[23:04:50]     ep 10/20 | train_loss=0.231495 | val_mse=0.209934(All) 0.3356(ILI) | val_mae=0.320742 | 6.7s | GPU=1.21GB
+[23:04:56]     ep 11/20 | train_loss=0.211043 | val_mse=0.226483(All) 0.3593(ILI) | val_mae=0.340479 | 6.7s | GPU=1.21GB
+[23:05:03]     ep 12/20 | train_loss=0.191663 | val_mse=0.256150(All) 0.4152(ILI) | val_mae=0.354665 | 6.7s | GPU=1.21GB
+[23:05:10]     ep 13/20 | train_loss=0.174757 | val_mse=0.208807(All) 0.3335(ILI) | val_mae=0.327229 | 6.7s | GPU=1.21GB
+[23:05:17]     ep 14/20 | train_loss=0.164014 | val_mse=0.224931(All) 0.3619(ILI) | val_mae=0.337409 | 6.7s | GPU=1.21GB
+[23:05:23]     ep 15/20 | train_loss=0.151743 | val_mse=0.228430(All) 0.3635(ILI) | val_mae=0.340365 | 6.7s | GPU=1.21GB
+[23:05:30]     ep 16/20 | train_loss=0.142129 | val_mse=0.256294(All) 0.4089(ILI) | val_mae=0.367501 | 6.7s | GPU=1.21GB
+[23:05:37]     ep 17/20 | train_loss=0.136474 | val_mse=0.218321(All) 0.3514(ILI) | val_mae=0.322318 | 6.7s | GPU=1.21GB
+[23:05:44]     ep 18/20 | train_loss=0.119813 | val_mse=0.232609(All) 0.3765(ILI) | val_mae=0.332830 | 6.7s | GPU=1.21GB
+[23:05:50]     ep 19/20 | train_loss=0.113046 | val_mse=0.242418(All) 0.3909(ILI) | val_mae=0.339897 | 6.7s | GPU=1.21GB
+[23:05:57]     ep 20/20 | train_loss=0.106322 | val_mse=0.214922(All) 0.3451(ILI) | val_mae=0.315285 | 6.7s | GPU=1.21GB
+[23:05:57]   L=60 rep seed=42: DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[23:05:57]   [CKPT] L=60: kept per-seed best-epoch ckpt seed=42 (best val_mse=0.208807, best_epoch=12) -> results/stage5/ckpt/author_966/miflu/best_miflu_L60_seed42.pth
+[23:05:57]   [DEFER_TEST] prediction export skipped (locked-batch step)
+[23:05:57]   [L=60] FINAL: TEST DEFERRED - no Test numbers produced (locked-batch step); best val=0.208807
+[23:05:57] 
+[23:05:57] ============================================================
+[23:05:57]   FINAL RESULTS — ILITOTAL (paper protocol, mean ± std over 10 reps)
+[23:05:57] ============================================================
+[23:05:57]      L           MSE           MAE
+[23:05:57]   --------------------------------
+[23:05:57]     60         nan±nan           nan±nan  
+[23:05:57] ============================================================
+[23:05:57]   SUPPLEMENTARY — de-normalised (patient counts). NOT the paper's
+[23:05:57]   Table V metric: MIFlu §V-B de-normalises only for the REGIONAL task.
+[23:05:57]   Reported for interpretability of the figures only.
+[23:05:57]   --------------------------------------------------------------
+[23:05:57]     60  MSE=           nan±nan       patients^2   MAE=      nan±nan     patients
+[23:05:57] ============================================================
+[23:05:57]   BEST-VAL CHECKPOINTS (one per horizon, rep with lowest val MSE):
+[23:05:57]     - L=60: seed=42  best_val_mse=0.208807  test=DEFERRED
+[23:05:57] ============================================================
+[23:05:57]   Total time: 2.3 min
+[23:05:57]   Raw per-rep results : results/stage5/author_966/miflu/results_miflu_paper_protocol_20260925_230341.csv
+[23:05:57]   Tidy result table   : results/stage5/author_966/miflu/results_miflu_paper_protocol_table_20260925_230341.csv
+miflu_L60_S42 wall=140.90 s
+[23:06:44]     ep  6/20 | train_loss=0.345488 | val_mse=0.261171(All) 0.4010(ILI) | val_mae=0.365008 | 6.7s | GPU=1.21GB
+[23:06:50]     ep  7/20 | train_loss=0.300536 | val_mse=0.206988(All) 0.3314(ILI) | val_mae=0.308754 | 6.7s | GPU=1.21GB
+[23:06:57]     ep  8/20 | train_loss=0.270882 | val_mse=0.245292(All) 0.3928(ILI) | val_mae=0.345483 | 6.7s | GPU=1.21GB
+[23:07:04]     ep  9/20 | train_loss=0.243019 | val_mse=0.232949(All) 0.3836(ILI) | val_mae=0.332606 | 6.7s | GPU=1.21GB
+[23:07:11]     ep 10/20 | train_loss=0.213409 | val_mse=0.215523(All) 0.3538(ILI) | val_mae=0.312453 | 6.7s | GPU=1.21GB
+[23:07:17]     ep 11/20 | train_loss=0.197910 | val_mse=0.224393(All) 0.3670(ILI) | val_mae=0.319519 | 6.7s | GPU=1.21GB
+[23:07:24]     ep 12/20 | train_loss=0.177066 | val_mse=0.251902(All) 0.4133(ILI) | val_mae=0.335975 | 6.7s | GPU=1.21GB
+[23:07:31]     ep 13/20 | train_loss=0.164619 | val_mse=0.262098(All) 0.4405(ILI) | val_mae=0.349181 | 6.7s | GPU=1.21GB
+[23:07:37]     ep 14/20 | train_loss=0.150386 | val_mse=0.228237(All) 0.3775(ILI) | val_mae=0.321143 | 6.7s | GPU=1.21GB
+[23:07:44]     ep 15/20 | train_loss=0.135348 | val_mse=0.230599(All) 0.3779(ILI) | val_mae=0.323084 | 6.7s | GPU=1.21GB
+[23:07:51]     ep 16/20 | train_loss=0.130294 | val_mse=0.222626(All) 0.3710(ILI) | val_mae=0.320782 | 6.7s | GPU=1.21GB
+[23:07:58]     ep 17/20 | train_loss=0.121911 | val_mse=0.242402(All) 0.3952(ILI) | val_mae=0.332279 | 6.7s | GPU=1.21GB
+[23:08:04]     ep 18/20 | train_loss=0.106852 | val_mse=0.263602(All) 0.4349(ILI) | val_mae=0.341711 | 6.7s | GPU=1.21GB
+[23:08:11]     ep 19/20 | train_loss=0.100065 | val_mse=0.250509(All) 0.4177(ILI) | val_mae=0.328051 | 6.7s | GPU=1.21GB
+[23:08:18]     ep 20/20 | train_loss=0.095006 | val_mse=0.224659(All) 0.3737(ILI) | val_mae=0.312336 | 6.7s | GPU=1.21GB
+[23:08:18]   L=60 rep seed=43: DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[23:08:18]   [CKPT] L=60: kept per-seed best-epoch ckpt seed=43 (best val_mse=0.206988, best_epoch=6) -> results/stage5/ckpt/author_966/miflu/best_miflu_L60_seed43.pth
+[23:08:18]   [DEFER_TEST] prediction export skipped (locked-batch step)
+[23:08:18]   [L=60] FINAL: TEST DEFERRED - no Test numbers produced (locked-batch step); best val=0.206988
+[23:08:18] 
+[23:08:18] ============================================================
+[23:08:18]   FINAL RESULTS — ILITOTAL (paper protocol, mean ± std over 10 reps)
+[23:08:18] ============================================================
+[23:08:18]      L           MSE           MAE
+[23:08:18]   --------------------------------
+[23:08:18]     60         nan±nan           nan±nan  
+[23:08:18] ============================================================
+[23:08:18]   SUPPLEMENTARY — de-normalised (patient counts). NOT the paper's
+[23:08:18]   Table V metric: MIFlu §V-B de-normalises only for the REGIONAL task.
+[23:08:18]   Reported for interpretability of the figures only.
+[23:08:18]   --------------------------------------------------------------
+[23:08:18]     60  MSE=           nan±nan       patients^2   MAE=      nan±nan     patients
+[23:08:18] ============================================================
+[23:08:18]   BEST-VAL CHECKPOINTS (one per horizon, rep with lowest val MSE):
+[23:08:18]     - L=60: seed=43  best_val_mse=0.206988  test=DEFERRED
+[23:08:18] ============================================================
+[23:08:18]   Total time: 2.3 min
+[23:08:18]   Raw per-rep results : results/stage5/author_966/miflu/results_miflu_paper_protocol_20260925_230602.csv
+[23:08:18]   Tidy result table   : results/stage5/author_966/miflu/results_miflu_paper_protocol_table_20260925_230602.csv
+miflu_L60_S43 wall=140.71 s
+[23:09:04]     ep  6/20 | train_loss=0.348810 | val_mse=0.219412(All) 0.3226(ILI) | val_mae=0.306083 | 6.7s | GPU=1.21GB
+[23:09:11]     ep  7/20 | train_loss=0.311595 | val_mse=0.184404(All) 0.2665(ILI) | val_mae=0.294568 | 6.7s | GPU=1.21GB
+[23:09:18]     ep  8/20 | train_loss=0.286775 | val_mse=0.182843(All) 0.2711(ILI) | val_mae=0.287534 | 6.7s | GPU=1.21GB
+[23:09:24]     ep  9/20 | train_loss=0.257629 | val_mse=0.154480(All) 0.2170(ILI) | val_mae=0.273949 | 6.7s | GPU=1.21GB
+[23:09:31]     ep 10/20 | train_loss=0.235423 | val_mse=0.141359(All) 0.2105(ILI) | val_mae=0.266709 | 6.7s | GPU=1.21GB
+[23:09:38]     ep 11/20 | train_loss=0.212768 | val_mse=0.149957(All) 0.2098(ILI) | val_mae=0.270452 | 6.7s | GPU=1.21GB
+[23:09:45]     ep 12/20 | train_loss=0.197849 | val_mse=0.133042(All) 0.1872(ILI) | val_mae=0.250416 | 6.7s | GPU=1.21GB
+[23:09:51]     ep 13/20 | train_loss=0.179904 | val_mse=0.159740(All) 0.2302(ILI) | val_mae=0.278928 | 6.7s | GPU=1.21GB
+[23:09:58]     ep 14/20 | train_loss=0.166060 | val_mse=0.156411(All) 0.2313(ILI) | val_mae=0.287218 | 6.7s | GPU=1.21GB
+[23:10:05]     ep 15/20 | train_loss=0.157030 | val_mse=0.136450(All) 0.1991(ILI) | val_mae=0.258228 | 6.7s | GPU=1.21GB
+[23:10:12]     ep 16/20 | train_loss=0.144452 | val_mse=0.132804(All) 0.1893(ILI) | val_mae=0.251691 | 6.7s | GPU=1.21GB
+[23:10:18]     ep 17/20 | train_loss=0.129338 | val_mse=0.122141(All) 0.1724(ILI) | val_mae=0.247253 | 6.7s | GPU=1.21GB
+[23:10:25]     ep 18/20 | train_loss=0.121580 | val_mse=0.138702(All) 0.2038(ILI) | val_mae=0.258573 | 6.7s | GPU=1.21GB
+[23:10:32]     ep 19/20 | train_loss=0.116272 | val_mse=0.116390(All) 0.1613(ILI) | val_mae=0.238147 | 6.7s | GPU=1.21GB
+[23:10:38]     ep 20/20 | train_loss=0.108495 | val_mse=0.125871(All) 0.1780(ILI) | val_mae=0.251068 | 6.7s | GPU=1.21GB
+[23:10:38]   L=60 rep seed=44: DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[23:10:39]   [CKPT] L=60: kept per-seed best-epoch ckpt seed=44 (best val_mse=0.116390, best_epoch=18) -> results/stage5/ckpt/author_966/miflu/best_miflu_L60_seed44.pth
+[23:10:39]   [DEFER_TEST] prediction export skipped (locked-batch step)
+[23:10:39]   [L=60] FINAL: TEST DEFERRED - no Test numbers produced (locked-batch step); best val=0.116390
+[23:10:39] 
+[23:10:39] ============================================================
+[23:10:39]   FINAL RESULTS — ILITOTAL (paper protocol, mean ± std over 10 reps)
+[23:10:39] ============================================================
+[23:10:39]      L           MSE           MAE
+[23:10:39]   --------------------------------
+[23:10:39]     60         nan±nan           nan±nan  
+[23:10:39] ============================================================
+[23:10:39]   SUPPLEMENTARY — de-normalised (patient counts). NOT the paper's
+[23:10:39]   Table V metric: MIFlu §V-B de-normalises only for the REGIONAL task.
+[23:10:39]   Reported for interpretability of the figures only.
+[23:10:39]   --------------------------------------------------------------
+[23:10:39]     60  MSE=           nan±nan       patients^2   MAE=      nan±nan     patients
+[23:10:39] ============================================================
+[23:10:39]   BEST-VAL CHECKPOINTS (one per horizon, rep with lowest val MSE):
+[23:10:39]     - L=60: seed=44  best_val_mse=0.116390  test=DEFERRED
+[23:10:39] ============================================================
+[23:10:39]   Total time: 2.3 min
+[23:10:39]   Raw per-rep results : results/stage5/author_966/miflu/results_miflu_paper_protocol_20260925_230823.csv
+[23:10:39]   Tidy result table   : results/stage5/author_966/miflu/results_miflu_paper_protocol_table_20260925_230823.csv
+miflu_L60_S44 wall=140.72 s
+[task] MODEL=miflu L=60 end=2026-09-25T15:10:39Z

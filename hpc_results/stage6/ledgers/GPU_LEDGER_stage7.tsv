@@ -1,0 +1,3 @@
+jobid	name	state	elapsed	gpu	gpu_hours	ours	submit
+A0_GPU_MINIMAL	587068	multimodal1	00:01:22	author_code_verbatim_replay
+A0_GPU_MINIMAL	587091	default	00:00:25	author_code_verbatim_replay

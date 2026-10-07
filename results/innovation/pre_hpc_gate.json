@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-09-14T21:01:46Z",
+  "protocol_version": "innov-v2.0",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version": "innov-v2.4",
+  "plan_sha256_expected": "AA4AB1C8842E893A4690787E17ADD0CA193C86825FFF9FD89F46952C7F9E7961",
+  "plan_sha256_runtime": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+  "fix_fingerprint": {
+    "repository_head": "1f6563f7ea52620354a4fa0666b813b6a9f9cc51",
+    "working_tree_dirty": true,
+    "fix_commit": null,
+    "fix_identifier": "working-tree@1f6563f+innovation-pkg:a8ec1a4f9db9"
+  },
+  "source_freeze": {
+    "manifest": "results/innovation/source_snapshot_manifest.json",
+    "aggregate_sha256": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+    "n_files": 77,
+    "total_bytes": 513185,
+    "snapshot_dir": "results/innovation/source_snapshot",
+    "repository_head_short": "1f6563f",
+    "working_tree_dirty": true
+  },
+  "source_deployment_verification": {
+    "verified": false,
+    "blocker": "UNVERIFIED_HPC_SOURCE_DEPLOYMENT",
+    "how_to_verify": "after deploying the frozen source, run on HPC: `python scripts/innovation/verify_source_snapshot.py --manifest results/innovation/source_snapshot_manifest.json` \u2014 it must exit 0 and print the aggregate hash"
+  },
+  "checks": {
+    "plan_sha256_matches": true,
+    "four_pilot_scripts_present": true,
+    "pilot_specs_json_present": true,
+    "gpt2_cache_available": true,
+    "aggregation_regression_ok": true,
+    "pipeline_regression_ok": true,
+    "gpt2_control_repro_ok": true,
+    "slurm_validation_ok": true,
+    "submission_guards_present": true,
+    "test_split_sealed": true,
+    "no_test_artifacts_under_runs": true,
+    "source_snapshot_dir_present": true,
+    "source_snapshot_manifest_present": true,
+    "pilot_specs_carry_snapshot_sha": true,
+    "pilot_specs_selection_eligible_false": true
+  },
+  "blocker": "UNVERIFIED_HPC_SOURCE_DEPLOYMENT",
+  "readiness": {
+    "pilot_generation_ready": true,
+    "pilot_submission_ready": false,
+    "full_sweep_submission_ready": false
+  },
+  "full_sweep_blocked_reason": "pilot has not been run/reviewed; the full sweep remains blocked until pilot evidence is accepted",
+  "submission_attempted": false,
+  "sbatch_invoked": false,
+  "test_sealed": true,
+  "frozen_winner_created": false,
+  "pilot_scripts": [
+    "hpc_scripts\\pilot_dlinear_L24_seed42.sh",
+    "hpc_scripts\\pilot_gpt2_miflu_L24_seed42.sh",
+    "hpc_scripts\\pilot_itransformer_L24_seed42.sh",
+    "hpc_scripts\\pilot_patchtst_L24_seed42.sh"
+  ]
+}

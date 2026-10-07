@@ -1,0 +1,78 @@
+{
+  "generated_utc": "2026-09-19T01:50:00Z",
+  "event": "V3_CLEAN_WAVE1_FAILURE_REQUIRES_REVIEW",
+  "round": "CodeBuddy_MIFlu_v3_13_Await_Gate_Migrate_205_Resume_to_580.md",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_clean7",
+  "runtime_version": "innov-v3.13-compact-checkpoint-quota-safe-resume",
+  "gate": {
+    "job_id": "571800",
+    "slurm_state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:27:03",
+    "node": "gpu-a100-06",
+    "n_passed": 3,
+    "n_paths": 19,
+    "all_passed": false
+  },
+  "root_cause": {
+    "id": "D14",
+    "classification": "V313_GATE_WIRING_DEFECT_RUNKEY_NOT_NORMALISED_TO_MODEL_NAME",
+    "location": "clean_gate.py verify_storage() -> compact_checkpoint.export_compact()",
+    "detail": "verify_storage() passes the full RUN KEY (e.g. 'primary__nlinear__L24__seed42__w1') straight into export_compact(), bypassing the run-key -> model-name normalisation that only existed in the CLI path. build_base_model() then evaluates CR.PRIMARY_MODELS[spec_name], which raises KeyError for a run key.",
+    "exception": "KeyError: '<run_key>'",
+    "defect_owner": "new v3.13 code (mine), NOT the scientific runtime",
+    "scientific_impact": "NONE"
+  },
+  "evidence_that_the_science_is_healthy": {
+    "rows_returned_rc0": 16,
+    "rows_with_rc_nonzero": 0,
+    "verify_run_checks_failing_on_any_row": 0,
+    "note": "every failing row has an EMPTY set of bad verify_run checks; only the storage sub-check failed",
+    "deferred_guard_passed": true,
+    "deferred_rows_refused": 18,
+    "archive_isolated": true,
+    "test_access_count": 0,
+    "holdout_access_count": 0
+  },
+  "failed_rows": [
+    "primary__nlinear__L24__seed42__w1",
+    "primary__dlinear__L24__seed42__w1",
+    "primary__patchtst__L24__seed42__w1",
+    "primary__itransformer__L24__seed42__w1",
+    "primary__gpt2_miflu__L24__seed42__w1",
+    "primary__qwen_time_llm__L24__seed42__w1",
+    "primary__calf_llm__L24__seed42__w1",
+    "primary__timecma_llm__L24__seed42__w1",
+    "ablation__without_dataset_information__L24__seed42__w1",
+    "ablation__without_task_instruction__L24__seed42__w1",
+    "ablation__without_input_variable_description__L24__seed42__w1",
+    "ablation__without_lora__L24__seed42__w1",
+    "ablation__without_multimodality__L24__seed42__w1",
+    "ablation__without_lora_and_multimodality__L24__seed42__w1",
+    "negative_control__zero_text__L24__seed42__w1",
+    "negative_control__shuffled_text__L24__seed42__w1"
+  ],
+  "independent_proof_that_the_compact_design_itself_is_correct": {
+    "job_id": "571631",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "result": "9/9 schemas proven: bit-exact reconstruction, frozen backbone excluded, restoration_exact, 0 unequal tensors",
+    "note": "that job used the CLI path, which normalises the run key correctly"
+  },
+  "minimal_fix_proposed": [
+    "add a single _model_name() normalisation helper inside compact_checkpoint.py and apply it at the start of export_compact() and restore_and_compare(), so BOTH the CLI and the in-process gate call work",
+    "no scientific change; no model/protocol change"
+  ],
+  "required_next_authorization": [
+    "create v3.14 (or re-cut v3.13 with the fix under a new aggregate), deterministic bundle A/B, deploy to a NEW never-before-used isolated root, and run exactly one fresh Gate",
+    "v3_clean7 must NOT be patched in place"
+  ],
+  "actions_deliberately_not_taken": {
+    "migrated_204_accepted_rows": false,
+    "repair_accepted_job_571472": false,
+    "deleted_quarantine": false,
+    "started_controller": false,
+    "submitted_a_second_gate": false,
+    "patched_the_frozen_deployment_in_place": false
+  }
+}

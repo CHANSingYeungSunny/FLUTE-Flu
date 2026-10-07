@@ -1,0 +1,12 @@
+track,model,group,implementation,MSE_L24,MSE_L36,MSE_L48,MSE_L60,average_MSE_4L,n_seeds_per_L,n_cells,comparable_to_paper,rank
+A_author966,notext,CONTROL,"MIFlu control, forecasting GPT-2 + LoRA KEPT",1.979595,1.826842,1.790090,2.092104,1.922158,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",1
+A_author966,miflu,LLM,corrected reconstruction (text path repaired),2.443924,1.936020,1.767731,2.018403,2.041519,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",2
+A_author966,nlinear,non-LLM,canonical NLinear,2.100828,2.027693,2.003275,2.066402,2.049550,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",3
+A_author966,seasonal_naive,baseline,deterministic reference,2.563768,2.265501,2.142458,2.103470,2.268799,1,4,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",4
+A_author966,dlinear,non-LLM,own re-implementation,2.284974,2.278010,2.355775,2.472567,2.347832,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",5
+A_author966,timecma_llm,LLM,TimeCMA-INSPIRED,2.454102,2.643185,2.720292,2.862457,2.670009,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",6
+A_author966,patchtst,non-LLM,PatchTST-INSPIRED (NOT canonical),3.888418,3.776626,3.952504,4.064334,3.920470,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",7
+A_author966,itransformer,non-LLM,own re-implementation,3.751068,3.981258,4.034325,4.172144,3.984699,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",8
+A_author966,qwen_time_llm,LLM,Time-LLM-INSPIRED on Qwen2.5-1.5B,4.618683,4.995727,5.665992,5.597817,5.219555,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",9
+A_author966,calf_llm,LLM,CALF-INSPIRED,5.271129,5.343068,5.614909,5.832092,5.515300,3,12,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",10
+A_author966,last_value_naive,baseline,deterministic reference,6.213324,7.713822,7.851274,6.884904,7.165831,1,4,"NO - different metric normalisation, 3 vs 10 repetitions, reconstructed hyperparameters",11

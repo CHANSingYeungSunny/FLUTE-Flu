@@ -1,0 +1,48 @@
+{
+  "generated_utc": "2026-09-15T20:13:42Z",
+  "data_values_acquired": false,
+  "records": [
+    {
+      "source_key": "cdc_fluview_official",
+      "authority": "CDC FluView / ILINet",
+      "official_url": "https://www.cdc.gov/fluview/overview/index.html",
+      "api_or_download": "https://gis.cdc.gov/GRASP/Fluview/FluViewPhase1.html",
+      "status": "CANDIDATE_METADATA_ONLY",
+      "public_use": "official public CDC surveillance; request snapshot and terms must be recorded at acquisition",
+      "granularity": "weekly Sunday-Saturday MMWR/epiweek",
+      "geography": "national, HHS region, state and other CDC levels",
+      "target": "ILI percentage / counts and denominator fields; not local ILITOTAL-identical by default",
+      "covariates": "age-stratified ILI fields, total patients, providers and reporting metadata where exposed",
+      "revision_backfill": "weekly preliminary data; late reports and corrections can revise history",
+      "request_spec": "official CDC FluView export/API; acquire metadata and raw response only after Gate approval"
+    },
+    {
+      "source_key": "cmu_delphi_fluview",
+      "authority": "CMU Delphi Epidata FluView endpoint with CDC provenance",
+      "official_url": "https://cmu-delphi.github.io/delphi-epidata/api/fluview.html",
+      "api_or_download": "https://api.delphi.cmu.edu/epidata/fluview/",
+      "status": "PREFERRED_METADATA_CANDIDATE_NOT_ACQUIRED",
+      "public_use": "publicly accessible US Government source; Delphi documents API data licensing",
+      "granularity": "weekly epiweek; documented range starts 1997w40",
+      "geography": "nat, HHS regions, census divisions, states and other documented regions",
+      "target": "num_ili, num_patients, unweighted ili, weighted wili; differs from local ILITOTAL until frozen",
+      "covariates": "num_providers and age fields; missing values may be null or imputed by version/access",
+      "revision_backfill": "preliminary data; issue/lag parameters expose historical releases and backfills",
+      "request_spec": "regions=nat; epiweeks=<locked interval>; record issue/lag policy and response metadata; no values this phase"
+    },
+    {
+      "source_key": "cdc_nhsn_hrd",
+      "authority": "CDC NHSN Weekly Hospital Respiratory Data",
+      "official_url": "https://data.cdc.gov/Public-Health-Surveillance/Weekly-Hospital-Respiratory-Data-HRD-Metrics-by-Ju/ua7e-t2fy/about_data",
+      "api_or_download": "Socrata dataset ua7e-t2fy",
+      "status": "EXTERNAL_VALIDATION_DIFFERENT_TARGET",
+      "public_use": "public domain U.S. Government",
+      "granularity": "weekly reporting date / MMWR week-ending date",
+      "geography": "national, region, state/territory",
+      "target": "hospital admissions/hospitalization/occupancy metrics, not outpatient ILI",
+      "covariates": "hospital capacity, age and influenza-confirmed admission fields",
+      "revision_backfill": "coverage mandates changed; corrections/backfills can revise history",
+      "request_spec": "metadata-only Socrata catalog inspection; never substitute HRD target for ILITOTAL without amendment"
+    }
+  ]
+}

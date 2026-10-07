@@ -1,0 +1,6 @@
+{
+  "updated_utc": "2026-09-14T11:05:53Z",
+  "status": "failed",
+  "run_id": "national-ili__patchtst__none__identity__L24__seed42__20260914T110553Z__1f6563f",
+  "error": "TypeError: __init__() got an unexpected keyword argument 'device'"
+}

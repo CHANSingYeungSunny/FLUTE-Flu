@@ -1,0 +1,2894 @@
+{
+  "generated_utc": "2026-09-18T13:58:47Z",
+  "host": "burgundy",
+  "durable_root": "/home/sychan552/innovation_durable",
+  "scratch_root": "/gpfs1/scratch/sychan552",
+  "n_durable_entries": 284,
+  "n_scratch_roots": 34,
+  "n_big_files": 82,
+  "durable_entries": [
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L60_seed42",
+      "name": "screening_qwen_time_llm_L60_seed42",
+      "bytes": 6179180426,
+      "gib": 5.755,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L60_seed43",
+      "name": "screening_qwen_time_llm_L60_seed43",
+      "bytes": 6179176908,
+      "gib": 5.755,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L60_seed44",
+      "name": "screening_qwen_time_llm_L60_seed44",
+      "bytes": 6179171720,
+      "gib": 5.755,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__qwen_time_llm__L24__seed45__w1",
+      "name": "primary__qwen_time_llm__L24__seed45__w1",
+      "bytes": 6178640625,
+      "gib": 5.754,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__qwen_time_llm__L24__seed42__w1",
+      "name": "primary__qwen_time_llm__L24__seed42__w1",
+      "bytes": 6178640139,
+      "gib": 5.754,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__qwen_time_llm__L24__seed43__w1",
+      "name": "primary__qwen_time_llm__L24__seed43__w1",
+      "bytes": 6178639014,
+      "gib": 5.754,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__qwen_time_llm__L24__seed44__w1",
+      "name": "primary__qwen_time_llm__L24__seed44__w1",
+      "bytes": 6178638836,
+      "gib": 5.754,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L24_seed44",
+      "name": "screening_qwen_time_llm_L24_seed44",
+      "bytes": 6177145878,
+      "gib": 5.753,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L24_seed42",
+      "name": "screening_qwen_time_llm_L24_seed42",
+      "bytes": 6177141637,
+      "gib": 5.753,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L24_seed43",
+      "name": "screening_qwen_time_llm_L24_seed43",
+      "bytes": 6177130791,
+      "gib": 5.753,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__qwen_time_llm__L24__seed46__w1",
+      "name": "primary__qwen_time_llm__L24__seed46__w1",
+      "bytes": 5463142652,
+      "gib": 5.088,
+      "classification": "H_PARTIAL_FAILED_COPY",
+      "proposed_action": "quarantine_then_delete",
+      "rationale": "durable copy was interrupted at ~88% by the home quota; the run itself COMPLETED 0:0 and its scratch artifacts are intact"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L60_seed42",
+      "name": "screening_calf_llm_L60_seed42",
+      "bytes": 507619958,
+      "gib": 0.473,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L60_seed43",
+      "name": "screening_calf_llm_L60_seed43",
+      "bytes": 507619593,
+      "gib": 0.473,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L60_seed44",
+      "name": "screening_calf_llm_L60_seed44",
+      "bytes": 507619577,
+      "gib": 0.473,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L24_seed44",
+      "name": "screening_calf_llm_L24_seed44",
+      "bytes": 506359570,
+      "gib": 0.472,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L24_seed42",
+      "name": "screening_calf_llm_L24_seed42",
+      "bytes": 506355534,
+      "gib": 0.472,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L24_seed43",
+      "name": "screening_calf_llm_L24_seed43",
+      "bytes": 506355488,
+      "gib": 0.472,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L60_seed44",
+      "name": "screening_timecma_llm_L60_seed44",
+      "bytes": 505292923,
+      "gib": 0.471,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L60_seed42",
+      "name": "screening_timecma_llm_L60_seed42",
+      "bytes": 505275263,
+      "gib": 0.471,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L60_seed43",
+      "name": "screening_timecma_llm_L60_seed43",
+      "bytes": 505271777,
+      "gib": 0.471,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L24_seed44",
+      "name": "screening_timecma_llm_L24_seed44",
+      "bytes": 504033084,
+      "gib": 0.469,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L24_seed42",
+      "name": "screening_timecma_llm_L24_seed42",
+      "bytes": 504029865,
+      "gib": 0.469,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L24_seed43",
+      "name": "screening_timecma_llm_L24_seed43",
+      "bytes": 504028015,
+      "gib": 0.469,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed49__w1",
+      "name": "primary__gpt2_miflu__L60__seed49__w1",
+      "bytes": 334603811,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed47__w1",
+      "name": "primary__gpt2_miflu__L60__seed47__w1",
+      "bytes": 334603636,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed42__w1",
+      "name": "primary__gpt2_miflu__L60__seed42__w1",
+      "bytes": 334603284,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed46__w1",
+      "name": "primary__gpt2_miflu__L60__seed46__w1",
+      "bytes": 334602951,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed48__w1",
+      "name": "primary__gpt2_miflu__L60__seed48__w1",
+      "bytes": 334601033,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed51__w1",
+      "name": "primary__gpt2_miflu__L60__seed51__w1",
+      "bytes": 334600395,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed50__w1",
+      "name": "primary__gpt2_miflu__L60__seed50__w1",
+      "bytes": 334599319,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed44__w1",
+      "name": "primary__gpt2_miflu__L60__seed44__w1",
+      "bytes": 334598631,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed43__w1",
+      "name": "primary__gpt2_miflu__L60__seed43__w1",
+      "bytes": 334596863,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L60__seed45__w1",
+      "name": "primary__gpt2_miflu__L60__seed45__w1",
+      "bytes": 334596184,
+      "gib": 0.312,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed44__w1",
+      "name": "primary__gpt2_miflu__L48__seed44__w1",
+      "bytes": 333301895,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed45__w1",
+      "name": "primary__gpt2_miflu__L48__seed45__w1",
+      "bytes": 333301182,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed51__w1",
+      "name": "primary__gpt2_miflu__L48__seed51__w1",
+      "bytes": 333300818,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed43__w1",
+      "name": "primary__gpt2_miflu__L48__seed43__w1",
+      "bytes": 333300277,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed48__w1",
+      "name": "primary__gpt2_miflu__L48__seed48__w1",
+      "bytes": 333300226,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed46__w1",
+      "name": "primary__gpt2_miflu__L48__seed46__w1",
+      "bytes": 333300166,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed42__w1",
+      "name": "primary__gpt2_miflu__L48__seed42__w1",
+      "bytes": 333298786,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed49__w1",
+      "name": "primary__gpt2_miflu__L48__seed49__w1",
+      "bytes": 333295798,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed47__w1",
+      "name": "primary__gpt2_miflu__L48__seed47__w1",
+      "bytes": 333295211,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L48__seed50__w1",
+      "name": "primary__gpt2_miflu__L48__seed50__w1",
+      "bytes": 333294764,
+      "gib": 0.31,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed42__w1",
+      "name": "primary__gpt2_miflu__L36__seed42__w1",
+      "bytes": 331997909,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed44__w1",
+      "name": "primary__gpt2_miflu__L36__seed44__w1",
+      "bytes": 331997537,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed51__w1",
+      "name": "primary__gpt2_miflu__L36__seed51__w1",
+      "bytes": 331995992,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed50__w1",
+      "name": "primary__gpt2_miflu__L36__seed50__w1",
+      "bytes": 331995141,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed48__w1",
+      "name": "primary__gpt2_miflu__L36__seed48__w1",
+      "bytes": 331994861,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed45__w1",
+      "name": "primary__gpt2_miflu__L36__seed45__w1",
+      "bytes": 331993913,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed46__w1",
+      "name": "primary__gpt2_miflu__L36__seed46__w1",
+      "bytes": 331993838,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed47__w1",
+      "name": "primary__gpt2_miflu__L36__seed47__w1",
+      "bytes": 331993658,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed49__w1",
+      "name": "primary__gpt2_miflu__L36__seed49__w1",
+      "bytes": 331992186,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L36__seed43__w1",
+      "name": "primary__gpt2_miflu__L36__seed43__w1",
+      "bytes": 331991988,
+      "gib": 0.309,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed44__w1",
+      "name": "primary__gpt2_miflu__L24__seed44__w1",
+      "bytes": 330695151,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed46__w1",
+      "name": "primary__gpt2_miflu__L24__seed46__w1",
+      "bytes": 330693955,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed43__w1",
+      "name": "primary__gpt2_miflu__L24__seed43__w1",
+      "bytes": 330693402,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed48__w1",
+      "name": "primary__gpt2_miflu__L24__seed48__w1",
+      "bytes": 330693091,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed47__w1",
+      "name": "primary__gpt2_miflu__L24__seed47__w1",
+      "bytes": 330692799,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed45__w1",
+      "name": "primary__gpt2_miflu__L24__seed45__w1",
+      "bytes": 330692653,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed51__w1",
+      "name": "primary__gpt2_miflu__L24__seed51__w1",
+      "bytes": 330692355,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed50__w1",
+      "name": "primary__gpt2_miflu__L24__seed50__w1",
+      "bytes": 330691590,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed42__w1",
+      "name": "primary__gpt2_miflu__L24__seed42__w1",
+      "bytes": 330691513,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__gpt2_miflu__L24__seed49__w1",
+      "name": "primary__gpt2_miflu__L24__seed49__w1",
+      "bytes": 330690459,
+      "gib": 0.308,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L60_seed42",
+      "name": "screening_gpt2_miflu_L60_seed42",
+      "bytes": 330483000,
+      "gib": 0.308,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L60_seed44",
+      "name": "screening_gpt2_miflu_L60_seed44",
+      "bytes": 330479411,
+      "gib": 0.308,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L60_seed43",
+      "name": "screening_gpt2_miflu_L60_seed43",
+      "bytes": 330479396,
+      "gib": 0.308,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L24_seed42",
+      "name": "screening_gpt2_miflu_L24_seed42",
+      "bytes": 329235127,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L24_seed44",
+      "name": "screening_gpt2_miflu_L24_seed44",
+      "bytes": 329224727,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L24_seed43",
+      "name": "screening_gpt2_miflu_L24_seed43",
+      "bytes": 329224549,
+      "gib": 0.307,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed42__w1",
+      "name": "primary__itransformer__L60__seed42__w1",
+      "bytes": 5656921,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed46__w1",
+      "name": "primary__itransformer__L60__seed46__w1",
+      "bytes": 5656422,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed47__w1",
+      "name": "primary__itransformer__L60__seed47__w1",
+      "bytes": 5654893,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed48__w1",
+      "name": "primary__itransformer__L60__seed48__w1",
+      "bytes": 5654854,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed43__w1",
+      "name": "primary__itransformer__L60__seed43__w1",
+      "bytes": 5654784,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed49__w1",
+      "name": "primary__itransformer__L60__seed49__w1",
+      "bytes": 5654469,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed51__w1",
+      "name": "primary__itransformer__L60__seed51__w1",
+      "bytes": 5653592,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed50__w1",
+      "name": "primary__itransformer__L60__seed50__w1",
+      "bytes": 5653571,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed45__w1",
+      "name": "primary__itransformer__L60__seed45__w1",
+      "bytes": 5653226,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L60__seed44__w1",
+      "name": "primary__itransformer__L60__seed44__w1",
+      "bytes": 5653087,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed44__w1",
+      "name": "primary__patchtst__L60__seed44__w1",
+      "bytes": 5629866,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed45__w1",
+      "name": "primary__patchtst__L60__seed45__w1",
+      "bytes": 5629147,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed47__w1",
+      "name": "primary__patchtst__L60__seed47__w1",
+      "bytes": 5628888,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed50__w1",
+      "name": "primary__patchtst__L60__seed50__w1",
+      "bytes": 5628838,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed42__w1",
+      "name": "primary__patchtst__L60__seed42__w1",
+      "bytes": 5628747,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed51__w1",
+      "name": "primary__patchtst__L60__seed51__w1",
+      "bytes": 5626488,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed48__w1",
+      "name": "primary__patchtst__L60__seed48__w1",
+      "bytes": 5625556,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed46__w1",
+      "name": "primary__patchtst__L60__seed46__w1",
+      "bytes": 5624917,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed43__w1",
+      "name": "primary__patchtst__L60__seed43__w1",
+      "bytes": 5623654,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L60__seed49__w1",
+      "name": "primary__patchtst__L60__seed49__w1",
+      "bytes": 5623509,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed50__w1",
+      "name": "primary__dlinear__L60__seed50__w1",
+      "bytes": 5168256,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed42__w1",
+      "name": "primary__dlinear__L60__seed42__w1",
+      "bytes": 5168027,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed45__w1",
+      "name": "primary__dlinear__L60__seed45__w1",
+      "bytes": 5167995,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed46__w1",
+      "name": "primary__dlinear__L60__seed46__w1",
+      "bytes": 5167861,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed48__w1",
+      "name": "primary__dlinear__L60__seed48__w1",
+      "bytes": 5167860,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed51__w1",
+      "name": "primary__dlinear__L60__seed51__w1",
+      "bytes": 5167843,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed43__w1",
+      "name": "primary__dlinear__L60__seed43__w1",
+      "bytes": 5167649,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed47__w1",
+      "name": "primary__dlinear__L60__seed47__w1",
+      "bytes": 5167468,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed49__w1",
+      "name": "primary__dlinear__L60__seed49__w1",
+      "bytes": 5167380,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L60__seed44__w1",
+      "name": "primary__dlinear__L60__seed44__w1",
+      "bytes": 5167368,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed47__w1",
+      "name": "primary__nlinear__L60__seed47__w1",
+      "bytes": 5139133,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed51__w1",
+      "name": "primary__nlinear__L60__seed51__w1",
+      "bytes": 5139109,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed46__w1",
+      "name": "primary__nlinear__L60__seed46__w1",
+      "bytes": 5139076,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed50__w1",
+      "name": "primary__nlinear__L60__seed50__w1",
+      "bytes": 5139029,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed45__w1",
+      "name": "primary__nlinear__L60__seed45__w1",
+      "bytes": 5138980,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed43__w1",
+      "name": "primary__nlinear__L60__seed43__w1",
+      "bytes": 5138957,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed44__w1",
+      "name": "primary__nlinear__L60__seed44__w1",
+      "bytes": 5138904,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed49__w1",
+      "name": "primary__nlinear__L60__seed49__w1",
+      "bytes": 5138783,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed48__w1",
+      "name": "primary__nlinear__L60__seed48__w1",
+      "bytes": 5138751,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L60__seed42__w1",
+      "name": "primary__nlinear__L60__seed42__w1",
+      "bytes": 5138442,
+      "gib": 0.005,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed43__w1",
+      "name": "primary__itransformer__L48__seed43__w1",
+      "bytes": 4590072,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed45__w1",
+      "name": "primary__itransformer__L48__seed45__w1",
+      "bytes": 4589614,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed42__w1",
+      "name": "primary__itransformer__L48__seed42__w1",
+      "bytes": 4589574,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed48__w1",
+      "name": "primary__itransformer__L48__seed48__w1",
+      "bytes": 4589215,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed44__w1",
+      "name": "primary__itransformer__L48__seed44__w1",
+      "bytes": 4588828,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed47__w1",
+      "name": "primary__itransformer__L48__seed47__w1",
+      "bytes": 4588618,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed46__w1",
+      "name": "primary__itransformer__L48__seed46__w1",
+      "bytes": 4588297,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed49__w1",
+      "name": "primary__itransformer__L48__seed49__w1",
+      "bytes": 4587650,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed50__w1",
+      "name": "primary__itransformer__L48__seed50__w1",
+      "bytes": 4587309,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L48__seed51__w1",
+      "name": "primary__itransformer__L48__seed51__w1",
+      "bytes": 4586868,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed48__w1",
+      "name": "primary__patchtst__L48__seed48__w1",
+      "bytes": 4565159,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed42__w1",
+      "name": "primary__patchtst__L48__seed42__w1",
+      "bytes": 4564896,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed43__w1",
+      "name": "primary__patchtst__L48__seed43__w1",
+      "bytes": 4564725,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed47__w1",
+      "name": "primary__patchtst__L48__seed47__w1",
+      "bytes": 4564629,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed44__w1",
+      "name": "primary__patchtst__L48__seed44__w1",
+      "bytes": 4563459,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed49__w1",
+      "name": "primary__patchtst__L48__seed49__w1",
+      "bytes": 4563007,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed46__w1",
+      "name": "primary__patchtst__L48__seed46__w1",
+      "bytes": 4562516,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed51__w1",
+      "name": "primary__patchtst__L48__seed51__w1",
+      "bytes": 4561074,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed45__w1",
+      "name": "primary__patchtst__L48__seed45__w1",
+      "bytes": 4560827,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L48__seed50__w1",
+      "name": "primary__patchtst__L48__seed50__w1",
+      "bytes": 4560614,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed50__w1",
+      "name": "primary__dlinear__L48__seed50__w1",
+      "bytes": 4138896,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed44__w1",
+      "name": "primary__dlinear__L48__seed44__w1",
+      "bytes": 4138892,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed42__w1",
+      "name": "primary__dlinear__L48__seed42__w1",
+      "bytes": 4138874,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed49__w1",
+      "name": "primary__dlinear__L48__seed49__w1",
+      "bytes": 4138804,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed47__w1",
+      "name": "primary__dlinear__L48__seed47__w1",
+      "bytes": 4138780,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed51__w1",
+      "name": "primary__dlinear__L48__seed51__w1",
+      "bytes": 4138756,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed48__w1",
+      "name": "primary__dlinear__L48__seed48__w1",
+      "bytes": 4138466,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed43__w1",
+      "name": "primary__dlinear__L48__seed43__w1",
+      "bytes": 4138454,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed46__w1",
+      "name": "primary__dlinear__L48__seed46__w1",
+      "bytes": 4138421,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L48__seed45__w1",
+      "name": "primary__dlinear__L48__seed45__w1",
+      "bytes": 4138128,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed51__w1",
+      "name": "primary__nlinear__L48__seed51__w1",
+      "bytes": 4115587,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed44__w1",
+      "name": "primary__nlinear__L48__seed44__w1",
+      "bytes": 4115535,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed47__w1",
+      "name": "primary__nlinear__L48__seed47__w1",
+      "bytes": 4115525,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed43__w1",
+      "name": "primary__nlinear__L48__seed43__w1",
+      "bytes": 4115423,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed46__w1",
+      "name": "primary__nlinear__L48__seed46__w1",
+      "bytes": 4115390,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed49__w1",
+      "name": "primary__nlinear__L48__seed49__w1",
+      "bytes": 4115389,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed48__w1",
+      "name": "primary__nlinear__L48__seed48__w1",
+      "bytes": 4115326,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed45__w1",
+      "name": "primary__nlinear__L48__seed45__w1",
+      "bytes": 4115309,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed50__w1",
+      "name": "primary__nlinear__L48__seed50__w1",
+      "bytes": 4115271,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L48__seed42__w1",
+      "name": "primary__nlinear__L48__seed42__w1",
+      "bytes": 4115244,
+      "gib": 0.004,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed50__w1",
+      "name": "primary__itransformer__L36__seed50__w1",
+      "bytes": 3523552,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed51__w1",
+      "name": "primary__itransformer__L36__seed51__w1",
+      "bytes": 3523134,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed47__w1",
+      "name": "primary__itransformer__L36__seed47__w1",
+      "bytes": 3523089,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed49__w1",
+      "name": "primary__itransformer__L36__seed49__w1",
+      "bytes": 3523021,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed42__w1",
+      "name": "primary__itransformer__L36__seed42__w1",
+      "bytes": 3522576,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed45__w1",
+      "name": "primary__itransformer__L36__seed45__w1",
+      "bytes": 3522421,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed48__w1",
+      "name": "primary__itransformer__L36__seed48__w1",
+      "bytes": 3522222,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed46__w1",
+      "name": "primary__itransformer__L36__seed46__w1",
+      "bytes": 3522098,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed43__w1",
+      "name": "primary__itransformer__L36__seed43__w1",
+      "bytes": 3521993,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L36__seed44__w1",
+      "name": "primary__itransformer__L36__seed44__w1",
+      "bytes": 3521521,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed49__w1",
+      "name": "primary__patchtst__L36__seed49__w1",
+      "bytes": 3498785,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed50__w1",
+      "name": "primary__patchtst__L36__seed50__w1",
+      "bytes": 3497958,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed48__w1",
+      "name": "primary__patchtst__L36__seed48__w1",
+      "bytes": 3497496,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed47__w1",
+      "name": "primary__patchtst__L36__seed47__w1",
+      "bytes": 3497253,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed46__w1",
+      "name": "primary__patchtst__L36__seed46__w1",
+      "bytes": 3496913,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed51__w1",
+      "name": "primary__patchtst__L36__seed51__w1",
+      "bytes": 3496895,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed45__w1",
+      "name": "primary__patchtst__L36__seed45__w1",
+      "bytes": 3496452,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed43__w1",
+      "name": "primary__patchtst__L36__seed43__w1",
+      "bytes": 3495954,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed44__w1",
+      "name": "primary__patchtst__L36__seed44__w1",
+      "bytes": 3495662,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L36__seed42__w1",
+      "name": "primary__patchtst__L36__seed42__w1",
+      "bytes": 3494827,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed49__w1",
+      "name": "primary__dlinear__L36__seed49__w1",
+      "bytes": 3109225,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed47__w1",
+      "name": "primary__dlinear__L36__seed47__w1",
+      "bytes": 3108980,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed45__w1",
+      "name": "primary__dlinear__L36__seed45__w1",
+      "bytes": 3108900,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed44__w1",
+      "name": "primary__dlinear__L36__seed44__w1",
+      "bytes": 3108822,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed42__w1",
+      "name": "primary__dlinear__L36__seed42__w1",
+      "bytes": 3108781,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed51__w1",
+      "name": "primary__dlinear__L36__seed51__w1",
+      "bytes": 3108652,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed50__w1",
+      "name": "primary__dlinear__L36__seed50__w1",
+      "bytes": 3108633,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed48__w1",
+      "name": "primary__dlinear__L36__seed48__w1",
+      "bytes": 3108582,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed46__w1",
+      "name": "primary__dlinear__L36__seed46__w1",
+      "bytes": 3108404,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L36__seed43__w1",
+      "name": "primary__dlinear__L36__seed43__w1",
+      "bytes": 3108314,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed50__w1",
+      "name": "primary__nlinear__L36__seed50__w1",
+      "bytes": 3091520,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed51__w1",
+      "name": "primary__nlinear__L36__seed51__w1",
+      "bytes": 3091458,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed43__w1",
+      "name": "primary__nlinear__L36__seed43__w1",
+      "bytes": 3091419,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed48__w1",
+      "name": "primary__nlinear__L36__seed48__w1",
+      "bytes": 3091355,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed47__w1",
+      "name": "primary__nlinear__L36__seed47__w1",
+      "bytes": 3091346,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed49__w1",
+      "name": "primary__nlinear__L36__seed49__w1",
+      "bytes": 3091323,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed45__w1",
+      "name": "primary__nlinear__L36__seed45__w1",
+      "bytes": 3091315,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed44__w1",
+      "name": "primary__nlinear__L36__seed44__w1",
+      "bytes": 3091264,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed42__w1",
+      "name": "primary__nlinear__L36__seed42__w1",
+      "bytes": 3091098,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L36__seed46__w1",
+      "name": "primary__nlinear__L36__seed46__w1",
+      "bytes": 3091029,
+      "gib": 0.003,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed43__w1",
+      "name": "primary__itransformer__L24__seed43__w1",
+      "bytes": 2457847,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed42__w1",
+      "name": "primary__itransformer__L24__seed42__w1",
+      "bytes": 2457693,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed47__w1",
+      "name": "primary__itransformer__L24__seed47__w1",
+      "bytes": 2457590,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed45__w1",
+      "name": "primary__itransformer__L24__seed45__w1",
+      "bytes": 2457510,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed48__w1",
+      "name": "primary__itransformer__L24__seed48__w1",
+      "bytes": 2457503,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed44__w1",
+      "name": "primary__itransformer__L24__seed44__w1",
+      "bytes": 2457083,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed50__w1",
+      "name": "primary__itransformer__L24__seed50__w1",
+      "bytes": 2456916,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed51__w1",
+      "name": "primary__itransformer__L24__seed51__w1",
+      "bytes": 2456834,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed46__w1",
+      "name": "primary__itransformer__L24__seed46__w1",
+      "bytes": 2456777,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__itransformer__L24__seed49__w1",
+      "name": "primary__itransformer__L24__seed49__w1",
+      "bytes": 2456213,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed49__w1",
+      "name": "primary__patchtst__L24__seed49__w1",
+      "bytes": 2433886,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed47__w1",
+      "name": "primary__patchtst__L24__seed47__w1",
+      "bytes": 2433380,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed48__w1",
+      "name": "primary__patchtst__L24__seed48__w1",
+      "bytes": 2433357,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed46__w1",
+      "name": "primary__patchtst__L24__seed46__w1",
+      "bytes": 2432774,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed51__w1",
+      "name": "primary__patchtst__L24__seed51__w1",
+      "bytes": 2432341,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed50__w1",
+      "name": "primary__patchtst__L24__seed50__w1",
+      "bytes": 2432294,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed42__w1",
+      "name": "primary__patchtst__L24__seed42__w1",
+      "bytes": 2431371,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed44__w1",
+      "name": "primary__patchtst__L24__seed44__w1",
+      "bytes": 2431152,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed45__w1",
+      "name": "primary__patchtst__L24__seed45__w1",
+      "bytes": 2430983,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__patchtst__L24__seed43__w1",
+      "name": "primary__patchtst__L24__seed43__w1",
+      "bytes": 2430911,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/baselines",
+      "name": "baselines",
+      "bytes": 2237724,
+      "gib": 0.002,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed51__w1",
+      "name": "primary__dlinear__L24__seed51__w1",
+      "bytes": 2079106,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed49__w1",
+      "name": "primary__dlinear__L24__seed49__w1",
+      "bytes": 2079035,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed45__w1",
+      "name": "primary__dlinear__L24__seed45__w1",
+      "bytes": 2078930,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed50__w1",
+      "name": "primary__dlinear__L24__seed50__w1",
+      "bytes": 2078915,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed46__w1",
+      "name": "primary__dlinear__L24__seed46__w1",
+      "bytes": 2078899,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed43__w1",
+      "name": "primary__dlinear__L24__seed43__w1",
+      "bytes": 2078824,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed44__w1",
+      "name": "primary__dlinear__L24__seed44__w1",
+      "bytes": 2078808,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed47__w1",
+      "name": "primary__dlinear__L24__seed47__w1",
+      "bytes": 2078776,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed48__w1",
+      "name": "primary__dlinear__L24__seed48__w1",
+      "bytes": 2078700,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__dlinear__L24__seed42__w1",
+      "name": "primary__dlinear__L24__seed42__w1",
+      "bytes": 2078612,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed44__w1",
+      "name": "primary__nlinear__L24__seed44__w1",
+      "bytes": 2067418,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed45__w1",
+      "name": "primary__nlinear__L24__seed45__w1",
+      "bytes": 2067264,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed48__w1",
+      "name": "primary__nlinear__L24__seed48__w1",
+      "bytes": 2067255,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed47__w1",
+      "name": "primary__nlinear__L24__seed47__w1",
+      "bytes": 2067196,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed49__w1",
+      "name": "primary__nlinear__L24__seed49__w1",
+      "bytes": 2067156,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed43__w1",
+      "name": "primary__nlinear__L24__seed43__w1",
+      "bytes": 2067086,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed50__w1",
+      "name": "primary__nlinear__L24__seed50__w1",
+      "bytes": 2067077,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed51__w1",
+      "name": "primary__nlinear__L24__seed51__w1",
+      "bytes": 2067075,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed42__w1",
+      "name": "primary__nlinear__L24__seed42__w1",
+      "bytes": 2066988,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/primary__nlinear__L24__seed46__w1",
+      "name": "primary__nlinear__L24__seed46__w1",
+      "bytes": 2066862,
+      "gib": 0.002,
+      "classification": "B_CURRENT_WAVE1_ACCEPTED_DURABLE_EVIDENCE",
+      "proposed_action": "preserve_then_convert_to_compact_in_v3_13",
+      "rationale": "accepted Wave-1 durable evidence (must not be lost)"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_patchtst_L60_seed43",
+      "name": "screening_patchtst_L60_seed43",
+      "bytes": 1574026,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_patchtst_L60_seed42",
+      "name": "screening_patchtst_L60_seed42",
+      "bytes": 1573962,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_patchtst_L60_seed44",
+      "name": "screening_patchtst_L60_seed44",
+      "bytes": 1572658,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_itransformer_L60_seed42",
+      "name": "screening_itransformer_L60_seed42",
+      "bytes": 1459073,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_itransformer_L60_seed44",
+      "name": "screening_itransformer_L60_seed44",
+      "bytes": 1452693,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_itransformer_L60_seed43",
+      "name": "screening_itransformer_L60_seed43",
+      "bytes": 1452527,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_dlinear_L60_seed42",
+      "name": "screening_dlinear_L60_seed42",
+      "bytes": 1159340,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_dlinear_L60_seed44",
+      "name": "screening_dlinear_L60_seed44",
+      "bytes": 1159332,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_dlinear_L60_seed43",
+      "name": "screening_dlinear_L60_seed43",
+      "bytes": 1154983,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_nlinear_L60_seed43",
+      "name": "screening_nlinear_L60_seed43",
+      "bytes": 1131772,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_nlinear_L60_seed42",
+      "name": "screening_nlinear_L60_seed42",
+      "bytes": 1131196,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_nlinear_L60_seed44",
+      "name": "screening_nlinear_L60_seed44",
+      "bytes": 1129611,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/figures",
+      "name": "figures",
+      "bytes": 1110790,
+      "gib": 0.001,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_patchtst_L24_seed43",
+      "name": "screening_patchtst_L24_seed43",
+      "bytes": 986799,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_patchtst_L24_seed42",
+      "name": "screening_patchtst_L24_seed42",
+      "bytes": 984928,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_patchtst_L24_seed44",
+      "name": "screening_patchtst_L24_seed44",
+      "bytes": 983628,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_itransformer_L24_seed43",
+      "name": "screening_itransformer_L24_seed43",
+      "bytes": 956917,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_itransformer_L24_seed42",
+      "name": "screening_itransformer_L24_seed42",
+      "bytes": 951835,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_itransformer_L24_seed44",
+      "name": "screening_itransformer_L24_seed44",
+      "bytes": 950082,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_dlinear_L24_seed44",
+      "name": "screening_dlinear_L24_seed44",
+      "bytes": 656965,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_dlinear_L24_seed42",
+      "name": "screening_dlinear_L24_seed42",
+      "bytes": 653476,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_dlinear_L24_seed43",
+      "name": "screening_dlinear_L24_seed43",
+      "bytes": 648132,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_nlinear_L24_seed42",
+      "name": "screening_nlinear_L24_seed42",
+      "bytes": 643231,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_nlinear_L24_seed43",
+      "name": "screening_nlinear_L24_seed43",
+      "bytes": 642262,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_nlinear_L24_seed44",
+      "name": "screening_nlinear_L24_seed44",
+      "bytes": 640957,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_artifact_audit.json",
+      "name": "screening_artifact_audit.json",
+      "bytes": 54794,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/_controller",
+      "name": "_controller",
+      "bytes": 54755,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_checkpoint_audit.json",
+      "name": "screening_checkpoint_audit.json",
+      "bytes": 13442,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_statistical_report.json",
+      "name": "screening_statistical_report.json",
+      "bytes": 7189,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/durable_storage_copy_status.csv",
+      "name": "durable_storage_copy_status.csv",
+      "bytes": 6018,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/restoration_verification.json",
+      "name": "restoration_verification.json",
+      "bytes": 5509,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_resource_report.csv",
+      "name": "screening_resource_report.csv",
+      "bytes": 3423,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_figure_qa.json",
+      "name": "screening_figure_qa.json",
+      "bytes": 3256,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_figure_qa_v1_7of9.json",
+      "name": "screening_figure_qa_v1_7of9.json",
+      "bytes": 3256,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_figure_qa_v2.json",
+      "name": "screening_figure_qa_v2.json",
+      "bytes": 3253,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_summary.json",
+      "name": "screening_summary.json",
+      "bytes": 2576,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_completion_gate_v2.json",
+      "name": "screening_completion_gate_v2.json",
+      "bytes": 2314,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_figure_inventory.csv",
+      "name": "screening_figure_inventory.csv",
+      "bytes": 2187,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_summary.csv",
+      "name": "screening_summary.csv",
+      "bytes": 2022,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_completion_gate_v2.md",
+      "name": "screening_completion_gate_v2.md",
+      "bytes": 1922,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/proposed_full_validation_candidates_v2.json",
+      "name": "proposed_full_validation_candidates_v2.json",
+      "bytes": 1886,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_completion_gate.md",
+      "name": "screening_completion_gate.md",
+      "bytes": 1840,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_summary.md",
+      "name": "screening_summary.md",
+      "bytes": 1840,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_completion_gate.json",
+      "name": "screening_completion_gate.json",
+      "bytes": 1272,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/candidate_serialization_correction_audit.json",
+      "name": "candidate_serialization_correction_audit.json",
+      "bytes": 1239,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/proposed_full_validation_candidates.json",
+      "name": "proposed_full_validation_candidates.json",
+      "bytes": 1148,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_metadata_chain_audit.json",
+      "name": "screening_metadata_chain_audit.json",
+      "bytes": 1145,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/restoration_verification.md",
+      "name": "restoration_verification.md",
+      "bytes": 994,
+      "gib": 0.0,
+      "classification": "G_SYSTEM_SHARED_OR_UNKNOWN",
+      "proposed_action": "preserve_report_for_review",
+      "rationale": "not proven to be superseded or regenerable"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/all_model_observed_ranking.csv",
+      "name": "all_model_observed_ranking.csv",
+      "bytes": 603,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_completion_gate_SUPERSEDED.json",
+      "name": "screening_completion_gate_SUPERSEDED.json",
+      "bytes": 532,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/screening_completion_gate_audit.json",
+      "name": "screening_completion_gate_audit.json",
+      "bytes": 372,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "quarantine_large_weights_keep_small_evidence",
+      "rationale": "v3.3-era screening row (superseded by the clean-v3 line); its bulk is a per-row copy of the frozen backbone"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/group_b_observed_ranking.csv",
+      "name": "group_b_observed_ranking.csv",
+      "bytes": 326,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/group_a_observed_ranking.csv",
+      "name": "group_a_observed_ranking.csv",
+      "bytes": 317,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    },
+    {
+      "path": "/home/sychan552/innovation_durable/screening/evidence_pack.sha256",
+      "name": "evidence_pack.sha256",
+      "bytes": 106,
+      "gib": 0.0,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.3-era governing record; tiny and audit-relevant"
+    }
+  ],
+  "scratch_roots": [
+    {
+      "path": "/gpfs1/scratch/sychan552/CHATTIME",
+      "name": "CHATTIME",
+      "bytes": 203565024439,
+      "gib": 189.585,
+      "classification": "F_OTHER_PROJECT_CONFIRMED_USER_OWNED",
+      "proposed_action": "preserve",
+      "rationale": "the original reproduction project; never touched"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean6",
+      "name": "innovation_deploy_root_v3_clean6",
+      "bytes": 55019702226,
+      "gib": 51.241,
+      "classification": "A_ACTIVE_CURRENT_WAVE1_REQUIRED",
+      "proposed_action": "preserve",
+      "rationale": "the ACTIVE v3.12 deployment root of the running Wave-1"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_5",
+      "name": "innovation_deploy_root_v3_5",
+      "bytes": 52684623018,
+      "gib": 49.066,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean5",
+      "name": "innovation_deploy_root_v3_clean5",
+      "bytes": 10207759841,
+      "gib": 9.507,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.12 deployment whose Gate 570846 passed 19/19 (historical Gate evidence)"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean4",
+      "name": "innovation_deploy_root_v3_clean4",
+      "bytes": 10168315379,
+      "gib": 9.47,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.10/v3.11 deployment + Gate 569016/570452 evidence"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_3",
+      "name": "innovation_deploy_root_v3_3",
+      "bytes": 7542948453,
+      "gib": 7.025,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_4",
+      "name": "innovation_deploy_root_v3_4",
+      "bytes": 7539435161,
+      "gib": 7.022,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v2_8",
+      "name": "innovation_deploy_root_v2_8",
+      "bytes": 4490049130,
+      "gib": 4.182,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/v3_cache",
+      "name": "v3_cache",
+      "bytes": 3650161334,
+      "gib": 3.399,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean3",
+      "name": "innovation_deploy_root_v3_clean3",
+      "bytes": 2981922542,
+      "gib": 2.777,
+      "classification": "D_SUPERSEDED_MIFLU_EVIDENCE_REQUIRED_FOR_AUDIT",
+      "proposed_action": "preserve",
+      "rationale": "v3.9 deployment + Gate 568988 evidence"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/MLFLU",
+      "name": "MLFLU",
+      "bytes": 1238491277,
+      "gib": 1.153,
+      "classification": "F_OTHER_PROJECT_CONFIRMED_USER_OWNED",
+      "proposed_action": "preserve",
+      "rationale": "earlier MIFlu working tree"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v2_7",
+      "name": "innovation_deploy_root_v2_7",
+      "bytes": 355097396,
+      "gib": 0.331,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v2_10",
+      "name": "innovation_deploy_root_v2_10",
+      "bytes": 33216258,
+      "gib": 0.031,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean2",
+      "name": "innovation_deploy_root_v3_clean2",
+      "bytes": 24962788,
+      "gib": 0.023,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean1",
+      "name": "innovation_deploy_root_v3_clean1",
+      "bytes": 23956744,
+      "gib": 0.022,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_2",
+      "name": "innovation_deploy_root_v3_2",
+      "bytes": 23823489,
+      "gib": 0.022,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_1",
+      "name": "innovation_deploy_root_v3_1",
+      "bytes": 23483109,
+      "gib": 0.022,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/v3_final_evidence.tgz",
+      "name": "v3_final_evidence.tgz",
+      "bytes": 18104012,
+      "gib": 0.017,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/_v312",
+      "name": "_v312",
+      "bytes": 7156561,
+      "gib": 0.007,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/_v311",
+      "name": "_v311",
+      "bytes": 7149989,
+      "gib": 0.007,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/_v310",
+      "name": "_v310",
+      "bytes": 7146327,
+      "gib": 0.007,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/_v39",
+      "name": "_v39",
+      "bytes": 6950675,
+      "gib": 0.006,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/_v38",
+      "name": "_v38",
+      "bytes": 6949059,
+      "gib": 0.006,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/cuda_test",
+      "name": "cuda_test",
+      "bytes": 1298142,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v2_9",
+      "name": "innovation_deploy_root_v2_9",
+      "bytes": 1271459,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v2_6",
+      "name": "innovation_deploy_root_v2_6",
+      "bytes": 973106,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_v2_5",
+      "name": "innovation_deploy_root_v2_5",
+      "bytes": 950339,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/innovation_deploy_root_20260915_061303",
+      "name": "innovation_deploy_root_20260915_061303",
+      "bytes": 931133,
+      "gib": 0.001,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/_v37",
+      "name": "_v37",
+      "bytes": 452187,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/_style_assets",
+      "name": "_style_assets",
+      "bytes": 362452,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/v35_bundle_a.zip",
+      "name": "v35_bundle_a.zip",
+      "bytes": 234732,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/v34_bundle_a.zip",
+      "name": "v34_bundle_a.zip",
+      "bytes": 234296,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/v3_phase1_bundle_a.zip",
+      "name": "v3_phase1_bundle_a.zip",
+      "bytes": 215495,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    },
+    {
+      "path": "/gpfs1/scratch/sychan552/v3_screening_evidence.tgz",
+      "name": "v3_screening_evidence.tgz",
+      "bytes": 171514,
+      "gib": 0.0,
+      "classification": "E_SUPERSEDED_MIFLU_BULK_REGENERABLE",
+      "proposed_action": "review_before_quarantine",
+      "rationale": "superseded deployment root; bulk = run artifacts/weights"
+    }
+  ],
+  "capacity_model": {
+    "home_used_gib_now": 101.0,
+    "home_hard_limit_gib": 100.0,
+    "home_soft_quota_gib": 50.0,
+    "durable_total_gib": 88.0,
+    "freed_if_legacy_weights_quarantined_gib": 42.0,
+    "freed_if_partial_copy_quarantined_gib": 5.1,
+    "wave1_big_weights_gib": 40.4,
+    "remaining_rows_full_policy_gib": {
+      "qwen_time_llm": 201.2,
+      "calf_llm": 18.8,
+      "timecma_llm": 18.8,
+      "gpt2_miflu": 78.1,
+      "baseline": 0.0
+    },
+    "remaining_rows_full_policy_total_gib": 316.9,
+    "verdict": "INFEASIBLE under the current full-copy policy: the remaining 375 rows would need ~317 GiB against a 100 GiB home hard limit. The compact-checkpoint policy is MANDATORY, and even then the Wave-1 durable footprint must first be reduced.",
+    "safety_margin_required_gib": 20.0
+  }
+}

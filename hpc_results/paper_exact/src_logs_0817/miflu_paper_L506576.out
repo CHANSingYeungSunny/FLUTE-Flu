@@ -1,0 +1,358 @@
+[slurm] python: /home/sychan552/.conda/envs/mlflu_hpc/bin/python -> Python 3.9.25
+[slurm] deps ok
+[slurm] PWD=/gpfs1/scratch/sychan552/CHATTIME/Chattime
+[slurm] HF_HOME=/gpfs1/scratch/sychan552/CHATTIME/.cache
+[slurm] Phase-1 single-horizon mode: L=24
+[slurm] launching: python scripts/train_miflu.py --horizon 24 --reps 10 --epochs 20 --batch 16 --seed 42
+[00:04:20] ============================================================
+[00:04:20]   MIFlu — FULL MULTIMODAL (text prompt + time-series)
+[00:04:20]   PAPER PROTOCOL (MIFlu_Complete_Extraction.md)
+[00:04:20] ============================================================
+[00:04:20]   Evaluation protocol: paper protocol (NOT L=52 walk-forward)
+[00:04:20]   Device: cuda (NVIDIA A100-SXM4-80GB)
+[00:04:20]   Config: T=104, L=[24] (each L trained INDEPENDENTLY)
+[00:04:20]           K=6, Lp=24, S=2, lora_r=4
+[00:04:20]           Split: static 70:10:20 (shuffle=False)
+[00:04:20]           Normalization: StandardScaler fit on TRAIN only
+[00:04:20]           batch=16, lr=0.0005, epochs=20, reps=10, seed=42
+[00:04:20] 
+[00:04:21] Data: 1025 total | Train=717 | Val=102 | Test=206
+[00:04:21] 
+[00:04:21] Loading GPT2 text embedder...
+[00:04:25] 
+[00:04:27]   Prompt built for L=24: 369 tokens
+[00:04:27] ──────────────────────────────────────────────────
+[00:04:27]   HORIZON L=24
+[00:04:27] ──────────────────────────────────────────────────
+[00:04:27]   [L=24] Rep 1/10 ...
+[00:04:27]   L=24: train=613 val=103 test=182 windows
+[00:04:27]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:04:37]     ep  1/20 | train_loss=0.800009 | val_mse=1.915741(All) 3.8753(ILI) | val_mae=0.885082 | 10.0s | GPU=0.88GB
+[00:04:46]     ep  2/20 | train_loss=0.649886 | val_mse=1.290054(All) 2.7619(ILI) | val_mae=0.612688 | 8.3s | GPU=0.88GB
+[00:04:54]     ep  3/20 | train_loss=0.455493 | val_mse=0.890272(All) 1.9212(ILI) | val_mae=0.499591 | 8.3s | GPU=0.88GB
+[00:05:02]     ep  4/20 | train_loss=0.349237 | val_mse=0.969095(All) 2.0623(ILI) | val_mae=0.514236 | 8.3s | GPU=0.88GB
+[00:05:11]     ep  5/20 | train_loss=0.302446 | val_mse=0.823475(All) 1.7691(ILI) | val_mae=0.468395 | 8.3s | GPU=0.88GB
+[00:05:19]     ep  6/20 | train_loss=0.252647 | val_mse=0.890624(All) 1.9106(ILI) | val_mae=0.480497 | 8.3s | GPU=0.88GB
+[00:05:28]     ep  7/20 | train_loss=0.223557 | val_mse=0.834177(All) 1.8042(ILI) | val_mae=0.452662 | 8.3s | GPU=0.88GB
+[00:05:36]     ep  8/20 | train_loss=0.205811 | val_mse=0.865077(All) 1.8771(ILI) | val_mae=0.462398 | 8.3s | GPU=0.88GB
+[00:05:44]     ep  9/20 | train_loss=0.184072 | val_mse=0.837111(All) 1.8209(ILI) | val_mae=0.463169 | 8.3s | GPU=0.88GB
+[00:05:53]     ep 10/20 | train_loss=0.165512 | val_mse=0.771183(All) 1.6785(ILI) | val_mae=0.451679 | 8.3s | GPU=0.88GB
+[00:06:01]     ep 11/20 | train_loss=0.143136 | val_mse=0.788237(All) 1.7309(ILI) | val_mae=0.459444 | 8.4s | GPU=0.88GB
+[00:06:09]     ep 12/20 | train_loss=0.129064 | val_mse=0.876984(All) 1.9320(ILI) | val_mae=0.482374 | 8.3s | GPU=0.88GB
+[00:06:18]     ep 13/20 | train_loss=0.118919 | val_mse=0.860035(All) 1.9010(ILI) | val_mae=0.460531 | 8.3s | GPU=0.88GB
+[00:06:26]     ep 14/20 | train_loss=0.105458 | val_mse=0.780650(All) 1.7174(ILI) | val_mae=0.444545 | 8.3s | GPU=0.88GB
+[00:06:34]     ep 15/20 | train_loss=0.099351 | val_mse=0.922885(All) 2.0316(ILI) | val_mae=0.481282 | 8.3s | GPU=0.88GB
+[00:06:43]     ep 16/20 | train_loss=0.093284 | val_mse=0.957193(All) 2.1004(ILI) | val_mae=0.488758 | 8.3s | GPU=0.88GB
+[00:06:51]     ep 17/20 | train_loss=0.088975 | val_mse=0.793042(All) 1.7460(ILI) | val_mae=0.448515 | 8.3s | GPU=0.88GB
+[00:06:59]     ep 18/20 | train_loss=0.083349 | val_mse=0.950318(All) 2.0918(ILI) | val_mae=0.492428 | 8.3s | GPU=0.88GB
+[00:07:08]     ep 19/20 | train_loss=0.076944 | val_mse=0.838742(All) 1.8438(ILI) | val_mae=0.460795 | 8.3s | GPU=0.88GB
+[00:07:16]     ep 20/20 | train_loss=0.078601 | val_mse=0.817113(All) 1.7892(ILI) | val_mae=0.456033 | 8.3s | GPU=0.88GB
+[00:07:16]     [DIAG] y_pred(StdScaler): mean=0.1766 std=0.8465 min=-1.0901 max=3.9990
+[00:07:16]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:07:17]     [DIAG] MSE_AllVars=2.360905 MSE_ILITotal=4.617568 PCC_ILI=0.5879
+[00:07:17]   L=24 DONE: test_mse=2.360905(All) 4.6176(ILI) test_mae=1.034440 pcc=0.5879
+[00:07:18]   [L=24] Rep 2/10 ...
+[00:07:18]   L=24: train=613 val=103 test=182 windows
+[00:07:18]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:07:27]     ep  1/20 | train_loss=0.799174 | val_mse=1.896551(All) 3.8397(ILI) | val_mae=0.886509 | 8.3s | GPU=0.88GB
+[00:07:35]     ep  2/20 | train_loss=0.686173 | val_mse=1.504262(All) 3.1537(ILI) | val_mae=0.726893 | 8.3s | GPU=0.88GB
+[00:07:44]     ep  3/20 | train_loss=0.517443 | val_mse=1.056706(All) 2.3000(ILI) | val_mae=0.523699 | 8.4s | GPU=0.88GB
+[00:07:52]     ep  4/20 | train_loss=0.403810 | val_mse=0.923091(All) 1.9712(ILI) | val_mae=0.530311 | 8.3s | GPU=0.88GB
+[00:08:00]     ep  5/20 | train_loss=0.338638 | val_mse=0.923576(All) 1.9776(ILI) | val_mae=0.493867 | 8.4s | GPU=0.88GB
+[00:08:09]     ep  6/20 | train_loss=0.288510 | val_mse=1.155808(All) 2.4625(ILI) | val_mae=0.541407 | 8.3s | GPU=0.88GB
+[00:08:17]     ep  7/20 | train_loss=0.248571 | val_mse=0.974213(All) 2.0854(ILI) | val_mae=0.511226 | 8.3s | GPU=0.88GB
+[00:08:25]     ep  8/20 | train_loss=0.212322 | val_mse=0.970080(All) 2.0929(ILI) | val_mae=0.495624 | 8.3s | GPU=0.88GB
+[00:08:34]     ep  9/20 | train_loss=0.189172 | val_mse=1.020852(All) 2.1848(ILI) | val_mae=0.523895 | 8.3s | GPU=0.88GB
+[00:08:42]     ep 10/20 | train_loss=0.172007 | val_mse=1.085684(All) 2.3378(ILI) | val_mae=0.532536 | 8.3s | GPU=0.88GB
+[00:08:50]     ep 11/20 | train_loss=0.153036 | val_mse=0.889589(All) 1.9018(ILI) | val_mae=0.513026 | 8.3s | GPU=0.88GB
+[00:08:59]     ep 12/20 | train_loss=0.137661 | val_mse=0.934479(All) 2.0159(ILI) | val_mae=0.509277 | 8.3s | GPU=0.88GB
+[00:09:07]     ep 13/20 | train_loss=0.130877 | val_mse=1.129027(All) 2.4721(ILI) | val_mae=0.533103 | 8.3s | GPU=0.88GB
+[00:09:15]     ep 14/20 | train_loss=0.118301 | val_mse=0.866868(All) 1.8626(ILI) | val_mae=0.499562 | 8.3s | GPU=0.88GB
+[00:09:24]     ep 15/20 | train_loss=0.113854 | val_mse=1.054171(All) 2.2984(ILI) | val_mae=0.533873 | 8.3s | GPU=0.88GB
+[00:09:32]     ep 16/20 | train_loss=0.101558 | val_mse=1.011909(All) 2.2079(ILI) | val_mae=0.539225 | 8.3s | GPU=0.88GB
+[00:09:40]     ep 17/20 | train_loss=0.094496 | val_mse=1.035056(All) 2.2694(ILI) | val_mae=0.543335 | 8.3s | GPU=0.88GB
+[00:09:49]     ep 18/20 | train_loss=0.088048 | val_mse=0.961430(All) 2.1138(ILI) | val_mae=0.517483 | 8.3s | GPU=0.88GB
+[00:09:57]     ep 19/20 | train_loss=0.085288 | val_mse=0.918243(All) 1.9979(ILI) | val_mae=0.511012 | 8.3s | GPU=0.88GB
+[00:10:05]     ep 20/20 | train_loss=0.078088 | val_mse=0.872916(All) 1.8987(ILI) | val_mae=0.490330 | 8.3s | GPU=0.88GB
+[00:10:05]     [DIAG] y_pred(StdScaler): mean=0.1587 std=0.9020 min=-1.2396 max=4.2534
+[00:10:05]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:10:06]     [DIAG] MSE_AllVars=3.969130 MSE_ILITotal=9.011801 PCC_ILI=0.4029
+[00:10:06]   L=24 DONE: test_mse=3.969130(All) 9.0118(ILI) test_mae=1.158697 pcc=0.4029
+[00:10:07]   [L=24] Rep 3/10 ...
+[00:10:07]   L=24: train=613 val=103 test=182 windows
+[00:10:07]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:10:16]     ep  1/20 | train_loss=0.808229 | val_mse=1.915986(All) 3.8326(ILI) | val_mae=0.910622 | 8.3s | GPU=0.88GB
+[00:10:24]     ep  2/20 | train_loss=0.689886 | val_mse=1.435725(All) 3.0496(ILI) | val_mae=0.684360 | 8.3s | GPU=0.88GB
+[00:10:32]     ep  3/20 | train_loss=0.496514 | val_mse=1.043327(All) 2.2439(ILI) | val_mae=0.531529 | 8.3s | GPU=0.88GB
+[00:10:41]     ep  4/20 | train_loss=0.383650 | val_mse=0.917406(All) 1.8993(ILI) | val_mae=0.585971 | 8.3s | GPU=0.88GB
+[00:10:49]     ep  5/20 | train_loss=0.303838 | val_mse=0.924710(All) 1.8885(ILI) | val_mae=0.601152 | 8.3s | GPU=0.88GB
+[00:10:57]     ep  6/20 | train_loss=0.264082 | val_mse=0.817339(All) 1.7273(ILI) | val_mae=0.464127 | 8.4s | GPU=0.88GB
+[00:11:06]     ep  7/20 | train_loss=0.234961 | val_mse=0.810050(All) 1.7130(ILI) | val_mae=0.463039 | 8.4s | GPU=0.88GB
+[00:11:14]     ep  8/20 | train_loss=0.207129 | val_mse=0.829199(All) 1.7419(ILI) | val_mae=0.483645 | 8.3s | GPU=0.88GB
+[00:11:22]     ep  9/20 | train_loss=0.186594 | val_mse=0.825842(All) 1.7606(ILI) | val_mae=0.468011 | 8.3s | GPU=0.88GB
+[00:11:31]     ep 10/20 | train_loss=0.171977 | val_mse=0.829872(All) 1.7543(ILI) | val_mae=0.474769 | 8.3s | GPU=0.88GB
+[00:11:39]     ep 11/20 | train_loss=0.151773 | val_mse=0.881661(All) 1.9071(ILI) | val_mae=0.487666 | 8.3s | GPU=0.88GB
+[00:11:48]     ep 12/20 | train_loss=0.144762 | val_mse=0.770297(All) 1.6284(ILI) | val_mae=0.466239 | 8.3s | GPU=0.88GB
+[00:11:56]     ep 13/20 | train_loss=0.127443 | val_mse=0.803723(All) 1.7344(ILI) | val_mae=0.447486 | 8.3s | GPU=0.88GB
+[00:12:04]     ep 14/20 | train_loss=0.113941 | val_mse=0.834539(All) 1.8023(ILI) | val_mae=0.458966 | 8.3s | GPU=0.88GB
+[00:12:13]     ep 15/20 | train_loss=0.110412 | val_mse=0.848222(All) 1.7941(ILI) | val_mae=0.482607 | 8.3s | GPU=0.88GB
+[00:12:21]     ep 16/20 | train_loss=0.104859 | val_mse=0.805466(All) 1.7394(ILI) | val_mae=0.451507 | 8.3s | GPU=0.88GB
+[00:12:29]     ep 17/20 | train_loss=0.091981 | val_mse=0.808100(All) 1.7424(ILI) | val_mae=0.460346 | 8.3s | GPU=0.88GB
+[00:12:38]     ep 18/20 | train_loss=0.091591 | val_mse=1.083827(All) 2.2453(ILI) | val_mae=0.581229 | 8.3s | GPU=0.88GB
+[00:12:46]     ep 19/20 | train_loss=0.086469 | val_mse=0.806170(All) 1.7257(ILI) | val_mae=0.455370 | 8.3s | GPU=0.88GB
+[00:12:54]     ep 20/20 | train_loss=0.080090 | val_mse=0.873419(All) 1.8686(ILI) | val_mae=0.482668 | 8.3s | GPU=0.88GB
+[00:12:54]     [DIAG] y_pred(StdScaler): mean=-0.0145 std=0.9039 min=-1.3399 max=4.1496
+[00:12:54]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:12:55]     [DIAG] MSE_AllVars=2.463474 MSE_ILITotal=4.466725 PCC_ILI=0.6396
+[00:12:55]   L=24 DONE: test_mse=2.463474(All) 4.4667(ILI) test_mae=1.115610 pcc=0.6396
+[00:12:56]   [L=24] Rep 4/10 ...
+[00:12:56]   L=24: train=613 val=103 test=182 windows
+[00:12:56]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:13:05]     ep  1/20 | train_loss=0.807968 | val_mse=1.932804(All) 3.8895(ILI) | val_mae=0.910248 | 8.5s | GPU=0.88GB
+[00:13:13]     ep  2/20 | train_loss=0.707377 | val_mse=1.588742(All) 3.3043(ILI) | val_mae=0.739247 | 8.3s | GPU=0.88GB
+[00:13:22]     ep  3/20 | train_loss=0.531281 | val_mse=1.075604(All) 2.2650(ILI) | val_mae=0.648086 | 8.3s | GPU=0.88GB
+[00:13:30]     ep  4/20 | train_loss=0.418095 | val_mse=0.902720(All) 1.8934(ILI) | val_mae=0.593276 | 8.3s | GPU=0.88GB
+[00:13:38]     ep  5/20 | train_loss=0.343377 | val_mse=0.780828(All) 1.6520(ILI) | val_mae=0.461285 | 8.3s | GPU=0.88GB
+[00:13:47]     ep  6/20 | train_loss=0.298794 | val_mse=0.820294(All) 1.7506(ILI) | val_mae=0.453604 | 8.3s | GPU=0.88GB
+[00:13:55]     ep  7/20 | train_loss=0.254786 | val_mse=0.741783(All) 1.5804(ILI) | val_mae=0.437589 | 8.3s | GPU=0.88GB
+[00:14:03]     ep  8/20 | train_loss=0.224478 | val_mse=0.864767(All) 1.8468(ILI) | val_mae=0.467790 | 8.3s | GPU=0.88GB
+[00:14:12]     ep  9/20 | train_loss=0.213660 | val_mse=0.693916(All) 1.4982(ILI) | val_mae=0.431715 | 8.3s | GPU=0.88GB
+[00:14:20]     ep 10/20 | train_loss=0.184211 | val_mse=0.752778(All) 1.6328(ILI) | val_mae=0.433022 | 8.3s | GPU=0.88GB
+[00:14:28]     ep 11/20 | train_loss=0.169303 | val_mse=0.665397(All) 1.4343(ILI) | val_mae=0.415339 | 8.3s | GPU=0.88GB
+[00:14:37]     ep 12/20 | train_loss=0.154774 | val_mse=0.583189(All) 1.2483(ILI) | val_mae=0.410516 | 8.3s | GPU=0.88GB
+[00:14:45]     ep 13/20 | train_loss=0.141940 | val_mse=0.684963(All) 1.4880(ILI) | val_mae=0.425827 | 8.3s | GPU=0.88GB
+[00:14:53]     ep 14/20 | train_loss=0.131546 | val_mse=0.647833(All) 1.4088(ILI) | val_mae=0.418515 | 8.3s | GPU=0.88GB
+[00:15:02]     ep 15/20 | train_loss=0.122149 | val_mse=0.618097(All) 1.3283(ILI) | val_mae=0.413477 | 8.3s | GPU=0.88GB
+[00:15:10]     ep 16/20 | train_loss=0.115524 | val_mse=0.598074(All) 1.3008(ILI) | val_mae=0.413122 | 8.3s | GPU=0.88GB
+[00:15:18]     ep 17/20 | train_loss=0.110249 | val_mse=0.791788(All) 1.7474(ILI) | val_mae=0.437574 | 8.3s | GPU=0.88GB
+[00:15:27]     ep 18/20 | train_loss=0.097868 | val_mse=0.725224(All) 1.6028(ILI) | val_mae=0.423152 | 8.3s | GPU=0.88GB
+[00:15:35]     ep 19/20 | train_loss=0.092198 | val_mse=0.707492(All) 1.5695(ILI) | val_mae=0.415097 | 8.3s | GPU=0.88GB
+[00:15:43]     ep 20/20 | train_loss=0.089185 | val_mse=0.660036(All) 1.4616(ILI) | val_mae=0.418446 | 8.3s | GPU=0.88GB
+[00:15:43]     [DIAG] y_pred(StdScaler): mean=0.0550 std=0.9197 min=-1.4552 max=4.2895
+[00:15:43]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:15:44]     [DIAG] MSE_AllVars=2.161296 MSE_ILITotal=3.672679 PCC_ILI=0.6846
+[00:15:44]   L=24 DONE: test_mse=2.161296(All) 3.6727(ILI) test_mae=1.040778 pcc=0.6846
+[00:15:45]   [L=24] Rep 5/10 ...
+[00:15:45]   L=24: train=613 val=103 test=182 windows
+[00:15:45]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:15:54]     ep  1/20 | train_loss=0.806629 | val_mse=1.953858(All) 3.9248(ILI) | val_mae=0.888938 | 8.3s | GPU=0.88GB
+[00:16:02]     ep  2/20 | train_loss=0.660946 | val_mse=1.351521(All) 2.8913(ILI) | val_mae=0.594690 | 8.3s | GPU=0.88GB
+[00:16:10]     ep  3/20 | train_loss=0.495406 | val_mse=0.994632(All) 2.1444(ILI) | val_mae=0.513363 | 8.3s | GPU=0.88GB
+[00:16:19]     ep  4/20 | train_loss=0.405906 | val_mse=0.862941(All) 1.8304(ILI) | val_mae=0.521648 | 8.3s | GPU=0.88GB
+[00:16:27]     ep  5/20 | train_loss=0.340878 | val_mse=0.825172(All) 1.7691(ILI) | val_mae=0.471626 | 8.3s | GPU=0.88GB
+[00:16:35]     ep  6/20 | train_loss=0.293533 | val_mse=0.831069(All) 1.7868(ILI) | val_mae=0.468714 | 8.3s | GPU=0.88GB
+[00:16:44]     ep  7/20 | train_loss=0.263725 | val_mse=0.965583(All) 2.0754(ILI) | val_mae=0.467066 | 8.3s | GPU=0.88GB
+[00:16:52]     ep  8/20 | train_loss=0.229720 | val_mse=0.867594(All) 1.8733(ILI) | val_mae=0.483660 | 8.3s | GPU=0.88GB
+[00:17:00]     ep  9/20 | train_loss=0.203228 | val_mse=0.987459(All) 2.1309(ILI) | val_mae=0.481838 | 8.3s | GPU=0.88GB
+[00:17:09]     ep 10/20 | train_loss=0.190829 | val_mse=1.039121(All) 2.2380(ILI) | val_mae=0.503781 | 8.3s | GPU=0.88GB
+[00:17:17]     ep 11/20 | train_loss=0.173837 | val_mse=1.301606(All) 2.7934(ILI) | val_mae=0.564352 | 8.3s | GPU=0.88GB
+[00:17:25]     ep 12/20 | train_loss=0.169904 | val_mse=0.980667(All) 2.1314(ILI) | val_mae=0.475821 | 8.3s | GPU=0.88GB
+[00:17:34]     ep 13/20 | train_loss=0.141944 | val_mse=0.886749(All) 1.9095(ILI) | val_mae=0.483406 | 8.3s | GPU=0.88GB
+[00:17:42]     ep 14/20 | train_loss=0.132462 | val_mse=0.952780(All) 2.0598(ILI) | val_mae=0.471667 | 8.3s | GPU=0.88GB
+[00:17:50]     ep 15/20 | train_loss=0.122098 | val_mse=0.846377(All) 1.8335(ILI) | val_mae=0.457461 | 8.3s | GPU=0.88GB
+[00:17:59]     ep 16/20 | train_loss=0.114313 | val_mse=1.062176(All) 2.3143(ILI) | val_mae=0.513935 | 8.3s | GPU=0.88GB
+[00:18:07]     ep 17/20 | train_loss=0.105391 | val_mse=1.042300(All) 2.2659(ILI) | val_mae=0.510166 | 8.3s | GPU=0.88GB
+[00:18:15]     ep 18/20 | train_loss=0.096594 | val_mse=1.034650(All) 2.2561(ILI) | val_mae=0.510907 | 8.3s | GPU=0.88GB
+[00:18:24]     ep 19/20 | train_loss=0.090928 | val_mse=1.178170(All) 2.5682(ILI) | val_mae=0.526711 | 8.3s | GPU=0.88GB
+[00:18:32]     ep 20/20 | train_loss=0.096994 | val_mse=0.900158(All) 1.9567(ILI) | val_mae=0.463176 | 8.3s | GPU=0.88GB
+[00:18:32]     [DIAG] y_pred(StdScaler): mean=0.1824 std=0.9269 min=-1.1930 max=3.9076
+[00:18:32]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:18:33]     [DIAG] MSE_AllVars=2.355993 MSE_ILITotal=4.315053 PCC_ILI=0.6425
+[00:18:33]   L=24 DONE: test_mse=2.355993(All) 4.3151(ILI) test_mae=1.029572 pcc=0.6425
+[00:18:33]   [L=24] Rep 6/10 ...
+[00:18:34]   L=24: train=613 val=103 test=182 windows
+[00:18:34]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:18:43]     ep  1/20 | train_loss=0.806023 | val_mse=1.953004(All) 3.9239(ILI) | val_mae=0.893561 | 8.3s | GPU=0.88GB
+[00:18:51]     ep  2/20 | train_loss=0.663375 | val_mse=1.331545(All) 2.8534(ILI) | val_mae=0.618422 | 8.3s | GPU=0.88GB
+[00:18:59]     ep  3/20 | train_loss=0.493010 | val_mse=0.969536(All) 2.0717(ILI) | val_mae=0.504291 | 8.3s | GPU=0.88GB
+[00:19:08]     ep  4/20 | train_loss=0.398905 | val_mse=0.883377(All) 1.8851(ILI) | val_mae=0.476279 | 8.3s | GPU=0.88GB
+[00:19:16]     ep  5/20 | train_loss=0.351155 | val_mse=0.804518(All) 1.7196(ILI) | val_mae=0.453852 | 8.3s | GPU=0.88GB
+[00:19:24]     ep  6/20 | train_loss=0.309742 | val_mse=1.031982(All) 2.1545(ILI) | val_mae=0.522862 | 8.3s | GPU=0.88GB
+[00:19:33]     ep  7/20 | train_loss=0.258003 | val_mse=0.607562(All) 1.2754(ILI) | val_mae=0.408210 | 8.3s | GPU=0.88GB
+[00:19:41]     ep  8/20 | train_loss=0.223939 | val_mse=0.729423(All) 1.5745(ILI) | val_mae=0.428175 | 8.3s | GPU=0.88GB
+[00:19:49]     ep  9/20 | train_loss=0.193236 | val_mse=0.749564(All) 1.5805(ILI) | val_mae=0.453366 | 8.3s | GPU=0.88GB
+[00:19:58]     ep 10/20 | train_loss=0.179052 | val_mse=0.745233(All) 1.5876(ILI) | val_mae=0.432371 | 8.3s | GPU=0.88GB
+[00:20:06]     ep 11/20 | train_loss=0.165491 | val_mse=0.568255(All) 1.1688(ILI) | val_mae=0.407825 | 8.3s | GPU=0.88GB
+[00:20:14]     ep 12/20 | train_loss=0.153717 | val_mse=0.733501(All) 1.5503(ILI) | val_mae=0.440322 | 8.3s | GPU=0.88GB
+[00:20:23]     ep 13/20 | train_loss=0.144404 | val_mse=0.633118(All) 1.3147(ILI) | val_mae=0.432688 | 8.3s | GPU=0.88GB
+[00:20:31]     ep 14/20 | train_loss=0.122431 | val_mse=0.626051(All) 1.3449(ILI) | val_mae=0.407394 | 8.3s | GPU=0.88GB
+[00:20:39]     ep 15/20 | train_loss=0.112093 | val_mse=0.483787(All) 1.0005(ILI) | val_mae=0.385720 | 8.3s | GPU=0.88GB
+[00:20:48]     ep 16/20 | train_loss=0.111170 | val_mse=0.538313(All) 1.1353(ILI) | val_mae=0.393024 | 8.3s | GPU=0.88GB
+[00:20:56]     ep 17/20 | train_loss=0.104266 | val_mse=0.562415(All) 1.1775(ILI) | val_mae=0.404342 | 8.3s | GPU=0.88GB
+[00:21:04]     ep 18/20 | train_loss=0.095385 | val_mse=0.587053(All) 1.2302(ILI) | val_mae=0.411110 | 8.3s | GPU=0.88GB
+[00:21:13]     ep 19/20 | train_loss=0.088945 | val_mse=0.529887(All) 1.0950(ILI) | val_mae=0.409683 | 8.3s | GPU=0.88GB
+[00:21:21]     ep 20/20 | train_loss=0.086775 | val_mse=0.613531(All) 1.2939(ILI) | val_mae=0.413054 | 8.3s | GPU=0.88GB
+[00:21:21]     [DIAG] y_pred(StdScaler): mean=0.1446 std=1.0229 min=-1.5068 max=4.8163
+[00:21:21]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:21:22]     [DIAG] MSE_AllVars=2.508358 MSE_ILITotal=4.770388 PCC_ILI=0.5938
+[00:21:22]   L=24 DONE: test_mse=2.508358(All) 4.7704(ILI) test_mae=1.072051 pcc=0.5938
+[00:21:22]   [L=24] Rep 7/10 ...
+[00:21:22]   L=24: train=613 val=103 test=182 windows
+[00:21:22]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:21:31]     ep  1/20 | train_loss=0.809023 | val_mse=1.959978(All) 3.9456(ILI) | val_mae=0.916186 | 8.3s | GPU=0.88GB
+[00:21:40]     ep  2/20 | train_loss=0.717347 | val_mse=1.613838(All) 3.3720(ILI) | val_mae=0.758945 | 8.3s | GPU=0.88GB
+[00:21:48]     ep  3/20 | train_loss=0.536385 | val_mse=1.104162(All) 2.3937(ILI) | val_mae=0.521871 | 8.3s | GPU=0.88GB
+[00:21:56]     ep  4/20 | train_loss=0.430405 | val_mse=0.966403(All) 2.0799(ILI) | val_mae=0.534639 | 8.3s | GPU=0.88GB
+[00:22:05]     ep  5/20 | train_loss=0.372752 | val_mse=1.002699(All) 2.1443(ILI) | val_mae=0.480393 | 8.3s | GPU=0.88GB
+[00:22:13]     ep  6/20 | train_loss=0.339049 | val_mse=0.885273(All) 1.8945(ILI) | val_mae=0.459771 | 8.3s | GPU=0.88GB
+[00:22:21]     ep  7/20 | train_loss=0.301711 | val_mse=0.891407(All) 1.9096(ILI) | val_mae=0.469566 | 8.3s | GPU=0.88GB
+[00:22:30]     ep  8/20 | train_loss=0.257767 | val_mse=0.835223(All) 1.7979(ILI) | val_mae=0.453029 | 8.3s | GPU=0.88GB
+[00:22:38]     ep  9/20 | train_loss=0.229431 | val_mse=0.779276(All) 1.6790(ILI) | val_mae=0.434646 | 8.3s | GPU=0.88GB
+[00:22:46]     ep 10/20 | train_loss=0.210708 | val_mse=0.711125(All) 1.5375(ILI) | val_mae=0.443141 | 8.3s | GPU=0.88GB
+[00:22:55]     ep 11/20 | train_loss=0.183006 | val_mse=0.719958(All) 1.5514(ILI) | val_mae=0.433129 | 8.3s | GPU=0.88GB
+[00:23:03]     ep 12/20 | train_loss=0.166110 | val_mse=0.755947(All) 1.6392(ILI) | val_mae=0.446887 | 8.3s | GPU=0.88GB
+[00:23:11]     ep 13/20 | train_loss=0.159845 | val_mse=0.936250(All) 2.0129(ILI) | val_mae=0.505052 | 8.3s | GPU=0.88GB
+[00:23:20]     ep 14/20 | train_loss=0.139435 | val_mse=0.764821(All) 1.6558(ILI) | val_mae=0.465961 | 8.3s | GPU=0.88GB
+[00:23:28]     ep 15/20 | train_loss=0.132863 | val_mse=0.986343(All) 2.1458(ILI) | val_mae=0.494925 | 8.3s | GPU=0.88GB
+[00:23:36]     ep 16/20 | train_loss=0.115518 | val_mse=0.789648(All) 1.7152(ILI) | val_mae=0.460146 | 8.3s | GPU=0.88GB
+[00:23:45]     ep 17/20 | train_loss=0.103836 | val_mse=0.892801(All) 1.9368(ILI) | val_mae=0.489087 | 8.3s | GPU=0.88GB
+[00:23:53]     ep 18/20 | train_loss=0.100365 | val_mse=0.848873(All) 1.8410(ILI) | val_mae=0.483395 | 8.3s | GPU=0.88GB
+[00:24:02]     ep 19/20 | train_loss=0.093188 | val_mse=0.847387(All) 1.8379(ILI) | val_mae=0.482639 | 8.3s | GPU=0.88GB
+[00:24:10]     ep 20/20 | train_loss=0.095081 | val_mse=0.924175(All) 2.0147(ILI) | val_mae=0.493074 | 8.3s | GPU=0.88GB
+[00:24:10]     [DIAG] y_pred(StdScaler): mean=0.1745 std=0.9005 min=-1.1235 max=4.3118
+[00:24:10]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:24:11]     [DIAG] MSE_AllVars=2.076152 MSE_ILITotal=3.747289 PCC_ILI=0.6866
+[00:24:11]   L=24 DONE: test_mse=2.076152(All) 3.7473(ILI) test_mae=1.004161 pcc=0.6866
+[00:24:11]   [L=24] Rep 8/10 ...
+[00:24:11]   L=24: train=613 val=103 test=182 windows
+[00:24:11]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:24:20]     ep  1/20 | train_loss=0.810058 | val_mse=1.966474(All) 3.9428(ILI) | val_mae=0.915717 | 8.3s | GPU=0.88GB
+[00:24:29]     ep  2/20 | train_loss=0.726057 | val_mse=1.639762(All) 3.3862(ILI) | val_mae=0.771666 | 8.3s | GPU=0.88GB
+[00:24:37]     ep  3/20 | train_loss=0.554127 | val_mse=1.093040(All) 2.3624(ILI) | val_mae=0.525585 | 8.3s | GPU=0.88GB
+[00:24:45]     ep  4/20 | train_loss=0.466303 | val_mse=1.146003(All) 2.4484(ILI) | val_mae=0.507573 | 8.3s | GPU=0.88GB
+[00:24:54]     ep  5/20 | train_loss=0.419269 | val_mse=0.880459(All) 1.9069(ILI) | val_mae=0.449896 | 8.3s | GPU=0.88GB
+[00:25:02]     ep  6/20 | train_loss=0.366333 | val_mse=1.000003(All) 2.1283(ILI) | val_mae=0.475116 | 8.3s | GPU=0.88GB
+[00:25:10]     ep  7/20 | train_loss=0.319680 | val_mse=0.873704(All) 1.8659(ILI) | val_mae=0.461988 | 8.3s | GPU=0.88GB
+[00:25:19]     ep  8/20 | train_loss=0.278853 | val_mse=0.995838(All) 2.1232(ILI) | val_mae=0.499851 | 8.3s | GPU=0.88GB
+[00:25:27]     ep  9/20 | train_loss=0.253042 | val_mse=0.900995(All) 1.9308(ILI) | val_mae=0.465534 | 8.3s | GPU=0.88GB
+[00:25:35]     ep 10/20 | train_loss=0.218616 | val_mse=0.914766(All) 1.9454(ILI) | val_mae=0.474055 | 8.3s | GPU=0.88GB
+[00:25:44]     ep 11/20 | train_loss=0.191753 | val_mse=0.679818(All) 1.4672(ILI) | val_mae=0.402434 | 8.3s | GPU=0.88GB
+[00:25:52]     ep 12/20 | train_loss=0.177724 | val_mse=0.851117(All) 1.8275(ILI) | val_mae=0.460703 | 8.3s | GPU=0.88GB
+[00:26:00]     ep 13/20 | train_loss=0.156833 | val_mse=0.827228(All) 1.7749(ILI) | val_mae=0.459981 | 8.3s | GPU=0.88GB
+[00:26:09]     ep 14/20 | train_loss=0.153926 | val_mse=1.068775(All) 2.2890(ILI) | val_mae=0.540445 | 8.3s | GPU=0.88GB
+[00:26:17]     ep 15/20 | train_loss=0.153390 | val_mse=0.817151(All) 1.7714(ILI) | val_mae=0.444518 | 8.3s | GPU=0.88GB
+[00:26:25]     ep 16/20 | train_loss=0.124278 | val_mse=0.904574(All) 1.9520(ILI) | val_mae=0.480494 | 8.3s | GPU=0.88GB
+[00:26:34]     ep 17/20 | train_loss=0.122628 | val_mse=1.032805(All) 2.2194(ILI) | val_mae=0.515400 | 8.3s | GPU=0.88GB
+[00:26:42]     ep 18/20 | train_loss=0.108100 | val_mse=0.713856(All) 1.5412(ILI) | val_mae=0.433544 | 8.3s | GPU=0.88GB
+[00:26:50]     ep 19/20 | train_loss=0.105323 | val_mse=0.847411(All) 1.8444(ILI) | val_mae=0.450962 | 8.3s | GPU=0.88GB
+[00:26:59]     ep 20/20 | train_loss=0.099647 | val_mse=0.789994(All) 1.7035(ILI) | val_mae=0.452032 | 8.3s | GPU=0.88GB
+[00:26:59]     [DIAG] y_pred(StdScaler): mean=-0.0364 std=0.9424 min=-1.5938 max=4.1437
+[00:26:59]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:27:00]     [DIAG] MSE_AllVars=2.318769 MSE_ILITotal=4.402344 PCC_ILI=0.6203
+[00:27:00]   L=24 DONE: test_mse=2.318769(All) 4.4023(ILI) test_mae=1.051061 pcc=0.6203
+[00:27:00]   [L=24] Rep 9/10 ...
+[00:27:00]   L=24: train=613 val=103 test=182 windows
+[00:27:00]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:27:09]     ep  1/20 | train_loss=0.803026 | val_mse=1.896979(All) 3.8253(ILI) | val_mae=0.890429 | 8.3s | GPU=0.88GB
+[00:27:17]     ep  2/20 | train_loss=0.669772 | val_mse=1.334096(All) 2.8411(ILI) | val_mae=0.622996 | 8.3s | GPU=0.88GB
+[00:27:26]     ep  3/20 | train_loss=0.489865 | val_mse=0.884382(All) 1.8997(ILI) | val_mae=0.514238 | 8.3s | GPU=0.88GB
+[00:27:34]     ep  4/20 | train_loss=0.369657 | val_mse=0.804184(All) 1.7119(ILI) | val_mae=0.442317 | 8.3s | GPU=0.88GB
+[00:27:42]     ep  5/20 | train_loss=0.304150 | val_mse=0.798246(All) 1.6863(ILI) | val_mae=0.462015 | 8.3s | GPU=0.88GB
+[00:27:51]     ep  6/20 | train_loss=0.251151 | val_mse=0.679725(All) 1.4460(ILI) | val_mae=0.424958 | 8.3s | GPU=0.88GB
+[00:27:59]     ep  7/20 | train_loss=0.215637 | val_mse=0.639483(All) 1.3794(ILI) | val_mae=0.417280 | 8.3s | GPU=0.88GB
+[00:28:07]     ep  8/20 | train_loss=0.187584 | val_mse=0.616151(All) 1.3236(ILI) | val_mae=0.405219 | 8.3s | GPU=0.88GB
+[00:28:16]     ep  9/20 | train_loss=0.159614 | val_mse=0.592562(All) 1.2643(ILI) | val_mae=0.414548 | 8.3s | GPU=0.88GB
+[00:28:24]     ep 10/20 | train_loss=0.151783 | val_mse=0.449140(All) 0.9535(ILI) | val_mae=0.364378 | 8.3s | GPU=0.88GB
+[00:28:32]     ep 11/20 | train_loss=0.134179 | val_mse=0.604596(All) 1.3022(ILI) | val_mae=0.409220 | 8.3s | GPU=0.88GB
+[00:28:41]     ep 12/20 | train_loss=0.138873 | val_mse=0.610824(All) 1.3207(ILI) | val_mae=0.392763 | 8.3s | GPU=0.88GB
+[00:28:49]     ep 13/20 | train_loss=0.113574 | val_mse=0.589502(All) 1.2578(ILI) | val_mae=0.396515 | 8.3s | GPU=0.88GB
+[00:28:57]     ep 14/20 | train_loss=0.108865 | val_mse=0.561908(All) 1.2112(ILI) | val_mae=0.386394 | 8.3s | GPU=0.88GB
+[00:29:06]     ep 15/20 | train_loss=0.101707 | val_mse=0.574800(All) 1.2542(ILI) | val_mae=0.390910 | 8.3s | GPU=0.88GB
+[00:29:14]     ep 16/20 | train_loss=0.096096 | val_mse=0.599560(All) 1.2662(ILI) | val_mae=0.411880 | 8.3s | GPU=0.88GB
+[00:29:22]     ep 17/20 | train_loss=0.090777 | val_mse=0.589003(All) 1.2588(ILI) | val_mae=0.394498 | 8.3s | GPU=0.88GB
+[00:29:31]     ep 18/20 | train_loss=0.083024 | val_mse=0.578057(All) 1.2336(ILI) | val_mae=0.381328 | 8.3s | GPU=0.88GB
+[00:29:39]     ep 19/20 | train_loss=0.079940 | val_mse=0.435496(All) 0.9226(ILI) | val_mae=0.345646 | 8.3s | GPU=0.88GB
+[00:29:47]     ep 20/20 | train_loss=0.077043 | val_mse=0.580974(All) 1.2395(ILI) | val_mae=0.384833 | 8.3s | GPU=0.88GB
+[00:29:48]     [DIAG] y_pred(StdScaler): mean=0.1862 std=0.9267 min=-1.2348 max=4.3330
+[00:29:48]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:29:48]     [DIAG] MSE_AllVars=3.029759 MSE_ILITotal=6.345666 PCC_ILI=0.4825
+[00:29:48]   L=24 DONE: test_mse=3.029759(All) 6.3457(ILI) test_mae=1.103567 pcc=0.4825
+[00:29:49]   [L=24] Rep 10/10 ...
+[00:29:49]   L=24: train=613 val=103 test=182 windows
+[00:29:49]   L=24: leakage guard OK — min test target-start index = 820 > val_end=819
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:29:58]     ep  1/20 | train_loss=0.802944 | val_mse=1.938694(All) 3.9193(ILI) | val_mae=0.892277 | 8.3s | GPU=0.88GB
+[00:30:06]     ep  2/20 | train_loss=0.700740 | val_mse=1.552918(All) 3.2401(ILI) | val_mae=0.740358 | 8.3s | GPU=0.88GB
+[00:30:14]     ep  3/20 | train_loss=0.527115 | val_mse=0.992237(All) 2.1337(ILI) | val_mae=0.520434 | 8.3s | GPU=0.88GB
+[00:30:23]     ep  4/20 | train_loss=0.409508 | val_mse=0.914966(All) 1.9424(ILI) | val_mae=0.551646 | 8.3s | GPU=0.88GB
+[00:30:31]     ep  5/20 | train_loss=0.340177 | val_mse=0.925161(All) 1.9739(ILI) | val_mae=0.491128 | 8.3s | GPU=0.88GB
+[00:30:39]     ep  6/20 | train_loss=0.279911 | val_mse=0.996190(All) 2.0775(ILI) | val_mae=0.562580 | 8.3s | GPU=0.88GB
+[00:30:48]     ep  7/20 | train_loss=0.246956 | val_mse=0.833029(All) 1.7739(ILI) | val_mae=0.456949 | 8.3s | GPU=0.88GB
+[00:30:56]     ep  8/20 | train_loss=0.221132 | val_mse=0.808915(All) 1.7121(ILI) | val_mae=0.443559 | 8.3s | GPU=0.88GB
+[00:31:04]     ep  9/20 | train_loss=0.191432 | val_mse=0.865821(All) 1.8536(ILI) | val_mae=0.463034 | 8.3s | GPU=0.88GB
+[00:31:13]     ep 10/20 | train_loss=0.176249 | val_mse=0.851269(All) 1.8257(ILI) | val_mae=0.469571 | 8.3s | GPU=0.88GB
+[00:31:21]     ep 11/20 | train_loss=0.159090 | val_mse=0.904160(All) 1.9524(ILI) | val_mae=0.472721 | 8.3s | GPU=0.88GB
+[00:31:29]     ep 12/20 | train_loss=0.147019 | val_mse=1.218003(All) 2.6043(ILI) | val_mae=0.546503 | 8.3s | GPU=0.88GB
+[00:31:38]     ep 13/20 | train_loss=0.136448 | val_mse=0.949163(All) 2.0712(ILI) | val_mae=0.478773 | 8.3s | GPU=0.88GB
+[00:31:46]     ep 14/20 | train_loss=0.122322 | val_mse=0.910987(All) 1.9687(ILI) | val_mae=0.495908 | 8.3s | GPU=0.88GB
+[00:31:54]     ep 15/20 | train_loss=0.111433 | val_mse=1.052192(All) 2.2826(ILI) | val_mae=0.526402 | 8.3s | GPU=0.88GB
+[00:32:03]     ep 16/20 | train_loss=0.108064 | val_mse=1.124386(All) 2.4463(ILI) | val_mae=0.515252 | 8.3s | GPU=0.88GB
+[00:32:11]     ep 17/20 | train_loss=0.102510 | val_mse=0.865899(All) 1.8801(ILI) | val_mae=0.464647 | 8.3s | GPU=0.88GB
+[00:32:19]     ep 18/20 | train_loss=0.094233 | val_mse=0.866689(All) 1.8858(ILI) | val_mae=0.456792 | 8.3s | GPU=0.88GB
+[00:32:28]     ep 19/20 | train_loss=0.088797 | val_mse=0.965754(All) 2.1142(ILI) | val_mae=0.484741 | 8.3s | GPU=0.88GB
+[00:32:36]     ep 20/20 | train_loss=0.083448 | val_mse=0.941068(All) 2.0526(ILI) | val_mae=0.482197 | 8.3s | GPU=0.88GB
+[00:32:36]     [DIAG] y_pred(StdScaler): mean=0.2016 std=1.0717 min=-1.4210 max=5.5566
+[00:32:36]     [DIAG] y_true(StdScaler): mean=0.4330 std=1.1231 min=-0.9229 max=8.8617
+[00:32:37]     [DIAG] MSE_AllVars=2.686407 MSE_ILITotal=5.209024 PCC_ILI=0.5721
+[00:32:37]   L=24 DONE: test_mse=2.686407(All) 5.2090(ILI) test_mae=1.104426 pcc=0.5721
+[00:32:37]   [CKPT] L=24: kept rep seed=50 (best val_mse=0.435496) -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/checkpoints/best_miflu_L24.pth
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[00:32:43]   [CSV] L=24: predictions written -> /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/predictions_miflu_L24_paper_protocol.csv (train=14712, val=2472, test=4368 rows)
+[00:32:44]   [L=24] FINAL: MSE_AllVars=2.593024 MSE_ILITotal=5.055853
+[00:32:44] 
+[00:32:44] ============================================================
+[00:32:44]   FINAL RESULTS — ILITOTAL (paper protocol, mean ± std over 10 reps)
+[00:32:44] ============================================================
+[00:32:44]      L           MSE           MAE          RMSE         PCC
+[00:32:44]   --------------------------------------------------------
+[00:32:44]     24      5.0559±1.5832      1.5004±0.1210      2.2277±0.3215    0.5913±0.0890
+[00:32:44] ============================================================
+[00:32:44]   BEST-VAL CHECKPOINTS (one per horizon, rep with lowest val MSE):
+[00:32:44]     - L=24: seed=50  best_val_mse=0.435496  test_mse_ili=6.345666
+[00:32:44] ============================================================
+[00:32:44]   Total time: 28.3 min
+[00:32:44]   Raw per-rep results : /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/results_miflu_paper_protocol_20260817_000420.csv
+[00:32:44]   Tidy result table   : /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/results_miflu_paper_protocol_table_20260817_000420.csv
+[slurm] done. Paper-protocol outputs under /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/ and /gpfs1/scratch/sychan552/CHATTIME/Chattime/checkpoints/

@@ -1,0 +1,190 @@
+{
+  "generated_utc": "2026-09-15T19:25:49Z",
+  "purpose": "preserve completed v2 evidence as immutable history before any v3 work",
+  "n_records": 18,
+  "v2_test_prediction_files": 52,
+  "v2_test_metric_files": 53,
+  "policy": "Do not delete, overwrite, relabel or rewrite any v2 evidence. The v2 Test is known and must not be described as an untouched v3 holdout.",
+  "records": [
+    {
+      "canonical_path": "MIFlu_innovation_plan_v2.md",
+      "exists": true,
+      "bytes": 8138,
+      "sha256": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+      "role": "v2_plan",
+      "artifact_kind": "protocol",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/frozen_winners.json",
+      "exists": true,
+      "bytes": 659,
+      "sha256": "6d8ac3f43fc6d82d84f12ce52205bf2a5de7f0c96a1bc48192ed908460fa8407",
+      "role": "v2_frozen_winners",
+      "artifact_kind": "selection",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/frozen_model_manifest.json",
+      "exists": true,
+      "bytes": 12512,
+      "sha256": "558d2e388225bc143e2e48b99b8ae796cab0f18dff3f7a9eacff03f60c7485b5",
+      "role": "v2_frozen_model_manifest",
+      "artifact_kind": "selection",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/freeze_audit.json",
+      "exists": true,
+      "bytes": 868,
+      "sha256": "15c3f5775e0f6e684469f1242a9108c3cc3edcb232ce17bb5177729ef98a3ad0",
+      "role": "v2_freeze_audit",
+      "artifact_kind": "audit",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/model_selection_audit.json",
+      "exists": true,
+      "bytes": 3672,
+      "sha256": "0d146a6f497ecace9ae8953999c6d1707af3f5f3f241b1a929d7fc7753b2c3d5",
+      "role": "v2_model_selection_audit",
+      "artifact_kind": "audit",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/governance/stage_provenance/stage_f_cohort_manifest.json",
+      "exists": true,
+      "bytes": 137733,
+      "sha256": "8695b8ea6151c5dd350411449141e4e547c7bd0aaa263e402695279477e0327d",
+      "role": "v2_stage_f_cohort_manifest",
+      "artifact_kind": "provenance",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/test_evaluations/ONE_TIME_TEST_ACCESS_RECEIPT.json",
+      "exists": true,
+      "bytes": 6843,
+      "sha256": "f870e48ec89c2e0ffd83d90871653b1d48beadccdf01d5361123e49d18186da6",
+      "role": "v2_test_receipt",
+      "artifact_kind": "test_authorization",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/test_evaluation_manifest.json",
+      "exists": true,
+      "bytes": 11230,
+      "sha256": "148586f402ea27ccadeb172b004a9e43e9ce807facaa49daec05303adfa85ef7",
+      "role": "v2_test_manifest",
+      "artifact_kind": "test_manifest",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/completion_gate.json",
+      "exists": true,
+      "bytes": 225,
+      "sha256": "7b79830073055d040d83f07e143b05e924f8ea66f2ec6f71d2e15a9dca4ddcf9",
+      "role": "v2_test_completion_gate",
+      "artifact_kind": "audit",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/checkpoint_verification.json",
+      "exists": true,
+      "bytes": 23629,
+      "sha256": "2370865c76f6e777b1940e04ea4f6f1bcc81b4b17686578df0e8cc2dc0e0126b",
+      "role": "v2_test_checkpoint_verification",
+      "artifact_kind": "audit",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/final/final_test_report.md",
+      "exists": true,
+      "bytes": 8310,
+      "sha256": "b6a3007dd316fa830bf946e5785574ac043529650be2041518282f310945934d",
+      "role": "v2_final_test_report",
+      "artifact_kind": "report",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/final/plan_completion_audit.json",
+      "exists": true,
+      "bytes": 5339,
+      "sha256": "058de4b8b73c9ebc78efc11a0711b6f4de129b4b2c17b5ee53a1e5d3a9099106",
+      "role": "v2_plan_completion_audit",
+      "artifact_kind": "audit",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/final_audit/final_project_audit.json",
+      "exists": true,
+      "bytes": 21082,
+      "sha256": "3964820c221a80245164b743e80fb81ff4b30a3350f2fabc8309d0c1a1e246c4",
+      "role": "v2_final_project_audit",
+      "artifact_kind": "audit",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/final_audit/resource_audit.json",
+      "exists": true,
+      "bytes": 3373,
+      "sha256": "b921805e5a31411886185529c9783d6a232ebdb018c522a77d95a95722b4b224",
+      "role": "v2_resource_audit_login_node_incident",
+      "artifact_kind": "incident_evidence",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/registry.csv",
+      "exists": true,
+      "bytes": 5886,
+      "sha256": "648a18d81d8c02cf77f7f0ecf1b5e4b6860f9a3263d2f8d78c8c13e8899bdb40",
+      "role": "v2_registry",
+      "artifact_kind": "registry",
+      "immutability": "append-only",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/registry_v2.csv",
+      "exists": true,
+      "bytes": 156121,
+      "sha256": "3c0463f8e9e68bad0f27be239c7fcf741ea0b34798e5cc25d182897a75f93292",
+      "role": "v2_registry_v2",
+      "artifact_kind": "registry",
+      "immutability": "append-only",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/autonomous_completion/stage_plan.json",
+      "exists": true,
+      "bytes": 5455,
+      "sha256": "82bdc859a7253af534b1ef8b6945609c3ad887544daf2d918e83146925b5fad1",
+      "role": "v2_stage_plan",
+      "artifact_kind": "control",
+      "immutability": "immutable",
+      "historical_version": "innov-v2.0"
+    },
+    {
+      "canonical_path": "results/innovation/autonomous_completion/job_ledger.csv",
+      "exists": true,
+      "bytes": 43861,
+      "sha256": "f7c4169475c3e4b2be81104be91f54e13177c135d7fb72c14fda195c58e77379",
+      "role": "v2_job_ledger",
+      "artifact_kind": "ledger",
+      "immutability": "append-only",
+      "historical_version": "innov-v2.0"
+    }
+  ]
+}

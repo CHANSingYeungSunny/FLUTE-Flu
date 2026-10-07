@@ -55,7 +55,7 @@ for ep in range(2):
     for i, (bx, by) in enumerate(tl):
         bx, by = bx.to(dev), by.to(dev)
         opt.zero_grad()
-        yh, _, _ = model(bx, htext=None)
+        yh, _, _, _ = model(bx, htext=None)
         L = crit(yh, by); L.backward()
         if ep == 0 and i == 0:
             # After first batch: check LoRA gradients
@@ -66,7 +66,7 @@ for ep in range(2):
         opt.step()
 
 with torch.no_grad():
-    yh, _, _ = model(torch.from_numpy(Xt[:50]).to(dev), htext=None)
+    yh, _, _, _ = model(torch.from_numpy(Xt[:50]).to(dev), htext=None)
 print(f'  After 2 epochs: y_pred mean={yh.mean():.4f} std={yh.std():.4f}')
 print(f'  Train target:    mean={Yt[:50].mean():.4f} std={Yt[:50].std():.4f}')
 print(f'  Scale OK: {abs(yh.std() - Yt[:50].std()) < 0.5}')
@@ -130,7 +130,7 @@ for j, lm in enumerate(model_mf.forecasting_llm.lora_modules):
 
 # Compare: MIFlu vs Baseline output on same input
 with torch.no_grad():
-    yh_bl, _, _ = model(torch.from_numpy(Xt[:4]).to(dev), htext=None)
+    yh_bl, _, _, _ = model(torch.from_numpy(Xt[:4]).to(dev), htext=None)
     yh_mf2, _, _ = model_mf(torch.from_numpy(Xt[:4]).to(dev), htext=ht)
     diff = (yh_bl - yh_mf2).abs().mean().item()
 print(f'\n  |MIFlu - Baseline| difference: {diff:.6f}')

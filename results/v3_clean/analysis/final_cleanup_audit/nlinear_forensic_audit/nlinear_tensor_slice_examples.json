@@ -1,0 +1,119 @@
+{
+  "T": 104,
+  "note": "input=[origin,origin+103]; target=[origin+104,origin+104+L-1]; disjoint by construction",
+  "peak_test_abs_week": 1024,
+  "examples": {
+    "first_test": {
+      "origin_abs_week": 716,
+      "input_slice_abs": [
+        716,
+        819
+      ],
+      "input_last_index": 819,
+      "input_last_epiweek": "201804",
+      "target_first_index": 820,
+      "target_first_epiweek": "201805",
+      "target_slice_abs_L24": [
+        820,
+        843
+      ],
+      "overlap": false,
+      "input_contains_target": false,
+      "input_contains_future": false,
+      "input_var_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_var": "ILITOTAL (variable_index 4)"
+    },
+    "middle_test": {
+      "origin_abs_week": 806,
+      "input_slice_abs": [
+        806,
+        909
+      ],
+      "input_last_index": 909,
+      "input_last_epiweek": "201942",
+      "target_first_index": 910,
+      "target_first_epiweek": "201943",
+      "target_slice_abs_L24": [
+        910,
+        933
+      ],
+      "overlap": false,
+      "input_contains_target": false,
+      "input_contains_future": false,
+      "input_var_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_var": "ILITOTAL (variable_index 4)"
+    },
+    "last_test_L24": {
+      "origin_abs_week": 897,
+      "input_slice_abs": [
+        897,
+        1000
+      ],
+      "input_last_index": 1000,
+      "input_last_epiweek": "202128",
+      "target_first_index": 1001,
+      "target_first_epiweek": "202129",
+      "target_slice_abs_L24": [
+        1001,
+        1024
+      ],
+      "overlap": false,
+      "input_contains_target": false,
+      "input_contains_future": false,
+      "input_var_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_var": "ILITOTAL (variable_index 4)"
+    },
+    "peak_period_2020": {
+      "origin_abs_week": 920,
+      "input_slice_abs": [
+        920,
+        1023
+      ],
+      "input_last_index": 1023,
+      "input_last_epiweek": "202151",
+      "target_first_index": 1024,
+      "target_first_epiweek": "202152",
+      "target_slice_abs_L24": [
+        1024,
+        1047
+      ],
+      "overlap": false,
+      "input_contains_target": false,
+      "input_contains_future": false,
+      "input_var_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_var": "ILITOTAL (variable_index 4)"
+    }
+  }
+}

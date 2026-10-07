@@ -1,0 +1,113 @@
+[f1cpu] host=gpu-v100s-01 job=607671 start=2026-10-06T11:30:25Z
+[f1cpu] GPU REQUIRED: NO (no gres/gpu in this job's AllocTRES by construction)
+[f1cpu] === Phase 3a: Test evaluation + prediction dump ===
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=42: mse_all=2.349777 mse_ili=4.646272 pcc=0.6620
+  [SKIP] notext L=60 s=43: missing
+  [SKIP] notext L=60 s=44: missing
+  nlinear  L=60 s=42: mse_all=1.984557 mse_ili=3.904797 pcc=0.7760
+  [SKIP] nlinear L=60 s=43: missing
+  [SKIP] nlinear L=60 s=44: missing
+  dlinear  L=60 s=42: mse_all=2.488979 mse_ili=4.695544 pcc=0.7893
+  [SKIP] dlinear L=60 s=43: missing
+  [SKIP] dlinear L=60 s=44: missing
+  [SKIP] patchtst L=60 s=42: missing
+  [SKIP] patchtst L=60 s=43: missing
+  [SKIP] patchtst L=60 s=44: missing
+  [SKIP] itransformer L=60 s=42: missing
+  [SKIP] itransformer L=60 s=43: missing
+  [SKIP] itransformer L=60 s=44: missing
+  [SKIP] qwen_time_llm L=60 s=42: missing
+  [SKIP] qwen_time_llm L=60 s=43: missing
+  [SKIP] qwen_time_llm L=60 s=44: missing
+  [SKIP] calf_llm L=60 s=42: missing
+  [SKIP] calf_llm L=60 s=43: missing
+  [SKIP] calf_llm L=60 s=44: missing
+  [SKIP] timecma_llm L=60 s=42: missing
+  [SKIP] timecma_llm L=60 s=43: missing
+  [SKIP] timecma_llm L=60 s=44: missing
+  last_value_naive   L=60: mse_all=6.884903 mse_ili=14.658813 (clamped=0)
+  seasonal_naive     L=60: mse_all=2.103470 mse_ili=4.284679 (clamped=0)
+
+artefacts: 3648 origin rows -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds_learned/test_manifest.csv
+
+=== average_MSE_4L (7-var standardized MSE, mean seeds then mean L) ===
+  notext             1.887035
+  nlinear            2.035117
+  miflu              2.048389
+  seasonal_naive     2.268799
+  dlinear            2.352137
+  last_value_naive   7.165831
+
+DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring/score_matrix.csv, score_summary.csv, average_mse_4L.csv
+[f1cpu] === Phase 3a2: assembling the curated scoring set ===
+  curated set: 24 artefacts (expect 24)
+[f1cpu] === Phase 3b: independent scoring ===
+[f1cpu] /home/sychan552/.conda/envs/mlflu_hpc/bin/python -u /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/f1_score_all.py --pred-root /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds_final --out-dir /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring --expect-seed 42
+[f1score] artefacts found : 24
+[f1score] accepted         : 24
+[f1score] REJECTED         : 0
+[f1score] missing (model,horizon) cells: 0
+[f1score] forecast-key violations: 0
+[f1score] models with off-contract seeds: 0
+
+[f1score] ranking (equal-weight four-horizon average MSE, lower better)
+     1. notext               1.887035
+     2. nlinear              2.035117
+     3. miflu                2.048389
+     4. seasonal_naive       2.222290
+     5. dlinear              2.352137
+     6. last_value_naive     7.165831
+
+[f1score] paired statistics (A wins iff diff < 0)
+                 miflu - notext               mean=+0.1614 t=+0.87 A wins 2/4 (B 2, ties 0)
+                 miflu - nlinear              mean=+0.0133 t=+0.08 A wins 2/4 (B 2, ties 0)
+                 miflu - dlinear              mean=-0.3037 t=-1.91 A wins 3/4 (B 1, ties 0)
+                notext - nlinear              mean=-0.1481 t=-0.85 A wins 3/4 (B 1, ties 0)
+                notext - dlinear              mean=-0.4651 t=-4.25 A wins 4/4 (B 0, ties 0)
+               nlinear - dlinear              mean=-0.3170 t=-4.66 A wins 4/4 (B 0, ties 0)
+                 miflu - seasonal_naive       mean=-0.1739 t=-1.06 A wins 3/4 (B 1, ties 0)
+                 miflu - last_value_naive     mean=-5.1174 t=-9.25 A wins 4/4 (B 0, ties 0)
+
+[f1score] SUCCESS GATES
+    [PASS] G1_all_six_models_present
+    [PASS] G2_all_four_horizons_present
+    [PASS] G3_no_rejected_artefacts
+    [PASS] G3b_no_duplicate_keys
+    [PASS] G4_forecast_keys_consistent
+    [PASS] G5_single_pilot_seed_only
+    [PASS] G6_no_missing_cells
+    [PASS] G7_partition_invariant_holds
+
+[f1score] integrity gates (G3,G4,G5) ok : True
+[f1score] completeness gates (G1,G2,G6) ok : True
+[f1score] F1 STATUS = COMPLETE
+[f1score] REMINDER: one seed only - no significance, no robustness, no 'best model' claim. See F1_SUCCESS_GATES.md.
+[f1cpu] === Phase 3c: text-path probe on the corrected MIFlu checkpoints ===
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: '% WEIGHTED ILI'
+[f1cpu] FAILED: /home/sychan552/.conda/envs/mlflu_hpc/bin/python -u /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/f1_text_probe.py --ckpt /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/miflu/best_miflu_L24_seed42.pth --L 24 --code-root /scratch/sychan552/a2_stage5 --out /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring/text_path_probe_L24.json
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: '% WEIGHTED ILI'
+[f1cpu] FAILED: /home/sychan552/.conda/envs/mlflu_hpc/bin/python -u /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/f1_text_probe.py --ckpt /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/miflu/best_miflu_L36_seed42.pth --L 36 --code-root /scratch/sychan552/a2_stage5 --out /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring/text_path_probe_L36.json
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: '% WEIGHTED ILI'
+[f1cpu] FAILED: /home/sychan552/.conda/envs/mlflu_hpc/bin/python -u /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/f1_text_probe.py --ckpt /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/miflu/best_miflu_L48_seed42.pth --L 48 --code-root /scratch/sychan552/a2_stage5 --out /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring/text_path_probe_L48.json
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: '% WEIGHTED ILI'
+[f1cpu] FAILED: /home/sychan552/.conda/envs/mlflu_hpc/bin/python -u /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/f1_text_probe.py --ckpt /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/miflu/best_miflu_L60_seed42.pth --L 60 --code-root /scratch/sychan552/a2_stage5 --out /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/scoring/text_path_probe_L60.json
+[f1cpu] Phase 3 failures=0
+[f1cpu] Phase 3 end=2026-10-06T11:35:29Z

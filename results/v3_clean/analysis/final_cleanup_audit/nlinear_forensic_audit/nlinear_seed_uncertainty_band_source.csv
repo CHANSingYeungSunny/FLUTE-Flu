@@ -1,0 +1,5 @@
+L,source,between_seed_std_mean,between_seed_std_min,between_seed_std_max,seed_ids
+24,"10 seeds 42..51, lead-1 (step0), ILITOTAL physical, per target week",1679.0180456987566,492.78864141353256,3116.836282272516,42..51
+36,"10 seeds 42..51, lead-1 (step0), ILITOTAL physical, per target week",1888.3875890100396,699.6848541505263,4030.739965743379,42..51
+48,"10 seeds 42..51, lead-1 (step0), ILITOTAL physical, per target week",1840.7044489977795,615.1404992870284,4024.608923123465,42..51
+60,"10 seeds 42..51, lead-1 (step0), ILITOTAL physical, per target week",1913.5495794642907,697.543119690931,4253.867981514002,42..51

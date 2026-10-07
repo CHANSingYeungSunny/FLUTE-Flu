@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-09-18T07:33:41Z",
+  "defect": "D12",
+  "classification": "BEHAVIOR_NEUTRAL_GATE_VALIDATOR_SCHEMA_ALIGNMENT_FIX",
+  "runtime_version_before": "innov-v3.11-artifact-directory-initialization",
+  "runtime_version_after": "innov-v3.12-gate-validator-schema-alignment",
+  "target_file": "scripts/innovation/clean_gate.py",
+  "scientific_runtime_modified": false,
+  "failing_gate": {
+    "job_id": "570452",
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "passed": "1/19",
+    "runners_rc0": "18/18",
+    "node": "gpu-a100-03"
+  },
+  "validator_only": true,
+  "failing_assertions": {
+    "checkpoint_file_present": {
+      "n_paths": 16,
+      "wrong": "checkpoints/best_validation.pt",
+      "actual": "checkpoints/best_val_mse.pt (declared by the manifest as checkpoint_file)"
+    },
+    "baseline_no_checkpoint": {
+      "n_paths": 2,
+      "wrong": "requires the checkpoints/ DIRECTORY to be absent",
+      "actual": "D11 creates a uniform tree; an EMPTY dir is valid"
+    },
+    "artifact_completeness": {
+      "n_paths": 2,
+      "wrong": "one shared list containing logs/train_history.csv",
+      "actual": "deterministic baselines never train"
+    }
+  },
+  "pre_repair_sha256": {
+    "scripts/innovation/clean_gate.py": "acd57d8250117f4e118cb764cd78e0d53b8bc377f62131e80ec22d45ad8e3ece"
+  },
+  "note": "Recorded BEFORE any edit."
+}

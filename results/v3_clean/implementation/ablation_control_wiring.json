@@ -1,0 +1,83 @@
+{
+  "generated_utc": "2026-09-17T15:28:54Z",
+  "file": "scripts\\innovation\\backbones\\llm_inspired.py",
+  "changes": {
+    "helpers_and_prompt_components": true,
+    "qwen_init_flags": true,
+    "qwen_prompt_composition": true,
+    "qwen_forward_text_mode": true,
+    "calf_init_flag": true,
+    "calf_forward_text_mode": true,
+    "timecma_init_flag": true,
+    "timecma_forward_text_mode": true
+  },
+  "n_applied": 8,
+  "variant_registry": {
+    "without_dataset_information": {
+      "base": "qwen_time_llm",
+      "kwargs": {
+        "prompt_components": [
+          "task",
+          "variable"
+        ]
+      }
+    },
+    "without_task_instruction": {
+      "base": "qwen_time_llm",
+      "kwargs": {
+        "prompt_components": [
+          "dataset",
+          "variable"
+        ]
+      }
+    },
+    "without_input_variable_description": {
+      "base": "qwen_time_llm",
+      "kwargs": {
+        "prompt_components": [
+          "dataset",
+          "task"
+        ]
+      }
+    },
+    "without_lora": {
+      "base": "gpt2_miflu",
+      "kwargs": {
+        "use_lora": false
+      }
+    },
+    "without_multimodality": {
+      "base": "gpt2_miflu",
+      "kwargs": {
+        "use_text_ln": false,
+        "gated_inject": false
+      }
+    },
+    "without_lora_and_multimodality": {
+      "base": "gpt2_miflu",
+      "kwargs": {
+        "use_lora": false,
+        "use_text_ln": false,
+        "gated_inject": false
+      }
+    },
+    "zero_text": {
+      "base": "llm_text_branch",
+      "kwargs": {
+        "text_mode": "zero"
+      }
+    },
+    "shuffled_text": {
+      "base": "llm_text_branch",
+      "kwargs": {
+        "text_mode": "shuffle"
+      }
+    },
+    "llm_removed_or_alignment_only": {
+      "base": "llm_text_branch",
+      "kwargs": {
+        "text_mode": "removed"
+      }
+    }
+  }
+}

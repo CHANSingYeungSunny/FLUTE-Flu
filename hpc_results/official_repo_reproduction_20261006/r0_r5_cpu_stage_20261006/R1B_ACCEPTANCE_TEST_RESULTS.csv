@@ -1,0 +1,31 @@
+id,requirement,method,result,observed,evidence
+T01,output shape matches the declared target contract,"synthetic forward, B=2, M=7",PASS,"(2, 24, 7)",r1b_model.py forward; 7 channels
+T02,all seven National-Illness variables present,static: loader rejects !=7 numeric columns,PASS,load_data aborts unless exactly 7,r1b_train.py load_data
+T03,forecast windows obey strict containment,"static: R1BDataset origins = [lo, hi-L-1]",PASS,targets o+1..o+L never cross a split boundary,r1b_train.py R1BDataset
+T04,no forecast key duplicated,scorer_f1 duplicate gate + unit test,PASS,G3b_no_duplicate_keys wired and fired on a synthetic duplicate,f1_preflight scorer tests A6
+T05,no forecast key missing,gate G6,PASS,24/24 in F1; same gate reused for R1-B,f1_gate_report.json
+T06,train/validation/Test boundaries correct,"static: 966*0.70=676, 966*0.20=193, val=97",PASS,"676/97/193, PAPER_EXPLICIT 70:10:20",r1b_train.py load_data
+T07,scaler fitted only on training rows,static: mu/sd from X[:676],PASS,mean/std computed on the train block only,r1b_train.py load_data
+T08,validation selects checkpoints,static: best tracked on dl_va only,PASS,best['val'] updated from the validation loop,r1b_train.py
+T09,Test not read during training,static: no test loader referenced in the epoch loop,PASS,dl_te is unused until after the selection,r1b_train.py
+T10,Test not read during checkpoint selection,static: selection uses dl_va only,PASS,B-5; the released rule selected on Test,r1b_train.py
+T11,predictions can be saved,np.savez_compressed in the trainer,PASS (wired),pred_<tag>.npz written after Test,r1b_train.py
+T12,targets can be saved,same NPZ carries target=,PASS (wired),target array in the same file,r1b_train.py
+T13,predictions reload without loss,NPZ is compressed float32; loader reads pred/target,PASS,"same schema the scorer reads in F1, where 24/24 loaded",scorer_f1.load_cell_validated
+T14,target and prediction keys match exactly,scorer_f1.cross_check_keys,PASS,identical var_cols and shapes enforced,scorer acceptance test A14
+T15,text replacement changes the prediction readout,deterministic equal-length swap on the R1-B model,PASS,max|dPred| = 5.8775e-02 (was exactly 0.0 released),CPU synthetic run this round
+T16,text gradients nonzero,backward through the text leaf,PASS,|grad_text| = 1.0405e-03 (was exactly 0.0 released),same run
+T17,time-series gradients nonzero,total grad norm over parameters,PASS,non-zero total gradient norm,same run
+T18,positive and negative text-path controls behave correctly,no-text control forward + text swap,PASS,"no-text control yields (2,24,7) and no text influence; text variant yields influence",same run
+T19,LoRA modules exist,static: author PEFT branch,NOT_YET_RUN (HPC only),peft is not installed in the local interpreter; the author's branch calls get_peft_model with the LIST default c_attn,local env check; HPC has peft 0.17.1
+T20,intended LoRA parameters are trainable,param name filter lora_,NOT_YET_RUN (HPC only),r1b_model keeps any name containing lora_ trainable,r1b_model._apply_effective_freeze
+T21,intended frozen base parameters have requires_grad=False,param inventory,PASS,"49 backbone tensors frozen, 27 kept",freeze_report in the model manifest
+T22,no unintended full-GPT training occurs,trainable fraction,PASS,1.93% trainable (released: 100%),same run
+T23,trainable count matches the declared architecture,consistency check,PASS,"1,599,768 = ln + wpe + in_layer + out_layer (+LoRA on HPC)",r1b_model freeze_report
+T24,prompt construction matches the verified paper template,uses the author's own shipped text embedding asset,PASS (asset-level),"text_emb_label_0507_<L>.txt, the author's own GPT-2 prompt embedding for that horizon",r1b_train.build_prompt_embeddings
+T25,metric pooling matches the declared R1 contract,"mean over origins x leads x 7 variables, z-space",PASS,same aggregation as the audited independent scorer,r1b_train.py
+T26,MSE and MAE use the declared scale,z-space (standardized) - PAPER_EXPLICIT,PASS,no inverse transform applied,r1b_train.py
+T27,four-horizon averaging is correct,"equal weight over L in {24,36,48,60}",PASS,"same rule as Table V's caption, verified arithmetically (1.4355)",earlier arithmetic check
+T28,repetition IDs and seeds are addressable,--repetition drives the RNG seed (1000+rep),PASS,each repetition is independently reproducible,r1b_train.py
+T29,checkpoint reload reproduces predictions within tolerance,state_dict round-trip on CPU,NOT_YET_RUN,requires a fitted checkpoint; the trainer reloads best['state'] in-process,pending pilot
+T30,the scorer rejects malformed input,20-check acceptance suite,PASS,"20/20 including duplicate keys, NaN, Inf, wrong dataset, wrong horizon, and Test-selected metadata",f1_preflight/logs/scorer_acceptance_tests.txt

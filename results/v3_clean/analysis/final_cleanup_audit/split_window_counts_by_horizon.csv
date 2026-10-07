@@ -1,0 +1,5 @@
+horizon_L,n_total_timestamps,n_train_timestamps,n_validation_timestamps,n_test_timestamps,T_input,stride,n_windows_total,n_windows_train,n_windows_validation,n_windows_test,test_target_start_abs_week,test_target_end_abs_week,first_forecast_origin,last_forecast_origin,test_target_start_date,test_target_end_date,distinct_test_target_weeks_full_horizon,lead1_test_target_weeks
+24,1025,717,102,206,104,1,898,613,103,182,820,1001,716,897,2018-01-28,2021-07-18,205,182
+36,1025,717,102,206,104,1,886,613,103,170,820,989,716,885,2018-01-28,2021-04-25,205,170
+48,1025,717,102,206,104,1,874,613,103,158,820,977,716,873,2018-01-28,2021-01-31,205,158
+60,1025,717,102,206,104,1,862,613,103,146,820,965,716,861,2018-01-28,2020-11-08,205,146

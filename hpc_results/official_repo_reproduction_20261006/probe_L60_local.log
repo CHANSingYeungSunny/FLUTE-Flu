@@ -1,0 +1,37 @@
+2026-10-06 04:14:00.175899: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2026-10-06 04:14:00.175991: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib\site-packages\huggingface_hub\file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+llmmodel = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-5): 6 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D()
+        (c_proj): Conv1D()
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D()
+        (c_proj): Conv1D()
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+[probe] flag control (multimodal 0 vs 1, length 42 vs 359): max|£Gpred| = 2.384186e-07  [NOT a text-content test]
+[probe] positive control (prefix-text repair, DECLARED CHANGE): max|£Gpred| = 4.816055e-05 -> DETECTS text influence
+[probe] device=cpu dtype=float32 L=60
+[probe] sequence layout: patches [0,41] text [42,358]
+[probe] head reads 42 positions
+[probe] max|£Gpred| over equal-length text swaps = 0.000000e+00 (tol 1.0e-06)
+[probe] |grad_text| = 0.0   |grad_ts| = 0.021277476102113724
+[probe] VERDICT = text_inert :: equal-length different-content text changed the prediction by at most 0.000e+00 (<= tol 1.0e-06) and the text embedding gradient is exactly zero
+[probe] wrote hpc_results/official_repo_reproduction_20261006/text_path_probe_cpu_local_L60.json

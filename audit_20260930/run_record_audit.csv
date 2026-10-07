@@ -1,0 +1,30 @@
+jobid,jobname,stage,state,exit_code,submit,end,elapsed,gpu,verdict,note
+587048,a0_gpu,A0 replay,FAILED,1:0,2026-09-26T18:16:19,2026-09-26T18:17:01,00:00:16,a100 x1,benign,environment/arg failure before any work was done
+587054,a0_gpu,A0 replay,FAILED,1:0,2026-09-26T18:20:52,2026-09-26T18:21:27,00:00:23,a100 x1,benign,same immediate failure mode
+587059,a0_gpu,A0 replay,FAILED,1:0,2026-09-26T18:23:31,2026-09-26T18:24:08,00:00:22,a100 x1,benign,same immediate failure mode
+587068,a0_gpu,A0 replay,FAILED,1:0,2026-09-26T18:29:02,2026-09-26T18:30:25,00:01:22,a100 x1,NUMERICALLY VALID,Ran the full 82s replay and produced valid output. Marked FAILED only because the wrapper script turned the author code's non-zero return code into a job failure. The wrapper was patched at 18:33:19 - AFTER this job ended.
+587091,a0_gpu,A0 replay,COMPLETED,0:0,2026-09-26T18:42:31,2026-09-26T18:42:50,00:00:25,a100 x1,VALID,Re-run under the patched wrapper; wrapper now prints 'reporting job success (author rc=1)'. Same author rc=1, but no longer fatal.
+587070,s6_task,A-track stage6,FAILED,2:0,2026-09-26T18:32:46,2026-09-26T18:32:52,00:00:04,a100 x1,benign,failed in 4 seconds - config/argument error; re-run as part of the array
+587243,s6_task,A-track stage6,CANCELLED by 90731875,0:0,2026-09-26T19:42:31,2026-09-26T19:42:51,00:00:00,none,benign,allocated without starting, then cancelled - a superseded replica. Job 90731875 is NOT present in this cluster's accounting (sacct -j empty over 2026-09-01..10-31), so the canceller cannot be identified from here.
+587373,s6_score,A-track stage6,FAILED,1:0,2026-09-26T20:53:46,2026-09-26T20:54:06,00:00:02,a100 x1,benign STEP 1 only,Died in step 1/3 at build_lock_stage5.py line 115: FileNotFoundError 'results/stage6/lock_templates.json' (relative path resolves to the wrong stage). No scoring performed; no artefact damaged.
+587385,s6_score,A-track stage6,FAILED,3:0,2026-09-26T21:06:59,2026-09-26T21:09:06,00:02:03,a100 x1,benign FINAL CHECK only,Passed lock-building and wrote the full score matrix; then exited 3 on the closing assertion 'expected 104 (96 learned + 8 baselines), found 116'. Expectation count was stale. The 116-row score_matrix.csv is complete. Independent recompute confirms it to 1.5e-07 relative.
+584889,s5_task,A-track stage5,FAILED,1:0,2026-09-25T01:10:14,2026-09-25T01:10:41,00:00:07,a100 x1,benign,early retry during bring-up
+584893,s5_task,A-track stage5,FAILED,1:0,2026-09-25T01:12:39,2026-09-25T01:13:02,00:00:06,a100 x1,benign,early retry during bring-up
+585530,s5_task,A-track stage5,FAILED,1:0,2026-09-25T16:02:21,2026-09-25T16:02:56,00:00:11,a100 x1,benign,retry
+585540,s5_task,A-track stage5,FAILED,1:0,2026-09-25T16:13:26,2026-09-25T16:16:31,00:02:43,a100 x1,benign,retry
+585544,s5_task,A-track stage5,FAILED,1:0,2026-09-25T16:19:00,2026-09-25T16:21:59,00:02:39,a100 x1,benign,retry
+585821,s5_task,A-track stage5,FAILED,1:0,2026-09-25T23:10:52,2026-09-25T23:12:05,00:01:06,a100 x1,benign,retry
+585823,s5_task,A-track stage5,FAILED,1:0,2026-09-25T23:12:25,2026-09-25T23:13:32,00:01:04,a100 x1,benign,retry
+585825,s5_task,A-track stage5,FAILED,1:0,2026-09-25T23:13:54,2026-09-25T23:15:01,00:01:03,a100 x1,benign,retry
+585827,s5_task,A-track stage5,FAILED,1:0,2026-09-25T23:15:23,2026-09-25T23:16:30,00:01:02,a100 x1,benign,retry
+585878,s5_score,A-track stage5,FAILED,1:0,2026-09-26T00:13:13,2026-09-26T00:13:44,00:00:25,a100 x1,benign,superseded by a successful s5_score run
+572650,v318_finalize,B-track v318,FAILED,1:0,2026-09-19T14:40:50,2026-09-19T14:41:15,00:00:02,a100 x4,benign,1 of 116 array tasks failed; the other 115 completed. Not on the A-track path.
+-,v319_finalize,B-track v319,COMPLETED,0:0,2026-09-19/20,-,,-,VALID,260 of 260 array tasks COMPLETED. This is the July-2026 4L x 10-seed eight-model run.
+-,s6_task (array),A-track stage6,COMPLETED (25 of 27),0:0,-,2026-09-26T20:53,,-,VALID,25 COMPLETED; 1 short config failure; 1 cancelled replica (see 587243)
+-,s5_task (array),A-track stage5,COMPLETED (20 of 29),0:0,-,2026-09-26T00:10,,-,VALID,20 COMPLETED; 9 bring-up retries
+-,s6_cpu_validate,A-track stage6,COMPLETED,0:0,-,2026-09-26T17:21,,-,VALID,pre-flight validation
+-,s6_llm_check,A-track stage6,COMPLETED,0:0,-,2026-09-26T17:52,,-,VALID,LLM availability check
+-,s5_verify,A-track stage5,COMPLETED,0:0,-,2026-09-25T01:08,,-,VALID,
+-,a2_ckpt_archive,A-track,COMPLETED,0:0,-,2026-09-26T17:11,,-,VALID,checkpoint archive step
+-,INTERACTIVE (login node),A-track stage6,NO SLURM JOB,,-,-,-,-,FLAG,recompute_verify.out reports PASS at delta=8.9e-16 over 116 cells but has NO corresponding sacct job. The independent verification was run interactively on the login node, so it has no scheduler record. Corroborated afterwards by our own offline recompute (1.5e-07 relative).
+-,GPU_LEDGER_stage7.tsv,A-track stage7,-,-,-,-,-,-,FLAG,Column/header mismatch: the jobid value lands in the 'name' column and the 'gpu_hours' column contains the free text 'author_code_verbatim_replay'. GPU-hours cannot be read off this file; the 1.0500 GPU-h completed / 0.0756 failed / 1.1256 total was computed independently from sacct AllocTRES.

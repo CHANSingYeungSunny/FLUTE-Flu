@@ -1,0 +1,36 @@
+{
+  "test_eval_id": "final_nlinear_20260915T145710Z",
+  "n_figures": 6,
+  "figures": [
+    {
+      "path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/figures/fig_test_mse_mae_by_horizon.png",
+      "bytes": 56277,
+      "sha256": "6fcd374c04b6b5cab264146868806370207939c6c3eb58229b6f1158df582bd4"
+    },
+    {
+      "path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/figures/fig_test_peak_pte_pie.png",
+      "bytes": 46002,
+      "sha256": "0566ddc2f4c55ff2da5a4eae987b0bd9a9ad3b949d24c58e900695cd4d14a813"
+    },
+    {
+      "path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/figures/fig_test_predictions_L24.png",
+      "bytes": 164001,
+      "sha256": "1f62c60307064285ae8ff019e940d944edd5561b5fb900c24a108ee84eaa5261"
+    },
+    {
+      "path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/figures/fig_test_predictions_L36.png",
+      "bytes": 169155,
+      "sha256": "dd7cfbe4d52562fa177164d97d2fe5f97de7b41bcb706498ae218042d325461c"
+    },
+    {
+      "path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/figures/fig_test_predictions_L48.png",
+      "bytes": 163373,
+      "sha256": "78c07d8c9a17e43da51151126d090690090a028a77ecb306398bbe726674bd80"
+    },
+    {
+      "path": "results/innovation/test_evaluations/final_nlinear_20260915T145710Z/figures/fig_test_predictions_L60.png",
+      "bytes": 169345,
+      "sha256": "3c9ecf406d8b1cce306043089fc7e4729b4a31e2c386c76f76a0960c1239130c"
+    }
+  ]
+}

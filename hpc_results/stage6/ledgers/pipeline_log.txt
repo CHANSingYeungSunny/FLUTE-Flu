@@ -1,0 +1,115 @@
+[pipe 2026-09-26T10:23:56Z] stage 1: A0 MODE=1
+[pipe 2026-09-26T10:23:57Z] waiting to submit (1)
+[pipe 2026-09-26T10:29:01Z] stage 1: A0 MODE=1
+[pipe 2026-09-26T10:29:02Z] A0 MODE=1 job=587068 submitted
+[pipe 2026-09-26T10:30:33Z] A0 MODE=1 job=587068 state=FAILED charged=0.0397
+[pipe 2026-09-26T10:30:33Z] waiting to submit (1)
+[a0fix 2026-09-26T10:33:24Z] slot free; submitting A0 MODE=0 comparable re-run
+[a0fix 2026-09-26T10:33:24Z] submit result: sbatch: [slurm_job_submit] Per node memory size have now been reset to 1024 MB.
+Submitted batch job 587073
+[pipe 2026-09-26T10:35:22Z] stage 1: A0 MODE=1
+[pipe 2026-09-26T10:48:32Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T10:48:32Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T10:59:53Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T10:59:53Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T10:59:53Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:02:50Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:02:50Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:02:50Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:02:50Z] STOP RULE: charged 0.0522 >= cap 0.01; NOT submitting dlinear L=36
+[pipe 2026-09-26T11:02:50Z] remaining matrix not run: dlinear L=36 and any later pair
+[pipe 2026-09-26T11:02:50Z] pipeline stopping early (budget), scored output will be partial
+[pipe 2026-09-26T11:02:56Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:02:56Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:02:56Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:04:26Z] waiting to submit (1)
+[pipe 2026-09-26T11:15:34Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:15:34Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:15:34Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:15:34Z] stage 2: dlinear L=36 already complete - skipping
+[pipe 2026-09-26T11:15:35Z] waiting for a free slot (try 1)
+[pipe 2026-09-26T11:18:55Z] waiting for a free slot (try 11)
+[pipe 2026-09-26T11:22:16Z] waiting for a free slot (try 21)
+[pipe 2026-09-26T11:24:44Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:24:44Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:24:44Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:24:44Z] stage 2: dlinear L=36 already complete - skipping
+[pipe 2026-09-26T11:24:44Z] waiting for a free slot (try 1)
+[pipe 2026-09-26T11:27:00Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:27:00Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:27:00Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:27:00Z] stage 2: dlinear L=36 already complete - skipping
+[pipe 2026-09-26T11:27:01Z] waiting for a free slot (try 1)
+[pipe 2026-09-26T11:29:28Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:29:28Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:29:28Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:29:28Z] stage 2: dlinear L=36 already complete - skipping
+[pipe 2026-09-26T11:29:29Z] waiting for a free slot (try 1)
+[pipe 2026-09-26T11:33:15Z] waiting for a free slot (try 16)
+[pipe 2026-09-26T11:34:13Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:34:13Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:34:13Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:34:13Z] stage 2: dlinear L=36 already complete - skipping
+[pipe 2026-09-26T11:34:13Z] stage 2: dlinear L=48 already complete - skipping
+[pipe 2026-09-26T11:34:13Z] waiting for a free slot (try 1)
+[pipe 2026-09-26T11:37:59Z] waiting for a free slot (try 16)
+[pipe 2026-09-26T11:41:46Z] waiting for a free slot (try 31)
+[pipe 2026-09-26T11:41:54Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:41:54Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:41:54Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:41:54Z] stage 2: dlinear L=36 already complete - skipping
+[pipe 2026-09-26T11:41:54Z] stage 2: dlinear L=48 already complete - skipping
+[pipe 2026-09-26T11:41:55Z] submitted dlinear L=60 job=587241 charged=0.0650
+[pipe 2026-09-26T11:42:31Z] job=587241 dlinear L=60 state=COMPLETED elapsed=00:00:15 charged=0.0692
+[pipe 2026-09-26T11:42:31Z] submitted patchtst L=24 job=587243 charged=0.0692
+[pipe 2026-09-26T11:42:51Z] BAD SUBMISSION: header='' (expected BACKBONE=patchtst L=24); killing 587243
+[pipe 2026-09-26T11:44:28Z] stage 1: A0 MODE=0 already has evidence (default) - skipping
+[pipe 2026-09-26T11:44:28Z] stage 1: A0 MODE=1 already has evidence (multimodal1) - skipping
+[pipe 2026-09-26T11:44:28Z] stage 2: dlinear L=24 already complete - skipping
+[pipe 2026-09-26T11:44:28Z] stage 2: dlinear L=36 already complete - skipping
+[pipe 2026-09-26T11:44:29Z] stage 2: dlinear L=48 already complete - skipping
+[pipe 2026-09-26T11:44:29Z] stage 2: dlinear L=60 already complete - skipping
+[pipe 2026-09-26T11:44:29Z] submitted patchtst L=24 job=587247
+[pipe 2026-09-26T11:45:05Z] job=587247 patchtst L=24 state=COMPLETED elapsed=00:00:24 charged=0.0758
+[pipe 2026-09-26T11:45:05Z] submitted patchtst L=36 job=587250
+[pipe 2026-09-26T11:46:06Z] job=587250 patchtst L=36 state=COMPLETED elapsed=00:00:21 charged=0.0817
+[pipe 2026-09-26T11:46:06Z] submitted patchtst L=48 job=587252
+[pipe 2026-09-26T11:47:07Z] job=587252 patchtst L=48 state=COMPLETED elapsed=00:00:21 charged=0.0875
+[pipe 2026-09-26T11:47:07Z] submitted patchtst L=60 job=587254
+[pipe 2026-09-26T11:48:08Z] job=587254 patchtst L=60 state=COMPLETED elapsed=00:00:21 charged=0.0933
+[pipe 2026-09-26T11:48:08Z] submitted itransformer L=24 job=587256
+[pipe 2026-09-26T11:48:54Z] job=587256 itransformer L=24 state=COMPLETED elapsed=00:00:22 charged=0.0994
+[pipe 2026-09-26T11:48:54Z] submitted itransformer L=36 job=587257
+[pipe 2026-09-26T11:49:35Z] job=587257 itransformer L=36 state=COMPLETED elapsed=00:00:21 charged=0.1053
+[pipe 2026-09-26T11:49:35Z] submitted itransformer L=48 job=587261
+[pipe 2026-09-26T11:50:36Z] job=587261 itransformer L=48 state=COMPLETED elapsed=00:00:22 charged=0.1114
+[pipe 2026-09-26T11:50:36Z] submitted itransformer L=60 job=587264
+[pipe 2026-09-26T11:51:37Z] job=587264 itransformer L=60 state=COMPLETED elapsed=00:00:22 charged=0.1175
+[pipe 2026-09-26T11:51:37Z] submitted calf_llm L=24 job=587265
+[pipe 2026-09-26T11:52:53Z] job=587265 calf_llm L=24 state=COMPLETED elapsed=00:00:49 charged=0.1311
+[pipe 2026-09-26T11:52:54Z] submitted calf_llm L=36 job=587266
+[pipe 2026-09-26T11:53:55Z] job=587266 calf_llm L=36 state=COMPLETED elapsed=00:00:45 charged=0.1436
+[pipe 2026-09-26T11:53:55Z] submitted calf_llm L=48 job=587268
+[pipe 2026-09-26T11:54:51Z] job=587268 calf_llm L=48 state=COMPLETED elapsed=00:00:44 charged=0.1558
+[pipe 2026-09-26T11:54:51Z] submitted calf_llm L=60 job=587269
+[pipe 2026-09-26T11:55:52Z] job=587269 calf_llm L=60 state=COMPLETED elapsed=00:00:46 charged=0.1686
+[pipe 2026-09-26T11:55:52Z] submitted timecma_llm L=24 job=587271
+[pipe 2026-09-26T11:56:53Z] job=587271 timecma_llm L=24 state=COMPLETED elapsed=00:00:45 charged=0.1811
+[pipe 2026-09-26T11:56:53Z] submitted timecma_llm L=36 job=587274
+[pipe 2026-09-26T11:57:54Z] job=587274 timecma_llm L=36 state=COMPLETED elapsed=00:00:42 charged=0.1928
+[pipe 2026-09-26T11:57:55Z] submitted timecma_llm L=48 job=587275
+[pipe 2026-09-26T11:58:51Z] job=587275 timecma_llm L=48 state=COMPLETED elapsed=00:00:43 charged=0.2047
+[pipe 2026-09-26T11:58:51Z] submitted timecma_llm L=60 job=587277
+[pipe 2026-09-26T11:59:52Z] job=587277 timecma_llm L=60 state=COMPLETED elapsed=00:00:42 charged=0.2164
+[pipe 2026-09-26T11:59:52Z] submitted qwen_time_llm L=24 job=587278
+[pipe 2026-09-26T12:14:14Z] job=587278 qwen_time_llm L=24 state=COMPLETED elapsed=00:13:56 charged=0.4486
+[pipe 2026-09-26T12:14:15Z] submitted qwen_time_llm L=36 job=587310
+[pipe 2026-09-26T12:28:01Z] job=587310 qwen_time_llm L=36 state=COMPLETED elapsed=00:13:14 charged=0.6692
+[pipe 2026-09-26T12:28:02Z] submitted qwen_time_llm L=48 job=587335
+[pipe 2026-09-26T12:40:59Z] job=587335 qwen_time_llm L=48 state=COMPLETED elapsed=00:12:51 charged=0.8833
+[pipe 2026-09-26T12:40:59Z] submitted qwen_time_llm L=60 job=587354
+[pipe 2026-09-26T12:53:45Z] job=587354 qwen_time_llm L=60 state=COMPLETED elapsed=00:12:27 charged=1.0908
+[pipe 2026-09-26T12:53:46Z] stage 3: lock + score + recompute (charged so far 1.0908)
+[pipe 2026-09-26T12:53:46Z] score job=587373 submitted
+[pipe 2026-09-26T12:54:16Z] score job=587373 state=FAILED charged=1.0914
+[pipe 2026-09-26T12:54:17Z] pipeline finished charged=1.0914

@@ -1,0 +1,14 @@
+stage,array_index,track,configuration,horizon,repetition,device,gpu_required,expected_elapsed_s,expected_gpu_hours,epochs,learning_rate,peft,text_pathway,checkpoint_selection,notes
+1,cpu_preflight,R1-B,declared_reconstruction,all,1,cpu,NO,120,0.00000,declared,declared,1,functional_prefixed,validation_only,"contract assertions + dataset hash + scorer acceptance tests; 0 GPU-h"
+2,0,R1-B,declared_reconstruction,24,1,gpu,YES,192,0.05333,declared,declared,1,functional_prefixed,validation_only,"basis: measured 0.0533 GPU-h per MIFlu fit; the pilot is NOT a reproduction"
+2,1,R1-B,declared_reconstruction,36,1,gpu,YES,192,0.05333,declared,declared,1,functional_prefixed,validation_only,same
+2,2,R1-B,declared_reconstruction,48,1,gpu,YES,192,0.05333,declared,declared,1,functional_prefixed,validation_only,same
+2,3,R1-B,declared_reconstruction,60,1,gpu,YES,192,0.05333,declared,declared,1,functional_prefixed,validation_only,same
+3,cpu_evaluation,R1-B,declared_reconstruction,all,1,cpu,NO,300,0.00000,n/a,n/a,n/a,n/a,n/a,"Test evaluated once; predictions persisted; independent scoring; text-path probe per checkpoint"
+4,gate_check,R1-B,declared_reconstruction,all,1,cpu,NO,60,0.00000,n/a,n/a,n/a,n/a,n/a,"apply R1_REPRODUCTION_SUCCESS_GATES; decide on expansion or stop"
+PILOT_TOTAL,,,,,,,4,1128,0.21332,,,,,
+EXPANSION_IF_VALID,R1-B 10 repetitions,declared_reconstruction,24/36/48/60,10,gpu,YES,192,2.13320,,,,,,,"40 fits total; incremental over the pilot = 36 fits = 1.92 GPU-h"
+R1C_SENSITIVITY,optional,R1-C,"4 predeclared combos: epochs {1,20} x lr {1e-4,5e-4}",24/36/48/60,1,gpu,YES,192,3.41312,,,,,,"16 fits = 4 combos x 4 horizons; reported as SENSITIVITY, never as reproduction"
+R1A_ALREADY_DONE,R1-A,literal_released_code_replay,24/36/48/60,1,gpu,DONE,1054,0.25000,1,1e-4,0,released_inactive,test_selected,"jobs 606365/606378/606385/606412 consumed 1.10806 GPU-h; NOT the paper reproduction"
+F1_FROZEN,EXPLORATORY_A2F,F1_six_model_pilot,24/36/48/60,1,mixed,FROZEN,,,,,,,,"0.25000 GPU-h spent; reclassified; F2 cancelled; the 0.35 remainder is parked"
+R3_TO_R6,not_planned_here,R3-R6,old_4v4_replacement,,,,,,, ,,,,,,"requires R1 success first; not costed until the old comparison is reconstructed"

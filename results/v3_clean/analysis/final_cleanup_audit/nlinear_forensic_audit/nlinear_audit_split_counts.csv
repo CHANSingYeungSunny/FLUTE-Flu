@@ -1,0 +1,5 @@
+L,T,stride,total_windows,train_windows,val_windows,test_windows,test_target_abs_week,first_origin,last_origin,unique_test_target_weeks_full
+24,104,1,898,613,103,182,820..1001,716,897,182
+36,104,1,886,613,103,170,820..989,716,885,170
+48,104,1,874,613,103,158,820..977,716,873,158
+60,104,1,862,613,103,146,820..965,716,861,146

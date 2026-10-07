@@ -1,0 +1,84 @@
+{
+  "contract": "pte_pie_literature",
+  "channel": "ILITOTAL",
+  "channel_index": 4,
+  "definitions": {
+    "PTE": "abs(predicted peak week - observed peak week), in weeks",
+    "PIE": "abs(predicted peak intensity - observed peak intensity) / observed peak intensity, in percent"
+  },
+  "thresholds": {
+    "PTE_weeks": 1,
+    "PIE_percent": 25.0
+  },
+  "forbidden_and_absent": [
+    "Peak Hit Rate (0.70/0.75)",
+    "PTE <= 2 weeks",
+    "PIE <= 20 percent",
+    "plus/minus 2-week matching window",
+    "peak-aware early stopping / checkpoint gate",
+    "peak_hit_ratio gate or tie-breaker",
+    "weighted PTE/PIE champion score"
+  ],
+  "steps": {
+    "0": {
+      "step": 0,
+      "lead_weeks": 1,
+      "available": true,
+      "n_points": 146,
+      "observed_peak_index": 105,
+      "predicted_peak_index": 101,
+      "observed_peak_value": 111360.99920985755,
+      "predicted_peak_value": 82465.06108477432,
+      "PTE_weeks": 4.0,
+      "PIE_percent": 25.947987473270974,
+      "accurate_peak_timing": false,
+      "accurate_peak_intensity": false,
+      "literature_criterion_met": false
+    },
+    "1": {
+      "step": 1,
+      "lead_weeks": 2,
+      "available": true,
+      "n_points": 146,
+      "observed_peak_index": 104,
+      "predicted_peak_index": 101,
+      "observed_peak_value": 111360.99920985755,
+      "predicted_peak_value": 82461.5824479917,
+      "PTE_weeks": 3.0,
+      "PIE_percent": 25.951111221088702,
+      "accurate_peak_timing": false,
+      "accurate_peak_intensity": false,
+      "literature_criterion_met": false
+    },
+    "2": {
+      "step": 2,
+      "lead_weeks": 3,
+      "available": true,
+      "n_points": 146,
+      "observed_peak_index": 103,
+      "predicted_peak_index": 101,
+      "observed_peak_value": 111360.99920985755,
+      "predicted_peak_value": 83104.7418612903,
+      "PTE_weeks": 2.0,
+      "PIE_percent": 25.373566642769525,
+      "accurate_peak_timing": false,
+      "accurate_peak_intensity": false,
+      "literature_criterion_met": false
+    },
+    "3": {
+      "step": 3,
+      "lead_weeks": 4,
+      "available": true,
+      "n_points": 146,
+      "observed_peak_index": 102,
+      "predicted_peak_index": 101,
+      "observed_peak_value": 111360.99920985755,
+      "predicted_peak_value": 83469.38236306421,
+      "PTE_weeks": 1.0,
+      "PIE_percent": 25.046126601497303,
+      "accurate_peak_timing": true,
+      "accurate_peak_intensity": false,
+      "literature_criterion_met": false
+    }
+  }
+}

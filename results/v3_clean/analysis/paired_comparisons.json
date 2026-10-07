@@ -1,0 +1,54 @@
+{
+  "winner_vs_runner": {
+    "winner": "gpt2_miflu",
+    "runner_up": "nlinear",
+    "winner_mean": 0.7708721562796242,
+    "runner_mean": 1.0697672040053035,
+    "mean_diff": -0.2988950477256792,
+    "paired_t": -13.3288594825976,
+    "p_value": 3.1326018425874847e-07,
+    "cohens_d": -5.941752037938673,
+    "n_pairs": 10,
+    "note": "paired t-test on matched-seed average_MSE_4L (10 seeds)"
+  },
+  "non_llm_vs_llm_group": {
+    "non_llm_group_mean": 1.1424084130530545,
+    "llm_group_mean": 1.242572007069319,
+    "mean_diff_nonllm_minus_llm": -0.1001635940162644,
+    "paired_t": -11.150650706202088,
+    "p_value": 1.4353156617970728e-06,
+    "cohens_d": -5.332939612936375,
+    "n_pairs": 10,
+    "note": "matched-seed paired t-test: per-seed mean of 4 models' average_MSE_4L, Non-LLM vs LLM (10 seeds)"
+  },
+  "per_horizon_group_compare": {
+    "24": {
+      "non_llm_mean": 1.0479822426864858,
+      "llm_mean": 1.1623555564775512,
+      "mean_diff": -0.11437331379106541,
+      "paired_t": -9.144991949449086,
+      "p_value": 7.490271161424913e-06
+    },
+    "36": {
+      "non_llm_mean": 1.1250078005906363,
+      "llm_mean": 1.199221640319679,
+      "mean_diff": -0.07421383972904261,
+      "paired_t": -4.460285818504312,
+      "p_value": 0.0015766050404088295
+    },
+    "48": {
+      "non_llm_mean": 1.1686415731798117,
+      "llm_mean": 1.2753497366220297,
+      "mean_diff": -0.10670816344221801,
+      "paired_t": -6.128818601235573,
+      "p_value": 0.0001730944599405071
+    },
+    "60": {
+      "non_llm_mean": 1.2280020357552837,
+      "llm_mean": 1.3333610948580168,
+      "mean_diff": -0.10535905910273313,
+      "paired_t": -10.658342993307958,
+      "p_value": 2.0995791407731953e-06
+    }
+  }
+}

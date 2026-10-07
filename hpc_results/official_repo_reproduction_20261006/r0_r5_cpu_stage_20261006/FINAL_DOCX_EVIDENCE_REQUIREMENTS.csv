@@ -1,0 +1,11 @@
+evidence_item,source,current_status,what_is_required
+new MIFlu Wave-1 validation MSE,"the replacement experiment, Stage C",NOT_YET_RUN,GPU: replacement 2.60 GPU-h
+new MIFlu Test/Holdout MSE + CI,"the replacement experiment, Stage D",NOT_YET_RUN,same run - Test is scored once from the frozen checkpoints
+new MIFlu per-horizon MSE/MAE,the replacement predictions,NOT_YET_RUN,same run
+corrected paired tests,one scorer over all eight models,NOT_YET_RUN,CPU only - no GPU
+"the seven historical predictions, re-scored",results/v3_clean/test_eval/results/,AVAILABLE,CPU only - format conversion to the scorer schema
+new MIFlu GPU-hours and checkpoint size,the replacement job ledger,NOT_YET_RUN,same run
+updated workflow diagram,the new pipeline definition,AVAILABLE (definition),CPU only - figure regeneration
+the paper-reproduction verdict,PAPER_LEVEL_REPRODUCTION_VERDICT.md,AVAILABLE,none
+the R1-B pilot result,the R1-B pilot,NOT_YET_RUN,GPU: pilot 0.30 GPU-h
+the seasonal-naive correction statement,SEASONAL_NAIVE_LEAKAGE_IMPACT_AUDIT.md,AVAILABLE,none

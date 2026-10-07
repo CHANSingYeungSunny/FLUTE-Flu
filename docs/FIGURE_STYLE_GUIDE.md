@@ -15,7 +15,7 @@
   - 蓝色虚线：Ground Truth (ILITOTAL)；红色实线：MIFlu Prediction (ILITOTAL)。
   - 蓝色倒三角：真实峰值；红色正三角：预测峰值。
   - 背景按流感相位着色（Baseline / Ramp-up / Peak / Decay）。
-  - 右上角注释框：4 指标数值（Peak Hit / Timing / Peak Intensity / Direction）。
+  - 右上角注释框：2 指标数值（PTE / PIE），并同显匹配峰值计数（如 2/3）作为样本量限定语。
 - 标题示例：`MIFlu Full-Test Continuous Curve with Peaks & Phases (N=7, OT=num_patients)`。
 
 ## 图 2 — 诊断图 (Diagnostics, 2-panel)
@@ -35,15 +35,13 @@
 - 表格为**真实 Markdown 表格**（竖线分隔），但单元格内 **不含竖线 / 希腊字母**，
   避免渲染歧义。
 - 列：`Indicator | Value | Threshold | Verdict`。
-- 行：Peak Hit / Timing / Peak Intensity / Direction。
+- 行：PTE / PIE 两项（Peak Hit Rate 与 Direction 已于 2026-09 移除）。
 - `Verdict` 取值：`accurate` / `NOT accurate`（大写以醒目）。
 
 | Indicator | Value | Threshold | Verdict |
 |---|---|---|---|
-| Peak Hit | 0.xxx | 0.75 | accurate / NOT accurate |
-| Timing | x.xx | 2.00 | accurate / NOT accurate |
-| Peak Intensity | xx.x | 20.00 | accurate / NOT accurate |
-| Direction | 0.xx | 0.60 | accurate / NOT accurate |
+| PTE (wk) | x.xx | 2.00 | accurate / NOT accurate |
+| PIE (%) | xx.x | 20.00 | accurate / NOT accurate |
 
 ---
 

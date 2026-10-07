@@ -1,0 +1,167 @@
+# author_data_adapter.patch — UNAPPLIED (prepared 2026-09-24)
+#
+# Purpose: replace the single 1025-row assumption with explicit, immutable
+# dataset profiles so the SAME architecture can run on the author 966-row data
+# (track A) without touching the project 1025-row path (track B).
+#
+# This patch is DELIBERATELY NOT APPLIED. It is a proposal for review. Line
+# numbers may have drifted since the audit; validate with `git apply --check`
+# before applying, and re-run the verification commands at the bottom.
+#
+# It does NOT: delete the assertion, replace 1025 with 966 globally, or change
+# any architecture (text ordering, channels, head, LoRA, scaling). It only makes
+# dataset identity explicit.
+
+diff --git a/scripts/configs.py b/scripts/configs.py
+--- a/scripts/configs.py
++++ b/scripts/configs.py
+@@ # DATA PATHS + WINDOW PROFILE (replace hard-coded 1025)
+-RAW_DATA_PATH = os.path.join(DATA_DIR, "raw", "national_illness_raw.csv")
++RAW_DATA_PATH = os.path.join(DATA_DIR, "raw", "national_illness_raw.csv")
+ REGIONAL_DATA_PATH = os.path.join(DATA_DIR, "us_region_raw.csv")
++
++# Immutable dataset profiles. The 1025-row path is unchanged; author_966 is
++# additive. Hash must match before any run proceeds (see verify commands).
++DATA_PROFILES = {
++    "project_1025": {
++        "data_path": os.path.join(DATA_DIR, "raw", "national_illness_raw.csv"),
++        "sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
++        "n_rows": 1025,
++        "split_rule": "project_70_10_20",   # train_end=717, val_end=819
++        "train_end": 717,
++        "val_end": 819,
++        "date_range_string": "between 2002 and 2021",
++    },
++    "author_966": {
++        "data_path": os.path.join(DATA_DIR, "raw",
++                                  "national_illness_raw_paper_exact.csv"),
++        "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
++        "n_rows": 966,
++        "split_rule": "author_676_97_193",  # num_vali = remainder
++        "train_end": 676,
++        "val_end": 773,
++        "date_range_string": "between 2002 and 2020",
++    },
++}
++
++def resolve_profile(name: str) -> dict:
++    """Return the immutable profile dict, or raise on an unknown name."""
++    if name not in DATA_PROFILES:
++        raise ValueError(f"unknown data profile {name!r}; "
++                         f"known={sorted(DATA_PROFILES)}")
++    return DATA_PROFILES[name]
+
+-# NON-NEGOTIABLE: full 1025-row window
++# (retained for backward compat; default profile is the project 1025 window)
+ FULL_ROWS = 1025
+ TRAIN_FRAC = 0.70
+ VAL_FRAC = 0.10
+ TRAIN_END = 717
+ VAL_END = 819
+@@
+-def assert_full_window(n_rows: int) -> int:
++def assert_full_window(n_rows: int, profile: str = "project_1025") -> int:
+     """Crash loudly if the CSV is not the complete 2002-2021 window.
+-
+-    The 966-row variant (COVID tail trimmed) would silently shrink the test
+-    split and remove the very distribution shift the paper studies.
++
++    The `project_1025` profile still refuses a truncated dataset; the
++    `author_966` profile instead requires exactly 966 rows (the author vintage)
++    so track-A and track-B can never be silently conflated.
+     """
+     n_rows = int(n_rows)
+-    if n_rows != FULL_ROWS:
++    expect = resolve_profile(profile)["n_rows"]
++    if n_rows != expect:
+         raise ValueError(
+-            f"expected the FULL {FULL_ROWS}-row window (2002-2021) but got "
+-            f"{n_rows} rows. Refusing to run on a truncated dataset.")
++            f"profile {profile!r} expects {expect} rows but got {n_rows}.")
+     return n_rows
+@@
+-def derive_split(n_rows: int) -> tuple[int, int]:
++def derive_split(n_rows: int, profile: str = "project_1025") -> tuple[int, int]:
+     """Recompute (train_end, val_end) and ASSERT they match the profile.
+-
+-    Reproduces the historical convention exactly:
+-        train_end = int(n * 0.70)
+-        val_end   = train_end + int(n * 0.10)
++
++    project_1025 uses the historical 70/10/20 convention; author_966 uses the
++    author's num_vali=remainder convention (676/97/193).
+     """
+-    n_rows = int(n_rows)
+-    train_end = int(n_rows * TRAIN_FRAC)
+-    val_end = train_end + int(n_rows * VAL_FRAC)
+-    if (train_end, val_end) != (TRAIN_END, VAL_END):
++    p = resolve_profile(profile)
++    if p["split_rule"] == "author_676_97_193":
++        train_end = int(n_rows * TRAIN_FRAC)          # 676
++        test_n = int(n_rows * 0.20)                   # 193
++        val_end = n_rows - test_n                     # 773
++    else:
++        train_end = int(n_rows * TRAIN_FRAC)
++        val_end = train_end + int(n_rows * VAL_FRAC)
++    if (train_end, val_end) != (p["train_end"], p["val_end"]):
+         raise ValueError(
+             f"split drift: got train_end={train_end}, val_end={val_end} but the "
+-            f"published split is {TRAIN_END}/{VAL_END} (n={n_rows}).")
++            f"profile {profile!r} split is {p['train_end']}/{p['val_end']}.")
+     return train_end, val_end
+
+diff --git a/scripts/textual_embedder.py b/scripts/textual_embedder.py
+--- a/scripts/textual_embedder.py
++++ b/scripts/textual_embedder.py
+@@ # date-range string must follow the profile, not be hard-coded
+-    "of the United States between 2002 and 2021.\n"
++    "of the United States between 2002 and 2021.\n"   # project_1025 default
+@@
+-def build_prompt(train_df, T, L):
++def build_prompt(train_df, T, L, date_range_string: str = "between 2002 and 2021"):
+     ...
+-    # any literal "between 2002 and 2021" in the template becomes date_range_string
++    # replace the hard-coded span with date_range_string from resolve_profile()
+
+diff --git a/scripts/train_miflu.py b/scripts/train_miflu.py
+--- a/scripts/train_miflu.py
++++ b/scripts/train_miflu.py
+@@ # add --profile and thread it into load + split + export/ckpt dirs
+     ap.add_argument("--profile", default="project_1025",
+-                    choices=sorted(configs.DATA_PROFILES),
++                    choices=sorted(configs.DATA_PROFILES),
+                     help="dataset profile (project_1025 or author_966)")
+@@
+-    data = df[VAR_COLS].values.astype(np.float32)
+-    n = assert_full_window(len(data))
+-    t_end, v_end = derive_split(n)
++    data = df[VAR_COLS].values.astype(np.float32)
++    n = assert_full_window(len(data), args.profile)
++    t_end, v_end = derive_split(n, args.profile)
++    # export/ckpt dirs default-scope by profile so track A and B never collide
+
+diff --git a/scripts/train_ablation.py b/scripts/train_ablation.py
+--- a/scripts/train_ablation.py
++++ b/scripts/train_ablation.py
+@@ # same --profile threading; no_multi stays a pure no-text variant
+-    n = assert_full_window(len(data))          # guard: no 966-row truncation
+-    t_end, v_end = derive_split(n)             # guard: split is exactly 717/819
++    n = assert_full_window(len(data), args.profile)
++    t_end, v_end = derive_split(n, args.profile)
+
+# --- NEW runners (author the source separately; contract below) ---
+# scripts/train_nlinear_966.py : NLinear on the author_966 profile under the
+#   train_miflu protocol (same scaler, windows, val-MSE selection). Thin wrapper
+#   over scripts/innovation/backbones/dlinear.py::NLinear. 12 fits.
+# scripts/train_naive_966.py  : last_value_naive + seasonal_naive (lag-52 by
+#   ROW) on the author_966 profile. Deterministic. 8 evals.
+
+# --- verification commands (run after applying) ---
+#   git apply --check recovery/stage3/author_data_adapter.patch
+#   python -c "import hashlib,sys; sys.path.insert(0,'scripts'); import configs as c; \
+#     for k,p in c.DATA_PROFILES.items(): \
+#       h=hashlib.sha256(open(p['data_path'],'rb').read()).hexdigest(); \
+#       assert h==p['sha256'], (k,h,p['sha256']); print('profile OK',k)"
+#   python -c "import sys; sys.path.insert(0,'scripts'); from configs import derive_split; \
+#     assert derive_split(966,'author_966')==(676,773); assert derive_split(1025)=='...'"
+#   python recovery/stage3/gap_consequence_check.py   # profile isolation + calendar

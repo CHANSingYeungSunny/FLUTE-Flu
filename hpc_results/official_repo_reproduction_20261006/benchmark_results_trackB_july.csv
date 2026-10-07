@@ -1,0 +1,9 @@
+track,model,group,MSE_L24,MSE_L36,MSE_L48,MSE_L60,average_MSE_4L,n_seeds_per_L,comparable_to_track_A,rank
+B_july2026_1025rows,gpt2_miflu,LLM,0.732442,0.778165,0.759819,0.813062,0.770872,10,"NO - different data vintage, different seed count",1
+B_july2026_1025rows,nlinear,non-LLM,0.979123,1.049039,1.100764,1.150142,1.069767,10,"NO - different data vintage, different seed count",2
+B_july2026_1025rows,patchtst,non-LLM,1.000711,1.071792,1.076758,1.154544,1.075951,10,"NO - different data vintage, different seed count",3
+B_july2026_1025rows,dlinear,non-LLM,1.065074,1.142838,1.203691,1.272130,1.170933,10,"NO - different data vintage, different seed count",4
+B_july2026_1025rows,timecma_llm,LLM,1.074038,1.140172,1.230192,1.281393,1.181449,10,"NO - different data vintage, different seed count",5
+B_july2026_1025rows,itransformer,non-LLM,1.147021,1.236362,1.293353,1.335193,1.252982,10,"NO - different data vintage, different seed count",6
+B_july2026_1025rows,qwen_time_llm,LLM,1.198515,1.142637,1.324469,1.346762,1.253096,10,"NO - different data vintage, different seed count",7
+B_july2026_1025rows,calf_llm,LLM,1.644427,1.735912,1.786919,1.892227,1.764871,10,"NO - different data vintage, different seed count",8

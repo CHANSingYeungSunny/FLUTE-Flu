@@ -1,0 +1,509 @@
+{
+  "recovery_date": "2026-09-24",
+  "environment": {
+    "python": "3.9.0",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.25.0",
+    "pandas": "2.2.3",
+    "numpy": "1.26.4",
+    "platform": "Windows-10-10.0.26100-SP0",
+    "note": "local CPU environment; HPC env per .codebuddy/memory: py3.9, torch 2.5.1, transformers 4.57.6, conda env mlflu_hpc"
+  },
+  "project_repository": {
+    "remote": "https://github.com/CHANSingYeungSunny/FLUTE-Flu.git",
+    "head_sha256": "1f6563f7ea52620354a4fa0666b813b6a9f9cc51",
+    "branch": "main"
+  },
+  "author_repository": {
+    "remote": "https://github.com/Jmoon3108/MIFlu.git",
+    "pinned_commit": "6ed210150b8819313947cf607eb1821c87b1bee3",
+    "local_checkout": "recovery/author_repo/"
+  },
+  "data_artifacts": {
+    "author_processed": {
+      "path": "recovery/author_repo/dataset/illness/national_illness.csv",
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+      "n_rows": 966,
+      "header": "date,1,2,3,4,5,6,OT"
+    },
+    "author_orig": {
+      "path": "recovery/author_repo/dataset/illness/national_illness_orig.csv",
+      "sha256": "8594cecb98c6f2f9dc014eca11c4d5d1e38ad5ce6ed0592d4abe65b146fce395",
+      "n_rows": 966,
+      "header": "date,% WEIGHTED ILI,%UNWEIGHTED ILI,AGE 0-4,AGE 5-24,ILITOTAL,NUM. OF PROVIDERS,OT"
+    },
+    "project_raw": {
+      "path": "data/raw/national_illness_raw.csv",
+      "sha256": "c2b983af2bf38614",
+      "n_rows": 1025,
+      "birth": "2026-07-15 23:27:42",
+      "modified": "2026-07-18 19:24:52",
+      "header": "epiweek,release_date,% WEIGHTED ILI,% UNWEIGHTED ILI,AGE 0-4,AGE 5-24,ILITOTAL,NUM. OF PROVIDERS,OT"
+    },
+    "paper_exact": {
+      "path": "data/raw/national_illness_raw_paper_exact.csv",
+      "sha256": "31ffc1693de205ca",
+      "n_rows": 966,
+      "created": "2026-08-28 19:20:06",
+      "note": "author data reformatted into project schema; epiweek column derived (value-verified)"
+    }
+  },
+  "key_findings": {
+    "author_rows": 966,
+    "author_parsed_identity": "0 diffs",
+    "author_date_labels": "synthetic 7-day index 2002-01-01..2020-06-30",
+    "author_true_span_mmwr": "200240..202113 (2002-09-29 .. 2021-03-28)",
+    "project_rows": 1025,
+    "project_span_mmwr": "200201..202152 with 19-week hole 2002w21..w39",
+    "overlap": 966,
+    "revised_weeks_weighted_ili": 72,
+    "first_revised_epiweek": 201640,
+    "ot_denominator_max_resid": 5e-06
+  },
+  "stage2_implementation_findings": {
+    "author_text_path": "inert (multimodal default 0; [htime||htext] + prefix retained under causal attention)",
+    "author_test_feature_coverage": "feature 0 (weighted ILI) only",
+    "author_test_usage": "evaluated every epoch, best selected by Test MSE, no clean restore",
+    "author_freeze": "no-op (gpt2 branch never sets requires_grad=False)",
+    "author_peft": "0 (full fine-tune despite lora filename)",
+    "author_train_epochs_default": 1,
+    "author_prompt": "placeholder 'Text from users'",
+    "smoke_text_visibility_max_diff": 0.0,
+    "project_miflu_vs_author": "corrected reconstruction, joint 7-channel output, proper LoRA+freeze, validation-based selection, 20 epochs, 10 reps",
+    "project_ran_966row_reproduction": true,
+    "project_ran_966row_detail": "job 514859 (TSLib official 966 rows) L24 MSE_All 2.238 and control966 (snapshot head-truncated 966) L24 1.379 — both via the project's CORRECTED MIFlu (scripts/train_miflu.py), NOT the author released code",
+    "project_ran_1025row_paper_protocol": true,
+    "project_ran_1025row_detail": "8-17 four-horizon paper-window run (2002-2021, 1025 rows): MSE_All 2.593/3.341/3.237/3.559 (1.7-2.6x paper); see hpc_results/paper_exact/REPLICATION_VERDICT.md",
+    "project_never_replayed_A0": true,
+    "project_never_replayed_A0_detail": "A0 = released author code verbatim (main_ILI_lora.py) remains UNRUN; this is the sole genuinely-undone provenance leg"
+  },
+  "stage3_preparation": {
+    "status": "PREPARED (no GPU/training/Test evaluation launched)",
+    "calendar_gap_corrected": "exactly ONE real gap (2002 w21-39, 19 weeks, row 20); 20 train origins' lookback inflated to ~123 weeks; 0 target/lead/seasonal-naive crossings; author 966 dense (0 gaps)",
+    "run_matrix_rows": 45,
+    "run_matrix_breakdown": "A0=1, A2-MIFlu=12, A2-NOTEXT=12, A2-NLIN=12, A2-LV=4, A2-SN=4",
+    "seeds_frozen_subset": [
+      42,
+      43,
+      44
+    ],
+    "selection_metric": "average_MSE_4L (7-var full-horizon z-space)",
+    "deliverables": [
+      "recovery/stage3/stage3_rerun_spec.md",
+      "recovery/stage3/run_matrix.csv",
+      "recovery/stage3/commands.md",
+      "recovery/stage3/configs/author_966_profile.json",
+      "recovery/stage3/configs/a2_frozen_protocol.json",
+      "recovery/stage3/configs/a2_new_runners.json",
+      "recovery/stage3/author_data_adapter.patch",
+      "recovery/stage3/resource_estimate.md",
+      "recovery/stage3/supervisor_brief.md",
+      "recovery/stage3/gap_consequence_check.py"
+    ],
+    "blocking_decisions": [
+      "D-adapter",
+      "D-nlinear",
+      "D-a0-env",
+      "D-split",
+      "D-target",
+      "D-scope",
+      "D-compute",
+      "D-holdout",
+      "D-naming"
+    ]
+  },
+  "stage4_implementation": {
+    "status": "READY_FOR_AUTHORIZED_LAUNCH",
+    "date": "2026-09-24",
+    "note": "implementation + CPU preflight complete; no GPU job, training, or Test evaluation launched",
+    "adapter_applied": "implemented directly (illustrative author_data_adapter.patch did not git-apply); hash-pinned profiles project_1025/author_966; 1025-row guard preserved for default profile",
+    "code_changed": [
+      "scripts/configs.py (DATA_PROFILES + resolve_profile/split_for_profile/verify_profile_hash)",
+      "scripts/textual_embedder.py (date_range_string param)",
+      "scripts/train_miflu.py (--profile, split_for_profile, scaler+calendar per profile)",
+      "scripts/train_ablation.py (--profile, same threading)",
+      "scripts/train_nlinear_966.py (NEW thin NLinear runner)",
+      "scripts/train_naive_966.py (NEW deterministic naive runner)"
+    ],
+    "config_hashes_after": {
+      "configs.py": "06eb39cd55df0bb8",
+      "textual_embedder.py": "13b51b34f6253d0b",
+      "train_miflu.py": "7839514a3e1d8ac0",
+      "train_ablation.py": "a0578d2608c8ad2a",
+      "train_nlinear_966.py": "46c855c63af1a41e",
+      "train_naive_966.py": "434857f812deceff"
+    },
+    "preflight": "CPU-only, all PASS (configs self-check, profile isolation, split boundaries, train-only scaler, NLinear equivalence err 0.0e+00, naive future-leak guard leads 0..59, clamped=0); text-tensor sensitivity check BLOCKED (needs GPT-2 cache)",
+    "reuse_map": "recovery/stage4/reuse_map.csv — 44 NEW_FIT + 1 BLOCKED (A0); job 514859/control966/8-17 are data-leg landmarks, not A2 matches (split 676/96/194 + 10-rep + fixed-20-epoch vs proposed 676/97/193 + 3-seed + val-selection)",
+    "reduced_matrix_rows": 44,
+    "deliverables": [
+      "recovery/stage4/adapter.diff",
+      "recovery/stage4/applied_code_diff.md",
+      "recovery/stage4/preflight_report.md",
+      "recovery/stage4/reuse_map.csv",
+      "recovery/stage4/reduced_run_matrix.csv",
+      "recovery/stage4/commands.md",
+      "recovery/stage4/launch_decisions.md",
+      "recovery/stage4/build_reuse_map.py"
+    ],
+    "remaining_decisions": [
+      "D-split",
+      "D-target",
+      "D-compute",
+      "D-holdout",
+      "D-a0-env"
+    ],
+    "resolved_decisions": [
+      "D-adapter",
+      "D-nlinear"
+    ]
+  },
+  "stage5_preparation": {
+    "status": "PREPARED_PREFLIGHT_READY",
+    "date": "2026-09-24",
+    "note": "classification fixed, protocol frozen, window-containment fix applied and verified on CPU; no GPU job, no training, no Test scoring",
+    "matrix": {
+      "rows": 44,
+      "new_fit": 36,
+      "new_eval": 8,
+      "a0_blocked": 1
+    },
+    "recorded_decisions": [
+      "D-split=676/97/193",
+      "D-target=average_MSE_4L",
+      "D-windows=strict target containment",
+      "D-holdout=retrospective only"
+    ],
+    "open_decisions": [
+      "D-compute",
+      "D-a0-env"
+    ],
+    "code_change": "scripts/{train_miflu,train_ablation,train_nlinear_966}.py: --containment {start,strict}; default 'start' preserves legacy behaviour, A2 uses 'strict'",
+    "window_counts_author_966_strict": {
+      "24": [
+        549,
+        74,
+        170
+      ],
+      "36": [
+        537,
+        62,
+        158
+      ],
+      "48": [
+        525,
+        50,
+        146
+      ],
+      "60": [
+        513,
+        38,
+        134
+      ]
+    },
+    "deliverables": [
+      "recovery/stage5/frozen_protocol_stage5.md",
+      "recovery/stage5/final_run_matrix.csv",
+      "recovery/stage5/a0_diagnostic_record.csv",
+      "recovery/stage5/hashes_stage5.json",
+      "recovery/stage5/window_counts_verify.md",
+      "recovery/stage5/preflight_compute_node.py",
+      "recovery/stage5/preflight_sbatch.sh",
+      "recovery/stage5/launch_commands.md",
+      "recovery/stage5/launch_decisions_stage5.md",
+      "recovery/stage5/results_report_zh.md",
+      "recovery/stage5/supervisor_brief_zh.md"
+    ]
+  },
+  "stage5_execution_a2": {
+    "status": "A2_COMPLETE / REPORTED",
+    "window_utc": "2026-09-25T00:28:39Z .. 2026-09-25T16:17:09Z",
+    "note": "A2 executed under an explicit user authorization (cumulative 2 GPU-hour cap for the whole round, not per conversation). A0 remains BLOCKED and was NOT run.",
+    "authorization": {
+      "granted_by": "user (this round)",
+      "scope": "36 learned fits + 8 deterministic baseline evaluations + unified Test scoring + verification + Chinese report",
+      "gpu_hour_cap_cumulative": 2.0,
+      "hardware": "stingy partition, 1x A100 (never bare --gres=gpu:1), existing mlflu_hpc env, local GPT-2 cache",
+      "concurrency": "max 1 running + 1 pending",
+      "not_supervisor_approved": true
+    },
+    "preflight": {
+      "job": 584886,
+      "result": "PASS",
+      "detail": "A100-SXM4-80GB; Python 3.9.25; torch 2.5.1; local GPT-2; output (4,7,24); trainable 1,030,056 / frozen 81,106,176; LoRA present; checkpoint round-trip tensor-identical; text swap changes output by ~1.6e-3; peak VRAM ~1.43 GB",
+      "earlier_attempts": "584875, 584876, 584877, 584884 FAILED; 584878 OUT_OF_MEMORY at the default 1024 MB HOST memory (not A100 VRAM) — fixed with --mem=16G",
+      "deploy_verify_job": 584888
+    },
+    "fits": {
+      "planned": 36,
+      "completed": 36,
+      "miflu": {"jobs": [585794, 585798, 585802, 585813], "note": "585555/585581 were earlier same-config runs superseded by 585794/585798; only the latter are reported"},
+      "notext": {"jobs": [585821, 585823, 585825, 585827, 585865, 585874, 585875, 585876], "note": "first four trained seed 42 successfully but exited 1 in the DEFER_TEST summary (TypeError on None); 585843-585846 reported COMPLETED but were EMPTY (resume guard keyed on (L,rep) and read a non-existent column test_mse_all, so seeds 43/44 were silently skipped); after fixing the guard to (L,rep,seed) + per-seed checkpoint existence, only the 8 missing fits were re-run and seed 42 was reused unchanged"},
+      "nlinear": {"jobs": [585828, 585830, 585832, 585833]},
+      "baselines": {"job": 585836, "records": 8}
+    },
+    "test_isolation": {
+      "learned_fits_ran_with": "DEFER_TEST=1 (Test evaluation and prediction export explicitly skipped, logged per run)",
+      "checkpoint_lock_written_utc": "2026-09-25T16:13:29Z",
+      "lock_contents": "36/36 fits: path, bytes, mtime, full SHA-256, validation-selection value, best epoch (where recorded)",
+      "first_lock_copy": "CHECKPOINT_LOCK_first_20260925T161329Z.json",
+      "test_inference": "performed only after the lock, in the same job, by one entry (scripts/score_test_stage5.py) for all 44 records",
+      "no_new_holdout_opened": true
+    },
+    "scoring": {
+      "job": 585883,
+      "first_attempt_job": 585878,
+      "first_attempt_failure": "AttributeError: 'NLinear' object has no attribute 'device' (raised after the lock step); fixed by passing the device explicitly; metric path unchanged",
+      "records": 44,
+      "files": ["score_matrix.csv", "score_summary.csv", "average_mse_4L.csv", "predictions/pred_<model>_L<L>_s<seed>.npz", "predictions/test_manifest.csv", "predictions/scaler_train_only.json"]
+    },
+    "verification": {
+      "script": "recovery/stage5/recompute_from_artifacts.py",
+      "method": "reads only the prediction NPZs, the Test-origin manifest and the train-only scaler; imports NO training/scoring model code; recomputes mse_all per (model,L,seed) and average_MSE_4L",
+      "checks": ["44 artefacts present", "variable order matches scaler", "every Test target block lies wholly inside [773,966)", "per-L Test origin count equals the frozen 170/158/146/134", "per-cell agreement with score_matrix.csv"],
+      "max_abs_diff_mse_all": 4.44e-16,
+      "max_abs_diff_average_mse_4L": 4.44e-16,
+      "result": "PASS",
+      "self_test": "recovery/stage5/_selftest_recompute.py — synthetic positive case passes; a deliberately corrupted prediction is correctly rejected"
+    },
+    "results": {
+      "primary_metric": "average_MSE_4L (7-variable standardized Test MSE; mean over seeds within L, then equal-weight mean over L)",
+      "average_MSE_4L": {
+        "notext": 1.9221576750278473,
+        "miflu": 2.0415193835894265,
+        "nlinear": 2.0495495200157166,
+        "seasonal_naive": 2.2687992453575134,
+        "last_value_naive": 7.165831208229065
+      },
+      "paired_seed_differences_mse_all": {
+        "miflu_minus_notext": {"mean": 0.1194, "sd": 0.2748, "per_L": {"24": 0.4643, "36": 0.1092, "48": -0.0224, "60": -0.0737}, "sign_flips_across_L": true},
+        "miflu_minus_nlinear": {"mean": -0.0080, "sd": 0.2640, "per_L": {"24": 0.3431, "36": -0.0917, "48": -0.2355, "60": -0.0480}, "sign_flips_across_L": true},
+        "notext_minus_nlinear": {"mean": -0.1274, "sd": 0.1934, "per_L": {"24": -0.1212, "36": -0.2009, "48": -0.2132, "60": 0.0257}, "sign_flips_across_L": true}
+      },
+      "interpretation": "Under this protocol the text pathway shows no confirmed predictive benefit; removing text is best on the pre-specified primary metric, driven mainly by L=24. MIFlu and NLinear are not distinguishable at 3 seeds. Not statistically significant != equivalent.",
+      "three_seeds_caveat": "the 3 seeds describe optimisation randomness only; they are not time-generalisation uncertainty nor replication",
+      "scope": "corrected-reconstruction retrospective control experiment on author 966-row data; NOT a reproduction of the paper (A0 unrun) and NOT a new independent generalisation Test"
+    },
+    "protocol_deviations": [
+      "window containment corrected to strict (target block wholly inside its split); the historical target-start rule let L=60 validation targets enter Test, contaminating checkpoint selection",
+      "naive-baseline Test numbers were produced (job 585836, 2026-09-25T15:19Z) before no-text seeds 43/44 were fitted (15:30-15:32Z), so not the protocol's literal order; no learned-model Test number existed at that time, and the unified scoring job recomputed all 8 baselines after the full lock with digit-identical values, so the reported baseline values postdate the lock",
+      "scoring job 585878 failed after locking; fixed minimally and rerun as 585883",
+      "best_epoch not recoverable for no-text (per-seed stdout truncated by the job wrapper's tail -40) or NLinear (never recorded); the selection quantity best_val is present and locked for all 36. A recovery attempt that mis-attributed seeds was DISCARDED rather than published",
+      "5 failed jobs, 4 empty runs, 1 superseded MIFlu pair; all costs charged to the budget",
+      "A0 not executed; no new holdout opened; no compute run on the login node"
+    ],
+    "gpu_accounting": {
+      "cap_gpu_hours": 2.0,
+      "used_gpu_hours": 1.1536,
+      "gpu_seconds": 4153,
+      "remaining_gpu_hours": 0.8464,
+      "method": "sacct -X (top-level jobs only, no .batch/.extern double counting); every job allocated gres/gpu=1 (A100) on stingy; 38 jobs since 2026-09-25T00:28:39Z",
+      "breakdown": {"preflight": 0.0297, "verify": 0.0014, "fit": 1.1019, "scoring": 0.0206},
+      "superseded_but_charged_gpu_hours": 0.44
+    },
+    "artefacts": {
+      "local": "hpc_results/stage5_a2/ (123 files, SHA-256 manifest verified on transfer: 122/123, the 123rd being the manifest itself)",
+      "remote_durable": "/home/sychan552/stage5_a2_durable/",
+      "remote_scratch": "/scratch/sychan552/a2_stage5/results/stage5/ (checkpoints 5.0 GB remain here; 10-day grace; SHA-256 locked)"
+    },
+    "executed_code_hashes": "recovery/stage5/hashes_stage5_executed.json (supersedes hashes_stage5.json, which predates the DEFER_TEST / per-seed-checkpoint / strict-containment wiring; the historical file is kept unchanged)",
+    "reports": [
+      "recovery/stage5/results_report_zh.md",
+      "recovery/stage5/supervisor_brief_zh.md",
+      "recovery/stage5/results_tables_zh.md",
+      "recovery/stage5/execution_ledger.md"
+    ],
+    "open_decisions": [
+      "D-a0-env (A0 replay) — still unauthorized",
+      "whether to enlarge the seed count with a pre-registered statistical plan",
+      "whether to seal a genuinely unseen future interval for a generalization claim",
+      "whether to extend beyond the three models compared here"
+    ]
+  },
+  "stage6_a0_a1_eight_model": {
+    "status": "CPU-COMPLETE / GPU-PENDING-QUOTA",
+    "date": "2026-09-26",
+    "new_gpu_hours_used": 0.0,
+    "new_gpu_note": "every Stage-6 and A0 job was submitted to stingy WITHOUT a --gres request; sacct shows no gres/gpu in AllocTRES. A2's 1.1536/2.0 was NOT touched and its 0.8464 balance was deliberately not spent on these new projects.",
+    "phase0_preservation": {
+      "status": "DONE",
+      "job": 586934,
+      "job_type": "CPU-only (cpu=2,mem=8G, no gres/gpu)",
+      "action": "copied all 36 locked A2 checkpoints from scratch to the persistent home location",
+      "verify": "ok=36 sha_fail=0 missing=0 of 36, against CHECKPOINT_LOCK_first_20260925T161329Z.json (written 16:13:29Z, before any Test inference)",
+      "reverified_by": "recovery/stage6/publish_stage6.sh (ok=36 sha_fail=0 missing=0)",
+      "location": "/home/sychan552/stage5_a2_durable/checkpoints/ (7.4 GB incl. local copy)",
+      "manifest": "CHECKPOINT_ARCHIVE_SHA256SUMS.txt",
+      "originals_kept": true
+    },
+    "a0_released_code_diagnostic": {
+      "status": "CPU-COMPLETE (decisive); GPU minimal diagnostic PENDING-QUOTA",
+      "author_commit": "6ed210150b8819313947cf607eb1821c87b1bee3",
+      "jobs": {"cpu_audit": 586942, "blockers": 586945, "embed_recovery": 586947,
+               "exec_proof_final": 587002},
+      "import_blockers_found": [
+        "einops not installed (pure-python; only 3 rearrange patterns are used)",
+        "embed.py absent from the released tree; only __pycache__/embed.cpython-39.pyc survives, which Python 3 cannot import. All 8 classes recovered from the author's own bytecode.",
+        "peft 0.17.1 removed prepare_model_for_int8_training"
+      ],
+      "compatibility_layer": "recovery/a0/a0_compat.py, placed in a separate sys.path directory; the author's tree is byte-for-byte unmodified. DataEmbedding/DataEmbedding_wo_time are imported but NEVER used (the real projection is nn.Linear(24,768)), and prepare_model_for_int8_training appears only inside a comment, so both shims are provably non-behavioural.",
+      "executed_findings": {
+        "text_to_output_max_abs_diff_shuffled": 0.0,
+        "text_embedding_gradient_norm": 0.0,
+        "text_inert_mechanism": "text is concatenated AFTER the patch tokens (byte offset 5566), passed through GPT-2 (5746), then outputs[:, :patch_num] is kept (5835). Under causal attention an earlier position cannot attend to later positions, so the text outputs are discarded before readout.",
+        "gpt2_blocks_kept": "6 of 12",
+        "lora_applied": false,
+        "lora_reason": "PEFT defaults to 0, so the LoraConfig branch (lines 74-90) never runs; llmmodel is a plain GPT2Model",
+        "freeze_effective": false,
+        "trainable_parameters": 82705944,
+        "total_parameters": 82705944,
+        "trainable_fraction": 1.0,
+        "freeze_reason": "lines 58-61 only set requires_grad=True for names containing 'ln'/'wpe' and never set False, so GPT-2's default requires_grad=True survives -> full fine-tuning of the kept 6 blocks plus 39,383,808 embedding params",
+        "real_input_projection": "nn.Linear(24, 768)",
+        "real_head": "nn.Linear(32256, 24)",
+        "forward_shape": "(8, 104, 1) -> (8, 24, 1): per-feature only, never a joint 7-variable forecast",
+        "text_asset": "text_emb_label_0507_24.txt shape (317, 768); all four L present",
+        "test_feature_coverage": "train feat_id=[0..6], val=[0..6], test=[0] only; drop_last reduces 170 -> 160 scored examples",
+        "split": "num_train=676, num_vali=97, num_test=193 -- IDENTICAL to the A2 protocol",
+        "test_read_during_training": true,
+        "test_used_for_selection": true,
+        "selection_detail": "test() is called every epoch (line 211) and the lowest Test MSE sets min_mse and the saved state_dict (lines 225-227, 264)",
+        "early_stopping_live": false,
+        "early_stopping_detail": "EarlyStopping is constructed (line 161) but every call is commented out (lines 235-236)"
+      },
+      "gpu_pending": {"script": "recovery/a0/a0_gpu_minimal.sh", "jobs": 2,
+                      "estimate_gpu_h": 0.5,
+                      "content": "author code replayed verbatim with the author's argparse DEFAULTS (train_epochs=1, lr=1e-4, multimodal=0 then 1), pred_len=24, itr=1",
+                      "explicit_caveat": "whatever it prints is feature-0 Test only, selected by Test MSE, 1 epoch at lr 1e-4, and is therefore NOT comparable to the paper's Table V nor to A2"}
+    },
+    "a1_paper_config_numerics": {
+      "status": "COMPLETE",
+      "document": "recovery/a1/a1_evidence_table_zh.md",
+      "method": "four-column item-by-item table: paper claim (with line numbers) vs repo argparse default vs EXECUTED released-code behaviour vs the project's actual A2 configuration",
+      "headline": {
+        "paper_specifies_epochs": false,
+        "paper_specifies_learning_rate": false,
+        "paper_wording": "'Training epochs and learning rate were set empirically (vary by base model)' (L298)",
+        "three_incompatible_configurations": "paper: unspecified | released default: 1 epoch @ 1e-4 | project A2: 20 epochs @ 5e-4",
+        "split_agrees_with_author_code": true,
+        "split_note": "the author's own integer rule yields 676/97/193, identical to A2; the '676/96/194' in earlier project notes refers to old job 514859, not to this protocol",
+        "token_order_determinable": false,
+        "token_order_evidence": "the paper's own dimension annotations are mutually inconsistent: L205 says h_fuse has len(token)+num(patches) rows (text first) while L219 says h_forecast has num(patches)+len(token) rows (text last), and L225 removes h_forecast[len(token):] yet claims num(patches) rows remain. Neither ordering is self-consistent with the index used.",
+        "released_code_matches_prose_intent": "yes -- the code keeps the first patch_num rows, which matches L222's prose ('the token portion is discarded'). So the code is not simply 'wrong'; the paper's formula is what cannot be resolved.",
+        "consequence": "under either candidate ordering the text is either discarded outright or, if placed first, would need a different truncation. The published implementation is provably text-free (measured gradient exactly 0).",
+        "table_v_miflu_verified": {"L24": {"mse": 1.542, "mae": 0.726}, "L36": {"mse": 1.422, "mae": 0.779},
+                                  "L48": {"mse": 1.414, "mae": 0.757}, "L60": {"mse": 1.364, "mae": 0.719},
+                                  "equal_weight_mean_mse": 1.4355,
+                                  "source_lines": "MIFlu_paper.md L318-324",
+                                  "a2_measured_mean": 2.0415, "ratio": 1.42}
+      },
+      "unverifiable_and_why": [
+        "the authors' actual epochs / learning rate: the paper says 'set empirically' and gives no value; neither 1/1e-4 nor 20/5e-4 can be shown to be what the authors used",
+        "token order: the paper contradicts itself (see above)",
+        "the full prompt text: text_emb.ipynb uses a placeholder and the cache filename does not match what the loader expects",
+        "text-embedding generation parameters: tokenizer, model revision, max_len and generation settings are not shipped",
+        "the other 12 Table V models: the paper states the baselines are imported from prior literature and the repository contains no code for them",
+        "the variance across the paper's 10 repetitions: only the 10-run mean is published"
+      ]
+    },
+    "eight_model_comparison": {
+      "status": "CODE + MATRIX + COST READY; NOT SUBMITTED (needs quota)",
+      "protocol": "identical to A2: author_966 full-SHA-256 profile, 676/97/193, T=104, four L, 7 outputs, strict target containment, common valid origins, train-only scaler, per-(model,L,seed) validation-MSE selection, seeds 42/43/44, one scoring entry, average_MSE_4L",
+      "protocol_identity_proof": {
+        "job": 586942,
+        "statement": "train_backbone_966 imports build_windows / load_and_normalize / eval_mse from train_nlinear_966, so identity is by construction",
+        "same_objects": true,
+        "window_counts": {"24": [549, 74, 170], "36": [537, 62, 158],
+                          "48": [525, 50, 146], "60": [513, 38, 134]}
+      },
+      "models": {
+        "non_llm": ["nlinear", "dlinear", "patchtst", "itransformer"],
+        "llm": ["miflu", "qwen_time_llm", "calf_llm", "timecma_llm"],
+        "mechanism_control_not_counted_in_the_eight": ["notext"],
+        "baselines": ["last_value_naive", "seasonal_naive"],
+        "fidelity_labels": {
+          "nlinear": "re-implementation (Zeng et al., AAAI 2023)",
+          "dlinear": "re-implementation (Zeng et al., AAAI 2023)",
+          "patchtst": "PatchTST-INSPIRED: supervised, no RevIN, no self-supervised pretraining, reduced capacity. NOT canonical PatchTST; claiming that would need a separate implementation and budget.",
+          "itransformer": "re-implementation (Liu et al., ICLR 2024)",
+          "miflu": "corrected reconstruction (text path live, validation-selected)",
+          "qwen_time_llm": "Time-LLM-INSPIRED: frozen Qwen2.5-1.5B, patch prototype reprogramming, Prompt-as-Prefix",
+          "calf_llm": "CALF-INSPIRED: frozen GPT-2, parallel branches, two alignment losses",
+          "timecma_llm": "TimeCMA-INSPIRED: frozen GPT-2, retrieval alignment, last-token branch"
+        }
+      },
+      "reuse": {
+        "miflu_fits_reused": 12, "nlinear_fits_reused": 12, "notext_fits_reused": 12,
+        "baselines_reused": 8, "new_fits_required": 72,
+        "total_final_configuration_fits": 96,
+        "basis": "same runner, profile, containment, epochs, batch, seeds, per-seed validation selection and DEFER_TEST gate as A2; the A2 checkpoints are already SHA-256 locked and archived, and the lock step fails closed on any mismatch rather than silently refitting"
+      },
+      "backbone_verification": {
+        "job": 587011,
+        "all_six_forward_pass_ok": true,
+        "trainable_params": {"dlinear": 5040, "patchtst": 87256, "itransformer": 75672,
+                             "qwen_time_llm": 370376, "calf_llm": 1981608, "timecma_llm": 1391016},
+        "matches_b_track_exactly": true,
+        "why_it_matters": "identical trainable-parameter counts prove the implementations have not drifted since the B track, which is what makes the B-track timings a valid cost basis",
+        "qwen_asset_resolved": "/gpfs1/scratch/sychan552/v3_cache/models--Qwen--Qwen2.5-1.5B/snapshots/8faed761d45a263340a0528343f099c05c9a4323",
+        "qwen_loader_kwargs": {"local_files_only": true, "trust_remote_code": false}
+      },
+      "measured_cost": {
+        "source": "resource_usage.json train_seconds from 320 completed B-track runs (8 models x 4 L x 10 seeds); NOT extrapolated from MIFlu or NLinear",
+        "seconds_per_fit_mean": {"dlinear": 5.70, "patchtst": 8.38, "itransformer": 8.48,
+                                 "calf_llm": 20.18, "timecma_llm": 15.23, "qwen_time_llm": 338.68},
+        "x12_fits_seconds": {"dlinear": 68.4, "patchtst": 100.5, "itransformer": 101.7,
+                             "calf_llm": 242.1, "timecma_llm": 182.7, "qwen_time_llm": 4064.2},
+        "pure_training_gpu_h": 1.3221,
+        "cross_check": "the B-track gpt2_miflu mean is 147.3 s/fit while A2 measured ~156 s/seed, i.e. the same order, so the timing basis is sound",
+        "adjustments": ["author_966 has ~4% fewer training windows (x0.96)",
+                        "frozen backbone asset load: +120 s (4 Qwen jobs)",
+                        "window build + validation: x1.15",
+                        "unified scoring of 104 records: +150 s",
+                        "checkpoint lock of 96 files: +60 s",
+                        "failure/retry margin: x1.15"],
+        "total_estimate_gpu_h": 1.8,
+        "stop_rule": "dispatch.sh checks the consumed Stage-6 GPU-hours before every submission (BUDGET_GPU_H, default 1.8) and stops with the remaining matrix recorded"
+      },
+      "compute_request": {
+        "a0_gpu_h": 0.5, "eight_model_gpu_h": 1.8, "total_gpu_h": 2.3,
+        "jobs": 26, "fits": 74,
+        "splittable": true,
+        "if_only_1_0_gpu_h": "the five cheap models total only 0.193 GPU-h and would complete; Qwen alone is 1.13 GPU-h and is the only large block",
+        "ordering_if_approved": "dlinear -> patchtst -> itransformer -> calf_llm -> timecma_llm -> qwen_time_llm, so a budget stop still leaves a usable partial ranking"
+      },
+      "artefacts_ready": {
+        "runner": "scripts/train_backbone_966.py",
+        "scoring": "scripts/score_test_stage5.py --stage6 (one metric code path, same file as A2)",
+        "lock": "scripts/build_lock_stage5.py --template recovery/stage6/lock_templates.json",
+        "independent_recompute": "recovery/stage6/recompute_eight.py",
+        "dispatch": "recovery/stage6/dispatch.sh (armed, idle; refuses to submit without --run; owns an execution lock)",
+        "run_task": "recovery/stage6/run_task.sh",
+        "scoring_job": "recovery/stage6/score_all.sh",
+        "syntax_check": "all stage scripts pass bash -n (syntax_fail=0); all python entry points pass ast.parse",
+        "frozen_backbone_storage": "frozen text-backbone tensors are NOT stored in the .pth; their key set goes to a sibling .frozen_keys.json and the values are reconstructed from the pinned snapshot, keeping 72 checkpoints under ~2 GB"
+      },
+      "statistical_constraints_fixed_in_advance": [
+        "the three seeds describe optimisation randomness only; they are not independent influenza seasons and are not replication",
+        "no temporal-block uncertainty analysis: the Test is 193 weeks with overlapping trajectories and pandemic non-stationarity, so only descriptive conclusions are given",
+        "LLM vs non-LLM is a descriptive comparison of two pre-declared sets of four implementations, NOT a random sample of 'all LLMs' and carries no inferential claim",
+        "B-track 1,025-row numbers are not merged with the author-966 ranking",
+        "A2 outputs are preserved; Stage 6 writes to results/stage6/ and never overwrites"
+      ]
+    },
+    "compute_request_summary": {
+      "status": "BLOCKED -- no explicit authorization exists for A0's GPU run or the eight-model comparison",
+      "requested_once": {"a0_gpu_h": 0.5, "eight_model_gpu_h": 1.8, "total_gpu_h": 2.3},
+      "detail_document": "recovery/stage6/cost_and_matrix_zh.md",
+      "a2_balance_deliberately_untouched": 0.8464
+    },
+    "not_authorized_therefore_not_executed": [
+      "ten repetitions instead of three seeds",
+      "the 2x2 text/LoRA matrix (160 fits)",
+      "canonical PatchTST",
+      "regional / few-shot study",
+      "any new backbone, dataset or extra model"
+    ],
+    "track_c_status": "INCOMPLETE and currently impossible: no unseen interval exists, and an old interval must not be renamed to fabricate a holdout"
+  }
+}

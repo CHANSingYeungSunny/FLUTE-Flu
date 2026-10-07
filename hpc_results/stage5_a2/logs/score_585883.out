@@ -1,0 +1,216 @@
+[score] step 1/3 ??checkpoint lock  2026-09-25T16:16:20Z
+  locked A2-MIFlu-L24-S42  val=0.143928
+  locked A2-MIFlu-L24-S43  val=0.233649
+  locked A2-MIFlu-L24-S44  val=0.160335
+  locked A2-MIFlu-L36-S42  val=0.155700
+  locked A2-MIFlu-L36-S43  val=0.211426
+  locked A2-MIFlu-L36-S44  val=0.153218
+  locked A2-MIFlu-L48-S42  val=0.127559
+  locked A2-MIFlu-L48-S43  val=0.146552
+  locked A2-MIFlu-L48-S44  val=0.142406
+  locked A2-MIFlu-L60-S42  val=0.208807
+  locked A2-MIFlu-L60-S43  val=0.206988
+  locked A2-MIFlu-L60-S44  val=0.116390
+  locked A2-NOTEXT-L24-S42  val=0.199475
+  locked A2-NOTEXT-L24-S43  val=0.176302
+  locked A2-NOTEXT-L24-S44  val=0.181909
+  locked A2-NOTEXT-L36-S42  val=0.142340
+  locked A2-NOTEXT-L36-S43  val=0.190018
+  locked A2-NOTEXT-L36-S44  val=0.189779
+  locked A2-NOTEXT-L48-S42  val=0.163332
+  locked A2-NOTEXT-L48-S43  val=0.143865
+  locked A2-NOTEXT-L48-S44  val=0.139040
+  locked A2-NOTEXT-L60-S42  val=0.159653
+  locked A2-NOTEXT-L60-S43  val=0.146062
+  locked A2-NOTEXT-L60-S44  val=0.135202
+  locked A2-NLIN-L24-S42  val=0.279781
+  locked A2-NLIN-L24-S43  val=0.270808
+  locked A2-NLIN-L24-S44  val=0.271097
+  locked A2-NLIN-L36-S42  val=0.239018
+  locked A2-NLIN-L36-S43  val=0.242206
+  locked A2-NLIN-L36-S44  val=0.241417
+  locked A2-NLIN-L48-S42  val=0.228420
+  locked A2-NLIN-L48-S43  val=0.235613
+  locked A2-NLIN-L48-S44  val=0.233224
+  locked A2-NLIN-L60-S42  val=0.243080
+  locked A2-NLIN-L60-S43  val=0.246087
+  locked A2-NLIN-L60-S44  val=0.246873
+[LOCK] OK — 36/36 fits locked -> results/stage5/scoring/CHECKPOINT_LOCK.json
+[score] step 2/3 ??Test scoring  2026-09-25T16:16:30Z
+text embedder OK
+
+=== L=24: test=170 train=549 val=74 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  miflu    L=24 s=42: mse_all=2.469479 mse_ili=4.963915 pcc=0.6568
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  miflu    L=24 s=43: mse_all=2.503137 mse_ili=5.135067 pcc=0.6218
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  miflu    L=24 s=44: mse_all=2.359155 mse_ili=4.736243 pcc=0.6972
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  notext   L=24 s=42: mse_all=1.808458 mse_ili=3.360084 pcc=0.7680
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  notext   L=24 s=43: mse_all=2.080862 mse_ili=3.982037 pcc=0.7524
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  notext   L=24 s=44: mse_all=2.049465 mse_ili=3.992106 pcc=0.7102
+  nlinear  L=24 s=42: mse_all=2.085733 mse_ili=4.115793 pcc=0.6834
+  nlinear  L=24 s=43: mse_all=2.143380 mse_ili=4.220885 pcc=0.6761
+  nlinear  L=24 s=44: mse_all=2.073371 mse_ili=4.090590 pcc=0.6853
+  last_value_naive   L=24: mse_all=6.213324 mse_ili=13.445924 (clamped=0)
+  seasonal_naive     L=24: mse_all=2.563768 mse_ili=5.206944 (clamped=0)
+
+=== L=36: test=158 train=537 val=62 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  miflu    L=36 s=42: mse_all=1.842247 mse_ili=3.424821 pcc=0.7549
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  miflu    L=36 s=43: mse_all=1.827483 mse_ili=3.315277 pcc=0.7573
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  miflu    L=36 s=44: mse_all=2.138330 mse_ili=4.234924 pcc=0.7370
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  notext   L=36 s=42: mse_all=1.635370 mse_ili=2.996637 pcc=0.7974
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  notext   L=36 s=43: mse_all=1.945080 mse_ili=3.706895 pcc=0.7478
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  notext   L=36 s=44: mse_all=1.900075 mse_ili=3.632691 pcc=0.7748
+  nlinear  L=36 s=42: mse_all=2.042341 mse_ili=4.002784 pcc=0.7166
+  nlinear  L=36 s=43: mse_all=1.997609 mse_ili=3.914141 pcc=0.7246
+  nlinear  L=36 s=44: mse_all=2.043128 mse_ili=4.013764 pcc=0.7163
+  last_value_naive   L=36: mse_all=7.713823 mse_ili=16.743832 (clamped=0)
+  seasonal_naive     L=36: mse_all=2.265501 mse_ili=4.587251 (clamped=0)
+
+=== L=48: test=146 train=525 val=50 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  miflu    L=48 s=42: mse_all=1.709073 mse_ili=3.101493 pcc=0.8023
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  miflu    L=48 s=43: mse_all=1.688146 mse_ili=3.089813 pcc=0.8039
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  miflu    L=48 s=44: mse_all=1.905973 mse_ili=3.662225 pcc=0.7967
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  notext   L=48 s=42: mse_all=1.754535 mse_ili=3.197203 pcc=0.7856
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  notext   L=48 s=43: mse_all=1.785308 mse_ili=3.347189 pcc=0.7632
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  notext   L=48 s=44: mse_all=1.830428 mse_ili=3.345530 pcc=0.7680
+  nlinear  L=48 s=42: mse_all=2.027838 mse_ili=3.982940 pcc=0.7403
+  nlinear  L=48 s=43: mse_all=1.971039 mse_ili=3.858034 pcc=0.7453
+  nlinear  L=48 s=44: mse_all=2.010948 mse_ili=3.940816 pcc=0.7419
+  last_value_naive   L=48: mse_all=7.851274 mse_ili=17.054823 (clamped=0)
+  seasonal_naive     L=48: mse_all=2.142457 mse_ili=4.335677 (clamped=0)
+
+=== L=60: test=134 train=513 val=38 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  miflu    L=60 s=42: mse_all=2.172754 mse_ili=4.082270 pcc=0.7089
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  miflu    L=60 s=43: mse_all=1.903155 mse_ili=3.565514 pcc=0.7531
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  miflu    L=60 s=44: mse_all=1.979299 mse_ili=3.474557 pcc=0.7648
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=42: mse_all=2.349777 mse_ili=4.646273 pcc=0.6620
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=43: mse_all=2.177529 mse_ili=4.042934 pcc=0.7113
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=44: mse_all=1.749006 mse_ili=3.057714 pcc=0.7976
+  nlinear  L=60 s=42: mse_all=1.984557 mse_ili=3.904797 pcc=0.7760
+  nlinear  L=60 s=43: mse_all=2.223805 mse_ili=4.393778 pcc=0.7402
+  nlinear  L=60 s=44: mse_all=1.990846 mse_ili=3.933949 pcc=0.7787
+  last_value_naive   L=60: mse_all=6.884903 mse_ili=14.658813 (clamped=0)
+  seasonal_naive     L=60: mse_all=2.103470 mse_ili=4.284679 (clamped=0)
+
+artefacts: 6688 origin rows -> results/stage5/scoring/predictions/test_manifest.csv
+
+=== average_MSE_4L (7-var standardized MSE, mean seeds then mean L) ===
+  notext             1.922158
+  miflu              2.041519
+  nlinear            2.049550
+  seasonal_naive     2.268799
+  last_value_naive   7.165831
+
+DONE -> results/stage5/scoring/score_matrix.csv, score_summary.csv, average_mse_4L.csv
+[score] step 3/3 ??independent recomputation  2026-09-25T16:17:09Z
+[recompute] 44 prediction artefacts found in results/stage5/scoring/predictions
+[recompute] scaler fitted on train rows [0, 676) ONLY; vars=7; manifest rows=6688
+[recompute] max |mse_all diff| = 4.441e-16   max |mae_all diff| = 2.220e-16
+[recompute] coverage OK: 36 learned fits + 8 deterministic baselines
+
+=== average_MSE_4L recomputed from artefacts (7-var z-space MSE) ===
+  notext             1.922158
+  miflu              2.041519
+  nlinear            2.049550
+  seasonal_naive     2.268799
+  last_value_naive   7.165831
+
+[recompute] max |average_MSE_4L diff| vs scoring entry = 4.441e-16
+
+[recompute] PASS — primary metric independently reproduced from artefacts
+[score] done  2026-09-25T16:17:09Z

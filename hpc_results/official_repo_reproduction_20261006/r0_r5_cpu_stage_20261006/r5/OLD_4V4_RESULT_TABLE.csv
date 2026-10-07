@@ -1,0 +1,33 @@
+stage,model,side,MSE_L24,MSE_L36,MSE_L48,MSE_L60,average_MSE_4L,source_file
+wave1_validation_v3clean,gpt2_miflu,llm,0.7324420428409919,0.7781652358508216,0.7598191411721624,0.813062205254521,0.7708721562796242,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,nlinear,non_llm,0.9791234190262845,1.0490394758439423,1.1007642306107754,1.1501416905402109,1.0697672040053035,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,patchtst,non_llm,1.0007110003261401,1.0717919887809093,1.0767582310581658,1.1545437201682427,1.0759512350833647,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,dlinear,non_llm,1.065073982950354,1.1428375065433085,1.2036905834563998,1.2721301726915688,1.1709330614104076,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,timecma_llm,llm,1.0740384822443503,1.1401717317722742,1.2301921542913368,1.281393274984254,1.1814489108230537,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,itransformer,non_llm,1.1470205684431638,1.2363622311943852,1.2933532475939056,1.3351925596211127,1.2529821517131419,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,qwen_time_llm,llm,1.1985148730094421,1.1426372722444271,1.3244689552584796,1.3467616345816742,1.2530956837735059,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,calf_llm,llm,1.6444268278154204,1.7359123214111918,1.7869186957661392,1.8922272646116185,1.7648712774010924,results/v3_clean/analysis/primary_summary_statistics.csv; results/v3_clean/analysis/model_ranking.csv
+wave1_validation_v3clean,last_value_naive,baseline,2.821200197815767,3.422431571802754,3.167843944134935,2.8250886828401813,3.059141099148409,results/v3_clean/analysis/baseline_comparison.csv; results/v3_clean/analysis/wave1_analysis_dataset.jsonl
+wave1_validation_v3clean,seasonal_naive,baseline,0.7193443203456401,0.7324035803523475,0.7460317981833594,0.8849131254865326,0.77067320584172,results/v3_clean/analysis/baseline_comparison.csv; results/v3_clean/analysis/wave1_analysis_dataset.jsonl
+final_test_holdout_v3clean,nlinear,non_llm,2.3367132666279566,2.705398963783712,2.906783152223484,3.0068188756351164,2.7389285645675674,results/v3_clean/final/final_test_metrics.json; results/v3_clean/final/final_test_seed_level.csv
+final_test_holdout_v3clean,gpt2_miflu,llm,2.750168477767016,3.1819887122474655,3.1893589477065225,3.0806078495326417,3.0505309968134116,results/v3_clean/final/final_test_metrics.json; results/v3_clean/final/final_test_seed_level.csv
+final_test_holdout_v3clean,seasonal_naive,baseline,4.15798927008481,4.276900526578596,4.382714791147462,4.2991626232572315,4.279191802767025,results/v3_clean/final/final_test_metrics.json; results/v3_clean/test_eval/results/baseline__seasonal_naive__L*/metrics/paper_aligned_full_output_metrics.json
+a2_author966_stage5,miflu,llm,2.4439,1.9360,1.7677,2.0184,2.041519,recovery/stage5/results_tables_zh.md (T1,T5); hpc_results/stage5_a2/scoring/average_mse_4L.csv
+a2_author966_stage5,notext,control,1.9796,1.8268,1.7901,2.0921,1.922158,recovery/stage5/results_tables_zh.md (T1,T5); hpc_results/stage5_a2/scoring/average_mse_4L.csv
+a2_author966_stage5,nlinear,non_llm,2.1008,2.0277,2.0033,2.0664,2.049550,recovery/stage5/results_tables_zh.md (T1,T5); hpc_results/stage5_a2/scoring/average_mse_4L.csv
+a2_author966_stage5,last_value_naive,baseline,6.2133,7.7138,7.8513,6.8849,7.165831,recovery/stage5/results_tables_zh.md (T1,T5); hpc_results/stage5_a2/scoring/average_mse_4L.csv
+a2_author966_stage5,seasonal_naive,baseline,2.5638,2.2655,2.1425,2.1035,2.268799,recovery/stage5/results_tables_zh.md (T1,T5); hpc_results/stage5_a2/scoring/average_mse_4L.csv
+stage6_author966_8model,miflu,llm,2.4439,1.9360,1.7677,2.0184,2.041519,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,nlinear,non_llm,2.1008,2.0277,2.0033,2.0664,2.049550,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,dlinear,non_llm,2.2850,2.2780,2.3558,2.4726,2.347832,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,timecma_llm,llm,2.4541,2.6432,2.7203,2.8625,2.670009,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,patchtst,non_llm,3.8884,3.7766,3.9525,4.0643,3.920470,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,itransformer,non_llm,3.7511,3.9813,4.0343,4.1721,3.984699,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,qwen_time_llm,llm,4.6187,4.9957,5.6660,5.5978,5.219555,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,calf_llm,llm,5.2711,5.3431,5.6149,5.8321,5.515300,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,notext,control,1.9796,1.8268,1.7901,2.0921,1.922158,hpc_results/stage6/scoring/average_mse_4L.csv; recovery/stage6/results_report_zh.md (S3.1,S3.2)
+stage6_author966_8model,last_value_naive,baseline,6.2133,7.7138,7.8513,6.8849,7.165831,hpc_results/stage6/scoring/average_mse_4L.csv
+stage6_author966_8model,seasonal_naive,baseline,2.5638,2.2655,2.1425,2.1035,2.268799,hpc_results/stage6/scoring/average_mse_4L.csv
+innovation_v2_screening,gpt2_miflu,llm,5.676612100742723,6.198279986076343,5.791370836920883,6.62246669189921,6.07218240498479,results/innovation/final_audit/primary_zspace_summary.csv
+innovation_v2_screening,nlinear,non_llm,4.2966115430674865,4.972769617091877,5.4046294112872735,5.6084790940096045,5.070622416364061,results/innovation/final_audit/primary_zspace_summary.csv
+early_ili_july2026,gpt2_miflu (MIFlu own impl),llm,5.0559,6.8340,6.4049,7.0704,6.3413,results/ili/National_Table_V_summary.md (ILITOTAL MSE_ILI, 10 reps)

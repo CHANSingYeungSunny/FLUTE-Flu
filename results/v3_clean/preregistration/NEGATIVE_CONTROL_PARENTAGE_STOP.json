@@ -1,0 +1,54 @@
+{
+  "generated_utc": "2026-09-17T04:20:00Z",
+  "status": "STOP_PROTOCOL_REVIEW_REQUIRED",
+  "decision": "V3_ORIGINAL_MIFLU_PROTOCOL_REVIEW_REQUIRED",
+  "trigger": "frozen 30-row negative-control matrix contains parent rows whose scientific meaning cannot be recovered from the matrix alone",
+  "matrix_file": "results/v3_superseded_archive/preregistration/proposed_negative_control_matrix.csv",
+  "matrix_rows": 30,
+  "matrix_modified": false,
+  "frozen_parents_by_control": {
+    "zero_text": {
+      "n_rows": 12,
+      "parents": ["gpt2_miflu", "BEST_VALIDATION_LLM_AFTER_SCREENING"],
+      "horizons": ["24", "60"], "seeds": ["42", "43", "44"]
+    },
+    "shuffled_text": {
+      "n_rows": 12,
+      "parents": ["gpt2_miflu", "BEST_VALIDATION_LLM_AFTER_SCREENING"],
+      "horizons": ["24", "60"], "seeds": ["42", "43", "44"]
+    },
+    "llm_removed_or_alignment_only": {
+      "n_rows": 6,
+      "parents": ["BEST_VALIDATION_LLM_AFTER_SCREENING"],
+      "horizons": ["24", "60"], "seeds": ["42", "43", "44"]
+    }
+  },
+  "findings": [
+    "The matrix does NOT name Qwen explicitly. It uses the deferred placeholder parent BEST_VALIDATION_LLM_AFTER_SCREENING (12 of 30 rows; the entire llm_removed_or_alignment_only arm).",
+    "zero_text and shuffled_text each have 6 additional rows with parent gpt2_miflu. The current wiring applies those two controls only to calf_llm / timecma_llm / qwen_time_llm, so those 12 gpt2_miflu rows are UNSUPPORTED and would be silently dropped if execution proceeded.",
+    "Resolving BEST_VALIDATION_LLM_AFTER_SCREENING requires knowing which LLM won validation. Using the OLD v3 screening ranking is explicitly forbidden by the final protocol; a clean-v3 validation winner does not exist yet because no clean-v3 run has been submitted (0/598).",
+    "Therefore the original scientific meaning of the BEST_VALIDATION_LLM_AFTER_SCREENING rows cannot be determined without a new protocol decision, and per item 6 execution must stop."
+  ],
+  "what_was_not_done": {
+    "matrix_edited": false,
+    "control_rows_deleted_or_renamed": false,
+    "static_gate_run": false,
+    "source_version_created": false,
+    "specs_generated": 0,
+    "bundle_built": false,
+    "hpc_root_created": false,
+    "pre_execution_gate_submitted": false,
+    "controller_launched": false,
+    "formal_rows_submitted": 0,
+    "test_or_holdout_accessed": false,
+    "champion_frozen": false,
+    "hpc_jobs_this_turn": 0
+  },
+  "options_for_review": [
+    "A. Bind BEST_VALIDATION_LLM_AFTER_SCREENING AFTER the clean-v3 validation phase completes (i.e. controls run in a later, explicitly authorized stage) - no matrix edit needed.",
+    "B. Replace the placeholder with an explicit, preregistered parent list - requires a protocol amendment and a new frozen matrix version.",
+    "C. Drop the placeholder rows - EXPLICITLY FORBIDDEN: it would silently delete preregistered controls."
+  ],
+  "recommended": "A",
+  "note": "the frozen 598-row matrix was NOT modified; no control was deleted, renamed or reinterpreted to fit the implementation"
+}

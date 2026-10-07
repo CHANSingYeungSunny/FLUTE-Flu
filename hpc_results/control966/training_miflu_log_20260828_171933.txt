@@ -1,0 +1,64 @@
+[17:19:34] ============================================================
+[17:19:34]   MIFlu — FULL MULTIMODAL (text prompt + time-series)
+[17:19:34]   PAPER PROTOCOL (MIFlu_Complete_Extraction.md)
+[17:19:34] ============================================================
+[17:19:34]   Evaluation protocol: paper protocol (NOT L=52 walk-forward)
+[17:19:34]   Device: cuda (NVIDIA A100-SXM4-80GB)
+[17:19:34]   Config: T=104, L=[24] (each L trained INDEPENDENTLY)
+[17:19:34]           K=6, Lp=24, S=2, lora_r=4
+[17:19:34]           Split: static 70:10:20 (shuffle=False)
+[17:19:34]           Normalization: StandardScaler fit on TRAIN only
+[17:19:34]           batch=16, lr=0.0005, epochs=20, reps=1, seed=42
+[17:19:34] 
+[17:19:34] Data: 966 total | Train=676 | Val=96 | Test=194
+[17:19:34] 
+[17:19:34] Loading GPT2 text embedder...
+[17:19:39] 
+[17:19:40]   Prompt built for L=24: 369 tokens
+[17:19:40] ──────────────────────────────────────────────────
+[17:19:40]   HORIZON L=24
+[17:19:40] ──────────────────────────────────────────────────
+[17:19:40]   [L=24] Rep 1/1 ...
+[17:19:40]   L=24: train=572 val=97 test=170 windows
+[17:19:40]   L=24: leakage guard OK — min test target-start index = 773 > val_end=772
+[17:19:50]     ep  1/20 | train_loss=0.808485 | val_mse=0.635263(All) 0.9588(ILI) | val_mae=0.616918 | 9.3s | GPU=0.88GB
+[17:19:58]     ep  2/20 | train_loss=0.725166 | val_mse=0.415862(All) 0.6594(ILI) | val_mae=0.476120 | 7.8s | GPU=0.88GB
+[17:20:06]     ep  3/20 | train_loss=0.515313 | val_mse=0.241213(All) 0.3596(ILI) | val_mae=0.357880 | 7.8s | GPU=0.88GB
+[17:20:14]     ep  4/20 | train_loss=0.370406 | val_mse=0.217470(All) 0.3135(ILI) | val_mae=0.345324 | 7.8s | GPU=0.88GB
+[17:20:21]     ep  5/20 | train_loss=0.302814 | val_mse=0.170910(All) 0.2409(ILI) | val_mae=0.287502 | 7.8s | GPU=0.88GB
+[17:20:29]     ep  6/20 | train_loss=0.262470 | val_mse=0.213999(All) 0.3163(ILI) | val_mae=0.336669 | 7.8s | GPU=0.88GB
+[17:20:37]     ep  7/20 | train_loss=0.231935 | val_mse=0.152225(All) 0.2271(ILI) | val_mae=0.267201 | 7.8s | GPU=0.88GB
+[17:20:45]     ep  8/20 | train_loss=0.204148 | val_mse=0.195010(All) 0.2934(ILI) | val_mae=0.312130 | 7.8s | GPU=0.88GB
+[17:20:52]     ep  9/20 | train_loss=0.185013 | val_mse=0.183897(All) 0.2754(ILI) | val_mae=0.302409 | 7.8s | GPU=0.88GB
+[17:21:00]     ep 10/20 | train_loss=0.169764 | val_mse=0.169296(All) 0.2550(ILI) | val_mae=0.285562 | 7.8s | GPU=0.88GB
+[17:21:08]     ep 11/20 | train_loss=0.147684 | val_mse=0.191100(All) 0.2950(ILI) | val_mae=0.294802 | 7.8s | GPU=0.88GB
+[17:21:16]     ep 12/20 | train_loss=0.140387 | val_mse=0.148825(All) 0.2266(ILI) | val_mae=0.259838 | 7.8s | GPU=0.88GB
+[17:21:24]     ep 13/20 | train_loss=0.119550 | val_mse=0.150965(All) 0.2272(ILI) | val_mae=0.261978 | 7.8s | GPU=0.88GB
+[17:21:31]     ep 14/20 | train_loss=0.108639 | val_mse=0.155458(All) 0.2295(ILI) | val_mae=0.261284 | 7.8s | GPU=0.88GB
+[17:21:39]     ep 15/20 | train_loss=0.105181 | val_mse=0.166228(All) 0.2519(ILI) | val_mae=0.268335 | 7.8s | GPU=0.88GB
+[17:21:47]     ep 16/20 | train_loss=0.096899 | val_mse=0.147024(All) 0.2187(ILI) | val_mae=0.251081 | 7.8s | GPU=0.88GB
+[17:21:55]     ep 17/20 | train_loss=0.094339 | val_mse=0.168146(All) 0.2563(ILI) | val_mae=0.264983 | 7.8s | GPU=0.88GB
+[17:22:02]     ep 18/20 | train_loss=0.086009 | val_mse=0.135633(All) 0.2033(ILI) | val_mae=0.241755 | 7.8s | GPU=0.88GB
+[17:22:10]     ep 19/20 | train_loss=0.081129 | val_mse=0.161606(All) 0.2443(ILI) | val_mae=0.260016 | 7.8s | GPU=0.88GB
+[17:22:18]     ep 20/20 | train_loss=0.079677 | val_mse=0.146398(All) 0.2230(ILI) | val_mae=0.247847 | 7.8s | GPU=0.88GB
+[17:22:18]     [DIAG] y_pred(StdScaler): mean=0.1842 std=0.6892 min=-1.1178 max=2.8751
+[17:22:18]     [DIAG] y_true(StdScaler): mean=0.0446 std=0.7037 min=-0.8836 max=2.4612
+[17:22:19]     [DIAG] MSE_AllVars=1.593390 MSE_ILITotal=3.377994 PCC_ILI=0.8464
+[17:22:19]   L=24 DONE: test_mse=1.593390(All) 3.3780(ILI) test_mae=0.832220 pcc=0.8464
+[17:22:19]   [CKPT] L=24: kept rep seed=42 (best val_mse=0.135633) -> /gpfs1/scratch/sychan552/CHATTIME/Chattime_control966/checkpoints/best_miflu_L24.pth
+[17:22:25]   [CSV] L=24: predictions written -> /gpfs1/scratch/sychan552/CHATTIME/Chattime_control966/data/predictions_miflu_L24_paper_protocol.csv (train=13728, val=2328, test=4080 rows)
+[17:22:25]   [L=24] FINAL: MSE_AllVars=1.593390 MSE_ILITotal=3.377994
+[17:22:25] 
+[17:22:25] ============================================================
+[17:22:25]   FINAL RESULTS — ILITOTAL (paper protocol, mean ± std over 10 reps)
+[17:22:25] ============================================================
+[17:22:25]      L           MSE           MAE
+[17:22:25]   --------------------------------
+[17:22:25]     24      3.3780±nan        1.2003±nan  
+[17:22:25] ============================================================
+[17:22:25]   BEST-VAL CHECKPOINTS (one per horizon, rep with lowest val MSE):
+[17:22:25]     - L=24: seed=42  best_val_mse=0.135633  test_mse_ili=3.377994
+[17:22:25] ============================================================
+[17:22:25]   Total time: 2.8 min
+[17:22:25]   Raw per-rep results : /gpfs1/scratch/sychan552/CHATTIME/Chattime_control966/data/results_miflu_paper_protocol_20260828_171933.csv
+[17:22:25]   Tidy result table   : /gpfs1/scratch/sychan552/CHATTIME/Chattime_control966/data/results_miflu_paper_protocol_table_20260828_171933.csv

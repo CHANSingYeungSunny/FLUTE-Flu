@@ -1,0 +1,47 @@
+{
+  "generated_utc": "2026-09-14T18:05:00Z",
+  "gate_type": "hpc_deployment_gate",
+  "note": "separate from the local pre_hpc_gate.json, which was NOT overwritten",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version": "innov-v2.1",
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964",
+  "resolved_deployment_root": "/gpfs1/scratch/sychan552/CHATTIME/MIFlu_innovation_deployments/innov-v2.1_dc7ee964",
+  "hashes": {
+    "archive_sha256": "c7ff4849c7a2ed9f5576eb1b21ce748fe99915823884ae057fda9600fea1ddb9",
+    "runtime_file_set_aggregate_sha256": "dc7ee9649c8d840a0453c9728b417059e5bc86fa7d859f224b5e3a67d43c07b4",
+    "hpc_env_check_sha256": "746bdf561ccab21f0e453e67d1949ce97cca9dbce2558ddb4ac7b7d8eb6b632c",
+    "authoritative_plan_sha256": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+  },
+  "verified": {
+    "repository_source_deployed_and_verified": true,
+    "hpc_base_environment_verified": true,
+    "strict_offline_gpt2_load_verified": true,
+    "pilot_scripts_bash_n_verified": true,
+    "hpc_a100_allocation_verified": false,
+    "gpu_assessment": "LOGIN_NODE_GPU_NOT_EXPECTED"
+  },
+  "readiness": {
+    "source_deployment_verified": true,
+    "hpc_base_environment_verified": true,
+    "hpc_a100_allocation_verified": false,
+    "pilot_submission_ready": false,
+    "full_sweep_submission_ready": false
+  },
+  "blocker": "UNVERIFIED_HPC_A100_ALLOCATION",
+  "additional_required_before_pilot_submission": [
+    "verify an A100 inside an allocated Slurm job or approved interactive GPU allocation",
+    "close the pilot-spec metadata gap D1 (experiment_stage / test_access_allowed / protocol_version) via an authorized frozen-source change + cascade + re-deploy"
+  ],
+  "safety": {
+    "submission_attempted": false,
+    "sbatch_invoked": false,
+    "ssh_used_for_read_only_and_deployment_only": true,
+    "test_sealed": true,
+    "frozen_winner_exists": false,
+    "frozen_winners_created": false,
+    "model_ranking_produced": false,
+    "test_access_count": 0
+  },
+  "pilot_runs_executed": 0,
+  "next_authorization_required": "pilot submission (sbatch) — separate, explicit user authorization"
+}

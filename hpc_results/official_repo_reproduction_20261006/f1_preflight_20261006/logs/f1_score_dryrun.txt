@@ -1,0 +1,38 @@
+[f1score] artefacts found : 8
+[f1score] accepted         : 8
+[f1score] REJECTED         : 0
+[f1score] missing (model,horizon) cells: 16
+    - miflu L=24
+    - miflu L=36
+    - miflu L=48
+    - miflu L=60
+    - notext L=24
+    - notext L=36
+    - notext L=48
+    - notext L=60
+    - nlinear L=24
+    - nlinear L=36
+    - nlinear L=48
+    - nlinear L=60
+[f1score] forecast-key violations: 0
+[f1score] models with off-contract seeds: 0
+
+[f1score] ranking (equal-weight four-horizon average MSE, lower better)
+     1. seasonal_naive       2.222290
+     2. last_value_naive     7.165831
+
+[f1score] paired statistics (A wins iff diff < 0)
+
+[f1score] SUCCESS GATES
+    [FAIL] G1_all_six_models_present
+    [FAIL] G2_all_four_horizons_present
+    [PASS] G3_no_rejected_artefacts
+    [PASS] G4_forecast_keys_consistent
+    [PASS] G5_single_pilot_seed_only
+    [FAIL] G6_no_missing_cells
+    [FAIL] G7_partition_invariant_holds
+
+[f1score] integrity gates (G3,G4,G5) ok : True
+[f1score] completeness gates (G1,G2,G6) ok : False
+[f1score] F1 STATUS = PARTIAL_DRY_RUN_INTEGRITY_OK
+[f1score] REMINDER: one seed only - no significance, no robustness, no 'best model' claim. See F1_SUCCESS_GATES.md.

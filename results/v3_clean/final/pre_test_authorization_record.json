@@ -1,0 +1,63 @@
+{
+  "generated_utc": "2026-09-21T04:47:43Z",
+  "authorization": "one-time Test/Holdout phase (exactly once)",
+  "authorized_models": [
+    "gpt2_miflu",
+    "nlinear",
+    "seasonal_naive"
+  ],
+  "authorized_horizons": [
+    24,
+    36,
+    48,
+    60
+  ],
+  "authorized_seeds": {
+    "gpt2_miflu": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "nlinear": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "seasonal_naive": [
+      "n/a"
+    ]
+  },
+  "expected_job_count": {
+    "gpt2_miflu": 40,
+    "nlinear": 40,
+    "seasonal_naive": 4
+  },
+  "expected_access_count": "one read of the Test split per run (84 total inference jobs); test split read counter starts 0",
+  "permitted_retry": "one retry only for a proven scheduler/node/filesystem/DNS transport transient, with no scientific change",
+  "forbidden_after_test_access": [
+    "change model/checkpoint/seed",
+    "change prompt/scaler/horizons/endpoints",
+    "change PTE/PIE/date/season/rolling rules",
+    "add or remove comparators",
+    "rerun because results are disappointing",
+    "select better-looking Test curves manually",
+    "return to Validation for further model development"
+  ],
+  "analysis_plan_hash": "see final_evaluation_plan.json",
+  "pte_pie_spec_hash": "see peak-evaluation-v1.json",
+  "figure_plan_hash": "see final_test_figure_plan.json"
+}

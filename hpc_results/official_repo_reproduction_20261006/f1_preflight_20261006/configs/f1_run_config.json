@@ -1,0 +1,137 @@
+{
+  "pilot": "A2-F Core Fair-Benchmark Pilot, One Seed",
+  "status": "PREPARED_NOT_SUBMITTED",
+  "generated": "2026-10-06",
+  "shared_contract": {
+    "dataset": {
+      "profile": "author_966",
+      "rows": 966,
+      "channels": 7,
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+      "source": "recovery/author_repo/dataset/illness/national_illness.csv"
+    },
+    "split": {
+      "train": 676,
+      "val": 97,
+      "test": 193,
+      "kind": "chronological"
+    },
+    "scaler": {
+      "fit_on": "train rows only [0,676)",
+      "space": "standardized_train_fit_z"
+    },
+    "seq_len_T": 104,
+    "horizons": [
+      24,
+      36,
+      48,
+      60
+    ],
+    "containment": "strict",
+    "seed": 42,
+    "checkpoint_selection": "best validation mse_all",
+    "test_evaluation": "once, deferred to the scoring step (DEFER_TEST=1)",
+    "shuffle": {
+      "train": true,
+      "val": false,
+      "test": false
+    },
+    "drop_last": false,
+    "var_cols": [
+      "% WEIGHTED ILI",
+      "% UNWEIGHTED ILI",
+      "AGE 0-4",
+      "AGE 5-24",
+      "ILITOTAL",
+      "NUM. OF PROVIDERS",
+      "OT"
+    ],
+    "target_contract": "all seven channels jointly; equal-weight four-horizon average"
+  },
+  "training": {
+    "epochs": 20,
+    "batch_size": 16,
+    "learning_rate": 0.0005,
+    "optimizer": "Adam",
+    "scheduler": "none",
+    "epochs_provenance": "RECONSTRUCTED_ASSUMPTION - the paper discloses no value",
+    "lr_provenance": "RECONSTRUCTED_ASSUMPTION - the paper discloses no value"
+  },
+  "models": {
+    "miflu": {
+      "category": "1_LLM_multimodal",
+      "device": "gpu",
+      "entry": "scripts/train_miflu.py --horizon {L} --seed {seed} --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict",
+      "fits": 4,
+      "gpu_required": true
+    },
+    "notext": {
+      "category": "2_LLM_unimodal",
+      "device": "gpu",
+      "entry": "scripts/train_ablation.py --variant no_multi --horizon {L} --seed {seed} --reps 1 --epochs 20 --batch 16 --profile author_966 --containment strict",
+      "fits": 4,
+      "gpu_required": true
+    },
+    "nlinear": {
+      "category": "3_dedicated_non_LLM",
+      "device": "cpu",
+      "entry": "scripts/train_nlinear_966.py --horizon {L} --seed {seed} --profile author_966 --containment strict",
+      "fits": 4,
+      "gpu_required": false
+    },
+    "dlinear": {
+      "category": "3_dedicated_non_LLM",
+      "device": "cpu",
+      "entry": "scripts/train_backbone_966.py --backbone dlinear --horizon {L} --seed {seed} --profile author_966 --containment strict",
+      "fits": 4,
+      "gpu_required": false
+    },
+    "last_value_naive": {
+      "category": "4_naive_reference",
+      "device": "cpu",
+      "entry": "f1_naive_runner.py --name last_value_naive --horizon {L} --seed {seed} --containment strict",
+      "fits": 4,
+      "gpu_required": false
+    },
+    "seasonal_naive": {
+      "category": "4_naive_reference",
+      "device": "cpu",
+      "entry": "f1_naive_runner.py --name seasonal_naive --horizon {L} --seed {seed} --containment strict --insufficient-history-policy invalid",
+      "fits": 4,
+      "gpu_required": false,
+      "leakage_safe": true,
+      "seasonal_lag_rows": 52,
+      "correction": "ref = ts - 52 + (s mod 52); the legacy ref = ts + s - 52 reads target rows at L=60"
+    }
+  },
+  "budget": {
+    "gpu_fits": 8,
+    "cpu_fits": 16,
+    "deterministic_runs": 8,
+    "base_gpu_hours": 0.42664,
+    "plus10pct": 0.4693,
+    "plus20pct": 0.51197,
+    "recommended_request_gpu_hours": 0.6,
+    "expected_wall_clock_minutes": 34,
+    "projected_storage_mb": 38
+  },
+  "outputs": {
+    "root": "/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1",
+    "code_root_readonly": "/scratch/sychan552/a2_stage5",
+    "scratch_used_for_output": false
+  },
+  "scheduling": {
+    "partition": "stingy",
+    "MaxSubmit": 1,
+    "MaxJobsPU": 1,
+    "arrays_permitted": false,
+    "launcher": "scripts/run_f1_sequential.sh"
+  },
+  "prohibited": [
+    "calling F1 the final A2-F comparison",
+    "presenting a one-seed ordering as a best-model claim",
+    "mixing Historical Track B artefacts",
+    "counting no-text MIFlu as non-LLM",
+    "writing output to scratch"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "generated_utc": "2026-09-21T00:45:00Z",
+  "status": "STOP_PROTOCOL_REVIEW_REQUIRED",
+  "decision": "DEFERRED_CONTROLS_REQUIRE_REVIEW",
+  "trigger": "pre-execution intervention-mechanism verification of the 18 deferred Wave-2 controls exposed two deterministic defects that make lawful execution impossible without a protocol decision",
+  "authoritative_binding": {
+    "deferred_parent_resolved": "BEST_VALIDATION_LLM_AFTER_SCREENING = gpt2_miflu",
+    "selected_parent_model": "gpt2_miflu",
+    "selected_parent_average_mse_4l": 0.7708721562796242,
+    "top_equivalence_set": [],
+    "binding_source": "results/v3_clean/final/deferred_parent_binding.json",
+    "binding_rule_sha256": "d0f708796e353017f1212ce4e2a4244d47582937117116049da2e0da5dae6b13"
+  },
+
+  "defect_A": {
+    "title": "12 of 18 deferred controls are exact duplicates of already-ACCEPTED Wave-1 controls",
+    "severity": "deterministic",
+    "evidence": {
+      "wave1_fixed_parent_controls_definition": "scripts/v3_clean/resolve_deferred_and_freeze.py lines 100-104: for ctrl in (zero_text, shuffled_text) x horizon in {24,60} x seed in {42,43,44} -> 12 Wave-1 rows, parent_model=gpt2_miflu",
+      "wave2_deferred_controls_definition": "scripts/v3_clean/resolve_deferred_and_freeze.py lines 106-111: same ctrl/horizon/seed grid for zero_text+shuffled_text (plus llm_removed_or_alignment_only) -> deferred parent",
+      "wave1_already_accepted": "results/v3_clean/final/wave1_final_freeze_manifest.json contains 12 run_keys matching negative_control__*__w1 (zero_text x6, shuffled_text x6, L24/L60 x seed42-44), within the 580 accepted Wave-1 keys",
+      "post_binding_identity": "deferred_parent_binding.json marks negative_control__{zero_text,shuffled_text}__L{L24,L60}__seed{42,43,44}__w2 with post_binding_parent_model=gpt2_miflu, post_binding_submittable=true",
+      "duplicate_confirmation": "for each of the 12 rows, the tuple (control, parent_model=gpt2_miflu, horizon, seed) is IDENTICAL between the accepted Wave-1 row and the deferred Wave-2 row"
+    },
+    "why_defect": "the frozen 30-row matrix allocated 6 zero_text and 6 shuffled_text rows to parent gpt2_miflu AND 6+6 more to parent BEST_VALIDATION_LLM_AFTER_SCREENING. When BEST resolves to gpt2_miflu itself, the two parent buckets collapse into one and the 12 rows become redundant re-runs of experiments whose results already exist in the accepted Wave-1 evidence."
+  },
+
+  "defect_B": {
+    "title": "6 llm_removed_or_alignment_only controls are un-executable on gpt2_miflu and scientifically meaningless there",
+    "severity": "deterministic",
+    "evidence": {
+      "no_runner_registration": "scripts/innovation/clean_runner.py VARIANTS (lines 57-74) registers only 8 variants (6 MIFlu ablations + zero_text + shuffled_text). llm_removed_or_alignment_only is ABSENT, so clean_runner.resolve_spec cannot build a model for it.",
+      "gpt2_miflu_architecture": "scripts/miflu_model.py: MIFlu = TextualInputEmbedder(full GPT2 frozen) -> htext + TimeSeriesEmbedder -> htime, fused [htext || htime] -> ForecastingLLM (GPT2 first K=6 layers + LoRA) -> output_projection. The backbone IS the LLM; there is no independent numeric branch to fall back to after 'removing the LLM'.",
+      "wiring_self_contradiction": "results/v3_clean/implementation/ablation_control_wiring_v2.json declares llm_removed_or_alignment_only applies_to=[calf_llm, timecma_llm] with note: 'for qwen_time_llm the LLM IS the backbone, so removal is not meaningful; the control is scoped to the inspired backbones that add an LLM branch on top of a numeric one'. The same logic applies to gpt2_miflu, whose parentage was never in applies_to.",
+      "binding_overreach": "deferred_parent_binding.json marks the 6 llm_removed_or_alignment_only rows post_binding_submittable=true and post_binding_parent_model=gpt2_miflu WITHOUT recording any intervention mechanism, despite the frozen reconciliation (negative_control_matrix_reconciliation.json) already flagging BEST_VALIDATION_LLM_AFTER_SCREENING as parents_unsupported_by_current_wiring for this control."
+    },
+    "why_defect": "the control 'remove the LLM branch, keep only the numeric/alignment branch' is meaningful only for backbones that superimpose an LLM branch on a separate numeric branch (calf_llm, timecma_llm). gpt2_miflu has no such numeric-only branch, so the control has no executable realization on the resolved parent."
+  },
+
+  "root_cause": "the original 30-row negative-control matrix implicitly assumed BEST_VALIDATION_LLM_AFTER_SCREENING would be an inspired backbone (calf_llm / timecma_llm / qwen_time_llm) distinct from gpt2_miflu. The frozen paper-aligned selector instead produced BEST = gpt2_miflu, which (a) collapses the gpt2_miflu and BEST parent buckets for zero_text/shuffled_text into duplicates, and (b) leaves llm_removed_or_alignment_only without a valid parent.",
+
+  "what_was_not_done": {
+    "matrix_modified": false,
+    "control_rows_deleted_or_renamed": false,
+    "deferred_rows_submitted": 0,
+    "controller_launched": false,
+    "hpc_jobs_this_turn": 0,
+    "test_or_holdout_accessed": false,
+    "test_holdout_access": "0 / 0",
+    "binding_rule_or_selection_rule_modified": false,
+    "champion_frozen": false
+  },
+
+  "options_for_review": [
+    "A. Acknowledge the 12 zero_text/shuffled_text Wave-2 rows as exact duplicates of accepted Wave-1 evidence and record a protocol amendment re-scoping them (do NOT silently delete; do NOT silently re-run as if independent).",
+    "B. Re-bind llm_removed_or_alignment_only to a parent in its lawful applies_to set (calf_llm and/or timecma_llm) via an explicit protocol amendment, since gpt2_miflu has no meaningful numeric-only branch.",
+    "C. Re-derive the scientific meaning of the 18 deferred rows from the original paper intent and produce a corrected, re-frozen matrix version under an explicit amendment.",
+    "D. Drop the llm_removed_or_alignment_only rows via a formal amendment (explicitly a protocol decision, never a silent deletion)."
+  ],
+  "recommended": "A + B (or C) — requires an explicit, human-authorized protocol amendment; the frozen 598-row matrix and the frozen binding/selection rules must not be edited to fit the implementation, and no deferred row may be submitted before the amendment is recorded."
+}

@@ -36,7 +36,7 @@ for L in hp['L']:
     x = torch.randn(8, 7, 104)
     ht = torch.randn(8, 367, 768)
     with torch.no_grad():
-        y, means, stdevs = model(x, ht)
+        y, _, means, stdevs = model(x, ht)
     expected = (8, 7, L)
     ok = y.shape == expected
     print(f"  L={L:2d}: y_hat={tuple(y.shape)} expected={expected} [{'PASS' if ok else 'FAIL'}]")
@@ -51,7 +51,7 @@ for L in hp['L']:
     y_true = torch.randn(4, 7, L)  # Targets in normalized space
 
     with torch.no_grad():
-        y_pred, _, _ = model(x, ht)
+        y_pred, _, _, _ = model(x, ht)
 
     p = y_pred.numpy()
     t = y_true.numpy()
@@ -75,7 +75,7 @@ model = MIFlu(N=7, T=5, L=2, Lp=2, S=1, K=6, device='cpu')
 model.eval()
 ht = torch.randn(2, 367, 768)
 with torch.no_grad():
-    y, means, stdevs = model(x, ht)
+    y, _, means, stdevs = model(x, ht)
 # means should be close to 3.0 for each var
 print(f"  Input mean: {x.mean():.2f} (expected ~3.0)")
 print(f"  Instance-norm computed means: {means.mean():.2f} (expected ~3.0)")

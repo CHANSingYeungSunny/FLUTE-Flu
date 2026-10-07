@@ -1,0 +1,42 @@
+{
+  "check": "a100_allocation_environment_check",
+  "implementation_source_version": "innov-v2.2",
+  "scientific_protocol_version": "innov-v2.0",
+  "utc": "2026-09-14T18:57:42Z",
+  "hostname": "gpu-a100-03",
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18",
+  "slurm_job_id": "556143",
+  "slurm_partition": "stingy",
+  "slurm_job_gpus": "0",
+  "cuda_visible_devices": "0",
+  "training_performed": false,
+  "data_loaded": false,
+  "plan_sha256_runtime": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+  "plan_sha256_expected": "AA4AB1C8842E893A4690787E17ADD0CA193C86825FFF9FD89F46952C7F9E7961",
+  "plan_sha256_matches": true,
+  "source_aggregate_expected": "06b83e18e4bb66d69ae457087fa5024bb4a50884bca3c080ca51af35de575e86",
+  "source_snapshot_n_files": 70,
+  "source_verification_exit": 0,
+  "source_aggregate_actual": "06b83e18e4bb66d69ae457087fa5024bb4a50884bca3c080ca51af35de575e86",
+  "source_verification_ok": true,
+  "nvidia_smi_query": "0, NVIDIA A100-SXM4-80GB, 81920 MiB, 580.167.08",
+  "torch": "2.5.1",
+  "cuda_runtime_version": "11.8",
+  "cuda_available": true,
+  "cuda_device_count": 1,
+  "cudnn_version": 90100,
+  "gpu_name_0": "NVIDIA A100-SXM4-80GB",
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA A100-SXM4-80GB",
+      "total_memory_bytes": 85093777408,
+      "compute_capability": "8.0",
+      "allocation_ok": true
+    }
+  ],
+  "exactly_one_gpu": true,
+  "gpu_name_is_a100": true,
+  "gpt2_offline_load": "OK",
+  "allocation_check_ok": true
+}

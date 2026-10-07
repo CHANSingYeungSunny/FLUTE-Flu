@@ -1,0 +1,21 @@
+{
+  "gates": {
+    "G1_all_six_models_present": false,
+    "G2_all_four_horizons_present": false,
+    "G3_no_rejected_artefacts": true,
+    "G4_forecast_keys_consistent": true,
+    "G5_single_pilot_seed_only": true,
+    "G6_no_missing_cells": false,
+    "G7_partition_invariant_holds": false
+  },
+  "all_gates_pass": false,
+  "integrity_ok": true,
+  "completeness_ok": false,
+  "status": "PARTIAL_DRY_RUN_INTEGRITY_OK",
+  "n_accepted": 8,
+  "n_rejected": 0,
+  "n_missing_cells": 16,
+  "key_violations": [],
+  "off_contract_seeds": {},
+  "note": "one-seed pilot; NOT a final A2-F comparison"
+}

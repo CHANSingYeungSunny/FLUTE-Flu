@@ -1,0 +1,12 @@
+{
+  "run_key": "primary__gpt2_miflu__L48__seed42__w1",
+  "state": "COMPLETED",
+  "updated_utc": "2026-09-21T05:10:28Z",
+  "split": {
+    "train": 717,
+    "validation": 102,
+    "test": 206
+  },
+  "elapsed_seconds": 7.231,
+  "n_test_windows": 158
+}

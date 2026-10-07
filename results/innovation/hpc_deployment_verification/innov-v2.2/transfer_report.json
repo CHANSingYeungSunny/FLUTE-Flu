@@ -1,0 +1,53 @@
+{
+  "generated_utc": "2026-09-14T18:25:00Z",
+  "implementation_source_version": "innov-v2.2",
+  "direction": "local_workstation_to_hpc",
+  "local_source_paths": [
+    "results/innovation/hpc_deployment/innovation_hpc_bundle.tar.gz",
+    "results/innovation/hpc_deployment/innovation_hpc_bundle.tar.gz.sha256"
+  ],
+  "archive_sha256": "c0af2dca7b32b7a84fbc476b8583979ea85d80313cec3003231a7d0197d31d76",
+  "archive_sha256_expected_local": "c0af2dca7b32b7a84fbc476b8583979ea85d80313cec3003231a7d0197d31d76",
+  "archive_deterministic_double_build": true,
+  "archive_members": 95,
+  "remote_staging_dir": "/home/sychan552/scratch/CHATTIME/",
+  "remote_destination_dir": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18/",
+  "transfer_command_redacted": "scp -o BatchMode=yes <archive> <sidecar> sychan552@burgundy.hpc.cityu.edu.hk:/home/sychan552/scratch/CHATTIME/",
+  "exit_status": 0,
+  "sidecar_check_remote": "innovation_hpc_bundle.tar.gz: OK (sha256sum -c)",
+  "transferred_files": [
+    {"name": "innovation_hpc_bundle.tar.gz", "size_bytes": 133449, "size_matches": true},
+    {"name": "innovation_hpc_bundle.tar.gz.sha256", "size_bytes": 95}
+  ],
+  "files_deliberately_NOT_transferred": [
+    "ssh private/public keys",
+    "credentials",
+    "local test artifacts (test_predictions.csv / test_metrics.json)",
+    "frozen_winners.json (does not exist)",
+    "test_evaluations/**",
+    "local model checkpoints",
+    "local caches (.git/, .codebuddy/, __pycache__/)"
+  ],
+  "remote_destination_creation": {
+    "isolated_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.2_06b83e18",
+    "preexisting_isolated_root": false,
+    "isolation_convention": "same as innov-v2.1_dc7ee964: the deployment lives OUTSIDE the original reproduction repo"
+  },
+  "INCIDENT_AND_RECOVERY": {
+    "what_happened": "The first extraction used the path printed by the REGENERATED DEPLOY_AND_VERIFY.md (cd .../CHATTIME/Chattime), i.e. the ORIGINAL reproduction repo, instead of the isolated deployment root used at v2.1. The extraction therefore ADDED innovation-only paths to /home/sychan552/scratch/CHATTIME/Chattime and rewrote the 7 reused dependency files with the frozen copies.",
+    "detected_by": "comparing the recorded v2.1 deployment_root (MIFlu_innovation_deployments/innov-v2.1_dc7ee964) with the extraction path",
+    "recovery_actions": [
+      "removed the bundle-only additions from Chattime: scripts/innovation/, tests/innovation/, results/innovation/, MIFlu_innovation_plan_v2.md, hpc_scripts/{innovation_worker.sh,pilot_*.sh(4),submit_innovation_*.sh(4),hpc_env_check.sh,pilot_specs.json}",
+      "proved the 7 overwritten dependency files were CONTENT-IDENTICAL: the residual __pycache__/*.cpython-39.pyc headers record the source size at compile time, and for miflu_model (27160), configs (11206), textual_embedder (11203), scaler_utils (10915), cdc_calendar (10991) and early_stopping (7202) that recorded size equals the current file size exactly",
+      "restored the original mtime of those 6 files from the same pyc headers (os.utime) so the tree is metadata-identical again",
+      "compute_miflu_indicators.py was NOT mtime-restored: its residual pyc is stale BY DESIGN (pyc source size 24236 vs current 24398) because that file was intentionally updated in the metrics-simplification round; its content is unchanged by this incident (it already held the intended pruned version), only its mtime remains the extraction value",
+      "no backup/restore of any file was required and no reproduction result was affected"
+    ],
+    "residual_state": "Chattime is byte-identical to its pre-extraction state; only the mtime of compute_miflu_indicators.py is not the original value",
+    "prevention": "scripts/build_innovation_hpc_bundle.py now prints the ISOLATED deployment root in DEPLOY_AND_VERIFY.md instead of the reproduction-repo path"
+  },
+  "host": "HPC login node",
+  "credentials_in_log": "none",
+  "submission_attempted": false,
+  "sbatch_invoked": false
+}

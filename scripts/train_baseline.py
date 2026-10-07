@@ -14,17 +14,9 @@ from torch.utils.data import DataLoader, TensorDataset
 sys.path.insert(0, os.path.dirname(__file__))
 from miflu_model import MIFlu
 
-CONFIG = {
-    "T": 104, "L_list": [24, 36, 48, 60], "N": 7,
-    "Lp": 24, "S": 2, "K": 6, "lora_r": 4, "D": 768,
-    "batch_size": 16, "learning_rate": 0.0005, "epochs": 20,
-    "num_repetitions": 10,
-}
-
-VAR_COLS = [
-    "% WEIGHTED ILI", "% UNWEIGHTED ILI", "AGE 0-4", "AGE 5-24",
-    "ILITOTAL", "NUM. OF PROVIDERS", "OT",
-]
+# Hyper-parameters, channel list and the deterministic `set_seed()` now come
+# from configs.py (single source of truth). Values are unchanged.
+from configs import CONFIG, VAR_COLS, set_seed
 
 BASE_DIR = os.path.dirname(__file__)
 LOG_PATH = os.path.join(BASE_DIR, "data", "training_baseline_log.txt")
@@ -79,7 +71,7 @@ def train_epoch(model, loader, opt, crit, dev):
     for bx, by in loader:
         bx, by = bx.to(dev), by.to(dev)
         opt.zero_grad()
-        yh, _, _ = model(bx, htext=None)
+        yh, _, _, _ = model(bx, htext=None)
         L = crit(yh, by)
         L.backward()
         opt.step()
@@ -92,7 +84,7 @@ def evaluate(model, loader, crit, dev, diag=False):
     preds, targets = [], []
     for i, (bx, by) in enumerate(loader):
         bx = bx.to(dev)
-        yh, _, _ = model(bx, htext=None)
+        yh, _, _, _ = model(bx, htext=None)
         preds.append(yh.cpu().numpy())
         targets.append(by.numpy())
         if diag and i == 0:
@@ -145,6 +137,10 @@ def train_L(data_dict, L, config, device):
             "test_mse_ili": t_mse_ili, "test_mae_ili": t_mae_ili}
 
 def main():
+    # ── Deterministic execution: seed every RNG before touching any data ──
+    # (This script previously had NO seeding at all.)
+    set_seed(CONFIG["seed"])
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
     log_init(LOG_PATH)
     log("=" * 60)

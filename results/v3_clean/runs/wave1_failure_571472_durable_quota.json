@@ -1,0 +1,103 @@
+{
+  "generated_utc": "2026-09-18T20:25:00Z",
+  "event": "V3_CLEAN_WAVE1_FAILURE_REQUIRES_REVIEW",
+  "round": "CodeBuddy_MIFlu_v3_Wave1_580_Formal_Runs_Execution_and_Audit.md",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_clean6",
+  "runtime_version": "innov-v3.12-gate-validator-schema-alignment",
+  "pre_execution_gate": {"job_id": "570846", "state": "COMPLETED", "exit_code": "0:0", "passed": "19/19"},
+  "controller": {
+    "script": "results/v3_clean/runs/wave1_controller.sh",
+    "static_audit": "31/31 passed",
+    "bash_n": "passed",
+    "launched_via": "setsid bash results/v3_clean/runs/wave1_launch.sh",
+    "single_instance_lock": true,
+    "lock_released_on_exit": true,
+    "process_still_running": false
+  },
+  "fail_stop": {
+    "row_key": "primary__qwen_time_llm__L24__seed46__w1",
+    "job_id": "571472",
+    "controller_message": "FAIL-STOP: durable copy failed for primary__qwen_time_llm__L24__seed46__w1",
+    "controller_behaviour_correct": true,
+    "controller_stopped_submitting": true
+  },
+  "ledger_state_at_stop": {
+    "submitted_lines": 205,
+    "completed_0_0_lines": 205,
+    "fully_accepted_rows": 204,
+    "row_with_run_success_but_incomplete_durable_copy": 1
+  },
+  "root_cause": {
+    "id": "D13",
+    "classification": "DETERMINISTIC_DURABLE_STORAGE_QUOTA_EXHAUSTION",
+    "subsystem": "durable copy destination (home filesystem), NOT the runner and NOT the science",
+    "home_quota_observed": {
+      "filesystem": "home (/gpfs1/home)",
+      "used_kb": 104855648,
+      "used_human": "~100 GB",
+      "soft_quota_kb": 52428800,
+      "soft_quota_human": "50 GB",
+      "hard_limit_kb": 104857600,
+      "hard_limit_human": "100 GB",
+      "grace": "5 days",
+      "verdict": "USED == HARD LIMIT -> all further writes refused"
+    },
+    "write_probe": {
+      "command": "dd if=/dev/zero of=<durable>/.diag_probe/big bs=1M count=200",
+      "result": "0 bytes copied (write refused)",
+      "means": "the destination cannot accept more data"
+    },
+    "durable_usage": {
+      "root": "/home/sychan552/innovation_durable",
+      "total_human": "88 GB",
+      "screening_subdir_human": "84 GB",
+      "n_run_dirs": 284,
+      "n_files": 4546
+    },
+    "copy_evidence": {
+      "source_dir": "results/v3_clean/runs/primary__qwen_time_llm__L24__seed46__w1",
+      "source_bytes": 6178637501,
+      "source_human": "~6.18 GB",
+      "partial_dest_bytes": 5463142652,
+      "partial_dest_human": "~5.46 GB",
+      "note": "cp was interrupted ~88% through when the write was refused"
+    },
+    "control_probe": {
+      "command": "cp -r <source>/. /tmp/diag_copy/",
+      "result": "succeeded (~5.8 GB written to /tmp)",
+      "means": "cp and the source are healthy; ONLY the home destination is blocked"
+    }
+  },
+  "why_the_row_is_large": {
+    "explanation": "each qwen_time_llm run saves an LLM-scale checkpoint; at ~6 GB per qwen run, the 40 qwen rows alone would need ~240 GB of durable space",
+    "implication": "the current durable policy (copy EVERY run's FULL artifact tree including weights) is not feasible within a 50 GB soft / 100 GB hard home quota for a 580-row matrix"
+  },
+  "run_itself_was_healthy": {
+    "slurm_state": "COMPLETED",
+    "exit_code": "0:0",
+    "artifacts_present_on_scratch": true,
+    "test_holdout_untouched": true,
+    "note": "only the DURABLE COPY failed; the run's own artifacts and metrics are intact on scratch"
+  },
+  "no_other_jobs": {"running": 0, "pending": 0},
+  "compliance": {
+    "stopped_submitting_immediately": true,
+    "row_not_skipped_or_replaced": true,
+    "frozen_deployment_not_modified_in_place": true,
+    "no_further_rows_submitted": true,
+    "no_partial_model_ranking_generated": true,
+    "no_provisional_champion_declared": true,
+    "selection_rule_unchanged": true,
+    "deferred_parent_not_bound": true,
+    "no_superseded_v3_results_used": true,
+    "formal_test_access": 0,
+    "holdout_access": 0,
+    "champion_frozen": false
+  },
+  "required_next_authorization": [
+    "decide the durable-storage policy (e.g. persist checkpoint HASHES + non-weight artifacts only, since checkpoint_manifest.json already records sha256_file, instead of copying multi-GB weights into a 50 GB home quota)",
+    "clean up or relocate the existing 88 GB under /home/sychan552/innovation_durable (only with explicit authorization)",
+    "then freeze a NEW version (v3.13) with the revised controller policy, rebuild bundles, deploy to a NEW isolated root, run one fresh Gate, and resume from the first non-accepted row"
+  ],
+  "partial_results_are_not_scientific_results": true
+}

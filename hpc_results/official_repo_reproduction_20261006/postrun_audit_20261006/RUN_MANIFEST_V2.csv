@@ -1,0 +1,121 @@
+run_key,slurm_jobid,model,L,seed,track,phase,start,exit,attempt_index,attempt_status,resource,gpu_hours,purpose,track_label_2026_10_06
+,,,,,A0R_and_A2basis,stage6,,,1,primary,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,2,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,3,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,4,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,5,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,6,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,7,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,8,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,9,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,10,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,11,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,12,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,13,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,14,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,15,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,16,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,17,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,18,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,19,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,20,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,21,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,22,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,23,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,24,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,25,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,26,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,27,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,28,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,29,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,30,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,31,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,32,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,33,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,34,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,35,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,36,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,37,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,38,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,39,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,40,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,41,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,42,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,43,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,44,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,45,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,46,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,47,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,48,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,49,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,50,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,51,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,52,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,53,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,54,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,55,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,56,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,57,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,58,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,59,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,60,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,61,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,62,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,63,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,64,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,65,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,66,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,67,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,68,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,69,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,70,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,71,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,72,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,73,superseded-retry,,,,A0R_and_A2basis
+,,,,,A0R_and_A2basis,stage6,,,74,superseded-retry,,,,A0R_and_A2basis
+S5-MIFLU-L24-S42,see stage5 ledger,miflu,24,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L24-S43,see stage5 ledger,miflu,24,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L24-S44,see stage5 ledger,miflu,24,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L36-S42,see stage5 ledger,miflu,36,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L36-S43,see stage5 ledger,miflu,36,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L36-S44,see stage5 ledger,miflu,36,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L48-S42,see stage5 ledger,miflu,48,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L48-S43,see stage5 ledger,miflu,48,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L48-S44,see stage5 ledger,miflu,48,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L60-S42,see stage5 ledger,miflu,60,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L60-S43,see stage5 ledger,miflu,60,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-MIFLU-L60-S44,see stage5 ledger,miflu,60,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L24-S42,see stage5 ledger,nlinear,24,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L24-S43,see stage5 ledger,nlinear,24,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L24-S44,see stage5 ledger,nlinear,24,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L36-S42,see stage5 ledger,nlinear,36,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L36-S43,see stage5 ledger,nlinear,36,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L36-S44,see stage5 ledger,nlinear,36,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L48-S42,see stage5 ledger,nlinear,48,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L48-S43,see stage5 ledger,nlinear,48,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L48-S44,see stage5 ledger,nlinear,48,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L60-S42,see stage5 ledger,nlinear,60,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L60-S43,see stage5 ledger,nlinear,60,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NLINEAR-L60-S44,see stage5 ledger,nlinear,60,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L24-S42,see stage5 ledger,notext,24,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L24-S43,see stage5 ledger,notext,24,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L24-S44,see stage5 ledger,notext,24,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L36-S42,see stage5 ledger,notext,36,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L36-S43,see stage5 ledger,notext,36,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L36-S44,see stage5 ledger,notext,36,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L48-S42,see stage5 ledger,notext,48,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L48-S43,see stage5 ledger,notext,48,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L48-S44,see stage5 ledger,notext,48,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L60-S42,see stage5 ledger,notext,60,42,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L60-S43,see stage5 ledger,notext,60,43,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-NOTEXT-L60-S44,see stage5 ledger,notext,60,44,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-LAST_VALUE_NAIVE-L24-DET,deterministic,last_value_naive,24,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-LAST_VALUE_NAIVE-L36-DET,deterministic,last_value_naive,36,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-LAST_VALUE_NAIVE-L48-DET,deterministic,last_value_naive,48,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-LAST_VALUE_NAIVE-L60-DET,deterministic,last_value_naive,60,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-SEASONAL_NAIVE-L24-DET,deterministic,seasonal_naive,24,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-SEASONAL_NAIVE-L36-DET,deterministic,seasonal_naive,36,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-SEASONAL_NAIVE-L48-DET,deterministic,seasonal_naive,48,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+S5-SEASONAL_NAIVE-L60-DET,deterministic,seasonal_naive,60,deterministic,A2_basis,stage5_a2,UNKNOWN,0,1,primary,,,,A2 basis corrected reconstruction
+AUDIT-READONLY-606430,606430,n/a - metadata audit,,,audit,postrun_audit_20261006,2026-10-05T22:00Z,0,1,primary,"cpu=4,mem=16G (NO gres/gpu)",0.00000,read-only inventory of the 19 historical deployment directories,
+AUDIT-HASH-606432,606432,n/a - content hashing,,,audit,postrun_audit_20261006,2026-10-05T22:02Z,0,1,primary,"cpu=4,mem=8G (NO gres/gpu)",0.00000,full SHA-256 of 594 checkpoint files and 20792 small files,

@@ -1,0 +1,209 @@
+###### 1. A0 587068 - exit 1 but it printed MSE 0.8581: what failed?
+----- /scratch/sychan552/a0_runs/logs/a0_587068.err  (size=0)
+  [last 18 lines]
+----- /scratch/sychan552/a0_runs/logs/a0_587068.out  (size=14351)
+  [last 18 lines]
+      /scratch/sychan552/a0_runs/runs/default_provenance.txt
+      /scratch/sychan552/a0_runs/runs/a0_multimodal1_multimodal1_gpt2_gpt2_sl104_ll18_pl24_dm768_nh4_el3_gl6_df768_ebtimeF_itr0/checkpoint.pth
+      /scratch/sychan552/a0_runs/runs/multimodal1_provenance.txt
+    
+    [a0gpu] ---- key evidence lines from the released run ----
+      5:Args in experiment:
+      6:Namespace(model_id='a0_multimodal1', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=1, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+      35:Epoch: 1 cost time: 56.54020428657532
+      40:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+      41:Epoch: 1, Steps: 240 | Train Loss: 0.4489474 Vali Loss: 0.2929663
+      48:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+      50:mse_mean = 0.8581, mse_std = 0.0000
+      52:Best performance in iteration 0: Epoch 0 with MSE = 0.8581 and MAE = 0.6780
+    
+    [a0gpu] REMINDER: whatever this prints is (a) feature-0 Test only,
+              (b) selected by Test MSE, (c) 1 epoch at lr 1e-4, and
+              (d) therefore NOT comparable to the paper's Table V nor to A2.
+    [a0gpu] charged 00:01:22 (job 587068) appended to /scratch/sychan552/a2_stage5/results/stage7/GPU_LEDGER_stage7.tsv
+
+  [search for traceback / error / killed in 587068]
+    77:Traceback (most recent call last):
+    84:RuntimeError: CUDA error: invalid device ordinal
+    85:CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+
+  [same for the COMPLETED 587091, as the control]
+    77:Traceback (most recent call last):
+    84:RuntimeError: CUDA error: invalid device ordinal
+    85:CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+  [587091 last 8 lines]
+      50:mse_mean = 0.9685, mse_std = 0.0000
+      52:Best performance in iteration 0: Epoch 0 with MSE = 0.9685 and MAE = 0.7158
+    
+    [a0gpu] REMINDER: whatever this prints is (a) feature-0 Test only,
+              (b) selected by Test MSE, (c) 1 epoch at lr 1e-4, and
+              (d) therefore NOT comparable to the paper's Table V nor to A2.
+    [a0gpu] charged 00:00:25 (job 587091) appended to /scratch/sychan552/a2_stage5/results/stage7/GPU_LEDGER_stage7.tsv
+    [a0gpu] diagnostic evidence present; reporting job success (author rc=1)
+
+###### 2. a0 log files inventory (sizes + mtimes)
+  total 113
+  drwxr-xr-x 2 sychan552 sychan552  4096 2026-09-26 18:43:06.138090000 +0800 .
+  drwxr-xr-x 4 sychan552 sychan552  4096 2026-09-26 18:16:48.227239000 +0800 ..
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 18:16:48.181987000 +0800 a0_587048.err
+  -rw-r--r-- 1 sychan552 sychan552  4675 2026-09-26 18:17:01.820877565 +0800 a0_587048.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 18:21:06.128510000 +0800 a0_587054.err
+  -rw-r--r-- 1 sychan552 sychan552  8293 2026-09-26 18:21:27.985545802 +0800 a0_587054.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 18:23:48.740188000 +0800 a0_587059.err
+  -rw-r--r-- 1 sychan552 sychan552  8293 2026-09-26 18:24:08.395067688 +0800 a0_587059.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 18:29:05.182287000 +0800 a0_587068.err
+  -rw-r--r-- 1 sychan552 sychan552 14351 2026-09-26 18:30:25.439243895 +0800 a0_587068.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 18:43:06.138090000 +0800 a0_587091.err
+  -rw-r--r-- 1 sychan552 sychan552  8748 2026-09-26 18:43:29.321467933 +0800 a0_587091.out
+  -rw-r--r-- 1 sychan552 sychan552  4564 2026-09-26 18:43:28.225951263 +0800 default_stdout.txt
+  -rw-r--r-- 1 sychan552 sychan552 10628 2026-09-26 18:30:24.496986490 +0800 multimodal1_stdout.txt
+
+###### 3. s6_score logs - where are they and what do they say
+
+###### 4. independent recomputation: batch job or interactive?
+  total 484
+  drwxr-xr-x 2 sychan552 sychan552  4096 2026-09-26 21:23:35.565412000 +0800 .
+  drwxr-xr-x 8 sychan552 sychan552  4096 2026-09-26 21:24:12.967997000 +0800 ..
+  -rw-r--r-- 1 sychan552 sychan552  9185 2026-09-26 20:54:17.160995870 +0800 pipeline_log.txt
+  -rw-r--r-- 1 sychan552 sychan552  6870 2026-09-26 20:54:17.160938523 +0800 pipeline_nohup.log
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 21:23:35.565412000 +0800 recompute_verify.err
+  -rw-r--r-- 1 sychan552 sychan552  1231 2026-09-26 21:23:36.805886403 +0800 recompute_verify.out
+  -rw-r--r-- 1 sychan552 sychan552  7587 2026-09-26 20:53:31.132913301 +0800 run_ledger.csv
+  -rw-r--r-- 1 sychan552 sychan552   366 2026-09-26 20:54:06.476647962 +0800 score_587373.err
+  -rw-r--r-- 1 sychan552 sychan552    76 2026-09-26 20:54:06.165350441 +0800 score_587373.out
+  -rw-r--r-- 1 sychan552 sychan552 12888 2026-09-26 21:09:06.752747403 +0800 score_587385.err
+  -rw-r--r-- 1 sychan552 sychan552 18151 2026-09-26 21:09:06.752728628 +0800 score_587385.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 18:32:50.642529000 +0800 task_587070.err
+  -rw-r--r-- 1 sychan552 sychan552   851 2026-09-26 18:32:52.727634514 +0800 task_587070.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 18:34:20.888060000 +0800 task_587075.err
+  -rw-r--r-- 1 sychan552 sychan552  6714 2026-09-26 18:34:34.024477595 +0800 task_587075.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:14:59.008456000 +0800 task_587190.err
+  -rw-r--r-- 1 sychan552 sychan552  6853 2026-09-26 19:15:14.346836304 +0800 task_587190.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:32:31.458618000 +0800 task_587226.err
+  -rw-r--r-- 1 sychan552 sychan552  6948 2026-09-26 19:32:46.541681060 +0800 task_587226.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:41:03.070865000 +0800 task_587237.err
+  -rw-r--r-- 1 sychan552 sychan552  1534 2026-09-26 19:41:11.187337065 +0800 task_587237.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:42:02.985653000 +0800 task_587241.err
+  -rw-r--r-- 1 sychan552 sychan552  7041 2026-09-26 19:42:15.754969055 +0800 task_587241.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:44:33.455941000 +0800 task_587247.err
+  -rw-r--r-- 1 sychan552 sychan552  6845 2026-09-26 19:44:55.988680919 +0800 task_587247.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:45:33.608553000 +0800 task_587250.err
+  -rw-r--r-- 1 sychan552 sychan552  6984 2026-09-26 19:45:52.857251648 +0800 task_587250.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:46:33.744526000 +0800 task_587252.err
+  -rw-r--r-- 1 sychan552 sychan552  7080 2026-09-26 19:46:52.775997174 +0800 task_587252.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:47:33.923394000 +0800 task_587254.err
+  -rw-r--r-- 1 sychan552 sychan552  7172 2026-09-26 19:47:52.907867704 +0800 task_587254.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:48:34.047967000 +0800 task_587256.err
+  -rw-r--r-- 1 sychan552 sychan552  6874 2026-09-26 19:48:53.339563450 +0800 task_587256.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:49:04.185447000 +0800 task_587257.err
+  -rw-r--r-- 1 sychan552 sychan552  7013 2026-09-26 19:49:23.242108840 +0800 task_587257.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:50:04.276443000 +0800 task_587261.err
+  -rw-r--r-- 1 sychan552 sychan552  7103 2026-09-26 19:50:24.014456638 +0800 task_587261.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:51:03.444461000 +0800 task_587264.err
+  -rw-r--r-- 1 sychan552 sychan552  7196 2026-09-26 19:51:24.970913400 +0800 task_587264.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:52:03.582173000 +0800 task_587265.err
+  -rw-r--r-- 1 sychan552 sychan552  7028 2026-09-26 19:52:51.574836657 +0800 task_587265.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:53:04.738179000 +0800 task_587266.err
+  -rw-r--r-- 1 sychan552 sychan552  7167 2026-09-26 19:53:47.964503177 +0800 task_587266.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:54:04.868714000 +0800 task_587268.err
+  -rw-r--r-- 1 sychan552 sychan552  7258 2026-09-26 19:54:46.336565770 +0800 task_587268.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:55:04.047572000 +0800 task_587269.err
+  -rw-r--r-- 1 sychan552 sychan552  7348 2026-09-26 19:55:48.104530791 +0800 task_587269.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:56:05.139138000 +0800 task_587271.err
+  -rw-r--r-- 1 sychan552 sychan552  7131 2026-09-26 19:56:48.475142669 +0800 task_587271.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:57:04.105109000 +0800 task_587274.err
+  -rw-r--r-- 1 sychan552 sychan552  7269 2026-09-26 19:57:45.196541241 +0800 task_587274.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:58:04.132575000 +0800 task_587275.err
+  -rw-r--r-- 1 sychan552 sychan552  7360 2026-09-26 19:58:46.723080402 +0800 task_587275.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 19:59:04.622521000 +0800 task_587277.err
+  -rw-r--r-- 1 sychan552 sychan552  7451 2026-09-26 19:59:45.674941598 +0800 task_587277.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 20:00:05.742307000 +0800 task_587278.err
+  -rw-r--r-- 1 sychan552 sychan552  7490 2026-09-26 20:13:59.391935740 +0800 task_587278.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 20:14:36.842538000 +0800 task_587310.err
+  -rw-r--r-- 1 sychan552 sychan552  7629 2026-09-26 20:27:49.635525928 +0800 task_587310.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 20:28:05.131312000 +0800 task_587335.err
+  -rw-r--r-- 1 sychan552 sychan552  7719 2026-09-26 20:40:54.438456001 +0800 task_587335.out
+  -rw-r--r-- 1 sychan552 sychan552     0 2026-09-26 20:41:06.107175000 +0800 task_587354.err
+  -rw-r--r-- 1 sychan552 sychan552  7812 2026-09-26 20:53:31.133775947 +0800 task_587354.out
+--- recompute_verify.out
+  [recompute8] 116 prediction artefacts in results/stage6/scoring/predictions
+  [recompute8] scaler fitted on train rows [0, 676) ONLY; vars=7; manifest rows=17632
+  [recompute8] max |mse_all diff| = 8.882e-16  max |mae_all diff| = 2.220e-16
+  [recompute8] coverage OK: 96 eight-model fits + 12 notext control + 8 baselines
+  
+  === average_MSE_4L recomputed from artefacts (7-var z-space MSE) ===
+  -- eight-model
+     miflu              2.041519
+     nlinear            2.049550
+     dlinear            2.347832
+     timecma_llm        2.670009
+     patchtst           3.920470
+     itransformer       3.984699
+     qwen_time_llm      5.219555
+     calf_llm           5.515300
+  -- mechanism-control
+     notext             1.922158
+  -- baseline
+     seasonal_naive     2.268799
+     last_value_naive   7.165831
+  
+  [recompute8] non-LLM mean average_MSE_4L = 3.075638 (n=4)
+  [recompute8] LLM     mean average_MSE_4L = 3.861596 (n=4)
+  [recompute8] NOTE: these are 4 fixed implementations chosen in advance,
+               NOT a random sample of 'all LLMs'. This is a descriptive
+               comparison of two named sets and carries no inferential
+               claim about LLM forecasters in general.
+  
+  [recompute8] PASS — eight-model primary metric independently reproduced
+--- recompute_verify.err
+--- any sbatch job for recompute?
+  585878|s5_score|2026-09-26T00:13:13|2026-09-26T00:13:44|00:00:25|FAILED
+  585883|s5_score|2026-09-26T00:16:16|2026-09-26T00:17:09|00:00:49|COMPLETED
+  587373|s6_score|2026-09-26T20:53:46|2026-09-26T20:54:06|00:00:02|FAILED
+  587385|s6_score|2026-09-26T21:06:59|2026-09-26T21:09:06|00:02:03|FAILED
+  (if no 'recompute' job appears above, the recompute was run interactively)
+
+###### 5. per-run evidence files for stage6
+  count = 0
+
+###### 6. exact GPU-second accounting from sacct for all a0_gpu + s6_* jobs
+  586942|s6_cpu_validate|81|COMPLETED|billing=5,cpu=2,mem=16G,node=1
+  587011|s6_llm_check|61|COMPLETED|billing=5,cpu=8,mem=32G,node=1
+  587048|a0_gpu|16|FAILED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587054|a0_gpu|23|FAILED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587059|a0_gpu|22|FAILED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587068|a0_gpu|82|FAILED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587070|s6_task|4|FAILED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587075|s6_task|16|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587091|a0_gpu|25|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587190|s6_task|18|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587226|s6_task|17|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587237|s6_task|11|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587241|s6_task|15|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587243|s6_task|0|CANCELLED by 90731875|
+  587247|s6_task|24|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587250|s6_task|21|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587252|s6_task|21|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587254|s6_task|21|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587256|s6_task|22|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587257|s6_task|21|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587261|s6_task|22|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587264|s6_task|22|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587265|s6_task|49|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587266|s6_task|45|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587268|s6_task|44|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587269|s6_task|46|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587271|s6_task|45|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587274|s6_task|42|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587275|s6_task|43|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587277|s6_task|42|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587278|s6_task|836|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587310|s6_task|794|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587335|s6_task|771|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587354|s6_task|747|COMPLETED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=24G,node=1
+  587373|s6_score|2|FAILED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=32G,node=1
+  587385|s6_score|123|FAILED|billing=15,cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=32G,node=1
+  --- totals
+  jobs=36  total_elapsed_s=4194  gpu_elapsed_s=4052 (1.1256 GPU-h)
+  COMPLETED-with-GPU: n=26  s=3780 (1.0500 GPU-h)
+  FAILED-with-GPU   : n=7  s=272 (0.0756 GPU-h)

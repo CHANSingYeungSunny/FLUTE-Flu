@@ -1,0 +1,8 @@
+{
+  "n_panels": 580,
+  "source": "_tmp_audit/ili_ilitotal_extract.csv.gz (HPC durable evidence)",
+  "forecast_origin": 715,
+  "scale": "inverse-transformed ILITOTAL (physical)",
+  "peak_markers": "true peak (*), predicted peak (v)",
+  "layout": "forecast window only (ground truth + prediction + peaks)"
+}

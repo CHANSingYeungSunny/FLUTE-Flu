@@ -14,13 +14,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 from miflu_model import MIFlu
 from textual_embedder import TextualInputEmbedder
 
-# ── Config (Table IV: Regional) ────────────────────────────────────────────
-CONFIG = {
-    "T": 20, "L_list": [2, 3, 5, 10, 13, 15, 20], "N": 10,
-    "Lp": 4, "S": 2, "K": 4, "lora_r": 4, "D": 768,
-    "batch_size": 32, "learning_rate": 0.0005, "epochs": 50,
-    "num_repetitions": 10,
-}
+# ── Config (Table IV: Regional) ──
+# The regional hyper-parameters now live in configs.py as REGIONAL_CONFIG
+# (shared with train_regional_baseline.py). Values are unchanged.
+from configs import REGIONAL_CONFIG as CONFIG, set_seed
 
 HHS_COLS = [f"HHS{i}" for i in range(1, 11)]
 
@@ -121,7 +118,7 @@ def train_epoch(model, loader, opt, crit, dev, prompt_cache):
         bsz = bx.size(0)
         ht = prompt_cache.expand(bsz, -1, -1) if prompt_cache.shape[0] == 1 else prompt_cache[:bsz]
         opt.zero_grad()
-        yh, _, _ = model(bx, htext=ht)
+        yh, _, _, _ = model(bx, htext=ht)
         L = crit(yh, by); L.backward(); opt.step()
         loss_sum += L.item() * bsz
     return loss_sum / len(loader.dataset)
@@ -135,7 +132,7 @@ def evaluate_regional(model, loader, dev, train_mean, train_std, prompt_cache):
         bx = bx.to(dev)
         bsz = bx.size(0)
         ht = prompt_cache.expand(bsz, -1, -1) if prompt_cache.shape[0] == 1 else prompt_cache[:bsz]
-        yh, _, _ = model(bx, htext=ht)
+        yh, _, _, _ = model(bx, htext=ht)
         all_preds.append(yh.cpu().numpy())
         all_targets.append(by.numpy())
     p_norm = np.concatenate(all_preds)    # (samples, N, L)
@@ -198,6 +195,10 @@ def train_L(data_dict, L_idx, config, device, prompt_cache):
 # ── Main ────────────────────────────────────────────────────────────────────
 
 def main():
+    # ── Deterministic execution: seed every RNG before touching any data ──
+    # (This script previously had NO seeding at all.)
+    set_seed(CONFIG["seed"])
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
     log_init(LOG_PATH)
     log("=" * 60)

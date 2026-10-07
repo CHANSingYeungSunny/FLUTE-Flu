@@ -1,0 +1,71 @@
+run_id: "national-ili__calf-llm__none__identity__L24__seed42__20260916T171227Z__nogit"
+dataset: "national_ili"
+protocol_version: "innov-v2.0"
+experiment_stage: "pilot"
+selection_eligible: false
+device_requested: "auto"
+device_actual: "cuda"
+device_name: "NVIDIA A100-SXM4-80GB"
+plan_sha256: "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+plan_sha256_expected: "AA4AB1C8842E893A4690787E17ADD0CA193C86825FFF9FD89F46952C7F9E7961"
+git_sha: "nogit"
+config:
+  T: 104
+  L_list:
+    - 24
+    - 36
+    - 48
+    - 60
+  N: 7
+  Lp: 24
+  S: 2
+  K: 6
+  lora_r: 4
+  lora_alpha: 4.0
+  D: 768
+  attn_heads: 8
+  batch_size: 16
+  learning_rate: 0.0005
+  epochs: 20
+  num_repetitions: 10
+  seed: 42
+  model: "calf_llm"
+  text_encoder: "none"
+  fusion: "identity"
+  horizon: 24
+  L: 24
+  patience: 7
+  device: "cuda"
+components:
+  backbone: "calf_llm"
+  text_encoder: "none"
+  fusion: "identity"
+  encoder_available: true
+  encoder_context_dim: null
+limits:
+  train: null
+  val: null
+trainable_parameters: 1981608
+total_parameters: 126421416
+architecture_report:
+  name: "calf_llm"
+  display_name: "CALF-inspired Cross-Modal LLM"
+  fidelity: "INSPIRED_SIMPLIFICATION"
+  contract_status: "INSPIRED_WITH_COMPONENT_CONTRACT"
+  published: "CALF (AAAI 2025)"
+  components:
+    - "temporal_target_branch"
+    - "textual_source_branch"
+    - "cross_modal_match"
+    - "feature_regularization"
+    - "output_consistency"
+  backbone_loaded: true
+purpose: "infrastructure_verification_only"
+paper_result_eligible: false
+test_access_allowed: false
+implementation_source_version: "innov-v3.3-gpt2-padding-compatibility"
+source_snapshot_sha256: "94886a2980b7717e2db938bc851550f2e30d0b64a403eef374d8908a87155f2b"
+authoritative_plan_sha256: "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+model_key: "calf_llm"
+display_name: "CALF-inspired Cross-Modal LLM"
+architecture_fidelity: "INSPIRED_SIMPLIFICATION"

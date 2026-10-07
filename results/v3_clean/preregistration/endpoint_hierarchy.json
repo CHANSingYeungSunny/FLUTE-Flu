@@ -1,0 +1,60 @@
+{
+  "generated_utc": "2026-09-17T15:10:53Z",
+  "frozen_before_any_clean_v3_result": true,
+  "primary_champion_selector": {
+    "metric": "mse_all_7vars_full_horizon_z",
+    "definition": "MSE over every valid element of the complete seven-variable, complete-L output in paper-aligned StandardScaler space",
+    "per_L": "mean across the frozen 10 repetitions for each L in {24,36,48,60}",
+    "aggregate": "average_MSE_4L = arithmetic mean of the four per-L means",
+    "lower_is_better": true,
+    "normalisation": "NONE \u2014 do not divide by gpt2_miflu, last_value_naive, seasonal_naive or any other model",
+    "forbidden_aggregates": [
+      "(r24+r60)/2",
+      "GPT-relative ratio",
+      "any baseline-relative ratio"
+    ]
+  },
+  "key_secondary": {
+    "metric": "mae_all_7vars_full_horizon_z",
+    "aggregate": "average_MAE_4L",
+    "rule": "reported as a key secondary; MUST NOT be combined with MSE into an invented weighted score"
+  },
+  "disease_specific_secondary": {
+    "channel": "ILITOTAL",
+    "report_per_L": [
+      "fixed_step=0 MSE/MAE",
+      "fixed_step=1 MSE/MAE",
+      "fixed_step=2 MSE/MAE",
+      "fixed_step=3 MSE/MAE",
+      "full-horizon MSE/MAE"
+    ],
+    "spaces": [
+      "z-space",
+      "physical-space where the v2 pipeline supports it"
+    ],
+    "rules": [
+      "never average predictions across lead times",
+      "never pool steps 0-3 into a champion score",
+      "fixed step 0 never replaces the paper-aligned selector"
+    ]
+  },
+  "literature_peak": {
+    "PTE": "abs(predicted peak week - observed peak week)",
+    "PIE": "abs(predicted peak intensity - observed peak intensity) / observed peak intensity",
+    "thresholds": {
+      "PTE_weeks": 1,
+      "PIE_percent": 25.0
+    },
+    "report": "PTE and PIE separately, plus the joint outcome",
+    "forbidden": [
+      "Peak Hit Rate (0.70/0.75)",
+      "PTE <= 2 weeks",
+      "PIE <= 20 percent",
+      "plus/minus 2-week matching window",
+      "peak-aware early stopping",
+      "peak-aware checkpoint gate",
+      "peak_hit_ratio eligibility gate or tie-breaker",
+      "weighted PTE/PIE champion score"
+    ]
+  }
+}

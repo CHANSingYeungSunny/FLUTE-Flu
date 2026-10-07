@@ -1,0 +1,146 @@
+{
+  "created_utc": "2026-09-14T21:01:34Z",
+  "bash_found": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "shell_syntax_checked": true,
+  "n_scripts": 9,
+  "all_ok": true,
+  "submission_attempted": false,
+  "sbatch_invoked": false,
+  "results": [
+    {
+      "script": "innovation_worker.sh",
+      "is_submit_driver": false,
+      "is_worker": true,
+      "runner_invocations": 1,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "pilot_dlinear_L24_seed42.sh",
+      "is_submit_driver": false,
+      "is_worker": true,
+      "runner_invocations": 1,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "pilot_gpt2_miflu_L24_seed42.sh",
+      "is_submit_driver": false,
+      "is_worker": true,
+      "runner_invocations": 1,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "pilot_itransformer_L24_seed42.sh",
+      "is_submit_driver": false,
+      "is_worker": true,
+      "runner_invocations": 1,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "pilot_patchtst_L24_seed42.sh",
+      "is_submit_driver": false,
+      "is_worker": true,
+      "runner_invocations": 1,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "submit_innovation_full.sh",
+      "is_submit_driver": true,
+      "is_worker": false,
+      "runner_invocations": 0,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "submit_innovation_pilot.sh",
+      "is_submit_driver": true,
+      "is_worker": false,
+      "runner_invocations": 0,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "submit_innovation_screening.sh",
+      "is_submit_driver": true,
+      "is_worker": false,
+      "runner_invocations": 0,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    },
+    {
+      "script": "submit_innovation_smoke.sh",
+      "is_submit_driver": true,
+      "is_worker": false,
+      "runner_invocations": 0,
+      "structural_ok": true,
+      "issues": [],
+      "bash_syntax": {
+        "checked": true,
+        "returncode": 0,
+        "ok": true,
+        "stderr": ""
+      },
+      "ok": true
+    }
+  ]
+}

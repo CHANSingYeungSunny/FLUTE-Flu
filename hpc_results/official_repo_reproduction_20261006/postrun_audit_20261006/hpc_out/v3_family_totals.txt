@@ -1,0 +1,4 @@
+family_apparent_bytes=219722194209
+family_actual_bytes=219722194209
+family_file_count=27019
+scratch_user_total_bytes=443647014748

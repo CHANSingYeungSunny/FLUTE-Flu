@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-09-17T15:38:54Z",
+  "defect": "three original MIFlu prompt ablations were wired to QwenTimeLLM.build_prompt_as_prefix()",
+  "why_wrong": "the original MIFlu paper is GPT-2 based; its prompt lives in scripts/textual_embedder.py as PROMPT_TEMPLATE_7 with the three bracketed sections [Dataset information], [Input variable description], [Task instruction]",
+  "evidence": [
+    "scripts/textual_embedder.py PROMPT_TEMPLATE_7 contains the three bracketed sections verbatim from Appendix Table X",
+    "scripts/innovation/encoders/gpt2_encoder.py fit_on_train_only calls textual_embedder.build_prompt(train_df, T=104, L=horizon)",
+    "scripts/train_ablation.py already defines build_prompt_no_dataset, corroborating that the original ablations act on the MIFlu prompt"
+  ],
+  "correction": {
+    "re_parented_to_gpt2_miflu": [
+      "without_dataset_information",
+      "without_task_instruction",
+      "without_input_variable_description",
+      "without_lora",
+      "without_multimodality",
+      "without_lora_and_multimodality"
+    ],
+    "miflu_prompt_made_separable": true,
+    "default_equivalence_method": "sections are obtained by splitting PROMPT_TEMPLATE_7 on its own separator, so re-joining all three reproduces it byte-for-byte",
+    "multimodality_true_removal": "GPT2MifluAdapter.forward replaces htext with exact zeros when multimodal=False (not merely use_text_ln=False/gated_inject=False)",
+    "controls_scoped_per_parent": true
+  },
+  "wording_fix": {
+    "file": "component_isolation_audit_v2.json",
+    "variant": "without_multimodality",
+    "was": "target_component='LoRA module + text/multimodal branch'",
+    "now": "target_component='text/multimodal branch', parameter_groups_touched=['text']"
+  },
+  "old_audit_preserved": "component_isolation_audit_v1_superseded.json",
+  "matrix_modified": false,
+  "code_changes": {
+    "textual_embedder_separable_sections": true,
+    "gpt2_encoder_prompt_components": true,
+    "gpt2_encoder_fit_passes_components": true,
+    "adapter_multimodal_flag": true,
+    "adapter_zeroes_text_contribution": true
+  }
+}

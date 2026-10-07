@@ -1,0 +1,360 @@
+[s6score] step 0/4 — expose the A2 trio under the stage6 roots  2026-09-26T13:07:03Z
+[prep] linking the A2 trio into the stage6 roots
+  linked miflu: 12 ckpt
+  linked notext: 12 ckpt
+  linked nlinear: 12 ckpt
+[prep] staging lock template
+  template models: 9
+[prep] A2 models that are still short of 12 fits (expected: none)
+[prep] done
+[s6score] step 1/4 — lock all 108 checkpoints (9 models x 4 L x 3 seeds)  2026-09-26T13:07:03Z
+  locked S6-MIFLU-L24-S42  val=0.143928
+  locked S6-MIFLU-L24-S43  val=0.233649
+  locked S6-MIFLU-L24-S44  val=0.160335
+  locked S6-MIFLU-L36-S42  val=0.155700
+  locked S6-MIFLU-L36-S43  val=0.211426
+  locked S6-MIFLU-L36-S44  val=0.153218
+  locked S6-MIFLU-L48-S42  val=0.127559
+  locked S6-MIFLU-L48-S43  val=0.146552
+  locked S6-MIFLU-L48-S44  val=0.142406
+  locked S6-MIFLU-L60-S42  val=0.208807
+  locked S6-MIFLU-L60-S43  val=0.206988
+  locked S6-MIFLU-L60-S44  val=0.116390
+  locked S6-NOTEXT-L24-S42  val=0.199475
+  locked S6-NOTEXT-L24-S43  val=0.176302
+  locked S6-NOTEXT-L24-S44  val=0.181909
+  locked S6-NOTEXT-L36-S42  val=0.142340
+  locked S6-NOTEXT-L36-S43  val=0.190018
+  locked S6-NOTEXT-L36-S44  val=0.189779
+  locked S6-NOTEXT-L48-S42  val=0.163332
+  locked S6-NOTEXT-L48-S43  val=0.143865
+  locked S6-NOTEXT-L48-S44  val=0.139040
+  locked S6-NOTEXT-L60-S42  val=0.159653
+  locked S6-NOTEXT-L60-S43  val=0.146062
+  locked S6-NOTEXT-L60-S44  val=0.135202
+  locked S6-NLIN-L24-S42  val=0.279781
+  locked S6-NLIN-L24-S43  val=0.270808
+  locked S6-NLIN-L24-S44  val=0.271097
+  locked S6-NLIN-L36-S42  val=0.239018
+  locked S6-NLIN-L36-S43  val=0.242206
+  locked S6-NLIN-L36-S44  val=0.241417
+  locked S6-NLIN-L48-S42  val=0.228420
+  locked S6-NLIN-L48-S43  val=0.235613
+  locked S6-NLIN-L48-S44  val=0.233224
+  locked S6-NLIN-L60-S42  val=0.243080
+  locked S6-NLIN-L60-S43  val=0.246087
+  locked S6-NLIN-L60-S44  val=0.246873
+  locked S6-DLIN-L24-S42  val=0.288711
+  locked S6-DLIN-L24-S43  val=0.285517
+  locked S6-DLIN-L24-S44  val=0.289507
+  locked S6-DLIN-L36-S42  val=0.255352
+  locked S6-DLIN-L36-S43  val=0.257611
+  locked S6-DLIN-L36-S44  val=0.256290
+  locked S6-DLIN-L48-S42  val=0.246462
+  locked S6-DLIN-L48-S43  val=0.250653
+  locked S6-DLIN-L48-S44  val=0.248222
+  locked S6-DLIN-L60-S42  val=0.262175
+  locked S6-DLIN-L60-S43  val=0.260446
+  locked S6-DLIN-L60-S44  val=0.263469
+  locked S6-PTST-L24-S42  val=0.289111
+  locked S6-PTST-L24-S43  val=0.258483
+  locked S6-PTST-L24-S44  val=0.250624
+  locked S6-PTST-L36-S42  val=0.263509
+  locked S6-PTST-L36-S43  val=0.262551
+  locked S6-PTST-L36-S44  val=0.267166
+  locked S6-PTST-L48-S42  val=0.248158
+  locked S6-PTST-L48-S43  val=0.263671
+  locked S6-PTST-L48-S44  val=0.254570
+  locked S6-PTST-L60-S42  val=0.268762
+  locked S6-PTST-L60-S43  val=0.252454
+  locked S6-PTST-L60-S44  val=0.281591
+  locked S6-ITRN-L24-S42  val=0.247071
+  locked S6-ITRN-L24-S43  val=0.248381
+  locked S6-ITRN-L24-S44  val=0.246685
+  locked S6-ITRN-L36-S42  val=0.222235
+  locked S6-ITRN-L36-S43  val=0.203595
+  locked S6-ITRN-L36-S44  val=0.210860
+  locked S6-ITRN-L48-S42  val=0.229988
+  locked S6-ITRN-L48-S43  val=0.211663
+  locked S6-ITRN-L48-S44  val=0.215738
+  locked S6-ITRN-L60-S42  val=0.262859
+  locked S6-ITRN-L60-S43  val=0.269404
+  locked S6-ITRN-L60-S44  val=0.255840
+  locked S6-QWEN-L24-S42  val=0.349125
+  locked S6-QWEN-L24-S43  val=0.429617
+  locked S6-QWEN-L24-S44  val=0.397924
+  locked S6-QWEN-L36-S42  val=0.338749
+  locked S6-QWEN-L36-S43  val=0.371928
+  locked S6-QWEN-L36-S44  val=0.360415
+  locked S6-QWEN-L48-S42  val=0.290710
+  locked S6-QWEN-L48-S43  val=0.293428
+  locked S6-QWEN-L48-S44  val=0.292741
+  locked S6-QWEN-L60-S42  val=0.304167
+  locked S6-QWEN-L60-S43  val=0.306225
+  locked S6-QWEN-L60-S44  val=0.287662
+  locked S6-CALF-L24-S42  val=0.435845
+  locked S6-CALF-L24-S43  val=0.426910
+  locked S6-CALF-L24-S44  val=0.443532
+  locked S6-CALF-L36-S42  val=0.373911
+  locked S6-CALF-L36-S43  val=0.358339
+  locked S6-CALF-L36-S44  val=0.368579
+  locked S6-CALF-L48-S42  val=0.376379
+  locked S6-CALF-L48-S43  val=0.373713
+  locked S6-CALF-L48-S44  val=0.387896
+  locked S6-CALF-L60-S42  val=0.398679
+  locked S6-CALF-L60-S43  val=0.398948
+  locked S6-CALF-L60-S44  val=0.401510
+  locked S6-TCMA-L24-S42  val=0.295622
+  locked S6-TCMA-L24-S43  val=0.299608
+  locked S6-TCMA-L24-S44  val=0.289971
+  locked S6-TCMA-L36-S42  val=0.249083
+  locked S6-TCMA-L36-S43  val=0.244201
+  locked S6-TCMA-L36-S44  val=0.253932
+  locked S6-TCMA-L48-S42  val=0.248529
+  locked S6-TCMA-L48-S43  val=0.243995
+  locked S6-TCMA-L48-S44  val=0.229851
+  locked S6-TCMA-L60-S42  val=0.267674
+  locked S6-TCMA-L60-S43  val=0.266228
+  locked S6-TCMA-L60-S44  val=0.260883
+[LOCK] OK — 108/108 fits locked -> results/stage6/scoring/CHECKPOINT_LOCK.json
+[s6score] step 2/4 — Test scoring (108 learned fits + 8 baselines)  2026-09-26T13:07:14Z
+text embedder OK
+
+=== L=24: test=170 train=549 val=74 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  miflu    L=24 s=42: mse_all=2.469479 mse_ili=4.963915 pcc=0.6568
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  miflu    L=24 s=43: mse_all=2.503137 mse_ili=5.135067 pcc=0.6218
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  miflu    L=24 s=44: mse_all=2.359155 mse_ili=4.736243 pcc=0.6972
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  notext   L=24 s=42: mse_all=1.808458 mse_ili=3.360084 pcc=0.7680
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  notext   L=24 s=43: mse_all=2.080862 mse_ili=3.982037 pcc=0.7524
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+  notext   L=24 s=44: mse_all=2.049465 mse_ili=3.992106 pcc=0.7102
+  nlinear  L=24 s=42: mse_all=2.085733 mse_ili=4.115793 pcc=0.6834
+  nlinear  L=24 s=43: mse_all=2.143380 mse_ili=4.220885 pcc=0.6761
+  nlinear  L=24 s=44: mse_all=2.073371 mse_ili=4.090590 pcc=0.6853
+  dlinear  L=24 s=42: mse_all=2.343386 mse_ili=4.362524 pcc=0.7093
+  dlinear  L=24 s=43: mse_all=2.240201 mse_ili=4.234115 pcc=0.7073
+  dlinear  L=24 s=44: mse_all=2.271336 mse_ili=4.255645 pcc=0.7101
+  patchtst L=24 s=42: mse_all=3.987077 mse_ili=7.943183 pcc=0.7471
+  patchtst L=24 s=43: mse_all=3.939436 mse_ili=7.974901 pcc=0.7268
+  patchtst L=24 s=44: mse_all=3.738741 mse_ili=7.387604 pcc=0.7338
+  itransformer L=24 s=42: mse_all=3.812105 mse_ili=7.517255 pcc=0.7997
+  itransformer L=24 s=43: mse_all=3.818720 mse_ili=7.611944 pcc=0.7983
+  itransformer L=24 s=44: mse_all=3.622380 mse_ili=7.290158 pcc=0.7968
+  qwen_time_llm L=24 s=42: mse_all=4.549644 mse_ili=8.805015 pcc=0.3993
+  qwen_time_llm L=24 s=43: mse_all=4.474920 mse_ili=8.734017 pcc=0.3682
+  qwen_time_llm L=24 s=44: mse_all=4.831486 mse_ili=8.854589 pcc=0.3796
+  calf_llm L=24 s=42: mse_all=5.227289 mse_ili=9.770835 pcc=0.7257
+  calf_llm L=24 s=43: mse_all=5.243544 mse_ili=9.757713 pcc=0.7048
+  calf_llm L=24 s=44: mse_all=5.342555 mse_ili=9.989618 pcc=0.7217
+  timecma_llm L=24 s=42: mse_all=2.364220 mse_ili=5.105112 pcc=0.6924
+  timecma_llm L=24 s=43: mse_all=2.470042 mse_ili=5.388796 pcc=0.7061
+  timecma_llm L=24 s=44: mse_all=2.528044 mse_ili=5.562316 pcc=0.6876
+  last_value_naive   L=24: mse_all=6.213324 mse_ili=13.445924 (clamped=0)
+  seasonal_naive     L=24: mse_all=2.563768 mse_ili=5.206944 (clamped=0)
+
+=== L=36: test=158 train=537 val=62 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  miflu    L=36 s=42: mse_all=1.842247 mse_ili=3.424821 pcc=0.7549
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  miflu    L=36 s=43: mse_all=1.827483 mse_ili=3.315277 pcc=0.7573
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  miflu    L=36 s=44: mse_all=2.138330 mse_ili=4.234924 pcc=0.7370
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  notext   L=36 s=42: mse_all=1.635370 mse_ili=2.996637 pcc=0.7974
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  notext   L=36 s=43: mse_all=1.945080 mse_ili=3.706895 pcc=0.7478
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  notext   L=36 s=44: mse_all=1.900075 mse_ili=3.632691 pcc=0.7748
+  nlinear  L=36 s=42: mse_all=2.042341 mse_ili=4.002784 pcc=0.7166
+  nlinear  L=36 s=43: mse_all=1.997609 mse_ili=3.914141 pcc=0.7246
+  nlinear  L=36 s=44: mse_all=2.043128 mse_ili=4.013764 pcc=0.7163
+  dlinear  L=36 s=42: mse_all=2.229051 mse_ili=4.164379 pcc=0.7514
+  dlinear  L=36 s=43: mse_all=2.281250 mse_ili=4.255870 pcc=0.7464
+  dlinear  L=36 s=44: mse_all=2.323730 mse_ili=4.316611 pcc=0.7468
+  patchtst L=36 s=42: mse_all=3.815880 mse_ili=7.917518 pcc=0.7502
+  patchtst L=36 s=43: mse_all=3.716652 mse_ili=7.778640 pcc=0.7551
+  patchtst L=36 s=44: mse_all=3.797347 mse_ili=7.937418 pcc=0.7594
+  itransformer L=36 s=42: mse_all=3.853578 mse_ili=7.704389 pcc=0.7858
+  itransformer L=36 s=43: mse_all=3.987612 mse_ili=7.945574 pcc=0.7899
+  itransformer L=36 s=44: mse_all=4.102583 mse_ili=8.168663 pcc=0.8022
+  qwen_time_llm L=36 s=42: mse_all=4.997795 mse_ili=9.419655 pcc=0.3714
+  qwen_time_llm L=36 s=43: mse_all=4.830128 mse_ili=9.492734 pcc=0.4130
+  qwen_time_llm L=36 s=44: mse_all=5.159257 mse_ili=9.419180 pcc=0.3762
+  calf_llm L=36 s=42: mse_all=5.344830 mse_ili=10.213994 pcc=0.7049
+  calf_llm L=36 s=43: mse_all=5.336008 mse_ili=10.137812 pcc=0.6789
+  calf_llm L=36 s=44: mse_all=5.348368 mse_ili=10.228341 pcc=0.6835
+  timecma_llm L=36 s=42: mse_all=2.634869 mse_ili=5.895326 pcc=0.7171
+  timecma_llm L=36 s=43: mse_all=2.646518 mse_ili=5.963163 pcc=0.7189
+  timecma_llm L=36 s=44: mse_all=2.648170 mse_ili=5.912652 pcc=0.7273
+  last_value_naive   L=36: mse_all=7.713823 mse_ili=16.743832 (clamped=0)
+  seasonal_naive     L=36: mse_all=2.265501 mse_ili=4.587251 (clamped=0)
+
+=== L=48: test=146 train=525 val=50 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  miflu    L=48 s=42: mse_all=1.709073 mse_ili=3.101493 pcc=0.8023
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  miflu    L=48 s=43: mse_all=1.688146 mse_ili=3.089813 pcc=0.8039
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  miflu    L=48 s=44: mse_all=1.905973 mse_ili=3.662225 pcc=0.7967
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  notext   L=48 s=42: mse_all=1.754535 mse_ili=3.197203 pcc=0.7856
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  notext   L=48 s=43: mse_all=1.785308 mse_ili=3.347189 pcc=0.7632
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=48) = 336
+  notext   L=48 s=44: mse_all=1.830428 mse_ili=3.345530 pcc=0.7680
+  nlinear  L=48 s=42: mse_all=2.027838 mse_ili=3.982940 pcc=0.7403
+  nlinear  L=48 s=43: mse_all=1.971039 mse_ili=3.858034 pcc=0.7453
+  nlinear  L=48 s=44: mse_all=2.010948 mse_ili=3.940816 pcc=0.7419
+  dlinear  L=48 s=42: mse_all=2.347131 mse_ili=4.369675 pcc=0.7702
+  dlinear  L=48 s=43: mse_all=2.405199 mse_ili=4.508870 pcc=0.7646
+  dlinear  L=48 s=44: mse_all=2.314995 mse_ili=4.309956 pcc=0.7721
+  patchtst L=48 s=42: mse_all=3.984495 mse_ili=8.565377 pcc=0.7476
+  patchtst L=48 s=43: mse_all=3.861747 mse_ili=7.802700 pcc=0.7755
+  patchtst L=48 s=44: mse_all=4.011270 mse_ili=8.832766 pcc=0.7562
+  itransformer L=48 s=42: mse_all=3.999369 mse_ili=8.170619 pcc=0.7987
+  itransformer L=48 s=43: mse_all=4.096235 mse_ili=8.245680 pcc=0.7857
+  itransformer L=48 s=44: mse_all=4.007372 mse_ili=8.110420 pcc=0.8193
+  qwen_time_llm L=48 s=42: mse_all=5.897892 mse_ili=11.357604 pcc=0.2589
+  qwen_time_llm L=48 s=43: mse_all=5.634144 mse_ili=10.542414 pcc=0.3506
+  qwen_time_llm L=48 s=44: mse_all=5.465939 mse_ili=10.338325 pcc=0.3484
+  calf_llm L=48 s=42: mse_all=5.647161 mse_ili=10.884194 pcc=0.6795
+  calf_llm L=48 s=43: mse_all=5.531143 mse_ili=10.763505 pcc=0.6926
+  calf_llm L=48 s=44: mse_all=5.666423 mse_ili=10.924982 pcc=0.7286
+  timecma_llm L=48 s=42: mse_all=2.894506 mse_ili=6.617508 pcc=0.7588
+  timecma_llm L=48 s=43: mse_all=2.505405 mse_ili=5.723667 pcc=0.7477
+  timecma_llm L=48 s=44: mse_all=2.760965 mse_ili=6.377804 pcc=0.7385
+  last_value_naive   L=48: mse_all=7.851274 mse_ili=17.054823 (clamped=0)
+  seasonal_naive     L=48: mse_all=2.142457 mse_ili=4.335677 (clamped=0)
+
+=== L=60: test=134 train=513 val=38 ===
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  miflu    L=60 s=42: mse_all=2.172754 mse_ili=4.082270 pcc=0.7089
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  miflu    L=60 s=43: mse_all=1.903155 mse_ili=3.565514 pcc=0.7531
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  miflu    L=60 s=44: mse_all=1.979299 mse_ili=3.474557 pcc=0.7648
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=42: mse_all=2.349777 mse_ili=4.646273 pcc=0.6620
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=43: mse_all=2.177529 mse_ili=4.042934 pcc=0.7113
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=60) = 420
+  notext   L=60 s=44: mse_all=1.749006 mse_ili=3.057714 pcc=0.7976
+  nlinear  L=60 s=42: mse_all=1.984557 mse_ili=3.904797 pcc=0.7760
+  nlinear  L=60 s=43: mse_all=2.223805 mse_ili=4.393778 pcc=0.7402
+  nlinear  L=60 s=44: mse_all=1.990846 mse_ili=3.933949 pcc=0.7787
+  dlinear  L=60 s=42: mse_all=2.488979 mse_ili=4.695545 pcc=0.7893
+  dlinear  L=60 s=43: mse_all=2.461410 mse_ili=4.653953 pcc=0.7874
+  dlinear  L=60 s=44: mse_all=2.467312 mse_ili=4.664598 pcc=0.7861
+  patchtst L=60 s=42: mse_all=4.085747 mse_ili=8.845036 pcc=0.7504
+  patchtst L=60 s=43: mse_all=3.927717 mse_ili=8.261996 pcc=0.7727
+  patchtst L=60 s=44: mse_all=4.179537 mse_ili=8.987328 pcc=0.7422
+  itransformer L=60 s=42: mse_all=4.127574 mse_ili=8.462691 pcc=0.7786
+  itransformer L=60 s=43: mse_all=4.118022 mse_ili=8.528329 pcc=0.7553
+  itransformer L=60 s=44: mse_all=4.270835 mse_ili=8.642220 pcc=0.7433
+  qwen_time_llm L=60 s=42: mse_all=5.743778 mse_ili=10.867894 pcc=0.3007
+  qwen_time_llm L=60 s=43: mse_all=5.705108 mse_ili=11.061687 pcc=0.2822
+  qwen_time_llm L=60 s=44: mse_all=5.344563 mse_ili=10.517454 pcc=0.3986
+  calf_llm L=60 s=42: mse_all=5.860724 mse_ili=11.470759 pcc=0.6572
+  calf_llm L=60 s=43: mse_all=5.819187 mse_ili=11.359445 pcc=0.6540
+  calf_llm L=60 s=44: mse_all=5.816365 mse_ili=11.396284 pcc=0.6788
+  timecma_llm L=60 s=42: mse_all=2.868016 mse_ili=6.555172 pcc=0.7597
+  timecma_llm L=60 s=43: mse_all=3.016701 mse_ili=6.957092 pcc=0.7439
+  timecma_llm L=60 s=44: mse_all=2.702654 mse_ili=6.334136 pcc=0.7611
+  last_value_naive   L=60: mse_all=6.884903 mse_ili=14.658813 (clamped=0)
+  seasonal_naive     L=60: mse_all=2.103470 mse_ili=4.284679 (clamped=0)
+
+artefacts: 17632 origin rows -> results/stage6/scoring/predictions/test_manifest.csv
+
+=== average_MSE_4L (7-var standardized MSE, mean seeds then mean L) ===
+  notext             1.922158
+  miflu              2.041519
+  nlinear            2.049550
+  seasonal_naive     2.268799
+  dlinear            2.347832
+  timecma_llm        2.670009
+  patchtst           3.920470
+  itransformer       3.984699
+  qwen_time_llm      5.219555
+  calf_llm           5.515300
+  last_value_naive   7.165831
+
+DONE -> results/stage6/scoring/score_matrix.csv, score_summary.csv, average_mse_4L.csv
+[s6score] step 3/4 — independent recomputation from artefacts  2026-09-26T13:09:06Z
+[recompute8] 116 prediction artefacts in results/stage6/scoring/predictions

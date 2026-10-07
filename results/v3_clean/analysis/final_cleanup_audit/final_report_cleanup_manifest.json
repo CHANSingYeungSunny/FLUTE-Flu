@@ -1,0 +1,49 @@
+{
+  "generated": "2026-09-21",
+  "purpose": "Cleanup manifest: what was archived, what was retained, and the non-destructive archive location (Addendum §7).",
+  "archive_dir": "results/v3_clean/analysis/final_cleanup_audit/",
+  "archive_policy": "non-destructive — all superseded/duplicate source, English, brief, QA, and manifest files were MOVED (not deleted) so evidence is preserved.",
+  "archived_files_count": 38,
+  "archived_categories": {
+    "superseded_report_variants": [
+      "MIFlu_Final_Supervisor_Report_EN.{md,docx,pdf}",
+      "MIFlu_Final_Supervisor_Report_ZH.{md,docx,pdf}",
+      "MIFlu_Final_Tutor_Meeting_Brief_EN.{md,docx,pdf}",
+      "MIFlu_Final_Tutor_Meeting_Brief_ZH.{md,docx,pdf}",
+      "MIFlu_Wave1_Final_Supervisor_Report.{docx,pdf}",
+      "MIFlu_Wave1_Final_Supervisor_Report_EN.md",
+      "MIFlu_Wave1_Final_Supervisor_Report_ZH.{md,docx,pdf}",
+      "MIFlu_Wave1_Tutor_Meeting_Brief_EN.md",
+      "MIFlu_Wave1_Tutor_Meeting_Brief_ZH.md"
+    ],
+    "superseded_project_summary_variants": [
+      "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Final_Updated_DRAFT.{md,docx,pdf}",
+      "Project_Summary_and_Planning_Chart_Wave1_Updated_DRAFT.md"
+    ],
+    "archived_source_of_final_reports": [
+      "MIFlu_非LLM与LLM流感预测最终报告_中文版.md",
+      "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Wave1_Updated_DRAFT.md"
+    ],
+    "qa_and_manifests": [
+      "final_report_artifact_manifest.json",
+      "final_report_qa.json",
+      "wave1_report_artifact_manifest.json",
+      "wave1_report_qa.json",
+      "Project_Summary_Update_Change_Map.md",
+      "Project_Summary_Update_Evidence_Pack.{json,md}"
+    ],
+    "inventory_snapshots": [
+      "figure_inventory_before.{csv,json}",
+      "report_inventory_before.{csv,json}"
+    ]
+  },
+  "archived_files_manifest": "archived_files_manifest.json",
+  "reports_root_final_state": [
+    "MIFlu_非LLM与LLM流感预测最终报告_中文版.docx",
+    "MIFlu_非LLM与LLM流感预测最终报告_中文版.pdf",
+    "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Wave1_Updated_DRAFT.docx",
+    "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Wave1_Updated_DRAFT.pdf"
+  ],
+  "deletions_executed": false,
+  "note": "CLEANUP_PLAN.md deletions remain pending approval; none were run."
+}

@@ -1,0 +1,73 @@
+[f1cpu] host=gpu-v100s-01 job=607564 start=2026-10-06T10:56:49Z
+[f1cpu] GPU REQUIRED: NO   (no gres/gpu in this job's AllocTRES by construction)
+[A2] run_config containment=strict profile=author_966 horizon=24 seed=42
+  [nlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[nlinear] L=24 seed=42 TEST DEFERRED best_val=0.279781 best_epoch=14 (9.7s)
+[nlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__nlinear__L24/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=36 seed=42
+  [nlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[nlinear] L=36 seed=42 TEST DEFERRED best_val=0.239018 best_epoch=10 (1.3s)
+[nlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__nlinear__L36/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=48 seed=42
+  [nlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[nlinear] L=48 seed=42 TEST DEFERRED best_val=0.228420 best_epoch=12 (1.3s)
+[nlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__nlinear__L48/metrics.csv
+[A2] run_config containment=strict profile=author_966 horizon=60 seed=42
+  [nlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[nlinear] L=60 seed=42 TEST DEFERRED best_val=0.243080 best_epoch=19 (1.3s)
+[nlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__nlinear__L60/metrics.csv
+  [dlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+  [dlinear] locked best-val ckpt -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/dlinear/best_dlinear_L24_seed42.pth
+[dlinear] L=24 seed=42 TEST DEFERRED best_val=0.288711 best_epoch=14 (1.7s)
+[dlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__dlinear__L24/metrics.csv
+  [dlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+  [dlinear] locked best-val ckpt -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/dlinear/best_dlinear_L36_seed42.pth
+[dlinear] L=36 seed=42 TEST DEFERRED best_val=0.255352 best_epoch=17 (1.6s)
+[dlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__dlinear__L36/metrics.csv
+  [dlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+  [dlinear] locked best-val ckpt -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/dlinear/best_dlinear_L48_seed42.pth
+[dlinear] L=48 seed=42 TEST DEFERRED best_val=0.246462 best_epoch=18 (1.6s)
+[dlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__dlinear__L48/metrics.csv
+  [dlinear] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+  [dlinear] locked best-val ckpt -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/dlinear/best_dlinear_L60_seed42.pth
+[dlinear] L=60 seed=42 TEST DEFERRED best_val=0.262175 best_epoch=12 (1.6s)
+[dlinear] DONE -> /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/logs/f1__dlinear__L60/metrics.csv
+[f1naive] last_value_naive L=24 windows=170 mse=6.213324 mae=1.622231 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__last_value_naive__L24__seed42/pred_last_value_naive_L24_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1naive] seasonal_naive L=24 windows=170 mse=2.563768 mae=1.004200 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__seasonal_naive__L24__seed42/pred_seasonal_naive_L24_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1naive] last_value_naive L=36 windows=158 mse=7.713822 mae=1.905885 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__last_value_naive__L36__seed42/pred_last_value_naive_L36_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1naive] seasonal_naive L=36 windows=158 mse=2.265501 mae=0.956793 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__seasonal_naive__L36__seed42/pred_seasonal_naive_L36_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1naive] last_value_naive L=48 windows=146 mse=7.851274 mae=1.952149 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__last_value_naive__L48__seed42/pred_last_value_naive_L48_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1naive] seasonal_naive L=48 windows=146 mse=2.142458 mae=0.941274 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__seasonal_naive__L48__seed42/pred_seasonal_naive_L48_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1naive] last_value_naive L=60 windows=134 mse=6.884904 mae=1.788430 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__last_value_naive__L60__seed42/pred_last_value_naive_L60_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1naive] seasonal_naive L=60 windows=134 mse=1.917433 mae=0.939163 invalid_leads=0
+[f1naive] wrote /gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/preds/f1__seasonal_naive__L60__seed42/pred_seasonal_naive_L60_s42.npz
+[f1naive] LEAKAGE_SAFE=True  GPU_REQUIRED=False
+[f1cpu] === Phase 1 scorer/contract check (partial, integrity-only) ===
+Traceback (most recent call last):
+  File "/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/f1_score_all.py", line 34, in <module>
+    import scorer_f1 as S                      # noqa: E402
+  File "/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/scorer_f1.py", line 60, in <module>
+    ORIG = _load_original()
+  File "/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1_preflight_20261006/scorer_f1.py", line 56, in _load_original
+    spec.loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs1/home/scripts/score_predictions_independent.py'
+  (PARTIAL_DRY_RUN_INTEGRITY_OK is the expected Phase-1 status: the GPU arms have not run yet)
+[f1cpu] Phase 1 failures=0
+[f1cpu] Phase 1 end=2026-10-06T10:57:54Z

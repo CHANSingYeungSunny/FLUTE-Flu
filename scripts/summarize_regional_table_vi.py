@@ -65,12 +65,13 @@ for L in L_list:
                     if mm else "NA"),
         "MAE_ILI": (f"{mm.get('MAE_ILI_mean', float('nan')):.4f}±{mm.get('MAE_ILI_std', float('nan')):.4f}"
                     if mm else "NA"),
-        # Supplementary (non-paper-protocol) indicators:
-        "Peak Hit": f"{g(v['peak_hit_rate'])} (thr 0.75)",
-        "Timing (wk)": f"{g(v['mean_abs_delta_t'])} (thr 2.0)",
-        "Peak Int. (%)": f"{g(v['mean_peak_magnitude_rel_err'])} (thr 20.0)",
-        "Direction": f"{g(v['directional_accuracy'])} (thr 0.60)",
-        "Peak Hit count": pa.get("peak_hit_count", "NA"),
+        # Supplementary (non-paper-protocol) indicators — PTE and PIE only.
+        # Matched/Missed counts are the SAMPLE-SIZE qualifier: PTE and PIE are
+        # computed over matched peaks only, so they are meaningless without it.
+        "PTE (wk)": (f"{g(v.get('peak_timing_error_weeks', v.get('mean_abs_delta_t')))}"
+                     " (thr 2.0)"),
+        "PIE (%)": f"{g(v['mean_peak_magnitude_rel_err'])} (thr 20.0)",
+        "Matched peaks": pa.get("peak_hit_count", "NA"),
         "Missed peaks": pa.get("n_missed", "NA"),
     })
 
@@ -82,7 +83,7 @@ out_df.to_csv(csv_path, index=False)
 with open(md_path, "w") as f:
     f.write("# MIFlu Paper-Protocol Results — Regional/Table VI Summary\n\n")
     f.write("**Primary metrics (MIFlu paper protocol, Section V-B): MSE / MAE only.**\n\n")
-    f.write("The four Peak/Timing/Intensity/Direction columns are **supplementary "
+    f.write("The PTE / PIE columns are **supplementary "
             "diagnostics** computed by this project (compute_miflu_indicators.py), "
             "NOT part of the MIFlu paper's reported metrics. Listed for insight only.\n\n")
     f.write("| " + " | ".join(out_df.columns) + " |\n")
@@ -90,9 +91,9 @@ with open(md_path, "w") as f:
     for _, r in out_df.iterrows():
         f.write("| " + " | ".join(str(r[c]) for c in out_df.columns) + " |\n")
     f.write("\n## Verdicts (supplementary thresholds)\n")
-    f.write("- Peak Hit >= 0.75, Timing <= 2.0 wk, Peak Intensity <= 20.0%, Direction >= 0.60\n")
-    f.write("- 'not accurate' on Peak Hit / Peak Intensity reflects missed peaks and "
-            "magnitude error at matched peaks (see Peak Hit count / Missed peaks).\n")
+    f.write("- PTE <= 2.0 wk, PIE <= 20.0 %\n")
+    f.write("- 'not accurate' on PTE / PIE reflects missed peaks and "
+            "magnitude error at matched peaks (see Matched peaks / Missed peaks).\n")
 
 print(f"[out] {csv_path}")
 print(f"[out] {md_path}")

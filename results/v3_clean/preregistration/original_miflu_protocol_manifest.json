@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-09-17T15:10:53Z",
+  "original_task": {
+    "dataset": "National-Illness (canonical)",
+    "canonical_data_sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+    "input": "all 7 variables over T = 104 historical weeks",
+    "output": "all 7 variables over L future weeks",
+    "L": [
+      24,
+      36,
+      48,
+      60
+    ],
+    "split": {
+      "train": 717,
+      "validation": 102,
+      "test": 206
+    },
+    "scaler": "StandardScaler fitted on train only",
+    "prompt_statistics": "train only",
+    "early_stopping": "ordinary validation loss",
+    "checkpoint": "lowest validation loss (NOT peak-aware)"
+  },
+  "verified_from_source": {
+    "N": 7,
+    "T": 104,
+    "HORIZONS": [
+      24,
+      36,
+      48,
+      60
+    ],
+    "ILI_CHANNEL": 4,
+    "var_cols_contain_ILITOTAL": true,
+    "split_manifest_fields_present": true,
+    "scaler_train_only_present": true
+  },
+  "protocol_verified": true
+}

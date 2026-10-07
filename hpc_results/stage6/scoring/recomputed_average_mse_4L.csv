@@ -1,0 +1,12 @@
+model,average_MSE_4L,group
+miflu,2.0415193835894265,eight-model
+nlinear,2.0495495200157166,eight-model
+dlinear,2.3478315273920694,eight-model
+timecma_llm,2.6700090169906616,eight-model
+patchtst,3.9204704562822976,eight-model
+itransformer,3.9846988916397095,eight-model
+qwen_time_llm,5.219554503758748,eight-model
+calf_llm,5.515299717585245,eight-model
+notext,1.9221576750278473,mechanism-control
+seasonal_naive,2.2687992453575134,baseline
+last_value_naive,7.165831208229065,baseline

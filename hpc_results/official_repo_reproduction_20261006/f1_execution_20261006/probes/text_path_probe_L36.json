@@ -1,0 +1,77 @@
+{
+  "probe": "f1_text_probe",
+  "horizon": 36,
+  "checkpoint": "/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/miflu/best_miflu_L36_seed42.pth",
+  "checkpoint_sha256": "0972589622386984ba986a5548f61434c7708d232feaa38c7d35d43422ea1e75",
+  "device": "cpu",
+  "dtype": "float32",
+  "torch": "2.5.1",
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "model_eval_mode": true,
+  "any_dropout_training": false,
+  "n_state_tensors": 106,
+  "dataset_path": "/scratch/sychan552/a2_stage5/data/raw/national_illness_raw_paper_exact.csv",
+  "dataset_sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+  "scaler_source": "refit on train rows [0,676)",
+  "input_space": "StandardScaler (train-fit)",
+  "input_shape": [
+    1,
+    7,
+    104
+  ],
+  "text_shape_here": [
+    1,
+    369,
+    768
+  ],
+  "text_shape_other": [
+    1,
+    369,
+    768
+  ],
+  "variants": {
+    "original": [
+      1,
+      369,
+      768
+    ],
+    "different_prompt_same_length": [
+      1,
+      369,
+      768
+    ],
+    "row_permuted_same_multiset": [
+      1,
+      369,
+      768
+    ]
+  },
+  "prediction_differences": {
+    "different_prompt_same_length": {
+      "max_abs_prediction_difference": 0.000179290771484375,
+      "mean_abs_prediction_difference": 5.558918201131746e-05,
+      "n_differing_elements": 252,
+      "n_elements": 252
+    },
+    "row_permuted_same_multiset": {
+      "max_abs_prediction_difference": 0.0665273666381836,
+      "mean_abs_prediction_difference": 0.01874452456831932,
+      "n_differing_elements": 252,
+      "n_elements": 252
+    }
+  },
+  "prediction_range_original": [
+    -0.5177502632141113,
+    1.9060704708099365
+  ],
+  "gradients": {
+    "loss": 1.115293264389038,
+    "text_embedding_grad_norm": 0.02371392957866192,
+    "text_embedding_grad_max_abs": 0.0016236321534961462
+  },
+  "tolerance": 1e-06,
+  "verdict": "text_active",
+  "verdict_reason": "max|dPred| over equal-length text swaps = 6.652737e-02 (tol 1.0e-06); |grad_text| = 0.02371392957866192",
+  "scope": "corrected A2 implementation (miflu_model.py) on an F1 validation-selected checkpoint; NOT the author's released code"
+}

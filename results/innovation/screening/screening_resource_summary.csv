@@ -1,0 +1,25 @@
+run_id,model_key,horizon,seed,train_seconds,gpu_hours,trainable_parameters,total_parameters,device_name,n_figures
+national-ili__dlinear__none__identity__L24__seed42__20260914T230303Z__nogit,dlinear,24,42,1.981,0.0006,5040,5040,NVIDIA A100-SXM4-80GB,4
+national-ili__dlinear__none__identity__L24__seed43__20260914T230403Z__nogit,dlinear,24,43,1.968,0.0005,5040,5040,NVIDIA A100-SXM4-80GB,4
+national-ili__dlinear__none__identity__L24__seed44__20260914T230503Z__nogit,dlinear,24,44,1.986,0.0006,5040,5040,NVIDIA A100-SXM4-80GB,4
+national-ili__dlinear__none__identity__L60__seed42__20260914T230603Z__nogit,dlinear,60,42,1.98,0.0006,12600,12600,NVIDIA A100-SXM4-80GB,4
+national-ili__dlinear__none__identity__L60__seed43__20260914T230704Z__nogit,dlinear,60,43,1.987,0.0006,12600,12600,NVIDIA A100-SXM4-80GB,4
+national-ili__dlinear__none__identity__L60__seed44__20260914T230804Z__nogit,dlinear,60,44,1.976,0.0005,12600,12600,NVIDIA A100-SXM4-80GB,4
+national-ili__nlinear__none__identity__L24__seed42__20260914T230904Z__nogit,nlinear,24,42,1.689,0.0005,2520,2520,NVIDIA A100-SXM4-80GB,4
+national-ili__nlinear__none__identity__L24__seed43__20260914T231004Z__nogit,nlinear,24,43,1.694,0.0005,2520,2520,NVIDIA A100-SXM4-80GB,4
+national-ili__nlinear__none__identity__L24__seed44__20260914T231104Z__nogit,nlinear,24,44,1.684,0.0005,2520,2520,NVIDIA A100-SXM4-80GB,4
+national-ili__nlinear__none__identity__L60__seed42__20260914T231204Z__nogit,nlinear,60,42,1.479,0.0004,6300,6300,NVIDIA A100-SXM4-80GB,4
+national-ili__nlinear__none__identity__L60__seed43__20260914T231304Z__nogit,nlinear,60,43,1.694,0.0005,6300,6300,NVIDIA A100-SXM4-80GB,4
+national-ili__nlinear__none__identity__L60__seed44__20260914T231405Z__nogit,nlinear,60,44,1.39,0.0004,6300,6300,NVIDIA A100-SXM4-80GB,4
+national-ili__patchtst__none__identity__L24__seed42__20260914T231505Z__nogit,patchtst,24,42,3.07,0.0009,87256,87256,NVIDIA A100-SXM4-80GB,4
+national-ili__patchtst__none__identity__L24__seed43__20260914T231605Z__nogit,patchtst,24,43,2.451,0.0007,87256,87256,NVIDIA A100-SXM4-80GB,4
+national-ili__patchtst__none__identity__L24__seed44__20260914T231705Z__nogit,patchtst,24,44,4.901,0.0014,87256,87256,NVIDIA A100-SXM4-80GB,4
+national-ili__patchtst__none__identity__L60__seed42__20260914T231805Z__nogit,patchtst,60,42,4.926,0.0014,114940,114940,NVIDIA A100-SXM4-80GB,4
+national-ili__patchtst__none__identity__L60__seed43__20260914T231905Z__nogit,patchtst,60,43,4.923,0.0014,114940,114940,NVIDIA A100-SXM4-80GB,4
+national-ili__patchtst__none__identity__L60__seed44__20260914T232006Z__nogit,patchtst,60,44,4.918,0.0014,114940,114940,NVIDIA A100-SXM4-80GB,4
+national-ili__itransformer__none__identity__L24__seed42__20260914T232106Z__nogit,itransformer,24,42,3.205,0.0009,75672,75672,NVIDIA A100-SXM4-80GB,4
+national-ili__itransformer__none__identity__L24__seed43__20260914T232206Z__nogit,itransformer,24,43,3.218,0.0009,75672,75672,NVIDIA A100-SXM4-80GB,4
+national-ili__itransformer__none__identity__L24__seed44__20260914T232306Z__nogit,itransformer,24,44,3.008,0.0008,75672,75672,NVIDIA A100-SXM4-80GB,4
+national-ili__itransformer__none__identity__L60__seed42__20260914T232406Z__nogit,itransformer,60,42,4.827,0.0013,78012,78012,NVIDIA A100-SXM4-80GB,4
+national-ili__itransformer__none__identity__L60__seed43__20260914T232507Z__nogit,itransformer,60,43,4.833,0.0013,78012,78012,NVIDIA A100-SXM4-80GB,4
+national-ili__itransformer__none__identity__L60__seed44__20260914T232638Z__nogit,itransformer,60,44,4.811,0.0013,78012,78012,NVIDIA A100-SXM4-80GB,4

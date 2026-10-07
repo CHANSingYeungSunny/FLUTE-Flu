@@ -1,0 +1,95 @@
+{
+  "generated_utc": "2026-09-17T15:52:55Z",
+  "version": "innov-v3.6-clean-paper-aligned",
+  "aggregate_sha256": "5fd81abea1aae8f1c117d69504e9e93186e64143fefc2d12a89eb33add2ba677",
+  "checks": [
+    {
+      "id": "total_rows_598",
+      "passed": true
+    },
+    {
+      "id": "primary_320",
+      "passed": true
+    },
+    {
+      "id": "baselines_8",
+      "passed": true
+    },
+    {
+      "id": "ablations_240",
+      "passed": true
+    },
+    {
+      "id": "negative_controls_30",
+      "passed": true
+    },
+    {
+      "id": "immediate_580",
+      "passed": true
+    },
+    {
+      "id": "deferred_18",
+      "passed": true
+    },
+    {
+      "id": "deleted_zero",
+      "passed": true
+    },
+    {
+      "id": "duplicated_zero",
+      "passed": true
+    },
+    {
+      "id": "all_control_rows_have_parent_and_intervention",
+      "passed": true
+    },
+    {
+      "id": "six_original_ablations_parented_to_gpt2_miflu",
+      "passed": true
+    },
+    {
+      "id": "fixed_parent_controls_12",
+      "passed": true
+    },
+    {
+      "id": "deferred_rows_non_submittable",
+      "passed": true
+    },
+    {
+      "id": "immediate_rows_submittable",
+      "passed": true
+    },
+    {
+      "id": "deferred_guard_blocks_submission",
+      "passed": true
+    },
+    {
+      "id": "unsupported_peak_logic_absent",
+      "passed": true
+    },
+    {
+      "id": "lf_only_scripts_crlf_zero",
+      "passed": true
+    },
+    {
+      "id": "scripts_generated_for_580_only",
+      "passed": true
+    },
+    {
+      "id": "archive_isolated",
+      "passed": true
+    },
+    {
+      "id": "formal_submissions_still_zero",
+      "passed": true
+    },
+    {
+      "id": "test_holdout_guards_pass",
+      "passed": true
+    }
+  ],
+  "n_passed": 21,
+  "n_checks": 21,
+  "all_passed": true,
+  "decision": "STATIC_GATE_PASSED"
+}

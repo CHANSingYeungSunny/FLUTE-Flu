@@ -1,0 +1,22 @@
+{
+  "generated_from": [
+    "final_test_metrics.json",
+    "final_peak_hit_rates.csv",
+    "deferred_controls_statistical_interpretation.json",
+    "selection_outcome.json (validation values)"
+  ],
+  "figure_text_language": "English",
+  "figures": {
+    "figB_final_test_comparison.png": "3-model Test average_MSE_4L + 95% CI",
+    "figC_validation_to_test_reversal.png": "validation vs Test, splits separated",
+    "figD_test_mse_mae_by_horizon.png": "per-horizon Test MSE / MAE",
+    "figE_test_pte_pie_by_horizon.png": "per-horizon PTE (wk) / PIE (%)",
+    "figG_deferred_controls_familyAB.png": "Family A vs B, kept separate",
+    "figH_final_workflow.png": "completed workflow + integrity labels"
+  },
+  "model_colors": {
+    "nlinear": "#1f77b4",
+    "gpt2_miflu": "#ff7f0e",
+    "seasonal_naive": "#2ca02c"
+  }
+}

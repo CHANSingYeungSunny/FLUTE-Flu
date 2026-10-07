@@ -1,0 +1,143 @@
+{
+  "rule_examined": "legacy: split by target START only (target may straddle the next split)",
+  "measured_on": "2026-09-25",
+  "profiles": {
+    "project_1025 (v3_clean Wave-1 / Test phase)": {
+      "n": 1025,
+      "train_end": 717,
+      "val_end": 819
+    },
+    "author_966 676/97/193 (A2 target)": {
+      "n": 966,
+      "train_end": 676,
+      "val_end": 773
+    },
+    "author_966 676/96/194 (job 514859 historical)": {
+      "n": 966,
+      "train_end": 676,
+      "val_end": 772
+    }
+  },
+  "results": [
+    {
+      "profile": "project_1025 (v3_clean Wave-1 / Test phase)",
+      "L": 24,
+      "n_val": 103,
+      "n_val_crossing": 23,
+      "pct_val_crossing": 22.3,
+      "pct_val_target_steps_in_test": 11.2,
+      "n_test": 182,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "project_1025 (v3_clean Wave-1 / Test phase)",
+      "L": 36,
+      "n_val": 103,
+      "n_val_crossing": 35,
+      "pct_val_crossing": 34.0,
+      "pct_val_target_steps_in_test": 17.0,
+      "n_test": 170,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "project_1025 (v3_clean Wave-1 / Test phase)",
+      "L": 48,
+      "n_val": 103,
+      "n_val_crossing": 47,
+      "pct_val_crossing": 45.6,
+      "pct_val_target_steps_in_test": 22.8,
+      "n_test": 158,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "project_1025 (v3_clean Wave-1 / Test phase)",
+      "L": 60,
+      "n_val": 103,
+      "n_val_crossing": 59,
+      "pct_val_crossing": 57.3,
+      "pct_val_target_steps_in_test": 28.6,
+      "n_test": 146,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/97/193 (A2 target)",
+      "L": 24,
+      "n_val": 98,
+      "n_val_crossing": 23,
+      "pct_val_crossing": 23.5,
+      "pct_val_target_steps_in_test": 11.7,
+      "n_test": 169,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/97/193 (A2 target)",
+      "L": 36,
+      "n_val": 98,
+      "n_val_crossing": 35,
+      "pct_val_crossing": 35.7,
+      "pct_val_target_steps_in_test": 17.9,
+      "n_test": 157,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/97/193 (A2 target)",
+      "L": 48,
+      "n_val": 98,
+      "n_val_crossing": 47,
+      "pct_val_crossing": 48.0,
+      "pct_val_target_steps_in_test": 24.0,
+      "n_test": 145,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/97/193 (A2 target)",
+      "L": 60,
+      "n_val": 98,
+      "n_val_crossing": 59,
+      "pct_val_crossing": 60.2,
+      "pct_val_target_steps_in_test": 30.1,
+      "n_test": 133,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/96/194 (job 514859 historical)",
+      "L": 24,
+      "n_val": 97,
+      "n_val_crossing": 23,
+      "pct_val_crossing": 23.7,
+      "pct_val_target_steps_in_test": 11.9,
+      "n_test": 170,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/96/194 (job 514859 historical)",
+      "L": 36,
+      "n_val": 97,
+      "n_val_crossing": 35,
+      "pct_val_crossing": 36.1,
+      "pct_val_target_steps_in_test": 18.0,
+      "n_test": 158,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/96/194 (job 514859 historical)",
+      "L": 48,
+      "n_val": 97,
+      "n_val_crossing": 47,
+      "pct_val_crossing": 48.5,
+      "pct_val_target_steps_in_test": 24.2,
+      "n_test": 146,
+      "test_targets_fully_in_test": true
+    },
+    {
+      "profile": "author_966 676/96/194 (job 514859 historical)",
+      "L": 60,
+      "n_val": 97,
+      "n_val_crossing": 59,
+      "pct_val_crossing": 60.8,
+      "pct_val_target_steps_in_test": 30.4,
+      "n_test": 134,
+      "test_targets_fully_in_test": true
+    }
+  ]
+}

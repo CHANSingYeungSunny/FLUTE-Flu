@@ -1,0 +1,21 @@
+{
+  "generated_utc": "2026-09-18T23:09:47Z",
+  "defect": "D16",
+  "classification": "BEHAVIOR_NEUTRAL_GATE_VERIFICATION_WIRING_AND_SAME_SOURCE_INVARIANT_FIX",
+  "files": {
+    "clean_gate.py": {
+      "pre_sha256": "ed993ad7868fe8239aeb3158e3d78f41e30b20e9eb29e0a6807f3e08c5e874e9",
+      "post_sha256": "39aa14e3ce7b7807b731206c28509e0667fd4ef0ee5861c6dd37469168ffa68d",
+      "pre_matches_v3_16_deployed": true,
+      "diff_bytes": 2984,
+      "diff_sha256": "f18bb0bbad94137299af0e83b727979e476955ef3199477b1fd43784b4cd557b"
+    }
+  },
+  "new_files": [
+    "storage_verification.py",
+    "same_source_invariant.py"
+  ],
+  "scientific_behaviour_changed": false,
+  "compact_tensor_selection_changed": false,
+  "note": "the verdict now reads ONLY the typed StorageVerification; a missing required check fails closed with MISSING_REQUIRED_STORAGE_CHECK"
+}

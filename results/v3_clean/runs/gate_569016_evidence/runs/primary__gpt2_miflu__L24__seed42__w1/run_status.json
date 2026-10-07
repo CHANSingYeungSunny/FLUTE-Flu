@@ -1,0 +1,16 @@
+{
+  "run_key": "primary__gpt2_miflu__L24__seed42__w1",
+  "state": "FAILED",
+  "updated_utc": "2026-09-17T17:19:03Z",
+  "spec": {
+    "arm": "primary",
+    "model": "gpt2_miflu",
+    "parent_model": "gpt2_miflu",
+    "horizon": 24,
+    "seed": 42,
+    "wave": 1,
+    "control": ""
+  },
+  "error": "OSError: Cannot save file into a non-existent directory: '/scratch/sychan552/innovation_deploy_root_v3_clean4/results/v3_clean/implementation/gate_569016/runs/primary__gpt2_miflu__L24__seed42__w1/logs'",
+  "traceback": "Traceback (most recent call last):\n  File \"/gpfs1/scratch/sychan552/innovation_deploy_root_v3_clean4/scripts/innovation/clean_runner.py\", line 330, in main\n    history.to_csv(os.path.join(run_dir, \"logs\", \"train_history.csv\"),\n  File \"/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/util/_decorators.py\", line 333, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/core/generic.py\", line 3989, in to_csv\n    return DataFrameRenderer(formatter).to_csv(\n  File \"/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/formats/format.py\", line 1014, in to_csv\n    csv_formatter.save()\n  File \"/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/formats/csvs.py\", line 251, in save\n    with get_handle(\n  File \"/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/common.py\", line 749, in get_handle\n    check_parent_directory(str(handle))\n  File \"/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/pandas/io/common.py\", line 616, in check_parent_directory\n    raise OSError(rf\"Cannot save file into a non-existent directory: '{parent}'\")\nOSError: Cannot save file into a non-existent directory: '/scratch/sychan552/innovation_deploy_root_v3_clean4/results/v3_clean/implementation/gate_569016/runs/primary__gpt2_miflu__L24__seed42__w1/logs'\n"
+}

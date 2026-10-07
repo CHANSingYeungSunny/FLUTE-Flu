@@ -1,0 +1,18 @@
+utc=2026-09-26T10:43:06Z
+slurm_job=587091
+author_commit=6ed210150b8819313947cf607eb1821c87b1bee3
+author_source_modified=1 non-pyc entries
+author_src_main_ILI_lora.py=eda73ba196f625620cee8f2c9e2d4270d4ce4504c5198f4b1d485622c49ad29c
+author_src_models_GPT4TS_lora.py=6ef9108eea3c068badb7f8a60efba9717b4e7fe969b46365ac7c26da560c6365
+author_src_models_GPT4TS.py=b146a0dd144dddc94e77267a332deca1d8329d3adc6daf986cc7e2498c414280
+author_src_data_provider_data_loader.py=1274c00bbc6886bcd6a48efb840ec017a591b8873fff77d82fe44eaef0b64f6e
+author_src_data_provider_data_factory.py=a5576e445d4a9a56ae9bf77024eeca9b435ed973613ddc7b78e57d7c8070b8da
+compat_layer_sha256=378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4
+compat_sitecustomize_sha256=381064b2fc37e46fdfbb3b17832a619d9aa3d9a1f21236a6eb3b41b929fa9c79
+compat_non_behavioural_evidence=np.Inf restored as the IDENTICAL np.inf object (asserted at import); peft symbol appears only inside a comment in the released code; DataEmbedding imported but never referenced
+data_sha256=2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+text_asset_sha256=837502311354c9ddf71e42fbdf5689b6bbbbd2f00c71055d0d226c3c1f44c0c8
+config=ALL ARGUMENTS ARE THE AUTHOR'S ARGPARSE DEFAULTS (main_ILI_lora.py L34-85)
+mode=0 multimodal=0 train_epochs=1 learning_rate=0.0001 batch_size=16 itr=1 pred_len=24
+note=AUTHOR CODE REPLAYED VERBATIM under a recorded compatibility layer;
+     NOT the A2 corrected reconstruction; NOT comparable to Table V or A2

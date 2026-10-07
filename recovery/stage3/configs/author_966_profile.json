@@ -1,0 +1,45 @@
+{
+  "profile_id": "author_966",
+  "immutable": true,
+  "data_path": "data/raw/national_illness_raw_paper_exact.csv",
+  "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+  "n_rows": 966,
+  "header": "epiweek,release_date,% WEIGHTED ILI,% UNWEIGHTED ILI,AGE 0-4,AGE 5-24,ILITOTAL,NUM. OF PROVIDERS,OT",
+  "var_cols": ["% WEIGHTED ILI", "% UNWEIGHTED ILI", "AGE 0-4", "AGE 5-24", "ILITOTAL", "NUM. OF PROVIDERS", "OT"],
+  "n_variables": 7,
+  "ilitotal_channel_index": 4,
+  "epiweek_span_mmwr": "200240..202113",
+  "true_span_note": "author TSLib national_illness.csv vintage; synthetic dates 2002-01-01..2020-06-30",
+  "calendar": {
+    "real_gaps": [],
+    "note": "dense weekly sequence; NO missing-week hole (starts 2002w40, after the 2002w21-39 hole). 3 week53 label-offset years exist but are calendar-dense (dates unchanged)."
+  },
+  "split_convention": {
+    "name": "author_676_97_193",
+    "rule": "num_train=int(966*0.70)=676; num_test=int(966*0.20)=193; num_vali=966-676-193=97 (remainder)",
+    "train_end": 676,
+    "val_end": 773,
+    "test_n": 193,
+    "alternative": {
+      "name": "project_676_96_194",
+      "rule": "train_end=int(966*0.70)=676; val_end=676+int(966*0.10)=772; test=194",
+      "train_end": 676,
+      "val_end": 772,
+      "test_n": 194,
+      "note": "used by job 514859; NOT the author's own convention"
+    }
+  },
+  "window_counts_dense": {
+    "T": 104,
+    "note": "dense contiguous 966-row reference counts (feature-expansion-independent):",
+    "L24": {"train": 549, "val": 74, "test": 170},
+    "L36": {"train": 537, "val": 62, "test": 158},
+    "L48": {"train": 525, "val": 50, "test": 146},
+    "L60": {"train": 513, "val": 38, "test": 134}
+  },
+  "embedding_scope": {
+    "kind": "static dataset-level text + per-variable min/max statistics computed on TRAIN split only",
+    "date_range_string": "between 2002 and 2020",
+    "coupling_note": "textual_embedder.py hard-codes 'between 2002 and 2021'; must be parameterized per profile"
+  }
+}

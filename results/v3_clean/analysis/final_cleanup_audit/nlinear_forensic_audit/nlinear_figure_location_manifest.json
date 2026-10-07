@@ -1,0 +1,46 @@
+{
+  "audit": "figure location + DOCX embedding proof (Mandate C section 13)",
+  "final_test_figures_root": "results/v3_clean/final/final_test_prediction_figures",
+  "gallery": {
+    "path": "results/v3_clean/final/final_test_prediction_gallery/final_test_prediction_gallery.png",
+    "bytes": 465135,
+    "sha256": "197089f939d6ea60469d81f8df096ff8c4a0688b9f12cc39151674354185906d"
+  },
+  "nlinear_figures": [
+    {
+      "figure_id": "fig_test_nlinear_L24",
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L24.png",
+      "bytes": 99036,
+      "sha256": "2c84506a3f37cb88974873ede59c6c989d785f2aeb0905a3e16cec89837d957f",
+      "docx_media": "word/media/image8.png"
+    },
+    {
+      "figure_id": "fig_test_nlinear_L60",
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L60.png",
+      "bytes": 95839,
+      "sha256": "5d700c10d57ab682c8d42e121e5745049b0b205ad077ee2dd347b353c2e9572a",
+      "docx_media": "word/media/image9.png"
+    }
+  ],
+  "source_data_csvs": {
+    "nlinear_L24": "results/v3_clean/final/final_test_curve_source_data/fig_test_nlinear_L24.csv",
+    "nlinear_L60": "results/v3_clean/final/final_test_curve_source_data/fig_test_nlinear_L60.csv",
+    "per_seed_root": "results/v3_clean/test_eval/results/primary__nlinear__L{L}__seed{s}__w1/predictions/test_predictions.csv"
+  },
+  "figure_generation_script": "scripts/v3_clean/final_test_figures.py",
+  "figure_manifest": "results/v3_clean/final/final_test_figure_manifest.json",
+  "figure_plan": "results/v3_clean/final/final_test_figure_plan.json",
+  "report_containing_figures": {
+    "docx": "results/v3_clean/analysis/reports/MIFlu_非LLM与LLM流感预测最终报告_中文版.docx",
+    "pdf": "results/v3_clean/analysis/reports/MIFlu_非LLM与LLM流感预测最终报告_中文版.pdf"
+  },
+  "docx_embedded_images_sha256": {
+    "image7.png (gallery / Figure F)": "197089f939d6ea60469d81f8df096ff8c4a0688b9f12cc39151674354185906d",
+    "image8.png (NLinear L24)": "2c84506a3f37cb88974873ede59c6c989d785f2aeb0905a3e16cec89837d957f",
+    "image9.png (NLinear L60)": "5d700c10d57ab682c8d42e121e5745049b0b205ad077ee2dd347b353c2e9572a",
+    "image10.png (GPT-2 MIFlu L24)": "0a2e8906702a1c571e6ec2c53cd40f336a7fc0dfedfc97189b3627df9ab2e4f3",
+    "image11.png (GPT-2 MIFlu L60)": "c74553013f4236f2484e24c76890a7294a1fc32a13aa3e253719993e6ac97a55",
+    "image1..6,12.png (Figures A,B,C,D,E,G,H)": "see nlinear_forensic_artifact_manifest.json for full DOCX media hash list"
+  },
+  "verification": "The NLinear L24/L60 PNGs embedded in the DOCX are byte-identical (SHA-256 match) to the final Test figures. The gallery PNG (all 12 panels) is also embedded byte-identically."
+}

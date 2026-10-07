@@ -1,0 +1,16 @@
+====================================================================
+naive_leakage_safe self-test  (SYNTHETIC arrays, not model results)
+====================================================================
+
+[1] seasonal_naive refs: min=248 max=299 origin=299
+    PASS: every reference <= origin
+[2] PASS: predictions equal the referenced rows
+[3] legacy formula leaking leads at L=60: [52, 53, 54, 55, 56, 57, 58, 59]... n=8
+    PASS: 8 leaking leads reproduced (s=52..59)
+[4] PASS: last_value repeats the origin row
+[5] PASS: insufficient history -> 50 leads INVALID, 10 valid, no clamped fabrication
+[6] PASS: ref <= origin for all lags in (1,2,7,12,52,53,104) x leads 0..59 -> formula is safe by construction
+
+====================================================================
+ALL TESTS PASS
+====================================================================

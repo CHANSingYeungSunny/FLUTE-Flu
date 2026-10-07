@@ -1,0 +1,35 @@
+{
+  "stage": "D",
+  "name": "no-text backbone Screening",
+  "expected_job_count": 24,
+  "completed_count": 24,
+  "failed_count": 0,
+  "missing_count": 0,
+  "duplicate_count": 0,
+  "source_version_distribution": {
+    "ff9e3d8f": 24
+  },
+  "coverage": {
+    "models": [
+      "dlinear",
+      "nlinear",
+      "patchtst",
+      "itransformer"
+    ],
+    "horizons": [
+      24,
+      60
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "metadata_chain_ok_count": 24,
+  "checkpoint_restore_ok_count": 24,
+  "test_access_count": 0,
+  "test_artifact_count": 0,
+  "complete": true,
+  "note": "expected = 24 cells (models x horizons x seeds); pilot/smoke runs are excluded by construction"
+}

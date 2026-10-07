@@ -1,0 +1,25 @@
+{
+  "audit": "checkpoint selection (Mandate C section 7, question 7)",
+  "verdict": "PASS",
+  "selection_split": "Validation only",
+  "evidence": {
+    "run": "national-ili__nlinear__none__identity__L24__seed42__20260914T110634Z__1f6563f",
+    "checkpoint_file": "checkpoints/best_val_mse.pt",
+    "best_val_mse": 1.043844223022461,
+    "best_epoch": 1,
+    "patience": 7,
+    "min_delta": 0.0,
+    "selection_metric": "validation MSE (z-space, 7-variable full output)",
+    "stopper_history": [{"epoch": 1, "val_loss": 1.043844223022461, "improved": true, "saved": true, "stop": false, "reason": "val_loss improved"}]
+  },
+  "test_influence_on_checkpoint": "none. Checkpoint, seed, hyperparameters and early stopping are determined on Training/Validation only; Test (819..1024) is never seen during selection.",
+  "test_eval_has_no_training": true,
+  "test_eval_restoration": {
+    "strict_load_ok": true,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "compact_sha256": "cc11cb834517d64dec02517e200b81f13e3a65ade4d9e33334ff396bc3bfaf26",
+    "canonical_tensor_sha256": "12d2c57d79a11afac78ee3492a1f59cab16ac544168c73cc202f5cc3c391822e"
+  },
+  "note": "test_eval.py performs inference only (restores frozen compact checkpoint, strict load, forward pass). No optimizer step, no weight update, no train loop."
+}

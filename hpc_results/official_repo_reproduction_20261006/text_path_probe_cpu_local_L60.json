@@ -1,0 +1,357 @@
+{
+  "probe": "text_path_deterministic",
+  "schema_version": 1,
+  "host": "LAPTOP-2UVMC8L4",
+  "platform": "Windows-10-10.0.26100-SP0",
+  "python": "3.9.0",
+  "torch": "2.6.0+cu124",
+  "numpy": "1.26.4",
+  "device": "cpu",
+  "device_name": "cpu",
+  "dtype": "float32",
+  "L": 60,
+  "batch": 8,
+  "init_seed": 42,
+  "dead_import_shims": [
+    "transformers.models.llama.modeling_llama.LlamaModel"
+  ],
+  "compat_dir": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\hpc_results\\official_repo_reproduction_20261006\\local_compat",
+  "author_repo": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\recovery\\author_repo",
+  "author_commit": "6ed210150b8819313947cf607eb1821c87b1bee3",
+  "author_commit_dirty_files": [
+    "models/__pycache__/GPT4TS_lora.cpython-39.pyc"
+  ],
+  "author_source_dirty_files": [],
+  "author_commit_dirty": false,
+  "author_model_sha256": "6ef9108eea3c068badb7f8a60efba9717b4e7fe969b46365ac7c26da560c6365",
+  "config": {
+    "model_id": "probe",
+    "checkpoints": "./checkpoints/",
+    "multimodal": 1,
+    "root_path": "./dataset/illness/",
+    "data_path": "national_illness.csv",
+    "data": "custom",
+    "features": "M",
+    "freq": 0,
+    "target": "OT",
+    "embed": "timeF",
+    "percent": 100,
+    "lora_r": 4,
+    "target_modules": [
+      "c_attn"
+    ],
+    "PEFT": 0,
+    "seq_len": 104,
+    "pred_len": 60,
+    "label_len": 18,
+    "decay_fac": 0.75,
+    "learning_rate": 0.0001,
+    "batch_size": 8,
+    "num_workers": 0,
+    "train_epochs": 1,
+    "lradj": "type1",
+    "patience": 3,
+    "gpt_layers": 6,
+    "backbone": "gpt2",
+    "textmodel": "gpt2",
+    "e_layers": 3,
+    "d_model": 768,
+    "n_heads": 4,
+    "d_ff": 768,
+    "dropout": 0.2,
+    "enc_in": 7,
+    "c_out": 7,
+    "patch_size": 24,
+    "kernel_size": 25,
+    "loss_func": "mse",
+    "pretrain": 1,
+    "freeze": 1,
+    "model": "model",
+    "stride": 2,
+    "max_len": -1,
+    "hid_dim": 16,
+    "tmax": 10,
+    "itr": 1,
+    "cos": 0
+  },
+  "checkpoint": {
+    "path": null,
+    "note": "no --ckpt supplied; deterministic seeded random init (seed=42). A0 released-code replay has no released checkpoint either, so this matches A0's situation."
+  },
+  "model_eval_mode": true,
+  "dropout_modules": [
+    {
+      "name": "llmmodel.drop",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.0.attn.attn_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.0.attn.resid_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.0.mlp.dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.1.attn.attn_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.1.attn.resid_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.1.mlp.dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.2.attn.attn_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.2.attn.resid_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.2.mlp.dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.3.attn.attn_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.3.attn.resid_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.3.mlp.dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.4.attn.attn_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.4.attn.resid_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.4.mlp.dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.5.attn.attn_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.5.attn.resid_dropout",
+      "p": 0.1,
+      "training": false
+    },
+    {
+      "name": "llmmodel.h.5.mlp.dropout",
+      "p": 0.1,
+      "training": false
+    }
+  ],
+  "any_dropout_training": false,
+  "parameters": {
+    "total": 83867196,
+    "trainable": 83867196,
+    "trainable_names": [
+      "llmmodel.wte.weight",
+      "llmmodel.wpe.weight",
+      "llmmodel.h.0.ln_1.weight",
+      "llmmodel.h.0.ln_1.bias",
+      "llmmodel.h.0.attn.c_attn.weight",
+      "llmmodel.h.0.attn.c_attn.bias",
+      "llmmodel.h.0.attn.c_proj.weight",
+      "llmmodel.h.0.attn.c_proj.bias",
+      "llmmodel.h.0.ln_2.weight",
+      "llmmodel.h.0.ln_2.bias",
+      "llmmodel.h.0.mlp.c_fc.weight",
+      "llmmodel.h.0.mlp.c_fc.bias",
+      "llmmodel.h.0.mlp.c_proj.weight",
+      "llmmodel.h.0.mlp.c_proj.bias",
+      "llmmodel.h.1.ln_1.weight",
+      "llmmodel.h.1.ln_1.bias",
+      "llmmodel.h.1.attn.c_attn.weight",
+      "llmmodel.h.1.attn.c_attn.bias",
+      "llmmodel.h.1.attn.c_proj.weight",
+      "llmmodel.h.1.attn.c_proj.bias",
+      "llmmodel.h.1.ln_2.weight",
+      "llmmodel.h.1.ln_2.bias",
+      "llmmodel.h.1.mlp.c_fc.weight",
+      "llmmodel.h.1.mlp.c_fc.bias",
+      "llmmodel.h.1.mlp.c_proj.weight",
+      "llmmodel.h.1.mlp.c_proj.bias",
+      "llmmodel.h.2.ln_1.weight",
+      "llmmodel.h.2.ln_1.bias",
+      "llmmodel.h.2.attn.c_attn.weight",
+      "llmmodel.h.2.attn.c_attn.bias",
+      "llmmodel.h.2.attn.c_proj.weight",
+      "llmmodel.h.2.attn.c_proj.bias",
+      "llmmodel.h.2.ln_2.weight",
+      "llmmodel.h.2.ln_2.bias",
+      "llmmodel.h.2.mlp.c_fc.weight",
+      "llmmodel.h.2.mlp.c_fc.bias",
+      "llmmodel.h.2.mlp.c_proj.weight",
+      "llmmodel.h.2.mlp.c_proj.bias",
+      "llmmodel.h.3.ln_1.weight",
+      "llmmodel.h.3.ln_1.bias",
+      "llmmodel.h.3.attn.c_attn.weight",
+      "llmmodel.h.3.attn.c_attn.bias",
+      "llmmodel.h.3.attn.c_proj.weight",
+      "llmmodel.h.3.attn.c_proj.bias",
+      "llmmodel.h.3.ln_2.weight",
+      "llmmodel.h.3.ln_2.bias",
+      "llmmodel.h.3.mlp.c_fc.weight",
+      "llmmodel.h.3.mlp.c_fc.bias",
+      "llmmodel.h.3.mlp.c_proj.weight",
+      "llmmodel.h.3.mlp.c_proj.bias"
+    ],
+    "n_trainable_tensors": 80
+  },
+  "all_parameters_sha256": "b7165c5defa9a4b93ff839b4d0187a50e17c8df62b0867974d577a982b7e3c05",
+  "input": {
+    "shape": [
+      8,
+      104,
+      1
+    ],
+    "columns": [
+      "1"
+    ],
+    "sha256": "0c15781a87fb2d372e2db74614be1c91cf35cdcb657c5cd99b1f8b04a752fdc5",
+    "seq_len": 104
+  },
+  "text_assets": {
+    "original_path": "recovery/author_repo\\dataset\\illness\\text_emb\\text_emb_label_0507_60.txt",
+    "control_path": "recovery/author_repo\\dataset\\illness\\text_emb\\text_emb_label_0507_24.txt",
+    "original_sha256": "fe98826fef910fd3e0316b67b823274b7991084db67524125ac0c4eda29f4ac0",
+    "control_sha256": "837502311354c9ddf71e42fbdf5689b6bbbbd2f00c71055d0d226c3c1f44c0c8",
+    "shape": [
+      317,
+      768
+    ],
+    "n_tokens": 317,
+    "d_model": 768,
+    "control_is_equal_length": true
+  },
+  "sequence_layout": {
+    "patch_num": 42,
+    "text_len": 317,
+    "total_seq_len": 359,
+    "time_series_position_range": [
+      0,
+      41
+    ],
+    "text_position_range": [
+      42,
+      358
+    ],
+    "text_comes_first_or_last": "LAST (text appended after the patch tokens; released GPT4TS_lora.py line 139)"
+  },
+  "prediction_sha256_original": "6f6063506350cba6e5c328d55eb8d3ecb090e2456d38b537396dae7082fb09d5",
+  "prediction_sha256_different_content_same_shape": "6f6063506350cba6e5c328d55eb8d3ecb090e2456d38b537396dae7082fb09d5",
+  "prediction_sha256_row_permuted_same_multiset": "6f6063506350cba6e5c328d55eb8d3ecb090e2456d38b537396dae7082fb09d5",
+  "prediction_differences": {
+    "different_content_same_shape": {
+      "max_abs_prediction_difference": 0.0,
+      "mean_abs_prediction_difference": 0.0,
+      "n_elements": 480,
+      "n_differing_elements": 0
+    },
+    "row_permuted_same_multiset": {
+      "max_abs_prediction_difference": 0.0,
+      "mean_abs_prediction_difference": 0.0,
+      "n_elements": 480,
+      "n_differing_elements": 0
+    }
+  },
+  "flag_control": {
+    "description": "multimodal=0 vs multimodal=1 at identical weights/input. This is the comparison the A0 GPU evidence relied on. It changes the sequence length and therefore the dropout RNG stream, so it does NOT isolate text CONTENT.",
+    "sequence_len_multimodal_0": 42,
+    "sequence_len_multimodal_1": 359,
+    "max_abs_prediction_difference": 2.384185791015625e-07,
+    "mean_abs_prediction_difference": 6.556511067401516e-08,
+    "isolates_text_content": false
+  },
+  "gradients": {
+    "loss": 3.5851786136627197,
+    "text_embedding_grad_norm": 0.0,
+    "text_embedding_grad_max_abs": 0.0,
+    "time_series_embedding_grad_norm": 0.021277476102113724,
+    "time_series_embedding_grad_max_abs": 0.00029756277217529714,
+    "note": "gradients are of the same forecasting loss wrt the two halves of the concatenated inputs_embeds actually fed to the LLM"
+  },
+  "head": {
+    "head_input_shape": [
+      8,
+      32256
+    ],
+    "d_model": 768,
+    "head_positions_read": 42,
+    "head_in_features": 32256,
+    "head_out_features": 60,
+    "llm_input_shape": [
+      8,
+      359,
+      768
+    ],
+    "time_series_embedding_sha256": "ea2c132a39f99636b3b23ccfa99fc003d4f6517996e2d92e7fcbebfba9793fde"
+  },
+  "positive_control": {
+    "description": "prefix-text repair (declared algorithm change): text concatenated BEFORE the patch tokens and the patch positions that follow the text are read by the head",
+    "edits_applied": [
+      {
+        "from": "outputs = torch.cat((outputs, text_emb_tensor), axis = 1)",
+        "to": "outputs = torch.cat((text_emb_tensor, outputs), axis = 1)"
+      },
+      {
+        "from": "outputs = outputs[:, :self.patch_num,:]",
+        "to": "outputs = outputs[:, text_emb_tensor.shape[1]:text_emb_tensor.shape[1]+self.patch_num,:]"
+      }
+    ],
+    "max_abs_prediction_difference": 4.8160552978515625e-05,
+    "mean_abs_prediction_difference": 1.625219920242671e-05,
+    "detects_text_influence": true,
+    "interpretation": "the probe CAN detect text influence when text is reachable; therefore a zero difference in the released path is a real zero, not a blind probe",
+    "is_released_implementation": false
+  },
+  "tolerance": 1e-06,
+  "tolerance_basis": "float32 accumulate over a 6-layer GPT-2; declared in advance, not tuned to the result",
+  "verdict": "text_inert",
+  "verdict_reason": "equal-length different-content text changed the prediction by at most 0.000e+00 (<= tol 1.0e-06) and the text embedding gradient is exactly zero",
+  "verdict_scope": "This verdict applies to the released commit replayed under a recorded compatibility layer, with PEFT=0 and the released argparse defaults. It is not a verdict on the paper's method and not a reproduction claim.",
+  "diagnostics": {
+    "prediction_changed": false,
+    "text_gradient_nonzero": false,
+    "time_series_gradient_nonzero": true,
+    "head_reads_any_text_position": false,
+    "dropout_inactive": true,
+    "model_in_eval_mode": true
+  }
+}

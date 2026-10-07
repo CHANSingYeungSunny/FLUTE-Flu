@@ -1,0 +1,16 @@
+{
+  "generated_utc": "2026-09-16T16:10:53Z",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_2",
+  "resolved_root": "/gpfs1/scratch/sychan552/innovation_deploy_root_v3_2",
+  "verification_mode": "explicit_root",
+  "expected_file_count": 87,
+  "verified_file_count": 87,
+  "expected_aggregate_sha256": "ebf202df304daf649a3aefb8c2965cfef601e52f413a16528b070db9a4b9ab53",
+  "actual_aggregate_sha256": "ebf202df304daf649a3aefb8c2965cfef601e52f413a16528b070db9a4b9ab53",
+  "exit_status": 0,
+  "runtime_guard_violations": 0,
+  "previous_root_retained": "/scratch/sychan552/innovation_deploy_root_v3_1",
+  "bundle_sha256": "aa63880c12dfa51fb5dd3999b056d3d6e0de767dac40ec98ace6b03d91a67f93",
+  "bundle_byte_identical": true,
+  "status": "VERIFIED"
+}

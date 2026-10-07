@@ -1,0 +1,99 @@
+{
+  "generated_utc": "2026-09-16T15:48:10Z",
+  "gate_kind": "PREPILOT_GATE",
+  "outcome": "FAILED",
+  "attempts": [
+    {
+      "job_id": "563486",
+      "attempt": 1,
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "00:01:04",
+      "node": "gpu-a100-05",
+      "partition": "stingy",
+      "alloc": "cpu=8,mem=32G,gres/gpu:a100=1",
+      "models_ok": "0/8",
+      "assets_downloaded": false,
+      "failures": [
+        "D1 RevisionNotFoundError (Time-LLM commit used as Qwen revision)",
+        "D2 CUDA busy/unavailable on first allocation",
+        "D3 gpt2_miflu TypeError unexpected keyword 'model_id'",
+        "D4 Qwen not cached -> transformers reports no connection"
+      ]
+    },
+    {
+      "job_id": "563498",
+      "attempt": 2,
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "00:02:33",
+      "node": "gpu-a100-05",
+      "partition": "stingy",
+      "alloc": "cpu=8,mem=32G,gres/gpu:a100=1",
+      "models_ok": "0/8",
+      "assets_downloaded": true,
+      "failures": [
+        "D2 persisted: CUDA probe 5/5 attempts failed with 'CUDA-capable device(s) is/are busy or unavailable'"
+      ],
+      "assets": {
+        "n_files": 7,
+        "total_bytes": 3098955511,
+        "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+        "cache": "/gpfs1/scratch/sychan552/v3_cache/models--Qwen--Qwen2.5-1.5B/snapshots/8faed761d45a263340a0528343f099c05c9a4323"
+      }
+    },
+    {
+      "job_id": "565800",
+      "attempt": 3,
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "00:01:12",
+      "node": "gpu-a100-03",
+      "partition": "stingy",
+      "alloc": "cpu=8,mem=32G,gres/gpu:a100=1",
+      "models_ok": "5/8",
+      "assets_downloaded": true,
+      "node_excluded": "gpu-a100-05",
+      "models_ok_list": [
+        "nlinear",
+        "dlinear",
+        "patchtst",
+        "itransformer",
+        "gpt2_miflu"
+      ],
+      "models_failed_list": [
+        "qwen_time_llm",
+        "calf_llm",
+        "timecma_llm"
+      ],
+      "failures": [
+        "D2 RESOLVED by avoiding the faulty node (CUDA works on gpu-a100-03)",
+        "D3 RESOLVED (gpt2_miflu now builds and backprops)",
+        "NEW D5: all three new LLM branches raise OSError \"We couldn't connect to 'https://huggingface.co' ... and couldn't find them in the cached files\" even though the pinned revision IS present in HF_HUB_CACHE"
+      ]
+    }
+  ],
+  "retries_used": 3,
+  "retries_permitted_by_prompt": 2,
+  "acceptance_criteria": {
+    "slurm_state_COMPLETED": false,
+    "exit_code_0_0": false,
+    "partition_stingy": true,
+    "allocated_gpu_a100_1": true,
+    "source_files_verified_85_of_85": true,
+    "source_aggregate_matches": true,
+    "runtime_guard_violations": 0,
+    "canonical_data_sha256_matches": true,
+    "test_access_count": 0,
+    "holdout_access_count": 0,
+    "formal_pilot_jobs_submitted_before_gate": 0,
+    "cuda_visible_and_usable": true,
+    "all_eight_models_built_with_gradients": false
+  },
+  "notes": [
+    "Job 565800 is the single evidence-backed retry permitted from this prompt; it was spent avoiding the faulty node gpu-a100-05.",
+    "Five of eight models, including gpt2_miflu, now build on CUDA with a verified backward pass on gpu-a100-03.",
+    "The three new LLM branches fail deterministically on asset-cache resolution, which is a code/plumbing defect, not a transient scheduler condition.",
+    "No Pilot may be submitted while the Gate is FAILED."
+  ]
+}

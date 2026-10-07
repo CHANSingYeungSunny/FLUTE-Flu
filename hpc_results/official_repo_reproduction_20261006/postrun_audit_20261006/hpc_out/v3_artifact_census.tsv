@@ -1,0 +1,15 @@
+*.safetensors	147
+*.bin	0
+*.pt	447
+*.pth	0
+*.ckpt	0
+adapter_model*	0
+adapter_config*	0
+tokenizer*	0
+config.json	0
+generation_config*	0
+*.csv	1909
+*.json	9385
+*.md	8
+*.py	2195
+*.txt	1716

@@ -1,0 +1,11 @@
+{
+  "stage": "F",
+  "expected_cells": 160,
+  "completed": 160,
+  "failed": 0,
+  "missing": 0,
+  "duplicate_within_stage": 0,
+  "test_access_count": 0,
+  "test_artifact_count": 0,
+  "status": "VALID_REUSE"
+}

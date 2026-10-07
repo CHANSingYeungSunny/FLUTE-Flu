@@ -1,0 +1,79 @@
+{
+  "generated_utc": "2026-09-25T16:30:00Z",
+  "note": "SHA-256 of the code that was ACTUALLY EXECUTED on the compute nodes for the Stage-5 A2 round. Supersedes hashes_stage5.json (generated 2026-09-24T15:43Z), which predates the DEFER_TEST / per-seed-checkpoint / strict-containment wiring. The historical file is kept unchanged.",
+  "supersedes": "recovery/stage5/hashes_stage5.json",
+  "executed_code": {
+    "scripts/train_miflu.py": "179659bbe251e0e5dfc6151e58743d02240494ac0d1391efe64cd32fa1d83a34",
+    "scripts/train_ablation.py": "80c908e80e527559c0e61717a7040642061caa2242b4291771e52e76f02a9a49",
+    "scripts/train_nlinear_966.py": "38db0c2063a947025843805841e018e8cab23b3862487d8597e53e891a3f16c4",
+    "scripts/train_naive_966.py": "e9bb21c661d80876c6be442b567a847ca0414894cd6aa2c337810877d3b092d3",
+    "scripts/score_test_stage5.py": "961295956f4c41a3e1cf563fb6a426bb259db940644c8d633e4fc34c2eb0412d",
+    "scripts/build_lock_stage5.py": "930062164622eb20afa39775e106553a22ac6d19989c2e8328ec28fb67ae519d",
+    "scripts/configs.py": "06eb39cd55df0bb8302d527b90dc5ac5923a43813bbc6acb28709e0d6d7b2bc9",
+    "scripts/textual_embedder.py": "13b51b34f6253d0b65c941751ffca73ce05571eec2b9635a0889b4a3a7f4a302",
+    "scripts/scaler_utils.py": "efac4e58ca85563012c55e5c9e74ab61035a7f7c578fb17658a1870a84462f2e",
+    "scripts/cdc_calendar.py": "963751eec162a8eefa133c2eb29764b5a8791920d3a99cddf08f8d3d02e593ad",
+    "scripts/miflu_model.py": "0e6bdb61213bfdcc72e6a5b2733fc891a613baeb3dc52b514997c1507bfc15ef",
+    "scripts/early_stopping.py": "be75264643f24c7d8fd5be890a83b465cde7aefe6cec297ae6bb951a15b70558"
+  },
+  "orchestration": {
+    "recovery/stage5/run_task.sh": "06305ad7330a35d6703cd49a33a25a47a0a66d2c518df82768b82ae54026bb6a",
+    "recovery/stage5/score_all.sh": "e3e5b8c074bd51230cf6d0bfe857087fec32da44dd61fd6a29cb79b9c59bcff3",
+    "recovery/stage5/recompute_from_artifacts.py": "b80ec5d8f760ff62ab1ac9000184e8b7eac13d93c9ae5b3a03cb64c3bf206d78",
+    "recovery/stage5/dispatch_notext_topup.sh": "ea0f732b6e010488d481404e50d917503b2ca838c80dfaa7f2f08fc4a66593c4"
+  },
+  "unchanged_since_stage5_freeze": [
+    "scripts/configs.py",
+    "scripts/textual_embedder.py",
+    "scripts/scaler_utils.py",
+    "scripts/cdc_calendar.py",
+    "scripts/train_naive_966.py"
+  ],
+  "changed_after_stage5_freeze": {
+    "scripts/train_miflu.py": "DEFER_TEST gate (no Test evaluation, no prediction export while DEFER_TEST=1) + per-(L,seed) best-val checkpoint + strict containment",
+    "scripts/train_ablation.py": "DEFER_TEST gate + per-(L,seed) best-val checkpoint + strict containment + DEFER_TEST-safe summary + seed-aware resume guard (2026-09-26 fix)",
+    "scripts/train_nlinear_966.py": "DEFER_TEST gate + per-(L,seed) best-val checkpoint + strict containment",
+    "scripts/score_test_stage5.py": "NEW unified locked-batch Test-scoring entry + artefact dump (pred/target tensors, Test-origin manifest, train-only scaler). Metric code path unchanged.",
+    "scripts/build_lock_stage5.py": "NEW fail-closed checkpoint lock (SHA-256 + validation-selection evidence for all 36 fits)"
+  },
+  "data": {
+    "author_processed_966": {
+      "path": "data/raw/national_illness_raw_paper_exact.csv",
+      "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+      "n_rows": 966,
+      "verified_by": "configs.verify_profile_hash() at the start of every fit and of the scoring entry"
+    },
+    "author_reference_966": {
+      "path": "recovery/author_repo/dataset/illness/national_illness.csv",
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5"
+    }
+  },
+  "protocol": {
+    "profile": "author_966",
+    "split": "676/97/193, zero-based half-open [0,676) [676,773) [773,966)",
+    "T": 104,
+    "horizons": [24, 36, 48, 60],
+    "seeds": [42, 43, 44],
+    "containment": "strict (target block wholly inside its split)",
+    "scaler": "StandardScaler fitted on train rows [0,676) only",
+    "selection": "per (model, L, seed): epoch with lowest 7-variable standardized VALIDATION MSE",
+    "primary_metric": "average_MSE_4L = mean over seeds of Test MSE, then equal-weight mean over L, 7-var standardized space",
+    "window_counts": {"24": [549, 74, 170], "36": [537, 62, 158],
+                      "48": [525, 50, 146], "60": [513, 38, 134]},
+    "hyperparameters": {
+      "optimizer": "Adam, lr=5e-4, weight_decay=0, betas=(0.9,0.999), eps=1e-8",
+      "lr_schedule": "none (constant lr; verified no scheduler in any of the three runners)",
+      "early_stopping": "disabled; fixed 20 epochs",
+      "batch_size": 16, "epochs": 20, "reps": 1,
+      "architecture": "T=104, K=6, Lp=24, S=2, lora_r=4; LoRA 73,728 params; GPT-2 backbone frozen except LoRA + first-k unfreeze per variant",
+      "precision": "fp32 (no AMP)"
+    }
+  },
+  "checkpoint_lock": "hpc_results/stage5_a2/scoring/CHECKPOINT_LOCK.json (36/36 fits, full SHA-256, written 2026-09-25T16:13:29Z before any Test inference)",
+  "gpu_accounting": {
+    "cap_gpu_hours": 2.0,
+    "used_gpu_hours": 1.1536,
+    "remaining_gpu_hours": 0.8464,
+    "method": "sacct -X (top-level jobs only, no .batch double counting); every job allocated gres/gpu=1 (A100) on partition stingy; 4153 GPU-seconds"
+  }
+}

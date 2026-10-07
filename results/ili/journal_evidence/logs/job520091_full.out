@@ -1,0 +1,371 @@
+JOB start Tue Sep  1 17:53:21 HKT 2026 on gpu-a100-09 | variant=full
+[17:53:26] ==================================================================
+[17:53:26]   Table VIII Ablation: MIFlu (full)
+[17:53:26] ==================================================================
+[17:53:26]   Variant         : full  (use_text=True, use_lora=True, use_text_ln=True, gated_inject=False, unfreeze_first_k=0)
+[17:53:26]   Recipe          : baseline  -> adam, lr=0.0005, wd=0, loss=mse, betas=(0.9, 0.999) eps=1e-08
+[17:53:26]   Early stopping  : False (patience=5, peak_hit_threshold=0.7)
+[17:53:26]   Config          : T=104, K=6, Lp=24, S=2
+[17:53:26]                     batch=16, epochs=20, reps=10, seed=42
+[17:53:26]   Data window     : FULL 1025 rows (200201-202152) — matches MIFlu §V-A
+[17:53:26]   Output          : hpc_results/journal_evidence/full/reps_1_to_10
+[17:53:26] 
+[17:53:26] Scaler: FIT on train[:717] ONLY — agrees with persisted /gpfs1/scratch/sychan552/CHATTIME/Chattime/data/scaler_miflu_national.json (no test-set refit)
+[17:53:26] Data: 1025 total (FULL 1025-row window) | Train=717 | Val=102 | Test=206
+[17:53:26] 
+[17:53:26] Loading GPT2 text embedder...
+[17:53:28] 
+[17:53:28]   [FORCE] resume disabled — all (L, rep) pairs will be retrained
+[17:53:28] ──────────────────────────────────────────────────
+[17:53:28]   HORIZON L=24
+[17:53:28] ──────────────────────────────────────────────────
+[17:53:29]   [L=24] Rep 1/10 ...
+[17:53:29]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[17:53:29] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[17:53:39]     ep  1/20 | train_loss=0.800009 | val_mse=1.915741(All) 3.8753(ILI) | val_mae=0.885082 | 9.9s
+[17:53:48]     ep  2/20 | train_loss=0.649881 | val_mse=1.294423(All) 2.7708(ILI) | val_mae=0.611469 | 8.3s
+[17:53:56]     ep  3/20 | train_loss=0.459061 | val_mse=0.923229(All) 1.9704(ILI) | val_mae=0.557328 | 8.3s
+[17:54:04]     ep  4/20 | train_loss=0.353430 | val_mse=0.839993(All) 1.7890(ILI) | val_mae=0.494813 | 8.3s
+[17:54:13]     ep  5/20 | train_loss=0.296235 | val_mse=0.826916(All) 1.7846(ILI) | val_mae=0.454447 | 8.3s
+[17:54:21]     ep  6/20 | train_loss=0.258805 | val_mse=0.769356(All) 1.6483(ILI) | val_mae=0.450928 | 8.3s
+[17:54:29]     ep  7/20 | train_loss=0.233077 | val_mse=0.754394(All) 1.6262(ILI) | val_mae=0.444574 | 8.3s
+[17:54:38]     ep  8/20 | train_loss=0.209518 | val_mse=0.814556(All) 1.7745(ILI) | val_mae=0.455853 | 8.3s
+[17:54:46]     ep  9/20 | train_loss=0.187183 | val_mse=0.770534(All) 1.6698(ILI) | val_mae=0.454938 | 8.3s
+[17:54:54]     ep 10/20 | train_loss=0.171192 | val_mse=0.698048(All) 1.5212(ILI) | val_mae=0.417568 | 8.3s
+[17:55:03]     ep 11/20 | train_loss=0.149796 | val_mse=0.742804(All) 1.6390(ILI) | val_mae=0.437622 | 8.3s
+[17:55:11]     ep 12/20 | train_loss=0.137071 | val_mse=0.676330(All) 1.4723(ILI) | val_mae=0.440416 | 8.3s
+[17:55:19]     ep 13/20 | train_loss=0.131238 | val_mse=0.720674(All) 1.5891(ILI) | val_mae=0.425633 | 8.3s
+[17:55:28]     ep 14/20 | train_loss=0.110627 | val_mse=0.656586(All) 1.4483(ILI) | val_mae=0.415471 | 8.3s
+[17:55:36]     ep 15/20 | train_loss=0.107418 | val_mse=0.746189(All) 1.6320(ILI) | val_mae=0.447980 | 8.3s
+[17:55:44]     ep 16/20 | train_loss=0.093048 | val_mse=0.678974(All) 1.4781(ILI) | val_mae=0.432822 | 8.3s
+[17:55:53]     ep 17/20 | train_loss=0.093253 | val_mse=0.713752(All) 1.5588(ILI) | val_mae=0.429665 | 8.3s
+[17:56:01]     ep 18/20 | train_loss=0.088448 | val_mse=0.761058(All) 1.6787(ILI) | val_mae=0.432214 | 8.3s
+[17:56:09]     ep 19/20 | train_loss=0.077144 | val_mse=0.652907(All) 1.4356(ILI) | val_mae=0.407549 | 8.3s
+[17:56:18]     ep 20/20 | train_loss=0.085164 | val_mse=0.895698(All) 1.9556(ILI) | val_mae=0.468820 | 8.3s
+[17:56:19]   L=24 DONE: test_mse=2.234191(All) 4.3124(ILI) test_mae=1.026601 | SUPPLEMENTARY phys: MSE=337939136.0 MAE=12683.6 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[17:56:25]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_01/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[17:56:25]   [L=24] Rep 2/10 ...
+[17:56:25]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[17:56:26] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[17:56:34]     ep  1/20 | train_loss=0.799174 | val_mse=1.896551(All) 3.8397(ILI) | val_mae=0.886509 | 8.3s
+[17:56:42]     ep  2/20 | train_loss=0.686173 | val_mse=1.504262(All) 3.1537(ILI) | val_mae=0.726893 | 8.3s
+[17:56:51]     ep  3/20 | train_loss=0.517462 | val_mse=1.059072(All) 2.3056(ILI) | val_mae=0.522677 | 8.3s
+[17:56:59]     ep  4/20 | train_loss=0.405049 | val_mse=0.941670(All) 2.0101(ILI) | val_mae=0.532191 | 8.3s
+[17:57:07]     ep  5/20 | train_loss=0.338565 | val_mse=0.851136(All) 1.7971(ILI) | val_mae=0.519928 | 8.3s
+[17:57:16]     ep  6/20 | train_loss=0.310201 | val_mse=1.178654(All) 2.4999(ILI) | val_mae=0.574401 | 8.3s
+[17:57:24]     ep  7/20 | train_loss=0.254472 | val_mse=0.865826(All) 1.8469(ILI) | val_mae=0.474512 | 8.3s
+[17:57:32]     ep  8/20 | train_loss=0.217669 | val_mse=0.990529(All) 2.1175(ILI) | val_mae=0.512385 | 8.3s
+[17:57:41]     ep  9/20 | train_loss=0.192007 | val_mse=0.942611(All) 2.0044(ILI) | val_mae=0.503153 | 8.4s
+[17:57:49]     ep 10/20 | train_loss=0.173819 | val_mse=1.046173(All) 2.2451(ILI) | val_mae=0.533760 | 8.3s
+[17:57:57]     ep 11/20 | train_loss=0.155628 | val_mse=0.835981(All) 1.7779(ILI) | val_mae=0.502245 | 8.3s
+[17:58:06]     ep 12/20 | train_loss=0.138549 | val_mse=1.003230(All) 2.1497(ILI) | val_mae=0.527018 | 8.3s
+[17:58:14]     ep 13/20 | train_loss=0.130635 | val_mse=0.878241(All) 1.8854(ILI) | val_mae=0.504543 | 8.3s
+[17:58:22]     ep 14/20 | train_loss=0.123106 | val_mse=0.729312(All) 1.5539(ILI) | val_mae=0.466901 | 8.3s
+[17:58:31]     ep 15/20 | train_loss=0.109553 | val_mse=1.008955(All) 2.1767(ILI) | val_mae=0.542255 | 8.3s
+[17:58:39]     ep 16/20 | train_loss=0.096788 | val_mse=0.973721(All) 2.1062(ILI) | val_mae=0.535172 | 8.3s
+[17:58:47]     ep 17/20 | train_loss=0.092440 | val_mse=0.982435(All) 2.1163(ILI) | val_mae=0.547245 | 8.3s
+[17:58:56]     ep 18/20 | train_loss=0.088376 | val_mse=1.005674(All) 2.1942(ILI) | val_mae=0.533357 | 8.3s
+[17:59:04]     ep 19/20 | train_loss=0.091794 | val_mse=0.918457(All) 1.9898(ILI) | val_mae=0.515545 | 8.3s
+[17:59:12]     ep 20/20 | train_loss=0.082354 | val_mse=0.884248(All) 1.9075(ILI) | val_mae=0.504162 | 8.3s
+[17:59:13]   L=24 DONE: test_mse=3.696921(All) 8.1874(ILI) test_mae=1.147946 | SUPPLEMENTARY phys: MSE=641551936.0 MAE=15006.4 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[17:59:19]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_02/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[17:59:19]   [L=24] Rep 3/10 ...
+[17:59:19]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[17:59:20] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[17:59:28]     ep  1/20 | train_loss=0.808229 | val_mse=1.915986(All) 3.8326(ILI) | val_mae=0.910622 | 8.3s
+[17:59:37]     ep  2/20 | train_loss=0.689886 | val_mse=1.435725(All) 3.0496(ILI) | val_mae=0.684360 | 8.3s
+[17:59:45]     ep  3/20 | train_loss=0.499051 | val_mse=1.059416(All) 2.2761(ILI) | val_mae=0.537440 | 8.3s
+[17:59:53]     ep  4/20 | train_loss=0.383355 | val_mse=0.950419(All) 1.9550(ILI) | val_mae=0.610859 | 8.3s
+[18:00:02]     ep  5/20 | train_loss=0.308202 | val_mse=0.812570(All) 1.6919(ILI) | val_mae=0.529012 | 8.3s
+[18:00:10]     ep  6/20 | train_loss=0.269321 | val_mse=0.803619(All) 1.6987(ILI) | val_mae=0.465623 | 8.3s
+[18:00:18]     ep  7/20 | train_loss=0.262401 | val_mse=1.102107(All) 2.3482(ILI) | val_mae=0.551177 | 8.3s
+[18:00:27]     ep  8/20 | train_loss=0.256641 | val_mse=0.839902(All) 1.7574(ILI) | val_mae=0.491741 | 8.3s
+[18:00:35]     ep  9/20 | train_loss=0.201902 | val_mse=0.842464(All) 1.7772(ILI) | val_mae=0.476663 | 8.3s
+[18:00:43]     ep 10/20 | train_loss=0.184287 | val_mse=0.840156(All) 1.7754(ILI) | val_mae=0.473394 | 8.3s
+[18:00:52]     ep 11/20 | train_loss=0.166382 | val_mse=0.860098(All) 1.8184(ILI) | val_mae=0.490151 | 8.3s
+[18:01:00]     ep 12/20 | train_loss=0.151064 | val_mse=0.984131(All) 2.1030(ILI) | val_mae=0.526380 | 8.3s
+[18:01:08]     ep 13/20 | train_loss=0.142464 | val_mse=0.918715(All) 1.9654(ILI) | val_mae=0.492573 | 8.3s
+[18:01:17]     ep 14/20 | train_loss=0.121253 | val_mse=0.929063(All) 1.9894(ILI) | val_mae=0.500019 | 8.3s
+[18:01:25]     ep 15/20 | train_loss=0.116470 | val_mse=0.878843(All) 1.8871(ILI) | val_mae=0.483240 | 8.3s
+[18:01:33]     ep 16/20 | train_loss=0.104624 | val_mse=0.959591(All) 2.0812(ILI) | val_mae=0.504305 | 8.3s
+[18:01:42]     ep 17/20 | train_loss=0.097781 | val_mse=0.872529(All) 1.8701(ILI) | val_mae=0.485524 | 8.3s
+[18:01:50]     ep 18/20 | train_loss=0.097052 | val_mse=0.890685(All) 1.9262(ILI) | val_mae=0.482392 | 8.3s
+[18:01:58]     ep 19/20 | train_loss=0.089403 | val_mse=0.852057(All) 1.8464(ILI) | val_mae=0.469676 | 8.3s
+[18:02:07]     ep 20/20 | train_loss=0.085926 | val_mse=0.921210(All) 1.9790(ILI) | val_mae=0.506061 | 8.3s
+[18:02:08]   L=24 DONE: test_mse=2.663199(All) 5.0128(ILI) test_mae=1.127666 | SUPPLEMENTARY phys: MSE=392392768.0 MAE=13594.5 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:02:14]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_03/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:02:14]   [L=24] Rep 4/10 ...
+[18:02:14]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:02:14] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[18:02:23]     ep  1/20 | train_loss=0.807968 | val_mse=1.932804(All) 3.8895(ILI) | val_mae=0.910248 | 8.3s
+[18:02:31]     ep  2/20 | train_loss=0.707377 | val_mse=1.588742(All) 3.3043(ILI) | val_mae=0.739247 | 8.3s
+[18:02:39]     ep  3/20 | train_loss=0.528563 | val_mse=1.072500(All) 2.2571(ILI) | val_mae=0.646100 | 8.3s
+[18:02:48]     ep  4/20 | train_loss=0.424153 | val_mse=0.856669(All) 1.8229(ILI) | val_mae=0.507214 | 8.3s
+[18:02:56]     ep  5/20 | train_loss=0.355736 | val_mse=0.787870(All) 1.6708(ILI) | val_mae=0.475899 | 8.3s
+[18:03:04]     ep  6/20 | train_loss=0.301351 | val_mse=0.801737(All) 1.7081(ILI) | val_mae=0.449851 | 8.3s
+[18:03:13]     ep  7/20 | train_loss=0.260790 | val_mse=0.818662(All) 1.7429(ILI) | val_mae=0.447967 | 8.3s
+[18:03:21]     ep  8/20 | train_loss=0.231588 | val_mse=0.742594(All) 1.6018(ILI) | val_mae=0.425080 | 8.3s
+[18:03:29]     ep  9/20 | train_loss=0.204107 | val_mse=0.793234(All) 1.7244(ILI) | val_mae=0.438731 | 8.3s
+[18:03:38]     ep 10/20 | train_loss=0.188720 | val_mse=0.678663(All) 1.4797(ILI) | val_mae=0.409160 | 8.3s
+[18:03:46]     ep 11/20 | train_loss=0.227012 | val_mse=0.697711(All) 1.5241(ILI) | val_mae=0.413017 | 8.3s
+[18:03:55]     ep 12/20 | train_loss=0.179618 | val_mse=0.676384(All) 1.4629(ILI) | val_mae=0.413828 | 8.3s
+[18:04:03]     ep 13/20 | train_loss=0.149258 | val_mse=0.716590(All) 1.5630(ILI) | val_mae=0.430802 | 8.3s
+[18:04:11]     ep 14/20 | train_loss=0.135395 | val_mse=0.664175(All) 1.4422(ILI) | val_mae=0.423903 | 8.3s
+[18:04:20]     ep 15/20 | train_loss=0.128874 | val_mse=0.717110(All) 1.5489(ILI) | val_mae=0.437275 | 8.3s
+[18:04:28]     ep 16/20 | train_loss=0.117150 | val_mse=0.660741(All) 1.4420(ILI) | val_mae=0.415054 | 8.3s
+[18:04:36]     ep 17/20 | train_loss=0.103514 | val_mse=0.619128(All) 1.3472(ILI) | val_mae=0.408037 | 8.3s
+[18:04:45]     ep 18/20 | train_loss=0.097523 | val_mse=0.719361(All) 1.5841(ILI) | val_mae=0.428322 | 8.3s
+[18:04:53]     ep 19/20 | train_loss=0.094370 | val_mse=0.631210(All) 1.3813(ILI) | val_mae=0.406532 | 8.3s
+[18:05:01]     ep 20/20 | train_loss=0.095050 | val_mse=0.612714(All) 1.3358(ILI) | val_mae=0.407037 | 8.3s
+[18:05:02]   L=24 DONE: test_mse=2.225183(All) 3.7958(ILI) test_mae=1.058888 | SUPPLEMENTARY phys: MSE=294295360.0 MAE=12304.0 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:05:08]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_04/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:05:08]   [L=24] Rep 5/10 ...
+[18:05:08]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:05:09] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[18:05:17]     ep  1/20 | train_loss=0.806629 | val_mse=1.953858(All) 3.9248(ILI) | val_mae=0.888938 | 8.3s
+[18:05:26]     ep  2/20 | train_loss=0.660946 | val_mse=1.351521(All) 2.8913(ILI) | val_mae=0.594690 | 8.3s
+[18:05:34]     ep  3/20 | train_loss=0.496089 | val_mse=1.005174(All) 2.1637(ILI) | val_mae=0.514347 | 8.3s
+[18:05:42]     ep  4/20 | train_loss=0.399942 | val_mse=0.904176(All) 1.9216(ILI) | val_mae=0.500666 | 8.3s
+[18:05:51]     ep  5/20 | train_loss=0.341157 | val_mse=0.844071(All) 1.8184(ILI) | val_mae=0.469238 | 8.3s
+[18:05:59]     ep  6/20 | train_loss=0.283717 | val_mse=0.883920(All) 1.8904(ILI) | val_mae=0.483775 | 8.3s
+[18:06:07]     ep  7/20 | train_loss=0.261863 | val_mse=0.993300(All) 2.1246(ILI) | val_mae=0.473099 | 8.3s
+[18:06:16]     ep  8/20 | train_loss=0.225546 | val_mse=0.819957(All) 1.7780(ILI) | val_mae=0.461648 | 8.3s
+[18:06:24]     ep  9/20 | train_loss=0.204106 | val_mse=0.935265(All) 2.0182(ILI) | val_mae=0.480052 | 8.3s
+[18:06:32]     ep 10/20 | train_loss=0.198850 | val_mse=0.879152(All) 1.8997(ILI) | val_mae=0.468911 | 8.3s
+[18:06:41]     ep 11/20 | train_loss=0.170640 | val_mse=1.014518(All) 2.1962(ILI) | val_mae=0.485169 | 8.3s
+[18:06:49]     ep 12/20 | train_loss=0.165575 | val_mse=0.813910(All) 1.7504(ILI) | val_mae=0.454084 | 8.3s
+[18:06:57]     ep 13/20 | train_loss=0.150079 | val_mse=0.981375(All) 2.1155(ILI) | val_mae=0.490318 | 8.3s
+[18:07:06]     ep 14/20 | train_loss=0.134778 | val_mse=1.074203(All) 2.3109(ILI) | val_mae=0.525073 | 8.3s
+[18:07:14]     ep 15/20 | train_loss=0.119639 | val_mse=0.947139(All) 2.0521(ILI) | val_mae=0.477006 | 8.3s
+[18:07:22]     ep 16/20 | train_loss=0.113457 | val_mse=1.060261(All) 2.3028(ILI) | val_mae=0.512104 | 8.3s
+[18:07:31]     ep 17/20 | train_loss=0.103745 | val_mse=0.933269(All) 2.0324(ILI) | val_mae=0.471820 | 8.3s
+[18:07:39]     ep 18/20 | train_loss=0.099480 | val_mse=0.990992(All) 2.1564(ILI) | val_mae=0.492169 | 8.3s
+[18:07:47]     ep 19/20 | train_loss=0.097909 | val_mse=1.161360(All) 2.5161(ILI) | val_mae=0.536364 | 8.3s
+[18:07:56]     ep 20/20 | train_loss=0.096720 | val_mse=0.966721(All) 2.1012(ILI) | val_mae=0.470980 | 8.3s
+[18:07:57]   L=24 DONE: test_mse=2.309866(All) 4.3164(ILI) test_mae=1.022342 | SUPPLEMENTARY phys: MSE=338184128.0 MAE=12370.8 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:08:03]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_05/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:08:03]   [L=24] Rep 6/10 ...
+[18:08:03]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:08:03] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[18:08:12]     ep  1/20 | train_loss=0.806023 | val_mse=1.953004(All) 3.9239(ILI) | val_mae=0.893561 | 8.3s
+[18:08:20]     ep  2/20 | train_loss=0.663623 | val_mse=1.326060(All) 2.8414(ILI) | val_mae=0.624790 | 8.3s
+[18:08:28]     ep  3/20 | train_loss=0.506362 | val_mse=1.019593(All) 2.1629(ILI) | val_mae=0.536766 | 8.3s
+[18:08:37]     ep  4/20 | train_loss=0.407223 | val_mse=0.882230(All) 1.8871(ILI) | val_mae=0.489871 | 8.3s
+[18:08:45]     ep  5/20 | train_loss=0.347575 | val_mse=0.830701(All) 1.7699(ILI) | val_mae=0.486306 | 8.3s
+[18:08:53]     ep  6/20 | train_loss=0.301049 | val_mse=0.872782(All) 1.8499(ILI) | val_mae=0.484958 | 8.3s
+[18:09:02]     ep  7/20 | train_loss=0.256275 | val_mse=0.814623(All) 1.7078(ILI) | val_mae=0.503989 | 8.3s
+[18:09:10]     ep  8/20 | train_loss=0.223512 | val_mse=0.823192(All) 1.7727(ILI) | val_mae=0.468537 | 8.3s
+[18:09:18]     ep  9/20 | train_loss=0.192805 | val_mse=0.575912(All) 1.2241(ILI) | val_mae=0.402057 | 8.3s
+[18:09:27]     ep 10/20 | train_loss=0.172038 | val_mse=0.708791(All) 1.5004(ILI) | val_mae=0.434086 | 8.3s
+[18:09:35]     ep 11/20 | train_loss=0.170260 | val_mse=0.802654(All) 1.6866(ILI) | val_mae=0.464860 | 8.3s
+[18:09:43]     ep 12/20 | train_loss=0.139906 | val_mse=0.838455(All) 1.7820(ILI) | val_mae=0.470693 | 8.3s
+[18:09:52]     ep 13/20 | train_loss=0.125209 | val_mse=0.730091(All) 1.5664(ILI) | val_mae=0.437827 | 8.3s
+[18:10:00]     ep 14/20 | train_loss=0.117777 | val_mse=0.888073(All) 1.9481(ILI) | val_mae=0.473937 | 8.3s
+[18:10:08]     ep 15/20 | train_loss=0.113959 | val_mse=0.881279(All) 1.8998(ILI) | val_mae=0.477473 | 8.3s
+[18:10:17]     ep 16/20 | train_loss=0.106013 | val_mse=0.787377(All) 1.6560(ILI) | val_mae=0.475001 | 8.3s
+[18:10:25]     ep 17/20 | train_loss=0.103372 | val_mse=0.889034(All) 1.9367(ILI) | val_mae=0.462015 | 8.3s
+[18:10:33]     ep 18/20 | train_loss=0.088170 | val_mse=0.759981(All) 1.6442(ILI) | val_mae=0.432996 | 8.3s
+[18:10:42]     ep 19/20 | train_loss=0.089826 | val_mse=0.768071(All) 1.6643(ILI) | val_mae=0.449028 | 8.3s
+[18:10:50]     ep 20/20 | train_loss=0.088894 | val_mse=0.827125(All) 1.8195(ILI) | val_mae=0.446592 | 8.3s
+[18:10:51]   L=24 DONE: test_mse=2.190748(All) 3.9585(ILI) test_mae=1.031010 | SUPPLEMENTARY phys: MSE=310204160.0 MAE=12730.2 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:10:57]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_06/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:10:57]   [L=24] Rep 7/10 ...
+[18:10:57]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:10:58] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[18:11:06]     ep  1/20 | train_loss=0.809023 | val_mse=1.959978(All) 3.9456(ILI) | val_mae=0.916186 | 8.3s
+[18:11:14]     ep  2/20 | train_loss=0.717347 | val_mse=1.613838(All) 3.3720(ILI) | val_mae=0.758945 | 8.3s
+[18:11:23]     ep  3/20 | train_loss=0.536660 | val_mse=1.092747(All) 2.3703(ILI) | val_mae=0.521206 | 8.3s
+[18:11:31]     ep  4/20 | train_loss=0.425270 | val_mse=0.949358(All) 2.0478(ILI) | val_mae=0.523663 | 8.3s
+[18:11:39]     ep  5/20 | train_loss=0.375959 | val_mse=1.024882(All) 2.1850(ILI) | val_mae=0.482398 | 8.3s
+[18:11:48]     ep  6/20 | train_loss=0.321807 | val_mse=0.946219(All) 2.0193(ILI) | val_mae=0.479061 | 8.3s
+[18:11:56]     ep  7/20 | train_loss=0.297810 | val_mse=0.828016(All) 1.7813(ILI) | val_mae=0.458663 | 8.3s
+[18:12:04]     ep  8/20 | train_loss=0.253835 | val_mse=0.984400(All) 2.1107(ILI) | val_mae=0.494613 | 8.3s
+[18:12:13]     ep  9/20 | train_loss=0.227818 | val_mse=0.843855(All) 1.8157(ILI) | val_mae=0.449422 | 8.3s
+[18:12:21]     ep 10/20 | train_loss=0.203603 | val_mse=0.719917(All) 1.5561(ILI) | val_mae=0.434938 | 8.3s
+[18:12:29]     ep 11/20 | train_loss=0.181138 | val_mse=0.780886(All) 1.6867(ILI) | val_mae=0.444243 | 8.3s
+[18:12:38]     ep 12/20 | train_loss=0.162935 | val_mse=0.822043(All) 1.7732(ILI) | val_mae=0.463351 | 8.3s
+[18:12:46]     ep 13/20 | train_loss=0.153424 | val_mse=0.948040(All) 2.0442(ILI) | val_mae=0.480860 | 8.3s
+[18:12:54]     ep 14/20 | train_loss=0.133295 | val_mse=0.816492(All) 1.7736(ILI) | val_mae=0.463030 | 8.3s
+[18:13:03]     ep 15/20 | train_loss=0.142120 | val_mse=0.891011(All) 1.9434(ILI) | val_mae=0.477506 | 8.3s
+[18:13:11]     ep 16/20 | train_loss=0.142668 | val_mse=0.912150(All) 1.9833(ILI) | val_mae=0.476661 | 8.3s
+[18:13:19]     ep 17/20 | train_loss=0.115764 | val_mse=1.030601(All) 2.2244(ILI) | val_mae=0.499185 | 8.3s
+[18:13:28]     ep 18/20 | train_loss=0.104014 | val_mse=1.075956(All) 2.3347(ILI) | val_mae=0.516600 | 8.3s
+[18:13:36]     ep 19/20 | train_loss=0.098206 | val_mse=0.907678(All) 1.9653(ILI) | val_mae=0.492235 | 8.3s
+[18:13:44]     ep 20/20 | train_loss=0.088047 | val_mse=0.886920(All) 1.9338(ILI) | val_mae=0.475521 | 8.3s
+[18:13:45]   L=24 DONE: test_mse=1.957839(All) 3.3903(ILI) test_mae=0.970200 | SUPPLEMENTARY phys: MSE=265694400.0 MAE=11374.5 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:13:51]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_07/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:13:52]   [L=24] Rep 8/10 ...
+[18:13:52]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:13:52] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[18:14:00]     ep  1/20 | train_loss=0.810058 | val_mse=1.966474(All) 3.9428(ILI) | val_mae=0.915717 | 8.3s
+[18:14:09]     ep  2/20 | train_loss=0.726057 | val_mse=1.639762(All) 3.3862(ILI) | val_mae=0.771666 | 8.3s
+[18:14:17]     ep  3/20 | train_loss=0.556699 | val_mse=1.102510(All) 2.3815(ILI) | val_mae=0.524680 | 8.3s
+[18:14:25]     ep  4/20 | train_loss=0.467925 | val_mse=1.119999(All) 2.3943(ILI) | val_mae=0.502979 | 8.3s
+[18:14:34]     ep  5/20 | train_loss=0.418994 | val_mse=0.905667(All) 1.9586(ILI) | val_mae=0.446366 | 8.3s
+[18:14:42]     ep  6/20 | train_loss=0.360726 | val_mse=0.956836(All) 2.0358(ILI) | val_mae=0.467294 | 8.3s
+[18:14:50]     ep  7/20 | train_loss=0.308447 | val_mse=0.760655(All) 1.6202(ILI) | val_mae=0.505219 | 8.3s
+[18:14:59]     ep  8/20 | train_loss=0.294701 | val_mse=0.785956(All) 1.6919(ILI) | val_mae=0.425886 | 8.3s
+[18:15:07]     ep  9/20 | train_loss=0.238453 | val_mse=0.817057(All) 1.7437(ILI) | val_mae=0.465139 | 8.3s
+[18:15:15]     ep 10/20 | train_loss=0.230827 | val_mse=0.764246(All) 1.6382(ILI) | val_mae=0.431197 | 8.3s
+[18:15:24]     ep 11/20 | train_loss=0.188763 | val_mse=0.786266(All) 1.6899(ILI) | val_mae=0.440786 | 8.3s
+[18:15:32]     ep 12/20 | train_loss=0.168013 | val_mse=0.934642(All) 1.9858(ILI) | val_mae=0.502627 | 8.3s
+[18:15:40]     ep 13/20 | train_loss=0.153928 | val_mse=0.988177(All) 2.1068(ILI) | val_mae=0.515391 | 8.3s
+[18:15:49]     ep 14/20 | train_loss=0.148709 | val_mse=0.964206(All) 2.0629(ILI) | val_mae=0.522878 | 8.3s
+[18:15:57]     ep 15/20 | train_loss=0.145441 | val_mse=0.826639(All) 1.7873(ILI) | val_mae=0.466446 | 8.3s
+[18:16:05]     ep 16/20 | train_loss=0.117474 | val_mse=0.891342(All) 1.9140(ILI) | val_mae=0.487160 | 8.3s
+[18:16:14]     ep 17/20 | train_loss=0.106491 | val_mse=0.833951(All) 1.7985(ILI) | val_mae=0.472649 | 8.3s
+[18:16:22]     ep 18/20 | train_loss=0.103273 | val_mse=0.804862(All) 1.7376(ILI) | val_mae=0.471048 | 8.3s
+[18:16:30]     ep 19/20 | train_loss=0.094607 | val_mse=0.860186(All) 1.8641(ILI) | val_mae=0.480978 | 8.3s
+[18:16:39]     ep 20/20 | train_loss=0.086661 | val_mse=0.873192(All) 1.8870(ILI) | val_mae=0.481072 | 8.3s
+[18:16:40]   L=24 DONE: test_mse=2.631245(All) 5.2272(ILI) test_mae=1.102761 | SUPPLEMENTARY phys: MSE=409629216.0 MAE=13888.6 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:16:46]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_08/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:16:46]   [L=24] Rep 9/10 ...
+[18:16:46]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:16:47] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[18:16:55]     ep  1/20 | train_loss=0.803026 | val_mse=1.896979(All) 3.8253(ILI) | val_mae=0.890429 | 8.3s
+[18:17:03]     ep  2/20 | train_loss=0.669772 | val_mse=1.334096(All) 2.8411(ILI) | val_mae=0.622996 | 8.3s
+[18:17:12]     ep  3/20 | train_loss=0.495721 | val_mse=0.898954(All) 1.9385(ILI) | val_mae=0.497417 | 8.3s
+[18:17:20]     ep  4/20 | train_loss=0.371333 | val_mse=0.886057(All) 1.8841(ILI) | val_mae=0.461375 | 8.3s
+[18:17:28]     ep  5/20 | train_loss=0.314151 | val_mse=0.850914(All) 1.7943(ILI) | val_mae=0.473686 | 8.3s
+[18:17:37]     ep  6/20 | train_loss=0.272022 | val_mse=0.707851(All) 1.4928(ILI) | val_mae=0.433021 | 8.3s
+[18:17:45]     ep  7/20 | train_loss=0.223315 | val_mse=0.733182(All) 1.5707(ILI) | val_mae=0.445553 | 8.3s
+[18:17:53]     ep  8/20 | train_loss=0.191484 | val_mse=0.653566(All) 1.3996(ILI) | val_mae=0.416147 | 8.3s
+[18:18:02]     ep  9/20 | train_loss=0.164711 | val_mse=0.648583(All) 1.3786(ILI) | val_mae=0.445733 | 8.3s
+[18:18:10]     ep 10/20 | train_loss=0.153829 | val_mse=0.581338(All) 1.2500(ILI) | val_mae=0.402640 | 8.3s
+[18:18:18]     ep 11/20 | train_loss=0.137763 | val_mse=0.717256(All) 1.5461(ILI) | val_mae=0.440219 | 8.3s
+[18:18:27]     ep 12/20 | train_loss=0.182324 | val_mse=0.585654(All) 1.2649(ILI) | val_mae=0.397828 | 8.3s
+[18:18:35]     ep 13/20 | train_loss=0.128129 | val_mse=0.517888(All) 1.0961(ILI) | val_mae=0.379585 | 8.3s
+[18:18:43]     ep 14/20 | train_loss=0.103733 | val_mse=0.558195(All) 1.2038(ILI) | val_mae=0.379907 | 8.3s
+[18:18:52]     ep 15/20 | train_loss=0.101682 | val_mse=0.729556(All) 1.5982(ILI) | val_mae=0.426055 | 8.3s
+[18:19:00]     ep 16/20 | train_loss=0.093756 | val_mse=0.569741(All) 1.2227(ILI) | val_mae=0.385828 | 8.3s
+[18:19:08]     ep 17/20 | train_loss=0.087258 | val_mse=0.599165(All) 1.2910(ILI) | val_mae=0.391093 | 8.3s
+[18:19:17]     ep 18/20 | train_loss=0.082729 | val_mse=0.711754(All) 1.5526(ILI) | val_mae=0.410455 | 8.3s
+[18:19:25]     ep 19/20 | train_loss=0.079244 | val_mse=0.569946(All) 1.2289(ILI) | val_mae=0.378191 | 8.3s
+[18:19:33]     ep 20/20 | train_loss=0.072647 | val_mse=0.495630(All) 1.0601(ILI) | val_mae=0.364614 | 8.3s
+[18:19:34]   L=24 DONE: test_mse=2.980268(All) 6.2263(ILI) test_mae=1.087478 | SUPPLEMENTARY phys: MSE=488025920.0 MAE=14216.6 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:19:40]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_09/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:19:40]   [L=24] Rep 10/10 ...
+[18:19:40]   L=24: train=613 val=103 test=182 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:19:41] [PARAM AUDIT] Variant: full | Total Trainable: 1,030,056 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[18:19:50]     ep  1/20 | train_loss=0.802944 | val_mse=1.938694(All) 3.9193(ILI) | val_mae=0.892277 | 8.5s
+[18:19:58]     ep  2/20 | train_loss=0.700740 | val_mse=1.552918(All) 3.2401(ILI) | val_mae=0.740358 | 8.3s
+[18:20:06]     ep  3/20 | train_loss=0.526409 | val_mse=1.045981(All) 2.2680(ILI) | val_mae=0.494502 | 8.3s
+[18:20:15]     ep  4/20 | train_loss=0.429911 | val_mse=0.925716(All) 1.9809(ILI) | val_mae=0.513278 | 8.3s
+[18:20:23]     ep  5/20 | train_loss=0.349259 | val_mse=0.938573(All) 1.9939(ILI) | val_mae=0.511338 | 8.3s
+[18:20:31]     ep  6/20 | train_loss=0.289563 | val_mse=0.852407(All) 1.7817(ILI) | val_mae=0.521089 | 8.3s
+[18:20:40]     ep  7/20 | train_loss=0.258858 | val_mse=0.750881(All) 1.5688(ILI) | val_mae=0.475195 | 8.3s
+[18:20:48]     ep  8/20 | train_loss=0.239661 | val_mse=0.789663(All) 1.6870(ILI) | val_mae=0.435284 | 8.3s
+[18:20:56]     ep  9/20 | train_loss=0.203755 | val_mse=0.709980(All) 1.5065(ILI) | val_mae=0.417866 | 8.3s
+[18:21:05]     ep 10/20 | train_loss=0.186852 | val_mse=0.905579(All) 1.9506(ILI) | val_mae=0.489845 | 8.3s
+[18:21:13]     ep 11/20 | train_loss=0.163755 | val_mse=0.891063(All) 1.9105(ILI) | val_mae=0.479824 | 8.3s
+[18:21:21]     ep 12/20 | train_loss=0.147159 | val_mse=1.149458(All) 2.4604(ILI) | val_mae=0.540566 | 8.3s
+[18:21:30]     ep 13/20 | train_loss=0.141247 | val_mse=1.017035(All) 2.1966(ILI) | val_mae=0.499283 | 8.3s
+[18:21:38]     ep 14/20 | train_loss=0.124824 | val_mse=0.989623(All) 2.1564(ILI) | val_mae=0.494172 | 8.3s
+[18:21:46]     ep 15/20 | train_loss=0.118468 | val_mse=1.017064(All) 2.2002(ILI) | val_mae=0.504090 | 8.3s
+[18:21:55]     ep 16/20 | train_loss=0.111211 | val_mse=1.079978(All) 2.3416(ILI) | val_mae=0.527641 | 8.3s
+[18:22:03]     ep 17/20 | train_loss=0.110627 | val_mse=0.794307(All) 1.6837(ILI) | val_mae=0.476889 | 8.3s
+[18:22:11]     ep 18/20 | train_loss=0.095830 | val_mse=0.783638(All) 1.6866(ILI) | val_mae=0.448747 | 8.3s
+[18:22:20]     ep 19/20 | train_loss=0.088478 | val_mse=0.788973(All) 1.6923(ILI) | val_mae=0.448446 | 8.3s
+[18:22:28]     ep 20/20 | train_loss=0.082996 | val_mse=0.943914(All) 2.0551(ILI) | val_mae=0.482343 | 8.3s
+[18:22:29]   L=24 DONE: test_mse=2.297836(All) 4.2935(ILI) test_mae=1.045738 | SUPPLEMENTARY phys: MSE=336260640.0 MAE=12957.1 patients
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:22:35]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/rep_10/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=24) = 168
+[18:22:41]   [CSV] L=24: predictions -> hpc_results/journal_evidence/full/reps_1_to_10/predictions_miflu_L24_paper_protocol.csv (alignment spread=0.00e+00)
+[18:22:41]   [L=24] FINAL over 10 reps: MSE_AllVars=2.518730 MSE_ILITotal=4.872052
+[18:22:41] 
+[18:22:41] ==================================================================
+[18:22:41]   ABLATION COMPLETE: MIFlu (full) | recipe=baseline
+[18:22:41] ==================================================================
+[18:22:41]     mse_all_mean  mse_all_std  mae_all_mean  mae_all_std  mse_ili_mean  mse_ili_std  mse_ili_phys_mean  mae_ili_phys_mean
+L                                                                                                                        
+24       2.51873     0.507325      1.062063      0.05426      4.872052     1.418799        381417766.4       13112.635742
+[18:22:41]   Avg MSE_AllVars across L: 2.518730
+[18:22:41]   Total time: 29.2 min
+[18:22:41]   Per-rep metrics : hpc_results/journal_evidence/full/reps_1_to_10/metrics.csv
+[18:22:41]   Summary         : hpc_results/journal_evidence/full/reps_1_to_10/summary.csv
+
+ABLATION_RESULT: variant=full recipe=baseline mse_all=2.518730
+JOB DONE Tue Sep  1 18:22:42 HKT 2026 | variant=full

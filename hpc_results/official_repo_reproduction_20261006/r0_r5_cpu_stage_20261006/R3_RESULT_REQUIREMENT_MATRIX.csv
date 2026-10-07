@@ -1,0 +1,13 @@
+item,kind,author_generated,required_code_path,required_data,required_reps,can_be_reproduced,status,blocker
+Table V (MIFlu column),table,YES,R1-B,966-row author file,10,YES on a reconstructed contract,NOT_YET_RUN,GPU authorization
+Table V (11 baseline columns),table,NO - CITED,n/a,n/a,n/a,NO - quoted from refs [9] and [14],NOT_APPLICABLE,
+Table VI (regional),table,YES,not released,US-Region dataset,n/a,NO,BLOCKED_BY_MISSING_DATA,dataset not released
+Table VII (embedders),table,YES,R1-B x 4 embedders,966-row + LLaMA2/BERT assets,10,YES with 3 extra embedder assets,NOT_YET_RUN,embedder assets
+Table VIII (ablation),table,YES,R1-B x 7 variants,966-row,10,YES if every switch functions,NOT_YET_RUN,6 switches to implement and verify
+Table IX (runtime),table,YES,regional only,US-Region,n/a,HARDWARE_NORMALIZED_ONLY,BLOCKED_BY_MISSING_DATA,regional + different GPU
+Fig. 3,figure,DERIVED,arithmetic,Table V,n/a,YES - derived from Table V,NOT_YET_RUN,needs Table V numbers
+Fig. 5 (T sensitivity),figure,YES,not released,US-Region,n/a,NO,BLOCKED_BY_MISSING_DATA,dataset not released
+Fig. 6 (K sensitivity),figure,YES,not released,US-Region,n/a,NO,BLOCKED_BY_MISSING_DATA,dataset not released
+Fig. 7 (few-shot),figure,YES,unknown,966-row,unknown,NO,BLOCKED_BY_MISSING_CONFIGURATION,fractions/subsampling unrecovered
+Table II,table,YES,n/a - descriptive,966-row,n/a,YES - already verified 7/7,COMPLETE,
+Table IV,table,METHOD_SPEC,n/a,n/a,n/a,YES - cross-verified,COMPLETE,

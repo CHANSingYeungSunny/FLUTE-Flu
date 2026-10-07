@@ -1,0 +1,33 @@
+--- a/scripts/innovation/screening_artifacts.py
++++ b/scripts/innovation/screening_artifacts.py
+@@ -146,6 +146,30 @@
+         "integer or None")
+ 
+ 
++def _null_safe_context_dim(encoder) -> int | None:
++    """D7 repair: serialize an OPTIONAL context dimension safely.
++
++    `--text-encoder none` is not a zero-dimensional encoder: its
++    ``context_dim()`` legitimately returns ``None``. That must be serialized as
++    JSON ``null`` — never 0, -1, or a fabricated dimension. ``context_dim()``
++    is called AT MOST ONCE. Unexpected non-numeric, non-null values fail
++    closed with a clear error rather than being coerced.
++    """
++    cd = encoder.context_dim() if hasattr(encoder, "context_dim") else None
++    if cd is None:
++        return None
++    if isinstance(cd, bool):  # bool is an int subclass; never a dimension
++        raise TypeError(
++            "context_dim() returned a bool; expected an integer or None")
++    if isinstance(cd, int):
++        return int(cd)
++    if isinstance(cd, float) and float(cd).is_integer():
++        return int(cd)
++    raise TypeError(
++        f"context_dim() returned {type(cd).__name__} {cd!r}; expected an "
++        "integer or None")
++
++
+ def _sha256_bytes(payload: bytes) -> str:
+     return hashlib.sha256(payload).hexdigest()
+ 

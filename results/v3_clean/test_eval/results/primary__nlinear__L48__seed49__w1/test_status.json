@@ -1,0 +1,12 @@
+{
+  "run_key": "primary__nlinear__L48__seed49__w1",
+  "state": "COMPLETED",
+  "updated_utc": "2026-09-21T05:29:44Z",
+  "split": {
+    "train": 717,
+    "validation": 102,
+    "test": 206
+  },
+  "elapsed_seconds": 3.412,
+  "n_test_windows": 158
+}

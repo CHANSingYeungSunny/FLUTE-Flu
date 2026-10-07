@@ -1,0 +1,11 @@
+model,family,train_seconds_mean,trainable_parameters,compact_bytes,best_epoch_mean
+last_value_naive,baseline,0.0,0,0,
+seasonal_naive,baseline,0.0,0,0,
+nlinear,non_llm,5.32265,2520,10224,17.325
+dlinear,non_llm,5.690725,5040,20480,17.7
+itransformer,non_llm,8.464675,75672,305376,9.875
+patchtst,non_llm,8.381699999999999,87256,351704,10.075
+qwen_time_llm,llm,338.673075,370376,1482128,11.425
+gpt2_miflu,llm,147.322,1030056,4135503,10.2
+timecma_llm,llm,15.2167,1391016,5564776,6.925
+calf_llm,llm,20.161424999999998,1981608,7927320,12.3

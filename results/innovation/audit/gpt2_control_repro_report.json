@@ -1,0 +1,56 @@
+{
+  "comparison": {
+    "torch_equal": true,
+    "torch_allclose_default": true,
+    "torch_allclose_atol_rtol": {
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "result": true
+    },
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0
+  },
+  "tensors": {
+    "shape": [
+      3,
+      7,
+      24
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0"
+  },
+  "device": "cuda",
+  "eval_mode": {
+    "old_is_training": false,
+    "adapter_is_training": false
+  },
+  "deterministic_settings": {
+    "torch_deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "torch_seed_drawn": true
+  },
+  "inputs": {
+    "x_sha256": "d0156cc7135843fe663d1fd2faffc2da4e503d64f6086023cef7d294dd5aa972",
+    "htext_sha256": "466e39c7091109b1282343b9dc951fabf7c5cd66d5b58f560802f2f6be0ea6b8",
+    "context": {
+      "source": "gpt2_local_cache",
+      "shape": [
+        1,
+        369,
+        768
+      ]
+    }
+  },
+  "checkpoint": {
+    "checkpoint_sha256": "58faa97d248b102b84d3933f9f21111b96ca91550b8aa86055fff93ad72663fe",
+    "state_dicts_match": true,
+    "kind": "synthetic (existing MIFlu state_dict, fixed seed)"
+  },
+  "tolerance_declared": {
+    "torch_equal_expected": true,
+    "max_abs_diff_atol": 1e-06
+  },
+  "hpc_checkpoint_validation": "pending_pilot_stage",
+  "note": "synthetic-checkpoint bit-exact reproduction only; validating against a real HPC-trained MIFlu checkpoint is PENDING until the pilot stage"
+}

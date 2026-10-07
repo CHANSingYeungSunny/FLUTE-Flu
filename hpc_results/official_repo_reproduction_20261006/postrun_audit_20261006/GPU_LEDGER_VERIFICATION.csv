@@ -1,0 +1,46 @@
+job_id,job_name,partition,state,elapsed,elapsed_seconds,gpus,gpu_hours,phase,purpose,success,kind,in_prior_total_2.24366
+585865,s5_task,stingy,COMPLETED,00:02:16,136,1,0.03778,stage5,stage5 A2 fit,yes,training,no
+585874,s5_task,stingy,COMPLETED,00:02:13,133,1,0.03694,stage5,stage5 A2 fit,yes,training,no
+585875,s5_task,stingy,COMPLETED,00:02:08,128,1,0.03556,stage5,stage5 A2 fit,yes,training,no
+585876,s5_task,stingy,COMPLETED,00:02:06,126,1,0.035,stage5,stage5 A2 fit,yes,training,no
+585878,s5_score,stingy,FAILED,00:00:25,25,1,0.00694,stage5,stage5 scoring,no,scoring,no
+585883,s5_score,stingy,COMPLETED,00:00:49,49,1,0.01361,stage5,stage5 scoring,yes,scoring,no
+587048,a0_gpu,stingy,FAILED,00:00:16,16,1,0.00444,stage6,A0 released-code GPU minimum diagnostic,no,training,yes
+587054,a0_gpu,stingy,FAILED,00:00:23,23,1,0.00639,stage6,A0 released-code GPU minimum diagnostic,no,training,yes
+587059,a0_gpu,stingy,FAILED,00:00:22,22,1,0.00611,stage6,A0 released-code GPU minimum diagnostic,no,training,yes
+587068,a0_gpu,stingy,FAILED,00:01:22,82,1,0.02278,stage6,A0 released-code GPU minimum diagnostic,no,training,yes
+587070,s6_task,stingy,FAILED,00:00:04,4,1,0.00111,stage6,stage6 eight-model fit,no,training,yes
+587075,s6_task,stingy,COMPLETED,00:00:16,16,1,0.00444,stage6,stage6 eight-model fit,yes,training,yes
+587091,a0_gpu,stingy,COMPLETED,00:00:25,25,1,0.00694,stage6,A0 released-code GPU minimum diagnostic,yes,training,yes
+587190,s6_task,stingy,COMPLETED,00:00:18,18,1,0.005,stage6,stage6 eight-model fit,yes,training,yes
+587226,s6_task,stingy,COMPLETED,00:00:17,17,1,0.00472,stage6,stage6 eight-model fit,yes,training,yes
+587237,s6_task,stingy,COMPLETED,00:00:11,11,1,0.00306,stage6,stage6 eight-model fit,yes,training,yes
+587241,s6_task,stingy,COMPLETED,00:00:15,15,1,0.00417,stage6,stage6 eight-model fit,yes,training,yes
+587247,s6_task,stingy,COMPLETED,00:00:24,24,1,0.00667,stage6,stage6 eight-model fit,yes,training,yes
+587250,s6_task,stingy,COMPLETED,00:00:21,21,1,0.00583,stage6,stage6 eight-model fit,yes,training,yes
+587252,s6_task,stingy,COMPLETED,00:00:21,21,1,0.00583,stage6,stage6 eight-model fit,yes,training,yes
+587254,s6_task,stingy,COMPLETED,00:00:21,21,1,0.00583,stage6,stage6 eight-model fit,yes,training,yes
+587256,s6_task,stingy,COMPLETED,00:00:22,22,1,0.00611,stage6,stage6 eight-model fit,yes,training,yes
+587257,s6_task,stingy,COMPLETED,00:00:21,21,1,0.00583,stage6,stage6 eight-model fit,yes,training,yes
+587261,s6_task,stingy,COMPLETED,00:00:22,22,1,0.00611,stage6,stage6 eight-model fit,yes,training,yes
+587264,s6_task,stingy,COMPLETED,00:00:22,22,1,0.00611,stage6,stage6 eight-model fit,yes,training,yes
+587265,s6_task,stingy,COMPLETED,00:00:49,49,1,0.01361,stage6,stage6 eight-model fit,yes,training,yes
+587266,s6_task,stingy,COMPLETED,00:00:45,45,1,0.0125,stage6,stage6 eight-model fit,yes,training,yes
+587268,s6_task,stingy,COMPLETED,00:00:44,44,1,0.01222,stage6,stage6 eight-model fit,yes,training,yes
+587269,s6_task,stingy,COMPLETED,00:00:46,46,1,0.01278,stage6,stage6 eight-model fit,yes,training,yes
+587271,s6_task,stingy,COMPLETED,00:00:45,45,1,0.0125,stage6,stage6 eight-model fit,yes,training,yes
+587274,s6_task,stingy,COMPLETED,00:00:42,42,1,0.01167,stage6,stage6 eight-model fit,yes,training,yes
+587275,s6_task,stingy,COMPLETED,00:00:43,43,1,0.01194,stage6,stage6 eight-model fit,yes,training,yes
+587277,s6_task,stingy,COMPLETED,00:00:42,42,1,0.01167,stage6,stage6 eight-model fit,yes,training,yes
+587278,s6_task,stingy,COMPLETED,00:13:56,836,1,0.23222,stage6,stage6 eight-model fit,yes,training,yes
+587310,s6_task,stingy,COMPLETED,00:13:14,794,1,0.22056,stage6,stage6 eight-model fit,yes,training,yes
+587335,s6_task,stingy,COMPLETED,00:12:51,771,1,0.21417,stage6,stage6 eight-model fit,yes,training,yes
+587354,s6_task,stingy,COMPLETED,00:12:27,747,1,0.2075,stage6,stage6 eight-model fit,yes,training,yes
+587373,s6_score,stingy,FAILED,00:00:02,2,1,0.00056,stage6,stage6 scoring,no,scoring,yes
+587385,s6_score,stingy,FAILED,00:02:03,123,1,0.03417,stage6,stage6 scoring,no,scoring,yes
+606358,probe_text_gpu,stingy,COMPLETED,00:00:30,30,1,0.00833,2026-10-06 continuation,deterministic text-path probe (A100 half),yes,probe,yes
+606361_0,a1_measure,stingy,COMPLETED,00:00:07,7,1,0.00194,2026-10-06 continuation,A1 run (one is the failed target_modules attempt),yes,training,yes
+606365_0,a1_measure,stingy,COMPLETED,00:17:34,1054,1,0.29278,2026-10-06 continuation,A1 run (one is the failed target_modules attempt),yes,training,yes
+606378_1,a1_L36,stingy,COMPLETED,00:16:54,1014,1,0.28167,2026-10-06 continuation,A1 horizon run,yes,training,yes
+606385_2,a1_L48,stingy,COMPLETED,00:16:18,978,1,0.27167,2026-10-06 continuation,A1 horizon run,yes,training,yes
+606412_3,a1_L60,stingy,COMPLETED,00:15:42,942,1,0.26167,2026-10-06 continuation,A1 horizon run,yes,training,yes

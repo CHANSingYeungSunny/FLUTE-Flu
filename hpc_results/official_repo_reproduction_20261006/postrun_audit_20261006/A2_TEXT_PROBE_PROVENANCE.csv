@@ -1,0 +1,32 @@
+field,v1_probe,v2_probe,changed_between_probes,effect_on_the_measurement
+probe_script,../probe_a2_text_path.py,../probe_a2_text_path_v2.py,YES - v2 is a new file; v1 left unmodified as the record of the defect,"none - the fix is the input space, nothing else"
+output_json,../a2_text_path_probe.json,../a2_text_path_probe_v2.json,new filename,old output preserved
+checkpoint,hpc_results/checkpoints/best_miflu_L24.pth,hpc_results/checkpoints/best_miflu_L24.pth,NO,same file
+checkpoint_tensors_loaded,106 loaded / 12 missing / 0 unexpected,106 loaded / 12 missing / 0 unexpected,NO,same weights
+the_12_missing_keys,"forecasting_llm.blocks.{0..5}.attn.{bias,masked_bias}","forecasting_llm.blocks.{0..5}.attn.{bias,masked_bias}",NO,"GPT-2 causal-mask BUFFERS - deterministic constants not trained values, so the real trained weights were used"
+model_class,miflu_model.MIFlu,miflu_model.MIFlu,NO,same
+model_eval_mode,True,True,NO,dropout inactive in both
+dropout_state,all modules training=False,all modules training=False,NO,not a source of difference
+autocast,not used,not used,NO,not a source of difference
+dtype,float32,float32,NO,not a source of difference
+batch_size,1,1,NO,not a source of difference
+sequence_length,text 369 tokens + 294 patches,text 369 tokens + 294 patches,NO,not a source of difference
+loss_function,"(y**2).mean()","(y**2).mean()",NO,mean not sum - identical in both
+gradient_accumulation,none,none,NO,not applicable
+zero_grad_called,fresh leaf each run,fresh leaf each run,NO,not applicable
+gradients_normalized,no,no,NO,not a source of difference
+**INPUT SPACE**,**RAW CSV values (OT approx 176569)** ,**StandardScaler z-space using data/scaler_miflu_author966.json**,"YES - THIS IS THE ONLY SOURCE OF DIFFERENCE","MIFlu.forward documents x as ALREADY in StandardScaler space; feeding raw values is 3-5 orders out of distribution"
+input_range,approx 0 to 1.8e5 raw,"[-0.816, +3.827] z","YES,consequence of the above","the forward pass ends in RevIN y_hat_rev = y_hat_norm * stdevs + means, so the input scale propagates into the output"
+replacement_text_length,identical (1552 chars to (1,369,768)),identical (1552 chars to (1,369,768)),NO,"the probe aborts if shapes differ, so unequal-length substitution cannot occur"
+replacement_text_distribution,"(a) a different real prompt for another horizon (b) a row permutation of the original","(a) a different real prompt for another horizon (b) a row permutation of the original",NO,same variants
+attention_mask,no mask used,no mask used,NO,not a source of difference
+text_embedding_normalization,model text_ln applied inside forward,model text_ln applied inside forward,NO,identical across variants
+max_abs_pred_diff_different_prompt,59.6875,6.518e-04,"YES","v1 inflated by approx 9.2e4x"
+max_abs_pred_diff_row_permuted,6308.3125,6.525e-02,"YES","v1 inflated by approx 9.7e4x"
+mean_abs_pred_diff_different_prompt,3.618861,1.925182e-04,"YES","v1 inflated"
+text_gradient_norm,713007616.0,0.025177501142024994,"YES","v1 inflated by approx 2.8e10x"
+text_gradient_max_abs,87364416.0,0.003386898897588253,"YES","v1 inflated"
+prediction_range,not recorded - scale driven by raw input,"[-0.828, +1.717] mean abs 0.732 z","YES","v1 could not report an interpretable range"
+verdict,text_active,text_active,NO,"UNCHANGED - the qualitative conclusion survives the correction"
+classification,n/a,TEXT_ACTIVE_BUT_MAGNITUDE_REQUIRES_CAUTION,n/a,"text IS active; the earlier MAGNITUDE was invalid"
+consequence_for_earlier_reports,"59.6875 and 7.13e+08 appear in ../TEXT_PATH_RESOLUTION.md and ../REPORT_*","corrected by STATUS_CORRECTION_ADDENDUM.md C-2",n/a,"original files NOT modified"

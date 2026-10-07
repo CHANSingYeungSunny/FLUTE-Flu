@@ -1,0 +1,16 @@
+architecture,component,present,evidence
+QwenTimeLLM,time_series_patching,True,"patch_projection,patch_len"
+QwenTimeLLM,prototype_based_reprogramming,True,"prototype_bank,prototype_query"
+QwenTimeLLM,prompt_as_prefix,True,"build_prompt_as_prefix,set_train_statistics"
+QwenTimeLLM,frozen_qwen_backbone,True,"_FrozenTextModel,load_backbone"
+QwenTimeLLM,forecast_projection,True,forecast_projection
+CALFInspired,temporal_target_branch,True,"temporal_branch,temporal_projection"
+CALFInspired,textual_source_branch,True,"text,text_projection"
+CALFInspired,cross_modal_matching,True,cross_modal_match
+CALFInspired,feature_regularization_in_loss,True,feature_regularization_loss
+CALFInspired,output_consistency_in_loss,True,output_consistency_loss
+TimeCMAInspired,independent_time_series_branch,True,time_series_branch
+TimeCMAInspired,independent_llm_prompt_branch,True,"text,prompt_projection"
+TimeCMAInspired,cross_modality_retrieval,True,"retrieve_aligned_prompt,retrieval_query"
+TimeCMAInspired,last_token_or_cached_prompt,True,retrieve_aligned_prompt
+TimeCMAInspired,forecast_head,True,forecast_head

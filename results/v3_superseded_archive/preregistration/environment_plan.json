@@ -1,0 +1,102 @@
+{
+  "generated_utc": "2026-09-15T20:00:06Z",
+  "principle": "Versioned v3 environment. The stable v2 environment is never modified.",
+  "base_observation": "The v2 HPC environment already provides torch 2.5.1 and transformers 4.57.6, which satisfies the Qwen2.5 requirement (>= 4.37.0). A separate environment is still created so v3 dependency changes cannot perturb v2 reproducibility.",
+  "environments": [
+    {
+      "env_name": "mlflu_v3_core",
+      "purpose": "Non-LLM, GPT-2 control, baselines, controls",
+      "python": "3.10",
+      "pytorch": "2.5.1",
+      "cuda": "11.8",
+      "transformers": "4.57.6",
+      "extra": [
+        "accelerate",
+        "safetensors"
+      ],
+      "model_cache": "/gpfs1/scratch/sychan552/v3_cache/core",
+      "expected_disk_gb": 8,
+      "expected_a100_memory_gb": {
+        "non_llm": 2,
+        "gpt2_backbone": 6
+      },
+      "mixed_precision": "bf16 only after a preregistered numerical-equivalence check",
+      "offline_procedure": "HF_HOME plus TRANSFORMERS_OFFLINE=1 and HF_HUB_OFFLINE=1",
+      "future_compute_node_smoke_command": "sbatch --partition=stingy --gres=gpu:a100:1 --time=00:20:00 hpc_scripts/v3/smoke_load_test.sh"
+    },
+    {
+      "env_name": "mlflu_v3_qwen",
+      "purpose": "Qwen2.5-1.5B Time-LLM-inspired branch",
+      "python": "3.11",
+      "pytorch": "2.2.2",
+      "cuda": "11.8",
+      "transformers": "4.37.2",
+      "extra": [
+        "accelerate==0.28.0",
+        "einops==0.7.0",
+        "peft==0.4.0",
+        "safetensors"
+      ],
+      "model_cache": "/gpfs1/scratch/sychan552/v3_cache/qwen",
+      "expected_disk_gb": 6,
+      "expected_a100_memory_gb": {
+        "qwen_1_5b_bf16": 12
+      },
+      "mixed_precision": "BF16 permitted; record exact dtype and deterministic seed",
+      "offline_procedure": "download once on an authorised compute node, then force offline mode",
+      "future_compute_node_smoke_command": "sbatch --partition=stingy --gres=gpu:a100:1 --time=00:20:00 hpc_scripts/v3/smoke_load_test.sh"
+    },
+    {
+      "env_name": "mlflu_v3_crossmodal",
+      "purpose": "CALF/TimeCMA-inspired branches",
+      "python": "3.11",
+      "pytorch": "2.1.2",
+      "cuda": "12.1",
+      "transformers": "repository-pinned compatible release",
+      "extra": [
+        "torchvision==0.8.0",
+        "pca dependency from CALF",
+        "safetensors"
+      ],
+      "model_cache": "/gpfs1/scratch/sychan552/v3_cache/crossmodal",
+      "expected_disk_gb": 6,
+      "expected_a100_memory_gb": {
+        "gpt2_backbone": 6
+      },
+      "mixed_precision": "FP32 baseline first; BF16 only after branch-specific equivalence check",
+      "offline_procedure": "materialise repository and GPT-2 cache before compute-node-only smoke test",
+      "future_compute_node_smoke_command": "sbatch --partition=stingy --gres=gpu:a100:1 --time=00:20:00 hpc_scripts/v3/smoke_load_test.sh"
+    }
+  ],
+  "weight_access": [
+    {
+      "model_key": "gpt2_miflu",
+      "source": "already cached offline (v2)",
+      "download_required": false,
+      "user_action_required": false
+    },
+    {
+      "model_key": "calf_llm",
+      "source": "GPT-2 backbone, already cached offline",
+      "download_required": false,
+      "user_action_required": false
+    },
+    {
+      "model_key": "timecma_llm",
+      "source": "GPT-2 backbone, already cached offline",
+      "download_required": false,
+      "user_action_required": true,
+      "reason": "upstream repository licence is NOASSERTION; manual review required"
+    },
+    {
+      "model_key": "qwen_time_llm",
+      "source": "Qwen/Qwen2.5-1.5B (Hugging Face)",
+      "download_required": true,
+      "approx_gb": 3.1,
+      "gated": false,
+      "user_action_required": true,
+      "reason": "network download onto HPC and licence confirmation"
+    }
+  ],
+  "total_new_download_gb": 3.1
+}

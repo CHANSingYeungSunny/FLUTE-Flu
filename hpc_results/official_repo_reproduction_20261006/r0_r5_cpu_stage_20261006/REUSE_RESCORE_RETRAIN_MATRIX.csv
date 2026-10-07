@@ -1,0 +1,9 @@
+model,side,role,historical_artifact,reuse_unchanged,rescore_required,retrain_required,reason
+gpt2_miflu,LLM,REPLACE,results/v3_clean/.../gpt2_miflu*,n/a - being replaced,YES - it must be scored by the SAME scorer as the new MIFlu,YES - on the historical 1025-row contract,the controlled intervention
+qwen_time_llm,LLM,HOLD FIXED,results/v3_clean/test_eval/results/<run>/test_predictions.csv,YES,NO,NO,holding it fixed is what makes the effect attributable
+calf_llm,LLM,HOLD FIXED,results/v3_clean/test_eval/results/<run>/test_predictions.csv,YES,NO,NO,holding it fixed is what makes the effect attributable
+timecma_llm,LLM,HOLD FIXED,results/v3_clean/test_eval/results/<run>/test_predictions.csv,YES,NO,NO,holding it fixed is what makes the effect attributable
+nlinear,non-LLM,HOLD FIXED,results/v3_clean/test_eval/results/<run>/test_predictions.csv,YES,NO,NO,holding it fixed is what makes the effect attributable
+dlinear,non-LLM,HOLD FIXED,results/v3_clean/test_eval/results/<run>/test_predictions.csv,YES,NO,NO,holding it fixed is what makes the effect attributable
+patchtst,non-LLM,HOLD FIXED,results/v3_clean/test_eval/results/<run>/test_predictions.csv,YES,NO,NO,holding it fixed is what makes the effect attributable
+itransformer,non-LLM,HOLD FIXED,results/v3_clean/test_eval/results/<run>/test_predictions.csv,YES,NO,NO,holding it fixed is what makes the effect attributable

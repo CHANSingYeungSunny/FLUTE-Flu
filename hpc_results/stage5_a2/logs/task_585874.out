@@ -1,0 +1,108 @@
+[task] MODEL=notext L=36 job=585874 start=2026-09-25T16:03:19Z
+[A2] run_config containment=strict profile=author_966 horizon=36 seed=42
+[00:03:23] ==================================================================
+[00:03:23]   Table VIII Ablation: w/o multimodality
+[00:03:23] ==================================================================
+[00:03:23]   Variant         : no_multi  (use_text=False, use_lora=True, use_text_ln=True, gated_inject=False, unfreeze_first_k=0)
+[00:03:23]   Recipe          : baseline  -> adam, lr=0.0005, wd=0, loss=mse, betas=(0.9, 0.999) eps=1e-08
+[00:03:23]   Early stopping  : False (patience=5)
+[00:03:23]   Config          : T=104, K=6, Lp=24, S=2
+[00:03:23]                     batch=16, epochs=20, reps=1, seed=42
+[00:03:23]   Data profile    : author_966 (966 rows, between 2002 and 2020, split 676/773)
+[00:03:23]   Output          : results/stage5/author_966/notext/
+[00:03:23] 
+[00:03:23] Scaler: FIT on train[:676] ONLY — agrees with persisted /gpfs1/scratch/sychan552/a2_stage5/data/scaler_miflu_author966.json (no test-set refit)
+[00:03:23] Data: 966 total (profile=author_966) | Train=676 | Val=97 | Test=193
+[00:03:23] 
+[00:03:23] 
+[00:03:23]   [RESUME] 6 (L, rep, seed) fits already complete (locked checkpoint present): [(24, 1, 42), (24, 1, 43), (24, 1, 44), (36, 1, 42), (48, 1, 42), (60, 1, 42)]
+[00:03:23] ──────────────────────────────────────────────────
+[00:03:23]   HORIZON L=36
+[00:03:23] ──────────────────────────────────────────────────
+[00:03:23]   [L=36] Rep 1/1 seed=42 ... already complete, skipping
+[00:03:23] 
+[00:03:23]   [ablation] validation-only fit complete; Test scoring deferred to the locked-batch scoring entry.
+
+ABLATION_RESULT: variant=no_multi recipe=baseline test_deferred=1
+notext_L36_S42 wall=4.80 s
+[00:03:29] 
+[00:03:29] 
+[00:03:29]   [RESUME] 6 (L, rep, seed) fits already complete (locked checkpoint present): [(24, 1, 42), (24, 1, 43), (24, 1, 44), (36, 1, 42), (48, 1, 42), (60, 1, 42)]
+[00:03:29] ──────────────────────────────────────────────────
+[00:03:29]   HORIZON L=36
+[00:03:29] ──────────────────────────────────────────────────
+[00:03:29]   [L=36] Rep 1/1 ...
+[00:03:29]   L=36: train=537 val=62 test=158 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+[00:03:29] [PARAM AUDIT] Variant: no_multi | Total Trainable: 1,094,652 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[00:03:32]     ep  1/20 | train_loss=0.838841 | val_mse=0.582043(All) 0.8766(ILI) | val_mae=0.581494 | 3.0s
+[00:03:35]     ep  2/20 | train_loss=0.671014 | val_mse=0.308264(All) 0.4854(ILI) | val_mae=0.395807 | 2.8s
+[00:03:38]     ep  3/20 | train_loss=0.514030 | val_mse=0.270563(All) 0.4209(ILI) | val_mae=0.380148 | 2.8s
+[00:03:41]     ep  4/20 | train_loss=0.446498 | val_mse=0.245894(All) 0.3721(ILI) | val_mae=0.365993 | 2.8s
+[00:03:44]     ep  5/20 | train_loss=0.373433 | val_mse=0.221675(All) 0.3338(ILI) | val_mae=0.341096 | 2.8s
+[00:03:47]     ep  6/20 | train_loss=0.320404 | val_mse=0.194481(All) 0.2968(ILI) | val_mae=0.312454 | 2.8s
+[00:03:49]     ep  7/20 | train_loss=0.270571 | val_mse=0.214365(All) 0.3251(ILI) | val_mae=0.316514 | 2.8s
+[00:03:52]     ep  8/20 | train_loss=0.239752 | val_mse=0.202892(All) 0.3130(ILI) | val_mae=0.306777 | 2.8s
+[00:03:55]     ep  9/20 | train_loss=0.210323 | val_mse=0.193175(All) 0.2996(ILI) | val_mae=0.300257 | 2.8s
+[00:03:58]     ep 10/20 | train_loss=0.184605 | val_mse=0.201942(All) 0.3185(ILI) | val_mae=0.313397 | 2.8s
+[00:04:01]     ep 11/20 | train_loss=0.176710 | val_mse=0.230162(All) 0.3697(ILI) | val_mae=0.323652 | 2.8s
+[00:04:04]     ep 12/20 | train_loss=0.171819 | val_mse=0.225837(All) 0.3688(ILI) | val_mae=0.324083 | 2.8s
+[00:04:06]     ep 13/20 | train_loss=0.151204 | val_mse=0.190018(All) 0.2952(ILI) | val_mae=0.292181 | 2.8s
+[00:04:09]     ep 14/20 | train_loss=0.136810 | val_mse=0.236848(All) 0.3905(ILI) | val_mae=0.326873 | 2.8s
+[00:04:12]     ep 15/20 | train_loss=0.119043 | val_mse=0.204260(All) 0.3279(ILI) | val_mae=0.298908 | 2.8s
+[00:04:15]     ep 16/20 | train_loss=0.108819 | val_mse=0.220720(All) 0.3597(ILI) | val_mae=0.309488 | 2.8s
+[00:04:18]     ep 17/20 | train_loss=0.106387 | val_mse=0.256248(All) 0.4251(ILI) | val_mae=0.331778 | 2.8s
+[00:04:21]     ep 18/20 | train_loss=0.103700 | val_mse=0.231807(All) 0.3846(ILI) | val_mae=0.312345 | 2.8s
+[00:04:23]     ep 19/20 | train_loss=0.100620 | val_mse=0.217259(All) 0.3459(ILI) | val_mae=0.298140 | 2.8s
+[00:04:26]     ep 20/20 | train_loss=0.100037 | val_mse=0.244337(All) 0.4038(ILI) | val_mae=0.324709 | 2.8s
+[00:04:26]   [ablation] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[00:04:27]   [DEFER_TEST] prediction export skipped (locked-batch step)
+[00:04:27] 
+[00:04:27]   [ablation] validation-only fit complete; Test scoring deferred to the locked-batch scoring entry.
+
+ABLATION_RESULT: variant=no_multi recipe=baseline test_deferred=1
+notext_L36_S43 wall=63.50 s
+[00:04:32] 
+[00:04:32] 
+[00:04:32]   [RESUME] 7 (L, rep, seed) fits already complete (locked checkpoint present): [(24, 1, 42), (24, 1, 43), (24, 1, 44), (36, 1, 42), (36, 1, 43), (48, 1, 42), (60, 1, 42)]
+[00:04:32] ──────────────────────────────────────────────────
+[00:04:32]   HORIZON L=36
+[00:04:32] ──────────────────────────────────────────────────
+[00:04:32]   [L=36] Rep 1/1 ...
+[00:04:32]   L=36: train=537 val=62 test=158 windows
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+[00:04:32] [PARAM AUDIT] Variant: no_multi | Total Trainable: 1,094,652 | LoRA Tensors: 12 | LoRA Params: 73,728 | use_text_ln=True use_lora=True gated_inject=False unfreeze_first_k=0
+[00:04:35]     ep  1/20 | train_loss=0.837726 | val_mse=0.547534(All) 0.8280(ILI) | val_mae=0.563669 | 3.0s
+[00:04:38]     ep  2/20 | train_loss=0.653173 | val_mse=0.343118(All) 0.5135(ILI) | val_mae=0.449450 | 2.8s
+[00:04:41]     ep  3/20 | train_loss=0.515320 | val_mse=0.239680(All) 0.3746(ILI) | val_mae=0.346128 | 2.8s
+[00:04:44]     ep  4/20 | train_loss=0.423421 | val_mse=0.212841(All) 0.3200(ILI) | val_mae=0.328388 | 2.8s
+[00:04:46]     ep  5/20 | train_loss=0.369313 | val_mse=0.205833(All) 0.3065(ILI) | val_mae=0.317697 | 2.8s
+[00:04:49]     ep  6/20 | train_loss=0.308807 | val_mse=0.225302(All) 0.3460(ILI) | val_mae=0.311760 | 2.8s
+[00:04:52]     ep  7/20 | train_loss=0.272008 | val_mse=0.191780(All) 0.2891(ILI) | val_mae=0.299546 | 2.8s
+[00:04:55]     ep  8/20 | train_loss=0.238991 | val_mse=0.240608(All) 0.3855(ILI) | val_mae=0.327165 | 2.8s
+[00:04:58]     ep  9/20 | train_loss=0.230681 | val_mse=0.209949(All) 0.3222(ILI) | val_mae=0.322721 | 2.8s
+[00:05:01]     ep 10/20 | train_loss=0.197562 | val_mse=0.254331(All) 0.4120(ILI) | val_mae=0.341025 | 2.8s
+[00:05:03]     ep 11/20 | train_loss=0.167591 | val_mse=0.252851(All) 0.4164(ILI) | val_mae=0.335373 | 2.8s
+[00:05:06]     ep 12/20 | train_loss=0.155830 | val_mse=0.228345(All) 0.3794(ILI) | val_mae=0.321574 | 2.8s
+[00:05:09]     ep 13/20 | train_loss=0.141922 | val_mse=0.213775(All) 0.3518(ILI) | val_mae=0.309035 | 2.8s
+[00:05:12]     ep 14/20 | train_loss=0.131160 | val_mse=0.244220(All) 0.4085(ILI) | val_mae=0.319954 | 2.8s
+[00:05:15]     ep 15/20 | train_loss=0.119231 | val_mse=0.217309(All) 0.3634(ILI) | val_mae=0.303196 | 2.8s
+[00:05:18]     ep 16/20 | train_loss=0.108627 | val_mse=0.189779(All) 0.3099(ILI) | val_mae=0.289924 | 2.8s
+[00:05:20]     ep 17/20 | train_loss=0.099649 | val_mse=0.198538(All) 0.3234(ILI) | val_mae=0.300279 | 2.8s
+[00:05:23]     ep 18/20 | train_loss=0.095503 | val_mse=0.214989(All) 0.3603(ILI) | val_mae=0.303663 | 2.8s
+[00:05:26]     ep 19/20 | train_loss=0.089536 | val_mse=0.214093(All) 0.3529(ILI) | val_mae=0.302831 | 2.8s
+[00:05:29]     ep 20/20 | train_loss=0.088701 | val_mse=0.239440(All) 0.4082(ILI) | val_mae=0.318914 | 2.8s
+[00:05:29]   [ablation] DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[00:05:29]   [DEFER_TEST] prediction export skipped (locked-batch step)
+[00:05:29] 
+[00:05:29]   [ablation] validation-only fit complete; Test scoring deferred to the locked-batch scoring entry.
+
+ABLATION_RESULT: variant=no_multi recipe=baseline test_deferred=1
+notext_L36_S44 wall=62.52 s
+[task] MODEL=notext L=36 end=2026-09-25T16:05:30Z

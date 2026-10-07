@@ -1,0 +1,101 @@
+{
+  "generated_utc": "2026-09-17T15:38:54Z",
+  "correction": "all six original MIFlu ablations re-parented to gpt2_miflu",
+  "variant_registry": {
+    "without_dataset_information": {
+      "parent": "gpt2_miflu",
+      "intervention_point": "textual_embedder.build_prompt -> PROMPT_TEMPLATE_7 sections",
+      "kwargs": {
+        "prompt_components": [
+          "variable",
+          "task"
+        ]
+      }
+    },
+    "without_task_instruction": {
+      "parent": "gpt2_miflu",
+      "intervention_point": "textual_embedder.build_prompt -> PROMPT_TEMPLATE_7 sections",
+      "kwargs": {
+        "prompt_components": [
+          "dataset",
+          "variable"
+        ]
+      }
+    },
+    "without_input_variable_description": {
+      "parent": "gpt2_miflu",
+      "intervention_point": "textual_embedder.build_prompt -> PROMPT_TEMPLATE_7 sections",
+      "kwargs": {
+        "prompt_components": [
+          "dataset",
+          "task"
+        ]
+      }
+    },
+    "without_lora": {
+      "parent": "gpt2_miflu",
+      "intervention_point": "MIFlu LoRA module",
+      "kwargs": {
+        "use_lora": false
+      }
+    },
+    "without_multimodality": {
+      "parent": "gpt2_miflu",
+      "intervention_point": "GPT2MifluAdapter.forward htext zeroing (true removal of every text contribution)",
+      "kwargs": {
+        "multimodal": false
+      }
+    },
+    "without_lora_and_multimodality": {
+      "parent": "gpt2_miflu",
+      "intervention_point": "MIFlu LoRA module + text branch zeroing",
+      "kwargs": {
+        "use_lora": false,
+        "multimodal": false
+      }
+    },
+    "zero_text": {
+      "parent": "llm_backbones",
+      "applies_to": [
+        "calf_llm",
+        "timecma_llm",
+        "qwen_time_llm"
+      ],
+      "intervention_point": "frozen text embeddings -> exact zeros",
+      "kwargs": {
+        "text_mode": "zero"
+      }
+    },
+    "shuffled_text": {
+      "parent": "llm_backbones",
+      "applies_to": [
+        "calf_llm",
+        "timecma_llm",
+        "qwen_time_llm"
+      ],
+      "intervention_point": "frozen text token order -> permutation",
+      "kwargs": {
+        "text_mode": "shuffle"
+      },
+      "frozen_semantics": {
+        "shuffle_unit": "token",
+        "dimension": "token axis (dim=1)",
+        "scope": "per sample, within the text sequence only",
+        "seed": 20260917,
+        "train_validation_handling": "identical deterministic permutation at train and validation; derived from no target and no Test value"
+      }
+    },
+    "llm_removed_or_alignment_only": {
+      "parent": "llm_backbones",
+      "applies_to": [
+        "calf_llm",
+        "timecma_llm"
+      ],
+      "intervention_point": "bypass cross-modality / retrieval branch",
+      "kwargs": {
+        "text_mode": "removed"
+      },
+      "note": "for qwen_time_llm the LLM IS the backbone, so removal is not meaningful; the control is scoped to the inspired backbones that add an LLM branch on top of a numeric one"
+    }
+  }
+}

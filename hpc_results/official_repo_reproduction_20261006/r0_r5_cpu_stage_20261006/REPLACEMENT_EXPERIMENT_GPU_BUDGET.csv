@@ -1,0 +1,12 @@
+item,value,basis
+fits,40,4 horizons x 10 seeds on the historical 1025-row contract
+device,"stingy, 1x A100",the only partition with idle A100s
+measured per-fit cost,0.0533 GPU-h,F1 measured 0.25 GPU-h over 8 fits
+base GPU-hours,2.1320,40 x 0.0533
+with 10% retry buffer,2.3452,
+with 20% retry buffer,2.5584,
+recommended request,2.60,covers the buffer plus failed-job allowance
+wall clock @ MaxJobsPU=1,~4.2 h,40 sequential jobs
+storage,159.4 MiB,locked-checkpoint path; the full path would be 12.24 GiB
+authorization status,NOT GRANTED,a new replacement-specific grant is required
+may the sealed remainders fund it?,NO,F1 0.35 and the older 0.05639 are sealed

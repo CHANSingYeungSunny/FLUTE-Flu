@@ -1,0 +1,492 @@
+{
+  "generated_utc": "2026-09-21T04:47:43Z",
+  "append_only": true,
+  "no_new_scientific_result": true,
+  "final_candidate": "gpt2_miflu",
+  "selection_rule_identity": {
+    "source": "results/v3_clean/preregistration/paper_aligned_selection_rule.json",
+    "sha256": "afa7a780010aeed20fd7a2d361300ae2ce4411baeed1d458581538d3df359325",
+    "ranking_metric": "average_MSE_4L (seven-variable, full-horizon, z-space)",
+    "lower_is_better": true,
+    "tie_break_order": [
+      "average_MSE_4L",
+      "average_MAE_4L",
+      "resource cost"
+    ],
+    "forbidden": [
+      "peak_hit_ratio",
+      "PTE/PIE",
+      "baseline-relative ratio",
+      "(r24+r60)/2"
+    ]
+  },
+  "selection_outcome_identity": {
+    "source": "results/v3_clean/analysis/selection_outcome.json",
+    "sha256": "f93e711288023703b7c6ed7818009e7598c70f6dc9ed4c9274691ea16f667dc4",
+    "winner": "gpt2_miflu",
+    "winner_average_mse_4l": 0.7708721562796242,
+    "runner_up": "nlinear",
+    "runner_up_average_mse_4l": 1.0697672040053035,
+    "paired_t": -13.3288594825976,
+    "p_value": 3.1326018425874847e-07,
+    "n_pairs": 10,
+    "top_equivalence_set": [],
+    "equivalence_triggered": false
+  },
+  "frozen_analysis_protocol_identity": {
+    "source": "results/v3_clean/analysis/frozen_analysis_protocol.json",
+    "sha256": "cd229790fd0693334d79a1d63a38f06be8faf8cf30d83eb45c70603bc580fb6f"
+  },
+  "supporting_accepted_rows": {
+    "count": 40,
+    "orders": [
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200
+    ],
+    "horizons": [
+      24,
+      36,
+      48,
+      60
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "run_keys": [
+      "primary__gpt2_miflu__L24__seed42__w1",
+      "primary__gpt2_miflu__L24__seed43__w1",
+      "primary__gpt2_miflu__L24__seed44__w1",
+      "primary__gpt2_miflu__L24__seed45__w1",
+      "primary__gpt2_miflu__L24__seed46__w1",
+      "primary__gpt2_miflu__L24__seed47__w1",
+      "primary__gpt2_miflu__L24__seed48__w1",
+      "primary__gpt2_miflu__L24__seed49__w1",
+      "primary__gpt2_miflu__L24__seed50__w1",
+      "primary__gpt2_miflu__L24__seed51__w1",
+      "primary__gpt2_miflu__L36__seed42__w1",
+      "primary__gpt2_miflu__L36__seed43__w1",
+      "primary__gpt2_miflu__L36__seed44__w1",
+      "primary__gpt2_miflu__L36__seed45__w1",
+      "primary__gpt2_miflu__L36__seed46__w1",
+      "primary__gpt2_miflu__L36__seed47__w1",
+      "primary__gpt2_miflu__L36__seed48__w1",
+      "primary__gpt2_miflu__L36__seed49__w1",
+      "primary__gpt2_miflu__L36__seed50__w1",
+      "primary__gpt2_miflu__L36__seed51__w1",
+      "primary__gpt2_miflu__L48__seed42__w1",
+      "primary__gpt2_miflu__L48__seed43__w1",
+      "primary__gpt2_miflu__L48__seed44__w1",
+      "primary__gpt2_miflu__L48__seed45__w1",
+      "primary__gpt2_miflu__L48__seed46__w1",
+      "primary__gpt2_miflu__L48__seed47__w1",
+      "primary__gpt2_miflu__L48__seed48__w1",
+      "primary__gpt2_miflu__L48__seed49__w1",
+      "primary__gpt2_miflu__L48__seed50__w1",
+      "primary__gpt2_miflu__L48__seed51__w1",
+      "primary__gpt2_miflu__L60__seed42__w1",
+      "primary__gpt2_miflu__L60__seed43__w1",
+      "primary__gpt2_miflu__L60__seed44__w1",
+      "primary__gpt2_miflu__L60__seed45__w1",
+      "primary__gpt2_miflu__L60__seed46__w1",
+      "primary__gpt2_miflu__L60__seed47__w1",
+      "primary__gpt2_miflu__L60__seed48__w1",
+      "primary__gpt2_miflu__L60__seed49__w1",
+      "primary__gpt2_miflu__L60__seed50__w1",
+      "primary__gpt2_miflu__L60__seed51__w1"
+    ]
+  },
+  "model_config_identity": {
+    "model": "gpt2_miflu",
+    "arm": "primary",
+    "family": "llm",
+    "backbone": "gpt2 (TextualInputEmbedder / gpt2_miflu adapter)",
+    "text_encoder": "gpt2",
+    "T": 104,
+    "N": 7,
+    "epochs": 20,
+    "batch_size": 16,
+    "lr": 0.0005,
+    "patience": 7,
+    "full_params": 1030056,
+    "lora_trainable_params": 73728
+  },
+  "base_model_identity": {
+    "base_model_id": "gpt2",
+    "base_model_revision": "openai-community/gpt2 (default revision, offline cached)",
+    "transformers_on_hpc": "4.57.6",
+    "source_version": "innov-v3.19-baseline-no-checkpoint-finalization",
+    "source_manifest_sha256": "95e30137f53d3d3a10a6453f0912883e7361afaada24593bd4bce4db3ac5b313",
+    "source_aggregate_sha256": "ae75b958b750e97c1ec9c0317ac80bf6fdc94ef979cfa280570540b0d889efaa",
+    "gpt2_related_source_files": {
+      "scripts/innovation/backbones/gpt2_miflu_adapter.py": "6dc97049c36f90d3de8f25ad641b57077a25950374b5b3f735bb72f40120a2d0",
+      "scripts/innovation/backbones/llm_inspired.py": "ffbd5f5321f5f4462bc896b1b99aad9eb5e9768c5e5d8c20e31e35e3b6d50140",
+      "scripts/innovation/encoders/gpt2_encoder.py": "a72b60e87a6514e07f358c1a6bc878ed50cf832be18610af6d337d31c52fe6b3",
+      "scripts/miflu_model.py": "0e6bdb61213bfdcc72e6a5b2733fc891a613baeb3dc52b514997c1507bfc15ef",
+      "scripts/textual_embedder.py": "fc52226fca7fa3165d13221a9d744b0bdb8fc29d56d8cfe848a42f018fc002a0"
+    }
+  },
+  "checkpoint_identity": {
+    "policy": "v3.15-compact-durable",
+    "durable_root": "/home/sychan552/innovation_durable/screening",
+    "per_run": {
+      "primary__gpt2_miflu__L24__seed42__w1": {
+        "job_id": "571231",
+        "compact_sha256": "acace30755848ea741da4102e3556c35aea31497568f17a9168ac80a634483ef",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:28Z"
+      },
+      "primary__gpt2_miflu__L24__seed43__w1": {
+        "job_id": "571234",
+        "compact_sha256": "12c8de46e8a1fd228ee7a158d6d40590b07279e16f3224eb2e9c2f4964242a96",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:30Z"
+      },
+      "primary__gpt2_miflu__L24__seed44__w1": {
+        "job_id": "571236",
+        "compact_sha256": "103567d61edb98caf3676b59803c92d9b2e40f18b7a225170be20b321373b140",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:32Z"
+      },
+      "primary__gpt2_miflu__L24__seed45__w1": {
+        "job_id": "571269",
+        "compact_sha256": "4ec7e03d8cdec578fd9634a68aa87fb1292a5a36c323896cb80e5e9753a9f333",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:34Z"
+      },
+      "primary__gpt2_miflu__L24__seed46__w1": {
+        "job_id": "571272",
+        "compact_sha256": "4ae3843c759df0022f33c86502a0615706857e321d0b8a45e29fe16d9cfa5c08",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:36Z"
+      },
+      "primary__gpt2_miflu__L24__seed47__w1": {
+        "job_id": "571275",
+        "compact_sha256": "35f34e83f070df8a4fc2455cbfd6be998fcdd3648d3270a145f0c4a6b741e8fa",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:38Z"
+      },
+      "primary__gpt2_miflu__L24__seed48__w1": {
+        "job_id": "571281",
+        "compact_sha256": "376afb2435e44a5c92a3a382d36090ffa249e90e6146da7b375b646ab2371f35",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:40Z"
+      },
+      "primary__gpt2_miflu__L24__seed49__w1": {
+        "job_id": "571284",
+        "compact_sha256": "003a8af6ab1ad6ca78fcb15e28f67e58ea76f7073dd5a0a85ff2fdd1ccac32c4",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:42Z"
+      },
+      "primary__gpt2_miflu__L24__seed50__w1": {
+        "job_id": "571289",
+        "compact_sha256": "462aaf1be7e91f117c93e5c122800a48f822d6f48499dc6d49161877df0dc7bd",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:44Z"
+      },
+      "primary__gpt2_miflu__L24__seed51__w1": {
+        "job_id": "571291",
+        "compact_sha256": "a000cb5aef3d5a1d722299ee4987145bc6d8ed962a4694ec4bd7ce006e5ece20",
+        "compact_bytes": 4135503,
+        "finalized_utc": "2026-09-18T20:58:46Z"
+      },
+      "primary__gpt2_miflu__L36__seed42__w1": {
+        "job_id": "571294",
+        "compact_sha256": "b61128a3ad7ce6f57deeaabd883cbe0eb861658b1b820565ad816eb5b0163dd8",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:58:48Z"
+      },
+      "primary__gpt2_miflu__L36__seed43__w1": {
+        "job_id": "571308",
+        "compact_sha256": "5ed81ccb8d681ddcbda42b27996ab8522757a2651a23b51f5580ef010d70a89e",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:58:51Z"
+      },
+      "primary__gpt2_miflu__L36__seed44__w1": {
+        "job_id": "571315",
+        "compact_sha256": "770c3b150450b1898e57bd04dddb6063d2e29ad66d41ed61c8a515050696a1ef",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:58:53Z"
+      },
+      "primary__gpt2_miflu__L36__seed45__w1": {
+        "job_id": "571322",
+        "compact_sha256": "f5793f8bd1fc361b25f1128c2374aea14a2e5a7b29f94ef9ccf148f202e71f07",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:58:55Z"
+      },
+      "primary__gpt2_miflu__L36__seed46__w1": {
+        "job_id": "571330",
+        "compact_sha256": "54d476004a7db13ac6897470597aaf6b9bc7556f02538aac00bd0fa3413d3acd",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:58:57Z"
+      },
+      "primary__gpt2_miflu__L36__seed47__w1": {
+        "job_id": "571335",
+        "compact_sha256": "6549e46d58f99ac91e137babbb23997909666be915aac076bf4668c9cf21fc3c",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:58:59Z"
+      },
+      "primary__gpt2_miflu__L36__seed48__w1": {
+        "job_id": "571346",
+        "compact_sha256": "2cf386300faeda746e09e0df3cde588b68f8b62e4ebe7128853beb267fad6881",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:59:01Z"
+      },
+      "primary__gpt2_miflu__L36__seed49__w1": {
+        "job_id": "571349",
+        "compact_sha256": "35a67dc634128794b4c780b9915e163da296070e33f3b08f3bbe652e5eb4b768",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:59:03Z"
+      },
+      "primary__gpt2_miflu__L36__seed50__w1": {
+        "job_id": "571354",
+        "compact_sha256": "5d2f1ee47b5ebcb83f1ec50f4d5ae86e5adac8b18f4292266bc844fbddb1a1f2",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:59:06Z"
+      },
+      "primary__gpt2_miflu__L36__seed51__w1": {
+        "job_id": "571356",
+        "compact_sha256": "8bda77bc405c126e69dc8fbabb737b5283950ff9a33ea792a220c3a3284744bd",
+        "compact_bytes": 4393871,
+        "finalized_utc": "2026-09-18T20:59:08Z"
+      },
+      "primary__gpt2_miflu__L48__seed42__w1": {
+        "job_id": "571359",
+        "compact_sha256": "5f326f7820ae0bbe37fb802192890b28805934cc7f66a92e62adb9ba1726d627",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:10Z"
+      },
+      "primary__gpt2_miflu__L48__seed43__w1": {
+        "job_id": "571362",
+        "compact_sha256": "c03b5c96f093b79e0840c95a5398af0412efa36504df9745d5197e04ade4cc0a",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:12Z"
+      },
+      "primary__gpt2_miflu__L48__seed44__w1": {
+        "job_id": "571364",
+        "compact_sha256": "e4104a9594e815260579904c9b49d2f576362067dbeeb6ff7f822af82ebddf9d",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:14Z"
+      },
+      "primary__gpt2_miflu__L48__seed45__w1": {
+        "job_id": "571371",
+        "compact_sha256": "65f18497732aabbfe080439fb0bd34fd7c230e1812499b8bb805a57bdf0b7506",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:16Z"
+      },
+      "primary__gpt2_miflu__L48__seed46__w1": {
+        "job_id": "571373",
+        "compact_sha256": "b8567c58e10870fc705d2e239cbc7e1d487e4c7f247622e81e6374a11b9fec94",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:19Z"
+      },
+      "primary__gpt2_miflu__L48__seed47__w1": {
+        "job_id": "571378",
+        "compact_sha256": "869d5cb81c4f0ea671077a0b1961a3b2c3bc3f5585aad6f853fa389616841b86",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:21Z"
+      },
+      "primary__gpt2_miflu__L48__seed48__w1": {
+        "job_id": "571383",
+        "compact_sha256": "ad958b40ffa24cca275a1978b783d5fbabe05f7a00524f1e5acfacb63b77c46d",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:23Z"
+      },
+      "primary__gpt2_miflu__L48__seed49__w1": {
+        "job_id": "571387",
+        "compact_sha256": "33c44cbd7cf702ac106e8f476f78c14a6e0c7df4148c4ce33687a1f07a481625",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:25Z"
+      },
+      "primary__gpt2_miflu__L48__seed50__w1": {
+        "job_id": "571393",
+        "compact_sha256": "b810afdf129565172478506bad6056716864daad6b1ad01f7c2e59369745b9fa",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:27Z"
+      },
+      "primary__gpt2_miflu__L48__seed51__w1": {
+        "job_id": "571396",
+        "compact_sha256": "0c6d6facd455e9f6ed5bc3d8235700019b0ea80ad769ee4557085f57246f1501",
+        "compact_bytes": 4652239,
+        "finalized_utc": "2026-09-18T20:59:29Z"
+      },
+      "primary__gpt2_miflu__L60__seed42__w1": {
+        "job_id": "571398",
+        "compact_sha256": "cdfafa7c05eab68f52397713260a6b56ee1064aa4489070e8860419c21887fde",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:31Z"
+      },
+      "primary__gpt2_miflu__L60__seed43__w1": {
+        "job_id": "571401",
+        "compact_sha256": "581a4ca93fb09b9d69a492934846b25e26b70bc4b70c6ca3b16dfbae81ecae8f",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:33Z"
+      },
+      "primary__gpt2_miflu__L60__seed44__w1": {
+        "job_id": "571402",
+        "compact_sha256": "578334ddd9f838d7828de8b1e0f222002b775daedcb9b2a4b93fe9eff776a85b",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:36Z"
+      },
+      "primary__gpt2_miflu__L60__seed45__w1": {
+        "job_id": "571404",
+        "compact_sha256": "3924121749dfe59940894daa9edcbf2b13a2c65c335857786854b08d9453c1f0",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:38Z"
+      },
+      "primary__gpt2_miflu__L60__seed46__w1": {
+        "job_id": "571408",
+        "compact_sha256": "88ddc26c831dea361774dabd50efb9d4b69b74402b3b6c83d096e69770ee1353",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:40Z"
+      },
+      "primary__gpt2_miflu__L60__seed47__w1": {
+        "job_id": "571412",
+        "compact_sha256": "47da55d1b93f40124d50ad3504d169bed0f3fcddce0959e0818c563549e47225",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:42Z"
+      },
+      "primary__gpt2_miflu__L60__seed48__w1": {
+        "job_id": "571423",
+        "compact_sha256": "c69f75aea57e1aaeb4e6a15aea866b86057d84b8118423c4db33b8099030d5b1",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:44Z"
+      },
+      "primary__gpt2_miflu__L60__seed49__w1": {
+        "job_id": "571427",
+        "compact_sha256": "b876c3bec286820d2ba692453a59d80bb7819488f674a116582732e5c9692607",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:46Z"
+      },
+      "primary__gpt2_miflu__L60__seed50__w1": {
+        "job_id": "571431",
+        "compact_sha256": "ef80c578988d60061a27193f006d6edcf60e1b99ef392a35e1c75c23401852ae",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:49Z"
+      },
+      "primary__gpt2_miflu__L60__seed51__w1": {
+        "job_id": "571441",
+        "compact_sha256": "f1a1bb0202dda34b11d992b7043ad8ccdd140a518793c002c0721dc558bfee6d",
+        "compact_bytes": 4910671,
+        "finalized_utc": "2026-09-18T20:59:51Z"
+      }
+    },
+    "restoration_evidence_per_run": {
+      "reconstruction_exact": true,
+      "restoration_exact": true,
+      "n_keys_unequal": 0,
+      "source": "compact_manifest.json (v3.15 migration) \u2014 bit-exact reconstruction by construction"
+    },
+    "provenance_gaps": {
+      "source_full_checkpoint_sha256": {
+        "status": "not_recorded",
+        "reason": "the full best_val_mse.pt was deleted during the v3.15 compact-durable migration (migrate_accepted_rows.py); only source_bytes was persisted. The hash is NOT recoverable from compact.safetensors (file-bytes differ from the full ckpt).",
+        "fabricated": false
+      },
+      "canonical_tensor_sha256": {
+        "status": "not_recorded_in_v315_manifest",
+        "reason": "migrate_accepted_rows.py computed canonical_tensor_sha256 internally (canonical-tensor-v1) but did NOT persist it to compact_manifest.json. It IS deterministically recomputable from compact.safetensors; test_eval.py recomputes and records it in test_manifest.json at Test time.",
+        "recomputable": true,
+        "schema": "canonical-tensor-v1",
+        "fabricated": false
+      }
+    }
+  },
+  "prompt_text_identity": {
+    "config_resolved_yaml_sha256": "f8edfd3a7c5be0c13c3f167b6a6bcbd058c55294e1d3a45d1a3441c20c67c29c",
+    "prompt_statistics_metadata_sha256": "d3b0bcfe82ef4b2be00f08e6d5067728cc4a72a7de49fcfca06e473db009e76f"
+  },
+  "input_variables": [
+    "% WEIGHTED ILI",
+    "% UNWEIGHTED ILI",
+    "AGE 0-4",
+    "AGE 5-24",
+    "ILITOTAL",
+    "NUM. OF PROVIDERS",
+    "OT"
+  ],
+  "scaler_identity": {
+    "scaler_metadata_sha256": "51b57fd0ec7528bc4452c9065f7e86bb7cf238e714db281b68970e17c0a4e8d5",
+    "train_only": true,
+    "n_variables": 7,
+    "fit_scope": "data[:717] train rows only"
+  },
+  "split_identity": {
+    "split_manifest_sha256": "5e562727791119e4ff4365a5263b2a40bb7a46f8c2b0fe5d8e6124fa6e7a5cef",
+    "full_rows": 1025,
+    "train_end": 717,
+    "val_end": 819,
+    "test_end": 1025,
+    "test_count": 206
+  },
+  "horizons": [
+    24,
+    36,
+    48,
+    60
+  ],
+  "seed_policy": {
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "n_seeds": 10,
+    "policy": "deterministic inference; per-seed frozen checkpoint restored from compact.safetensors, evaluated on Test, aggregated as mean over seeds 42..51 within each L, matching the frozen selection rule.",
+    "deterministic_inference": true
+  },
+  "no_change_declaration": "No model, checkpoint, comparator, prompt, scaler, hyperparameter, endpoint, or rule may change after Test/Holdout access begins. This freeze is append-only and irreversible for the one-time Test phase."
+}

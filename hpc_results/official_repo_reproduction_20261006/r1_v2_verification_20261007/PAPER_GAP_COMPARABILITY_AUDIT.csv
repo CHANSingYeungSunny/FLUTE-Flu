@@ -1,0 +1,19 @@
+criterion,old_A2_selfbuilt_miflu,new_R1B_official_repo_miflu,comparable,note
+dataset,author national_illness.csv 966 rows,author national_illness.csv 966 rows,YES,sha256 2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5 on both sides
+dataset_sha256,2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5,2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5,YES,identical
+split,676 / 97 / 193,676 / 97 / 193,YES,identical
+variables,7 channels,7 channels,YES,same VAR_COLS order; ILITOTAL index 4
+metric_space,z-space (StandardScaler, train-only fit),z-space (StandardScaler, train-only fit),YES,identical
+horizons,24 / 36 / 48 / 60,24 / 36 / 48 / 60,YES,identical
+pooling,mean over (origins x leads x 7 variables),mean over (origins x leads x 7 variables),YES,identical
+seeds,42 / 43 / 44,42 / 43 / 44,YES,matched
+window_rule,strict containment,strict containment,YES,origins 170/158/146/134 in both
+containment_flag_in_artifacts,strict,strict,YES,read from the npz/manifest
+profile_flag_in_artifacts,author_966,author_966,YES,read from the npz/manifest
+checkpoint_policy,validation-selected,validation-selected,YES,both select on best validation MSE
+test_access_during_fit,False,False,YES,neither reads Test while fitting
+implementation,project self-built reconstruction (scripts/miflu_model.py),official repository GPT4TS-derived MIFlu (r1b_model.R1BCorrectedMIFlu),NO,THIS IS THE DIFFERENCE BEING MEASURED - the two are different models, not the same model tuned
+text_asset,project-built prompt statistics encoder,author text_emb_label_0507_<L>.txt,NO,declared deviation D2 of R1-B
+n_repetitions,3 seeds,3 seeds,YES,matched
+test_scope,full strict Test (170/158/146/134 origins),full strict Test (170/158/146/134 origins),YES,identical
+VERDICT_OVERALL,,,COMPARABLE_WITH_DECLARED_IMPLEMENTATION_DIFFERENCE,"The old and new author-966 MIFlu results are contract-comparable on dataset, split, variables, metric space, horizons, pooling, seeds, window rule and checkpoint policy. They differ in implementation and text asset, which is precisely what the comparison is intended to measure."

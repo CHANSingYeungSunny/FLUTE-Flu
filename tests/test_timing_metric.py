@@ -2,12 +2,14 @@
 test_timing_metric.py — Regression test for the Timing (|Δt|) = 0.0 bug
 ========================================================================
 
-Fix Brief #3: Timing and Peak Intensity must be computed ONLY over peaks that
-pass the Peak Hit criterion, and the Peak Hit count must ALWAYS be reported
-alongside them. A Timing of 0.0 must NEVER silently mask missed peaks.
+PTE (Timing) and PIE (Peak Intensity) must be computed ONLY over MATCHED peaks,
+and the matched-peak count must ALWAYS be reported alongside them — it is the
+SAMPLE SIZE for both, not an indicator in its own right. (Peak Hit Rate was
+removed in 2026-09; only PTE and PIE are reported.)
+A Timing of 0.0 must NEVER silently mask missed peaks.
 
 This test feeds a synthetic ground-truth / prediction pair whose peaks do NOT
-overlap (so Peak Hit = 0/n). It asserts:
+overlap (so matched peaks = 0/n). It asserts:
   (a) peak_hit_count is reported as "0/<n>", never omitted.
   (b) mean_abs_delta_t is None (unmatched), NOT 0.0.
   (c) mean_peak_magnitude_rel_err_pct is None (unmatched), NOT 0.0.

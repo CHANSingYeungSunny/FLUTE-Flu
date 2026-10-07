@@ -1,0 +1,88 @@
+{
+  "dataset": "author national_illness.csv",
+  "n_rows": 966,
+  "seq_len": 104,
+  "split_rule": "int(n*0.7) / int(n*0.2) / remainder",
+  "num_train": 676,
+  "num_vali": 97,
+  "num_test": 193,
+  "border1s": [
+    0,
+    572,
+    669
+  ],
+  "border2s": [
+    676,
+    773,
+    966
+  ],
+  "data_x_rows": {
+    "train": [
+      0,
+      676
+    ],
+    "val": [
+      572,
+      773
+    ],
+    "test": [
+      669,
+      966
+    ]
+  },
+  "note_test_feature_coverage": "Dataset_Custom.__len__ for set_type==2 returns tot_len WITHOUT *enc_in, so __getitem__ feat_id = index // tot_len is always 0 -> test evaluates feature 0 (weighted ILI) only.",
+  "horizons": {
+    "24": {
+      "pred_len": 24,
+      "tot_len": {
+        "train": 549,
+        "val": 74,
+        "test": 170
+      },
+      "samples": {
+        "train": 3843,
+        "val": 518,
+        "test": 170
+      }
+    },
+    "36": {
+      "pred_len": 36,
+      "tot_len": {
+        "train": 537,
+        "val": 62,
+        "test": 158
+      },
+      "samples": {
+        "train": 3759,
+        "val": 434,
+        "test": 158
+      }
+    },
+    "48": {
+      "pred_len": 48,
+      "tot_len": {
+        "train": 525,
+        "val": 50,
+        "test": 146
+      },
+      "samples": {
+        "train": 3675,
+        "val": 350,
+        "test": 146
+      }
+    },
+    "60": {
+      "pred_len": 60,
+      "tot_len": {
+        "train": 513,
+        "val": 38,
+        "test": 134
+      },
+      "samples": {
+        "train": 3591,
+        "val": 266,
+        "test": 134
+      }
+    }
+  }
+}

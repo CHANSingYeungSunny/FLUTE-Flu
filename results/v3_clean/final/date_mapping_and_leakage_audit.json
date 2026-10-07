@@ -1,0 +1,228 @@
+{
+  "audit": "date_mapping_and_leakage",
+  "passed": true,
+  "n_checks": 44,
+  "checks": [
+    {
+      "name": "calendar_complete_0_1024",
+      "passed": true,
+      "detail": "0..1024"
+    },
+    {
+      "name": "calendar_no_gaps",
+      "passed": true,
+      "detail": "n=1025"
+    },
+    {
+      "name": "calendar_monotonic",
+      "passed": true,
+      "detail": "week starts strictly non-decreasing at >=7-day spacing"
+    },
+    {
+      "name": "calendar_deterministic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar_anchor_715",
+      "passed": true,
+      "detail": "got 2016-01-24 want 2016-01-24"
+    },
+    {
+      "name": "calendar_anchor_769",
+      "passed": true,
+      "detail": "got 2017-02-05 want 2017-02-05"
+    },
+    {
+      "name": "calendar_anchor_819",
+      "passed": true,
+      "detail": "got 2018-01-21 want 2018-01-21"
+    },
+    {
+      "name": "calendar_anchor_820",
+      "passed": true,
+      "detail": "got 2018-01-28 want 2018-01-28"
+    },
+    {
+      "name": "calendar_anchor_821",
+      "passed": true,
+      "detail": "got 2018-02-04 want 2018-02-04"
+    },
+    {
+      "name": "per_origin_unique_ordered_L24",
+      "passed": true,
+      "detail": "each origin's 24 steps -> 24 distinct ascending target weeks"
+    },
+    {
+      "name": "dedup_distinct_weeks_L24",
+      "passed": true,
+      "detail": "921 distinct target weeks == 921 (full span)"
+    },
+    {
+      "name": "per_origin_unique_ordered_L36",
+      "passed": true,
+      "detail": "each origin's 36 steps -> 36 distinct ascending target weeks"
+    },
+    {
+      "name": "dedup_distinct_weeks_L36",
+      "passed": true,
+      "detail": "921 distinct target weeks == 921 (full span)"
+    },
+    {
+      "name": "per_origin_unique_ordered_L48",
+      "passed": true,
+      "detail": "each origin's 48 steps -> 48 distinct ascending target weeks"
+    },
+    {
+      "name": "dedup_distinct_weeks_L48",
+      "passed": true,
+      "detail": "921 distinct target weeks == 921 (full span)"
+    },
+    {
+      "name": "per_origin_unique_ordered_L60",
+      "passed": true,
+      "detail": "each origin's 60 steps -> 60 distinct ascending target weeks"
+    },
+    {
+      "name": "dedup_distinct_weeks_L60",
+      "passed": true,
+      "detail": "921 distinct target weeks == 921 (full span)"
+    },
+    {
+      "name": "target_abs_week_ordered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "first_test_target_abs_week",
+      "passed": true,
+      "detail": "first test target abs_week=820"
+    },
+    {
+      "name": "input_target_disjoint_no_future_leak_L24",
+      "passed": true,
+      "detail": "every window's input ends at target_start-1 (disjoint, chronological)"
+    },
+    {
+      "name": "input_target_disjoint_no_future_leak_L36",
+      "passed": true,
+      "detail": "every window's input ends at target_start-1 (disjoint, chronological)"
+    },
+    {
+      "name": "input_target_disjoint_no_future_leak_L48",
+      "passed": true,
+      "detail": "every window's input ends at target_start-1 (disjoint, chronological)"
+    },
+    {
+      "name": "input_target_disjoint_no_future_leak_L60",
+      "passed": true,
+      "detail": "every window's input ends at target_start-1 (disjoint, chronological)"
+    },
+    {
+      "name": "test_target_start_range_L24",
+      "passed": true,
+      "detail": "[820, 1001] want [820, 1001]"
+    },
+    {
+      "name": "test_target_start_range_L36",
+      "passed": true,
+      "detail": "[820, 989] want [820, 989]"
+    },
+    {
+      "name": "test_target_start_range_L48",
+      "passed": true,
+      "detail": "[820, 977] want [820, 977]"
+    },
+    {
+      "name": "test_target_start_range_L60",
+      "passed": true,
+      "detail": "[820, 965] want [820, 965]"
+    },
+    {
+      "name": "season_201805",
+      "passed": true,
+      "detail": "2017/2018"
+    },
+    {
+      "name": "season_202046",
+      "passed": true,
+      "detail": "2020/2021"
+    },
+    {
+      "name": "season_202129",
+      "passed": true,
+      "detail": "2020/2021"
+    },
+    {
+      "name": "season_201940",
+      "passed": true,
+      "detail": "2019/2020"
+    },
+    {
+      "name": "season_boundary_39",
+      "passed": true,
+      "detail": "2018/2019"
+    },
+    {
+      "name": "season_boundary_40",
+      "passed": true,
+      "detail": "2019/2020"
+    },
+    {
+      "name": "season_boundary_20",
+      "passed": true,
+      "detail": "2018/2019"
+    },
+    {
+      "name": "season_boundary_21",
+      "passed": true,
+      "detail": "2018/2019"
+    },
+    {
+      "name": "tie_multiple_maxima_first_index",
+      "passed": true,
+      "detail": "PTE=0.0 (argmax picks first of equals)"
+    },
+    {
+      "name": "peak_at_first_step",
+      "passed": true,
+      "detail": "PTE=0.0"
+    },
+    {
+      "name": "peak_at_final_step",
+      "passed": true,
+      "detail": "PTE=0.0"
+    },
+    {
+      "name": "observed_peak_zero_pie_none",
+      "passed": true,
+      "detail": "PIE=None"
+    },
+    {
+      "name": "pie_above_25_no_hit",
+      "passed": true,
+      "detail": "PIE=50.0 (obs peak 100 vs pred peak 50 -> 50%)"
+    },
+    {
+      "name": "pte_within_1_week_hit",
+      "passed": true,
+      "detail": "PTE=1.0"
+    },
+    {
+      "name": "insufficient_weeks_none",
+      "passed": true,
+      "detail": "n<2 -> no peak detection"
+    },
+    {
+      "name": "inverse_scaler_shared",
+      "passed": true,
+      "detail": "y_true_physical and y_pred_physical use identical mean_v/std_v in build_test_prediction_frame (single code path)"
+    },
+    {
+      "name": "no_test_value_loaded",
+      "passed": true,
+      "detail": "audit loaded only cdc_calendar (epiweek/date columns) + synthetic fixtures; the ILI columns of the raw CSV were never read"
+    }
+  ],
+  "no_test_value_loaded": true
+}

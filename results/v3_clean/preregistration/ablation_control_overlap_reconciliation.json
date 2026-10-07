@@ -1,0 +1,31 @@
+{
+  "generated_utc": "2026-09-17T15:31:15Z",
+  "overlaps_examined": 3,
+  "duplicates_removed": 0,
+  "matrix_modified": false,
+  "matrix_rows_unchanged": 598,
+  "note": "the frozen 598-row matrix is read-only here; no control invented after results, none removed",
+  "overlaps": [
+    {
+      "original_ablation": "without_multimodality",
+      "v3_control": "llm_removed_or_alignment_only",
+      "relationship": "related but NOT identical",
+      "distinction": "without_multimodality removes the TEXT branch of the ORIGINAL MIFlu (use_text_ln/gated_inject off); llm_removed_or_alignment_only removes the LLM branch of the INSPIRED backbones (CALF/TimeCMA/Qwen) via text_mode='removed'",
+      "resolution": "keep both; they act on different model families"
+    },
+    {
+      "original_ablation": "without_lora_and_multimodality",
+      "v3_control": "zero_text",
+      "relationship": "distinct",
+      "distinction": "without_lora_and_multimodality ablates MIFlu architecture components; zero_text is a representational control that zeroes frozen text embeddings while keeping the branch wired",
+      "resolution": "keep both"
+    },
+    {
+      "original_ablation": "without_input_variable_description",
+      "v3_control": "shuffled_text",
+      "relationship": "distinct",
+      "distinction": "the former removes a PROMPT component; the latter preserves the text content and destroys its ORDER",
+      "resolution": "keep both"
+    }
+  ]
+}

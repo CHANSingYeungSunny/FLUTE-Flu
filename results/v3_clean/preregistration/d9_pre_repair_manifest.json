@@ -1,0 +1,31 @@
+{
+  "generated_utc": "2026-09-17T16:56:06Z",
+  "defect": "D9",
+  "classification": "BEHAVIOR_NEUTRAL_API_SIGNATURE_ADAPTATION_FIX",
+  "runtime_version_before": "innov-v3.9-runner-import-path-fix",
+  "runtime_version_after": "innov-v3.10-backbone-kwarg-fix",
+  "failing_gate": {
+    "job_id": "568988",
+    "state": "FAILED",
+    "n_failing_paths": 18,
+    "first_observed": "primary__nlinear__L24__seed42__w1"
+  },
+  "failure_signature": {
+    "exception": "TypeError",
+    "message": "__init__() got an unexpected keyword argument 'device'",
+    "failing_file": "scripts/innovation/backbones/registry.py",
+    "failing_line": 28,
+    "raised_from": "scripts/innovation/clean_runner.py line 307",
+    "stage": "model construction (data loaded, training not started)",
+    "shared_by_all_model_paths": true
+  },
+  "predecessor_defect": {
+    "id": "D8",
+    "status": "FIXED_AND_VERIFIED_IN_v3.9",
+    "evidence": "after the v3.9 import-path fix the runner imports successfully and reaches spec resolution and model construction (baseline paths now report 'unknown run_key' from the GATE's key builder, and primary paths reach make_backbone)"
+  },
+  "pre_repair_sha256": {
+    "scripts/innovation/clean_runner.py": "46d2db624ed97880f9871b8a9b655b1cc13677db0e47cd8f3cecb85b617fb109"
+  },
+  "note": "Recorded BEFORE any edit to this defect's target."
+}

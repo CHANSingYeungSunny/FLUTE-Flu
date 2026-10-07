@@ -7,20 +7,28 @@ This script is part of the MIFlu paper-protocol evaluation line
 (`train_miflu.py` + `compute_miflu_indicators.py`). It:
   * Reads the paper-protocol per-horizon prediction CSV (has a `split` column)
     and plots the TEST split only.
-  * Emits exactly the artifacts requested:
-      results/ili/figures/fig_miflu_eval_continuous_L{L}.png
-      results/ili/figures/fig_miflu_eval_diagnostics_L{L}.png
-  * The 4 supplementary diagnostic indicators (Peak Hit / Timing / Peak
-    Intensity / Direction) are computed by `compute_miflu_indicators.py`
-    (this project's own script). They are supplementary only — the MIFlu
-    National paper protocol reports MSE/MAE. Full caveat in FIGURE_CAPTION.
-  * Thresholds: Peak Hit >= 0.75, Timing <= 2.0, Peak Intensity <= 20.0,
-    Direction >= 0.60.
+  * Y AXIS = PHYSICAL PATIENT COUNTS (Advisor Q3). The raw CSV's
+    `*_ili_phys` columns are de-normalised ILITOTAL. The z-space columns
+    (`*_ili`) remain the PRIMARY metric for the table (MIFlu §V-B), but the
+    figure speaks in counts so a clinician can read it.
+  * X AXIS = REAL CDC EPIWEEK DATES. The CSV carries `week_start_date` produced
+    by `cdc_calendar` (which uses the raw epiweek labels, not the buggy
+    synthetic `2002w01 + i weeks` grid that drifted ~19 weeks by row 820).
+  * LEAD-TIME POLICY (Advisor Q1) is EXPLICIT and declared on the figure:
+    overlapping forecast windows are collapsed via `aggregate_lead_time` so the
+    effective forecast horizon is constant (default: fixed_step=0 => 1-week-ahead),
+    instead of silently averaging 1..L-week-ahead predictions per week.
+  * The supplementary diagnostic indicators (Peak Timing Error / Peak Intensity
+    Error) are computed by `compute_miflu_indicators.py`. They are supplementary
+    only — the MIFlu National paper protocol reports MSE/MAE. Full caveat in the
+    figure caption. Peak Hit Rate and Direction were REMOVED (2026-09); the two
+    remaining indicators are always shown with their matched-peak count.
 
 Pure CPU (matplotlib/pandas/numpy). 300 DPI.
 
 Usage:
-  python scripts/make_miflu_evaluation_figure.py --pred_csv data/predictions_miflu_L24_paper_protocol.csv --L 24
+  python scripts/make_miflu_evaluation_figure.py \
+      --pred_csv data/predictions_miflu_L24_paper_protocol.csv --L 24
 """
 import os
 import sys
@@ -89,19 +97,6 @@ def season_label(date: pd.Timestamp) -> str:
     return f"{y-1}-{y}" if m < 7 else f"{y}-{y+1}"
 
 
-def _week_to_epiweek(abs_week: int) -> str:
-    """Map an absolute week index (0-based, 2002w01 = index 0) to an epiweek
-    code YYYYWW for date parsing. The national data starts at 200201."""
-    base_year, base_week = 2002, 1
-    # ISO week arithmetic via pandas Timestamp.
-    from datetime import datetime
-    d = datetime.fromisocalendar(base_year, base_week, 1)
-    ts = pd.Timestamp(d) + pd.Timedelta(weeks=int(abs_week))
-    # Convert back to epiweek code YYYYWW (ISO week number, zero-padded).
-    iso = ts.isocalendar()
-    return f"{iso[0]}{iso[1]:02d}"
-
-
 def smooth(series: np.ndarray, window: int = 4) -> np.ndarray:
     if len(series) < window:
         return series
@@ -132,34 +127,37 @@ def shade_phases(ax, dates, labels):
             if i == prev + 1:
                 prev = i
                 continue
-            ax.axvspan(dates.iloc[start], dates.iloc[prev], color=col,
+            ax.axvspan(dates[start], dates[prev], color=col,
                        alpha=0.45, zorder=0)
             start = prev = i
-        ax.axvspan(dates.iloc[start], dates.iloc[prev], color=col,
+        ax.axvspan(dates[start], dates[prev], color=col,
                    alpha=0.45, zorder=0)
 
 
 def add_annotation_box(ax, summary, L, split_label="test"):
-    """Annotation box with the 4 SUPPLEMENTARY indicators.
+    """Annotation box with the 2 SUPPLEMENTARY indicators (PTE and PIE).
 
-    The 4 indicators are supplementary diagnostics for our own MIFlu pipeline
-    (computed by compute_miflu_indicators.py). The full caveat — "not part of
-    the MIFlu paper-reported metrics (National paper protocol reports MSE/MAE
-    only)" — lives in FIGURE_CAPTION_L24.md. On the figure itself we keep only a
-    short "Supplementary" tag. Timing / Peak Intensity MUST be shown together
-    with the Peak-Hit hit count, never as a bare number (Fix Brief #3).
+    These are supplementary diagnostics (computed by
+    compute_miflu_indicators.py). The full caveat — "not part of the MIFlu
+    paper-reported metrics (National paper protocol reports MSE/MAE only)" —
+    lives in the figure caption. PTE / PIE MUST be shown together with the
+    matched-peak count, never as a bare number: both are computed over MATCHED
+    peaks only, so without the count the reader cannot judge the sample size.
+
+    Peak Hit Rate and Direction were REMOVED (2026-09) and are no longer drawn.
+
+    Advisor Q1c: `mean_abs_delta_t` was renamed to `peak_timing_error_weeks`
+    (it is a peak-timing ERROR in weeks, not a lead time). The old key is kept
+    as a fallback for older summary JSONs.
     """
-    v = summary.get("verdicts", {})
     peak = summary.get("peak_aggregate", {})
     hit_count = peak.get("peak_hit_count", "NA")
-    n_missed = peak.get("n_missed", "NA")
+    madt = peak.get("peak_timing_error_weeks", peak.get("mean_abs_delta_t", None))
+    mmr = peak.get("mean_peak_magnitude_rel_err_pct", None)
 
     def _fmt(x, nd=2, na="NA"):
         return na if x is None or (isinstance(x, float) and np.isnan(x)) else f"{x:.{nd}f}"
 
-    # Timing / Peak Intensity shown WITH hit count (Fix Brief #3).
-    madt = peak.get("mean_abs_delta_t", None)
-    mmr = peak.get("mean_peak_magnitude_rel_err_pct", None)
     timing_s = (f"{_fmt(madt,1)} wk (based on {hit_count} matched peaks)"
                 if madt is not None else f"unmatched (hit {hit_count})")
     intensity_s = (f"{_fmt(mmr,1)}% (based on {hit_count} matched peaks)"
@@ -167,10 +165,8 @@ def add_annotation_box(ax, summary, L, split_label="test"):
 
     box = (
         "Supplementary indicators:\n"
-        f"  Peak Hit   = {_fmt(peak.get('peak_hit_rate'),2)} ({hit_count}; {n_missed} missed)\n"
-        f"  Timing     = {timing_s}\n"
-        f"  Peak Int.  = {intensity_s}\n"
-        f"  Direction  = {_fmt(v.get('directional_accuracy', {}).get('value'),2)}"
+        f"  PTE = {timing_s}\n"
+        f"  PIE = {intensity_s}"
     )
     ax.text(0.985, 0.95, box, transform=ax.transAxes, ha="right", va="top",
             fontsize=7.5, linespacing=1.35,
@@ -178,47 +174,40 @@ def add_annotation_box(ax, summary, L, split_label="test"):
 
 
 def build_continuous_panel(ax, dates, gt, pred, labels, summary, L,
-                            split_boundaries=None):
-    """Plot the TEST-ONLY series.
+                           split_dates=None):
+    """Plot the TEST-ONLY series in PHYSICAL patient counts.
 
-    `split_boundaries` (optional) is a list of (abs_week_index, label) pairs
-    marking the train→val and val→test cut points, drawn as vertical dashed
-    lines so the viewer can SEE the split is test-only (Task A.1).
+    `split_dates` (optional) is a list of (Timestamp, label) marking the
+    train→val and val→test cut points, drawn as vertical dashed lines so the
+    viewer can SEE the split is test-only (Advisor Q2b).
     """
     shade_phases(ax, dates, labels)
     ax.plot(dates, gt, color="#1f77b4", lw=2.0, ls="--",
-            label="Ground Truth (ILITOTAL)", zorder=3)
+            label="Ground Truth (ILITOTAL, patients)", zorder=3)
     ax.plot(dates, pred, color="#d62728", lw=1.8,
-            label="MIFlu Prediction (ILITOTAL)", zorder=2)
+            label="MIFlu Prediction (ILITOTAL, patients)", zorder=2)
     tpk = find_peaks(gt, prominence=0.08 * (gt.max() - gt.min()),
                      distance=8)[0]
     ppk = find_peaks(pred, prominence=0.08 * (pred.max() - pred.min()),
                      distance=8)[0]
-    ax.scatter(dates.iloc[tpk], gt[tpk], marker="v", color="#1f77b4",
-               s=70, zorder=5, label="True Peak")
-    ax.scatter(dates.iloc[ppk], pred[ppk], marker="^", color="#d62728",
-               s=70, zorder=5, label="Pred Peak")
-    # (Task A.1) Explicit split boundaries — prove the plotted curve is test-only.
-    if split_boundaries:
-        for bw, blab in split_boundaries:
-            bdate = parse_dates(pd.Series([_week_to_epiweek(bw)]))
-            ax.axvline(bdate.iloc[0], color="#888", ls=":", lw=1.2, zorder=1)
-            # Place the split-boundary label at the BOTTOM of the axis (lower right
-            # area) so it never collides with the upper-left legend.
-            ax.text(bdate.iloc[0], ax.get_ylim()[0], f"{blab} ",
+    ax.scatter(dates[tpk], gt[tpk], marker="v", color="#1f77b4",
+           s=70, zorder=5, label="True Peak")
+    ax.scatter(dates[ppk], pred[ppk], marker="^", color="#d62728",
+           s=70, zorder=5, label="Pred Peak")
+    if split_dates:
+        for bdate, blab in split_dates:
+            ax.axvline(bdate, color="#888", ls=":", lw=1.2, zorder=1)
+            ax.text(bdate, ax.get_ylim()[0], f"{blab} ",
                     fontsize=7, color="#555", va="bottom", ha="left",
                     rotation=90)
     ax.set_ylabel("ILITOTAL (patient count)")
     ax.set_title(f"MIFlu Forecast vs Ground Truth — Test Set Only, L={L}",
                  fontsize=10.5, weight="bold")
-    # COVID-19 distribution-shift annotation (test period 2020-2021) — lower LEFT.
     ax.annotate("COVID-19 NPIs → atypical flat 2020-21 season\n"
                 "(distribution shift: not seen in 2002-2019 training)",
                 xy=(0.015, 0.04), xycoords="axes fraction",
                 fontsize=7.5, color="#555",
                 bbox=dict(boxstyle="round,pad=0.4", fc="#f3f3f3", ec="#bbb"))
-    # Legend upper-LEFT, nudged down slightly so it never overlaps the title or
-    # the (now bottom-placed) split label.
     ax.legend(fontsize=8, loc="upper left", bbox_to_anchor=(0.0, 0.98))
     ax.grid(alpha=0.25)
     add_annotation_box(ax, summary, L)
@@ -231,7 +220,7 @@ def build_directional_panel(ax, dates, gt, pred):
     win = 13
     if len(same) >= win:
         roll = np.convolve(same, np.ones(win) / win, mode="valid")
-        rdates = dates.iloc[win // 2: win // 2 + len(roll)]
+        rdates = dates[win // 2: win // 2 + len(roll)]
         ax.plot(rdates, roll, color="#2ca02c", lw=1.8)
         ax.axhline(0.5, color="gray", ls="--", lw=1.0, label="chance (0.5)")
         overall = float(np.nanmean(same[(~((dgt == 0) & (dpred == 0)))]))
@@ -247,8 +236,6 @@ def build_directional_panel(ax, dates, gt, pred):
 
 def build_peakbars_panel(ax, peak_df):
     hit = peak_df[peak_df["status"].isin(["Hit", "Missed"])].copy()
-    # The indicator module returns `true_peak_idx`/`pred_peak_idx`, not a `season`
-    # label. Fall back gracefully if `season` is absent.
     if "season" in hit.columns:
         seasons = hit["season"].tolist()
     else:
@@ -259,7 +246,7 @@ def build_peakbars_panel(ax, peak_df):
            else 0 for x in hit["peak_magnitude_rel_err_pct"]]
     x = np.arange(len(seasons))
     w = 0.38
-    ax.bar(x - w / 2, dt, w, color="#1f77b4", label="|\u0394t| weeks (timing)")
+    ax.bar(x - w / 2, dt, w, color="#1f77b4", label="|\u0394t| weeks (timing error)")
     ax.bar(x + w / 2, mag, w, color="#ff7f0e", label="mag rel-err %")
     ax.set_xticks(x)
     ax.set_xticklabels(seasons, rotation=30, ha="right", fontsize=8)
@@ -271,13 +258,10 @@ def build_peakbars_panel(ax, peak_df):
 
 
 def write_verdict_table(summary, md_path):
-    order = ["peak_hit_rate", "mean_abs_delta_t",
-             "mean_peak_magnitude_rel_err", "directional_accuracy"]
+    order = ["peak_timing_error_weeks", "mean_peak_magnitude_rel_err"]
     pretty = {
-        "peak_hit_rate": "Peak Hit",
-        "mean_abs_delta_t": "Timing",
-        "mean_peak_magnitude_rel_err": "Peak Intensity",
-        "directional_accuracy": "Direction",
+        "peak_timing_error_weeks": "PTE (wk)",
+        "mean_peak_magnitude_rel_err": "PIE (%)",
     }
     rows = []
     for name in order:
@@ -313,6 +297,15 @@ def main():
     ap.add_argument("--fig_dir", default=FIG_DIR)
     ap.add_argument("--met_dir", default=MET_DIR)
     ap.add_argument("--dpi", type=int, default=300)
+    # ── Advisor Q1: explicit lead-time policy ──
+    ap.add_argument("--lead_mode", default="fixed_step",
+                    choices=["mean_over_lead", "fixed_step", "origin_stride"],
+                    help="How overlapping windows are collapsed before plotting.")
+    ap.add_argument("--lead_step", type=int, default=0,
+                    help="Forecast step kept when --lead_mode=fixed_step "
+                         "(0 => 1-week-ahead, constant lead time).")
+    ap.add_argument("--stride", type=int, default=None,
+                    help="Window stride for --lead_mode=origin_stride.")
     args = ap.parse_args()
 
     os.makedirs(args.fig_dir, exist_ok=True)
@@ -324,6 +317,11 @@ def main():
         m = re.search(r"L(\d+)", os.path.basename(args.pred_csv))
         if m:
             L = int(m.group(1))
+
+    from compute_miflu_indicators import (
+        compute_peak_indicators, compute_trend_indicators, verdicts,
+        aggregate_lead_time)
+    from cdc_calendar import load_week_calendar
 
     # ── PAPER-PROTOCOL PATH (default) ──
     if args.walkforward_csv is None:
@@ -337,40 +335,60 @@ def main():
         assert "split" in df.columns, "prediction CSV must carry a `split` column"
         test_df = df[df["split"] == "test"].copy()
         assert len(test_df) > 0, "no `test` rows in prediction CSV — leakage guard failed"
-        # Collapse overlapping test windows onto a common absolute-week axis;
-        # where windows overlap, take the MEAN (deterministic, leakage-free).
-        grp = test_df.groupby("abs_week").agg(
-            ground_truth_ili=("ground_truth_ili", "mean"),
-            prediction_ili=("prediction_ili", "mean")).sort_index()
-        dates = parse_dates(pd.Series([_week_to_epiweek(w) for w in grp.index]))
-        gt = grp["ground_truth_ili"].to_numpy(dtype=float)
-        pred = grp["prediction_ili"].to_numpy(dtype=float)
-        # Build the REAL supplementary summary from the test-only series via the
-        # indicator module (Fix Brief #3 math: Timing/Intensity over matched peaks
-        # only; Peak-Hit count always co-reported).
-        from compute_miflu_indicators import (
-            compute_peak_indicators, compute_trend_indicators, verdicts)
+
+        # Advisor Q1/Q3: collapse overlapping windows with an EXPLICIT, declared
+        # lead-time policy, in PHYSICAL units (patient counts). The CSV carries
+        # `week_start_date` from cdc_calendar (REAL dates, no 19-week drift).
+        grp = aggregate_lead_time(test_df, mode=args.lead_mode,
+                                  step=args.lead_step, stride=args.stride)
+        # matplotlib's date converter accepts python `datetime` objects, but
+        # rejects pandas `Timestamp` objects — so convert explicitly.
+        dates = np.asarray(grp["week_start_date"].dt.to_pydatetime())
+        gt = grp["gt"].to_numpy(dtype=float)      # physical patient counts
+        pred = grp["pred"].to_numpy(dtype=float)  # physical patient counts
+
+        lead_note = {
+            "fixed_step": f"constant lead time = {args.lead_step + 1} week(s) ahead",
+            "mean_over_lead": "MIXED lead times 1..L averaged per week "
+                              "(effective lead time varies along the curve)",
+            "origin_stride": f"window stride = {args.stride}",
+        }[args.lead_mode]
+        print(f"[lead-time policy] mode={args.lead_mode} — {lead_note}")
+        print(f"                    weeks={len(gt)}, contributing windows per "
+              f"week: min={int(grp['n_windows'].min())}, "
+              f"max={int(grp['n_windows'].max())}")
+
+        # Build the REAL supplementary summary from the test-only PHYSICAL series.
         peak_df, peak_agg = compute_peak_indicators(gt, pred)
         trend = compute_trend_indicators(gt, pred)
-        thr = {"peak_hit_rate": 0.75, "mean_abs_delta_t": 2.0,
-               "mean_peak_mag_rel_err": 20.0, "directional_accuracy": 0.60}
-        v = verdicts(peak_agg, trend, thr)
+        thr = {"mean_abs_delta_t": 2.0, "mean_peak_mag_rel_err": 20.0}
+        v = verdicts(peak_agg, thr)
         summary = {"peak_aggregate": peak_agg, "verdicts": v,
                    "trend_indicators": trend, "thresholds": thr}
+
         labels = phase_label(gt)
         suffix = f"_L{L}" if L else ""
-        # (Task A.1) Split boundaries from the leakage audit: train[0,717),
-        # val[717,819), test[819,1025). The plotted curve is test-only (abs_week
-        # >= 820). Draw the val/test boundary so the viewer can SEE it.
-        split_boundaries = [(819, "val|test (test starts wk820)")]
-        # ---- 1. Continuous forecast figure (TEST ONLY) ----
+
+        # (Advisor Q2b) Split boundary at the val|test cut. Use the REAL calendar
+        # date for abs_week 819 (test starts at abs_week 820).
+        cal = load_week_calendar()
+        bdate = cal.loc[cal["abs_week"] == 819, "week_start_date"]
+        split_dates = [(bdate.iloc[0], "val|test (test starts wk820)")
+                       ] if len(bdate) else None
+
+        # ---- 1. Continuous forecast figure (TEST ONLY, physical counts) ----
         fig1, ax = plt.subplots(figsize=(7, 4.2))
         build_continuous_panel(ax, dates, gt, pred, labels, summary, L or 0,
-                               split_boundaries=split_boundaries)
+                               split_dates=split_dates)
+        # Declare the lead-time policy on the figure itself (Advisor Q1).
+        ax.text(0.015, 0.95, f"Lead-time policy: {lead_note}",
+                transform=ax.transAxes, fontsize=7, color="#444",
+                bbox=dict(boxstyle="round,pad=0.3", fc="#eef", ec="#99c"))
         fig1.tight_layout()
         p1 = os.path.join(args.fig_dir, f"fig_miflu_eval_continuous{suffix}.png")
         fig1.savefig(p1, dpi=args.dpi)
         plt.close(fig1)
+
         # ---- 2. Diagnostics (rolling direction + peak bars) ----
         fig2, (axL, axR) = plt.subplots(1, 2, figsize=(13, 4.2))
         build_directional_panel(axL, dates, gt, pred)
@@ -379,9 +397,16 @@ def main():
         p2 = os.path.join(args.fig_dir, f"fig_miflu_eval_diagnostics{suffix}.png")
         fig2.savefig(p2, dpi=args.dpi)
         plt.close(fig2)
+
+        md_p = os.path.join(args.met_dir,
+                            f"miflu_verdict_table{suffix}.md")
+        write_verdict_table(summary, md_p)
+
         print(f"[fig] -> {p1}")
         print(f"[fig] -> {p2}")
-        print(f"[OK ] plotted TEST split only ({len(gt)} weeks) for L={L}")
+        print(f"[md ] -> {md_p}")
+        print(f"[OK ] plotted TEST split only ({len(gt)} weeks) for L={L} "
+              f"in PHYSICAL patient counts")
         return
 
     # ── DEPRECATED walk-forward path (kept for the ChatTime variant only) ──
@@ -392,7 +417,7 @@ def main():
             print(f"[BLOCKER] missing input: {p}")
             sys.exit(3)
     df = pd.read_csv(args.walkforward_csv)
-    dates = parse_dates(df["date"].astype(str))
+    dates = np.asarray(parse_dates(df["date"].astype(str)).dt.to_pydatetime())
     gt = df["ground_truth"].to_numpy(dtype=float)
     pred = df["prediction"].to_numpy(dtype=float)
     peak_df = pd.read_csv(args.indicators_csv)

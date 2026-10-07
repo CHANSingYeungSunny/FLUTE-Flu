@@ -1,0 +1,68 @@
+[23:08:23] ============================================================
+[23:08:23]   MIFlu — FULL MULTIMODAL (text prompt + time-series)
+[23:08:23]   PAPER PROTOCOL (MIFlu_paper.md)
+[23:08:23] ============================================================
+[23:08:23]   Evaluation protocol: paper protocol (NOT L=52 walk-forward)
+[23:08:23]   Device: cuda (NVIDIA A100-SXM4-80GB)
+[23:08:23]   Config: T=104, L=[60] (each L trained INDEPENDENTLY)
+[23:08:23]           K=6, Lp=24, S=2, lora_r=4
+[23:08:23]           Split: static 70:10:20 (shuffle=False)
+[23:08:23]           Normalization: StandardScaler fit on TRAIN only
+[23:08:23]           batch=16, lr=0.0005, epochs=20, reps=1, seed=44
+[23:08:23] 
+[23:08:23] Scaler persisted -> /gpfs1/scratch/sychan552/a2_stage5/data/scaler_miflu_author966.json (train_end=676, val_end=773)
+[23:08:23] Data: 966 total | Train=676 | Val=97 | Test=193
+[23:08:23] 
+[23:08:23] Loading GPT2 text embedder...
+[23:08:24] 
+[23:08:24]   Prompt built for L=60: 369 tokens
+[23:08:24] ──────────────────────────────────────────────────
+[23:08:24]   HORIZON L=60
+[23:08:24] ──────────────────────────────────────────────────
+[23:08:24]   [L=60] Rep 1/1 ...
+[23:08:24]   L=60: train=513 val=38 test=134 windows (containment=strict)
+[23:08:24]   L=60: leakage guard OK — min test target-start index = 773, containment=strict
+[23:08:31]     ep  1/20 | train_loss=0.864460 | val_mse=0.612800(All) 0.9062(ILI) | val_mae=0.602057 | 6.8s | GPU=1.21GB
+[23:08:37]     ep  2/20 | train_loss=0.766624 | val_mse=0.490990(All) 0.7457(ILI) | val_mae=0.538417 | 6.7s | GPU=1.21GB
+[23:08:44]     ep  3/20 | train_loss=0.593171 | val_mse=0.234976(All) 0.3316(ILI) | val_mae=0.377846 | 6.7s | GPU=1.21GB
+[23:08:51]     ep  4/20 | train_loss=0.470734 | val_mse=0.224124(All) 0.3131(ILI) | val_mae=0.324013 | 6.7s | GPU=1.21GB
+[23:08:58]     ep  5/20 | train_loss=0.399471 | val_mse=0.185281(All) 0.2619(ILI) | val_mae=0.302492 | 6.7s | GPU=1.21GB
+[23:09:04]     ep  6/20 | train_loss=0.348810 | val_mse=0.219412(All) 0.3226(ILI) | val_mae=0.306083 | 6.7s | GPU=1.21GB
+[23:09:11]     ep  7/20 | train_loss=0.311595 | val_mse=0.184404(All) 0.2665(ILI) | val_mae=0.294568 | 6.7s | GPU=1.21GB
+[23:09:18]     ep  8/20 | train_loss=0.286775 | val_mse=0.182843(All) 0.2711(ILI) | val_mae=0.287534 | 6.7s | GPU=1.21GB
+[23:09:24]     ep  9/20 | train_loss=0.257629 | val_mse=0.154480(All) 0.2170(ILI) | val_mae=0.273949 | 6.7s | GPU=1.21GB
+[23:09:31]     ep 10/20 | train_loss=0.235423 | val_mse=0.141359(All) 0.2105(ILI) | val_mae=0.266709 | 6.7s | GPU=1.21GB
+[23:09:38]     ep 11/20 | train_loss=0.212768 | val_mse=0.149957(All) 0.2098(ILI) | val_mae=0.270452 | 6.7s | GPU=1.21GB
+[23:09:45]     ep 12/20 | train_loss=0.197849 | val_mse=0.133042(All) 0.1872(ILI) | val_mae=0.250416 | 6.7s | GPU=1.21GB
+[23:09:51]     ep 13/20 | train_loss=0.179904 | val_mse=0.159740(All) 0.2302(ILI) | val_mae=0.278928 | 6.7s | GPU=1.21GB
+[23:09:58]     ep 14/20 | train_loss=0.166060 | val_mse=0.156411(All) 0.2313(ILI) | val_mae=0.287218 | 6.7s | GPU=1.21GB
+[23:10:05]     ep 15/20 | train_loss=0.157030 | val_mse=0.136450(All) 0.1991(ILI) | val_mae=0.258228 | 6.7s | GPU=1.21GB
+[23:10:12]     ep 16/20 | train_loss=0.144452 | val_mse=0.132804(All) 0.1893(ILI) | val_mae=0.251691 | 6.7s | GPU=1.21GB
+[23:10:18]     ep 17/20 | train_loss=0.129338 | val_mse=0.122141(All) 0.1724(ILI) | val_mae=0.247253 | 6.7s | GPU=1.21GB
+[23:10:25]     ep 18/20 | train_loss=0.121580 | val_mse=0.138702(All) 0.2038(ILI) | val_mae=0.258573 | 6.7s | GPU=1.21GB
+[23:10:32]     ep 19/20 | train_loss=0.116272 | val_mse=0.116390(All) 0.1613(ILI) | val_mae=0.238147 | 6.7s | GPU=1.21GB
+[23:10:38]     ep 20/20 | train_loss=0.108495 | val_mse=0.125871(All) 0.1780(ILI) | val_mae=0.251068 | 6.7s | GPU=1.21GB
+[23:10:38]   L=60 rep seed=44: DEFER_TEST=1 - Test NOT evaluated (validation-only fit)
+[23:10:39]   [CKPT] L=60: kept per-seed best-epoch ckpt seed=44 (best val_mse=0.116390, best_epoch=18) -> results/stage5/ckpt/author_966/miflu/best_miflu_L60_seed44.pth
+[23:10:39]   [DEFER_TEST] prediction export skipped (locked-batch step)
+[23:10:39]   [L=60] FINAL: TEST DEFERRED - no Test numbers produced (locked-batch step); best val=0.116390
+[23:10:39] 
+[23:10:39] ============================================================
+[23:10:39]   FINAL RESULTS — ILITOTAL (paper protocol, mean ± std over 10 reps)
+[23:10:39] ============================================================
+[23:10:39]      L           MSE           MAE
+[23:10:39]   --------------------------------
+[23:10:39]     60         nan±nan           nan±nan  
+[23:10:39] ============================================================
+[23:10:39]   SUPPLEMENTARY — de-normalised (patient counts). NOT the paper's
+[23:10:39]   Table V metric: MIFlu §V-B de-normalises only for the REGIONAL task.
+[23:10:39]   Reported for interpretability of the figures only.
+[23:10:39]   --------------------------------------------------------------
+[23:10:39]     60  MSE=           nan±nan       patients^2   MAE=      nan±nan     patients
+[23:10:39] ============================================================
+[23:10:39]   BEST-VAL CHECKPOINTS (one per horizon, rep with lowest val MSE):
+[23:10:39]     - L=60: seed=44  best_val_mse=0.116390  test=DEFERRED
+[23:10:39] ============================================================
+[23:10:39]   Total time: 2.3 min
+[23:10:39]   Raw per-rep results : results/stage5/author_966/miflu/results_miflu_paper_protocol_20260925_230823.csv
+[23:10:39]   Tidy result table   : results/stage5/author_966/miflu/results_miflu_paper_protocol_table_20260925_230823.csv

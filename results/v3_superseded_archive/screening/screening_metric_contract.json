@@ -1,0 +1,108 @@
+{
+  "generated_utc": "2026-09-16T21:06:49Z",
+  "frozen_before_first_submission": true,
+  "protocol": {
+    "scientific_protocol_version": "innov-v2.0",
+    "dataset": "canonical National-Illness",
+    "canonical_data_sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+    "rows": 1025,
+    "period": "epiweek 200201 through 202152",
+    "variables": 7,
+    "split": {
+      "train": 717,
+      "validation": 102,
+      "test": 206,
+      "rule": "train if target_start < train_end; val if <= val_end; else test"
+    },
+    "input_window_T": 104,
+    "patch_length_Lp": 24,
+    "stride_S": 2,
+    "gpt2_layers_K": 6,
+    "lora_rank_r": 4,
+    "output_formulation": "7 variables",
+    "reporting_channel": "ILITOTAL",
+    "scaler_fit": "train rows only",
+    "prompt_stats_fit": "train rows only",
+    "early_stopping_monitor": "validation MSE",
+    "patience": 7,
+    "best_checkpoint": "minimum validation MSE",
+    "screening_uses_validation_only": true
+  },
+  "group_a": [
+    "nlinear",
+    "dlinear",
+    "patchtst",
+    "itransformer"
+  ],
+  "group_b": [
+    "gpt2_miflu",
+    "qwen_time_llm",
+    "calf_llm",
+    "timecma_llm"
+  ],
+  "reference_baselines": [
+    "last_value_naive",
+    "seasonal_naive"
+  ],
+  "horizons": [
+    24,
+    60
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "family_a": {
+    "name": "paper_style_full_horizon",
+    "definition": "normalized (z-space) MSE and MAE over the complete seven-variable, multi-step output for the horizon",
+    "fields": [
+      "mse_all_z",
+      "mae_all_z",
+      "mse_ili_phys",
+      "mae_ili_phys"
+    ],
+    "usage": "MIFlu/Table-V-style architecture comparison",
+    "step0_substitution_forbidden": true
+  },
+  "family_b": {
+    "name": "disease_specific_fixed_step",
+    "channel": "ILITOTAL",
+    "steps": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "lead_weeks": {
+      "0": 1,
+      "1": 2,
+      "2": 3,
+      "3": 4
+    },
+    "primary_endpoint": 0,
+    "supplementary": [
+      1,
+      2,
+      3
+    ],
+    "per_step_fields": [
+      "mse_z",
+      "mae_z",
+      "mse_phys",
+      "mae_phys",
+      "pte_weeks",
+      "pie_pct",
+      "peak_criterion_pass"
+    ],
+    "peak_criterion": {
+      "PTE_max_weeks": 1,
+      "PIE_max_pct": 25.0,
+      "expression": "PTE <= 1 week AND PIE <= 25%"
+    },
+    "never_merged_across_steps": true
+  },
+  "post_hoc_metric_selection_forbidden": true,
+  "screening_is_validation_only": true,
+  "pilot_metrics_excluded": true
+}

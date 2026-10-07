@@ -1,0 +1,20 @@
+{
+  "protocol": "original GPT-2/MIFlu National-Illness workflow",
+  "status": "EQUIVALENT",
+  "canonical_data_sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+  "target": "ILITOTAL",
+  "channels": 7,
+  "lookback": 104,
+  "horizons": [24, 36, 48, 60],
+  "train_end": 717,
+  "validation_end": 819,
+  "test_end": 1025,
+  "split_rule": "target-start-week split: train < train_end, validation <= val_end, otherwise test",
+  "scaler_fit": "train rows only",
+  "prompt_statistics_fit": "train rows only",
+  "verified_manifest": "results/innovation/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T110754Z__1f6563f/split_manifest.json",
+  "scaler_metadata": "results/innovation/runs/national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T110754Z__1f6563f/scaler_metadata.json",
+  "new_split_design": false,
+  "rolling_origin_redesign": false,
+  "external_target": false
+}

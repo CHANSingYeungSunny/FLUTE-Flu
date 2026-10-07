@@ -1,0 +1,5 @@
+track,horizon,n_repetitions_completed,n_repetitions_paper,mse_mean_over_epochs,mse_best_epoch_mean,mae_best_epoch_mean,status,metric_caveat
+A1_reconstructed_paper_config,24,1,10,0.604363,0.534386,0.450279,PARTIAL - 1 of the paper's 10 repetitions,released entry point scores FEATURE 0 ONLY and selects the checkpoint by TEST MSE; not comparable to Table V or to A2
+A1_reconstructed_paper_config,36,1,10,0.602817,0.538689,0.419530,PARTIAL - 1 of the paper's 10 repetitions,released entry point scores FEATURE 0 ONLY and selects the checkpoint by TEST MSE; not comparable to Table V or to A2
+A1_reconstructed_paper_config,48,1,10,0.657133,0.606936,0.468384,PARTIAL - 1 of the paper's 10 repetitions,released entry point scores FEATURE 0 ONLY and selects the checkpoint by TEST MSE; not comparable to Table V or to A2
+A1_reconstructed_paper_config,60,1,10,0.654465,0.593349,0.509288,PARTIAL - 1 of the paper's 10 repetitions,released entry point scores FEATURE 0 ONLY and selects the checkpoint by TEST MSE; not comparable to Table V or to A2

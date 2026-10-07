@@ -1,0 +1,25 @@
+{
+  "generated_utc": "2026-09-18T20:23:14Z",
+  "defect": "D15",
+  "classification": "BEHAVIOR_NEUTRAL_GATE_STORAGE_PREDICATE_APPLICABILITY_FIX",
+  "files": {
+    "compact_checkpoint.py": {
+      "pre_sha256": "ca5c64ccd587d8fcca914ac8df0b24d9003f0672148c1ebee6ce33d609a9426c",
+      "post_sha256": "0d97c7d14ea81fb267a5f3e6266249672d0e2807de463e9a3328c49d9c73d158",
+      "pre_matches_v3_14_deployed": true,
+      "diff_bytes": 3353,
+      "diff_sha256": "cf2d08b917aa237a475221aebbca1643eccdc6e6f0c75a41d6b29f0523fca148"
+    },
+    "clean_gate.py": {
+      "pre_sha256": "1d3847b95edbfe36be09f0c6ce5904ece047d0cefc976033aa69cc218a572d3c",
+      "post_sha256": "0ff4fc105aed0cf5b67de35f0ec7d558ea6ca70f8c9616f63dd9615347c8ef29",
+      "pre_matches_v3_14_deployed": true,
+      "diff_bytes": 3035,
+      "diff_sha256": "37352095beabc90c024212b0fd61842193f774b8f8072183a992b376d49564b0"
+    }
+  },
+  "new_files": [
+    "scripts/innovation/architecture_contract.py"
+  ],
+  "scientific_behaviour_changed": false
+}

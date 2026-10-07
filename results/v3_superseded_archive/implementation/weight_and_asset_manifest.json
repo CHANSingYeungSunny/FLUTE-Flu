@@ -1,0 +1,32 @@
+{
+  "status": "AUTHORIZED_NOT_YET_DOWNLOADED",
+  "qwen": {
+    "repository_id": "Qwen/Qwen2.5-1.5B",
+    "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "license": "Apache-2.0",
+    "gated": false,
+    "cache": "/gpfs1/scratch/sychan552/CHATTIME/.cache",
+    "downloaded": false
+  },
+  "gpt2": {
+    "source": "existing verified MIFlu/GPT-2 asset path",
+    "new_download": false,
+    "load_check": "compute-node only"
+  },
+  "calf": {
+    "implementation": "CALF-inspired clean local code",
+    "backbone": "GPT-2 asset",
+    "license": "Apache-2.0 paper/repository provenance",
+    "downloaded": false
+  },
+  "timecma": {
+    "implementation": "clean-room paper-derived local code",
+    "backbone": "GPT-2 asset",
+    "license": "S-Lab License 1.0 upstream reviewed for clean-room separation",
+    "upstream_code_copied": false,
+    "downloaded": false
+  },
+  "file_hashes": [],
+  "asset_download_completed": false,
+  "reason": "Asset acquisition and real offline-load checks are compute-node pre-Pilot gates."
+}

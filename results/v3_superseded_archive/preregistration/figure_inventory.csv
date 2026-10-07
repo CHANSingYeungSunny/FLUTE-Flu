@@ -1,0 +1,9 @@
+figure_family,description,status,expected_naming,protocol_version,steps
+fixed_step_forecast_overlay,steps 0-3 forecast overlay vs ground truth,NOT_YET_GENERATED,fig_fixed_step_forecast_overlay__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"
+step_sweep_error,step-sweep MSE/MAE comparison (reference layout grammar),NOT_YET_GENERATED,fig_step_sweep_error__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"
+peak_timing_intensity,seasonal PTE/PIE with the literature criterion,NOT_YET_GENERATED,fig_peak_timing_intensity__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"
+residual_diagnostics,residuals by fixed step,NOT_YET_GENERATED,fig_residual_diagnostics__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"
+loss_curve,training/validation loss (trainable models only),NOT_YET_GENERATED,fig_loss_curve__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"
+cross_seed_mean,cross-seed mean with uncertainty band,NOT_YET_GENERATED,fig_cross_seed_mean__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"
+group_comparison,Group A vs Group B using the fixed palette order,NOT_YET_GENERATED,fig_group_comparison__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"
+resource_vs_accuracy,GPU-hours vs accuracy,NOT_YET_GENERATED,fig_resource_vs_accuracy__<model>__L<horizon>__seed<seed>__steps0-3.png,innov-v3.0,"0,1,2,3"

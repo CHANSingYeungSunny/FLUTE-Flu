@@ -1,0 +1,120 @@
+{
+  "generated_utc": "2026-09-17T03:10:20Z",
+  "version": 2,
+  "supersedes": "screening_completion_gate.json",
+  "supersedes_status": "SUPERSEDED_PREMATURE_COMPLETION_GATE_MISSING_FIGURE_QA",
+  "checks": [
+    {
+      "id": "accepted_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "artifact_audit_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "checkpoint_audit_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "metadata_chain_audit_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "durable_copy_audit_48_of_48",
+      "passed": true
+    },
+    {
+      "id": "restoration_8_of_8",
+      "passed": true
+    },
+    {
+      "id": "baseline_audit_passed",
+      "passed": true
+    },
+    {
+      "id": "statistical_report_complete",
+      "passed": true
+    },
+    {
+      "id": "candidate_serialization_corrected",
+      "passed": true
+    },
+    {
+      "id": "figure_inventory_complete",
+      "passed": true
+    },
+    {
+      "id": "figure_provenance_complete",
+      "passed": true
+    },
+    {
+      "id": "figure_qa_passed",
+      "passed": true
+    },
+    {
+      "id": "local_sync_passed",
+      "passed": true
+    },
+    {
+      "id": "pilot_metrics_excluded",
+      "passed": true
+    },
+    {
+      "id": "test_access_count_zero",
+      "passed": true
+    },
+    {
+      "id": "holdout_access_count_zero",
+      "passed": true
+    },
+    {
+      "id": "full_validation_submitted_zero",
+      "passed": true
+    },
+    {
+      "id": "champions_frozen_zero",
+      "passed": true
+    }
+  ],
+  "n_passed": 18,
+  "n_checks": 18,
+  "all_passed": true,
+  "reference_baseline": "last_value_naive",
+  "tie_window": 0.01,
+  "n_accepted": 48,
+  "n_figures": 8,
+  "restoration": {
+    "n_passed": 8,
+    "all_passed": true
+  },
+  "advanced": {
+    "group_a": [
+      "nlinear",
+      "patchtst"
+    ],
+    "group_b": [
+      "gpt2_miflu",
+      "qwen_time_llm"
+    ]
+  },
+  "raw_score_order": {
+    "group_a": [
+      "nlinear",
+      "dlinear",
+      "patchtst",
+      "itransformer"
+    ],
+    "group_b": [
+      "gpt2_miflu",
+      "qwen_time_llm",
+      "timecma_llm",
+      "calf_llm"
+    ]
+  },
+  "test_access_count": 0,
+  "holdout_access_count": 0,
+  "champion_frozen": false,
+  "full_validation_submitted": false,
+  "decision": "PHASE2_SCREENING_COMPLETE_WITH_FIGURE_QA"
+}

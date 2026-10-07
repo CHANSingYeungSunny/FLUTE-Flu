@@ -1,0 +1,6 @@
+L,paper_MSE,paper_MAE,source,caveat
+24,1.542,0.726,MIFlu paper Table V,paper states baseline columns are imported from refs [9]/[14]; whether MIFlu's own column is a rerun is not stated
+36,1.422,0.779,MIFlu paper Table V,paper states baseline columns are imported from refs [9]/[14]; whether MIFlu's own column is a rerun is not stated
+48,1.414,0.757,MIFlu paper Table V,paper states baseline columns are imported from refs [9]/[14]; whether MIFlu's own column is a rerun is not stated
+60,1.364,0.719,MIFlu paper Table V,paper states baseline columns are imported from refs [9]/[14]; whether MIFlu's own column is a rerun is not stated
+mean(4L),1.4355,0.74525,arithmetic mean of Table V,paper's own rounded statement is 1.436/0.745 (Table VIII)

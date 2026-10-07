@@ -1,0 +1,92 @@
+{
+  "generated_utc": "2026-09-14T21:05:00Z",
+  "repair_of": "FORBIDDEN_CD_TARGET_IN_GENERATED_SCRIPTS",
+  "previous_evidence_preserved": "results/innovation/hpc_pilot/pilot_precheck_failure.json, PILOT_PRECHECK_FAILURE.md (v2.3) — unchanged",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version_before": "innov-v2.3",
+  "implementation_source_version_after": "innov-v2.4",
+  "root_cause": "scripts/innovation/hpc_specs.py::_HEADER contained a hardcoded `cd /home/sychan552/scratch/CHATTIME/Chattime`, a legacy line inherited from the original ablation workflow (pre-dating the isolated-deployment policy and never revisited in innov-v2.1/v2.2/v2.3). Every generated script inherited it, so the four pilots, the worker and the submit driver would all have executed from the forbidden original reproduction repository.",
+  "affected_scripts": [
+    "hpc_scripts/pilot_gpt2_miflu_L24_seed42.sh",
+    "hpc_scripts/pilot_dlinear_L24_seed42.sh",
+    "hpc_scripts/pilot_patchtst_L24_seed42.sh",
+    "hpc_scripts/pilot_itransformer_L24_seed42.sh",
+    "hpc_scripts/innovation_worker.sh",
+    "hpc_scripts/submit_innovation_pilot.sh"
+  ],
+  "why_the_runtime_guard_correctly_blocked_it": "runtime_guard.py is invoked with --deployment-root \"${INNOVATION_DEPLOYMENT_ROOT:-$(pwd)}\"; with the forbidden `cd` in place $(pwd) resolved to the banned root, the guard reported 1 violation and exited 2, so the pilot would have aborted with FORBIDDEN_ORIGINAL_REPOSITORY_RUNTIME_IMPORT before any training. The guard was fail-closed and correct; the defect was purely in the generated scripts. Because of that, no v2.3 pilot was ever submitted and no erroneous training result exists.",
+  "files_changed": [
+    "scripts/innovation/hpc_specs.py  (new safe _HEADER, new _STARTUP_PY, rewritten _pilot_script/_WORKER, new _submit_pilot_driver, _pilot_script_name)",
+    "scripts/innovation/slurm_check.py (accepts `set -euo pipefail` as equivalent to `set -u`)",
+    "scripts/innovation/paths.py       (IMPLEMENTATION_SOURCE_VERSION -> innov-v2.4)",
+    "tests/innovation/test_script_safety.py (new, 14 test functions)",
+    "tests/innovation/test_metadata_chain.py (version assertion now reads the constant)"
+  ],
+  "new_header_behaviour": {
+    "strict_mode": "set -euo pipefail",
+    "explicit_root_required": ": \"${INNOVATION_DEPLOYMENT_ROOT:?INNOVATION_DEPLOYMENT_ROOT must be set to the isolated deployment root}\"",
+    "no_silent_fallback": true,
+    "forbidden_root_resolution": "readlink -f only (never cd into it)",
+    "forbidden_comparison": "exact equality OR prefix `<banned>/` -> echo FORBIDDEN_ORIGINAL_REPOSITORY_RUNTIME_IMPORT, exit 2",
+    "final_cd": "cd \"$DEPLOYMENT_ROOT\""
+  },
+  "startup_checks_added_to_every_pilot_and_worker": [
+    "python scripts/innovation/runtime_guard.py --deployment-root \"$DEPLOYMENT_ROOT\"",
+    "python scripts/innovation/verify_source_snapshot.py --deployment-root \"$DEPLOYMENT_ROOT\" --manifest results/innovation/source_snapshot_manifest.json",
+    "startup governance assertion: manifest aggregate == pilot_specs.json source_snapshot_sha256, and test_access_allowed / selection_eligible / paper_result_eligible are false, and experiment_stage=pilot + purpose=infrastructure_verification_only"
+  ],
+  "submit_driver_contract": {
+    "script": "hpc_scripts/submit_innovation_pilot.sh",
+    "references": ["pilot_gpt2_miflu_L24_seed42.sh", "pilot_dlinear_L24_seed42.sh", "pilot_patchtst_L24_seed42.sh", "pilot_itransformer_L24_seed42.sh"],
+    "uses_generic_worker": false,
+    "dependency": "afterok (never afterany)",
+    "serial": "submits the next pilot only after the previous reaches a terminal state (respects stingy 1 running + 1 pending)",
+    "fail_stop": "predecessor not COMPLETED or ExitCode != 0:0 -> exit 1, nothing further submitted",
+    "retry": "none",
+    "self_recursion": "none",
+    "guard": "CONFIRM_INNOVATION_SUBMIT=YES required; INNOVATION_DEPLOYMENT_ROOT required"
+  },
+  "hashes": {
+    "runtime_file_count": 77,
+    "runtime_aggregate_sha256": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+    "archive_sha256": "bc6e8bff6f77c8b5e23634466f8d09b13927dd74198c67194c6befe28c4375ae",
+    "archive_build_deterministic": true,
+    "archive_members": 102,
+    "previous_v2_3_aggregate": "9bc1503c2ee7ad99019200108f990df72aa4e8e8cb37d3ecba13965e8ee431e0",
+    "canonical_indicator_sha256": "bf72d37ce9eaa21cb052f18568764d913163caf237ba9ce0cf76f15d98f46c0f"
+  },
+  "deployment": {
+    "root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.4_5a4c3247",
+    "explicit_root_verification": {"expected": 77, "verified": 77, "mode": "explicit_root", "exit": 0},
+    "runtime_guard_violations": 0,
+    "bash_n": {"pilots": 4, "worker": 1, "submit": 1, "all_ok": true},
+    "strict_offline_gpt2": "OK"
+  },
+  "regression_tests_added": [
+    "no forbidden cd target in pilots/worker/submit",
+    "explicit INNOVATION_DEPLOYMENT_ROOT required, no $(pwd) fallback",
+    "banned root and any subdirectory rejected; legal isolated root accepted",
+    "missing root fails closed (behavioural, exit 1)",
+    "guard blocks without CONFIRM_INNOVATION_SUBMIT (behavioural, submission_attempted=false)",
+    "each pilot invokes the runner exactly once and runs guard + verifier + hash/eligibility assertions",
+    "worker never invokes sbatch",
+    "submit references only the four pilots; afterok not afterany; no recursion; no retry",
+    "fail-stop simulation with fake sbatch/sacct: success -> 4 submissions, FAILED predecessor -> 1 submission and non-zero exit",
+    "four pilots remain selection/paper/test ineligible; spec hash matches the manifest",
+    "test seal holds",
+    "bash -n on pilots/worker/submit"
+  ],
+  "metadata_contract_smoke": {
+    "needed": true,
+    "reason": "the frozen source hash changed (v2.3 -> v2.4), so the five-layer chain evidence had to be regenerated under the new hash; the script-safety repair itself did not touch the runner",
+    "runs": "additional dlinear/L24/seed42 smoke runs (1 epoch, limited rows); one of them (…20260914T210119Z__1f6563f) carries the final v2.4 hash and is the chain evidence",
+    "status": "permanently ineligible: selection_eligible=false, paper_result_eligible=false, test_access_allowed=false",
+    "registry_v2_rows": 6,
+    "registry_v2_rows_with_v2_4_hash": 1
+  },
+  "claims_not_made": [
+    "no claim that any v2.4 model job has run on an A100 (job 556143 was observed under innov-v2.2)",
+    "no pilot has been submitted in this turn",
+    "no model ranking, no screening, no full sweep, no test evaluation"
+  ]
+}

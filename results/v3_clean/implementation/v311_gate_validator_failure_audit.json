@@ -1,0 +1,41 @@
+{
+  "generated_utc": "2026-09-18T07:45:56Z",
+  "runtime_version": "innov-v3.11-artifact-directory-initialization",
+  "executable_status": "SUPERSEDED_FOR_EXECUTION_GATE_VALIDATOR_SCHEMA_MISMATCH",
+  "superseded_by": "innov-v3.12-gate-validator-schema-alignment",
+  "gate_570452": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:26:38",
+    "node": "gpu-a100-03",
+    "passed": "1/19",
+    "runners_rc0": "18/18"
+  },
+  "validator_only": true,
+  "runner_defect": false,
+  "scientific_protocol_changed": false,
+  "scientific_checks_passed_on_all_18_paths": true,
+  "failing_validator_assertions": {
+    "checkpoint_file_present": {
+      "n_paths": 16,
+      "wrong": "checkpoints/best_validation.pt",
+      "actual": "checkpoints/best_val_mse.pt"
+    },
+    "baseline_no_checkpoint": {
+      "n_paths": 2,
+      "wrong": "checkpoints/ dir must be absent",
+      "actual": "uniform tree; empty dir valid"
+    },
+    "artifact_completeness": {
+      "n_paths": 2,
+      "wrong": "shared list with train history",
+      "actual": "baselines never train"
+    }
+  },
+  "isolation": {
+    "test_access": 0,
+    "holdout_access": 0,
+    "formal_rows_submitted": "0/598",
+    "archive_isolated": true
+  }
+}

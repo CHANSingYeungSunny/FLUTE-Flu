@@ -1,0 +1,18 @@
+{
+  "generated_utc": "2026-09-17T15:52:55Z",
+  "option": "A (deferred binding retained)",
+  "matrix_total": 598,
+  "immediate": 580,
+  "deferred": 18,
+  "deleted": 0,
+  "duplicated": 0,
+  "breakdown": {
+    "primary_8x4x10": 320,
+    "baselines_2x4": 8,
+    "ablations_6x4x10": 240,
+    "fixed_parent_gpt2_miflu_controls": 12,
+    "deferred_controls": 18
+  },
+  "wave1_rows": 580,
+  "wave2_rows": 18
+}

@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-09-21T04:47:43Z",
+  "source_artifacts": {
+    "paper_aligned_selection_rule.json": "afa7a780010aeed20fd7a2d361300ae2ce4411baeed1d458581538d3df359325",
+    "selection_outcome.json": "f93e711288023703b7c6ed7818009e7598c70f6dc9ed4c9274691ea16f667dc4",
+    "frozen_analysis_protocol.json": "cd229790fd0693334d79a1d63a38f06be8faf8cf30d83eb45c70603bc580fb6f"
+  },
+  "freeze_files": {
+    "final_candidate_freeze.json": "2aab994151ea610e4708994b4b85516d4b5467f4b2204e872adde2d228180a62",
+    "final_candidate_freeze.md": "c2baa7a3dce04929972ffd02d5b1d2024afd0d490f3da63796884c5a15bd0aeb",
+    "final_comparator_freeze.json": "c5c7f5e3eb38c0d286a0f55553712674dbcc5060acbfd0e18fdcaa7b85cf605d"
+  }
+}

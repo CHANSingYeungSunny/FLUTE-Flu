@@ -1,0 +1,53 @@
+{
+  "status": "STATIC_SOURCE_AUDITED_REPAIRED",
+  "qwen_time_llm": {
+    "source": "scripts/innovation/backbones/llm_inspired.py:QwenTimeLLM",
+    "components": [
+      "patching",
+      "prototype_reprogramming",
+      "Prompt-as-Prefix",
+      "frozen_Qwen_backbone",
+      "forecast_projection"
+    ],
+    "train_only_prompt_guard": "set_train_statistics is required before forward",
+    "fallback": "no generic fallback; load_backbone must be true for forward",
+    "status": "READY_FOR_COMPUTE_NODE_GATE"
+  },
+  "calf_llm": {
+    "source": "scripts/innovation/backbones/llm_inspired.py:CALFInspired",
+    "components": [
+      "temporal_target_branch",
+      "textual_source_branch",
+      "cross_modal_match",
+      "feature_regularization",
+      "output_consistency"
+    ],
+    "optimization": "trainer adds auxiliary_loss to forecast MSE",
+    "status": "READY_FOR_COMPUTE_NODE_GATE"
+  },
+  "timecma_llm": {
+    "source": "scripts/innovation/backbones/llm_inspired.py:TimeCMAInspired",
+    "components": [
+      "independent_time_series_branch",
+      "independent_prompt_branch",
+      "cross_modality_retrieval",
+      "last_token_representation",
+      "forecast_head"
+    ],
+    "provenance": "clean-room paper-derived implementation; no upstream source copied",
+    "status": "READY_FOR_COMPUTE_NODE_GATE_AFTER_LICENSE_REVIEW"
+  },
+  "difference_matrix": "results/v3/implementation/llm_component_difference_matrix.csv",
+  "real_model_loading_permitted_locally": false,
+  "generated_utc": "2026-09-16T08:38:52Z",
+  "static_component_verification": "results/v3/implementation/architecture_component_tests.json",
+  "all_defining_components_present": true,
+  "materially_distinct": true,
+  "distinctness_evidence": {
+    "qwen_time_llm": "prototype reprogramming + Prompt-as-Prefix (unique)",
+    "calf_llm": "feature_regularization_loss + output_consistency_loss (unique)",
+    "timecma_llm": "retrieve_aligned_prompt similarity retrieval + last-token (unique)"
+  },
+  "no_upstream_source_copied": true,
+  "real_model_behaviour": "NOT_TESTED_LOCALLY (compute-node only)"
+}

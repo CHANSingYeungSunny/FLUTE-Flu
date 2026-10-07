@@ -1,0 +1,9 @@
+tag=f1__notext__L24__seed42
+arm=notext
+horizon=24
+seed=42
+slurm_job=607613_4
+elapsed=00:01:06
+fit_exit_code=0
+checkpoint_dir=/gpfs1/home/sychan552/official_repo_reproduction_20261006/f1/ckpt/notext
+test_deferred=1

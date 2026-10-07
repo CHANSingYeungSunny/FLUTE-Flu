@@ -1,0 +1,114 @@
+[a0gpu] compat layer sha256:
+  378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4  /scratch/sychan552/a0_compat_shim/a0_compat.py
+  381064b2fc37e46fdfbb3b17832a619d9aa3d9a1f21236a6eb3b41b929fa9c79  /scratch/sychan552/a0_compat_shim/sitecustomize.py
+[a0gpu] mode=0 tag=default job=587091 start=2026-09-26T10:43:06Z
+[a0gpu] gpu: NVIDIA A100-SXM4-80GB, 81920 MiB
+utc=2026-09-26T10:43:06Z
+slurm_job=587091
+author_commit=6ed210150b8819313947cf607eb1821c87b1bee3
+author_source_modified=1 non-pyc entries
+author_src_main_ILI_lora.py=eda73ba196f625620cee8f2c9e2d4270d4ce4504c5198f4b1d485622c49ad29c
+author_src_models_GPT4TS_lora.py=6ef9108eea3c068badb7f8a60efba9717b4e7fe969b46365ac7c26da560c6365
+author_src_models_GPT4TS.py=b146a0dd144dddc94e77267a332deca1d8329d3adc6daf986cc7e2498c414280
+author_src_data_provider_data_loader.py=1274c00bbc6886bcd6a48efb840ec017a591b8873fff77d82fe44eaef0b64f6e
+author_src_data_provider_data_factory.py=a5576e445d4a9a56ae9bf77024eeca9b435ed973613ddc7b78e57d7c8070b8da
+compat_layer_sha256=378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4
+compat_sitecustomize_sha256=381064b2fc37e46fdfbb3b17832a619d9aa3d9a1f21236a6eb3b41b929fa9c79
+compat_non_behavioural_evidence=np.Inf restored as the IDENTICAL np.inf object (asserted at import); peft symbol appears only inside a comment in the released code; DataEmbedding imported but never referenced
+data_sha256=2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+text_asset_sha256=837502311354c9ddf71e42fbdf5689b6bbbbd2f00c71055d0d226c3c1f44c0c8
+config=ALL ARGUMENTS ARE THE AUTHOR'S ARGPARSE DEFAULTS (main_ILI_lora.py L34-85)
+mode=0 multimodal=0 train_epochs=1 learning_rate=0.0001 batch_size=16 itr=1 pred_len=24
+note=AUTHOR CODE REPLAYED VERBATIM under a recorded compatibility layer;
+     NOT the A2 corrected reconstruction; NOT comparable to Table V or A2
+/scratch/sychan552/a0_compat_shim/sitecustomize.py:47: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+/scratch/sychan552/a0_compat_shim/sitecustomize.py:47: FutureWarning: In the future `np.str` will be defined as the corresponding NumPy scalar.
+  if not hasattr(_np, _alias) and hasattr(_np, _real):
+Args in experiment:
+Namespace(model_id='a0_default', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=0, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+train 3843
+val 518
+test 170
+llmmodel = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-5): 6 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+0it [00:00, ?it/s]1it [00:00,  5.51it/s]6it [00:00, 24.15it/s]11it [00:00, 33.43it/s]17it [00:00, 40.73it/s]23it [00:00, 44.95it/s]29it [00:00, 47.52it/s]35it [00:00, 49.21it/s]41it [00:00, 50.31it/s]47it [00:01, 47.45it/s]53it [00:01, 48.97it/s]59it [00:01, 49.90it/s]65it [00:01, 50.81it/s]71it [00:01, 51.36it/s]77it [00:01, 51.77it/s]83it [00:01, 52.07it/s]89it [00:01, 52.28it/s]95it [00:02, 52.42it/s]101it [00:02, 52.54it/s]107it [00:02, 52.59it/s]113it [00:02, 52.62it/s]119it [00:02, 52.68it/s]125it [00:02, 52.65it/s]131it [00:02, 52.69it/s]137it [00:02, 52.67it/s]143it [00:02, 52.70it/s]149it [00:03, 52.72it/s]155it [00:03, 52.71it/s]161it [00:03, 52.73it/s]167it [00:03, 52.72it/s]173it [00:03, 52.73it/s]179it [00:03, 52.72it/s]185it [00:03, 52.77it/s]191it [00:03, 52.75it/s]197it [00:03, 52.55it/s]203it [00:04, 52.61it/s]209it [00:04, 52.65it/s]215it [00:04, 52.68it/s]221it [00:04, 52.69it/s]227it [00:04, 52.78it/s]233it [00:04, 52.83it/s]239it [00:04, 52.87it/s]240it [00:04, 49.39it/s]
+Epoch: 1 cost time: 6.878187894821167
+0it [00:00, ?it/s]8it [00:00, 73.23it/s]20it [00:00, 98.84it/s]32it [00:00, 77.20it/s]
+0it [00:00, ?it/s]10it [00:00, 49.21it/s]
+test shape: (10, 16, 24, 1) (10, 16, 24, 1)
+test shape: (160, 24, 1) (160, 24, 1)
+mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+Epoch: 1, Steps: 240 | Train Loss: 0.4220130 Vali Loss: 0.2803148
+lr_adjust = {1: 0.0001}
+Updating learning rate to 0.0001
+------------------------------------
+0it [00:00, ?it/s]10it [00:00, 49.06it/s]
+test shape: (10, 16, 24, 1) (10, 16, 24, 1)
+test shape: (160, 24, 1) (160, 24, 1)
+mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+Results saved to 'results.csv'.
+mse_mean = 0.9685, mse_std = 0.0000
+mae_mean = 0.7158, mae_std = 0.0000
+Best performance in iteration 0: Epoch 0 with MSE = 0.9685 and MAE = 0.7158
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 270, in <module>
+    train()
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 267, in train
+    test_vis(model, test_data, test_loader, args, device, 1)
+  File "/gpfs1/scratch/sychan552/a0_replay/utils/tools.py", line 346, in test_vis
+    batch_x = batch_x.float().to(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[a0gpu] released entry point exit=1  2026-09-26T10:43:29Z
+[a0gpu] files produced under /scratch/sychan552/a0_runs/runs:
+  /scratch/sychan552/a0_runs/runs/preserve_mode0_job587059/default_stdout_job587059.txt
+  /scratch/sychan552/a0_runs/runs/preserve_mode0_job587059/GPU_LEDGER_stage7.tsv
+  /scratch/sychan552/a0_runs/runs/preserve_mode0_job587059/default_provenance_job587059.txt
+  /scratch/sychan552/a0_runs/runs/a0_default_multimodal0_gpt2_gpt2_sl104_ll18_pl24_dm768_nh4_el3_gl6_df768_ebtimeF_itr0/checkpoint.pth
+  /scratch/sychan552/a0_runs/runs/default_provenance.txt
+  /scratch/sychan552/a0_runs/runs/a0_multimodal1_multimodal1_gpt2_gpt2_sl104_ll18_pl24_dm768_nh4_el3_gl6_df768_ebtimeF_itr0/checkpoint.pth
+  /scratch/sychan552/a0_runs/runs/multimodal1_provenance.txt
+
+[a0gpu] ---- key evidence lines from the released run ----
+  5:Args in experiment:
+  6:Namespace(model_id='a0_default', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=0, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+  35:Epoch: 1 cost time: 6.878187894821167
+  40:mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+  41:Epoch: 1, Steps: 240 | Train Loss: 0.4220130 Vali Loss: 0.2803148
+  48:mae:0.7158, mse:0.9685, rmse:0.9841, smape:93.0595
+  50:mse_mean = 0.9685, mse_std = 0.0000
+  52:Best performance in iteration 0: Epoch 0 with MSE = 0.9685 and MAE = 0.7158
+
+[a0gpu] REMINDER: whatever this prints is (a) feature-0 Test only,
+          (b) selected by Test MSE, (c) 1 epoch at lr 1e-4, and
+          (d) therefore NOT comparable to the paper's Table V nor to A2.
+[a0gpu] charged 00:00:25 (job 587091) appended to /scratch/sychan552/a2_stage5/results/stage7/GPU_LEDGER_stage7.tsv
+[a0gpu] diagnostic evidence present; reporting job success (author rc=1)

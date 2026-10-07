@@ -1,0 +1,17 @@
+{
+  "pdf_path": "c:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\reference_papers\\MIFlu_Large_Language_Model-Based_Multimodal_Influenza_Forecasting_Scheme.pdf",
+  "pdf_bytes": 2956545,
+  "pdf_sha256": "7735a4388145dd2aced536417f7a4f50dafe21ed0d4fca64baa2b20f2e27885c",
+  "n_pages": 12,
+  "pdf_metadata": {
+    "/Creator": "LaTeX with hyperref package",
+    "/ModDate": "D:20251004002417-04'00'",
+    "/IEEE Article ID": "10965883",
+    "/CreationDate": "D:20250916193932+05'30'",
+    "/IEEE Issue ID": "11192794",
+    "/Producer": "Acrobat Distiller 11.0 (Windows); modified using iText® Core 7.2.4 (AGPL version) ©2000-2022 iText Group NV",
+    "/Subject": "IEEE Journal of Biomedical and Health Informatics;2025;29;10;10.1109/JBHI.2025.3561214",
+    "/IEEE Publication ID": "6221020",
+    "/Title": "MIFlu: Large Language Model-Based Multimodal Influenza Forecasting Scheme"
+  }
+}

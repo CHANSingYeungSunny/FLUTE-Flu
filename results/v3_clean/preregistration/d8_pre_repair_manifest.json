@@ -1,0 +1,28 @@
+{
+  "generated_utc": "2026-09-17T16:43:25Z",
+  "defect": "D8",
+  "classification": "BEHAVIOR_NEUTRAL_RUNTIME_PATH_RESOLUTION_FIX",
+  "runtime_version_before": "innov-v3.8-complete-deployment-closure",
+  "runtime_version_after": "innov-v3.9-runner-import-path-fix",
+  "failing_gate": {
+    "job_id": "568972",
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "passed": "1/19",
+    "only_passing_check": "deferred_guard",
+    "n_failing_paths": 18
+  },
+  "failure_signature": {
+    "exception": "ModuleNotFoundError",
+    "message": "No module named 'innovation'",
+    "failing_file": "scripts/innovation/clean_runner.py",
+    "failing_line": 41,
+    "stage": "import (before any data or model work)",
+    "shared_by_all_18_paths": true
+  },
+  "pre_repair_sha256": {
+    "scripts\\innovation\\clean_runner.py": "cfb92258d792b40d675b589730c329e7c4d995f9fbe8238433dbc0bad92f1227"
+  },
+  "pre_repair_bytes": 18039,
+  "note": "Recorded BEFORE any edit, per prompt section 10."
+}

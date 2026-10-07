@@ -1,0 +1,60 @@
+--- a/scripts/innovation/clean_gate.py
++++ b/scripts/innovation/clean_gate.py
+@@ -271,7 +271,7 @@
+ 
+ def verify_storage(run_dir: Path, run_key: str, arm: str, horizon: int,
+                    stage_root: Path) -> dict:
+-    """v3.13: prove the COMPACT durable path for this checkpoint schema.
++    """v3.15: prove the COMPACT durable path for this checkpoint schema.
+ 
+     Requires (per task section 6 / 9):
+       * compact export is reconstruction-complete
+@@ -294,6 +294,7 @@
+     try:
+         from innovation import compact_checkpoint as CC
+         from innovation import storage_policy as SP
++        from innovation import architecture_contract as AC
+     except Exception as e:                                     # noqa: BLE001
+         res.update({"passed": False,
+                     "error": f"import {type(e).__name__}: {e}"})
+@@ -331,18 +332,35 @@
+         "compact_bytes": rep["compact_bytes"],
+         "compression_ratio": rep["compression_ratio"],
+         "reconstruction_exact": rep["reconstruction_exact"],
+-        "frozen_backbone_excluded": rep["frozen_backbone_excluded"],
++        # D15: structured architecture-contract evidence (NOT a size/name
++        # heuristic). `frozen_backbone_excluded` is kept for the audit trail but
++        # is no longer the universal pass condition.
++        "frozen_backbone_excluded": rep.get("frozen_backbone_excluded"),
++        "has_pretrained_backbone": rep["has_pretrained_backbone"],
++        "predicate_applicable": rep["predicate_applicable"],
++        "pretrained_backbone_contract_source":
++            rep["pretrained_backbone_contract_source"],
++        "pretrained_backbone_module_paths":
++            rep["pretrained_backbone_module_paths"],
++        "frozen_backbone_key_count": rep["frozen_backbone_key_count"],
++        "frozen_backbone_bytes_total": rep["frozen_backbone_bytes_total"],
++        "frozen_backbone_bytes_excluded":
++            rep["frozen_backbone_bytes_excluded"],
++        "unexpected_frozen_backbone_bytes_retained":
++            rep["unexpected_frozen_backbone_bytes_retained"],
++        "changed_frozen_backbone_bytes_dropped":
++            rep["changed_frozen_backbone_bytes_dropped"],
++        "no_frozen_backbone_duplication": rep["no_frozen_backbone_duplication"],
+         "restoration_exact": rest["restoration_exact"],
+         "n_keys_unequal": rest["n_keys_unequal"],
+         "missing_keys": rest["missing_keys"],
+         "unexpected_keys": rest["unexpected_keys"],
++        "n_missing": len(rest["missing_keys"]),
++        "n_unexpected": len(rest["unexpected_keys"]),
+         "atomic_publish_ok": published,
+         "contained": SP.is_contained(str(final), str(stage_root)),
+     })
+-    res["passed"] = bool(rep["reconstruction_exact"]
+-                         and rest["restoration_exact"]
+-                         and published and res["contained"]
+-                         and rep["frozen_backbone_excluded"])
++    res["passed"] = AC.storage_verdict(rep, rest, published, res["contained"])
+     return res
+ 
+ 

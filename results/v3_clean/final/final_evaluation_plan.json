@@ -1,0 +1,49 @@
+{
+  "generated_utc": "2026-09-21T04:47:43Z",
+  "frozen_before_test_access": true,
+  "purpose": "Final evaluation plan for the one-time Test/Holdout phase.",
+  "primary_endpoint": {
+    "metric": "mse_all_7vars_full_horizon_z",
+    "space": "StandardScaler z (train-only scaler)",
+    "aggregation": "per-L mean over 10 seeds (42..51); then average_MSE_4L = arithmetic mean over L in {24,36,48,60}",
+    "direction": "lower is better",
+    "matches_wave1": true
+  },
+  "key_secondary": {
+    "metric": "mae_all_7vars_full_horizon_z",
+    "aggregation": "same as primary (per-L seed-mean; average_MAE_4L)",
+    "rule": "reported; never combined with MSE into an invented score"
+  },
+  "additional_endpoints": [
+    "ilitotal_full_horizon MSE/MAE (physical, inverse-transformed)",
+    "PTE/PIE + hit rates (peak-evaluation-v1 spec, secondary public-health)"
+  ],
+  "horizon_weighting": "equal (arithmetic mean over L); matches Wave-1",
+  "seed_handling": {
+    "n_seeds_per_L": 10,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "policy": "each frozen per-seed checkpoint is restored and evaluated on Test; report per-seed and seed-mean per L; no seed selection"
+  },
+  "confidence_interval_method": "standard error across 10 seeds per L; t-distribution 95% CI (df=9)",
+  "paired_unpaired": "matched-seed paired comparisons (candidate vs each comparator), paired t-test on the 10 seeds per L",
+  "multiple_comparison": "Holm-Bonferroni across the pre-registered confirmatory tests",
+  "missing_data_policy": "Test windows complete by construction; any missing window => fail-stop (no imputation)",
+  "outlier_policy": "no outlier removal; all Test target windows included",
+  "tie_equivalence_policy": "report both; never manufacture a unique winner",
+  "rounding": "4 significant figures in reports",
+  "validation_to_test_gap": {
+    "definition": "Test average_MSE_4L - Validation average_MSE_4L (also per-L); negative = better on Test"
+  },
+  "success_interpretation": "descriptive generalization report; no pre-registered pass/fail threshold"
+}

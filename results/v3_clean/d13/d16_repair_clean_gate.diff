@@ -1,0 +1,66 @@
+--- a/scripts/innovation/clean_gate.py
++++ b/scripts/innovation/clean_gate.py
+@@ -329,11 +329,15 @@
+     os.replace(str(stage), str(final))
+     published = (final / "compact.safetensors").exists()
+ 
+-    # v3.16: canonical TENSOR-SEMANTIC identity, and invariance against the
+-    # compact package produced by the pre-fix migration (if one exists).
++    # v3.17b (D17): everything below must use the PUBLISHED path. `compact`
++    # still names the staging file, which no longer exists after the rename.
++    published_compact = final / "compact.safetensors"
++
++    # canonical TENSOR-SEMANTIC identity of the published package
+     can = None
+     try:
+-        can = CC.canonical_tensor_sha256(CC._load_compact(str(compact)))
++        can = CC.canonical_tensor_sha256(
++            CC._load_compact(str(published_compact)))
+     except Exception as e:                                     # noqa: BLE001
+         res["canonical_error"] = f"{type(e).__name__}: {e}"
+     res["canonical_tensor_sha256"] = can
+@@ -393,7 +397,8 @@
+     ident = SSI.source_identity(run_key, str(ck), os.environ.get("SLURM_JOB_ID"),
+                                 1, impl_version)
+     ssi = SSI.same_source_compare(str(run_dir), str(ck), run_key, horizon,
+-                                  ssi_dir, ident, ident)
++                                  ssi_dir, ident, ident,
++                                  published_post_path=str(published_compact))
+ 
+     # ---- v3.17 (D16): the ONE authoritative, strongly-typed result -------
+     checks = {
+@@ -401,7 +406,8 @@
+         "run_status_completed": True,
+         "compact_file_present": bool(published),
+         "compact_file_sha256_matches_manifest":
+-            bool(rep.get("compact_sha256") == _sha_file(str(compact))),
++            bool(rep.get("compact_sha256")
++                 == _sha_file_safe(str(published_compact))),
+         "canonical_tensor_sha256_present": bool(can),
+         "reconstruction_exact": bool(rep.get("reconstruction_exact")),
+         "restoration_exact": bool(rest.get("restoration_exact")),
+@@ -417,7 +423,7 @@
+     evidence = {
+         "run_key": run_key, "model": rep.get("spec_name"),
+         "horizon": rep.get("horizon"),
+-        "file_sha256": _sha_file(str(compact)),
++        "file_sha256": _sha_file_safe(str(published_compact)),
+         "canonical_tensor_sha256": can,
+         "canonical_hash_schema": CC.CANONICAL_HASH_SCHEMA,
+         "source_full_checkpoint_sha256": ident["source_full_checkpoint_sha256"],
+@@ -447,6 +453,15 @@
+         for c in iter(lambda: f.read(1 << 20), b""):
+             h.update(c)
+     return h.hexdigest()
++
++
++def _sha_file_safe(path: str) -> str:
++    """Never raises: a missing/unreadable file yields "" so the corresponding
++    check simply fails (fail-closed) instead of crashing the whole Gate."""
++    try:
++        return _sha_file(path)
++    except Exception:                                          # noqa: BLE001
++        return ""
+ 
+ 
+ def main() -> int:

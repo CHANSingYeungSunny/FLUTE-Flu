@@ -1,0 +1,44 @@
+{
+  "target_date_reconstructible": true,
+  "formula": "target_abs_week = forecast_origin + 104 + step",
+  "target_abs_week_range": [
+    717,
+    878
+  ],
+  "target_epiweek_range": [
+    201606,
+    201911
+  ],
+  "fixed_lead_dedup_leads": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "season_definition": "MMWR wk40(year Y) .. wk20(year Y+1)",
+  "seasons": {
+    "2016-2017": {
+      "abs_range": [
+        751,
+        783
+      ],
+      "obs_peak_abs_week": 769,
+      "obs_peak_epiweek": 201706,
+      "obs_peak_intensity": 42890.0
+    },
+    "2017-2018": {
+      "abs_range": [
+        803,
+        835
+      ],
+      "obs_peak_abs_week": 821,
+      "obs_peak_epiweek": 201806,
+      "obs_peak_intensity": 87825.0
+    }
+  },
+  "inverse_scaler_verified": "y_true_physical == raw ILITOTAL (|diff|<1e-3)",
+  "observed_peak_zero_rule": "PIE undefined -> skipped (never triggered)",
+  "test_holdout": "0/0 (validation-only prediction frames)",
+  "n_runs": 580,
+  "n_events_per_run": 8
+}

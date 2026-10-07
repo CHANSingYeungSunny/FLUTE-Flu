@@ -1,0 +1,20 @@
+{
+  "generated_utc": "2026-09-18T08:32:37Z",
+  "gate_job_id": "570846",
+  "version": "innov-v3.12-gate-validator-schema-alignment",
+  "node": "gpu-a100-04",
+  "slurm_state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:26:47",
+  "n_paths": 19,
+  "n_passed": 19,
+  "all_passed": true,
+  "failing_paths": [],
+  "runners_rc0": "18/18",
+  "deferred_guards_passed": "18/18",
+  "archive_isolated": true,
+  "test_access_count": 0,
+  "holdout_access_count": 0,
+  "formal_rows_submitted": "0/598",
+  "gate_report_sha256": "c0a297c292293dcd07e9b48f65b2f4a07fbeb18e2a7298e0b270f422772bb677"
+}

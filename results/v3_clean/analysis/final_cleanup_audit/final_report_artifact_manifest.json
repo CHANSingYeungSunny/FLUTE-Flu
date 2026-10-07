@@ -1,0 +1,191 @@
+{
+  "generated_utc": "2026-09-21T06:00:48Z",
+  "file_count": 37,
+  "files": [
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Supervisor_Report_EN.md",
+      "sha256": "2a0bb879c99e4f947ed78688ef5b0fdbae0e8cdd31d917438101d1ab57396121",
+      "bytes": 20215
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Supervisor_Report_EN.docx",
+      "sha256": "1ecddc17fd76123b0d8f94159a992b70bac107fdb088b314d897683559f3c1f1",
+      "bytes": 865854
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Supervisor_Report_EN.pdf",
+      "sha256": "294057cba75ad6242e690a26e312518911f419c86a6b517ddd756e8b21b46817",
+      "bytes": 971558
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Supervisor_Report_ZH.md",
+      "sha256": "eea51766b8182034efed6d7f99f5e40c851258109122c2c0851b50a49a3cebbf",
+      "bytes": 19265
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Supervisor_Report_ZH.docx",
+      "sha256": "a8c14088f5331df48c1733af502f18206607a6d1697f6a665155ee1da65e2ee7",
+      "bytes": 866573
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Supervisor_Report_ZH.pdf",
+      "sha256": "0c46188ab7f6d3331e4fa6a115aae878683ac991354c89be60790a047c67d6e3",
+      "bytes": 1101384
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Tutor_Meeting_Brief_EN.md",
+      "sha256": "ee5a04c95838810d47baa6cbfb1108a8eb667cd5ac1b2055a0570d0b54a783b5",
+      "bytes": 3694
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Tutor_Meeting_Brief_EN.docx",
+      "sha256": "b6baa44d10b0e034cdc101def9bf41b901588b7d757219a508bd413dd51ee457",
+      "bytes": 39238
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Tutor_Meeting_Brief_EN.pdf",
+      "sha256": "869b6d56233fcd9fa6f3e230a0d85d137e8a1d220a149130b18294399d7c30f7",
+      "bytes": 35007
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Tutor_Meeting_Brief_ZH.md",
+      "sha256": "399793d88b939a983f3a3b834e1cdd7954c064417dcd6806ae086888f0e164a8",
+      "bytes": 3506
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Tutor_Meeting_Brief_ZH.docx",
+      "sha256": "bd68e8d6754f422c5e8e96058ff908f554d8c0be819e167d3ce8b55a3e991104",
+      "bytes": 39495
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/MIFlu_Final_Tutor_Meeting_Brief_ZH.pdf",
+      "sha256": "42f6301d244a409ebe5979b517d2867bd37aeb533b4fa1faf8b26d0873d96b9d",
+      "bytes": 90309
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Final_Updated_DRAFT.md",
+      "sha256": "9d33b1883a7e876b99b4b44f33e7f9bbd05774b5293c01a02b5a52f29bd7d652",
+      "bytes": 7840
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Final_Updated_DRAFT.docx",
+      "sha256": "8461de01684cbf3c051385a74e4145e916ab99d1450b8e598f6c9b74c26aff78",
+      "bytes": 41403
+    },
+    {
+      "path": "results/v3_clean/analysis/reports/58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A_Final_Updated_DRAFT.pdf",
+      "sha256": "78d75ba25e49e1228eccc0c4ac618db3b727d3af3e1c13c44b9372646ce79da4",
+      "bytes": 40583
+    },
+    {
+      "path": "results/v3_clean/final/final_test_metrics.json",
+      "sha256": "613cfd52178298f8c0c135e5aa616035cf8b2ff52063593a1d3161551d4b5baf",
+      "bytes": 35376
+    },
+    {
+      "path": "results/v3_clean/final/final_test_seed_level.csv",
+      "sha256": "9922a65c24f870bd8876b23c9ea12572b2e48d8ddfc28d63bf2e10a5f66ccb3e",
+      "bytes": 13854
+    },
+    {
+      "path": "results/v3_clean/final/final_peak_metrics.csv",
+      "sha256": "912029b69c1fd8c8159201ea18e80c966765ab12ee1463503aeb3f59e52616d8",
+      "bytes": 23243
+    },
+    {
+      "path": "results/v3_clean/final/final_peak_hit_rates.csv",
+      "sha256": "9dbd74dca88f57037155714aba763c76b7b9cefba9af750b5b1f9eebbc2e15b4",
+      "bytes": 2763
+    },
+    {
+      "path": "results/v3_clean/final/final_generalization_comparison.csv",
+      "sha256": "32087f55fc31ed1ae9d50dd2140a4cd33bd92371376a7d706977ba0f265d93d9",
+      "bytes": 1124
+    },
+    {
+      "path": "results/v3_clean/final/final_test_access_ledger.jsonl",
+      "sha256": "f1216f95dbf66a2cdabb33ae000946400823905c64acf1984310e0fc33d95082",
+      "bytes": 9140
+    },
+    {
+      "path": "results/v3_clean/final/final_test_artifact_manifest.json",
+      "sha256": "842a49965709a043faee9f80d587345b9568779b14dbed5608cfebc37fc8b572",
+      "bytes": 4371
+    },
+    {
+      "path": "results/v3_clean/final/final_test_window_provenance.csv",
+      "sha256": "f08205f748db40f0f4fa31f5d91ed56f6ee7b6b8be27b3d6e9adcf6851f7df93",
+      "bytes": 2458
+    },
+    {
+      "path": "results/v3_clean/final/final_test_figure_manifest.json",
+      "sha256": "2c5b2373a949aa5e0f9b77f82486aae6618b404f8b92cdc56ddb9af38f281a8a",
+      "bytes": 3204
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_gallery/final_test_prediction_gallery.png",
+      "sha256": "197089f939d6ea60469d81f8df096ff8c4a0688b9f12cc39151674354185906d",
+      "bytes": 465135
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_gpt2_miflu_L24.png",
+      "sha256": "0a2e8906702a1c571e6ec2c53cd40f336a7fc0dfedfc97189b3627df9ab2e4f3",
+      "bytes": 99713
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_gpt2_miflu_L36.png",
+      "sha256": "83f2014c61fd2d1e3127fc02f7ad7f257193d2fd4415f8d0ab970ca72e0405be",
+      "bytes": 99572
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_gpt2_miflu_L48.png",
+      "sha256": "b04162cd64fe9b01b73be593bfd52ba8d7318c0a15fa8db14df25932670f2407",
+      "bytes": 98778
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_gpt2_miflu_L60.png",
+      "sha256": "c74553013f4236f2484e24c76890a7294a1fc32a13aa3e253719993e6ac97a55",
+      "bytes": 96049
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L24.png",
+      "sha256": "2c84506a3f37cb88974873ede59c6c989d785f2aeb0905a3e16cec89837d957f",
+      "bytes": 99036
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L36.png",
+      "sha256": "fdc53d58bcfb271c448e36690336716bac8cbd13c89d548306060ea6d1c6c12c",
+      "bytes": 100534
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L48.png",
+      "sha256": "5e820abf7522547c510a1decc540466dbec154e8eefddc748b54a74353610082",
+      "bytes": 98382
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L60.png",
+      "sha256": "5d700c10d57ab682c8d42e121e5745049b0b205ad077ee2dd347b353c2e9572a",
+      "bytes": 95839
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_seasonal_naive_L24.png",
+      "sha256": "dd1a5ce4f283e1fba0c775c81e3441c6f6c3aeb404202b498355b4bc48260177",
+      "bytes": 109630
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_seasonal_naive_L36.png",
+      "sha256": "637abe418e336125448164dec62124ea219ad22fa46e42d41aa71b06087025f7",
+      "bytes": 110413
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_seasonal_naive_L48.png",
+      "sha256": "ea6643a8c18f7a9a4a6297b23ea5d7e8a01b0e8b150b4a72359ebd39922066e3",
+      "bytes": 105746
+    },
+    {
+      "path": "results/v3_clean/final/final_test_prediction_figures/fig_test_seasonal_naive_L60.png",
+      "sha256": "f85bf2f51f140c65ed793ba36ec4d07098cda0ebdb7d0ff5856d54a886bd300e",
+      "bytes": 100189
+    }
+  ]
+}

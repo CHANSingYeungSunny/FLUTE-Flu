@@ -1,0 +1,109 @@
+{
+  "checkpoint": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\hpc_results\\checkpoints\\best_miflu_L24.pth",
+  "missing_keys": 12,
+  "unexpected_keys": 0,
+  "model_eval_mode": true,
+  "dropout_training": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "text_shape_L24": [
+    1,
+    369,
+    768
+  ],
+  "text_shape_L60": [
+    1,
+    369,
+    768
+  ],
+  "equal_length_available": true,
+  "variants": {
+    "original": [
+      1,
+      369,
+      768
+    ],
+    "different_prompt_same_length": [
+      1,
+      369,
+      768
+    ],
+    "row_permuted_same_multiset": [
+      1,
+      369,
+      768
+    ]
+  },
+  "same_shape_all_variants": true,
+  "input_shape": [
+    1,
+    7,
+    104
+  ],
+  "input_space": "StandardScaler (train-fit, mean/std from data/scaler_miflu_author966.json)",
+  "raw_input_range": [
+    0.737859,
+    878845.0
+  ],
+  "z_input_range": [
+    -0.8163240862418165,
+    3.827070989805592
+  ],
+  "prediction_differences": {
+    "different_prompt_same_length": {
+      "max_abs_prediction_difference": 0.0006518363952636719,
+      "mean_abs_prediction_difference": 0.00019251822959631681,
+      "n_differing_elements": 168,
+      "n_elements": 168
+    },
+    "row_permuted_same_multiset": {
+      "max_abs_prediction_difference": 0.06525421142578125,
+      "mean_abs_prediction_difference": 0.0218218807131052,
+      "n_differing_elements": 168,
+      "n_elements": 168
+    }
+  },
+  "prediction_range": {
+    "original": [
+      -0.8283122181892395,
+      1.7174403667449951,
+      0.7320489287376404
+    ],
+    "different_prompt_same_length": [
+      -0.8279150724411011,
+      1.7169057130813599,
+      0.7319270372390747
+    ],
+    "row_permuted_same_multiset": [
+      -0.8253720998764038,
+      1.7509958744049072,
+      0.7463933229446411
+    ]
+  },
+  "gradients": {
+    "loss": 0.8191448450088501,
+    "text_embedding_grad_norm": 0.025177501142024994,
+    "text_embedding_grad_max_abs": 0.003386898897588253
+  },
+  "tolerance": 1e-06,
+  "verdict": "text_active",
+  "verdict_reason": "max|\u0394pred| over equal-length text swaps = 6.525421e-02 (tol 1.0e-06); |grad_text| = 0.025177501142024994",
+  "scope": "A2 corrected reconstruction (miflu_model.py), which is the implementation the LLM-vs-non-LLM benchmark reports. This is NOT the author's released code - see TEXT_PATH_RESOLUTION.md for that, where the verdict was text_inert."
+}

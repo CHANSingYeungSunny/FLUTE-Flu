@@ -1,0 +1,76 @@
+[dispatch] submitted MODEL=miflu L=24 job=585544 at 2026-09-25T08:19:00Z
+[dispatch] submitted MODEL=miflu L=24 job=585555 at 2026-09-25T08:29:35Z
+[dispatch] submitted MODEL=miflu L=36 job=585581 at 2026-09-25T09:25:58Z
+[dispatch] submitted miflu L=24 job=585794 at 2026-09-25T14:39:00Z
+[dispatch] job=585794 miflu L=24 state= elapsed=
+[dispatch] FAILED to submit miflu L=36 at 2026-09-25T14:39:00Z
+[dispatch] FAILED to submit miflu L=48 at 2026-09-25T14:39:00Z
+[dispatch] FAILED to submit miflu L=60 at 2026-09-25T14:39:00Z
+[dispatch] FAILED to submit notext L=24 at 2026-09-25T14:39:00Z
+[dispatch] FAILED to submit notext L=36 at 2026-09-25T14:39:00Z
+[dispatch] FAILED to submit notext L=48 at 2026-09-25T14:39:00Z
+[dispatch] FAILED to submit notext L=60 at 2026-09-25T14:39:00Z
+[dispatch] FAILED to submit nlinear L=24 at 2026-09-25T14:39:01Z
+[dispatch] FAILED to submit nlinear L=36 at 2026-09-25T14:39:01Z
+[dispatch] FAILED to submit nlinear L=48 at 2026-09-25T14:39:01Z
+[dispatch] FAILED to submit nlinear L=60 at 2026-09-25T14:39:01Z
+[dispatch] FAILED to submit naive L=0 at 2026-09-25T14:39:01Z
+[dispatch] queue finished at 2026-09-25T14:39:01Z
+[dispatch] FAILED to submit miflu L=36 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit miflu L=48 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit miflu L=60 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit notext L=24 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit notext L=36 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit notext L=48 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit notext L=60 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit nlinear L=24 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit nlinear L=36 at 2026-09-25T14:40:30Z
+[dispatch] FAILED to submit nlinear L=48 at 2026-09-25T14:40:31Z
+[dispatch] FAILED to submit nlinear L=60 at 2026-09-25T14:40:31Z
+[dispatch] FAILED to submit naive L=0 at 2026-09-25T14:40:31Z
+[dispatch] queue finished at 2026-09-25T14:40:31Z
+[dispatch] waiting to submit miflu L=36 (tries=1) at 2026-09-25T14:43:31Z
+[dispatch] submitted miflu L=36 job=585798 at 2026-09-25T14:47:01Z
+[dispatch] job=585798 miflu L=36 state=COMPLETED elapsed=00:07:30
+[dispatch] submitted miflu L=48 job=585802 at 2026-09-25T14:55:14Z
+[dispatch] job=585802 miflu L=48 state=COMPLETED elapsed=00:07:17
+[dispatch] submitted miflu L=60 job=585813 at 2026-09-25T15:03:09Z
+[dispatch] job=585813 miflu L=60 state=COMPLETED elapsed=00:07:04
+[dispatch] submitted notext L=24 job=585821 at 2026-09-25T15:10:52Z
+[dispatch] job=585821 notext L=24 state=FAILED elapsed=00:01:06
+[dispatch] submitted notext L=36 job=585823 at 2026-09-25T15:12:25Z
+[dispatch] job=585823 notext L=36 state=FAILED elapsed=00:01:04
+[dispatch] submitted notext L=48 job=585825 at 2026-09-25T15:13:54Z
+[dispatch] job=585825 notext L=48 state=FAILED elapsed=00:01:03
+[dispatch] submitted notext L=60 job=585827 at 2026-09-25T15:15:24Z
+[dispatch] job=585827 notext L=60 state=FAILED elapsed=00:01:02
+[dispatch] submitted nlinear L=24 job=585828 at 2026-09-25T15:16:54Z
+[dispatch] job=585828 nlinear L=24 state=COMPLETED elapsed=00:00:13
+[dispatch] submitted nlinear L=36 job=585830 at 2026-09-25T15:17:21Z
+[dispatch] job=585830 nlinear L=36 state=COMPLETED elapsed=00:00:14
+[dispatch] submitted nlinear L=48 job=585832 at 2026-09-25T15:17:50Z
+[dispatch] job=585832 nlinear L=48 state=COMPLETED elapsed=00:00:13
+[dispatch] submitted nlinear L=60 job=585833 at 2026-09-25T15:18:16Z
+[dispatch] job=585833 nlinear L=60 state=COMPLETED elapsed=00:00:14
+[dispatch] submitted naive L=0 job=585836 at 2026-09-25T15:19:03Z
+[dispatch] job=585836 naive L=0 state=COMPLETED elapsed=00:00:05
+[dispatch] queue finished at 2026-09-25T15:19:51Z
+[dispatch] submitted notext L=24 job=585843 at 2026-09-25T15:30:06Z
+[dispatch] job=585843 notext L=24 state=COMPLETED elapsed=00:00:17
+[dispatch] submitted notext L=36 job=585844 at 2026-09-25T15:30:47Z
+[dispatch] job=585844 notext L=36 state=COMPLETED elapsed=00:00:16
+[dispatch] submitted notext L=48 job=585845 at 2026-09-25T15:31:28Z
+[dispatch] job=585845 notext L=48 state=COMPLETED elapsed=00:00:16
+[dispatch] submitted notext L=60 job=585846 at 2026-09-25T15:31:48Z
+[dispatch] job=585846 notext L=60 state=COMPLETED elapsed=00:00:16
+[dispatch] queue finished at 2026-09-25T15:32:29Z
+[topup] dispatcher started 2026-09-25T16:00:28Z pid=2856043
+[topup] submitted notext L=24 job=585865 at 2026-09-25T16:00:28Z
+[topup] job=585865 notext L=24 state=COMPLETED elapsed=00:02:16
+[topup] submitted notext L=36 job=585874 at 2026-09-25T16:03:14Z
+[topup] job=585874 notext L=36 state=COMPLETED elapsed=00:02:13
+[topup] submitted notext L=48 job=585875 at 2026-09-25T16:05:31Z
+[topup] job=585875 notext L=48 state=COMPLETED elapsed=00:02:08
+[topup] submitted notext L=60 job=585876 at 2026-09-25T16:08:02Z
+[topup] job=585876 notext L=60 state=COMPLETED elapsed=00:02:06
+[topup] queue finished at 2026-09-25T16:10:34Z

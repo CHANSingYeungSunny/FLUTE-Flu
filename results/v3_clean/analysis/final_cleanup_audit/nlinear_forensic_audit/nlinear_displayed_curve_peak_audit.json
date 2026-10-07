@@ -1,0 +1,28 @@
+{
+  "scope": "displayed seed-mean lead-1 curve only (illustrative)",
+  "official_season_level": "see final_peak_metrics.csv / final_peak_hit_rates.csv",
+  "results": {
+    "L24": {
+      "true_peak_abs_week": 925,
+      "pred_peak_abs_week": 926,
+      "true_peak_value_phys": 111360.99920985757,
+      "pred_peak_value_phys": 111170.6797830292,
+      "PTE_weeks": 1,
+      "PTE_hit": true,
+      "PIE_pct": 0.17090312423446963,
+      "PIE_hit": true,
+      "interpretation": "REPRESENTATIVE displayed-curve (seed-mean lead-1) metric, NOT season/event-level official PTE/PIE"
+    },
+    "L60": {
+      "true_peak_abs_week": 925,
+      "pred_peak_abs_week": 926,
+      "true_peak_value_phys": 111360.99920985757,
+      "pred_peak_value_phys": 110285.4798619817,
+      "PTE_weeks": 1,
+      "PTE_hit": true,
+      "PIE_pct": 0.9657953462226745,
+      "PIE_hit": true,
+      "interpretation": "REPRESENTATIVE displayed-curve (seed-mean lead-1) metric, NOT season/event-level official PTE/PIE"
+    }
+  }
+}

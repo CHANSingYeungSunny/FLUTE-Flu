@@ -1,0 +1,13 @@
+field,historical_C_D,r1b_author_966,compatible,note
+dataset,"July-2026 snapshot, 1025 rows","author national_illness.csv, 966 rows",NO,different vintages and lengths
+sha256,to be pinned at run time,2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5,NO,
+split,717 / 102 / 206,676 / 97 / 193,NO,both 70:10:20 of their own N
+date_range,through 2021,stored dates end 2020-06-30,NO,the paper says 2002-2021; unresolved
+variables,7 channels,7 channels,YES,same seven CDC fields
+metric_space,z-space (StandardScaler),z-space (StandardScaler),YES,the one fully matchable item
+scaler_fit_rows,train rows of the 1025 contract,"rows [0,676)",PARTIAL,"same rule, different rows"
+T,104,104,YES,
+horizons,24/36/48/60,24/36/48/60,YES,
+seeds,42-51 (10),42+ (declared per run),PARTIAL,different seed sets
+checkpoint_rule,historical rule,validation-only (B-5 declared repair),PARTIAL,
+seasonal_naive_formula,SAFE (clamped),safe (corrected),YES,historical track is NOT affected by the leak

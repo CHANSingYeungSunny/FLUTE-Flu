@@ -1,0 +1,11 @@
+{
+  "heartbeat_utc": "2026-09-15T04:04:36Z",
+  "controller_pid": 129024,
+  "current_stage": "J",
+  "last_job": "J|nlinear|none|identity|L60|s44",
+  "deployment_root": "/gpfs1/scratch/sychan552/innovation_deploy_root_v2_8",
+  "dry_run": false,
+  "status": "STOPPED",
+  "stop_reason": "LOCAL_STAGE_FAILED: K",
+  "stopped_utc": "2026-09-15T04:04:39Z"
+}

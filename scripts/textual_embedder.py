@@ -134,8 +134,50 @@ def compute_prompt_stats(train_df, var_cols=VAR_COLS):
     return stats
 
 
-def build_prompt(train_df, T=104, L=24):
-    """Primary 7-variable prompt (N=7, OT included)."""
+# ── clean-v3: separable MIFlu prompt sections (original ablations) ──────────
+# The ORIGINAL MIFlu prompt has exactly three bracketed sections. They are
+# obtained by SPLITTING the existing template on its own separator, so
+# re-joining all three reproduces PROMPT_TEMPLATE_7 byte-for-byte. No
+# transcription, no drift, and the unablated parent is provably unchanged.
+MIFLU_PROMPT_SEPARATOR = "***\n"
+PROMPT_COMPONENT_ORDER = ("dataset", "variable", "task")
+DEFAULT_MIFLU_PROMPT_COMPONENTS = PROMPT_COMPONENT_ORDER
+
+
+def miflu_prompt_sections(template: str = PROMPT_TEMPLATE_7) -> dict:
+    """Split the MIFlu template into its three named sections."""
+    parts = template.split(MIFLU_PROMPT_SEPARATOR)
+    if len(parts) != 3:
+        raise ValueError("MIFlu template must contain exactly three sections; "
+                         f"got {len(parts)}")
+    return dict(zip(PROMPT_COMPONENT_ORDER, parts))
+
+
+def build_miflu_prompt_template(components=DEFAULT_MIFLU_PROMPT_COMPONENTS,
+                                template: str = PROMPT_TEMPLATE_7) -> str:
+    """Re-assemble the MIFlu template from the ENABLED sections only."""
+    sec = miflu_prompt_sections(template)
+    kept = [c for c in PROMPT_COMPONENT_ORDER if c in tuple(components)]
+    return MIFLU_PROMPT_SEPARATOR.join(sec[c] for c in kept)
+
+
+def build_prompt(train_df, T=104, L=24,
+                 components=DEFAULT_MIFLU_PROMPT_COMPONENTS,
+                 date_range_string="between 2002 and 2021"):
+    """Primary 7-variable prompt (N=7, OT included), section-selectable.
+
+    `date_range_string` is the [Dataset information] span; it is a DESCRIPTIVE
+    label only (the min/max statistics are already train-only and carry no
+    target values). It is parameterised so the author 966-row profile can say
+    "between 2002 and 2020" without touching the project 1025-row default.
+    """
+    template = build_miflu_prompt_template(components)
+    return _format_prompt(template, train_df, T=T, L=L,
+                          var_cols=VAR_COLS, date_range_string=date_range_string)
+
+
+# ── legacy fixed-template entry point (kept for provenance) ────────────────
+def _build_prompt_legacy(train_df, T=104, L=24):
     return _format_prompt(PROMPT_TEMPLATE_7, train_df, T=T, L=L,
                           var_cols=VAR_COLS)
 
@@ -155,7 +197,8 @@ def build_prompt_6var(train_df, T=104, L=24):
                           var_cols=VAR_COLS_6)
 
 
-def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6):
+def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6,
+                   date_range_string="between 2002 and 2021"):
     stats = compute_prompt_stats(train_df, var_cols=var_cols)
     fmt_stats = {}
     for k, v in stats.items():
@@ -164,6 +207,7 @@ def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6):
         else:          # absolute counts
             fmt_stats[k] = f"{v:.0f}"
     fmt_stats["L"] = L
+    template = template.replace("between 2002 and 2021", date_range_string)
     return template.format(**fmt_stats)
 
 

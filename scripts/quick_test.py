@@ -48,12 +48,12 @@ for ep in range(5):
     for bx, by in tl:
         bx, by = bx.to(device), by.to(device)
         opt.zero_grad()
-        yh, _, _ = model(bx, htext=None)
+        yh, _, _, _ = model(bx, htext=None)
         L = crit(yh, by); L.backward(); opt.step()
         loss_sum += L.item()
     model.eval()
     with torch.no_grad():
-        yh_test, _, _ = model(torch.from_numpy(Xte[:50]).to(device), htext=None)
+        yh_test, _, _, _ = model(torch.from_numpy(Xte[:50]).to(device), htext=None)
         yh_test = yh_test.cpu().numpy()
         test_mse = np.mean((yh_test - Yte[:50])**2)
     print(f'  Epoch {ep+1}: train_loss={loss_sum/len(tl):.4f}, test_mse(50samples)={test_mse:.4f}')
@@ -61,7 +61,7 @@ for ep in range(5):
     print(f'    y_true: mean={Yte[:50].mean():.4f} std={Yte[:50].std():.4f}')
 
 # Final check
-yh_final, _, _ = model(torch.from_numpy(Xte[:50]).to(device), htext=None)
+yh_final, _, _, _ = model(torch.from_numpy(Xte[:50]).to(device), htext=None)
 yh_final = yh_final.detach().cpu().numpy()
 pred_mean, true_mean = yh_final.mean(), Yte[:50].mean()
 print(f'\n=== VERDICT ===')

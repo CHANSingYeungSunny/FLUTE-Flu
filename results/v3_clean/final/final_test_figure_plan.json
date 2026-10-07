@@ -1,0 +1,55 @@
+{
+  "generated_utc": "2026-09-21T04:47:43Z",
+  "frozen_before_test_access": true,
+  "display_rules": {
+    "plot_scope": "authorized Test/Holdout target forecast window only",
+    "ground_truth": "solid line",
+    "prediction": "dashed line",
+    "peaks": "mark observed and predicted peaks",
+    "scale": "inverse-transformed ILITOTAL original scale",
+    "omit": [
+      "historical-input tail",
+      "Training/Validation prediction curves",
+      "input/forecast boundary line and labels"
+    ]
+  },
+  "reference_figure": "results/ili/figures/fig_q1_step_sweep_L24_L60_step1.png",
+  "case_selection_rule": {
+    "deterministic": true,
+    "rule": "for each (model, horizon), plot the seed-mean prediction curve (mean over seeds 42..51) over the SAME authorized Test forecast window; never select a curve after viewing results",
+    "authorized_models": [
+      "gpt2_miflu",
+      "nlinear",
+      "seasonal_naive"
+    ]
+  },
+  "provenance_row_fields": [
+    "figure_id",
+    "model",
+    "horizon",
+    "forecast_origin",
+    "input_start_date",
+    "input_end_date",
+    "test_target_start_date",
+    "test_target_end_date",
+    "input_target_overlap_count",
+    "future_target_leakage_count",
+    "scaler_fit_split",
+    "checkpoint_selection_split",
+    "plotted_target_split",
+    "MSE",
+    "MAE",
+    "PTE",
+    "PIE",
+    "PTE_hit",
+    "PIE_hit",
+    "joint_hit"
+  ],
+  "hard_conditions": {
+    "input_target_overlap_count": 0,
+    "future_target_leakage_count": 0,
+    "scaler_fit_split": "Training",
+    "checkpoint_selection_split": "Validation",
+    "plotted_target_split": "Test/Holdout"
+  }
+}

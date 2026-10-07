@@ -1,0 +1,56 @@
+{
+  "session_started_utc": "2026-09-14T21:25:00Z",
+  "authorization_document": "CodeBuddy_MIFlu_Maximum_Autonomy_Completion_Prompt.md",
+  "loop": "READ_STATE -> IDENTIFY_NEXT -> PLAN -> EXECUTE -> OBSERVE -> DIAGNOSE -> REPAIR -> TEST -> UPDATE -> CONTINUE",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version_at_start": "innov-v2.4",
+  "authoritative_plan_sha256": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961",
+  "runtime_aggregate_sha256_at_start": "5a4c32473e293e8ab01b116e72c7326188b1844a1a84952b72bc2ec5f5eae25d",
+  "runtime_file_count_at_start": 77,
+  "deployment_root": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/innov-v2.4_5a4c3247",
+  "stage_order": ["A verify gate", "B four pilots", "C candidate readiness", "D screening", "E select candidates", "F full evaluation", "G ablations", "H llm/tsfm", "I robustness", "J auc", "K freeze", "L test", "M final evidence", "N evoforecast"],
+  "limits": {
+    "max_autonomous_source_repair_cascades": 4,
+    "max_autonomous_protocol_amendments": 1,
+    "test_isolation": "absolute before lawful freeze"
+  },
+  "queue_policy_applied": {
+    "partition": "stingy",
+    "gres": "gpu:a100:1",
+    "per_user_running": 1,
+    "per_user_pending": 1,
+    "submission_style": "one job at a time from the login node, waiting for a terminal state (the chain driver is NOT used as a job because it would itself occupy the single stingy slot)"
+  },
+  "authorization_ceiling": "K",
+  "controller": {
+    "type": "login_node_background_auto_submit_loop",
+    "policy_allowed": true,
+    "policy_basis": "HPC_GUIDE.md §3b/§11 endorse a background auto-submit loop; it requests no GPU and never occupies the single stingy slot",
+    "script": "hpc_scripts/autonomous/controller.sh",
+    "state_module": "hpc_scripts/autonomous/state.py",
+    "helpers": "hpc_scripts/autonomous/lib.sh",
+    "outside_frozen_source_hash": true,
+    "stage_plan": "results/innovation/autonomous_completion/stage_plan.json",
+    "completion_matrix": "results/innovation/autonomous_completion/completion_matrix.json",
+    "freeze_audit": "results/innovation/autonomous_completion/freeze_audit.json",
+    "test_gate": "completion matrix fully resolved AND validation-only freeze audit passed (never on time-remaining alone)",
+    "launch": "nohup bash hpc_scripts/autonomous/controller.sh > controller.log 2>&1 &"
+  },
+  "artifacts": {
+    "session_manifest": "results/innovation/autonomous_completion/session_manifest.json",
+    "action_log": "results/innovation/autonomous_completion/action_log.jsonl",
+    "decision_log": "results/innovation/autonomous_completion/decision_log.md",
+    "job_ledger": "results/innovation/autonomous_completion/job_ledger.csv",
+    "repair_ledger": "results/innovation/autonomous_completion/repair_ledger.json",
+    "budget_ledger": "results/innovation/autonomous_completion/budget_ledger.csv",
+    "current_state": "results/innovation/autonomous_completion/current_state.json",
+    "completion_matrix": "results/innovation/autonomous_completion/completion_matrix.md",
+    "completion_matrix_json": "results/innovation/autonomous_completion/completion_matrix.json",
+    "freeze_audit": "results/innovation/autonomous_completion/freeze_audit.json",
+    "budget_ledger": "results/innovation/autonomous_completion/budget_ledger.csv",
+    "controller_script": "hpc_scripts/autonomous/controller.sh",
+    "controller_state_module": "hpc_scripts/autonomous/state.py",
+    "controller_helpers": "hpc_scripts/autonomous/lib.sh",
+    "resume_instructions": "results/innovation/autonomous_completion/resume_instructions.md"
+  }
+}

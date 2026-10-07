@@ -1,0 +1,216 @@
+{
+  "env": {
+    "nvidia_smi": {
+      "available": true,
+      "output": "Tue Sep 15 05:01:35 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 555.97                 Driver Version: 555.97         CUDA Version: 12.5     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce GTX 1650 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   61C    P8              3W /   35W |       0MiB /   4096MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+"
+    },
+    "torch_cuda": {
+      "cuda_available": true,
+      "device_count": 1,
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "torch": "2.6.0+cu124"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T110544Z__1f6563f",
+      "status": "failed",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": null,
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T110623Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T181420Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": "smoke",
+      "selection_eligible": false,
+      "device_requested": "auto",
+      "device_actual": "cuda",
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T192321Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": "smoke",
+      "selection_eligible": false,
+      "device_requested": "auto",
+      "device_actual": "cuda",
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T192836Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": "smoke",
+      "selection_eligible": false,
+      "device_requested": "auto",
+      "device_actual": "cuda",
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T204908Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": "smoke",
+      "selection_eligible": false,
+      "device_requested": "auto",
+      "device_actual": "cuda",
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T205322Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": "smoke",
+      "selection_eligible": false,
+      "device_requested": "auto",
+      "device_actual": "cuda",
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T205746Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": "smoke",
+      "selection_eligible": false,
+      "device_requested": "auto",
+      "device_actual": "cuda",
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T210119Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": "smoke",
+      "selection_eligible": false,
+      "device_requested": "auto",
+      "device_actual": "cuda",
+      "device_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__gpt2__cross-attention__L24__seed42__20260914T110728Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__gpt2__film-gate__L24__seed42__20260914T110702Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__tfidf-svd__concat-projection__L24__seed42__20260914T110554Z__1f6563f",
+      "status": "failed",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__tfidf-svd__concat-projection__L24__seed42__20260914T110644Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T110754Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__itransformer__none__identity__L24__seed42__20260914T110553Z__1f6563f",
+      "status": "failed",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": null,
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__itransformer__none__identity__L24__seed42__20260914T110641Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__nlinear__none__identity__L24__seed42__20260914T110553Z__1f6563f",
+      "status": "failed",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": null,
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__nlinear__none__identity__L24__seed42__20260914T110634Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__patchtst__none__identity__L24__seed42__20260914T110553Z__1f6563f",
+      "status": "failed",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": null,
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    },
+    {
+      "run_id": "national-ili__patchtst__none__identity__L24__seed42__20260914T110637Z__1f6563f",
+      "status": "ok",
+      "experiment_stage": null,
+      "selection_eligible": null,
+      "device_requested": "cuda",
+      "device_actual": "cuda",
+      "device_name": null,
+      "cuda_available": "True"
+    }
+  ]
+}

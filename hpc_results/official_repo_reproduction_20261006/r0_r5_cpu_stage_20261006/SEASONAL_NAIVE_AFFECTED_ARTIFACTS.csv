@@ -1,0 +1,7 @@
+stage,formula,leakage,old_value_L60,corrected_value_L60,ranking_changed,report_wording_changed,action
+A early_ili_july2026,own track,not assessed,n/a,n/a,n/a,no,none
+B innovation_v2_screening,n/a,NO,n/a,n/a,no,no,none
+C wave1_validation_v3clean (the historical 4v4),SAFE (clamped),NO,0.88491,0.88491,no,no,none - the historical comparison is unaffected
+D final_test_holdout_v3clean,SAFE (clamped),NO,0.88491,0.88491,no,no,none
+E a2_author966_stage5/stage6,LEAKY ref=ts+s-52,YES at L=60 (8 leads),2.1035,1.9174,no (still 5th of 5),YES - any quoted L60 value or 4-horizon mean,additive correction note; do not edit train_naive_966.py
+F1 (frozen),leakage-safe,NO,1.9174,1.9174,n/a,no,none

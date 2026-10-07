@@ -1,0 +1,69 @@
+{
+  "generated_utc": "2026-09-24T15:43:15.846334+00:00",
+  "note": "full SHA-256 values; abbreviated hashes in earlier reports must not be reused",
+  "code": {
+    "configs.py": "06eb39cd55df0bb8302d527b90dc5ac5923a43813bbc6acb28709e0d6d7b2bc9",
+    "train_miflu.py": "c586f9c96ccd0a1ad8b4892ad7382ce7a9eb6531b6d250e81978d918c64dae3d",
+    "train_ablation.py": "182860beec59f58905b39ad4a5755160e0713ace0ed263b759bfd0ef6b179efd",
+    "train_nlinear_966.py": "c18db24dab5a04d406eee2384400ab413391ac8f7c76a3cae237e27466e266e4",
+    "train_naive_966.py": "434857f812deceff971a1a1ff2854053d1f79f0057d244ad02116637e7d5ac1b",
+    "textual_embedder.py": "13b51b34f6253d0b65c941751ffca73ce05571eec2b9635a0889b4a3a7f4a302",
+    "scaler_utils.py": "efac4e58ca85563012c55e5c9e74ab61035a7f7c578fb17658a1870a84462f2e",
+    "cdc_calendar.py": "963751eec162a8eefa133c2eb29764b5a8791920d3a99cddf08f8d3d02e593ad"
+  },
+  "data": {
+    "author_processed_966": {
+      "path": "recovery/author_repo/dataset/illness/national_illness.csv",
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+      "n_rows": 966
+    },
+    "author_orig_966": {
+      "path": "recovery/author_repo/dataset/illness/national_illness_orig.csv",
+      "sha256": "8594cecb98c6f2f9dc014eca11c4d5d1e38ad5ce6ed0592d4abe65b146fce395",
+      "n_rows": 966
+    },
+    "project_raw_1025": {
+      "path": "data/raw/national_illness_raw.csv",
+      "sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+      "n_rows": 1025
+    },
+    "paper_exact_966": {
+      "path": "data/raw/national_illness_raw_paper_exact.csv",
+      "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+      "n_rows": 966
+    }
+  },
+  "protocol_config": {
+    "a2_frozen_protocol": {
+      "path": "recovery/stage3/configs/a2_frozen_protocol.json",
+      "sha256": "ae5103512b6cf0b4e61ef3f5eb906b41bd6597cd0290f007d2ecc4d2d323ee1c"
+    },
+    "author_966_profile": {
+      "path": "recovery/stage3/configs/author_966_profile.json",
+      "sha256": "adbb2b99c851d432a489a0af65ef970c3d9b1f622798485abb9bb402c1926489"
+    }
+  },
+  "window_containment": "strict (Stage 5 section 2.2); legacy 'start' retained as default for old runs",
+  "window_counts_author_966": {
+    "24": [
+      549,
+      74,
+      170
+    ],
+    "36": [
+      537,
+      62,
+      158
+    ],
+    "48": [
+      525,
+      50,
+      146
+    ],
+    "60": [
+      513,
+      38,
+      134
+    ]
+  }
+}

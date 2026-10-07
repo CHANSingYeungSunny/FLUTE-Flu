@@ -294,7 +294,7 @@ MLFlu/
 - `docs/leakage_audit_report.md`（英文）：索引范围 + scaler fit 边界代码 + 无 shuffle 证明 + COVID-19 分布偏移解释（左拟合好/右退化 = 合法泛化失败）。
 
 ### 8.4 Timing bug 修复（Brief #3 + 补充③）
-- `compute_miflu_indicators.py` 重构：Timing 与 Peak Intensity **仅对通过 Peak Hit 的峰**计算；**Peak Hit 分子/分母始终并排显示**（`peak_hit_count: "1/4"`）；未命中样本记 `Missed`（漏检），**绝不 Timing=0**；零命中时 Timing/Intensity 报 `null`（"unmatched"）。
+- `compute_miflu_indicators.py` 重构：PTE（峰值时间误差）与 PIE（峰值强度误差）**仅对匹配峰**计算；**匹配峰计数始终并排显示**（`peak_hit_count: "1/4"`）作为**样本量限定语**；未命中样本记 `Missed`（漏检），**绝不 Timing=0**；零命中时 PTE/PIE 报 `null`（"unmatched"）。**2026-09 更新**：Peak Hit Rate 与 Direction 两项指标已彻底移除，仅保留 PTE / PIE。
 - `tests/test_timing_metric.py`：合成不重叠峰 → 断言 Timing 为 `null` 而非 0.0；偏移峰 → 断言正确反映非零偏移。全过。
 
 ### 8.5 特征归因警示（Brief #4）

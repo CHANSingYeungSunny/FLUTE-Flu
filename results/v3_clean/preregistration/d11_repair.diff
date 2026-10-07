@@ -1,0 +1,57 @@
+--- a/scripts/innovation/clean_runner.py
++++ b/scripts/innovation/clean_runner.py
+@@ -109,6 +109,43 @@
+         f.write(text)
+ 
+ 
++# v3.11 (D11): the COMPLETE per-run artifact tree. `_atomic_write_json` and
++# `_write_text` create the parent of the file they write (which is why
++# metrics/ and checkpoints/ existed in Gate 569016), but pandas `.to_csv` does
++# NOT — so logs/train_history.csv and predictions/validation_predictions.csv
++# died with "Cannot save file into a non-existent directory".
++RUN_SUBDIRS = ("logs", "predictions", "metrics", "checkpoints")
++
++
++def ensure_run_dirs(run_dir: str, out_root: str) -> str:
++    """Idempotently create the full run artifact tree (called ONCE per run).
++
++    Safety, all mandatory:
++      * `run_dir` must be a DIRECT child of the authorised output root;
++      * the RESOLVED real paths must stay directly under the real output root,
++        so a symlinked run directory or an escaping `..` can never cause a
++        write outside the authorised output root;
++      * only the four declared sub-directories are created — never any other
++        path, and never a parent outside the authorised output root.
++
++    Behaviour-neutral: no scientific input, metric or checkpoint choice is
++    touched. Returns the resolved run directory.
++    """
++    real_out = os.path.realpath(out_root)
++    real_run = os.path.realpath(run_dir)
++    if os.path.dirname(real_run) != real_out:
++        raise SystemExit(
++            "run directory escapes the authorised output root: "
++            f"{run_dir} (resolved {real_run})")
++    os.makedirs(real_run, exist_ok=True)
++    for name in RUN_SUBDIRS:
++        d = os.path.join(real_run, name)
++        if os.path.islink(d):
++            raise SystemExit(f"refusing symlinked artifact directory: {d}")
++        os.makedirs(d, exist_ok=True)
++    return real_run
++
++
+ def load_registry(deployment_root: str) -> dict:
+     p = os.path.join(deployment_root, "results", "v3_clean", "runs",
+                      "complete_specs_598.json")
+@@ -185,7 +222,9 @@
+     run_dir = os.path.join(out_root, run_key)
+     if os.path.exists(run_dir) and os.listdir(run_dir):
+         raise SystemExit(f"run directory already exists and is non-empty: {run_dir}")
+-    os.makedirs(run_dir, exist_ok=True)
++    # D11: create the COMPLETE artifact tree ONCE, after the create-only and
++    # path-containment checks, and before ANY artifact write.
++    run_dir = ensure_run_dirs(run_dir, out_root)
+ 
+     status_path = os.path.join(run_dir, "run_status.json")
+     started = time.time()

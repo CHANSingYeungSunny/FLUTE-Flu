@@ -1,0 +1,1357 @@
+{
+  "n_cells": 52,
+  "results": [
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.289095964727053,
+      "mae_all_z": 1.3942085045556991,
+      "mse_ili_phys": 336193513.8178634,
+      "mae_ili_phys": 12343.533834156973,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.0,
+        "mean_pie_pct": 10.966531978121091,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 42,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed42__20260915T000808Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.339107530034526,
+      "mae_all_z": 1.4231631176199955,
+      "mse_ili_phys": 340113586.34703195,
+      "mae_ili_phys": 12599.881596715459,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 2.6666666666666665,
+        "mean_pie_pct": 8.668357698708384,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 43,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed43__20260915T000908Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.343238418334469,
+      "mae_all_z": 1.4031702469967837,
+      "mse_ili_phys": 340437377.99583167,
+      "mae_ili_phys": 12422.876022506547,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 2.6666666666666665,
+        "mean_pie_pct": 9.92030443026861,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 44,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed44__20260915T001007Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.300368355237043,
+      "mae_all_z": 1.4166043839906086,
+      "mse_ili_phys": 337077081.2291433,
+      "mae_ili_phys": 12541.814279409555,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 3,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 7.503116584593907,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 45,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed45__20260915T001107Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.255666650395857,
+      "mae_all_z": 1.3750092181852156,
+      "mse_ili_phys": 333573213.5874116,
+      "mae_ili_phys": 12173.554192623376,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.6666666666666667,
+        "mean_pie_pct": 10.143759196473239,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 46,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed46__20260915T001207Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.255587722678822,
+      "mae_all_z": 1.3844896058815075,
+      "mse_ili_phys": 333567028.0953926,
+      "mae_ili_phys": 12257.488215408046,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 2.6666666666666665,
+        "mean_pie_pct": 9.363180495456989,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 47,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed47__20260915T001308Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.304186392403789,
+      "mae_all_z": 1.4161351920534506,
+      "mse_ili_phys": 337376351.75142103,
+      "mae_ili_phys": 12537.660338014037,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.6666666666666667,
+        "mean_pie_pct": 10.400374877410874,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 48,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed48__20260915T001408Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.329998226229644,
+      "mae_all_z": 1.4132704719689575,
+      "mse_ili_phys": 339399570.0901271,
+      "mae_ili_phys": 12512.297726809324,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.6666666666666667,
+        "mean_pie_pct": 7.797647664817279,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 49,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed49__20260915T001508Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.272405022822755,
+      "mae_all_z": 1.3903786747519358,
+      "mse_ili_phys": 334885223.88912195,
+      "mae_ili_phys": 12309.626685844672,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.3333333333333333,
+        "mean_pie_pct": 7.674696780105857,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 50,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed50__20260915T001608Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.276461147810905,
+      "mae_all_z": 1.3965363826883288,
+      "mse_ili_phys": 335203156.7173762,
+      "mae_ili_phys": 12364.14356418931,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.3333333333333333,
+        "mean_pie_pct": 12.602359380857708,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 24,
+      "seed": 51,
+      "run_id": "national-ili__nlinear__none__identity__L24__seed51__20260915T001716Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.9835092067891,
+      "mae_all_z": 1.514363321719472,
+      "mse_ili_phys": 390623917.8706859,
+      "mae_ili_phys": 13407.316642491958,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 3.0,
+        "mean_pie_pct": 10.57013553775158,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 42,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed42__20260915T001816Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.964189087574825,
+      "mae_all_z": 1.514902294603073,
+      "mse_ili_phys": 389109545.7232721,
+      "mae_ili_phys": 13412.088441377527,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 2.6666666666666665,
+        "mean_pie_pct": 14.781695655253053,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 43,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed43__20260915T001916Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.967947138041345,
+      "mae_all_z": 1.511055179031298,
+      "mse_ili_phys": 389404112.7352638,
+      "mae_ili_phys": 13378.028235820695,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.3333333333333333,
+        "mean_pie_pct": 10.149713443620792,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 44,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed44__20260915T002016Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 5.019553640308672,
+      "mae_all_z": 1.5411840273534538,
+      "mse_ili_phys": 393449201.3724471,
+      "mae_ili_phys": 13644.772027149076,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 0.3333333333333333,
+        "mean_pie_pct": 10.93847510659223,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 45,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed45__20260915T002116Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.939989050627628,
+      "mae_all_z": 1.5152614666762294,
+      "mse_ili_phys": 387212665.2710213,
+      "mae_ili_phys": 13415.268316690283,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 2.6666666666666665,
+        "mean_pie_pct": 7.446001239445635,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 46,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed46__20260915T002217Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.929812927504357,
+      "mae_all_z": 1.5239686889181316,
+      "mse_ili_phys": 386415026.26505965,
+      "mae_ili_phys": 13492.35714055479,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.6666666666666667,
+        "mean_pie_pct": 10.302755309818254,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 47,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed47__20260915T002317Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 5.021053811522865,
+      "mae_all_z": 1.5484111776685014,
+      "mse_ili_phys": 393566788.1074551,
+      "mae_ili_phys": 13708.75709603503,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.6666666666666667,
+        "mean_pie_pct": 12.761006330839914,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 48,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed48__20260915T002447Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.94856372093864,
+      "mae_all_z": 1.5164365261327475,
+      "mse_ili_phys": 387884775.6145106,
+      "mae_ili_phys": 13425.671635407092,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 2.6666666666666665,
+        "mean_pie_pct": 8.793090894649344,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 49,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed49__20260915T002547Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.95749622300557,
+      "mae_all_z": 1.5185675012778637,
+      "mse_ili_phys": 388584934.6660706,
+      "mae_ili_phys": 13444.538076682496,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 1.6666666666666667,
+        "mean_pie_pct": 8.654341657325276,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 50,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed50__20260915T002647Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 4.9955813646057665,
+      "mae_all_z": 1.5348335752467581,
+      "mse_ili_phys": 391570173.8692234,
+      "mae_ili_phys": 13588.548703421799,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 2,
+        "peak_hit_ratio": 0.6666666666666666,
+        "mean_pte_weeks": 2.3333333333333335,
+        "mean_pie_pct": 11.28477191334045,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 36,
+      "seed": 51,
+      "run_id": "national-ili__nlinear__none__identity__L36__seed51__20260915T002748Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.421832600521751,
+      "mae_all_z": 1.6148722763102057,
+      "mse_ili_phys": 424981155.45610815,
+      "mae_ili_phys": 14297.166117607792,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 1.3949572981808542,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 42,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed42__20260915T002848Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.404841907329388,
+      "mae_all_z": 1.5936115578110213,
+      "mse_ili_phys": 423649368.22483325,
+      "mae_ili_phys": 14108.935730946216,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 7.164840879592149,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 43,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed43__20260915T002953Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.38426020756874,
+      "mae_all_z": 1.5992714218492718,
+      "mse_ili_phys": 422036106.4735654,
+      "mae_ili_phys": 14159.044964882894,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 1.2831132690262828,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 44,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed44__20260915T003048Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.421778138679752,
+      "mae_all_z": 1.6052290507079443,
+      "mse_ili_phys": 424976885.66550535,
+      "mae_ili_phys": 14211.79045014844,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 1.0941933676689133,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 45,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed45__20260915T003148Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.409750630868119,
+      "mae_all_z": 1.6104650000903071,
+      "mse_ili_phys": 424034128.50734055,
+      "mae_ili_phys": 14258.146553329274,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 2.7122318384466952,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 46,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed46__20260915T003249Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.436089979700343,
+      "mae_all_z": 1.6071928531606388,
+      "mse_ili_phys": 426098695.59785587,
+      "mae_ili_phys": 14229.176852069324,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 2.136905837294054,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 47,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed47__20260915T003349Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.406324221319198,
+      "mae_all_z": 1.6128970561701341,
+      "mse_ili_phys": 423765556.53382856,
+      "mae_ili_phys": 14279.678624020347,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 6.089509093547984,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 48,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed48__20260915T003449Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.410087352075375,
+      "mae_all_z": 1.614027242185322,
+      "mse_ili_phys": 424060523.25946623,
+      "mae_ili_phys": 14289.684660126892,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 1.8367936834650982,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 49,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed49__20260915T003549Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.38253514121903,
+      "mae_all_z": 1.5989158658029803,
+      "mse_ili_phys": 421900888.2905553,
+      "mae_ili_phys": 14155.897058414508,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 5.745498136582206,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 50,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed50__20260915T003649Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.368793933591034,
+      "mae_all_z": 1.6014830468133836,
+      "mse_ili_phys": 420823808.98278993,
+      "mae_ili_phys": 14178.62544076654,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 3.8343954322395364,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 48,
+      "seed": 51,
+      "run_id": "national-ili__nlinear__none__identity__L48__seed51__20260915T003749Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.663509785766433,
+      "mae_all_z": 1.6482020640003678,
+      "mse_ili_phys": 443924611.4029085,
+      "mae_ili_phys": 14592.249207490546,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 3.804112845451619,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 42,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed42__20260915T003850Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.649824844168679,
+      "mae_all_z": 1.6558478739075406,
+      "mse_ili_phys": 442851940.7234952,
+      "mae_ili_phys": 14659.940888816798,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 3.009668933921894,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 43,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed43__20260915T003950Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.574419599550778,
+      "mae_all_z": 1.6277711508767978,
+      "mse_ili_phys": 436941428.70951915,
+      "mae_ili_phys": 14411.365460344428,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 0.14533170881312543,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 44,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed44__20260915T004050Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.511911701282191,
+      "mae_all_z": 1.626102463393068,
+      "mse_ili_phys": 432041852.9142088,
+      "mae_ili_phys": 14396.59184336205,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 1.1239397781471947,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 45,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed45__20260915T004151Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.595599142665594,
+      "mae_all_z": 1.6468270896128103,
+      "mse_ili_phys": 438601549.7000856,
+      "mae_ili_phys": 14580.075953541935,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 0.973538843647622,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 46,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed46__20260915T004251Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.580984676611083,
+      "mae_all_z": 1.6332496339952802,
+      "mse_ili_phys": 437456021.4144997,
+      "mae_ili_phys": 14459.868859417362,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 1.1418301841043166,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 47,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed47__20260915T004351Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.622765214251196,
+      "mae_all_z": 1.6386501045255457,
+      "mse_ili_phys": 440730916.9120497,
+      "mae_ili_phys": 14507.681572009222,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.5,
+        "mean_pie_pct": 1.8198816528820607,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 48,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed48__20260915T004451Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.622582731243629,
+      "mae_all_z": 1.6513212527363184,
+      "mse_ili_phys": 440716612.4113338,
+      "mae_ili_phys": 14619.864718781215,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 5.767493060635055,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 49,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed49__20260915T004552Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.63435824290631,
+      "mae_all_z": 1.6554609665328204,
+      "mse_ili_phys": 441639615.4596608,
+      "mae_ili_phys": 14656.515387436679,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 1.8166907513815824,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 50,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed50__20260915T004652Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.628835001650154,
+      "mae_all_z": 1.652879969536467,
+      "mse_ili_phys": 441206686.996692,
+      "mae_ili_phys": 14633.66474152308,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 2,
+        "peak_hit_ratio": 1.0,
+        "mean_pte_weeks": 0.0,
+        "mean_pie_pct": 1.1530008248285584,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "champion",
+      "model_key": "nlinear",
+      "horizon": 60,
+      "seed": 51,
+      "run_id": "national-ili__nlinear__none__identity__L60__seed51__20260915T004751Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 5.064470103217218,
+      "mae_all_z": 1.6537898331078882,
+      "mse_ili_phys": 396969901.4683165,
+      "mae_ili_phys": 14641.720161298255,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 4.666666666666667,
+        "mean_pie_pct": 74.14448311392157,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 24,
+      "seed": 42,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260915T023509Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 4.1853560202655045,
+      "mae_all_z": 1.4584184461546168,
+      "mse_ili_phys": 328062033.02768356,
+      "mae_ili_phys": 12912.012362302004,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 5.333333333333333,
+        "mean_pie_pct": 54.91564875647529,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 24,
+      "seed": 43,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed43__20260915T023717Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 4368,
+      "mse_all_z": 7.780010178745447,
+      "mae_all_z": 1.74354817452687,
+      "mse_ili_phys": 609822904.3559695,
+      "mae_ili_phys": 15436.389746585608,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 1,
+        "peak_hit_ratio": 0.3333333333333333,
+        "mean_pte_weeks": 4.0,
+        "mean_pie_pct": 87.47171462281663,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 24,
+      "seed": 44,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed44__20260915T024018Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 6.517966783071166,
+      "mae_all_z": 1.6664762876544368,
+      "mse_ili_phys": 510899769.58765453,
+      "mae_ili_phys": 14754.038833358863,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 5.0,
+        "mean_pie_pct": 58.952693158251,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 36,
+      "seed": 42,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L36__seed42__20260915T024318Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 5.670115789930651,
+      "mae_all_z": 1.6646515904548365,
+      "mse_ili_phys": 444442412.1526468,
+      "mae_ili_phys": 14737.884024027906,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 5.666666666666667,
+        "mean_pie_pct": 99.99852697187805,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 36,
+      "seed": 43,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L36__seed43__20260915T024719Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 6120,
+      "mse_all_z": 6.406757385227209,
+      "mae_all_z": 1.6888278776268457,
+      "mse_ili_phys": 502182811.9773025,
+      "mae_ili_phys": 14951.927154341554,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 3,
+        "n_seasons_incomplete": 1,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 5.333333333333333,
+        "mean_pie_pct": 73.08128851471024,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 36,
+      "seed": 44,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L36__seed44__20260915T025020Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.3917405872886865,
+      "mae_all_z": 1.5975033513310597,
+      "mse_ili_phys": 422622442.3186631,
+      "mae_ili_phys": 14143.391482646959,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 2.5,
+        "mean_pie_pct": 31.53095639866693,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 48,
+      "seed": 42,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L48__seed42__20260915T025321Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 6.3647115376967855,
+      "mae_all_z": 1.591218269712052,
+      "mse_ili_phys": 498887120.575239,
+      "mae_ili_phys": 14087.746914956137,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 1,
+        "peak_hit_ratio": 0.5,
+        "mean_pte_weeks": 1.5,
+        "mean_pie_pct": 9.62911318878516,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 48,
+      "seed": 43,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L48__seed43__20260915T025621Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 7584,
+      "mse_all_z": 5.617660385777176,
+      "mae_all_z": 1.600993566913039,
+      "mse_ili_phys": 440330782.3297301,
+      "mae_ili_phys": 14174.291870310337,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 2.0,
+        "mean_pie_pct": 34.72091138105082,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 48,
+      "seed": 44,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L48__seed44__20260915T030052Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 5.86260671591403,
+      "mae_all_z": 1.6896704810178205,
+      "mse_ili_phys": 459530485.612095,
+      "mae_ili_phys": 14959.387131893907,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 0,
+        "peak_hit_ratio": 0.0,
+        "mean_pte_weeks": 2.5,
+        "mean_pie_pct": 35.352167907181624,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 60,
+      "seed": 42,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L60__seed42__20260915T030458Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 7.583657405261704,
+      "mae_all_z": 1.7398513490742404,
+      "mse_ili_phys": 594432121.629796,
+      "mae_ili_phys": 15403.660125258633,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 1,
+        "peak_hit_ratio": 0.5,
+        "mean_pte_weeks": 1.5,
+        "mean_pie_pct": 16.032822742262756,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 60,
+      "seed": 43,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L60__seed43__20260915T030754Z__nogit"
+    },
+    {
+      "split": "test",
+      "n_rows": 8760,
+      "mse_all_z": 6.4211359545218984,
+      "mae_all_z": 1.6548487457208607,
+      "mse_ili_phys": 503309851.49047273,
+      "mae_ili_phys": 14651.095165681185,
+      "peak": {
+        "n_seasons_total": 4,
+        "n_seasons_evaluable": 2,
+        "n_seasons_incomplete": 2,
+        "n_hits": 1,
+        "peak_hit_ratio": 0.5,
+        "mean_pte_weeks": 2.0,
+        "mean_pie_pct": 18.420687603162,
+        "thresholds": {
+          "PTE_max_weeks": 1,
+          "PIE_max_pct": 25.0
+        }
+      },
+      "role": "baseline",
+      "model_key": "gpt2_miflu",
+      "horizon": 60,
+      "seed": 44,
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L60__seed44__20260915T031155Z__nogit"
+    }
+  ]
+}

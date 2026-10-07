@@ -1,0 +1,44 @@
+{
+  "generated_utc": "2026-09-16T16:20:39Z",
+  "harness_version": "v3-prepilot-gate-g1g2-fixed",
+  "scope": "GATE_HARNESS_ONLY",
+  "frozen_runtime_modified": false,
+  "frozen_runtime": {
+    "source_version": "innov-v3.2-d5-asset-resolution",
+    "source_aggregate_sha256": "ebf202df304daf649a3aefb8c2965cfef601e52f413a16528b070db9a4b9ab53",
+    "bundle_sha256": "aa63880c12dfa51fb5dd3999b056d3d6e0de767dac40ec98ace6b03d91a67f93"
+  },
+  "defects": {
+    "G1": {
+      "where": "hpc_scripts/v3_prepilot_gate.py",
+      "symptom": "RuntimeError: train-only Prompt-as-Prefix statistics were not set",
+      "cause": "the harness never called the model's official set_train_statistics(...) before the forward pass",
+      "repair": "train_only_prompt_statistics() derives statistics exclusively from raw.iloc[: scaler.train_end]; the harness calls set_train_statistics(...) before forward and fails closed if the model rejects them.",
+      "provenance": {
+        "split": "frozen training split",
+        "contains_validation_or_test": false
+      }
+    },
+    "G2": {
+      "where": "hpc_scripts/v3_prepilot_gate.py",
+      "symptom": "CALF and TimeCMA ran on Qwen instead of their preregistered GPT-2 backbone",
+      "cause": "the harness passed model_id=Qwen to every LLM branch, and both constructors accept model_id, so broad **kwargs filtering let the override through",
+      "repair": "explicit per-model MODEL_ROUTING by declared contract, plus assert_no_qwen_leakage() which fails closed before any build."
+    }
+  },
+  "hashes": {
+    "pre_repair_py_sha256": "4377592be45e275c1bf7a5424face4980c0fae64c1f51f3fa1cd67bec215a13e",
+    "post_repair_py_sha256": "942804cc2b415a1c8ca02dd981d216ff658b991fadbd318eb36f3046fc025758",
+    "pre_repair_sh_sha256": "de0382f68c7d4aa240f19545a91dc8b2c0a4254c0cd4252cf51b746e2d6a8848",
+    "post_repair_sh_sha256": "de0382f68c7d4aa240f19545a91dc8b2c0a4254c0cd4252cf51b746e2d6a8848",
+    "diff_file": "results/v3/implementation/g1_g2_harness_repair.diff",
+    "diff_bytes": 8312
+  },
+  "scientific_behavior_classification": "BEHAVIOR_NEUTRAL_HARNESS_ONLY",
+  "static_tests": {
+    "targeted": 8,
+    "all_passed": true,
+    "full_suite": "40 passed, 1 skipped"
+  },
+  "status": "READY_FOR_FINAL_GATE"
+}

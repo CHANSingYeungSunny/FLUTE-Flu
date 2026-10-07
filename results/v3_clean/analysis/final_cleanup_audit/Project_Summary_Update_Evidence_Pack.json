@@ -1,0 +1,129 @@
+{
+  "document_id": "Project_Summary_Update_Evidence_Pack",
+  "generated_utc": "2026-09-20T06:10:00Z",
+  "target_document": "58324980_CHAN_Sing_Yeung_Project_Summary_and_Planning_Chart_202627A",
+  "target_present_in_workspace": false,
+  "instruction": "Do NOT overwrite the original. This pack provides versioned update content only.",
+  "status": {
+    "wave1_complete": true,
+    "accepted_rows": 580,
+    "deferred_controls_pending": 18,
+    "test_access": 0,
+    "holdout_access": 0,
+    "final_champion_frozen": false
+  },
+  "project_scope": "Empirical and mechanistic comparison of Non-LLM versus LLM-based forecasting architectures for influenza-like-illness (ILI) forecasting, under a pre-registered frozen selection rule on the national ILI dataset, with strict test/holdout isolation.",
+  "problem_statement": "It is unclear whether integrating frozen large language models into time-series forecasters yields accuracy that is (a) superior to lightweight linear models and (b) attributable to the text/LLM mechanism rather than to the underlying seasonality of ILI data.",
+  "research_question": "Across four Non-LLM and four LLM-based forecasting architectures, which performs best under the frozen selection rule, and does the LLM family as a whole reliably outperform the Non-LLM family?",
+  "objectives": [
+    "Run a pre-registered, seed-replicated (10 seeds x 4 horizons) benchmark of 8 architectures.",
+    "Identify best Non-LLM, best LLM, and overall Wave-1 validation champion under the frozen rule.",
+    "Ablate the LLM mechanism (LoRA, multimodal fusion, prompt components) to localize any text contribution.",
+    "Preserve strict test/holdout isolation and a quota-safe compact-checkpoint pipeline."
+  ],
+  "methodology": {
+    "dataset": "national ILI, seven variables, z-space (train-only normalization)",
+    "horizons": [24, 36, 48, 60],
+    "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+    "early_stopping_patience": 7,
+    "selection_rule": "rank by average_MSE_4L (mean of per-horizon mean MSE, lower better); key secondary average_MAE_4L; forbidden tie-breakers: peak-hit ratio, PTE/PIE, baseline-relative ratio, (r24+r60)/2",
+    "execution": "serial fail-stop controller, 580 rows accepted, 0 ledger FAIL events, test/holdout 0/0"
+  },
+  "models_compared": {
+    "non_llm": ["nlinear", "dlinear", "patchtst", "itransformer"],
+    "llm": ["gpt2_miflu", "qwen_time_llm", "calf_llm", "timecma_llm"],
+    "deterministic_references": ["seasonal_naive", "last_value_naive"],
+    "note_patchtst": "PatchTST-inspired reimplementation (no self-supervised pretraining, no RevIN, reduced capacity)"
+  },
+  "experimental_scale": {
+    "total_accepted": 580,
+    "primary": 320,
+    "baseline": 8,
+    "ablation": 240,
+    "negative_control": 12,
+    "deleted": 0,
+    "duplicated": 0
+  },
+  "milestones_completed": [
+    "Frozen protocol + selection rule recovered and verified (HPC_GUIDE SHA-256 verified).",
+    "580/580 durable packages reconciled; analysis dataset built (1 row/run).",
+    "Primary ranking, family comparison, horizon/seed stability, baselines, ablations, controls, efficiency computed."
+  ],
+  "best_wave1_validation_result": {
+    "best_non_llm": "nlinear",
+    "best_non_llm_mse": 1.0697672040053035,
+    "best_non_llm_ci95": [1.0676659523808025, 1.0718684556298044],
+    "best_llm": "gpt2_miflu",
+    "best_llm_mse": 0.7708721562796242,
+    "best_llm_ci95": [0.7200244390748666, 0.8217198734843819],
+    "overall_champion": "gpt2_miflu",
+    "runner_up": "nlinear",
+    "winner_vs_runner_paired_t": -13.3288594825976,
+    "winner_vs_runner_p": 3.1326018425874847e-07
+  },
+  "llm_vs_nonllm": {
+    "non_llm_group_mean": 1.1424084130530545,
+    "llm_group_mean": 1.242572007069319,
+    "paired_t": -11.150650706202088,
+    "p_value": 1.4353156617970728e-06,
+    "conclusion": "Non-LLM family significantly more accurate; LLM win is one model (gpt2_miflu), not the paradigm.",
+    "seasonal_naive_beats_gpt2_miflu_at": ["L24", "L36", "L48"]
+  },
+  "ablation_control": {
+    "ablations": [
+      {"component": "without_lora", "rel_delta_pct": 0.2608, "p": 0.9474},
+      {"component": "without_lora_and_multimodality", "rel_delta_pct": 0.9024, "p": 0.7662},
+      {"component": "without_multimodality", "rel_delta_pct": 1.9506, "p": 0.4735},
+      {"component": "without_task_instruction", "rel_delta_pct": 2.8197, "p": 0.3948},
+      {"component": "without_input_variable_description", "rel_delta_pct": 5.8049, "p": 0.0788},
+      {"component": "without_dataset_information", "rel_delta_pct": 12.8455, "p": 0.0036, "significant": true}
+    ],
+    "negative_controls": [
+      {"control": "zero_text", "mean_delta": -0.0629, "n_cells": 6},
+      {"control": "shuffled_text", "mean_delta": 0.0807, "n_cells": 6}
+    ],
+    "note": "negative controls exploratory (n=6 cells, L24/L60 x seeds 42-44)"
+  },
+  "deferred_controls": {
+    "count": 18,
+    "parent_binding": "BEST_VALIDATION_LLM_AFTER_SCREENING (gpt2_miflu)",
+    "status": "not run in Wave-1"
+  },
+  "test_holdout_stage": "Test and holdout sealed (0/0); final publication champion not frozen; final manuscript pending.",
+  "timeline": [
+    "Wave-2 deferred-control binding + execution",
+    "Freeze audit + final champion selection (post-deferred-controls)",
+    "Test/holdout evaluation only after freeze",
+    "Manuscript drafting and submission"
+  ],
+  "risks": [
+    {"risk": "LLM superiority over-claimed", "mitigation": "report family-level result + seasonal_naive honestly"},
+    {"risk": "gpt2_miflu seed instability (SD 0.071)", "mitigation": "report seed SD + 95% CI; ordering robust (non-overlapping CIs)"},
+    {"risk": "PTE/PIE (peak metrics)", "mitigation": "computed from reconstructed target week; secondary metric, never a tie-breaker"},
+    {"risk": "patchtst fidelity (no pretraining/RevIN)", "mitigation": "carry 'PatchTST-inspired' caveat"},
+    {"risk": "LLM cost (409x params, 28x time vs nlinear)", "mitigation": "present cost table transparently"}
+  ],
+  "deliverables": [
+    "Supervisor report (EN/ZH, DOCX/PDF)",
+    "Tutor brief (EN/ZH)",
+    "Evidence pack + change map",
+    "Updated Project Summary draft (DOCX/PDF)",
+    "QA + artifact manifests",
+    "Source tables/figures"
+  ],
+  "contributions": [
+    "Empirical architecture comparison — pre-registered, seed-replicated (10 seeds x 4 horizons), test-isolated benchmark of 8 Non-LLM/LLM architectures under a frozen selection rule.",
+    "Mechanism / ablation evidence — localization of the LLM text contribution to the dataset-information component, with LoRA and multimodal fusion shown to be statistically inert.",
+    "Reproducible quota-safe framework — fail-closed, compact-checkpoint pipeline (580/580 accepted, 0 fail events, test/holdout 0/0) with bit-exact checkpoint compaction."
+  ],
+  "source_files": {
+    "frozen_protocol": "results/v3_clean/analysis/frozen_analysis_protocol.json",
+    "model_ranking": "results/v3_clean/analysis/model_ranking.csv",
+    "primary_summary": "results/v3_clean/analysis/primary_summary_statistics.csv",
+    "selection_outcome": "results/v3_clean/analysis/selection_outcome.json",
+    "ablation_effects": "results/v3_clean/analysis/ablation_effects.csv",
+    "baseline_comparison": "results/v3_clean/analysis/baseline_comparison.csv",
+    "control_effects": "results/v3_clean/analysis/control_effects_summary.csv",
+    "resource_storage": "results/v3_clean/analysis/resource_storage.csv"
+  }
+}

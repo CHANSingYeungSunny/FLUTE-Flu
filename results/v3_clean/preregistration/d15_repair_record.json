@@ -1,0 +1,37 @@
+{
+  "generated_utc": "2026-09-19T09:55:14Z",
+  "defect": "D15_DETERMINISTIC_BASELINE_NO_CHECKPOINT_FINALIZATION",
+  "classification": "BEHAVIOR_NEUTRAL_DETERMINISTIC_BASELINE_NO_CHECKPOINT_FINALIZATION_FIX",
+  "previous_version": "innov-v3.18-published-path-verification-hardening",
+  "science_impact": "NONE (no model, loss, optimizer, early stopping, checkpoint selection, data, split, scaler, prompt statistics, metric, horizon, seed, matrix, ablation/control semantics or endpoint hierarchy touched)",
+  "files": [
+    {
+      "path": "scripts/innovation/storage_verification.py",
+      "status": "modified",
+      "pre_sha256": "4032a0d5c0b590cf721f8b02f0a7dc80d95a281347bfcba8cfbe61a5600e119e",
+      "post_sha256": "2239a5f4ab22c7ece2067939428d206625ee01bebe7d1c62d0206df326eae10e",
+      "diff_bytes": 11432
+    },
+    {
+      "path": "scripts/innovation/clean_gate.py",
+      "status": "modified",
+      "pre_sha256": "39aa14e3ce7b7807b731206c28509e0667fd4ef0ee5861c6dd37469168ffa68d",
+      "post_sha256": "ea24df3ba433813371d995e825220ae877a051763944d6db1fcec969b9ffaa7c",
+      "diff_bytes": 2162
+    },
+    {
+      "path": "scripts/innovation/baseline_finalize.py",
+      "status": "new",
+      "pre_sha256": null,
+      "post_sha256": "2967ec5192bf6f33fa41bb9b978d5ae7cc7ac8c917663784292728957ac9e586",
+      "diff_bytes": 10338
+    },
+    {
+      "path": "scripts/innovation/finalize_row.py",
+      "status": "new",
+      "pre_sha256": null,
+      "post_sha256": "66f11d3428f75ce7e9f4ec1e9dbd001f546dd8350af99198f15eda09b5881ef0",
+      "diff_bytes": 16676
+    }
+  ]
+}

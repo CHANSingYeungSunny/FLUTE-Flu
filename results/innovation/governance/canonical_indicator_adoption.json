@@ -1,0 +1,56 @@
+{
+  "repository_relative_path": "scripts/compute_miflu_indicators.py",
+  "sha256": "bf72d37ce9eaa21cb052f18568764d913163caf237ba9ce0cf76f15d98f46c0f",
+  "file_size": 24398,
+  "adoption_time": "2026-09-14T19:22:00Z",
+  "scientific_protocol_version": "innov-v2.0",
+  "implementation_source_version_before_adoption": "innov-v2.2",
+  "implementation_source_version_after_adoption": "innov-v2.3",
+  "reason_for_adoption": "The pre-incident remote state of this file cannot be proven, and no trusted pre-incident copy survives on HPC. Rather than leave the metric implementation ambiguous forever, the CURRENT file is adopted PROSPECTIVELY by exact hash: from innov-v2.3 onwards every innovation metric is produced by this exact bytes-level content.",
+  "historical_integrity_status": "UNRESOLVED",
+  "historical_integrity_statement": "The pre-incident byte identity of scripts/compute_miflu_indicators.py could not be established.",
+  "reference_unavailable_explanation": "The surviving pre-incident __pycache__ artefact was compiled from a 24236-byte revision while the current file is 24398 bytes, so it is stale and cannot certify the pre-incident content; the local git HEAD blob is an earlier ~13.4 kB revision; no dated pre-incident copy of the 24398-byte revision exists anywhere on HPC; and no output of this script dated after 2026-09-03 exists to reveal which revision was in use.",
+  "no_preincident_byte_identity_claim": true,
+  "matches_local_working_copy": true,
+  "matches_innov_v2_2_frozen_copy": true,
+  "innov_v2_2_frozen_sha256": "bf72d37ce9eaa21cb052f18568764d913163caf237ba9ce0cf76f15d98f46c0f",
+  "canonical_copy_path": "results/innovation/governance/canonical_indicator_script.py",
+  "canonical_copy_sha256": "bf72d37ce9eaa21cb052f18568764d913163caf237ba9ce0cf76f15d98f46c0f",
+  "canonical_copy_verified": true,
+  "declaration": "The adopted script is the canonical metric implementation from innov-v2.3 onwards. No claim is made that it is byte-identical to the pre-incident remote working copy.",
+  "prohibited_interpretation": "It must not be represented as proven identical to the pre-incident remote working copy, and size / mtime / pyc-header / bytecode equality must not be cited as proof of byte identity.",
+  "provided_functions": [
+    "detect_peaks(values, prominence_frac=0.08)",
+    "stl_strengths(values, period=52)",
+    "compute_peak_indicators(gt, pred, match_tol=2) -> peak_timing_error_weeks (PTE), mean_peak_magnitude_rel_err_pct (PIE), peak_hit_count, n_true_peaks, n_hit, n_missed",
+    "aggregate_lead_time(df, mode='fixed_step', step=h) -> fixed-step aggregation (no mean-over-lead, no cross-horizon mixing)",
+    "compute_trend_indicators(gt, pred)",
+    "verdicts(peak_agg, thr)"
+  ],
+  "provided_metrics": [
+    "MSE",
+    "MAE",
+    "PTE",
+    "PIE",
+    "peak_hit_count",
+    "n_true_peaks",
+    "n_hit",
+    "n_missed"
+  ],
+  "peak_criterion": {
+    "criterion": "PTE <= 1 week AND PIE <= 25%",
+    "pte_max_weeks": 1.0,
+    "pie_max_pct": 25.0,
+    "note": "the ONLY peak criterion implemented or reported"
+  },
+  "approved_use_scope": [
+    "all innovation runs from innov-v2.3 onwards",
+    "validation-phase metrics (MSE/MAE/PTE/PIE)",
+    "the future frozen-winner test evaluation"
+  ],
+  "not_approved": [
+    "any statement about pre-incident byte identity",
+    "any alternative peak threshold"
+  ],
+  "modification_policy": "the scientific logic may only change under a separately documented metric defect"
+}

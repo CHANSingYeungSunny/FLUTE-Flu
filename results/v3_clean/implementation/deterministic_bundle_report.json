@@ -1,0 +1,19 @@
+{
+  "generated_utc": "2026-09-19T10:41:53Z",
+  "version": "innov-v3.19-baseline-no-checkpoint-finalization",
+  "bundle_a_sha256": "0e0b9275fe092b0b4bf8846bab6d762642713a9637d1cea1c25697a12cfee9ca",
+  "bundle_b_sha256": "0e0b9275fe092b0b4bf8846bab6d762642713a9637d1cea1c25697a12cfee9ca",
+  "sha256_identical": true,
+  "byte_identical": true,
+  "member_list_identical": true,
+  "n_members": 766,
+  "source_aggregate_sha256": "ae75b958b750e97c1ec9c0317ac80bf6fdc94ef979cfa280570540b0d889efaa",
+  "deployment_aggregate_sha256": "05581a557158c0c19bb8e6caa1a5fb35fad889b774195616632cf62d9f4bcff6",
+  "excluded": [
+    "v3_superseded_archive",
+    "test_evaluations",
+    "test_predictions",
+    "test_metrics",
+    "holdout"
+  ]
+}

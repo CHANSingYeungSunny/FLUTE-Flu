@@ -1,0 +1,26 @@
+{
+  "generated_utc": "2026-09-16T21:06:49Z",
+  "frozen_before_reading_aggregated_results": true,
+  "reference_baseline": "last_value_naive",
+  "reference_frozen": true,
+  "step_1": "per model and horizon, mean full-horizon normalized (z-space) validation MSE over seeds 42/43/44",
+  "step_2": "normalize each model's mean MSE at that horizon by the frozen reference baseline `last_value_naive` on the same horizon",
+  "step_3": "Screening score = equal-weight mean of the two normalized horizon scores",
+  "normalized_horizon_score_formula": "r_h = mean_seed_MSE(model, h) / mean_MSE(reference, h); lower is better",
+  "screening_score_formula": "S = (r_24 + r_60) / 2; lower is better",
+  "step_4": "rank within Group A and Group B separately, ascending S",
+  "step_5": "retain at least the top two from each group for Full Validation",
+  "tie_window": 0.01,
+  "tie_breakers": [
+    "lower mean full-horizon validation MAE (z-space), averaged over horizons and seeds",
+    "better step-0 ILITOTAL z-space MSE, averaged over horizons and seeds",
+    "better literature peak criterion performance (higher mean peak_hit_ratio, then more PTE<=1w & PIE<=25% passes)",
+    "fewer trainable parameters",
+    "lower GPU-hours"
+  ],
+  "tie_remaining_action": "advance both, or stop for a budget amendment; never use Test evidence",
+  "never_eliminate_an_entire_architecture_group": true,
+  "pilot_metrics_may_not_enter": true,
+  "no_test_evidence": true,
+  "amendment_policy": "the rule is immutable after aggregated results are first read; any change requires a documented budget amendment and invalidates the Screening outcome"
+}

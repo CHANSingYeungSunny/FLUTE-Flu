@@ -1,0 +1,83 @@
+{
+  "job": "607887",
+  "host": "gpu-v100s-01",
+  "torch": "2.5.1",
+  "peft": "0.17.1",
+  "cuda_available": false,
+  "T19_lora_tensors": 12,
+  "T19_lora_params": 73728,
+  "T19_c_attn_lora_tensors": 12,
+  "T19_example_names": [
+    "llmmodel.base_model.model.h.0.attn.c_attn.lora_A.default.weight",
+    "llmmodel.base_model.model.h.0.attn.c_attn.lora_B.default.weight",
+    "llmmodel.base_model.model.h.1.attn.c_attn.lora_A.default.weight",
+    "llmmodel.base_model.model.h.1.attn.c_attn.lora_B.default.weight",
+    "llmmodel.base_model.model.h.2.attn.c_attn.lora_A.default.weight",
+    "llmmodel.base_model.model.h.2.attn.c_attn.lora_B.default.weight"
+  ],
+  "T19_PASS": true,
+  "T20_non_lora_trainable": [
+    "in_layer.bias",
+    "in_layer.weight",
+    "llmmodel.base_model.model.h.0.ln_1.bias",
+    "llmmodel.base_model.model.h.0.ln_1.weight",
+    "llmmodel.base_model.model.h.0.ln_2.bias",
+    "llmmodel.base_model.model.h.0.ln_2.weight",
+    "llmmodel.base_model.model.h.1.ln_1.bias",
+    "llmmodel.base_model.model.h.1.ln_1.weight",
+    "llmmodel.base_model.model.h.1.ln_2.bias",
+    "llmmodel.base_model.model.h.1.ln_2.weight",
+    "llmmodel.base_model.model.h.2.ln_1.bias",
+    "llmmodel.base_model.model.h.2.ln_1.weight",
+    "llmmodel.base_model.model.h.2.ln_2.bias",
+    "llmmodel.base_model.model.h.2.ln_2.weight",
+    "llmmodel.base_model.model.h.3.ln_1.bias",
+    "llmmodel.base_model.model.h.3.ln_1.weight",
+    "llmmodel.base_model.model.h.3.ln_2.bias",
+    "llmmodel.base_model.model.h.3.ln_2.weight",
+    "llmmodel.base_model.model.h.4.ln_1.bias",
+    "llmmodel.base_model.model.h.4.ln_1.weight"
+  ],
+  "T20_non_lora_trainable_count": 31,
+  "T20_PASS": true,
+  "frozen_tensor_count": 49,
+  "frozen_examples": [
+    "llmmodel.base_model.model.wte.weight",
+    "llmmodel.base_model.model.h.0.attn.c_attn.base_layer.weight",
+    "llmmodel.base_model.model.h.0.attn.c_attn.base_layer.bias",
+    "llmmodel.base_model.model.h.0.attn.c_proj.weight",
+    "llmmodel.base_model.model.h.0.attn.c_proj.bias",
+    "llmmodel.base_model.model.h.0.mlp.c_fc.weight"
+  ],
+  "freeze_report": {
+    "kept_trainable_in_backbone": 39,
+    "frozen_tensors_in_backbone": 49,
+    "examples_kept": [
+      "base_model.model.wpe.weight",
+      "base_model.model.h.0.ln_1.weight",
+      "base_model.model.h.0.ln_1.bias",
+      "base_model.model.h.0.attn.c_attn.lora_A.default.weight",
+      "base_model.model.h.0.attn.c_attn.lora_B.default.weight",
+      "base_model.model.h.0.ln_2.weight"
+    ],
+    "note": "the released loop only ever set requires_grad=True and never False, leaving 100% trainable"
+  },
+  "total_parameters": 82779672,
+  "trainable_parameters": 1673496,
+  "trainable_fraction": 0.020216267588013637,
+  "text_influence_PEFT1": {
+    "max_abs_prediction_difference": 0.04626822471618652,
+    "text_embedding_grad_norm": 0.001157740829512477,
+    "total_grad_norm": 8.241551399230957,
+    "verdict": "text_active"
+  },
+  "T29_max_abs_reload_diff": 0.0,
+  "T29_checkpoint_bytes": 331158882,
+  "T29_PASS": true,
+  "peft0_control": {
+    "trainable": 1599768,
+    "lora_tensors": 0
+  },
+  "peft_flag_changes_architecture": true,
+  "T19_T20_T29_ALL_PASS": true
+}

@@ -1,0 +1,6 @@
+artifact,location,defect,old_value,corrected_value,does_it_change_a_ranking,does_it_change_the_historical_report,required_action,overwritten
+scripts/train_naive_966.py,scripts/,seasonal naive reads 8 future target rows at L=60,L60 2.1035,L60 1.9174,no (still 5th of 5),NO - the historical report uses the safe path,do NOT edit; superseded by naive_leakage_safe.py,NO
+benchmark_results_average_4L.csv,official_repo_reproduction_20261006/,seasonal_naive row carries the leaky L60 value,2.1035 / mean 2.26880,1.9174 / mean 2.22229,no,NO,additive correction note,NO
+recovery/stage6/results_report_zh.md,recovery/stage6/,section 0 quotes the inverted win count 5/12,5/12,7/12,no,NO,corrected in SCORING_CORRECTION_NOTE.md,NO
+HYPERPARAMETER_PROVENANCE.md + _V2,official_repo_reproduction_20261006/,states the paper discloses no epochs or learning rate,UNRECOVERED,PAPER_EXPLICIT via Table IV (20 / 0.0005 / 16 / 104),no,NO,superseded by R1_HYPERPARAMETER_EVIDENCE.csv,NO
+the original Chinese DOCX,results/v3_clean/analysis/reports/,"uses the safe seasonal path, so NO seasonal defect; but it depends on the old MIFlu",n/a,n/a,n/a,the MIFlu dependency is handled by the DOCX map,produce a NEW replacement edition; never edit the original,NO

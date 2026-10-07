@@ -4,6 +4,13 @@
 > **日期：** 2026-08-17（v3）
 > **框架来源：** session summary §7 (Tutor's Original Questions) 逐字原文，10 条顺序与措辞直接采用。
 > **口径：** 大白话优先，数学定义为辅；假设对方完全不懂该领域。
+>
+> **⚠️ 2026-09 指标口径变更（本文为旧草稿，请注意）：** 补充诊断指标已由"四大指标"
+> （Peak Hit / Timing / Peak Intensity / Direction）精简为 **PTE（峰值时间误差）** 与
+> **PIE（峰值强度误差）** 两项；`peak_hit_rate`（峰值命中率）与 `directional_accuracy`
+> （方向准确率）已**彻底移除**。因此正文中"Peak Hit = 0.50 (2/4)"应理解为**匹配峰计数
+> 2/4**——它是 PTE/PIE 的**样本量限定语**，不再是单独报告的指标。最终口径以
+> `导师五大疑问_零基础解答报告_最终版.md` 与 `docs/ILI_FOUR_INDICATORS.md` 为准。
 
 ---
 

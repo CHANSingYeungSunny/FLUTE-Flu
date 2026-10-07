@@ -1,0 +1,12 @@
+{
+  "source_version": "innov-v3.1-phase1-remediated",
+  "scientific_protocol": "original GPT-2/MIFlu National-Illness; ILITOTAL; train_end=717; val_end=819; test_end=1025; L=24/36/48/60; fixed steps 0-3",
+  "source_snapshot_manifest": "results/innovation/source_snapshot_manifest.json",
+  "source_snapshot_aggregate_sha256": "6d6d37a75e0dd7a6137a194a8d12347d207fa4a013eb5b65136068bc2f358544",
+  "deterministic_bundle_sha256": "775c6c22c4af952e75628ac315f2cc35c8e7e6e6d86b5ec02831c3b0061f1282",
+  "deterministic_bundle_byte_identical": true,
+  "hpc_guide_sha256": "1cd21a655907d137914c695bf04637d8da2f09358a0732c961e739dd8e74c167",
+  "phase1_preflight_incident_classification": "BEHAVIOR_NEUTRAL_PRE_PILOT_PROCESS_VIOLATION",
+  "phase1_started": false,
+  "slurm_submissions": 0
+}

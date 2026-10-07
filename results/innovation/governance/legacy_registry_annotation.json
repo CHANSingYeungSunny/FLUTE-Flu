@@ -1,0 +1,122 @@
+{
+  "note": "annotation only; legacy registry.csv rows are NOT modified",
+  "created_utc": "2026-09-14T19:26:00Z",
+  "legacy_file": "results/innovation/registry.csv",
+  "legacy_rows": 14,
+  "rewritten": false,
+  "policy": "select_best_model may read legacy records only to exclude them; missing eligibility fields are never inferred as true",
+  "runs": [
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T110544Z__1f6563f",
+      "status": "failed",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row: status != ok"
+    },
+    {
+      "run_id": "national-ili__nlinear__none__identity__L24__seed42__20260914T110553Z__1f6563f",
+      "status": "failed",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row: status != ok"
+    },
+    {
+      "run_id": "national-ili__patchtst__none__identity__L24__seed42__20260914T110553Z__1f6563f",
+      "status": "failed",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row: status != ok"
+    },
+    {
+      "run_id": "national-ili__itransformer__none__identity__L24__seed42__20260914T110553Z__1f6563f",
+      "status": "failed",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row: status != ok"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__tfidf-svd__concat-projection__L24__seed42__20260914T110554Z__1f6563f",
+      "status": "failed",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row: status != ok"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T110623Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__nlinear__none__identity__L24__seed42__20260914T110634Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__patchtst__none__identity__L24__seed42__20260914T110637Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__itransformer__none__identity__L24__seed42__20260914T110641Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__tfidf-svd__concat-projection__L24__seed42__20260914T110644Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__gpt2__film-gate__L24__seed42__20260914T110702Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__fusion-forecaster__gpt2__cross-attention__L24__seed42__20260914T110728Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260914T110754Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    },
+    {
+      "run_id": "national-ili__dlinear__none__identity__L24__seed42__20260914T181420Z__1f6563f",
+      "status": "ok",
+      "selection_eligible": false,
+      "paper_result_eligible": false,
+      "test_access_allowed": false,
+      "reason": "legacy row predating registry schema v2 / infrastructure-only stage"
+    }
+  ]
+}

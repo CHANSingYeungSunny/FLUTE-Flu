@@ -1,0 +1,72 @@
+run_id: "national-ili__dlinear__none__identity__L24__seed42__20260914T205322Z__1f6563f"
+dataset: "national_ili"
+protocol_version: "innov-v2.0"
+experiment_stage: "smoke"
+selection_eligible: false
+device_requested: "auto"
+device_actual: "cuda"
+device_name: "NVIDIA GeForce GTX 1650 with Max-Q Design"
+plan_sha256: "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+plan_sha256_expected: "AA4AB1C8842E893A4690787E17ADD0CA193C86825FFF9FD89F46952C7F9E7961"
+git_sha: "1f6563f"
+config:
+  T: 104
+  L_list:
+    - 24
+    - 36
+    - 48
+    - 60
+  N: 7
+  Lp: 24
+  S: 2
+  K: 6
+  lora_r: 4
+  lora_alpha: 4.0
+  D: 768
+  attn_heads: 8
+  batch_size: 16
+  learning_rate: 0.0005
+  epochs: 1
+  num_repetitions: 10
+  seed: 42
+  model: "dlinear"
+  text_encoder: "none"
+  fusion: "identity"
+  horizon: 24
+  L: 24
+  patience: 7
+  device: "cuda"
+components:
+  backbone: "dlinear"
+  text_encoder: "none"
+  fusion: "identity"
+  encoder_available: true
+  encoder_context_dim: null
+limits:
+  train: 32
+  val: 16
+trainable_parameters: 5040
+total_parameters: 5040
+architecture_report:
+  name: "dlinear"
+  display_name: "DLinear (Zeng et al., AAAI 2023)"
+  published: "DLinear (Zeng et al., AAAI 2023)"
+  fidelity: "REFERENCE_FAITHFUL"
+  kernel_size: 25
+  individual: false
+  evidence:
+    - "backbones/dlinear.py:26-37 moving-average decomposition (AvgPool1d stride 1, replication padding)"
+    - "backbones/dlinear.py:58-61 seasonal = x - trend"
+    - "backbones/dlinear.py:47-56 Linear(T->L) applied along the TIME axis, weights shared across channels (individual=False default)"
+    - "backbones/dlinear.py:43 kernel_size=25 (the paper default)"
+  deviations:
+  notes: "moving-average decomposition + shared Linear(T->L) over the time axis; weights shared across channels. No material deviation."
+purpose: "runtime_metadata_contract_verification"
+paper_result_eligible: false
+test_access_allowed: false
+implementation_source_version: "innov-v2.4"
+source_snapshot_sha256: "6adbe06ab35fc38cde5b95086cda79aa05167b4153b22e3a4f252cf1c31d77e5"
+authoritative_plan_sha256: "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
+model_key: "dlinear"
+display_name: "DLinear"
+architecture_fidelity: "REFERENCE_FAITHFUL"

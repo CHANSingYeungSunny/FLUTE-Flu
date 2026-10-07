@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "n_rows": 4368,
+  "mse_all_z": 4.272405022822755,
+  "mae_all_z": 1.3903786747519358,
+  "mse_ili_phys": 334885223.88912195,
+  "mae_ili_phys": 12309.626685844672,
+  "peak": {
+    "n_seasons_total": 4,
+    "n_seasons_evaluable": 3,
+    "n_seasons_incomplete": 1,
+    "n_hits": 2,
+    "peak_hit_ratio": 0.6666666666666666,
+    "mean_pte_weeks": 1.3333333333333333,
+    "mean_pie_pct": 7.674696780105857,
+    "thresholds": {
+      "PTE_max_weeks": 1,
+      "PIE_max_pct": 25.0
+    }
+  },
+  "role": "champion",
+  "model_key": "nlinear",
+  "horizon": 24,
+  "seed": 50,
+  "run_id": "national-ili__nlinear__none__identity__L24__seed50__20260915T001608Z__nogit"
+}

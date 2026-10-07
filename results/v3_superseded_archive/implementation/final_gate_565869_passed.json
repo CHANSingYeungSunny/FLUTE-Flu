@@ -1,0 +1,19 @@
+{
+  "generated_utc": "2026-09-16T17:01:14Z",
+  "gate_kind": "PREPILOT_GATE",
+  "create_only": true,
+  "note": "New file. The earlier Gate records (563486, 563498, 565800, 565844, 565860) are preserved untouched, including gate_565860/ output copies.",
+  "job_id": "565869",
+  "name": "v3_prepilot_gate",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:00:16",
+  "node": "gpu-a100-03",
+  "models_ok": "8/8",
+  "partition": "stingy",
+  "excluded_node": "gpu-a100-05",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_3",
+  "source_aggregate_sha256": "94886a2980b7717e2db938bc851550f2e30d0b64a403eef374d8908a87155f2b",
+  "bundle_sha256": "c0fff202849c03db57fb0f729e3128516b93dac66fa68deb78f9e52bb535f66f",
+  "verdict": "PASSED_8_OF_8"
+}

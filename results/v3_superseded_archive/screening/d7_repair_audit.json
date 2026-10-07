@@ -1,0 +1,40 @@
+{
+  "generated_utc": "2026-09-16T21:31:17Z",
+  "defect": "D7",
+  "classification": "BEHAVIOR_NEUTRAL_OPTIONAL_METADATA_SERIALIZATION_FIX",
+  "repair": {
+    "added": "_null_safe_context_dim(encoder) in screening_artifacts.py",
+    "behavior": "None -> JSON null; int -> int; integral float -> int; bool / str / other -> TypeError (fail closed)",
+    "context_dim_calls": "at most once",
+    "substitutes_zero_or_minus_one": false,
+    "touches_model_data_loss_metric_checkpoint": false,
+    "encoder_selection_changed": false,
+    "text_encoder_none_still_distinct_from_zero_dim": true,
+    "gpt2_context_dim_preserved": 768
+  },
+  "files_changed": {
+    "scripts/innovation/screening_artifacts.py": {
+      "pre": "4ae1c1e9cdf34137a379ddc95d4e09210368e37da66d8125e819ce0e227855ad",
+      "post": "5c10652207e87acbd2934173bfd4747b724f0a3cb99d2064e6100ed508e83330",
+      "changed": true
+    },
+    "scripts/innovation/paths.py": {
+      "pre": "bb780e116d5c3b9b296a4f70d4c9aa8600628df5caa0aad82211a9ec4e35933b",
+      "post": "bb780e116d5c3b9b296a4f70d4c9aa8600628df5caa0aad82211a9ec4e35933b",
+      "changed": false
+    },
+    "scripts/v3/build_screening_specs.py": {
+      "pre": "add8db590ab2b04e35492d4aedb0841ddd24dafb3bb11307398b1df8f7fea20d",
+      "post": "add8db590ab2b04e35492d4aedb0841ddd24dafb3bb11307398b1df8f7fea20d",
+      "changed": false
+    }
+  },
+  "runtime_version_before": "innov-v3.4-screening-artifact-contract",
+  "runtime_version_after": "innov-v3.5-context-dim-null-safe",
+  "source_file_count_before": 90,
+  "source_file_count_after": 90,
+  "source_aggregate_before": "8597d08e603048d4f86642ba4b1fb56689c54c64a630f72e2db313aec7603c91",
+  "source_aggregate_after": "1856817016d84f75fce90073da51fe38414f1f59be98698490c5b52ba2bd39e3",
+  "v3_4_preserved": true,
+  "v3_4_deployment_root_preserved": "/scratch/sychan552/innovation_deploy_root_v3_4"
+}

@@ -1,0 +1,43 @@
+{
+  "generated": "2026-09-21",
+  "purpose": "Compare the plotting semantics of the reference Q1 figure (fig_q1_step_sweep step0) against the final Test/Holdout prediction figures, to answer whether 'seed-mean lead-1' equals 'step0' and whether the curves are fixed-origin full-horizon forecasts or rolling-origin fixed-lead concatenations.",
+  "reference_figure": {
+    "file": "results/ili/figures/fig_q1_step_sweep_L24_L60_step0.png",
+    "generator": "scripts/q1_step_sweep.py",
+    "aggregation": "aggregate_lead_time(mode='fixed_step', step=0)",
+    "step0_meaning": "keep only forecast step == 0 (lead_weeks == 1, i.e. 1-week-ahead) from every test window, then groupby(abs_week).mean()",
+    "lead_mapping": "step h == (h+1)-week ahead, so step 0 == lead-1 == 1-week-ahead",
+    "curve_type": "rolling-origin fixed-lead (lead-1) concatenation",
+    "x_axis": "week_start_date (calendar week)",
+    "y_axis": "ILITOTAL physical (patient count)",
+    "line_style": "ground truth solid black; prediction dashed red",
+    "multiplicity_resolution": "at fixed step each target week is predicted by exactly ONE origin; groupby mean resolves the remaining per-seed repetition"
+  },
+  "final_test_figures": {
+    "generator": "scripts/v3_clean/final_test_figures.py",
+    "aggregation": "load_seed_mean_curves (seed-mean over seeds 42..51) then lead1_curve (filter lead_weeks == 1)",
+    "curve_type": "rolling-origin fixed-lead (lead-1) concatenation",
+    "x_axis": "week_start_date via cdc_calendar.load_week_calendar (MMWR Sunday anchor)",
+    "y_axis": "ILITOTAL physical (inverse-transformed original scale)",
+    "line_style": "ground truth solid blue (#1f77b4); prediction dashed red (#d62728); observed/predicted peak markers",
+    "scope": "Test target weeks the horizon reaches at lead-1: abs_week [820, 1025-L]",
+    "multiplicity_resolution": "test_predictions.csv carries 7 variables per (target_date, lead); filtered to variable_index == 4 (ILITOTAL); seed-mean over 10 seeds; at fixed lead each target week has exactly one forecast origin"
+  },
+  "comparison": {
+    "seed_mean_lead1_equals_step0": true,
+    "explanation": "step 0 in fixed_step aggregation IS lead_weeks 1 (1-week-ahead); the final figures' 'seed-mean lead-1' filter is the same slice. Both then average over seeds only (a fixed lead leaves exactly one origin per target week).",
+    "curve_type_identical": true,
+    "explanation": "Both are ROLLING-ORIGIN fixed-lead (lead-1) concatenations: each plotted point is the 1-week-ahead forecast from a distinct origin (origin = target_week - 104), NOT a single origin's full-L-step trajectory.",
+    "x_axis_consistent": true,
+    "explanation": "Both use calendar week (week_start_date) on x; the final figures resolve it via the authoritative cdc_calendar MMWR mapping (fixes the old ~19-week drift).",
+    "y_axis_consistent": true,
+    "explanation": "Both plot ILITOTAL in physical (original) units, not z-space.",
+    "differences": {
+      "data_source": "reference reads data/predictions_miflu_L{L}_paper_protocol.csv (earlier HPC paper-protocol export); final reads results/v3_clean/test_eval/results/*/predictions/test_predictions.csv (frozen one-time Test runs)",
+      "models": "reference is MIFlu-only; final covers nlinear / gpt2_miflu / seasonal_naive",
+      "color_scheme": "reference black/red; final blue/red with peak markers",
+      "semantic_effect": "none — data source and color differ, but the plotted quantity (lead-1 seed-mean ILITOTAL over test target weeks) is identical"
+    }
+  },
+  "conclusion": "Figure semantics are CONSISTENT. 'seed-mean lead-1' equals step0; both are rolling-origin lead-1 concatenations, not single-origin full-horizon forecasts. No figure regeneration required for semantic correctness."
+}

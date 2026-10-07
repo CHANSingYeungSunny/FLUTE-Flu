@@ -1,0 +1,172 @@
+{
+  "generated_utc": "2026-09-18T08:32:37Z",
+  "version": "innov-v3.12-gate-validator-schema-alignment",
+  "gate_job_id": "570846",
+  "gate_all_passed": true,
+  "n_checks": 31,
+  "n_passed": 31,
+  "all_passed": true,
+  "controller_launched": false,
+  "controller_is_pure_bash": true,
+  "n_wave1_rows": 580,
+  "n_deferred_rows": 18,
+  "n_row_scripts": 580,
+  "bash_available": false,
+  "checks": [
+    {
+      "id": "wave1_unique_run_keys",
+      "passed": true,
+      "detail": "580 keys, 580 unique"
+    },
+    {
+      "id": "zero_deferred_rows_in_wave1",
+      "passed": true,
+      "detail": "0"
+    },
+    {
+      "id": "zero_duplicates",
+      "passed": true,
+      "detail": "0"
+    },
+    {
+      "id": "zero_missing_scripts",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "zero_extra_scripts",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "zero_crlf_scripts",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "all_scripts_pass_bash_n",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "order_is_monotonic",
+      "passed": true,
+      "detail": "orders 1..580"
+    },
+    {
+      "id": "order_file_is_lf_only",
+      "passed": true,
+      "detail": "no CR bytes in order/controller/launcher"
+    },
+    {
+      "id": "deferred_count_18",
+      "passed": true,
+      "detail": "18"
+    },
+    {
+      "id": "matrix_total_598",
+      "passed": true,
+      "detail": "598"
+    },
+    {
+      "id": "source_identity_is_v3_12",
+      "passed": true,
+      "detail": "innov-v3.12-gate-validator-schema-alignment"
+    },
+    {
+      "id": "specs_carry_v3_12_identity",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_has_single_instance_lock",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_requires_authorization_token",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_unsets_token_before_any_sbatch",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_enforces_one_active_job",
+      "passed": true,
+      "detail": "counts numeric job ids only"
+    },
+    {
+      "id": "active_job_count_ignores_scheduler_banner",
+      "passed": true,
+      "detail": "the 'Last update in N seconds ago' banner is not counted"
+    },
+    {
+      "id": "controller_exports_row_script_contract",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "jobroot_matches_runner_default_out_root",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_records_job_id_immediately",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_has_append_only_ledger",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_is_resumable",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_fail_stops",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_verifies_durable_copy",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_stops_after_wave1",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "id": "controller_has_no_forbidden_tooling",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "controller_never_touches_archive_or_test_or_holdout",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "controller_not_running",
+      "passed": true,
+      "detail": "pgrep found no wave1_controller.sh process"
+    },
+    {
+      "id": "formal_submissions_remain_0",
+      "passed": true,
+      "detail": "0/598 (no row submitted this turn)"
+    },
+    {
+      "id": "lock_not_held",
+      "passed": true,
+      "detail": "free"
+    }
+  ]
+}

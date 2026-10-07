@@ -1,0 +1,407 @@
+{
+  "generated_utc": "2026-09-16T23:16:14Z",
+  "metrics": {
+    "last_value_naive": {
+      "24": {
+        "full_horizon": {
+          "mse_all_z": 2.821200197815767,
+          "mae_all_z": 1.150080139988418,
+          "mse_all_phys": 5075870888.313633,
+          "mae_all_phys": 24077.98602725871,
+          "n_rows_z": 17304,
+          "n_variables": 7,
+          "horizon": 24
+        },
+        "fixed_step": {
+          "contract_version": "v3.4-fixed-step-metrics",
+          "channel": "ILITOTAL",
+          "primary_step": 0,
+          "supplementary_steps": [
+            1,
+            2,
+            3
+          ],
+          "steps_never_averaged": true,
+          "peak_criterion": {
+            "PTE_max_weeks": 1,
+            "PIE_max_pct": 25.0,
+            "expression": "PTE <= 1 week AND PIE <= 25%"
+          },
+          "step_lead_weeks": {
+            "0": 1,
+            "1": 2,
+            "2": 3,
+            "3": 4
+          },
+          "steps": {
+            "0": {
+              "step": 0,
+              "lead_weeks": 1,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 0.12099473095212969,
+              "mae_z": 0.2169066598114458,
+              "mse_phys": 9483966.741207961,
+              "mae_phys": 1920.3689205056673,
+              "pte_weeks": 1.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 1,
+              "peak_hit_ratio": 1.0,
+              "peak_criterion_pass_all": true
+            },
+            "1": {
+              "step": 1,
+              "lead_weeks": 2,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 0.40123270407745254,
+              "mae_z": 0.40612947709352065,
+              "mse_phys": 31449944.894385647,
+              "mae_phys": 3595.6407525227146,
+              "pte_weeks": 2.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "2": {
+              "step": 2,
+              "lead_weeks": 3,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 0.8056338597264833,
+              "mae_z": 0.599669634717182,
+              "mse_phys": 63148243.49053592,
+              "mae_phys": 5309.135874771769,
+              "pte_weeks": 3.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "3": {
+              "step": 3,
+              "lead_weeks": 4,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.2387288192224137,
+              "mae_z": 0.7670962926253532,
+              "mse_phys": 97095657.22766207,
+              "mae_phys": 6791.4368358878555,
+              "pte_weeks": 4.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            }
+          }
+        }
+      },
+      "60": {
+        "full_horizon": {
+          "mse_all_z": 2.8250886828401813,
+          "mae_all_z": 1.1464432551421444,
+          "mse_all_phys": 5916182590.191648,
+          "mae_all_phys": 26694.274911874338,
+          "n_rows_z": 43260,
+          "n_variables": 7,
+          "horizon": 60
+        },
+        "fixed_step": {
+          "contract_version": "v3.4-fixed-step-metrics",
+          "channel": "ILITOTAL",
+          "primary_step": 0,
+          "supplementary_steps": [
+            1,
+            2,
+            3
+          ],
+          "steps_never_averaged": true,
+          "peak_criterion": {
+            "PTE_max_weeks": 1,
+            "PIE_max_pct": 25.0,
+            "expression": "PTE <= 1 week AND PIE <= 25%"
+          },
+          "step_lead_weeks": {
+            "0": 1,
+            "1": 2,
+            "2": 3,
+            "3": 4
+          },
+          "steps": {
+            "0": {
+              "step": 0,
+              "lead_weeks": 1,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 0.12099473095212969,
+              "mae_z": 0.2169066598114458,
+              "mse_phys": 9483966.741207961,
+              "mae_phys": 1920.3689205056673,
+              "pte_weeks": 1.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 1,
+              "peak_hit_ratio": 1.0,
+              "peak_criterion_pass_all": true
+            },
+            "1": {
+              "step": 1,
+              "lead_weeks": 2,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 0.40123270407745254,
+              "mae_z": 0.40612947709352065,
+              "mse_phys": 31449944.894385647,
+              "mae_phys": 3595.6407525227146,
+              "pte_weeks": 2.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "2": {
+              "step": 2,
+              "lead_weeks": 3,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 0.8056338597264833,
+              "mae_z": 0.599669634717182,
+              "mse_phys": 63148243.49053592,
+              "mae_phys": 5309.135874771769,
+              "pte_weeks": 3.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "3": {
+              "step": 3,
+              "lead_weeks": 4,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.2387288192224137,
+              "mae_z": 0.7670962926253532,
+              "mse_phys": 97095657.22766207,
+              "mae_phys": 6791.4368358878555,
+              "pte_weeks": 4.0,
+              "pie_pct": 0.0,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            }
+          }
+        }
+      }
+    },
+    "seasonal_naive": {
+      "24": {
+        "full_horizon": {
+          "mse_all_z": 0.7193443203456401,
+          "mae_all_z": 0.42064273181912615,
+          "mse_all_phys": 1211963051.5834336,
+          "mae_all_phys": 10666.736088727203,
+          "n_rows_z": 17304,
+          "n_variables": 7,
+          "horizon": 24
+        },
+        "fixed_step": {
+          "contract_version": "v3.4-fixed-step-metrics",
+          "channel": "ILITOTAL",
+          "primary_step": 0,
+          "supplementary_steps": [
+            1,
+            2,
+            3
+          ],
+          "steps_never_averaged": true,
+          "peak_criterion": {
+            "PTE_max_weeks": 1,
+            "PIE_max_pct": 25.0,
+            "expression": "PTE <= 1 week AND PIE <= 25%"
+          },
+          "step_lead_weeks": {
+            "0": 1,
+            "1": 2,
+            "2": 3,
+            "3": 4
+          },
+          "steps": {
+            "0": {
+              "step": 0,
+              "lead_weeks": 1,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.0674941905382522,
+              "mae_z": 0.5404089941706472,
+              "mse_phys": 83673721.32512933,
+              "mae_phys": 4784.475671098215,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "1": {
+              "step": 1,
+              "lead_weeks": 2,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.3692122403273972,
+              "mae_z": 0.5908869109252124,
+              "mse_phys": 107323378.85074915,
+              "mae_phys": 5231.378604330439,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "2": {
+              "step": 2,
+              "lead_weeks": 3,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.6177289776261603,
+              "mae_z": 0.6362458627345493,
+              "mse_phys": 126802941.74268599,
+              "mae_phys": 5632.9611163523605,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "3": {
+              "step": 3,
+              "lead_weeks": 4,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.7639314208949795,
+              "mae_z": 0.6668050090230785,
+              "mse_phys": 138262772.25376344,
+              "mae_phys": 5903.514518542462,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            }
+          }
+        }
+      },
+      "60": {
+        "full_horizon": {
+          "mse_all_z": 0.8849131254865326,
+          "mae_all_z": 0.5047282395014563,
+          "mse_all_phys": 2547303401.914949,
+          "mae_all_phys": 15433.133390148278,
+          "n_rows_z": 43260,
+          "n_variables": 7,
+          "horizon": 60
+        },
+        "fixed_step": {
+          "contract_version": "v3.4-fixed-step-metrics",
+          "channel": "ILITOTAL",
+          "primary_step": 0,
+          "supplementary_steps": [
+            1,
+            2,
+            3
+          ],
+          "steps_never_averaged": true,
+          "peak_criterion": {
+            "PTE_max_weeks": 1,
+            "PIE_max_pct": 25.0,
+            "expression": "PTE <= 1 week AND PIE <= 25%"
+          },
+          "step_lead_weeks": {
+            "0": 1,
+            "1": 2,
+            "2": 3,
+            "3": 4
+          },
+          "steps": {
+            "0": {
+              "step": 0,
+              "lead_weeks": 1,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.0674941905382522,
+              "mae_z": 0.5404089941706472,
+              "mse_phys": 83673721.32512933,
+              "mae_phys": 4784.475671098215,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "1": {
+              "step": 1,
+              "lead_weeks": 2,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.3692122403273972,
+              "mae_z": 0.5908869109252124,
+              "mse_phys": 107323378.85074915,
+              "mae_phys": 5231.378604330439,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "2": {
+              "step": 2,
+              "lead_weeks": 3,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.6177289776261603,
+              "mae_z": 0.6362458627345493,
+              "mse_phys": 126802941.74268599,
+              "mae_phys": 5632.9611163523605,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            },
+            "3": {
+              "step": 3,
+              "lead_weeks": 4,
+              "available": true,
+              "n_points": 103,
+              "mse_z": 1.7639314208949795,
+              "mae_z": 0.6668050090230785,
+              "mse_phys": 138262772.25376344,
+              "mae_phys": 5903.514518542462,
+              "pte_weeks": 4.0,
+              "pie_pct": 28.93215318582203,
+              "n_seasons_evaluable": 1,
+              "n_hits": 0,
+              "peak_hit_ratio": 0.0,
+              "peak_criterion_pass_all": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "test_access_count": 0,
+  "holdout_access_count": 0
+}

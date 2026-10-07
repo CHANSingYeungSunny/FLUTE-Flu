@@ -1,0 +1,345 @@
+{
+  "generated_utc": "2026-09-17T15:44:14Z",
+  "matrix_file": "results/v3_superseded_archive/preregistration/proposed_negative_control_matrix.csv",
+  "matrix_rows": 30,
+  "matrix_modified": false,
+  "summary_by_control": {
+    "zero_text": {
+      "n_rows": 12,
+      "parents_in_frozen_matrix": [
+        "BEST_VALIDATION_LLM_AFTER_SCREENING",
+        "gpt2_miflu"
+      ],
+      "horizons": [
+        "24",
+        "60"
+      ],
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "parents_unsupported_by_current_wiring": [
+        "BEST_VALIDATION_LLM_AFTER_SCREENING",
+        "gpt2_miflu"
+      ]
+    },
+    "shuffled_text": {
+      "n_rows": 12,
+      "parents_in_frozen_matrix": [
+        "BEST_VALIDATION_LLM_AFTER_SCREENING",
+        "gpt2_miflu"
+      ],
+      "horizons": [
+        "24",
+        "60"
+      ],
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "parents_unsupported_by_current_wiring": [
+        "BEST_VALIDATION_LLM_AFTER_SCREENING",
+        "gpt2_miflu"
+      ]
+    },
+    "llm_removed_or_alignment_only": {
+      "n_rows": 6,
+      "parents_in_frozen_matrix": [
+        "BEST_VALIDATION_LLM_AFTER_SCREENING"
+      ],
+      "horizons": [
+        "24",
+        "60"
+      ],
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "parents_unsupported_by_current_wiring": [
+        "BEST_VALIDATION_LLM_AFTER_SCREENING"
+      ]
+    }
+  },
+  "controls_with_unsupported_parents": [
+    "zero_text",
+    "shuffled_text",
+    "llm_removed_or_alignment_only"
+  ],
+  "rows": [
+    {
+      "control": "zero_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "24",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "24",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "24",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "60",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "60",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "60",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "24",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "24",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "24",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "60",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "60",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "gpt2_miflu",
+      "horizon": "60",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "zero_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "shuffled_text",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "llm_removed_or_alignment_only",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "llm_removed_or_alignment_only",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "llm_removed_or_alignment_only",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "24",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "llm_removed_or_alignment_only",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "42",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "llm_removed_or_alignment_only",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "43",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    },
+    {
+      "control": "llm_removed_or_alignment_only",
+      "parent_model": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+      "horizon": "60",
+      "seed": "44",
+      "role": "secondary_ablation",
+      "counts_toward_primary_architecture": "False",
+      "intervention": "UNSUPPORTED_BY_CURRENT_WIRING"
+    }
+  ],
+  "decision": "V3_V2_PROTOCOL_REVIEW_REQUIRED",
+  "reason": "the frozen matrix contains control rows whose parent model is not supported by the current wiring; the original scientific meaning of those rows must be recovered, and the matrix must NOT be edited to fit the implementation"
+}

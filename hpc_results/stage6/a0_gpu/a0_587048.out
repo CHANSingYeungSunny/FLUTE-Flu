@@ -1,0 +1,69 @@
+[a0gpu] mode=0 tag=default job=587048 start=2026-09-26T10:16:48Z
+[a0gpu] gpu: NVIDIA A100-SXM4-80GB, 81920 MiB
+utc=2026-09-26T10:16:48Z
+slurm_job=587048
+author_commit=6ed210150b8819313947cf607eb1821c87b1bee3
+author_source_modified=0 non-pyc entries
+author_src_main_ILI_lora.py=eda73ba196f625620cee8f2c9e2d4270d4ce4504c5198f4b1d485622c49ad29c
+author_src_models_GPT4TS_lora.py=6ef9108eea3c068badb7f8a60efba9717b4e7fe969b46365ac7c26da560c6365
+author_src_models_GPT4TS.py=b146a0dd144dddc94e77267a332deca1d8329d3adc6daf986cc7e2498c414280
+author_src_data_provider_data_loader.py=1274c00bbc6886bcd6a48efb840ec017a591b8873fff77d82fe44eaef0b64f6e
+author_src_data_provider_data_factory.py=a5576e445d4a9a56ae9bf77024eeca9b435ed973613ddc7b78e57d7c8070b8da
+compat_layer_sha256=378af75526b4b6d9f500716bc42ffb4fd0f4cfc6109695d6c2e29bdbd6a1d6f4
+data_sha256=2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5
+text_asset_sha256=837502311354c9ddf71e42fbdf5689b6bbbbd2f00c71055d0d226c3c1f44c0c8
+config=ALL ARGUMENTS ARE THE AUTHOR'S ARGPARSE DEFAULTS (main_ILI_lora.py L34-85)
+mode=0 multimodal=0 train_epochs=1 learning_rate=0.0001 batch_size=16 itr=1 pred_len=24
+note=AUTHOR CODE REPLAYED VERBATIM under a recorded compatibility layer;
+     NOT the A2 corrected reconstruction; NOT comparable to Table V or A2
+Args in experiment:
+Namespace(model_id='a0_default', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=0, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+train 3843
+val 518
+test 170
+llmmodel = GPT2Model(
+  (wte): Embedding(50257, 768)
+  (wpe): Embedding(1024, 768)
+  (drop): Dropout(p=0.1, inplace=False)
+  (h): ModuleList(
+    (0-5): 6 x GPT2Block(
+      (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (attn): GPT2Attention(
+        (c_attn): Conv1D(nf=2304, nx=768)
+        (c_proj): Conv1D(nf=768, nx=768)
+        (attn_dropout): Dropout(p=0.1, inplace=False)
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (mlp): GPT2MLP(
+        (c_fc): Conv1D(nf=3072, nx=768)
+        (c_proj): Conv1D(nf=768, nx=3072)
+        (act): NewGELUActivation()
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (ln_f): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)
+Traceback (most recent call last):
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 270, in <module>
+    train()
+  File "/gpfs1/scratch/sychan552/a0_replay/main_ILI_lora.py", line 161, in train
+    early_stopping = EarlyStopping(patience=args.patience, verbose=True)
+  File "/gpfs1/scratch/sychan552/a0_replay/utils/tools.py", line 50, in __init__
+    self.val_loss_min = np.Inf
+  File "/home/sychan552/.conda/envs/mlflu_hpc/lib/python3.9/site-packages/numpy/__init__.py", line 397, in __getattr__
+    raise AttributeError(
+AttributeError: `np.Inf` was removed in the NumPy 2.0 release. Use `np.inf` instead.
+
+[a0gpu] released entry point exit=1  2026-09-26T10:17:01Z
+[a0gpu] files produced under /scratch/sychan552/a0_runs/runs:
+  /scratch/sychan552/a0_runs/runs/default_provenance.txt
+
+[a0gpu] ---- key evidence lines from the released run ----
+  1:Args in experiment:
+  2:Namespace(model_id='a0_default', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=0, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+
+[a0gpu] REMINDER: whatever this prints is (a) feature-0 Test only,
+          (b) selected by Test MSE, (c) 1 epoch at lr 1e-4, and
+          (d) therefore NOT comparable to the paper's Table V nor to A2.

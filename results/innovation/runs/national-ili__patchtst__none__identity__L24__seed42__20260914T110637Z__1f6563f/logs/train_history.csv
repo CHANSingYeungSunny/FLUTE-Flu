@@ -1,0 +1,2 @@
+epoch,train_loss,val_mse,val_mae,val_mse_ili,improved,saved,best_epoch,stop
+1,0.6250180676579475,0.5121398568153381,0.5583447813987732,0.6379367709159851,True,True,1,False

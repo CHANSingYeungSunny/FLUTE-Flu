@@ -1,0 +1,67 @@
+############ A. full job timeline (Submit -> Start -> End), oldest first
+sort: write failed: 'standard output': Disk quota exceeded
+sort: write error
+
+############ B. job-name inventory with counts and first/last submit
+sort: write failed: 'standard output': Disk quota exceeded
+sort: write error
+
+############ C. A0 evidence: what the two diagnostic jobs actually contain
+--- job 587048 ---
+    FILE /scratch/sychan552/a0_runs/logs/a0_587048.err  (0 bytes)
+    FILE /scratch/sychan552/a0_runs/logs/a0_587048.out  (4675 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587048.err  (0 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587048.out  (4675 bytes)
+--- job 587054 ---
+    FILE /scratch/sychan552/a0_runs/logs/a0_587054.err  (0 bytes)
+    FILE /scratch/sychan552/a0_runs/logs/a0_587054.out  (8293 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587054.err  (0 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587054.out  (8293 bytes)
+--- job 587059 ---
+    FILE /scratch/sychan552/a0_runs/logs/a0_587059.err  (0 bytes)
+    FILE /scratch/sychan552/a0_runs/logs/a0_587059.out  (8293 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587059.err  (0 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587059.out  (8293 bytes)
+--- job 587068 ---
+    FILE /scratch/sychan552/a0_runs/logs/a0_587068.err  (0 bytes)
+    FILE /scratch/sychan552/a0_runs/logs/a0_587068.out  (14351 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587068.err  (0 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587068.out  (14351 bytes)
+--- job 587091 ---
+    FILE /scratch/sychan552/a0_runs/logs/a0_587091.err  (0 bytes)
+    FILE /scratch/sychan552/a0_runs/logs/a0_587091.out  (8748 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587091.err  (0 bytes)
+    FILE /scratch/sychan552/a2_stage5/results/stage6/a0_gpu/a0_587091.out  (8748 bytes)
+
+############ D. A0 terminal numbers, straight from the job outputs
+--- 587068 : /scratch/sychan552/a0_runs/logs/a0_587068.out
+    first line: [a0gpu] compat layer sha256:
+    mse/mae lines:
+98:  6:Namespace(model_id='a0_multimodal1', checkpoints='/scratch/sychan552/a0_runs/runs/', multimodal=1, root_path='./dataset/illness/', data_path='national_illness.csv', data='custom', features='M', freq=0, target='OT', embed='timeF', percent=100, lora_r=4, target_modules=['c_attn'], PEFT=0, seq_len=104, pred_len=24, label_len=18, decay_fac=0.75, learning_rate=0.0001, batch_size=16, num_workers=10, train_epochs=1, lradj='type1', patience=3, gpt_layers=6, backbone='gpt2', textmodel='gpt2', e_layers=3, d_model=768, n_heads=4, d_ff=768, dropout=0.2, enc_in=862, c_out=862, patch_size=24, kernel_size=25, loss_func='mse', pretrain=1, freeze=1, model='model', stride=2, max_len=-1, hid_dim=16, tmax=10, itr=1, cos=0)
+100:  40:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+102:  48:mae:0.6780, mse:0.8581, rmse:0.9264, smape:84.6760
+103:  50:mse_mean = 0.8581, mse_std = 0.0000
+104:  52:Best performance in iteration 0: Epoch 0 with MSE = 0.8581 and MAE = 0.6780
+107:          (b) selected by Test MSE, (c) 1 epoch at lr 1e-4, and
+    stderr tail:
+--- 587091 : /scratch/sychan552/a0_runs/logs/a0_587091.out
+    first line: [a0gpu] compat layer sha256:
+    mse/mae lines:
+tail: write error: Disk quota exceeded
+    stderr tail:
+
+############ E. A0 ledger as written by the jobs
+/scratch/sychan552/a0_runs/logs/default_stdout.txt
+/scratch/sychan552/a0_runs/logs/multimodal1_stdout.txt
+/scratch/sychan552/a0_runs/runs/default_provenance.txt
+/scratch/sychan552/a0_runs/runs/multimodal1_provenance.txt
+
+############ F. Stage 5 (A2) run ledger
+A2-MIFlu-L24-S42,585794,miflu,24,42,A2-MIFlu-L24-S42_start=2026-09-25T14:41:42Z,exit=0
+55
+
+############ G. Stage 6 run ledger
+S6-DLINEAR-L24-S42,587075,dlinear,24,42,S6-DLINEAR-L24-S42_start=2026-09-26T10:34:25Z,exit=0
+
+
+

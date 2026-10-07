@@ -1,0 +1,18 @@
+{
+  "templates": {
+    "miflu":         ["miflu",         "best_miflu_L{L}_seed{s}.pth"],
+    "notext":        ["notext",        "best_ablation_no_multi_L{L}_seed{s}.pth"],
+    "nlinear":       ["nlinear",       "best_nlinear_L{L}_seed{s}.pth"],
+    "dlinear":       ["dlinear",       "best_dlinear_L{L}_seed{s}.pth"],
+    "patchtst":      ["patchtst",      "best_patchtst_L{L}_seed{s}.pth"],
+    "itransformer":  ["itransformer",  "best_itransformer_L{L}_seed{s}.pth"],
+    "qwen_time_llm": ["qwen_time_llm", "best_qwen_time_llm_L{L}_seed{s}.pth"],
+    "calf_llm":      ["calf_llm",      "best_calf_llm_L{L}_seed{s}.pth"],
+    "timecma_llm":   ["timecma_llm",   "best_timecma_llm_L{L}_seed{s}.pth"]
+  },
+  "run_ids": {
+    "miflu": "S6-MIFLU", "notext": "S6-NOTEXT", "nlinear": "S6-NLIN",
+    "dlinear": "S6-DLIN", "patchtst": "S6-PTST", "itransformer": "S6-ITRN",
+    "qwen_time_llm": "S6-QWEN", "calf_llm": "S6-CALF", "timecma_llm": "S6-TCMA"
+  }
+}

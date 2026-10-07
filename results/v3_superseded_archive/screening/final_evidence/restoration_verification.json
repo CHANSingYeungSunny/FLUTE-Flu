@@ -1,0 +1,155 @@
+{
+  "generated_utc": "2026-09-17T01:30:36Z",
+  "slurm_job_id": "566246",
+  "node": "gpu-a100-06",
+  "deployment_root": "/scratch/sychan552/innovation_deploy_root_v3_5",
+  "cells": "default cell L24/seed42 for every architecture family",
+  "n_families": 8,
+  "n_passed": 8,
+  "all_passed": true,
+  "tolerance": {
+    "max_abs_prediction_diff": 1e-05,
+    "relative_full_horizon_mse_diff": 1e-06
+  },
+  "device": "cuda",
+  "test_access_count": 0,
+  "holdout_access_count": 0,
+  "results": [
+    {
+      "run_key": "screening_nlinear_L24_seed42",
+      "model": "nlinear",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_nlinear_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 8.881784197001252e-16,
+      "mse_restored": 2.15514144097008,
+      "mse_saved": 2.15514144097008,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    },
+    {
+      "run_key": "screening_dlinear_L24_seed42",
+      "model": "dlinear",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_dlinear_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 8.881784197001252e-16,
+      "mse_restored": 2.3178563191931567,
+      "mse_saved": 2.3178563191931567,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    },
+    {
+      "run_key": "screening_patchtst_L24_seed42",
+      "model": "patchtst",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_patchtst_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 4.440892098500626e-16,
+      "mse_restored": 2.3665511068384104,
+      "mse_saved": 2.3665511068384104,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    },
+    {
+      "run_key": "screening_itransformer_L24_seed42",
+      "model": "itransformer",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_itransformer_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 4.440892098500626e-16,
+      "mse_restored": 2.6426282559350627,
+      "mse_saved": 2.6426282559350627,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    },
+    {
+      "run_key": "screening_gpt2_miflu_L24_seed42",
+      "model": "gpt2_miflu",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_gpt2_miflu_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 8.881784197001252e-16,
+      "mse_restored": 1.0396410930013482,
+      "mse_saved": 1.0396410930013482,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    },
+    {
+      "run_key": "screening_qwen_time_llm_L24_seed42",
+      "model": "qwen_time_llm",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_qwen_time_llm_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 4.440892098500626e-16,
+      "mse_restored": 2.1454676846651015,
+      "mse_saved": 2.1454676846651015,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    },
+    {
+      "run_key": "screening_calf_llm_L24_seed42",
+      "model": "calf_llm",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_calf_llm_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 2.220446049250313e-16,
+      "mse_restored": 3.5334169344242627,
+      "mse_saved": 3.5334169344242627,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    },
+    {
+      "run_key": "screening_timecma_llm_L24_seed42",
+      "model": "timecma_llm",
+      "checkpoint": "/home/sychan552/innovation_durable/screening/screening_timecma_llm_L24_seed42/checkpoints/best_val_mse.pt",
+      "rows_compared": 2472,
+      "max_abs_prediction_diff": 4.440892098500626e-16,
+      "mse_restored": 2.3566016418329805,
+      "mse_saved": 2.3566016418329805,
+      "relative_full_horizon_mse_diff": 0.0,
+      "tolerance": {
+        "max_abs_prediction_diff": 1e-05,
+        "relative_full_horizon_mse_diff": 1e-06
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "passed": true
+    }
+  ]
+}

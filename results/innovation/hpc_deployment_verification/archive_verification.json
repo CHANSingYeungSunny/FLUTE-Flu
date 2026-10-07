@@ -1,0 +1,19 @@
+{
+  "generated_utc": "2026-09-14T18:05:00Z",
+  "verified_on": "HPC login node hpclogin02",
+  "staging_dir": "/home/sychan552/scratch/CHATTIME/MIFlu_innovation_deployments/_incoming",
+  "expected_archive_sha256": "c7ff4849c7a2ed9f5576eb1b21ce748fe99915823884ae057fda9600fea1ddb9",
+  "sidecar_verification": {
+    "command": "sha256sum -c innovation_hpc_bundle.tar.gz.sha256",
+    "stdout": "innovation_hpc_bundle.tar.gz: OK",
+    "exit_code": 0
+  },
+  "recomputed_archive_sha256": "c7ff4849c7a2ed9f5576eb1b21ce748fe99915823884ae057fda9600fea1ddb9",
+  "sha256_matches_expected": true,
+  "archive_size_bytes_remote": 130428,
+  "archive_size_bytes_local": 130428,
+  "size_matches_local_manifest": true,
+  "archive_member_count": 94,
+  "member_count_matches_prep_manifest": true,
+  "extraction_allowed": true
+}

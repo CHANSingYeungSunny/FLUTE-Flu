@@ -57,8 +57,10 @@ Table V. They are retained only for the Phase 2 ChatTime comparison.
 - [x] Prediction CSVs with an explicit `split` column.
 - [x] Leakage-audit report — `docs/leakage_audit_report.md`.
 - [x] Fixed peak / Timing metrics — `scripts/compute_miflu_indicators.py`
-      (Peak Hit count always co-reported with Timing; unmatched peaks recorded as
-      "Missed", never Timing = 0).
+      (supplementary indicators are PTE and PIE only; the matched-peak count, e.g.
+      "2/3", is always co-reported as their sample-size qualifier; unmatched peaks
+      recorded as "Missed", never Timing = 0. Peak Hit Rate and Direction were
+      removed in 2026-09.)
 - [x] Feature-importance report with causal caveat — `scripts/feature_verification.py`
       (Granger labeled as "temporal precedence + statistical association";
       NUM. OF PROVIDERS / OT caveat on reporting-scale effects).

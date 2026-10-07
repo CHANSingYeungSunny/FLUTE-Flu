@@ -1,0 +1,23 @@
+artifact_group,track,path,disposition,rationale,decision_status
+author_repo_clone,A,recovery/author_repo/,EVIDENCE,Pinned author source @ 6ed2101; never modified; primary evidence for reproduction audit,FINAL
+author_processed_data,A,recovery/author_repo/dataset/illness/national_illness.csv,EVIDENCE,966-row author vintage (MMWR 2002w40-2021w13); basis of track A,FINAL
+paper_exact_reformat,A,data/raw/national_illness_raw_paper_exact.csv,EVIDENCE,Author values reformatted to project schema; epiweek derived and value-verified,FINAL
+project_july_snapshot,B,data/raw/national_illness_raw.csv,EVIDENCE,1025-row July-2026 FluView snapshot; basis of track B,FINAL
+v3_clean_analysis,B,results/v3_clean/analysis/,REUSE,Frozen analysis protocol + rankings + paired comparisons; preserved and reusable as B/C evidence,FINAL
+v3_clean_runs,B,results/v3_clean/runs/,REUSE,Controller/gate/registry evidence for the v3_clean execution; reusable as provenance,FINAL
+v3_clean_final_test,C,results/v3_clean/final/final_test_*,EXPOSED,Original holdout already inspected; cannot restore unseen status (per prompt constraint),FINAL
+v3_clean_final_other,B,results/v3_clean/final/,REUSE,Non-test final artifacts (freeze manifests/ledgers/plans); reusable as B evidence,FINAL
+v3_clean_preregistration,B,results/v3_clean/preregistration/,REUSE,Preregistered protocol/amendments; reusable as protocol provenance,FINAL
+v3_clean_implementation,B,results/v3_clean/implementation/,REUSE,Deterministic bundles/descriptors; reusable (SUPERSEDED_* entries are archival),FINAL
+national_table_v_summary,B,results/ili/National_Table_V_summary.csv,REUSE,Project B/C headline table (MSE/MAE/peak); preserved,FINAL
+miflu_prediction_csvs,B,data/predictions_miflu_L*.csv,REUSE,Project MIFlu per-horizon predictions; preserved,FINAL
+miflu_eval_figures,B,results/ili/figures/fig_miflu_eval_*.png,REUSE,Project MIFlu evaluation figures; preserved,FINAL
+legacy_v2_archive,B,results/v2_legacy_archive/,SUPERSEDED,Pre-v3 results; preserve but exclude from claims,FINAL
+v3_superseded_archive,B,results/v3_superseded_archive/,SUPERSEDED,Superseded v3 iterations; preserve but exclude from claims,FINAL
+deprecated_walkforward,B,results/ili/DEPRECATED_walkforward_L52.md,SUPERSEDED,Superseded walk-forward doc; preserve,FINAL
+paper_protocol_1025row_run,B,hpc_results/data/ + hpc_results/paper_exact/,REUSE,8-17 four-horizon paper-window run (1025 rows, 2002-2021); MSE_All 2.593/3.341/3.237/3.559 (1.7-2.6x paper). Corrected-model reproduction, NOT A0,FINAL
+job_514859_966row,A,hpc_results/paper_exact/training_miflu_log_514859.txt,EVIDENCE,TSLib official 966-row run via project corrected MIFlu (not author code); L24 MSE_All 2.238,FINAL
+control966_966row,A,hpc_results/paper_exact/,EVIDENCE,Snapshot head-truncated 966-row control via project corrected MIFlu; L24 MSE_All 1.379,FINAL
+paper_reproduction_run,A,results/(future),TO-RERUN-PROPOSED,Remaining: A0 released-code replay (unrun) + coherent A2 matrix (corrected MIFlu/no-text/NLinear on 966 rows); proposal only,NEEDS-SUPERVISOR
+refreshed_benchmark_run,B,results/(future),TO-RERUN-PROPOSED,Refreshed-data benchmark on July snapshot; already partially covered by v3_clean,NEEDS-SUPERVISOR
+fresh_holdout_run,C,results/(future),TO-RERUN-PROPOSED,Requires a genuinely untouched future interval before any outcome is inspected,NEEDS-SUPERVISOR

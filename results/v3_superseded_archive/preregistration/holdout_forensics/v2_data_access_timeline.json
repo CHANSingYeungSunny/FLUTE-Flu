@@ -1,0 +1,37 @@
+{
+  "generated_utc": "2026-09-15T19:59:40Z",
+  "events": [
+    {
+      "order": 1,
+      "event": "raw CSV acquired into the project (data/raw)",
+      "content_proof": "SHA-256 c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+      "note": "content identical on local and HPC"
+    },
+    {
+      "order": 2,
+      "event": "v2 scaler and prompt statistics fitted on train rows 0..716 only",
+      "evidence": "split_manifest scaler_fit = 'train rows only (data[:train_end])'"
+    },
+    {
+      "order": 3,
+      "event": "v2 Stage F full validation runs trained/evaluated",
+      "evidence": "results/innovation/runs/*/split_manifest.json"
+    },
+    {
+      "order": 4,
+      "event": "v2 champion frozen (nlinear)",
+      "evidence": "frozen_winners.json, freeze_audit.json (test_access_count = 0)"
+    },
+    {
+      "order": 5,
+      "event": "v2 one-time Test evaluation, 52 cells",
+      "evidence": "target epiweeks 201805..202152 = rows 820..1024 (last row)"
+    },
+    {
+      "order": 6,
+      "event": "v3 Phase 0.5 read-only forensics on the same file",
+      "content_proof": "SHA-256 c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d (unchanged)"
+    }
+  ],
+  "conclusion": "The maximum observable epiweek in the file is 202152. The v2 Test target range ends at exactly the same epiweek. No observation exists after it."
+}

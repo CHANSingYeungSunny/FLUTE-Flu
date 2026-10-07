@@ -1,0 +1,211 @@
+{
+  "sources": [
+    {
+      "role": "PRIMARY STRUCTURED SOURCE (user-authored transcription)",
+      "path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\reference_papers\\MIFlu_Large_Language_Model-Based_Multimodal_Influenza_Forecasting_Scheme.md",
+      "sha256": "b772bbdc47a85b43ab28ed3f4fdb2fd0f54d9d2d5ea67ea7d08dfd97ea068812",
+      "bytes": 62988,
+      "lines": 497,
+      "headings": 27,
+      "sections_present": [
+        "Abstract",
+        "I Introduction",
+        "II Related Work",
+        "III Preliminaries",
+        "IV Proposed Scheme",
+        "V Experimental Settings",
+        "VI Experimental Results",
+        "VII Conclusion",
+        "Appendix",
+        "References"
+      ],
+      "tables_in_markdown": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "IX",
+        "X"
+      ],
+      "has_table_IV_values": true,
+      "table_IV_note": "the file explicitly states the table contents were NOT extractable from the PDF text layer and lists only the comparison-model names, so it contains NO epoch/lr/batch/T rows",
+      "note_v2": "UPDATED by the user 2026-10-06: all ten tables now carry values, including Table IV hyperparameters and Tables II/III descriptive statistics"
+    },
+    {
+      "role": "SOURCE OF RECORD (original PDF)",
+      "path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\reference_papers\\MIFlu_Large_Language_Model-Based_Multimodal_Influenza_Forecasting_Scheme.pdf",
+      "sha256": "7735a4388145dd2aced536417f7a4f50dafe21ed0d4fca64baa2b20f2e27885c",
+      "bytes": 2956545,
+      "pages": 12,
+      "text_layer": "present; but 0 tables machine-detectable and 0 occurrences of any table value",
+      "rendered_pages": "paper/page_03..11.png at 200 dpi"
+    },
+    {
+      "role": "OLDER PROJECT TRANSCRIPTION (superseded)",
+      "path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\MIFlu_paper.md",
+      "sha256": "1259c0c67dcbb19f5745f105bc43619cfed95b9bb09a54d9f6964c861bb0fd38",
+      "lines": 557,
+      "tables_in_markdown": [
+        "I",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "IX",
+        "X"
+      ],
+      "defect": "omits Table IV's contents entirely AND contains no table values for II, VII, VIII, IX",
+      "status": "SUPERSEDED by the new reference_papers Markdown for structure; retained as a historical artifact"
+    }
+  ],
+  "cross_check": {
+    "table_V_MIFlu_MSE_MAE": {
+      "pdf_visually_verified": {
+        "L24": [
+          1.542,
+          0.726
+        ],
+        "L36": [
+          1.422,
+          0.779
+        ],
+        "L48": [
+          1.414,
+          0.757
+        ],
+        "L60": [
+          1.364,
+          0.719
+        ]
+      },
+      "markdown": {
+        "L24": [
+          1.542,
+          0.726
+        ],
+        "L36": [
+          1.422,
+          0.779
+        ],
+        "L48": [
+          1.414,
+          0.757
+        ],
+        "L60": [
+          1.364,
+          0.719
+        ]
+      },
+      "older_project_transcription": {
+        "L24": [
+          1.542,
+          0.726
+        ],
+        "L36": [
+          1.422,
+          0.779
+        ],
+        "L48": [
+          1.414,
+          0.757
+        ],
+        "L60": [
+          1.364,
+          0.719
+        ]
+      },
+      "agreement": "ALL THREE AGREE -> MARKDOWN_PDF_CROSS_VERIFIED",
+      "note": "bold/underline convention also agrees: L24 MSE MIFlu underlined (second-best), PatchTST bold (best)"
+    },
+    "table_IV_hyperparameters": {
+      "pdf_visually_verified": {
+        "epochs_national": 20,
+        "batch_national": 16,
+        "lr_national": 0.0005,
+        "T_national": 104,
+        "L_national": "24,36,48,60",
+        "epochs_regional": 50,
+        "batch_regional": 32,
+        "T_regional": 20
+      },
+      "markdown": {
+        "present": true,
+        "epochs_national": 20,
+        "batch_national": 16,
+        "lr_national": 0.0005,
+        "T_national": 104,
+        "L_national": "24,36,48,60",
+        "epochs_regional": 50,
+        "batch_regional": 32,
+        "T_regional": 20
+      },
+      "older_project_transcription": {
+        "present": false,
+        "reason": "Table IV omitted entirely"
+      },
+      "agreement": "MARKDOWN_PDF_CROSS_VERIFIED (was single-source before the user update)",
+      "consequence": "this is the ONLY evidence in the project for epochs/lr/batch; it is new this round and it CORRECTS the earlier conclusion that the paper discloses no values"
+    },
+    "table_VIII_ablation": {
+      "markdown": {
+        "MIFlu": [
+          1.436,
+          0.745
+        ],
+        "w/o dataset": [
+          1.473,
+          0.77
+        ],
+        "w/o task": [
+          1.465,
+          0.759
+        ],
+        "w/o input var": [
+          1.538,
+          0.779
+        ],
+        "w/o LoRA": [
+          1.57,
+          0.794
+        ],
+        "w/o multimodality": [
+          1.647,
+          0.816
+        ],
+        "w/o LoRA+multimodality": [
+          1.925,
+          0.904
+        ]
+      },
+      "older_project_transcription": "same values (agent-verified from the PDF image this round)",
+      "agreement": "MARKDOWN_PDF_CROSS_VERIFIED"
+    },
+    "table_II_descriptive_stats": {
+      "markdown": "present, all 7 variables with average/max/SD",
+      "verification": "the 966-row file reproduces Table II 7/7 (max dev 0.02%); the 1025-row snapshot matches only 1/7 (up to 7.04% off)",
+      "agreement": "MARKDOWN_PDF_CROSS_VERIFIED",
+      "consequence": "the paper National-Illness analysis dataset IS the 966-row file"
+    },
+    "table_III_descriptive_stats": {
+      "markdown": "present, 10 regions + Total",
+      "agreement": "MARKDOWN_TRANSCRIPTION"
+    },
+    "table_VII_embedder": {
+      "markdown": "present, GPT2/LLaMA2-7B/BERT/X(GPT4TS) x 4 horizons",
+      "agreement": "MARKDOWN_PDF_CROSS_VERIFIED"
+    },
+    "table_IX_training_time": {
+      "markdown": "present: ReILIF 130 min, MIFlu 119 min",
+      "agreement": "MARKDOWN_PDF_CROSS_VERIFIED"
+    },
+    "table_X_prompt": {
+      "markdown": "present (appendix)",
+      "agreement": "MARKDOWN_PDF_CROSS_VERIFIED"
+    }
+  }
+}

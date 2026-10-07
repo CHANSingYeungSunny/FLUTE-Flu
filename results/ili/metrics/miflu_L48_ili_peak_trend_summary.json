@@ -1,50 +1,46 @@
 {
   "source": "data/predictions_miflu_L48_paper_protocol.csv",
+  "lead_time_policy": {
+    "mode": "fixed_step",
+    "step": 0,
+    "stride": null,
+    "lead_note": "constant lead time = 1 week(s) ahead",
+    "n_weeks": 158,
+    "windows_per_week_min": 1,
+    "windows_per_week_max": 1
+  },
   "peak_aggregate": {
-    "peak_hit_count": "2/4",
-    "n_true_peaks": 4,
+    "peak_hit_count": "2/2",
+    "n_true_peaks": 2,
     "n_hit": 2,
-    "n_missed": 2,
-    "peak_hit_rate": 0.5,
-    "mean_abs_delta_t": 1.5,
-    "mean_peak_magnitude_rel_err_pct": 32.37469107015776,
+    "n_missed": 0,
+    "peak_timing_error_weeks": 1.0,
+    "mean_abs_delta_t": 1.0,
+    "mean_peak_magnitude_rel_err_pct": 20.375395452279168,
     "false_peak_count": 1
   },
   "trend_indicators": {
-    "directional_accuracy": 0.696078431372549,
-    "beta_gt": 0.0,
-    "beta_pred": 0.8518148337946887,
-    "beta_abs_diff": 0.8518148337946887,
-    "zeta_gt": 0.4333620607229375,
-    "zeta_pred": 0.9633097130049358,
-    "zeta_abs_diff": 0.5299476522819984
+    "beta_gt": 0.07260059841611666,
+    "beta_pred": 0.6418610970702531,
+    "beta_abs_diff": 0.5692604986541364,
+    "zeta_gt": 0.7161358824602991,
+    "zeta_pred": 0.9562117682263659,
+    "zeta_abs_diff": 0.24007588576606675
   },
   "verdicts": {
-    "peak_hit_rate": {
-      "value": 0.5,
-      "threshold": 0.75,
-      "verdict": "not accurate"
-    },
-    "mean_abs_delta_t": {
-      "value": 1.5,
+    "peak_timing_error_weeks": {
+      "value": 1.0,
       "threshold": 2.0,
       "verdict": "accurate"
     },
     "mean_peak_magnitude_rel_err": {
-      "value": 32.37469107015776,
+      "value": 20.375395452279168,
       "threshold": 20.0,
       "verdict": "not accurate"
-    },
-    "directional_accuracy": {
-      "value": 0.696078431372549,
-      "threshold": 0.6,
-      "verdict": "accurate"
     }
   },
   "thresholds": {
-    "peak_hit_rate": 0.75,
     "mean_abs_delta_t": 2.0,
-    "mean_peak_mag_rel_err": 20.0,
-    "directional_accuracy": 0.6
+    "mean_peak_mag_rel_err": 20.0
   }
 }

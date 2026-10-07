@@ -1,0 +1,41 @@
+==========================================================================
+STORAGE GUARD TESTS  (SYNTHETIC artefacts, CPU only, nothing on HPC)
+==========================================================================
+
+A. projections use MEASURED sizes, not assumptions
+  [PASS] A1 locked-checkpoint pilot projection is small  -- 16.58 MiB
+  [PASS] A2 full-state_dict projection is ~85x larger (the F1 surprise)  -- ratio 76x
+  [PASS] A3 measured checkpoint size is the real one (329 MB full)  -- 328,585,240 bytes
+  [PASS] A4 10-repetition projection (locked) fits comfortably in home  -- 159.44 MiB
+  [PASS] A5 10-repetition projection (full) is the one to worry about  -- 12.2437 GiB
+  [PASS] A6 historical-replacement projection (40 fits, locked)  -- 159.44 MiB
+
+B. preflight refuses unsafe targets
+  [PASS] B1 refuses a scratch target when scratch is not declared healthy  -- target is on scratch and scratch is NOT declared healthy (quota 413/300 GB, grace expired)
+  [PASS] B2a the scratch-block reason disappears once explicitly declared healthy  -- the scratch guard is bypassed only by explicit declaration
+  [PASS] B2b an unmeasurable target is refused (free space UNKNOWN)  -- free space UNKNOWN for C:\Users\Asus\AppData\Local\Temp\sg_tests_o_speo2e\home_like (no existing ancestor on this host); cannot verify the required headroom of 1.0 GiB
+  [PASS] B3 allows a normal target with ample space  -- free 273.7 GiB
+  [PASS] B4 required headroom is max(1 GiB, 10x projected)  -- 1,073,741,824 bytes
+  [PASS] B5 refuses when free space is below the required headroom  -- free 273.7 GiB < required 10737418240.0 GiB
+
+C. atomic saves leave no partial artefacts
+  [PASS] C1 NPZ written and readable  -- 420 bytes
+  [PASS] C2 reloaded arrays match  -- (2, 7, 24)
+  [PASS] C3 torch checkpoint written  -- 1200 bytes
+  [PASS] C4 no .part residue after a successful save  -- ['ckpt.pth', 'home_like', 'pred_test.npz']
+  [PASS] C5 simulated failure raises
+  [PASS] C6 the original file is intact after a failed overwrite  -- byte-identical
+  [PASS] C7 no .part residue after a failed save  -- ['ckpt.pth', 'home_like', 'pred_test.npz']
+
+D. postflight detects residue and counts artefacts
+  [PASS] D1 postflight passes on a clean directory  -- 2 files, 0.0 MiB
+  [PASS] D2 postflight FAILS when a .part file is present  -- ['leftover.part']
+
+E. the retention policy names what is kept and what never is
+  [PASS] E1 keeps exactly one checkpoint per (model,L,rep)
+  [PASS] E2 never keeps per-epoch checkpoints or optimizer state
+  [PASS] E3 lifecycle states the peak is bounded during training
+
+==========================================================================
+RESULT: 24/24 checks passed
+==========================================================================

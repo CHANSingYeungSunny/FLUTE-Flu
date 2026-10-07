@@ -1,0 +1,133 @@
+{
+  "generated_utc": "2026-09-17T15:38:54Z",
+  "version": 2,
+  "purpose": "corrected component-isolation audit after the parentage fix",
+  "n_variants": 9,
+  "n_isolation_ok": 9,
+  "all_passed": true,
+  "variants": [
+    {
+      "variant": "llm_removed_or_alignment_only",
+      "parent": "llm_backbones",
+      "correct_parent": true,
+      "target_component": "text branch",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "calf_llm",
+        "timecma_llm"
+      ]
+    },
+    {
+      "variant": "shuffled_text",
+      "parent": "llm_backbones",
+      "correct_parent": true,
+      "target_component": "text branch",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "calf_llm",
+        "timecma_llm",
+        "qwen_time_llm"
+      ]
+    },
+    {
+      "variant": "without_dataset_information",
+      "parent": "gpt2_miflu",
+      "correct_parent": true,
+      "target_component": "Prompt-as-Prefix section",
+      "parameter_groups_touched": [
+        "prompt"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "gpt2_miflu"
+      ]
+    },
+    {
+      "variant": "without_input_variable_description",
+      "parent": "gpt2_miflu",
+      "correct_parent": true,
+      "target_component": "Prompt-as-Prefix section",
+      "parameter_groups_touched": [
+        "prompt"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "gpt2_miflu"
+      ]
+    },
+    {
+      "variant": "without_lora",
+      "parent": "gpt2_miflu",
+      "correct_parent": true,
+      "target_component": "LoRA module",
+      "parameter_groups_touched": [
+        "lora"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "gpt2_miflu"
+      ]
+    },
+    {
+      "variant": "without_lora_and_multimodality",
+      "parent": "gpt2_miflu",
+      "correct_parent": true,
+      "target_component": "LoRA module + text/multimodal branch",
+      "parameter_groups_touched": [
+        "lora",
+        "text"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "gpt2_miflu"
+      ]
+    },
+    {
+      "variant": "without_multimodality",
+      "parent": "gpt2_miflu",
+      "correct_parent": true,
+      "target_component": "text/multimodal branch",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "gpt2_miflu"
+      ]
+    },
+    {
+      "variant": "without_task_instruction",
+      "parent": "gpt2_miflu",
+      "correct_parent": true,
+      "target_component": "Prompt-as-Prefix section",
+      "parameter_groups_touched": [
+        "prompt"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "gpt2_miflu"
+      ]
+    },
+    {
+      "variant": "zero_text",
+      "parent": "llm_backbones",
+      "correct_parent": true,
+      "target_component": "text branch",
+      "parameter_groups_touched": [
+        "text"
+      ],
+      "isolation_ok": true,
+      "applies_to": [
+        "calf_llm",
+        "timecma_llm",
+        "qwen_time_llm"
+      ]
+    }
+  ]
+}

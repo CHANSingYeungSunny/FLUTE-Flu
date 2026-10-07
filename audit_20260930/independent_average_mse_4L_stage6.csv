@@ -1,0 +1,10 @@
+model,average_MSE_4L_independent
+calf_llm,5.515299654
+dlinear,2.347831572
+itransformer,3.984698809
+miflu,2.041519334
+nlinear,2.049549558
+notext,1.922157682
+patchtst,3.920470490
+qwen_time_llm,5.219554504
+timecma_llm,2.670009000

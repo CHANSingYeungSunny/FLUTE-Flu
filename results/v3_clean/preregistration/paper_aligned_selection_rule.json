@@ -1,0 +1,31 @@
+{
+  "generated_utc": "2026-09-17T15:10:53Z",
+  "frozen_before_viewing_clean_v3_results": true,
+  "ranking_metric": "average_MSE_4L (seven-variable, full-horizon, z-space)",
+  "lower_is_better": true,
+  "normalisation": "none",
+  "outputs_required": [
+    "paper_aligned_best_non_llm",
+    "paper_aligned_best_llm",
+    "paper_aligned_best_overall"
+  ],
+  "statistical_equivalence_policy": [
+    "primary ranking uses average_MSE_4L",
+    "report all 10 seed values, mean, sample sd, confidence interval and paired effect sizes",
+    "use matched-seed paired comparisons where valid plus a preregistered multiple-comparison correction",
+    "if leading models are statistically or practically indistinguishable, report a top equivalence set instead of manufacturing a unique champion",
+    "only if an exact tie-break is needed and frozen in advance use average_MAE_4L, then resource cost",
+    "PTE/PIE must not be inserted post hoc as champion tie-breakers"
+  ],
+  "tie_break_order": [
+    "average_MSE_4L",
+    "average_MAE_4L",
+    "resource cost"
+  ],
+  "forbidden": [
+    "peak_hit_ratio tie-breaker",
+    "PTE/PIE tie-breaker",
+    "baseline-relative ratio",
+    "(r24+r60)/2"
+  ]
+}

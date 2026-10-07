@@ -1,0 +1,25 @@
+{
+  "audit": "independent reconstruction from frozen artifacts (Mandate C section 12)",
+  "verdict": "UNVERIFIABLE (model-level forward pass not re-executed in this read-only audit); data-level reconstruction VERIFIED byte-exact",
+  "data_level_reconstruction": {
+    "performed": true,
+    "result": "PASS",
+    "method": "Re-read the 10 frozen per-seed test_predictions.csv (variable_index==4), averaged y_pred_physical over seeds per (target_date, lead_weeks), took the lead_weeks==1 slice, and compared to final_test_curve_source_data/fig_test_nlinear_L{24,60}.csv.",
+    "max_abs_diff_vs_figure_source": 0.0,
+    "truth_column_check": "y_true_physical == raw ILITOTAL (max|d| = 0.0039)"
+  },
+  "model_level_reconstruction": {
+    "performed": false,
+    "reason": "Would require re-running a forward pass from the frozen compact checkpoint (compact.safetensors). The compact checkpoint lives in an external durable screening root (not under results/) and re-executing inference exceeds the read-only, no-rerun-Test mandate of this audit.",
+    "evidence_that_restoration_is_correct": {
+      "test_manifest": "results/v3_clean/test_eval/results/primary__nlinear__L24__seed42__w1/test_manifest.json",
+      "strict_load_ok": true,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "compact_sha256": "cc11cb834517d64dec02517e200b81f13e3a65ade4d9e33334ff396bc3bfaf26",
+      "base_model": "nlinear",
+      "device": "cuda"
+    },
+    "note": "The checkpoint was already restored under strict load (missing=0, unexpected=0) at Test time; this plus the byte-exact data-level reconstruction covers the identity/substitution concern. A full model forward re-run can be performed on a compute node if independent numeric confirmation is additionally required."
+  }
+}

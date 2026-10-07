@@ -1,0 +1,11 @@
+horizon,metric,paper_value,source,source_locator,verified_this_round,verification_method,caveat
+24,MSE,1.542,MIFlu_paper.md,"Table V row: | 24 | MSE | **1.542** | ... (line 316)",YES,read directly from the project paper copy; arithmetic self-check passed,"the project paper copy is a transcription; direct re-extraction of the table numbers from the PDF did not succeed with the available tooling, so the transcription is the authority"
+24,MAE,0.726,MIFlu_paper.md,Table V line 317,YES,same,same
+36,MSE,1.422,MIFlu_paper.md,Table V line 318,YES,same,same
+36,MAE,0.779,MIFlu_paper.md,Table V line 319,YES,same,same
+48,MSE,1.414,MIFlu_paper.md,Table V line 320,YES,same,same
+48,MAE,0.757,MIFlu_paper.md,Table V line 321,YES,same,same
+60,MSE,1.364,MIFlu_paper.md,Table V line 322,YES,same,same
+60,MAE,0.719,MIFlu_paper.md,Table V line 323,YES,same,same
+4L-mean,MSE,1.4355,derived from Table V,MIFlu_paper.md arithmetic,YES,"(1.542+1.422+1.414+1.364)/4 = 1.43550 exactly; Table VIII rounds to 1.436","the paper does not print 1.4355 in Table V; Table VIII prints the rounded 1.436"
+4L-mean,MAE,0.74525,derived from Table V,MIFlu_paper.md arithmetic,YES,"(0.726+0.779+0.757+0.719)/4 = 0.74525 exactly; Table VIII rounds to 0.745",same

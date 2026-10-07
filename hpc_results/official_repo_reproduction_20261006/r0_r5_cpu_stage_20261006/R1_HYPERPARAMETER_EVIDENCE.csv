@@ -1,0 +1,25 @@
+setting,paper_value_or_rule,code_value,classification,source,restorable_for_R1B,note
+task_input_length_T,104 (national),104,PAPER_EXPLICIT (Table IV) + OFFICIAL_CODE_EXPLICIT,Table IV / main_ILI_lora.py L50,YES,cross-verified in both the PDF image and the updated Markdown
+horizons,"L=24,36,48,60 (national)","--pred_len, one run per L",PAPER_EXPLICIT (Table IV) + OFFICIAL_CODE_EXPLICIT,Table IV,YES,
+epochs,20 (national),--train_epochs default 1,PAPER_EXPLICIT (Table IV),Table IV,YES,CORRECTS the earlier UNRECOVERED classification; the project value of 20 was paper-supported
+batch_size,16 (national),--batch_size default 16,PAPER_EXPLICIT (Table IV) + OFFICIAL_CODE_EXPLICIT,Table IV,YES,agrees
+learning_rate,0.0005 (national),--learning_rate default 1e-4,PAPER_EXPLICIT (Table IV),Table IV,YES,CORRECTS the earlier UNRECOVERED classification; the code default differs
+optimizer,NOT STATED,Adam,OFFICIAL_CODE_EXPLICIT only,main_ILI_lora.py,AS_DEFAULT,
+scheduler,NOT STATED,lradj type1 with cos=0 means adjust_learning_rate IS called; hard-coded 0.9 decay from epoch 4; --decay_fac 0.75 is inert,LOG_RECOVERED (code) / UNRECOVERED (paper),utils/tools.py L26-27,AS_DEFAULT,
+backbone_layers_K,6 (national),--gpt_layers default 6,PAPER_EXPLICIT + OFFICIAL_CODE_EXPLICIT,paper prose,YES,agrees
+patch_length_stride,"Lp=24, S=2 (national)","patch_size 24, stride 2",PAPER_EXPLICIT + OFFICIAL_CODE_EXPLICIT,paper prose,YES,agrees
+lora_rank_r,4,--lora_r default 4,PAPER_EXPLICIT + OFFICIAL_CODE_EXPLICIT,paper prose,YES,agrees
+lora_actually_applied,yes - part of the method,NO - PEFT=0 by default so the branch never runs,CONFLICTING_EVIDENCE,main_ILI_lora.py L48 and L74-90,YES_RESTORE_REQUIRED,
+text_embedder,full GPT2,--textmodel gpt2,PAPER_EXPLICIT + OFFICIAL_CODE_EXPLICIT,paper Section VI-C,YES,agrees
+text_sequence_order,UNRESOLVED - the paper contradicts itself (L205 vs L219),text AFTER patches; the kept prefix cannot attend to it; VERIFIED text_inert,CONFLICTING_EVIDENCE,paper + GPT4TS_lora.py L139 and L145,YES_RESTORE_REQUIRED,B-2 in R1-B
+target_identity,seven variables declared; the evaluated variable for Table V is NOT stated,channel 0 only,CONFLICTING_EVIDENCE,paper L238 and L464-510 + data_loader.py L299 L305 L312-317,NOT_FROM_RELEASED,
+pooling_axes,NOT STATED,mean over origins x leads x the single channel,UNRECOVERED,paper silent; tools.py L320-331,NO,
+checkpoint_selection,NOT STATED,"Test MSE selects the best epoch, every epoch",UNRECOVERED (paper) / OFFICIAL_CODE_EXPLICIT (code),main_ILI_lora.py L211 L225 L264,NO,
+repetitions,mean of 10,--itr default 1; np.mean(mses),PAPER_EXPLICIT + OFFICIAL_CODE_EXPLICIT,paper L306 + main_ILI_lora.py L255-258,YES,
+seeds,NOT STATED,fix_seed=2021 set ONCE at module level,UNRECOVERED (paper),main_ILI_lora.py L27-30,NO,
+national_dataset,"966 rows, verified against Table II 7/7",national_illness.csv 966 rows,PAPER_EXPLICIT (Table II) + OFFICIAL_CODE_EXPLICIT,Table II vs the file,YES,NEW this round - resolves the data-identity question
+national_split,70:10:20,676/97/193,PAPER_EXPLICIT + OFFICIAL_CODE_EXPLICIT,paper prose + data_loader.py,YES,agrees
+metric_space,MSE/MAE on standardized data (national),standardized only; inverse_transform never called,PAPER_EXPLICIT + CODE_EXPLICIT,paper Section V-B + utils/metrics.py,YES,
+four_horizon_average,equal-weight mean of the four horizon scores,"a reporting step, not present in the code",PAPER_EXPLICIT,Table V caption + Table VIII 1.436,YES,
+environment,"Python 3.9.18, PyTorch 2.1.0, RTX 3090",not stated,PAPER_EXPLICIT,paper,PARTIAL,HPC uses A100; hardware-induced numerical differences are possible
+regional_split,50:10:40 (US-Region),n/a - regional not run,PAPER_EXPLICIT,paper prose,n/a,distinct from the national 70:10:20; the brief did not note this

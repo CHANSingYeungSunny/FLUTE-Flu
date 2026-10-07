@@ -1,0 +1,169 @@
+--- v3.2/scripts/innovation/backbones/llm_inspired.py
++++ v3.3/scripts/innovation/backbones/llm_inspired.py
+@@ -43,13 +43,74 @@
+             self.loaded = True
+             for parameter in self.model.parameters():
+                 parameter.requires_grad = False
++            # ── D6: GPT-2 padding compatibility ──────────────────────────────
++            # GPT-2's tokenizer has no pad token, while Qwen's does. Requesting
++            # padding without one raises ValueError. The safe repair reuses the
++            # EXISTING eos token as the pad token: no new vocabulary entry is
++            # added and no embedding matrix is resized, so pretrained weights and
++            # the token-id space are untouched. Padded positions are then
++            # excluded by the attention mask wherever a pooled/last-token
++            # representation is taken.
++            self.pad_token_reused_eos = False
++            self.tokenizer_vocab_size = None
++            self.model_embedding_rows = None
++            self._ensure_pad_token()
++            self.tokenizer_vocab_size = int(len(self.tokenizer))
++            self.model_embedding_rows = int(
++                self.model.get_input_embeddings().weight.shape[0])
++
++    # ── D6 helpers ──────────────────────────────────────────────────────────
++    def _ensure_pad_token(self) -> None:
++        """Reuse the existing EOS token as the pad token when none is defined.
++
++        Never adds a vocabulary entry and never resizes embeddings. Fails closed
++        when the tokenizer provides neither a pad nor an eos token.
++        """
++        tok = self.tokenizer
++        if getattr(tok, "pad_token_id", None) is None:
++            if getattr(tok, "eos_token_id", None) is None:
++                raise RuntimeError(
++                    f"tokenizer for {self.model_id!r} has neither pad_token_id nor "
++                    "eos_token_id; cannot pad safely (refusing to invent a token id)")
++            # reuse the EXISTING eos token string/id — no vocabulary growth
++            tok.pad_token = tok.eos_token
++            self.pad_token_reused_eos = True
++        else:
++            self.pad_token_reused_eos = False
++
++    @staticmethod
++    def last_non_pad(hidden, attention_mask):
++        """Hidden state of the LAST NON-PADDING token for each sample.
++
++        Right-padding is assumed (the frozen rule). Never selects a padded slot.
++        """
++        lengths = (attention_mask.sum(dim=1) - 1).clamp(min=0)
++        idx = lengths.view(-1, 1, 1).expand(-1, 1, hidden.size(-1))
++        return hidden.gather(1, idx).squeeze(1)
++
++    def pad_report(self) -> dict:
++        return {"model_id": self.model_id,
++                "pad_token_reused_eos": bool(self.pad_token_reused_eos),
++                "pad_token_id": (None if self.tokenizer is None
++                                 else self.tokenizer.pad_token_id),
++                "eos_token_id": (None if self.tokenizer is None
++                                 else self.tokenizer.eos_token_id),
++                "vocab_size": self.tokenizer_vocab_size,
++                "embedding_rows": self.model_embedding_rows,
++                "vocab_grown": False,
++                "embedding_resized": False}
+ 
+     def encode_prompt(self, prompts: list[str], device: torch.device) -> torch.Tensor:
+         if not self.loaded:
+             raise RuntimeError("text backbone is not loaded; compute-node load required")
+-        batch = self.tokenizer(prompts, return_tensors="pt", padding=True, truncation=True)
++        batch = self.tokenizer(prompts, return_tensors="pt", padding=True,
++                               truncation=True)
+         batch = {key: value.to(device) for key, value in batch.items()}
+-        return self.model(**batch).last_hidden_state
++        attention_mask = batch["attention_mask"]
++        # The attention mask is returned alongside the hidden states so every
++        # consumer can exclude padded positions (D6 requirement).
++        hidden = self.model(**batch).last_hidden_state
++        return hidden, attention_mask
+ 
+ 
+ class QwenTimeLLM(ForecastBackbone):
+@@ -99,8 +160,14 @@
+         if self.train_statistics is None:
+             raise RuntimeError("train-only Prompt-as-Prefix statistics were not set")
+         prompts = [self.build_prompt_as_prefix(self.train_statistics)] * batch
+-        prompt_tokens = self.text.encode_prompt(prompts, x.device)
+-        hidden = self.text.model(inputs_embeds=torch.cat((prompt_tokens, patch_tokens.mean(1)), dim=1)).last_hidden_state[:, -1]
++        prompt_tokens, prompt_mask = self.text.encode_prompt(prompts, x.device)
++        # The reprogrammed patch token is always a real (non-pad) position, so it
++        # carries mask 1 and remains the last token used for the forecast.
++        patch_mask = torch.ones((batch, 1), device=x.device, dtype=prompt_mask.dtype)
++        combined_mask = torch.cat((prompt_mask, patch_mask), dim=1)
++        hidden = self.text.model(
++            inputs_embeds=torch.cat((prompt_tokens, patch_tokens.mean(1)), dim=1),
++            attention_mask=combined_mask).last_hidden_state[:, -1]
+         return self.forecast_projection(hidden).reshape(batch, self.N, self.L)
+ 
+     def architecture_report(self):
+@@ -125,13 +192,23 @@
+         self.forecast_head = nn.Linear(hidden_dim, self.N * self.L)
+         self._last_auxiliary_loss = None
+ 
+-    def cross_modal_match(self, temporal, textual):
++    def _text_pool(self, textual, text_mask=None):
++        """Masked text pooling (D6): when a mask is supplied the LAST NON-PADDING
++        token is used, so padded positions can never enter the cross-modal
++        representation, the alignment or either auxiliary loss."""
++        if text_mask is None:
++            return textual[:, -1]
++        return self.text.last_non_pad(textual, text_mask)
++
++    def cross_modal_match(self, temporal, textual, text_mask=None):
+         query = self.match_query(temporal)
+-        key = self.text_projection(textual[:, -1])
++        key = self.text_projection(self._text_pool(textual, text_mask))
+         return F.normalize(query, dim=-1), F.normalize(key, dim=-1)
+ 
+-    def feature_regularization_loss(self, temporal, textual):
+-        return F.mse_loss(self.temporal_projection(temporal), self.text_projection(textual[:, -1]).detach())
++    def feature_regularization_loss(self, temporal, textual, text_mask=None):
++        return F.mse_loss(
++            self.temporal_projection(temporal),
++            self.text_projection(self._text_pool(textual, text_mask)).detach())
+ 
+     def output_consistency_loss(self, temporal_output, textual_output):
+         return F.mse_loss(temporal_output, textual_output.detach())
+@@ -141,13 +218,13 @@
+             raise RuntimeError("CALF text backbone unavailable; run on compute node with cache")
+         temporal = self.temporal_branch(x.mean(1))
+         prompts = ["Forecast ILITOTAL from the training protocol."] * x.shape[0]
+-        textual = self.text.encode_prompt(prompts, x.device)
+-        temporal_repr, text_repr = self.cross_modal_match(temporal, textual)
++        textual, text_mask = self.text.encode_prompt(prompts, x.device)
++        temporal_repr, text_repr = self.cross_modal_match(temporal, textual, text_mask)
+         fused = temporal_repr + text_repr
+         temporal_output = self.forecast_head(temporal_repr)
+         textual_output = self.forecast_head(text_repr)
+         self._last_auxiliary_loss = (
+-            self.feature_regularization_loss(temporal, textual)
++            self.feature_regularization_loss(temporal, textual, text_mask)
+             + self.output_consistency_loss(temporal_output, textual_output)
+         )
+         return self.forecast_head(fused).reshape(x.shape[0], self.N, self.L)
+@@ -177,8 +254,14 @@
+         self.retrieval_query = nn.Linear(hidden_dim, hidden_dim)
+         self.forecast_head = nn.Linear(hidden_dim, self.N * self.L)
+ 
+-    def retrieve_aligned_prompt(self, series_repr, prompt_tokens):
+-        prompt_repr = self.prompt_projection(prompt_tokens[:, -1:, :])
++    def retrieve_aligned_prompt(self, series_repr, prompt_tokens, prompt_mask=None):
++        # D6: select the LAST NON-PADDING token via the attention mask, never the
++        # final padded array slot.
++        if prompt_mask is None:
++            pooled = prompt_tokens[:, -1:, :]
++        else:
++            pooled = self.text.last_non_pad(prompt_tokens, prompt_mask).unsqueeze(1)
++        prompt_repr = self.prompt_projection(pooled)
+         scores = torch.einsum("bd,bkd->bk", F.normalize(self.retrieval_query(series_repr), dim=-1), F.normalize(prompt_repr, dim=-1))
+         index = scores.argmax(dim=-1)
+         return prompt_repr[torch.arange(prompt_repr.shape[0], device=prompt_repr.device), index]
+@@ -188,8 +271,8 @@
+             raise RuntimeError("TimeCMA text backbone unavailable; run on compute node with cache")
+         series_repr = self.time_series_branch(x.mean(1))
+         prompts = ["Encode the temporal context and forecast ILITOTAL."] * x.shape[0]
+-        prompt_tokens = self.text.encode_prompt(prompts, x.device)
+-        aligned = self.retrieve_aligned_prompt(series_repr, prompt_tokens)
++        prompt_tokens, prompt_mask = self.text.encode_prompt(prompts, x.device)
++        aligned = self.retrieve_aligned_prompt(series_repr, prompt_tokens, prompt_mask)
+         fused = series_repr + aligned
+         return self.forecast_head(fused).reshape(x.shape[0], self.N, self.L)
+ 

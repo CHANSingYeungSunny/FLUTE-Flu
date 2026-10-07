@@ -1,0 +1,134 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "chars": 6308,
+      "text_blocks": 18,
+      "image_blocks": 1,
+      "xobjects": 1,
+      "decimal_numbers_found": 1,
+      "sample": [
+        "10.1109"
+      ]
+    },
+    {
+      "page": 2,
+      "chars": 6652,
+      "text_blocks": 13,
+      "image_blocks": 0,
+      "xobjects": 0,
+      "decimal_numbers_found": 0,
+      "sample": []
+    },
+    {
+      "page": 3,
+      "chars": 5825,
+      "text_blocks": 36,
+      "image_blocks": 0,
+      "xobjects": 0,
+      "decimal_numbers_found": 0,
+      "sample": []
+    },
+    {
+      "page": 4,
+      "chars": 2567,
+      "text_blocks": 13,
+      "image_blocks": 1,
+      "xobjects": 1,
+      "decimal_numbers_found": 0,
+      "sample": []
+    },
+    {
+      "page": 5,
+      "chars": 4440,
+      "text_blocks": 12,
+      "image_blocks": 0,
+      "xobjects": 0,
+      "decimal_numbers_found": 0,
+      "sample": []
+    },
+    {
+      "page": 6,
+      "chars": 3870,
+      "text_blocks": 57,
+      "image_blocks": 1,
+      "xobjects": 1,
+      "decimal_numbers_found": 0,
+      "sample": []
+    },
+    {
+      "page": 7,
+      "chars": 3792,
+      "text_blocks": 14,
+      "image_blocks": 0,
+      "xobjects": 0,
+      "decimal_numbers_found": 1,
+      "sample": [
+        "9.18"
+      ]
+    },
+    {
+      "page": 8,
+      "chars": 2736,
+      "text_blocks": 10,
+      "image_blocks": 1,
+      "xobjects": 1,
+      "decimal_numbers_found": 0,
+      "sample": []
+    },
+    {
+      "page": 9,
+      "chars": 3821,
+      "text_blocks": 14,
+      "image_blocks": 2,
+      "xobjects": 2,
+      "decimal_numbers_found": 0,
+      "sample": []
+    },
+    {
+      "page": 10,
+      "chars": 4628,
+      "text_blocks": 22,
+      "image_blocks": 1,
+      "xobjects": 1,
+      "decimal_numbers_found": 1,
+      "sample": [
+        "0.596"
+      ]
+    },
+    {
+      "page": 11,
+      "chars": 4814,
+      "text_blocks": 20,
+      "image_blocks": 1,
+      "xobjects": 1,
+      "decimal_numbers_found": 3,
+      "sample": [
+        "10.1145",
+        "10.1145",
+        "10.1109"
+      ]
+    },
+    {
+      "page": 12,
+      "chars": 5982,
+      "text_blocks": 34,
+      "image_blocks": 0,
+      "xobjects": 0,
+      "decimal_numbers_found": 9,
+      "sample": [
+        "10.1609",
+        "10.1109",
+        "10.1109",
+        "10.1109",
+        "10.1109",
+        "10.1609",
+        "10.1016",
+        "2021.03",
+        "10.1016"
+      ]
+    }
+  ],
+  "table_pages": {},
+  "ocr_available": false
+}

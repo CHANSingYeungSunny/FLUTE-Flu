@@ -1,0 +1,6 @@
+{"utc": "2026-09-16T17:01:00Z", "event": "phase0_preregistration_verified", "n_checks": 26, "n_passed": 25, "deliverable": "COMPLETE"}
+{"utc": "2026-09-16T17:01:00Z", "event": "stale_records_detected", "files": ["results/v3/pilots/pilot_submission_manifest.json", "results/v3/pilots/pilot_job_status.csv"], "was": "gate 565860 FAILED 6/8, 0 submissions", "observed_hpc_truth": "gate 565869 COMPLETED 8/8, 5 pilots COMPLETED"}
+{"utc": "2026-09-16T17:01:00Z", "event": "reconciled", "basis": "lightweight sacct/squeue only", "slurm_submitted_this_round": 0}
+{"utc": "2026-09-16T17:01:14Z", "event": "phase0_preregistration_verified", "n_checks": 26, "n_passed": 26, "deliverable": "COMPLETE"}
+{"utc": "2026-09-16T17:01:14Z", "event": "stale_records_detected", "files": ["results/v3/pilots/pilot_submission_manifest.json", "results/v3/pilots/pilot_job_status.csv"], "was": "gate 565860 FAILED 6/8, 0 submissions", "observed_hpc_truth": "gate 565869 COMPLETED 8/8, 5 pilots COMPLETED"}
+{"utc": "2026-09-16T17:01:14Z", "event": "reconciled", "basis": "lightweight sacct/squeue only", "slurm_submitted_this_round": 0}

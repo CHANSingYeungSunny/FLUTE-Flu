@@ -1,0 +1,7 @@
+{
+  "generated_utc": "2026-09-17T15:52:55Z",
+  "deferred_parent": "BEST_VALIDATION_LLM_AFTER_SCREENING",
+  "deferred_rows": 18,
+  "rule": "a row whose parent_model == BEST_VALIDATION_LLM_AFTER_SCREENING must be refused before binding",
+  "checked_by_static_gate": true
+}

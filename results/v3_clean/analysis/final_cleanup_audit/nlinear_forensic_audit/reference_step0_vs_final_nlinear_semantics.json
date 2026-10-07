@@ -1,0 +1,40 @@
+{
+  "audit": "reference fig_q1_step_sweep_L24_L60_step0.png vs final NLinear figures (Mandate C section 5)",
+  "reference_figure": {
+    "path": "results/ili/figures/fig_q1_step_sweep_L24_L60_step0.png",
+    "generator": "scripts/q1_step_sweep.py",
+    "aggregation": "aggregate_lead_time(mode='fixed_step', step=0)",
+    "step0_meaning": "step 0 == lead-1 (1-week-ahead) under zero-based indexing",
+    "source_data": "data/predictions_miflu_L{24,36,48,60}_paper_protocol.csv (MIFlu / GPT-2 model)",
+    "target_variable": "ILITOTAL",
+    "curve_type": "rolling-origin fixed-lead (lead-1) concatenation",
+    "seed_averaging": "yes (MIFlu 10-repetition mean)",
+    "inverse_transform": "z -> physical ILITOTAL",
+    "x_axis": "week_start_date"
+  },
+  "final_nlinear_figures": {
+    "paths": ["results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L24.png",
+              "results/v3_clean/final/final_test_prediction_figures/fig_test_nlinear_L60.png"],
+    "generator": "scripts/v3_clean/final_test_figures.py",
+    "aggregation": "load_seed_mean_curves -> lead1_curve (lead_weeks == 1)",
+    "lead1_meaning": "lead_weeks == 1 == step 0 == 1-week-ahead (zero-based step == one-based lead)",
+    "source_data": "results/v3_clean/test_eval/results/primary__nlinear__L{L}__seed{s}__w1/predictions/test_predictions.csv (variable_index==4)",
+    "target_variable": "ILITOTAL",
+    "curve_type": "rolling-origin fixed-lead (lead-1) concatenation",
+    "seed_averaging": "yes (10 seeds 42..51, seed-mean)",
+    "inverse_transform": "z -> physical ILITOTAL",
+    "x_axis": "week_start_date (MMWR via cdc_calendar)"
+  },
+  "field_comparison": {
+    "step0_equals_lead1": {"verdict": "EXACT MATCH", "note": "step 0 (zero-based) == lead_weeks 1 (one-based) == 1-week-ahead"},
+    "target_variable": {"verdict": "EXACT MATCH", "note": "ILITOTAL both"},
+    "curve_type": {"verdict": "EXACT MATCH", "note": "rolling-origin lead-1 concatenation, one origin per target week, no overlap"},
+    "seed_averaging": {"verdict": "EQUIVALENT WITH DOCUMENTED DIFFERENCE", "note": "both average stochastic repetitions/seeds; reference averages MIFlu 10 reps, final averages NLinear 10 seeds"},
+    "inverse_transform": {"verdict": "EXACT MATCH", "note": "z -> physical ILITOTAL, shared inverse for truth and pred"},
+    "x_axis": {"verdict": "EXACT MATCH", "note": "week_start_date (MMWR Sunday)"},
+    "model": {"verdict": "EQUIVALENT WITH DOCUMENTED DIFFERENCE", "note": "reference figure shows MIFlu (GPT-2); final figures show NLinear. Same SEMANTICS, different model."},
+    "style": {"verdict": "EQUIVALENT WITH DOCUMENTED DIFFERENCE", "note": "reference solid black/dashed red; final solid blue (#1f77b4)/dashed red (#d62728) + peak markers"}
+  },
+  "overall_verdict": "EQUIVALENT WITH DOCUMENTED DIFFERENCE",
+  "conclusion": "The final NLinear L24/L60 figures follow the SAME essential semantics as the reference step0 figure: rolling-origin lead-1 (1-week-ahead) seed-mean ILITOTAL physical curve over test target weeks. The differences are the model (NLinear vs MIFlu GPT-2) and cosmetic style (colors/peak markers), neither of which changes the figure semantics."
+}

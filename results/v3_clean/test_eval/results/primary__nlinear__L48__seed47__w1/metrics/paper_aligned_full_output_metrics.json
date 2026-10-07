@@ -1,0 +1,57 @@
+{
+  "contract": "paper_aligned_full_output",
+  "space": "StandardScaler z",
+  "n_variables": 7,
+  "variables_observed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "complete_seven_variable_output": true,
+  "mse_all_7vars_full_horizon_z": 2.8964764211084506,
+  "mae_all_7vars_full_horizon_z": 1.179221384441046,
+  "n_elements": 53088,
+  "horizon": 48,
+  "per_variable_z": {
+    "0": {
+      "mse_z": 1.2031194856934204,
+      "mae_z": 0.7417228012706766,
+      "n": 7584
+    },
+    "1": {
+      "mse_z": 1.5983565747853485,
+      "mae_z": 0.8556953755102119,
+      "n": 7584
+    },
+    "2": {
+      "mse_z": 5.766373563632749,
+      "mae_z": 1.7603351862314953,
+      "n": 7584
+    },
+    "3": {
+      "mse_z": 3.83807500679512,
+      "mae_z": 1.3620149750469541,
+      "n": 7584
+    },
+    "4": {
+      "mse_z": 5.407617140622563,
+      "mae_z": 1.6080551438592572,
+      "n": 7584
+    },
+    "5": {
+      "mse_z": 0.862029164458323,
+      "mae_z": 0.8334804015737105,
+      "n": 7584
+    },
+    "6": {
+      "mse_z": 1.59976401177163,
+      "mae_z": 1.0932458075950167,
+      "n": 7584
+    }
+  },
+  "primary_selector_role": "average_MSE_4L is the arithmetic mean of the four per-L values of mse_all_7vars_full_horizon_z"
+}

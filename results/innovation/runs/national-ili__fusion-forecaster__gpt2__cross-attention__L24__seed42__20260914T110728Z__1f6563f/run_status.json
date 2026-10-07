@@ -1,0 +1,22 @@
+{
+  "updated_utc": "2026-09-14T11:07:46Z",
+  "run_id": "national-ili__fusion-forecaster__gpt2__cross-attention__L24__seed42__20260914T110728Z__1f6563f",
+  "status": "ok",
+  "phase": "validation",
+  "best_epoch": 1,
+  "best_val_mse": 0.9104000329971313,
+  "n_val_windows": 16,
+  "n_train_windows": 32,
+  "checkpoint_sha256": "cb67d2494ef6c328e081b216b68e6804c124f919ec4235abc16d90b1e76a50d7",
+  "state_dict_sha256": "e284074675c452cd3eca276c610a41e2a68d6183f85af04ce29e84007023e54d",
+  "restore_ok": true,
+  "val_mse_all_z": 0.5194443431671251,
+  "val_mse_ili_phys": 40715763.047349595,
+  "peak_hit_ratio": null,
+  "val_mae_all_z": 0.5882306959611014,
+  "trainable_parameters": 970408,
+  "total_parameters": 970408,
+  "train_seconds": 2.75,
+  "truncated_by_time_limit": false,
+  "test_artifacts_written": false
+}

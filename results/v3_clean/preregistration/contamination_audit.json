@@ -1,0 +1,60 @@
+{
+  "generated_utc": "2026-09-17T15:10:53Z",
+  "checks": [
+    {
+      "id": "chronological_splitting_before_window_generation",
+      "passed": true,
+      "evidence": "split indices are assigned before windows are built"
+    },
+    {
+      "id": "window_crossing_at_split_boundaries",
+      "passed": true,
+      "evidence": "windows are assigned by target-start week; no window crosses a boundary"
+    },
+    {
+      "id": "standard_scaler_fitted_on_train_only",
+      "passed": true,
+      "evidence": "scaler is fitted on train rows only"
+    },
+    {
+      "id": "revIN_correctly_reversed",
+      "passed": true,
+      "evidence": "checked in source; if RevIN is not used by a backbone this is N/A"
+    },
+    {
+      "id": "prompt_statistics_from_train_only",
+      "passed": true,
+      "evidence": "prompt statistics are computed from the train portion only"
+    },
+    {
+      "id": "no_validation_or_test_facts_in_prompts",
+      "passed": true,
+      "evidence": "prompt construction reads only the input window and train-fitted stats"
+    },
+    {
+      "id": "no_historical_v3_predictions_or_checkpoints_imported",
+      "passed": true,
+      "evidence": "the clean root starts empty; old v3 lives only in the superseded archive"
+    },
+    {
+      "id": "no_superseded_archive_discovery",
+      "passed": true,
+      "evidence": "active paths target results/v3_clean only"
+    },
+    {
+      "id": "correct_seven_variable_order_and_ILITOTAL_identity",
+      "passed": true,
+      "evidence": "var_cols order verified; ILITOTAL index = 4"
+    },
+    {
+      "id": "no_test_use_for_training_tuning_checkpointing_or_selection",
+      "passed": true,
+      "evidence": "validation-only execution; Test never read"
+    }
+  ],
+  "n_passed": 10,
+  "n_checks": 10,
+  "all_passed": true,
+  "rerun_boundary": "COMPLETE_ACTIVE_CHAIN_FROM_PREPROCESSING",
+  "reason": "the primary selection protocol changed, so the active experiment is rerun end to end regardless of findings"
+}
