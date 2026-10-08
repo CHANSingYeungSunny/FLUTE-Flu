@@ -1,0 +1,9 @@
+CURRENT_OFFICIAL_REPORT
+path=c:\Users\Asus\Desktop\FYP code\MLFlu\reports\concise_final\MIFlu_非LLM与LLM流感预测最终报告_中文版_官方仓库966行严格测试冠军版_精简终版.docx
+sha256=73f97cc2439f56950b37fa9a8726cac1f84e375b54553700f93b2f196b2ea5f6
+version=精简终版 v1 (修正：移除“自定义通过”列/口径，仅保留文献标准 PTE≤1周&PIE≤25%；论文复现结果仅保留“论文目标 1.4355”与“MIFlu 最终Test 1.8652”的统一对比，移除 C0/C1)
+date=2026-10-08
+source_result_dir=c:\Users\Asus\Desktop\FYP code\MLFlu\results\v3_clean\analysis\peak_criteria
+authority=CURRENT_AUTHORITATIVE_FINAL_REPORT
+supersedes=历史1025行实验报告 (SUPERSEDED_HISTORICAL_REPORT)
+evidence_source=v2 综合证据报告 (COMPREHENSIVE_EVIDENCE_REPORT)

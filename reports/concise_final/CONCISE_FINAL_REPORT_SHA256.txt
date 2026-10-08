@@ -1,0 +1,2 @@
+CONCISE_FINAL_REPORT_SHA256=73f97cc2439f56950b37fa9a8726cac1f84e375b54553700f93b2f196b2ea5f6
+pages=A4; figures_embedded=6; tables=10; h1=11

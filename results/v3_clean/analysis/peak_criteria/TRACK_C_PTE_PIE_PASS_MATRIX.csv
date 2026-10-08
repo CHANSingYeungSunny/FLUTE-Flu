@@ -1,0 +1,9 @@
+model,n_true_peaks,literature_hits_PTE1_PIE25,literature_hit_rate_pct,mean_PTE_wk,mean_PIE_pct,satisfies_literature
+miflu,36,15,41.7,0.29,25.0,PARTIAL
+nlinear,36,36,100.0,0.28,3.14,YES
+dlinear,36,31,86.1,0.92,17.72,PARTIAL
+timecma_llm,36,0,0.0,1.38,50.44,NO
+patchtst,36,0,0.0,0.67,66.61,NO
+itransformer,36,0,0.0,0.72,66.16,NO
+qwen_time_llm,36,1,2.8,0.96,36.33,PARTIAL
+calf_llm,36,0,0.0,0.93,81.25,NO

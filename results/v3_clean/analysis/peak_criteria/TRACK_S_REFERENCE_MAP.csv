@@ -1,0 +1,8 @@
+reference,source_path,context,meaning,final_report_relevant,verdict
+scripts/s1_*.py,scripts/s1_write_csvs.py | scripts/s1_vs_trackc.py | scripts/parse_s1_results.py,Track S deliverable / comparison scripts,STOPPING-CRITERIA SENSITIVITY (patience-5 early stopping),yes (supplementary methods),SENSITIVITY
+S1_EARLYSTOP_PROTOCOL.md,hpc_results/.../r1_v2_verification_20261007/S1_EARLYSTOP_PROTOCOL.md,Declares Track S as a stopping-criteria supplementary experiment,STOPPING-CRITERIA SENSITIVITY, yes (supplementary methods),SENSITIVITY
+s1es Slurm jobs,hpc_results/.../r1_v2_verification_20261007/s1_earlystop.sbatch | s1_batch_driver.sh,Track S early-stopping HPC jobs (job name s1es),STOPPING-CRITERIA SENSITIVITY, yes (supplementary methods),SENSITIVITY
+STORAGE_TRACK_S0_S1.md,hpc_results/.../r0_r5_cpu_stage_20261006/STORAGE_TRACK_S0_S1.md,Checkpoint storage track S0-S5 (infrastructure),INFRASTRUCTURE (stale label, NOT a results track),no,STALE_LABEL
+storage_guard.py,hpc_results/.../r0_r5_cpu_stage_20261006/storage/storage_guard.py,References the S-track storage guard,INFRASTRUCTURE (stale),no,STALE_LABEL
+HPC_STORAGE_READY_VERDICT.md,hpc_results/.../r0_r5_cpu_stage_20261006/HPC_STORAGE_READY_VERDICT.md,Covers Storage Track S2-S5,INFRASTRUCTURE (stale),no,STALE_LABEL
+TRACK_SEPARATION_RULES.md,hpc_results/.../postrun_audit_20261006/TRACK_SEPARATION_RULES.md,"Uses 'track' to mean the A/B/C experiment tracks, not Track S",EXPERIMENT TRACK SEPARATION (A/B/C),context only,NOT_TRACK_S

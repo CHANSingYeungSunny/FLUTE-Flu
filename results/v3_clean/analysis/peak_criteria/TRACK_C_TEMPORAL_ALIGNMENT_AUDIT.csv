@@ -1,0 +1,9 @@
+model,cells,lag0_best_frac,alignment_status,test_date_start,test_date_end,pre_covid_weeks,covid_weeks,pre_covid_mae_ili,covid_mae_ili,pre_covid_rel_mae,covid_rel_mae
+miflu,12,1.0,ALIGNED,2016-10-25,2020-06-30,167,26,8477.1,5812.1,0.287,0.32
+nlinear,12,0.75,MINOR_PHASE_LAG,2016-10-25,2020-06-30,167,26,3556.8,3477.9,0.121,0.191
+dlinear,12,1.0,ALIGNED,2016-10-25,2020-06-30,167,26,5442.2,2550.5,0.185,0.14
+timecma_llm,12,1.0,ALIGNED,2016-10-25,2020-06-30,167,26,10245.5,4567.7,0.347,0.251
+patchtst,12,1.0,ALIGNED,2016-10-25,2020-06-30,167,26,14327.7,5805.6,0.486,0.319
+itransformer,12,1.0,ALIGNED,2016-10-25,2020-06-30,167,26,14427.9,5302.7,0.489,0.292
+qwen_time_llm,12,1.0,ALIGNED,2016-10-25,2020-06-30,167,26,10180.4,5639.9,0.345,0.31
+calf_llm,12,1.0,ALIGNED,2016-10-25,2020-06-30,167,26,17397.2,3792.6,0.59,0.209

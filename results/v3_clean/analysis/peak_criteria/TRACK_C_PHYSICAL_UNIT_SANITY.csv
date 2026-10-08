@@ -1,0 +1,8 @@
+index,csv_col,canonical_name,role,train_min,train_max,train_mean,inverse_roundtrip_max_err
+0,1,% WEIGHTED ILI,auxiliary feature,0.35,7.72,1.74,8.881784197001252e-16
+1,2,% UNWEIGHTED ILI,auxiliary feature,0.49,7.62,1.71,8.881784197001252e-16
+2,3,AGE 0-4,auxiliary feature,98.0,13187.0,2672.45,1.8189894035458565e-12
+3,4,AGE 5-24,auxiliary feature,91.0,39364.0,3745.15,7.275957614183426e-12
+4,5,ILITOTAL,PTE/PIE TARGET (ILITOTAL influenza activity),318.0,69068.0,9439.84,7.275957614183426e-12
+5,6,NUM. OF PROVIDERS,auxiliary feature,264.0,2197.0,1322.16,1.1368683772161603e-13
+6,OT,OT,auxiliary feature,64699.0,906536.0,493629.37,2.9103830456733704e-11
