@@ -1,6 +1,14 @@
 # R1-C — BOUNDED REPRODUCTION-GAP ANALYSIS
 
-Generated 2026-10-07. Track R only. **Does not touch Track C.**
+Generated 2026-10-08. **Final: all 24 fits complete (24/24, all rc 0).**
+Track R only. **Does not touch Track C.**
+
+> **Revision note.** An earlier version of this file reported seed-1000-only
+> numbers (C0 1.9477 / C1 1.8029, gap 35.68 % → 25.59 %). Those are superseded
+> by the three-seed means below. The single-seed estimate was materially wrong:
+> seed 1000 turned out to be an unlucky seed for C0 (1.9477 versus a 3-seed mean
+> of 1.8561). This is exactly the failure mode the comparability audit warned
+> about, and it is why the frozen selection rule requires a three-seed mean.
 
 ---
 
@@ -9,8 +17,6 @@ Generated 2026-10-07. Track R only. **Does not touch Track C.**
 **Question.** Can evidence-supported unresolved settings bring the
 official-repository MIFlu result to within **5 %** of the paper's reported
 four-horizon average MSE, without Test-driven tuning or accuracy hunting?
-
-**Constraints actually observed**
 
 | constraint | status |
 |---|---|
@@ -24,152 +30,139 @@ four-horizon average MSE, without Test-driven tuning or accuracy hunting?
 | Test read once per frozen fit | ✅ |
 | Track C unmodified | ✅ |
 | no Test-based selection of paper settings | ✅ |
-| all candidates reported, including poor ones | ✅ (this file) |
+| all candidates reported, including poor ones | ✅ |
 | no unrestricted hyperparameter search | ✅ two candidates total |
 
 ---
 
 ## 2. The candidate matrix
 
-Exactly **one** unresolved setting qualified as a legitimate candidate
-(`R1C_DOCUMENTARY_EVIDENCE.md` §2): the **learning-rate scheduler**. Everything
-else was either already matched (optimizer, T, epochs, batch, lr, LoRA rank,
-LoRA targets, gpt_layers) or was a **declared repair of a released defect** whose
-reversion would reintroduce the defect (Test-based checkpoint selection,
-single-channel evaluation), or had **no documentary instantiation** (repetition
-aggregation, seed mechanism).
+Exactly **one** unresolved setting qualified (`R1C_DOCUMENTARY_EVIDENCE.md` §2):
+the **learning-rate scheduler**. Everything else was either already matched
+(optimizer, T, epochs, batch, lr, LoRA rank, LoRA targets, gpt_layers) or was a
+declared repair of a released defect whose reversion would reintroduce the
+defect, or had no documentary instantiation.
 
 | id | change | evidence |
 |---|---|---|
-| `C0_r1b_constant_lr` | reference — constant 5e-4 (the R1-B configuration) | `r1b_train.py` |
+| `C0_r1b_constant_lr` | reference — constant 5e-4 | `r1b_train.py` |
 | `C1_released_type1_scheduler` | `lr = 5e-4` for epoch < 3, else `5e-4 × 0.9^(epoch-3)` | `utils/tools.py:26-27` |
-
-**C1 is the only change tested.** It was not selected because it looked
-promising; it is the only setting where R1-B silently differs from a *recovered*
-released default without that difference being a declared repair.
 
 ---
 
-## 3. Results
+## 3. Results — three-seed means (24/24 fits, all rc 0)
 
-### 3.1 Seed 1000 — complete (8 of 8 fits, all rc 0)
+### 3.1 Per horizon
 
-| L | paper MSE | C0 MSE | C1 MSE | paper MAE | C0 MAE | C1 MAE | C0 best ep | C1 best ep |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 24 | 1.542 | 2.133497 | **2.017671** | 0.726 | 0.929781 | **0.915340** | 5 | 5 |
-| 36 | 1.422 | 2.022708 | **1.777410** | 0.779 | 0.997668 | **0.866462** | 6 | 9 |
-| 48 | 1.414 | 1.841337 | **1.710919** | 0.757 | 0.895716 | **0.874585** | 10 | 10 |
-| 60 | 1.364 | 1.793311 | **1.705562** | 0.719 | 0.911584 | **0.862131** | 11 | **17** |
-| **mean** | **1.4355** | **1.947713** | **1.802891** | **0.74525** | **0.933687** | **0.879630** | — | — |
+| L | paper MSE | C0 MSE | C0 SD | C1 MSE | C1 SD | C0 MAE | C1 MAE | C0 rel | C1 rel |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 24 | 1.542 | 2.0460 | 0.0911 | **2.0588** | 0.0410 | 0.9167 | 0.9203 | +32.7 % | **+33.5 %** |
+| 36 | 1.422 | 1.9036 | 0.1043 | **1.8154** | 0.0630 | 0.9178 | 0.8693 | +33.9 % | **+27.7 %** |
+| 48 | 1.414 | 1.7339 | 0.0948 | **1.7166** | 0.0701 | 0.8635 | 0.8751 | +22.6 % | **+21.4 %** |
+| 60 | 1.364 | 1.7408 | 0.0807 | **1.6991** | 0.0065 | 0.8804 | 0.8704 | +27.6 % | **+24.6 %** |
+| **mean** | **1.4355** | **1.8561** | 0.0878 | **1.8225** | 0.0405 | 0.8946 | 0.8838 | **+29.30 %** | **+26.96 %** |
 
-**C1 improves C0 at all four horizons and on both metrics.** No horizon regressed.
+**C1 is better on three of four horizons and worse on L=24.** It also has
+roughly half the seed-to-seed spread (SD 0.0405 versus 0.0878).
 
-### 3.2 Seeds 1001 and 1002 — PENDING
+Per-seed four-horizon means:
 
-Submitted by `r1c_batch_driver.sh`. `partition-stingy` enforces
-`MaxJobsPU=1 / MaxSubmitJobsPU=1`, so batches must drain serially; each batch of
-four fits takes about 30 minutes. This file will be regenerated when they finish.
+| seed | C0 | C1 |
+|---|---:|---:|
+| 1000 | 1.9477 | 1.8029 |
+| 1001 | 1.8478 | 1.8691 |
+| 1002 | 1.7727 | 1.7954 |
 
-**The seed-1000 result is already decisive** for the 5 % question: C1 closes
-roughly a quarter of the gap, and the remaining distance to 5 % is about
-**20.6 percentage points** — far larger than any seed-to-seed variation observed
-anywhere in this project (Track C SD across seeds was 0.09 on a mean of 1.87).
+Note the overlap: C0's best seed (1.7727) beats C1's worst seed (1.8691).
+
+### 3.2 Is the improvement real?
+
+```
+C0 mean = 1.8561   sd = 0.0878   (n = 3 seeds)
+C1 mean = 1.8225   sd = 0.0405   (n = 3 seeds)
+difference = 0.0336
+Welch t = 0.602   df = 2.8
+```
+
+|t| = 0.602 is far below any conventional threshold. **The C1 − C0 improvement
+is not distinguishable from seed noise at three seeds.** The honest reading is
+that C1 is *not worse* and is more stable, not that C1 is *demonstrably better*.
 
 ---
 
 ## 4. Paper-gap arithmetic
 
 ```
-paper target (four-horizon average MSE)      = 1.4355
-paper target (four-horizon average MAE)      = 0.74525
+paper target (four-horizon average MSE) = 1.4355
 
-C0 absolute gap  = 1.947713 - 1.4355  = 0.512213
-C1 absolute gap  = 1.802891 - 1.4355  = 0.367391
+C0 absolute gap = 1.8561 - 1.4355 = 0.4206     relative = 0.4206/1.4355 x 100 = 29.30 %
+C1 absolute gap = 1.8225 - 1.4355 = 0.3870     relative = 0.3870/1.4355 x 100 = 26.96 %
 
-C0 relative gap  = 0.512213 / 1.4355 x 100 = 35.68 %
-C1 relative gap  = 0.367391 / 1.4355 x 100 = 25.59 %
-
-improvement C1 over C0 (absolute) = 1.947713 - 1.802891 = 0.144822
-improvement C1 over C0 (relative) = 0.144822 / 1.947713 x 100 = 7.44 %
-share of the original gap removed = 0.144822 / 0.512213 x 100 = 28.27 %
-distance still remaining to 5 %   = 25.59 - 5.00 = 20.59 percentage points
+improvement C1 over C0 (absolute) = 1.8561 - 1.8225 = 0.0336
+improvement C1 over C0 (relative) = 0.0336 / 1.8561 x 100 = 1.81 %
+share of the original gap removed  = 0.0336 / 0.4206 x 100 = 7.99 %
+distance still remaining to 5 %    = 26.96 - 5.00 = 21.96 percentage points
 ```
 
 | quantity | C0 | C1 |
 |---|---:|---:|
-| mean `average_MSE_4L` | 1.947713 | **1.802891** |
-| relative error vs paper | +35.68 % | **+25.59 %** |
+| mean `average_MSE_4L` (3 seeds) | 1.8561 | **1.8225** |
+| SD across seeds | 0.0878 | **0.0405** |
+| relative error vs paper | +29.30 % | **+26.96 %** |
 | horizons inside ±0.10 MSE | 0 / 4 | **0 / 4** |
 | horizons inside ±0.05 MAE | 0 / 4 | **0 / 4** |
-| verdict (per candidate) | `NO_EVIDENCE_SUPPORTED_IMPROVEMENT` | `IMPROVED_BUT_ABOVE_5_PERCENT` |
+| verdict | `REFERENCE / NO_EVIDENCE_SUPPORTED_IMPROVEMENT` | `IMPROVED_BUT_ABOVE_5_PERCENT` |
 
-**MSE is not accuracy.** These percentages are relative errors in a squared-error
-metric against a reported value. They are not accuracy percentages, and a
-"25.6 % less accurate" reading would be wrong.
+**MSE is not accuracy.** These are relative errors in a squared-error metric
+against a reported value, not accuracy percentages.
 
----
-
-## 5. Why C1 helps — and why only this much
-
-The mechanism was predicted **before** execution (`R1C_DOCUMENTARY_EVIDENCE.md`
-§4) and the data confirm it. Under a constant 5e-4, validation-selected best
-epochs were early (5, 6, 10, 11 of 20). Decaying the learning rate lets late
-epochs become competitive: the C1 best epoch moves to **17** at L=60 and to
-**9** at L=36.
-
-But the improvement is bounded by the same thing that bounds the whole
-reproduction: **the released evaluation contract cannot produce the paper's
-number.** The two settings with the largest plausible leverage — Test-based
-checkpoint selection and single-channel evaluation — are released **defects**.
-Reverting them would make the number smaller and simultaneously make it
-scientifically meaningless, and it would require reading Test during selection,
-which the brief forbids. They were therefore excluded *by evidence*, not by
-preference.
+> **Note on the verdict scale.** `R1C_SELECTION_RULE.md` §4 sets the boundary
+> `NO_EVIDENCE_SUPPORTED_IMPROVEMENT if relative error >= 35.68 %`, which was
+> written against the single-seed reference. Now that the reference is a
+> three-seed mean at 29.30 %, C0 is labelled `REFERENCE / NO_EVIDENCE_SUPPORTED_
+> IMPROVEMENT` **by definition** — it is the baseline against which improvement
+> is measured, not a candidate that attempted a change. C1 is judged against it.
 
 ---
 
-## 6. Residual unresolved settings
+## 5. Why the improvement is bounded
 
-| setting | status | why it cannot be instantiated |
-|---|---|---|
-| optimizer | recovered, matched | Adam on both sides; nothing to change |
-| scheduler | **recovered; C1 tests it** | — |
-| checkpoint-selection rule | recovered; R1-B repairs it | reverting reintroduces Test selection |
-| pooling axes / eval scope | recovered; R1-B repairs it | reverting reintroduces single-channel eval |
-| repetition aggregation | unrecovered | released code prints mean±SD over iterations; paper's rule unstated |
-| seed mechanism | unrecovered | no seed list, no `manual_seed` tied to repetition index |
-| dataset date span | contradictory | paper says 2002–2021; released file ends 2020-06-30 |
-| Table V column provenance | unrecovered | paper states baselines are quoted from [9]/[14]; whether MIFlu's own column is also quoted is unstated |
+The mechanism was predicted before execution (`R1C_DOCUMENTARY_EVIDENCE.md` §4)
+and partly confirmed: decaying the learning rate lets late epochs become
+competitive, so the selected epoch moves later (C1 reaches epoch 17–20 at L=60
+versus epoch 11–12 for C0). But that only reshuffles which epoch is picked; it
+does not change what the released evaluation contract can produce.
 
-**Four of these are permanently unresolvable from the released artifacts**
-(`R1_PAPER_CODE_CONFLICTS.md` §Summary). That is the structural reason a 5 %
-target was never likely to be reachable, and it is why
-`PARTIAL_REPRODUCTION` is a legitimate final verdict rather than a failure.
+The two settings with the largest plausible leverage — Test-based checkpoint
+selection and single-channel evaluation — are released **defects**. Reverting
+them would make the number smaller and simultaneously make it meaningless, and
+would require reading Test during selection, which the brief forbids. They were
+excluded **by evidence, not by preference**.
 
----
-
-## 7. Effect on the championship
-
-**None.** Track C is frozen. R1-C concerns Track R only. The R1-C numbers
-(contract: seeds 1000–1002, 1 repetition per seed) are **not** the Track C
-numbers (contract: seeds 42/43/44, 3 seeds, Test-only ranking) and must never be
-substituted into the championship ranking.
-
-For the record, they differ: Track C MIFlu `average_MSE_4L` = **1.8652**;
-R1-C C1 = **1.8029**. The R1-C value is **not** a better championship result and
-is **not** a challenger to it — it is a different question on a different
-contract.
+**Four of eight paper/code conflicts are permanently unresolvable from the
+released artifacts** (`R1_PAPER_CODE_CONFLICTS.md` §Summary), and whether
+Table V's own MIFlu column was produced by this code at all is unstated.
 
 ---
 
-## 8. Cost
+## 6. Effect on the championship
+
+**None.** Track C is frozen. R1-C is a different question on a different
+contract (seeds 1000–1002 versus 42/43/44).
+
+For the record: Track C MIFlu = **1.8652**, R1-C C1 = **1.8225**, R1-C C0 =
+**1.8561**. C0 sits within one SD of the Track C champion, which is a useful
+consistency check — same configuration, different seeds, nearly the same answer.
+**Neither R1-C number is a challenger to the championship.**
+
+---
+
+## 7. Cost
 
 | item | value |
 |---|---|
-| R1-C fits executed (seed 1000) | 8 |
-| R1-C fits remaining (seeds 1001/1002) | 16 |
-| measured cost per fit (seed 1000) | 0.1207 – 0.1422 GPU-h |
-| seed-1000 subtotal | 1.0194 GPU-h |
-| estimated total for 24 fits | ≈ 3.06 GPU-h |
+| R1-C fits executed | 24 / 24, all rc 0 |
+| measured cost per fit | ≈ 0.12 GPU-h |
+| total | ≈ 2.9 GPU-h |
 | partition | `stingy`, 1 × A100 per job |
-| all fits | rc 0, none on a login node |
+| login-node computation | none |

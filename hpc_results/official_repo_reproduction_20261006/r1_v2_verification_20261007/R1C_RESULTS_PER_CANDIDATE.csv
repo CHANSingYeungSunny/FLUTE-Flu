@@ -3,32 +3,31 @@ C0_r1b_constant_lr,1000,24,2.133497,0.929781,5,0.227362,609506_0,0,COMPLETE
 C0_r1b_constant_lr,1000,36,2.022708,0.997668,6,0.215881,610013_1,0,COMPLETE
 C0_r1b_constant_lr,1000,48,1.841337,0.895716,10,0.201683,610025_2,0,COMPLETE
 C0_r1b_constant_lr,1000,60,1.793311,0.911584,11,0.234158,610032_3,0,COMPLETE
-C0_r1b_constant_lr,1000,mean_4L,1.947713,0.933687,,,-,COMPLETE
-C0_r1b_constant_lr,1001,24,,,,,,PENDING
-C0_r1b_constant_lr,1001,36,,,,,,PENDING
-C0_r1b_constant_lr,1001,48,,,,,,PENDING
-C0_r1b_constant_lr,1001,60,,,,,,PENDING
-C0_r1b_constant_lr,1002,24,,,,,,PENDING
-C0_r1b_constant_lr,1002,36,,,,,,PENDING
-C0_r1b_constant_lr,1002,48,,,,,,PENDING
-C0_r1b_constant_lr,1002,60,,,,,,PENDING
-C1_released_type1_scheduler,1000,24,2.017671,0.915340,5,0.214762,610061_0,0,COMPLETE
-C1_released_type1_scheduler,1000,36,1.777410,0.866462,9,0.201954,610070_1,0,COMPLETE
+C0_r1b_constant_lr,1001,24,2.052932,0.956293,4,0.244372,610657_0,0,COMPLETE
+C0_r1b_constant_lr,1001,36,1.859109,0.902761,7,0.204173,610665_1,0,COMPLETE
+C0_r1b_constant_lr,1001,48,1.698061,0.891443,8,0.202577,610670_2,0,COMPLETE
+C0_r1b_constant_lr,1001,60,1.781185,0.895328,15,0.238532,610677_3,0,COMPLETE
+C0_r1b_constant_lr,1002,24,1.95168,0.864133,7,0.232976,610708_0,0,COMPLETE
+C0_r1b_constant_lr,1002,36,1.828926,0.852903,9,0.207272,610712_1,0,COMPLETE
+C0_r1b_constant_lr,1002,48,1.662285,0.803341,11,0.195116,610753_2,0,COMPLETE
+C0_r1b_constant_lr,1002,60,1.647903,0.834187,12,0.199539,610756_3,0,COMPLETE
+C1_released_type1_scheduler,1000,24,2.017671,0.91534,5,0.214762,610061_0,0,COMPLETE
+C1_released_type1_scheduler,1000,36,1.77741,0.866462,9,0.201954,610070_1,0,COMPLETE
 C1_released_type1_scheduler,1000,48,1.710919,0.874585,10,0.195516,610639_2,0,COMPLETE
 C1_released_type1_scheduler,1000,60,1.705562,0.862131,17,0.230196,610648_3,0,COMPLETE
-C1_released_type1_scheduler,1000,mean_4L,1.802891,0.879630,,,-,COMPLETE
-C1_released_type1_scheduler,1001,24,,,,,,PENDING
-C1_released_type1_scheduler,1001,36,,,,,,PENDING
-C1_released_type1_scheduler,1001,48,,,,,,PENDING
-C1_released_type1_scheduler,1001,60,,,,,,PENDING
-C1_released_type1_scheduler,1002,24,,,,,,PENDING
-C1_released_type1_scheduler,1002,36,,,,,,PENDING
-C1_released_type1_scheduler,1002,48,,,,,,PENDING
-C1_released_type1_scheduler,1002,60,,,,,,PENDING
-
-# NOTES
-# status PENDING = submitted by r1c_batch_driver.sh, not yet finished at the time this file was generated.
-# horizon mean_4L = equal-weight mean over L = 24/36/48/60 for that seed.
-# Per-candidate means over three seeds will replace the single-seed mean_4L rows once seeds 1001/1002 complete.
-# Every fit selects its checkpoint on Validation only and reads Test exactly once (correction B-5).
-# No candidate above was chosen, added or removed after any result was seen.
+C1_released_type1_scheduler,1001,24,2.099725,0.964524,7,0.238547,610680_0,0,COMPLETE
+C1_released_type1_scheduler,1001,36,1.888092,0.892488,9,0.194159,610686_1,0,COMPLETE
+C1_released_type1_scheduler,1001,48,1.78931,0.908207,8,0.197629,610692_2,0,COMPLETE
+C1_released_type1_scheduler,1001,60,1.699141,0.896491,17,0.222934,610697_3,0,COMPLETE
+C1_released_type1_scheduler,1002,24,2.059079,0.880945,11,0.224539,610765_0,0,COMPLETE
+C1_released_type1_scheduler,1002,36,1.78067,0.848879,14,0.202897,610770_1,0,COMPLETE
+C1_released_type1_scheduler,1002,48,1.649428,0.842455,13,0.198016,610777_2,0,COMPLETE
+C1_released_type1_scheduler,1002,60,1.692541,0.852559,20,0.195759,610783_3,0,COMPLETE
+C0_r1b_constant_lr,1000,mean_4L,1.947713,0.933687,,,-,,COMPLETE
+C0_r1b_constant_lr,1001,mean_4L,1.847822,0.911456,,,-,,COMPLETE
+C0_r1b_constant_lr,1002,mean_4L,1.772698,0.838641,,,-,,COMPLETE
+C1_released_type1_scheduler,1000,mean_4L,1.80289,0.879629,,,-,,COMPLETE
+C1_released_type1_scheduler,1001,mean_4L,1.869067,0.915428,,,-,,COMPLETE
+C1_released_type1_scheduler,1002,mean_4L,1.79543,0.856209,,,-,,COMPLETE
+C0_r1b_constant_lr,ALL,mean_3seed_4L,1.856078,0.894595,,,-,,SD=0.0878 n_seeds=3
+C1_released_type1_scheduler,ALL,mean_3seed_4L,1.822462,0.883756,,,-,,SD=0.0405 n_seeds=3

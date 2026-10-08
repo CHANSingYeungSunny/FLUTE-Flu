@@ -1,0 +1,16 @@
+{
+  "thresholds": {
+    "PTE_weeks": 1.0,
+    "PIE_pct": 25.0,
+    "source": "Kramer & Shaman 2019 PLOS Comput Biol DOI 10.1371/journal.pcbi.1006742"
+  },
+  "judgement": "per peak (NOT averaged across peaks)",
+  "match_tol_weeks": 2,
+  "min_sep_weeks": 40,
+  "units": "physical patient counts (ILITOTAL), train-only scaler",
+  "scaler": {
+    "mean": 9439.841796875,
+    "scale": 9003.15234375,
+    "fit_on": "train rows [0,676)"
+  }
+}

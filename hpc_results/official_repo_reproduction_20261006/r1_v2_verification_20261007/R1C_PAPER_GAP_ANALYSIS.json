@@ -1,0 +1,33 @@
+{
+  "paper_target": {
+    "MSE_mean": 1.4355,
+    "MAE_mean": 0.74525,
+    "by_L_MSE": {
+      "24": 1.542,
+      "36": 1.422,
+      "48": 1.414,
+      "60": 1.364
+    }
+  },
+  "candidates": {
+    "C0_r1b_constant_lr": {
+      "mean_average_MSE_4L": 1.856078,
+      "sd": 0.087799,
+      "mean_average_MAE_4L": 0.894595,
+      "n_seeds": 3,
+      "absolute_gap_vs_paper": 0.420578,
+      "relative_gap_pct": 29.3,
+      "inside_pm0p10_of_4": 0
+    },
+    "C1_released_type1_scheduler": {
+      "mean_average_MSE_4L": 1.822462,
+      "sd": 0.040533,
+      "mean_average_MAE_4L": 0.883756,
+      "n_seeds": 3,
+      "absolute_gap_vs_paper": 0.386962,
+      "relative_gap_pct": 26.96,
+      "inside_pm0p10_of_4": 0
+    }
+  },
+  "note": "three-seed means; judgement per candidate"
+}

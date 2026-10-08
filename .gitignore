@@ -30,3 +30,10 @@ results/v3_clean/test_eval/
 
 # --- Vendored third-party repository (nested git repo, no .gitmodules) ---
 recovery/author_repo/
+
+# --- HPC tarballs, extracted checkpoints, and Word lock files ---
+*.tgz
+s1es_runs/
+r1c_logs/
+~$*.docx
+~$*.pdf
