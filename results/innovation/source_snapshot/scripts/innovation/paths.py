@@ -57,7 +57,8 @@ HUMAN_REVIEW_CHECKLIST = os.path.join(INNOVATION_ROOT,
                                       "human_review_checklist.md")
 
 # ── Authoritative plan freeze (revision 10) ─────────────────────────────────
-PLAN_MD = os.path.join(PROJECT_ROOT, "MIFlu_innovation_plan_v2.md")
+PLAN_MD = os.path.join(PROJECT_ROOT, "docs", "protocol_freeze",
+                       "MIFlu_innovation_plan_v2.md")
 PLAN_SHA256_EXPECTED = (
     "AA4AB1C8842E893A4690787E17ADD0CA193C86825FFF9FD89F46952C7F9E7961"
 )

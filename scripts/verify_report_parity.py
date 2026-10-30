@@ -39,7 +39,12 @@ PROJECT_ROOT = os.path.dirname(HERE)
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
-from md_to_docx import find_report, parse_blocks  # noqa: E402
+# Fix Windows console encoding for CJK filenames
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+from md_to_docx import parse_blocks  # noqa: E402
 
 W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
@@ -90,9 +95,25 @@ def md_content_units(md: str) -> list:
     return units
 
 
+def find_authoritative_report() -> tuple[str, str]:
+    """Locate the authoritative report MD + DOCX in reports/concise_final/."""
+    base = os.path.join(PROJECT_ROOT, "reports", "concise_final")
+    md_path = os.path.join(base, "REPORT_精简终版.md")
+    if not os.path.exists(md_path):
+        raise FileNotFoundError(f"MD not found: {md_path}")
+    # DOCX has the full long name
+    docx_path = None
+    for fn in os.listdir(base):
+        if fn.endswith(".docx"):
+            docx_path = os.path.join(base, fn)
+            break
+    if docx_path is None:
+        raise FileNotFoundError(f"DOCX not found in {base}")
+    return md_path, docx_path
+
+
 def main() -> int:
-    md_path = find_report()
-    docx_path = os.path.splitext(md_path)[0] + ".docx"
+    md_path, docx_path = find_authoritative_report()
 
     with open(md_path, "r", encoding="utf-8") as f:
         md = f.read()

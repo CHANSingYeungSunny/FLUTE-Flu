@@ -100,16 +100,11 @@ def assemble() -> dict[str, int]:
     counts["00_HANDOFF.md"] = 1
 
     # 01 — paper + analyses
-    counts["01_paper"] = copy_named(
-        os.path.join(BASE, "docs", "paper_and_analysis"), "01_paper",
-        ["MIFlu_paper.md", "MIFlu_论文完整解析与答辩解答.md",
-         "MIFlu_paper_analysis_and_defense_ZH.md", "MIFlu_paper_analysis_and_defense_EN.md",
-         "Related_Work_with_Code.md", "Rethinking_the_Role_of_LLMs_in_TSF.md"])
+    counts["01_paper"] = copy_named(os.path.join(BASE, "docs", "01_paper"), "01_paper",
+                                     ["PAPER_EXPLAINED.md", "AUTHOR_REPO_EXPLAINED.md"])
     if os.path.exists(PAPER_REF):
         copy_file(PAPER_REF, os.path.join("01_paper", "MIFlu_paper_fulltext_reference.md"))
         counts["01_paper"] += 1
-    counts["01_paper"] += copy_named(os.path.join(BASE, "docs", "01_paper"), "01_paper",
-                                     ["PAPER_EXPLAINED.md", "AUTHOR_REPO_EXPLAINED.md"])
 
     # 02 — author repo (code + its official data + the GPT-2 text embeddings actually used)
     counts["02_author_repo"] = copy_named(
@@ -188,8 +183,11 @@ The author CSV's `date` column is a synthetic 7-day index, not real CDC weeks.
         copy_file(os.path.join(BASE, "START_HERE.md"), "START_HERE.md")
         counts["07_docs"] += 1
     counts["07_docs"] += copy_named(os.path.join(BASE, "docs"), "07_docs",
-                                    ["GLOSSARY.md", "DIRECTORY_MAP.md", "EVIDENCE_INDEX.md",
-                                     "PROJECT_STATUS.md", "ROADMAP.md", "REORG_MIGRATION_NOTE.md"])
+                                    ["GLOSSARY.md", "DIRECTORY_MAP.md", "EVIDENCE_INDEX.md"])
+
+    # 08 — paper tables (flat authoritative tables)
+    counts["08_paper_tables"] = copy_tree(os.path.join(BASE, "paper_tables"), "08_paper_tables",
+                                          include_exts=(".csv", ".txt", ".md"))
     return counts
 
 
@@ -248,7 +246,7 @@ def verify_zip(zip_path: str) -> bool:
         names = set(z.namelist())
         for required in ["00_HANDOFF.md", f"04_benchmark/{REPORT_DOCX}",
                          "02_author_repo/code/dataset/illness/national_illness.csv",
-                         "01_paper/PAPER_EXPLAINED.md", "07_docs/PROJECT_STATUS.md",
+                         "01_paper/PAPER_EXPLAINED.md", "07_docs/DIRECTORY_MAP.md",
                          "PACKAGE_MANIFEST.txt", "OMITTED_REGENERABLE.md"]:
             if required not in names:
                 print(f"[handoff] FAIL missing in zip: {required}")

@@ -1,3 +1,0 @@
-SUPERSEDED_NOT_ACTIVE_NOT_SELECTION_ELIGIBLE
-archived_utc: 2026-09-17T15:10:53Z
-reason: the primary selection protocol changed to the paper-aligned seven-variable full-horizon average_MSE_4L selector; every result here was produced under the superseded rule.

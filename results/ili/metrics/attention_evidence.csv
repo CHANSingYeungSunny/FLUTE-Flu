@@ -1,7 +1,0 @@
-metric,value
-n_time_patches,294
-n_text_tokens,369
-uniform_attention,0.00271003
-mean_text_attention,0.00271003
-peak_text_attention,0.18190387
-peak_over_uniform_ratio,67.1225

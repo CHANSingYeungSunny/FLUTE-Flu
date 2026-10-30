@@ -1,4 +1,0 @@
-true_peak_idx,pred_peak_idx,delta_t_weeks,true_peak_value,pred_peak_value,peak_magnitude_rel_err_pct,status
-54,53,-1,70056.0,58959.88671875,15.838919266372617,Hit
-105,106,1,111361.0,83618.890625,24.91187163818572,Hit
-,152,,,70506.5546875,,False

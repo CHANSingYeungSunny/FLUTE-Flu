@@ -320,16 +320,19 @@ class TimeCMAInspired(ForecastBackbone):
         return prompt_repr[torch.arange(prompt_repr.shape[0], device=prompt_repr.device), index]
 
     def forward(self, x, ctx=None):
+        series_repr = self.time_series_branch(x.mean(1))
+        if self.text_mode == "removed":
+            # negative control llm_removed_or_alignment_only: bypass the
+            # cross-modality retrieval branch entirely and forecast from the
+            # numeric time-series branch alone.
+            return self.forecast_head(series_repr).reshape(x.shape[0], self.N, self.L)
         if not self.text.loaded:
             raise RuntimeError("TimeCMA text backbone unavailable; run on compute node with cache")
-        series_repr = self.time_series_branch(x.mean(1))
         prompts = ["Encode the temporal context and forecast ILITOTAL."] * x.shape[0]
         prompt_tokens, prompt_mask = self.text.encode_prompt(prompts, x.device)
         prompt_tokens = apply_text_mode(prompt_tokens, self.text_mode)
         aligned = self.retrieve_aligned_prompt(series_repr, prompt_tokens, prompt_mask)
-        # "removed" bypasses the cross-modality retrieval entirely: the forecast
-        # is produced from the time-series branch alone.
-        fused = series_repr if self.text_mode == "removed" else series_repr + aligned
+        fused = series_repr + aligned
         return self.forecast_head(fused).reshape(x.shape[0], self.N, self.L)
 
     def architecture_report(self):

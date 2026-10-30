@@ -1,9 +1,0 @@
-model_key,group,horizon,seed,stage,selection_eligible,paper_result_eligible
-nlinear,A_non_llm,24,42,pilot,False,False
-dlinear,A_non_llm,24,42,pilot,False,False
-patchtst,A_non_llm,24,42,pilot,False,False
-itransformer,A_non_llm,24,42,pilot,False,False
-gpt2_miflu,B_llm,24,42,pilot,False,False
-qwen_time_llm,B_llm,24,42,pilot,False,False
-calf_llm,B_llm,24,42,pilot,False,False
-timecma_llm,B_llm,24,42,pilot,False,False

@@ -55,7 +55,7 @@ def read(p: Path) -> str:
 # ── 1. verify the ORIGINAL MIFlu seven-variable protocol ───────────────────
 paths_src = read(SCRIPTS / "innovation" / "paths.py")
 dp_src = read(SCRIPTS / "innovation" / "data_pipeline.py")
-plan_v2 = read(ROOT / "MIFlu_innovation_plan_v2.md")
+plan_v2 = read(ROOT / "docs" / "protocol_freeze" / "MIFlu_innovation_plan_v2.md")
 
 
 def grep_int(src: str, pat: str):

@@ -1,3 +1,0 @@
-variant,total_params,trainable_params,num_lora_modules,lora_params,has_modality_aligner,modality_aligner_params
-full,82136232,1030056,6,73728,False,0
-gated_inject,84474025,17537449,4,49152,True,2363905

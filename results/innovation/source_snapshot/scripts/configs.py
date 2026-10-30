@@ -78,8 +78,84 @@ VAL_FRAC = 0.10
 TRAIN_END = 717
 VAL_END = 819
 
+# ──────────────────────────────────────────────────────────────────────────
+# Immutable dataset profiles (Stage 4 adapter — additive, hash-pinned)
+# ──────────────────────────────────────────────────────────────────────────
+# The project 1025-row path is byte-for-byte unchanged. `author_966` is a
+# SEPARATE profile so track A (author 966-row vintage) and track B (July 1025
+# snapshot) can never be silently conflated. Each profile pins its own data
+# hash, split rule, scaler path and prompt date-range; nothing is inferred
+# from file contents alone. No profile deletes the 1025-row guard — the default
+# profile still refuses a truncated CSV.
+DATA_PROFILES = {
+    "project_1025": {
+        "data_path": RAW_DATA_PATH,
+        "sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
+        "n_rows": 1025,
+        "split_rule": "project_70_10_20",
+        "train_end": 717,
+        "val_end": 819,
+        "date_range_string": "between 2002 and 2021",
+        "scaler_path": SCALER_PATH,
+    },
+    "author_966": {
+        "data_path": os.path.join(DATA_DIR, "raw",
+                                  "national_illness_raw_paper_exact.csv"),
+        "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+        "n_rows": 966,
+        "split_rule": "author_676_97_193",
+        "train_end": 676,
+        "val_end": 773,
+        "date_range_string": "between 2002 and 2020",
+        "scaler_path": os.path.join(DATA_DIR, "scaler_miflu_author966.json"),
+    },
+}
+
 # Priority subset for the journal submission (no prompt ablations).
 CORE_VARIANTS = ("full", "no_lora", "no_text_ln", "gated_inject")
+
+
+def resolve_profile(name: str) -> dict:
+    """Return a copy of the immutable profile, or raise on an unknown name."""
+    if name not in DATA_PROFILES:
+        raise ValueError(f"unknown data profile {name!r}; "
+                         f"known={sorted(DATA_PROFILES)}")
+    return dict(DATA_PROFILES[name])
+
+
+def split_for_profile(name: str, n_rows: int) -> tuple[int, int]:
+    """Recompute (train_end, val_end) for a named profile and assert it matches.
+
+    project_1025 keeps the historical 70/10/20 convention; author_966 uses the
+    author's num_vali=remainder convention (676/97/193).
+    """
+    p = resolve_profile(name)
+    n = int(n_rows)
+    if n != p["n_rows"]:
+        raise ValueError(f"profile {name!r} expects {p['n_rows']} rows, got {n}")
+    if p["split_rule"] == "author_676_97_193":
+        train_end = int(n * TRAIN_FRAC)      # 676
+        test_n = int(n * 0.20)               # 193
+        val_end = n - test_n                 # 773 (num_vali = remainder)
+    else:
+        train_end = int(n * TRAIN_FRAC)
+        val_end = train_end + int(n * VAL_FRAC)
+    if (train_end, val_end) != (p["train_end"], p["val_end"]):
+        raise ValueError(f"profile {name!r} split drift: got "
+                         f"({train_end},{val_end}) expected "
+                         f"({p['train_end']},{p['val_end']})")
+    return train_end, val_end
+
+
+def verify_profile_hash(name: str) -> str:
+    """Verify the profile's data file hash; return it on success."""
+    import hashlib
+    p = resolve_profile(name)
+    h = hashlib.sha256(open(p["data_path"], "rb").read()).hexdigest()
+    if h != p["sha256"]:
+        raise ValueError(f"profile {name!r} hash mismatch: expected "
+                         f"{p['sha256']} got {h}")
+    return h
 
 
 def assert_full_window(n_rows: int) -> int:
@@ -221,6 +297,13 @@ def _self_check() -> None:
     # The two configs must not have been silently merged.
     assert NATIONAL_CONFIG["T"] == 104 and REGIONAL_CONFIG["T"] == 20
     assert CONFIG is NATIONAL_CONFIG
+    # Dataset profiles: distinct, hash-pinned, split-correct.
+    assert split_for_profile("project_1025", 1025) == (717, 819)
+    assert split_for_profile("author_966", 966) == (676, 773)
+    assert resolve_profile("project_1025")["data_path"] != \
+        resolve_profile("author_966")["data_path"]
+    assert resolve_profile("project_1025")["scaler_path"] != \
+        resolve_profile("author_966")["scaler_path"]
     print("[configs] self-check OK")
     print(f"  window: FULL_ROWS={FULL_ROWS} train_end={TRAIN_END} "
           f"val_end={VAL_END}")

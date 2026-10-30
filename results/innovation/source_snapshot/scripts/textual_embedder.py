@@ -162,11 +162,18 @@ def build_miflu_prompt_template(components=DEFAULT_MIFLU_PROMPT_COMPONENTS,
 
 
 def build_prompt(train_df, T=104, L=24,
-                 components=DEFAULT_MIFLU_PROMPT_COMPONENTS):
-    """Primary 7-variable prompt (N=7, OT included), section-selectable."""
+                 components=DEFAULT_MIFLU_PROMPT_COMPONENTS,
+                 date_range_string="between 2002 and 2021"):
+    """Primary 7-variable prompt (N=7, OT included), section-selectable.
+
+    `date_range_string` is the [Dataset information] span; it is a DESCRIPTIVE
+    label only (the min/max statistics are already train-only and carry no
+    target values). It is parameterised so the author 966-row profile can say
+    "between 2002 and 2020" without touching the project 1025-row default.
+    """
     template = build_miflu_prompt_template(components)
     return _format_prompt(template, train_df, T=T, L=L,
-                          var_cols=VAR_COLS)
+                          var_cols=VAR_COLS, date_range_string=date_range_string)
 
 
 # ── legacy fixed-template entry point (kept for provenance) ────────────────
@@ -190,7 +197,8 @@ def build_prompt_6var(train_df, T=104, L=24):
                           var_cols=VAR_COLS_6)
 
 
-def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6):
+def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6,
+                   date_range_string="between 2002 and 2021"):
     stats = compute_prompt_stats(train_df, var_cols=var_cols)
     fmt_stats = {}
     for k, v in stats.items():
@@ -199,6 +207,7 @@ def _format_prompt(template, train_df, T=104, L=24, var_cols=VAR_COLS_6):
         else:          # absolute counts
             fmt_stats[k] = f"{v:.0f}"
     fmt_stats["L"] = L
+    template = template.replace("between 2002 and 2021", date_range_string)
     return template.format(**fmt_stats)
 
 

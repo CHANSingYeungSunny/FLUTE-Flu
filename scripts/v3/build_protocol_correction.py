@@ -102,7 +102,7 @@ gate["superseded_history"] = "SUPERSEDED_V3_HOLDOUT_FEASIBILITY_HISTORY"
 gate["must_not_do"] = ["download weights", "install model dependencies", "construct or load models", "train or infer", "submit Slurm jobs", "access Test values", "generate v3 result figures", "modify v2 evidence", "compute on a Burgundy login node"]
 gate["phase07_audit"] = {
     "canonical_data_sha256": "c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d",
-    "plan_sha256": hashlib.sha256((ROOT / "MIFlu_innovation_plan_v3.md").read_bytes()).hexdigest(),
+    "plan_sha256": hashlib.sha256((ROOT / "docs" / "protocol_freeze" / "MIFlu_innovation_plan_v3.md").read_bytes()).hexdigest(),
     "active_external_data": False,
     "active_new_holdout": False,
     "active_rolling_origin_redesign": False,

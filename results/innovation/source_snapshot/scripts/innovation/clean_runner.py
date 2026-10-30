@@ -71,6 +71,8 @@ VARIANTS = {
         ("gpt2_miflu", "gpt2", {}, {"text_mode": "zero"}),
     "shuffled_text":
         ("gpt2_miflu", "gpt2", {}, {"text_mode": "shuffle"}),
+    "llm_removed_or_alignment_only":
+        ("timecma_llm", "none", {"text_mode": "removed"}, {}),
 }
 PRIMARY_MODELS = {"nlinear": "none", "dlinear": "none", "patchtst": "none",
                   "itransformer": "none", "gpt2_miflu": "gpt2",
@@ -147,8 +149,13 @@ def ensure_run_dirs(run_dir: str, out_root: str) -> str:
 
 
 def load_registry(deployment_root: str) -> dict:
-    p = os.path.join(deployment_root, "results", "v3_clean", "runs",
-                     "complete_specs_598.json")
+    # The frozen 598 matrix is immutable. The deferred-controls amendment may
+    # supply an append-only amended execution registry (never the frozen file)
+    # via INNOVATION_REGISTRY_REL; the default remains the frozen registry.
+    rel = os.environ.get(
+        "INNOVATION_REGISTRY_REL",
+        os.path.join("results", "v3_clean", "runs", "complete_specs_598.json"))
+    p = os.path.join(deployment_root, rel)
     if not os.path.exists(p):
         raise SystemExit(f"frozen spec registry not found: {p}")
     return json.loads(open(p, encoding="utf-8").read())

@@ -1,5 +1,0 @@
-copy_id,path,host,sha256,bytes,role
-local_canonical,data/raw/national_illness_raw.csv,local,c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d,72100,the file used by v2 and inspected here
-hpc_mlflu,/gpfs1/scratch/sychan552/MLFLU/data/raw/national_illness_raw.csv,burgundy,c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d,72100,HPC project copy
-hpc_v2_10_deploy_root,/scratch/sychan552/innovation_deploy_root_v2_10/data/raw/national_illness_raw.csv,burgundy,c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d,72100,v2 isolated deployment root copy
-hpc_repro_repo,/home/sychan552/scratch/CHATTIME/Chattime/data/raw/national_illness_raw.csv,burgundy,c2b983af2bf38614adbb4c984fa6b63fb3f73f3b148c54dcc4ef5a14efa4c70d,72100,original reproduction repository copy

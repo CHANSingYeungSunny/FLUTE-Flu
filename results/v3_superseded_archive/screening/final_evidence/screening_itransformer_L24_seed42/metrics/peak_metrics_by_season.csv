@@ -1,4 +1,0 @@
-season,n_weeks,status,hit,gt_peak_week,gt_peak_value,pred_peak_week,pred_peak_value,pte_weeks,pie_pct
-2015,15,incomplete_season,False,,,,,,
-2016,33,evaluable,False,769.0,42890.0,770.0,28069.25390625,1.0,34.5552485282117
-2017,17,incomplete_season,False,,,,,,

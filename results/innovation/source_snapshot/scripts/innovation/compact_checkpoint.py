@@ -58,7 +58,11 @@ def _registry_path(deployment_root: str | None = None) -> Path:
     if not root:
         raise CompactInputError(
             "INNOVATION_DEPLOYMENT_ROOT must be set to resolve a run key")
-    p = _P(root).joinpath(*REGISTRY_REL)
+    # Amendment-B (append-only): honour INNOVATION_REGISTRY_REL exactly like
+    # clean_runner.load_registry; the default remains the frozen 598 registry.
+    rel = os.environ.get("INNOVATION_REGISTRY_REL")
+    parts = tuple(rel.split("/")) if rel else REGISTRY_REL
+    p = _P(root).joinpath(*parts)
     if not p.is_file():
         raise CompactInputError(f"immutable registry not found: {p}")
     return p
@@ -96,15 +100,20 @@ def resolve_run_key(run_key: str, deployment_root: str | None = None) -> dict:
     if len(specs) > 1:
         raise CompactInputError(f"ambiguous run key: {k} ({len(specs)} matches)")
     s = specs[0]
-    if s.get("wave") == 2 or not s.get("submittable") \
-            or not s.get("executable_binding"):
+    # Eligibility mirrors clean_runner.resolve_spec: submittable AND executable
+    # binding are the authority. `wave==2` is NOT a disqualifier by itself (the
+    # amendment rebinds deferred rows into executable bindings while keeping
+    # their original wave=2 provenance).
+    if not s.get("submittable") or not s.get("executable_binding"):
         raise CompactInputError(f"deferred run key not executable: {k}")
     for field in ("model", "horizon", "arm"):
         if field not in s:
             raise CompactInputError(f"malformed spec {k}: missing {field}")
     return {"run_key": k, "model": s["model"], "arm": s["arm"],
             "horizon": int(s["horizon"]), "seed": s.get("seed"),
-            "wave": s.get("wave")}
+            "wave": s.get("wave"), "control": s.get("control"),
+            "parent_model": s.get("parent_model"),
+            "amended_action": s.get("amended_action")}
 
 
 def normalise_spec_input(spec_input: str,

@@ -1,9 +1,0 @@
-order,model_key,horizon,seed,job_id,state,exit_code,node,run_id,audit_passed
-1,nlinear,24,42,565871,COMPLETED,0:0,gpu-a100-03,national-ili__nlinear__none__identity__L24__seed42__20260916T164310Z__nogit,True
-2,dlinear,24,42,565875,COMPLETED,0:0,gpu-a100-03,national-ili__dlinear__none__identity__L24__seed42__20260916T164642Z__nogit,True
-3,patchtst,24,42,565879,COMPLETED,0:0,gpu-a100-03,national-ili__patchtst__none__identity__L24__seed42__20260916T164943Z__nogit,True
-4,itransformer,24,42,565880,COMPLETED,0:0,gpu-a100-03,national-ili__itransformer__none__identity__L24__seed42__20260916T165144Z__nogit,True
-5,gpt2_miflu,24,42,565882,COMPLETED,0:0,gpu-a100-03,national-ili__gpt2-miflu__gpt2__concat-projection__L24__seed42__20260916T165315Z__nogit,True
-6,qwen_time_llm,24,42,565900,COMPLETED,0:0,gpu-a100-03,national-ili__qwen-time-llm__none__identity__L24__seed42__20260916T170450Z__nogit,True
-7,calf_llm,24,42,565903,COMPLETED,0:0,gpu-a100-03,national-ili__calf-llm__none__identity__L24__seed42__20260916T171227Z__nogit,True
-8,timecma_llm,24,42,565911,COMPLETED,0:0,gpu-a100-03,national-ili__timecma-llm__none__identity__L24__seed42__20260916T171554Z__nogit,True

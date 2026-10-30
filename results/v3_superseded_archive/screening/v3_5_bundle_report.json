@@ -1,8 +1,0 @@
-{
-  "generated_utc": "2026-09-16T21:31:17Z",
-  "stdout": "bundle_a_sha256= b845e4aa703639febfb5ed131cd2c42b906468325689bd2d2b0cfbbd5857407c\nbundle_b_sha256= b845e4aa703639febfb5ed131cd2c42b906468325689bd2d2b0cfbbd5857407c\nbyte_identical= True",
-  "source_file_count": 90,
-  "source_aggregate_sha256": "1856817016d84f75fce90073da51fe38414f1f59be98698490c5b52ba2bd39e3",
-  "implementation_source_version": "innov-v3.5-context-dim-null-safe",
-  "specs_stdout": "[specs] n=48 static_gate=31/31 -> PASSED\n[specs] source_snapshot_sha256=1856817016d84f75fce90073da51fe38414f1f59be98698490c5b52ba2bd39e3\n[specs] entry scripts written=48 -> hpc_scripts/v3_screening/"
-}

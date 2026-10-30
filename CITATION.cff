@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this reproduction, please cite both the original paper and this repository."
+type: software
+title: "MLFlu: Reproduction of MIFlu (IEEE JBHI 2025)"
+version: "1.0.0"
+date-released: "2026-10-30"
+license: MIT
+authors:
+  - family-names: "CHAN"
+    given-names: "Sing Yeung Sunny"
+repository-code: "https://github.com/CHANSingYeungSunny/FLUTE-Flu"
+abstract: "Partial reproduction of MIFlu (Moon et al., IEEE JBHI 2025): full pipeline from official Hong Kong ILI 966-row data to frozen predictions, authoritative MSE ranking tables, and manuscript-ready report. MSE 1.8652 vs paper 1.4355 (+29.9%, PARTIAL_REPRODUCTION)."
+keywords:
+  - influenza forecasting
+  - multimodal fusion
+  - GPT-2
+  - reproducibility
+  - Hong Kong ILI
+preferred-citation:
+  type: article
+  title: "MIFlu: Multimodal Fusion with GPT-2-Enhanced Text Encoding for Long-Term Influenza Forecasting in Hong Kong"
+  authors:
+    - family-names: "Moon"
+      given-names: "Jinha"
+    - family-names: "Choi"
+      given-names: "Minha"
+  journal: "IEEE Journal of Biomedical and Health Informatics"
+  year: 2025
+  doi: "10.1109/JBHI.2025.3561214"

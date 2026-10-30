@@ -1,0 +1,15 @@
+item,value
+gpu_jobs,12
+gpu_hours_total,1.5083
+cpu_scoring_jobs,2
+all_jobs_rc_zero,True
+home_used_GB,31
+home_soft_quota_GB,50
+home_hard_limit_GB,100
+home_grace,none
+home_headroom_to_soft_GB,19
+scratch_used_GB,285
+scratch_soft_quota_GB,300
+scratch_hard_limit_GB,1024
+scratch_grace,none
+scratch_headroom_to_soft_GB,15

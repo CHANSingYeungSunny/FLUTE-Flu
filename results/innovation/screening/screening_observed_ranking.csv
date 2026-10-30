@@ -1,5 +1,0 @@
-rank,model_key,display_name,mean_val_mse_all_horizons,fidelity
-1,patchtst,PatchTST-inspired,1.0519965688387551,INSPIRED_SIMPLIFICATION
-2,nlinear,NLinear,1.0750239392121634,REFERENCE_FAITHFUL
-3,dlinear,DLinear,1.168700933456421,REFERENCE_FAITHFUL
-4,itransformer,iTransformer-aligned,1.2310535510381062,REFERENCE_ALIGNED_WITH_DISCLOSED_DEVIATIONS

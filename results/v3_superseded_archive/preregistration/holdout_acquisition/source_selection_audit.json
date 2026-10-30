@@ -1,9 +1,0 @@
-{
-  "generated_utc": "2026-09-15T20:13:42Z",
-  "selected_source": null,
-  "preferred_candidate": "cmu_delphi_fluview",
-  "decision": "NO_HOLDOUT_ACQUIRED",
-  "reason": "Metadata supports a possible transformed national weekly holdout, but target/unit/schema compatibility has not been frozen and no values may be accessed in Phase 0.6.",
-  "required_user_action": "Approve target choice: shared reduced feature/percentage protocol or explicitly different-target external validation; then authorize quarantined acquisition.",
-  "known_v2_test_reuse": false
-}

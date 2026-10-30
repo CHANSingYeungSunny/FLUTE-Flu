@@ -1,9 +1,0 @@
-{
-  "variant": "gated_inject",
-  "horizon_L": 24,
-  "seed": 44,
-  "recipe": "baseline",
-  "early_stopping_enabled": false,
-  "selection": "final epoch (fixed-epoch Table IV protocol)",
-  "best_val_mse_all": 0.9976588487625122
-}

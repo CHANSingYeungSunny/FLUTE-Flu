@@ -254,6 +254,12 @@ def finalize_stochastic(a, key, info, src, durable, stage, original_job_id):
     manifest = {
         "run_key": key, "model": info["model"], "arm": info["arm"],
         "horizon": info["horizon"], "wave": info["wave"],
+        "seed": info.get("seed"),
+        "parent_model": info.get("parent_model"),
+        "control": info.get("control"),
+        "amended_action": info.get("amended_action"),
+        "amendment": getattr(a, "amendment_id", None)
+                     or os.environ.get("AMENDMENT_ID"),
         "policy": "v3.19-compact-durable",
         "finalized_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "source_dir": str(src),
@@ -352,6 +358,8 @@ def main(argv=None):
     ap.add_argument("--original-job-id", default=None,
                     help="the row's TRAINING job id (provenance retention); "
                          "e.g. 572649 for a repair-finalize")
+    ap.add_argument("--amendment-id", default=None,
+                    help="optional amendment identity recorded in the manifest")
     a = ap.parse_args(argv)
 
     key = a.run_key

@@ -53,7 +53,7 @@ from innovation.paths import (IMPLEMENTATION_SOURCE_VERSION, PLAN_MD,
 # ── what the pilot needs ────────────────────────────────────────────────────
 SNAPSHOT_INCLUDE_DIRS = ("scripts/innovation", "tests/innovation")
 SNAPSHOT_HPC_PREFIXES = ("innovation_", "pilot_", "submit_innovation_")
-SNAPSHOT_INCLUDE_FILES = ("MIFlu_innovation_plan_v2.md",)
+SNAPSHOT_INCLUDE_FILES = ("docs/protocol_freeze/MIFlu_innovation_plan_v2.md",)
 # existing modules the innovation code RE-USES (required to run the pilot)
 SNAPSHOT_DEPENDENCY_FILES = (
     "scripts/configs.py", "scripts/scaler_utils.py", "scripts/miflu_model.py",
