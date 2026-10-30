@@ -16,7 +16,7 @@ MSE/MAE 主协议的**补充诊断**（supplementary，非论文原协议）。
 
 目标序列：ILITOTAL（全国流感样病例就诊总计数），物理单位 = 患者人数。
 输入通道 N=7（含 OT = num_patients（CDC 总就诊人次/分母，全量未缩放），推导与口径详见
-`MIFlu_论文完整解析与答辩解答.md` §1 第 7 通道及附注）。
+`paper_and_analysis/MIFlu_论文完整解析与答辩解答.md` §1 第 7 通道及附注）。
 
 ---
 

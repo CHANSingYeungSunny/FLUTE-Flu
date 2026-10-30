@@ -1,92 +1,65 @@
-# MIFlu Reproduction — IEEE JBHI 2025
+# MIFlu Reproduction & Benchmark — MLFlu
 
-Reproduction of *MIFlu: Large Language Model-Based Multimodal Influenza
-Forecasting Scheme* (Moon et al., IEEE JBHI 2025) on the US CDC national
-influenza dataset, plus a Phase 2 ChatTime-backbone comparison.
+Reproduction of **MIFlu: Large Language Model-Based Multimodal Influenza Forecasting Scheme**
+(Moon et al., **IEEE JBHI 2025**, DOI 10.1109/JBHI.2025.3561214) on the author's 966-row US
+National-Illness dataset, plus a strict **8-model benchmark** (4 non-LLM vs 4 LLM-side),
+paper-reproduction study, and peak-accuracy audit. Goal: innovate on top of MIFlu
+(final-year project → top-tier journal).
 
-## Current authoritative result source
+> **New here? Read [`START_HERE.md`](START_HERE.md) first** — 10-minute zero-foundation entry
+> (bilingual), including the seven hard constraints for citing any number in this project.
 
-**The only current conclusion source is the four independent per-horizon tables
-produced under the paper protocol** (`scripts/train_miflu.py`, `L ∈ {24,36,48,60}`
-trained and evaluated separately):
+## Current authoritative result / 当前权威结果
 
-- `data/results_miflu_paper_protocol_*.csv` — raw per-rep results
-- `data/results_miflu_paper_protocol_table_*.csv` — tidy table (MSE / MAE / RMSE /
-  PCC, mean ± std over 10 repetitions, English headers)
-- `data/predictions_miflu_L{L}_paper_protocol.csv` — per-horizon test predictions
-  with an explicit `split` column (train / val / test)
+**One source of truth**: `reports/concise_final/MIFlu_非LLM与LLM流感预测最终报告_中文版_官方仓库966行严格测试冠军版_精简终版.docx`
+(SHA-256 and authority label in [`CURRENT_OFFICIAL_REPORT.txt`](CURRENT_OFFICIAL_REPORT.txt)).
 
-Protocol: `T=104`, `L ∈ {24,36,48,60}` evaluated **independently** (four separate
-runs, not a rolling window), static `70:10:20` time-ordered split (`shuffle=False`),
-`Lp=24, S=2`, GPT2 first `K=6` layers + LoRA `r=4` on attention only, positional
-embeddings and LayerNorm frozen, StandardScaler fit on the **train split only**,
-10 repetitions averaged.
+| Headline | Value |
+|----------|-------|
+| Paper target (avg MSE, Table V) | 1.4355 |
+| Our MIFlu final Test `average_MSE_4L` | **1.8652** (SD 0.0916) |
+| Reproduction verdict | **PARTIAL_REPRODUCTION** (+29.9%, 5% band not met) |
+| 8-model champion | **MIFlu 1.8652** (best non-LLM = MIFlu; best LLM-side = TimeCMA-LLM 2.6700) |
+| Group means | non-LLM 3.0756 < LLM-side 3.8175 |
+| Peak accuracy (literature PTE≤1wk & PIE≤25%) | NLinear 36/36 (peak champion) vs MIFlu 15/36 |
 
-## Deprecated artifacts (DO NOT USE as conclusions)
+**MSE is not accuracy** — the MSE champion and the peak champion are different models;
+they are reported separately.
 
-The previous **ChatTime-style L=52 walk-forward** pipeline is **deprecated** and
-isolated under `scripts/chattime_variant/`. Its outputs
-(`results/ili/miflu_fulltest_walkforward.csv` and any `*_DEPRECATED.png` figures)
-use a *different* evaluation protocol and are **NOT comparable** to the paper's
-Table V. They are retained only for the Phase 2 ChatTime comparison.
+## Protocol / 实验协议
 
-| Artifact | Status |
-|----------|--------|
-| `data/results_miflu_paper_protocol_*.csv` | ✅ CURRENT (paper protocol) |
-| `results/ili/miflu_fulltest_walkforward.csv` | ⚠️ DEPRECATED (ChatTime L=52) |
+Author 966 rows · Train/Val/Test = 676/97/193 (70:10:20) · strict containment · Train-only
+scaler · z-space canonical scorer · seeds 42/43/44 · horizons L = 24/36/48/60 · Test scored
+once after checkpoint selection · peak metrics per peak under the literature criterion.
 
-## Known limitations (honest disclosure)
+## Repository layout / 目录导航
 
-1. **Learning rate / epoch counts were not disclosed** by the paper ("set
-   empirically", Section V-C). Exact digit-for-digit reproduction is therefore
-   **not claimed**; the target is matching order of magnitude and qualitative
-   trends per horizon.
-2. **No official code or data snapshot** was released. Our pipeline is rebuilt
-   from the paper text (see `MIFlu_paper.md`, the sole cross-reference — the direct
-   markdown conversion of the IEEE JBHI 2025 PDF).
-3. **Distribution shift in the test period (2020–2021, COVID-19 NPIs)** causes an
-   atypical near-flat influenza season absent from the 2002–2019 training data.
-   This is a legitimate generalization failure, **not** data leakage (proven in
-   `docs/leakage_audit_report.md` and `tests/test_leakage_audit.py`).
-4. Reported short-horizon (L=24/36/48) magnitudes remain higher than the paper's;
-   this is documented in `PROJECT_STATUS.md`, not hidden.
+| Path | What |
+|------|------|
+| [`START_HERE.md`](START_HERE.md) | zero-foundation entry point |
+| [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) | current results, verdicts, open issues |
+| [`docs/01_paper/`](docs/01_paper/) | paper explained + author repo explained |
+| [`docs/GLOSSARY.md`](docs/GLOSSARY.md) · [`docs/DIRECTORY_MAP.md`](docs/DIRECTORY_MAP.md) · [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md) | terminology · where things are · where numbers come from |
+| [`docs/ROADMAP.md`](docs/ROADMAP.md) | Phase A optimize benchmark → B add models → C innovate |
+| `reports/concise_final/` | ★ authoritative report + manifest |
+| `results/v3_clean/analysis/peak_criteria/` | ★ benchmark results + PTE/PIE peak audit |
+| `hpc_results/official_repo_reproduction_20261006/` | paper-reproduction evidence (R1-C) |
+| `audit_20260930/` | independent audit |
+| `data/` | datasets (author 966-row copy + 1025-row snapshot) |
+| `recovery/author_repo/` | the author's GitHub repo clone (`github.com/Jmoon3108/MIFlu`) |
+| `scripts/`, `tests/` | runnable code |
+| `handoff/` | bilingual handoff package for an AI collaborator (zip) |
+| `archive/`, `docs/paper_and_analysis/`, `docs/planning/` | historical prompts, drafts & analyses |
 
-## Deliverables (all in English)
+## Honest limitations / 诚实披露
 
-- [x] Four per-horizon result tables (MSE / MAE / RMSE / PCC, 10-run mean ± std).
-- [x] Prediction CSVs with an explicit `split` column.
-- [x] Leakage-audit report — `docs/leakage_audit_report.md`.
-- [x] Fixed peak / Timing metrics — `scripts/compute_miflu_indicators.py`
-      (supplementary indicators are PTE and PIE only; the matched-peak count, e.g.
-      "2/3", is always co-reported as their sample-size qualifier; unmatched peaks
-      recorded as "Missed", never Timing = 0. Peak Hit Rate and Direction were
-      removed in 2026-09.)
-- [x] Feature-importance report with causal caveat — `scripts/feature_verification.py`
-      (Granger labeled as "temporal precedence + statistical association";
-      NUM. OF PROVIDERS / OT caveat on reporting-scale effects).
-- [x] Unit tests — `tests/test_leakage_audit.py`, `tests/test_timing_metric.py`.
+1. Reproduction gap of +29.9% remains; optimizer/scheduler/seeds not fully disclosed by the
+   paper/repo (repo defaults differ from paper Table IV).
+2. The text-path mechanism question is **unresolved** (GPU vs CPU replay contradict; ablations
+   disagree) — reported as such, never as "works" or "does nothing".
+3. 3 seeds only; 4 horizons are correlated; LLM-side baselines (TimeCMA/Qwen/CALF) are informed
+   simplifications; regional (US-Region) part not reproduced (author artifact unavailable).
+4. Older 1025-row-era results are superseded and must not be compared with the 966-row track
+   (different data vintage, seed count, and metric convention).
 
-## Reproduce
-
-```bash
-# 1. Train + evaluate the four horizons (needs GPU/CPU torch + transformers).
-python scripts/train_miflu.py            # default: L ∈ {24,36,48,60}, 10 reps
-
-# 2. Peak / trend indicators on the test split (per L).
-python scripts/compute_miflu_indicators.py \
-    --pred_csv data/predictions_miflu_L24_paper_protocol.csv --prefix miflu_L24_
-
-# 3. Evaluation figures (test split only, with COVID shift annotation).
-python scripts/make_miflu_evaluation_figure.py \
-    --pred_csv data/predictions_miflu_L24_paper_protocol.csv --L 24
-
-# 4. Run the leakage + timing audit.
-python -m pytest tests/ -v
-```
-
-## Phase 2 (planned, not yet implemented)
-
-Substitute the LLM backbone with **ChatTime** (Wang et al., AAAI 2025) using its
-native foreign-language-tokenization protocol, compared against the MIFlu
-reproduction above. Isolated under `scripts/chattime_variant/`; the MIFlu
-architecture is left unchanged.
+Details and evidence pointers: [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md).

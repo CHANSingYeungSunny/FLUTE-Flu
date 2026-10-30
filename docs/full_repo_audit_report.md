@@ -1,5 +1,9 @@
 # Full Repository Audit Report — MIFlu Reproduction (Local + HPC Remote)
 
+> **NOTE (2026-10-30 repo reorg):** the root-level filenames listed below have since been moved
+> into `docs/paper_and_analysis/`, `docs/planning/` and `archive/` — see `docs/REORG_MIGRATION_NOTE.md`.
+> The tree and dates below are the audit-time snapshot and are intentionally left unedited.
+
 **Date:** 2026-08-16
 **Scope:** Read-only audit. No code, config, or files were modified by this audit.
 **Trigger:** Phase 1 paper-protocol alignment (L ∈ {24, 36, 48, 60} four independent runs) and a planned bidirectional sync to the CityUHK Burgundy HPC before any training is submitted.

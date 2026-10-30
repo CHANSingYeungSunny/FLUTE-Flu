@@ -3,7 +3,7 @@
 > 目标：完整复现 MIFlu 论文 Table VI（Regional ILI Forecasting, RMSE/PCC, 10 HHS regions, L∈{2,3,5,10,13,15,20}）。
 > 本文只评估"还缺什么"，不写代码。状态基于 2026-08-17 仓库快照。
 
-## 一、论文 Table VI 要求（权威口径，来自 MIFlu_paper.md）
+## 一、论文 Table VI 要求（权威口径，来自 paper_and_analysis/MIFlu_paper.md）
 
 - **数据**：US-Region（10 HHS regions，`num_ili` 绝对计数），199740–202018（week 40, 1997 – week 18, 2020）。
 - **切分**：50:10:40（训练/验证/测试，按时间顺序），Paper §V-A / Table III。

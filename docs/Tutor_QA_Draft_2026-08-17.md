@@ -10,7 +10,7 @@
 > **PIE（峰值强度误差）** 两项；`peak_hit_rate`（峰值命中率）与 `directional_accuracy`
 > （方向准确率）已**彻底移除**。因此正文中"Peak Hit = 0.50 (2/4)"应理解为**匹配峰计数
 > 2/4**——它是 PTE/PIE 的**样本量限定语**，不再是单独报告的指标。最终口径以
-> `导师五大疑问_零基础解答报告_最终版.md` 与 `docs/ILI_FOUR_INDICATORS.md` 为准。
+> `paper_and_analysis/导师五大疑问_零基础解答报告_最终版.md` 与 `ILI_FOUR_INDICATORS.md` 为准。
 
 ---
 
@@ -113,7 +113,7 @@
 - **20% 测试**（最后 206 周，≈2019 末–2021）：考模型——**完全没在训练/调参时见过**。
 
 **为什么这样切**：
-1. **论文对齐**：MIFlu 论文（MIFlu_paper.md V-A）明确用 70:10:20（follow [9],[21]）。
+1. **论文对齐**：MIFlu 论文（paper_and_analysis/MIFlu_paper.md V-A）明确用 70:10:20（follow [9],[21]）。
 2. **时间序列不能随机洗牌**：若打乱，未来信息会漏进训练（典型泄漏）。必须**按时间顺序**切，保证测试永远在最后。
 3. **足够测试量**：20%（206 周 ≈ 4 个流感季）足以评估跨年稳定性，含 COVID-19 异常季这一压力测试。
 4. **防泄漏三不变量**（已通过单元测试）：
@@ -229,7 +229,7 @@ NUM. OF PROVIDERS = 每周上报流感数据的诊所/医院数量。它是"真�
 
 | 文件 | 用途 |
 |------|------|
-| `MIFlu_paper.md` | 论文 PDF 直接 markdown 转换（唯一权威交叉参考） |
+| `paper_and_analysis/MIFlu_paper.md` | 论文 PDF 直接 markdown 转换（唯一权威交叉参考） |
 | `docs/leakage_audit_report.md` | 数据泄漏审计（四项断言全过）— 支撑 Q3 |
 | `docs/scaler_convention_supplement.md` | Scaler 拟合约定详细分析 — 支撑 Q8 |
 | `docs/full_repo_audit_report.md` | 全仓库审计（含 §6 协议警告）— 支撑 Q10 |

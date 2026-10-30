@@ -37,3 +37,6 @@ s1es_runs/
 r1c_logs/
 ~$*.docx
 ~$*.pdf
+
+# --- Handoff package staging (intermediate; the built .zip itself IS tracked) ---
+handoff/staging/

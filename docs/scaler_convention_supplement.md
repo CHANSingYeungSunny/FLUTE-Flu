@@ -1,6 +1,6 @@
 # Supplementary: StandardScaler Fit Convention — Train-Only vs Pooled
 
-**Context.** MIFlu paper (MIFlu_paper.md, Section V-B) states National ILI forecasting
+**Context.** MIFlu paper (paper_and_analysis/MIFlu_paper.md, Section V-B) states National ILI forecasting
 metrics are computed on StandardScaler-normalized data, but does **not** specify
 whether the scaler is fit on the **train split only** or on the **whole series
 (train+val+test)**. Our pipeline (`scripts/train_miflu.py::load_and_normalize`) fits
@@ -70,7 +70,7 @@ a way that could explain the residual MAE gap?
 
 **Finding (local `data/raw/national_illness_raw.csv`):**
 - Shape 1025 × 9; `epiweek` range **200201 … 202152** — identical nominal coverage to
-  the paper (2002–2021, per MIFlu_paper.md V-A).
+  the paper (2002–2021, per paper_and_analysis/MIFlu_paper.md V-A).
 - **No 2024+ weeks present.** The "2024–2026" in the original hypothesis referred to
   our *download date*, not to newer surveillance data — CDC ILINet national data for
   2002–2021 is final and stable; our file covers exactly the paper's range.
@@ -97,5 +97,5 @@ out / moot."
 - **Residual gap (MAE ~17%, and the ~2–3× on primary train-only numbers) is unexplained** by
   the available evidence — the most likely remaining causes are the paper's undisclosed scaler
   fit convention and/or architecture/hyperparameter differences (lr, epochs not disclosed per
-  MIFlu_paper.md V-C). Neither is resolvable without the paper's code/data snapshot. This is
+  paper_and_analysis/MIFlu_paper.md V-C). Neither is resolvable without the paper's code/data snapshot. This is
   stated honestly; it is **not** claimed as a perfect reproduction.
