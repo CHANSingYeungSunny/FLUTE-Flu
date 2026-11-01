@@ -1,0 +1,100 @@
+{
+  "model": "llm_probe_demo",
+  "L": 24,
+  "seed": 42,
+  "profile": "author_966",
+  "containment": "strict",
+  "eval_space": "standardized_train_fit_z",
+  "n_eval_windows_rule": "eval_slice(W, batch=16) = (W // 16) * 16",
+  "probe_only": true,
+  "mock_encoder": true,
+  "artefact_is_a_result": false,
+  "created_utc": "2026-11-01T11:53:51.826030+00:00",
+  "wall_seconds": 2.847,
+  "hardware": {
+    "run_device": "cpu",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpu_count": 1,
+    "gpu_capability": [
+      7,
+      5
+    ],
+    "cuda_version": "12.4"
+  },
+  "slurm": {},
+  "library_versions": {
+    "python": "3.9.0",
+    "torch": "2.6.0+cu124",
+    "numpy": "1.26.4"
+  },
+  "code": {
+    "runner": {
+      "file": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\scripts\\train_backbone_966.py",
+      "sha256": "21c144e91cc8eec1769ff141613e3ed31ad5b8b9893b34d7a448baa31543f4b9"
+    }
+  },
+  "encoder": {
+    "arm": "llm_encoder",
+    "model_id": "Qwen/Qwen2.5-1.5B",
+    "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "revision_pinned": true,
+    "mock_encoder": true,
+    "encoder": {
+      "class": "MockLLMEncoder",
+      "parameters": 262336,
+      "trainable_parameters": 0,
+      "frozen": true,
+      "eval_mode": true,
+      "hidden_dim": 64,
+      "pooling": "masked_mean_last_hidden_state",
+      "loader": null
+    },
+    "head": {
+      "class": "nn.Linear",
+      "in_features": 64,
+      "out_features": 24,
+      "parameters": 1560,
+      "shared_across_variables": true
+    },
+    "encoder_batch_size": 8,
+    "prompt_template_version": "v1",
+    "prompt_decimals": 4,
+    "device": "cpu",
+    "torch_version": "2.6.0+cu124",
+    "transformers_version": "4.25.0",
+    "python_version": "3.9.0",
+    "numpy_version": "1.26.4",
+    "determinism": {
+      "manual_seed": 42,
+      "cudnn_deterministic": true,
+      "cudnn_benchmark": false,
+      "sampling": "disabled (single forward, use_cache=False)"
+    },
+    "cache": {
+      "entries": 0,
+      "hits": 0,
+      "misses": 0
+    }
+  },
+  "config": {
+    "epochs": 1,
+    "batch": 16,
+    "encoder_batch_size": 8,
+    "max_train_windows": 32,
+    "max_val_windows": 16,
+    "encoder_device": "cpu",
+    "dry_run": true,
+    "epoch_rows": [
+      {
+        "epoch": 1,
+        "train_loss": 0.7745854556560516,
+        "val_mse_all": 1.0650073289871216,
+        "val_mae_all": 0.8745654821395874
+      }
+    ],
+    "n_train": 32,
+    "n_val": 16,
+    "n_test": 170
+  }
+}

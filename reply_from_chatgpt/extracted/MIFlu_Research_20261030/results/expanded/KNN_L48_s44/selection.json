@@ -1,0 +1,22 @@
+[
+  {
+    "candidate": 0,
+    "config": {
+      "n_neighbors": 5
+    },
+    "val_mse": 0.309811416776119,
+    "best_epoch": null,
+    "seconds": 0.005858015999365307,
+    "curve": []
+  },
+  {
+    "candidate": 1,
+    "config": {
+      "n_neighbors": 15
+    },
+    "val_mse": 0.31483263919489274,
+    "best_epoch": null,
+    "seconds": 0.0065021569998862105,
+    "curve": []
+  }
+]

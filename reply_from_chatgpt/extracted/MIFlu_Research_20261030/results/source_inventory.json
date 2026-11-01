@@ -1,0 +1,3054 @@
+[
+  {
+    "path": "02_author_repo/code/data_provider/data_factory.py",
+    "lines": 60,
+    "sha256": "a5576e445d4a9a56ae9bf77024eeca9b435ed973613ddc7b78e57d7c8070b8da",
+    "classes": [],
+    "functions": [
+      "data_provider"
+    ],
+    "imports": [
+      "data_provider.data_loader",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/data_provider/data_loader.py",
+    "lines": 635,
+    "sha256": "1274c00bbc6886bcd6a48efb840ec017a591b8873fff77d82fe44eaef0b64f6e",
+    "classes": [
+      "Dataset_ETT_hour",
+      "Dataset_ETT_minute",
+      "Dataset_Custom",
+      "Dataset_Custom_orig",
+      "Dataset_Pred",
+      "Dataset_TSF"
+    ],
+    "functions": [],
+    "imports": [
+      "pathlib",
+      "sklearn.preprocessing",
+      "torch.utils.data",
+      "utils.timefeatures",
+      "utils.tools"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/main_ILI_lora.py",
+    "lines": 270,
+    "sha256": "eda73ba196f625620cee8f2c9e2d4270d4ce4504c5198f4b1d485622c49ad29c",
+    "classes": [
+      "SMAPE"
+    ],
+    "functions": [
+      "train"
+    ],
+    "imports": [
+      "data_provider.data_factory",
+      "models.DLinear",
+      "models.GPT4TS_lora",
+      "models.PatchTST",
+      "torch",
+      "tqdm",
+      "utils.tools"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/models/DLinear.py",
+    "lines": 87,
+    "sha256": "b7842931202e593eb6d755827823c097cc7746387caecf0f09b27885b620d052",
+    "classes": [
+      "moving_avg",
+      "series_decomp",
+      "DLinear"
+    ],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "02_author_repo/code/models/GPT4TS.py",
+    "lines": 120,
+    "sha256": "b146a0dd144dddc94e77267a332deca1d8329d3adc6daf986cc7e2498c414280",
+    "classes": [
+      "GPT4TS"
+    ],
+    "functions": [],
+    "imports": [
+      "einops",
+      "embed",
+      "torch",
+      "transformers",
+      "transformers.models.gpt2.configuration_gpt2",
+      "transformers.models.gpt2.modeling_gpt2",
+      "transformers.models.llama.modeling_llama"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/models/GPT4TS_lora.py",
+    "lines": 155,
+    "sha256": "6ef9108eea3c068badb7f8a60efba9717b4e7fe969b46365ac7c26da560c6365",
+    "classes": [
+      "CustomConfig",
+      "GPT4TS"
+    ],
+    "functions": [],
+    "imports": [
+      "einops",
+      "embed",
+      "peft",
+      "torch",
+      "transformers",
+      "transformers.models.gpt2.configuration_gpt2",
+      "transformers.models.gpt2.modeling_gpt2",
+      "transformers.models.llama.modeling_llama"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/models/GPT4TS_new.py",
+    "lines": 119,
+    "sha256": "89f578905aa81fbd4bd56c2e5552a732b74a7cae83fae0fd8bdb06e1275f3b4f",
+    "classes": [
+      "GPT4TS"
+    ],
+    "functions": [],
+    "imports": [
+      "einops",
+      "embed",
+      "torch",
+      "transformers",
+      "transformers.models.gpt2.configuration_gpt2",
+      "transformers.models.gpt2.modeling_gpt2",
+      "transformers.models.llama.modeling_llama"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/models/GPT4TS_orig.py",
+    "lines": 91,
+    "sha256": "e7799d9b43b0aef1e241eea46d7ea01e4f7e6a8cd7971a96749990e2b6aaac30",
+    "classes": [
+      "GPT4TS"
+    ],
+    "functions": [],
+    "imports": [
+      "einops",
+      "embed",
+      "torch",
+      "transformers",
+      "transformers.models.gpt2.configuration_gpt2",
+      "transformers.models.gpt2.modeling_gpt2",
+      "transformers.models.llama.modeling_llama"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/models/PatchTST.py",
+    "lines": 218,
+    "sha256": "daf1e9a49087c7bc1c4c9a63b3525d8a40e506f54df8ea7a1315bd8600d8465f",
+    "classes": [
+      "AttentionLayer",
+      "FullAttention",
+      "EncoderLayer",
+      "Encoder",
+      "PatchTST"
+    ],
+    "functions": [
+      "l2norm"
+    ],
+    "imports": [
+      "einops",
+      "embed",
+      "math"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/utils/__init__.py",
+    "lines": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "02_author_repo/code/utils/metrics.py",
+    "lines": 49,
+    "sha256": "67b8affa6374344e09d6049b9a7e33eb3a9e87c6782a3f076322455de528fa16",
+    "classes": [],
+    "functions": [
+      "RSE",
+      "CORR",
+      "MAE",
+      "MSE",
+      "RMSE",
+      "MAPE",
+      "MSPE",
+      "SMAPE",
+      "ND",
+      "metric"
+    ],
+    "imports": []
+  },
+  {
+    "path": "02_author_repo/code/utils/timefeatures.py",
+    "lines": 134,
+    "sha256": "2ad031a425f6f02b88db1918333a30937e41b18f435df90e6bcbb6470427221b",
+    "classes": [
+      "TimeFeature",
+      "SecondOfMinute",
+      "MinuteOfHour",
+      "HourOfDay",
+      "DayOfWeek",
+      "DayOfMonth",
+      "DayOfYear",
+      "MonthOfYear",
+      "WeekOfYear"
+    ],
+    "functions": [
+      "time_features_from_frequency_str",
+      "time_features"
+    ],
+    "imports": [
+      "pandas.tseries",
+      "pandas.tseries.frequencies",
+      "typing"
+    ]
+  },
+  {
+    "path": "02_author_repo/code/utils/tools.py",
+    "lines": 378,
+    "sha256": "7c536e2e51fe5e7ce6ef5798c905a03f47562d4df7b7f599680f7bfc5d4785fa",
+    "classes": [
+      "EarlyStopping",
+      "dotdict",
+      "StandardScaler"
+    ],
+    "functions": [
+      "adjust_learning_rate",
+      "visual",
+      "convert_tsf_to_dataframe",
+      "vali",
+      "MASE",
+      "test",
+      "test_vis"
+    ],
+    "imports": [
+      "datetime",
+      "distutils.util",
+      "tqdm",
+      "utils.metrics"
+    ]
+  },
+  {
+    "path": "05_reproduction_audit/r1c_c1_train.py",
+    "lines": 279,
+    "sha256": "0c8d8012d18e99b11b7657af927842a9b03c928f57786f5f93ecbf5908d17a7c",
+    "classes": [
+      "Strict966Dataset"
+    ],
+    "functions": [
+      "sha256_file",
+      "load_966",
+      "build_text",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "r1b_model",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/aggregate_journal_tables.py",
+    "lines": 190,
+    "sha256": "a314a0a480386153a168c59c8f081441238cec959864794d551f38aa730cef81",
+    "classes": [],
+    "functions": [
+      "_read_metrics",
+      "aggregate_experiment",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/audit_q2_q3.py",
+    "lines": 209,
+    "sha256": "dd73bfa9e15c8d0872c2619172efdd6946b9d390de0f21d27bd81bd5b51cdfff",
+    "classes": [],
+    "functions": [
+      "corr",
+      "load",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/audit_trackc_context.py",
+    "lines": 109,
+    "sha256": "50340c918214a37be92140fb95b33481d264a9227ecdad35e41a2a5c76b2d490",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/build_concise_final_report.py",
+    "lines": 420,
+    "sha256": "e4bf42a2890874a1b6e0178227ab767187fe715725549f05dc0e06b091b1fad7",
+    "classes": [],
+    "functions": [
+      "add_para",
+      "add_callout",
+      "add_table",
+      "add_fig"
+    ],
+    "imports": [
+      "docx",
+      "docx.enum.table",
+      "docx.enum.text",
+      "docx.oxml",
+      "docx.oxml.ns",
+      "docx.shared",
+      "matplotlib"
+    ]
+  },
+  {
+    "path": "06_scripts/build_final_report_v2.py",
+    "lines": 1178,
+    "sha256": "c01fe552c81ecd52e4876e0d5e5c4ad0cbf41e2464e3a5d359de8e3a239f81b7",
+    "classes": [],
+    "functions": [
+      "read_csv",
+      "rows_dicts",
+      "set_cn_font",
+      "shade",
+      "repeat_header",
+      "set_table_fit_to_frame",
+      "add_field",
+      "add_page_footer",
+      "h",
+      "para",
+      "bullet",
+      "caption",
+      "source_note",
+      "table",
+      "figure",
+      "f",
+      "brk",
+      "make_figures",
+      "build"
+    ],
+    "imports": [
+      "__future__",
+      "docx",
+      "docx.enum.section",
+      "docx.enum.table",
+      "docx.enum.text",
+      "docx.oxml",
+      "docx.oxml.ns",
+      "docx.shared",
+      "matplotlib.patches"
+    ]
+  },
+  {
+    "path": "06_scripts/build_handoff_zip.py",
+    "lines": 310,
+    "sha256": "51cf84c049b8fa99637bf244bab30eb7e3f20f732568009e4865f69c5445ca62",
+    "classes": [],
+    "functions": [
+      "sha256_file",
+      "copy_file",
+      "copy_tree",
+      "copy_named",
+      "write_text",
+      "assemble",
+      "write_omitted_note",
+      "build_manifest",
+      "make_zip",
+      "verify_zip",
+      "split_if_needed",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/build_lock_stage5.py",
+    "lines": 180,
+    "sha256": "2546d1cee9b1dfa7fc6a63e35b63a47bf4706343052b740148cf57e29735b575",
+    "classes": [],
+    "functions": [
+      "sha256",
+      "miflu_val_evidence",
+      "table_val_evidence",
+      "main"
+    ],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/build_pte_pie_deliverables.py",
+    "lines": 91,
+    "sha256": "b16631f43df8b0ccf5d45721b9f2fda44b4d59f0e4b6910a1fefd7840f6e80bd",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/build_track_c_docx.py",
+    "lines": 389,
+    "sha256": "f8eed618c5331b6875f684ee0e93707a9995322da6feb79686975f85764930f6",
+    "classes": [],
+    "functions": [
+      "load",
+      "_repeat_header",
+      "add_table",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "docx",
+      "docx.enum.text",
+      "docx.oxml",
+      "docx.oxml.ns",
+      "docx.shared"
+    ]
+  },
+  {
+    "path": "06_scripts/cdc_calendar.py",
+    "lines": 272,
+    "sha256": "963751eec162a8eefa133c2eb29764b5a8791920d3a99cddf08f8d3d02e593ad",
+    "classes": [],
+    "functions": [
+      "mmwr_week1_start",
+      "mmwr_year_has_53_weeks",
+      "mmwr_week_start",
+      "canonicalize_epiweeks",
+      "load_week_calendar",
+      "list_anomalies",
+      "week_calendar_as_dict",
+      "attach_calendar",
+      "_self_check"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/compute_miflu_indicators.py",
+    "lines": 487,
+    "sha256": "bf72d37ce9eaa21cb052f18568764d913163caf237ba9ce0cf76f15d98f46c0f",
+    "classes": [],
+    "functions": [
+      "detect_peaks",
+      "stl_strengths",
+      "compute_peak_indicators",
+      "aggregate_lead_time",
+      "compute_trend_indicators",
+      "verdicts",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "scipy.signal",
+      "statsmodels.tsa.seasonal"
+    ]
+  },
+  {
+    "path": "06_scripts/compute_pte_pie_track_c.py",
+    "lines": 293,
+    "sha256": "78b5202f2363c2833ea82ec79c63930b9dda65bb53ef75a141c26d1774747650",
+    "classes": [],
+    "functions": [
+      "to_phys",
+      "_floor",
+      "pick_peaks",
+      "load_miflu",
+      "load_npz",
+      "evaluate",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/configs.py",
+    "lines": 317,
+    "sha256": "06eb39cd55df0bb8302d527b90dc5ac5923a43813bbc6acb28709e0d6d7b2bc9",
+    "classes": [],
+    "functions": [
+      "resolve_profile",
+      "split_for_profile",
+      "verify_profile_hash",
+      "assert_full_window",
+      "derive_split",
+      "set_seed",
+      "reps_root",
+      "rep_dir",
+      "ckpt_dir",
+      "best_model_path",
+      "_self_check"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/download_national_illness.py",
+    "lines": 208,
+    "sha256": "d7c78d023e3a36365b96aab61ce8de1444251d09bf993f019a2e84460872c7ba",
+    "classes": [],
+    "functions": [
+      "fetch_delphi_classic",
+      "fetch_delphi_by_year",
+      "build_dataframe",
+      "validate_dataframe",
+      "main"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  {
+    "path": "06_scripts/download_us_region.py",
+    "lines": 195,
+    "sha256": "cf975ef50f8e775b86db6d7e08fe14637953c5c01ac373d700363306421a4cf9",
+    "classes": [],
+    "functions": [
+      "fetch_with_retry",
+      "fetch_all",
+      "build_dataframe",
+      "validate",
+      "main"
+    ],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/early_stopping.py",
+    "lines": 176,
+    "sha256": "be75264643f24c7d8fd5be890a83b465cde7aefe6cec297ae6bb951a15b70558",
+    "classes": [
+      "EarlyStopping"
+    ],
+    "functions": [
+      "_self_check"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/extract_docx_to_md.py",
+    "lines": 150,
+    "sha256": "9bb6c109a92994ea1373a0fa3bc63375035d4753399654052250afd0175ba1a7",
+    "classes": [],
+    "functions": [
+      "iter_block_items",
+      "para_text",
+      "has_drawing",
+      "heading_level",
+      "table_to_md",
+      "extract",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "docx",
+      "docx.table",
+      "docx.text.paragraph"
+    ]
+  },
+  {
+    "path": "06_scripts/finalize_concise_report_qa.py",
+    "lines": 124,
+    "sha256": "a230708c4f6fbe629e5a34cdee3117fe6a2534c487852a740ab0f8c559a979f3",
+    "classes": [],
+    "functions": [
+      "sha256",
+      "chk",
+      "add"
+    ],
+    "imports": [
+      "docx",
+      "docx.shared"
+    ]
+  },
+  {
+    "path": "06_scripts/finalize_docx_v2.py",
+    "lines": 82,
+    "sha256": "8c955dcfe217e597fc97b8bd925db46b93ee633b5860ad023899f76cd12f1b17",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/__init__.py",
+    "lines": 22,
+    "sha256": "a9179d9463fae99e6d717ad3b8804f19b56ffb53f12f556e42beebf24601691b",
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/innovation/architecture_contract.py",
+    "lines": 280,
+    "sha256": "434ef74fa672e618bd4441a6bd28b0bde926e9b25d7c614e8cd847f49b81d12c",
+    "classes": [],
+    "functions": [
+      "contract_path",
+      "_hf_module_paths",
+      "_common_ancestor",
+      "_dominant_cluster_ancestor",
+      "declared_base_identity",
+      "detect_backbone_modules",
+      "reference_key_mapping",
+      "torch_equal_safe",
+      "backbone_key_prefixes",
+      "is_backbone_key",
+      "base_model_identity",
+      "probe_contract",
+      "evaluate_duplication",
+      "storage_verdict"
+    ],
+    "imports": [
+      "__future__",
+      "pathlib",
+      "transformers"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/assets.py",
+    "lines": 164,
+    "sha256": "89c0de99c8c59abee7a178086d81d0d456beb73b217ac84890d9886f4ccf6f1b",
+    "classes": [],
+    "functions": [
+      "total_bytes",
+      "asset_manifest_sha256",
+      "snapshot_is_complete",
+      "descriptor_for",
+      "resolve_pretrained_source",
+      "asset_descriptor",
+      "cache_root",
+      "to_json"
+    ],
+    "imports": [
+      "__future__",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/__init__.py",
+    "lines": 43,
+    "sha256": "32f4c7f0b6fee98ec2a3ba2a16bc20378173463dcfa8bee4bc49a55a9435367d",
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "innovation.backbones.dlinear",
+      "innovation.backbones.fusion_forecaster",
+      "innovation.backbones.gpt2_miflu_adapter",
+      "innovation.backbones.itransformer",
+      "innovation.backbones.llm_inspired",
+      "innovation.backbones.patchtst",
+      "innovation.backbones.registry"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/dlinear.py",
+    "lines": 136,
+    "sha256": "b4868652eb73feefec71726fb878441a9040aeab74d1ad819500c0c03c21c66f",
+    "classes": [
+      "_MovingAvg",
+      "DLinear",
+      "NLinear"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/fusion_forecaster.py",
+    "lines": 88,
+    "sha256": "d434c75d2724299fe3656d5c5855d78445e4de2fc7c260dc36020238cf1d9521",
+    "classes": [
+      "TimeTokenEncoder",
+      "TextFusionForecaster"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/gpt2_miflu_adapter.py",
+    "lines": 89,
+    "sha256": "7170c37badc2487adf7c0b0b789c461a5a26a7db727ec4490d675571e3fedae1",
+    "classes": [
+      "GPT2MifluAdapter"
+    ],
+    "functions": [
+      "gpt2_cache_available"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.interfaces",
+      "miflu_model"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/itransformer.py",
+    "lines": 86,
+    "sha256": "40dcc8691bbe122d93ceba61b8b1c3939a8ac085d8881e6c7556574128d83443",
+    "classes": [
+      "ITransformer"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/llm_inspired.py",
+    "lines": 344,
+    "sha256": "e435133e6ff30775d2cc8595d16a52ef137882ac49bbd8c24a8d7bdf1a683ec4",
+    "classes": [
+      "_FrozenTextModel",
+      "QwenTimeLLM",
+      "CALFInspired",
+      "TimeCMAInspired"
+    ],
+    "functions": [
+      "build_prompt_from_components",
+      "apply_text_mode"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.interfaces",
+      "transformers"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/patchtst.py",
+    "lines": 97,
+    "sha256": "fb0db9160b0ace28ec597557430f650f078f53dbcda458218ef28f2ae7c77e67",
+    "classes": [
+      "PatchTST"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/backbones/registry.py",
+    "lines": 36,
+    "sha256": "9051f72ec9192ca1d5615bf4cdf481ea7bd836d9fdcccee9dffc7435640b95d6",
+    "classes": [],
+    "functions": [
+      "register_backbone",
+      "get_backbone",
+      "make_backbone",
+      "list_backbones",
+      "available_backbones"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/baseline_finalize.py",
+    "lines": 240,
+    "sha256": "b70c4841d82bc62bf11c56a800102d656f9ec3d2f305bb74a8539604b7821a13",
+    "classes": [],
+    "functions": [
+      "_read_json",
+      "checkpoint_entries",
+      "verify_baseline_run",
+      "build_baseline_manifest",
+      "verify_baseline_package",
+      "isolation_probe"
+    ],
+    "imports": [
+      "__future__",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/clean_gate.py",
+    "lines": 568,
+    "sha256": "ea24df3ba433813371d995e825220ae877a051763944d6db1fcec969b9ffaa7c",
+    "classes": [],
+    "functions": [
+      "run_key_for",
+      "gate_dir",
+      "run_one",
+      "_load",
+      "_sha256_path",
+      "declared_checkpoint",
+      "verify_run",
+      "verify_storage",
+      "_sha_file",
+      "_sha_file_safe",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/clean_metrics.py",
+    "lines": 294,
+    "sha256": "3cba1572fe87be979fe8e8ad7527472a3548e560f66b7f252e707e45b680477b",
+    "classes": [],
+    "functions": [
+      "_mse",
+      "_mae",
+      "_finite",
+      "paper_aligned_full_output_metrics",
+      "_ilitotal",
+      "ilitotal_fixed_step_metrics",
+      "ilitotal_full_horizon_metrics",
+      "_seasonal_frame",
+      "pte_pie_metrics",
+      "compute_all",
+      "naive_prediction_frame"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/clean_runner.py",
+    "lines": 450,
+    "sha256": "e0c6497ca0238b55943838b564b7f19157409c5cd3427c8c4bd3e6eb0cb7d1cd",
+    "classes": [],
+    "functions": [
+      "_sha256_file",
+      "_atomic_write_json",
+      "_write_text",
+      "ensure_run_dirs",
+      "load_registry",
+      "resolve_spec",
+      "build_full_prediction_frame",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones.registry",
+      "innovation.data_pipeline",
+      "innovation.encoders.registry",
+      "innovation.trainer"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/compact_checkpoint.py",
+    "lines": 467,
+    "sha256": "11198f61b7731c8e533e70d1952410714fc2fd5664a5b38cbcb3e12257f7eece",
+    "classes": [
+      "CompactInputError"
+    ],
+    "functions": [
+      "_registry_path",
+      "_load_registry",
+      "_reject_path_like",
+      "resolve_run_key",
+      "normalise_spec_input",
+      "_bkw_for",
+      "build_base_model",
+      "sha256_file",
+      "canonical_tensor_sha256",
+      "_load_compact",
+      "_load_sd",
+      "_save_compact",
+      "export_compact",
+      "restore_and_compare",
+      "schema_report",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones.registry",
+      "pathlib",
+      "safetensors.torch"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/data_pipeline.py",
+    "lines": 151,
+    "sha256": "0990853b43286b16c26cbdca19a824687e12a2a6f8e0754f963886223499f396",
+    "classes": [],
+    "functions": [
+      "load_raw_df",
+      "load_scaler",
+      "to_array",
+      "normalize",
+      "build_windows",
+      "make_split_manifest",
+      "make_loaders",
+      "_self_check"
+    ],
+    "imports": [
+      "__future__",
+      "configs",
+      "innovation.paths",
+      "scaler_utils"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/encoders/__init__.py",
+    "lines": 17,
+    "sha256": "6e336f20a4baa3f09e1199a10d9269e5e3f66bc6396ca3d9120a071999bdf3d2",
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "innovation.encoders.gpt2_encoder",
+      "innovation.encoders.none_encoder",
+      "innovation.encoders.registry",
+      "innovation.encoders.tfidf_svd"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/encoders/gpt2_encoder.py",
+    "lines": 95,
+    "sha256": "4e79b9f88539863c4f17edca392d4262eed41fff326740cb4ac9093309f4717c",
+    "classes": [
+      "GPT2TextEncoder"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation.backbones.gpt2_miflu_adapter",
+      "innovation.interfaces",
+      "textual_embedder"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/encoders/none_encoder.py",
+    "lines": 22,
+    "sha256": "9eef6c2a04fbbf54709503e7970c10395834383c5c6340aa4de6ab1931143fd9",
+    "classes": [
+      "NoneTextEncoder"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/encoders/registry.py",
+    "lines": 34,
+    "sha256": "419c62fc3951d174c0d00d75204aa9b636e3d26837b3d24df5c75ae3cc9338c8",
+    "classes": [],
+    "functions": [
+      "register_encoder",
+      "get_encoder",
+      "make_encoder",
+      "list_encoders",
+      "available_encoders"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/encoders/tfidf_svd.py",
+    "lines": 86,
+    "sha256": "0d62f130b8f909eda6915511ae00084c2658c6f4e35595dc55fed6e97dc0a1f5",
+    "classes": [
+      "TfidfSvdEncoder"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation.interfaces",
+      "innovation.paths",
+      "sklearn.decomposition",
+      "sklearn.feature_extraction.text",
+      "textual_embedder"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/fidelity.py",
+    "lines": 33,
+    "sha256": "efc71477c42cc9a4eb024c693b238b4d4e996963ba0b51a71936c3de8c52f0bb",
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/figures.py",
+    "lines": 112,
+    "sha256": "94464de5ecb4aa33b917fca4d1b617051edd374a505022166d5f3cc20bcabe54",
+    "classes": [],
+    "functions": [
+      "_save",
+      "loss_curve",
+      "forecast_continuous",
+      "peak_timing_intensity",
+      "residual_diagnostics"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/finalize_row.py",
+    "lines": 380,
+    "sha256": "6def939a69200a610a5769d76cd2e5c0e46beabcd94470844c037b1b6db588b5",
+    "classes": [],
+    "functions": [
+      "sha",
+      "sha_safe",
+      "spec_checkpoint_applicable",
+      "quarantine_stale_staging",
+      "atomic_publish",
+      "_common_evidence",
+      "_write_record",
+      "finalize_baseline",
+      "finalize_stochastic",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/fusion/__init__.py",
+    "lines": 19,
+    "sha256": "03fc9267d4adfcd82d04b15ecf136f6ecfc88d192b7f235b5ae9f89cef46a5f7",
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "innovation.fusion.concat_projection",
+      "innovation.fusion.cross_attention",
+      "innovation.fusion.film_gate",
+      "innovation.fusion.identity",
+      "innovation.fusion.registry"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/fusion/concat_projection.py",
+    "lines": 24,
+    "sha256": "8a1b32681e36ac5870f2c6f84922d5da3cad414d6f50e70285a2b4fd97db6484",
+    "classes": [
+      "ConcatProjectionFusion"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/fusion/cross_attention.py",
+    "lines": 26,
+    "sha256": "0d742a1932bfb382f820a5ba4b393a5963fe9eb638514c423fac606e5c12fac5",
+    "classes": [
+      "CrossAttentionFusion"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/fusion/film_gate.py",
+    "lines": 24,
+    "sha256": "f7f3d29c4ff5f90d3acec89e30ec1188b9874e1ced8c86b7974c25056bfdb591",
+    "classes": [
+      "FilmGateFusion"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/fusion/identity.py",
+    "lines": 12,
+    "sha256": "5b0ccc491be83dcc144891591d3c7d2c2e57b08e57923c2641ed10097ebf305e",
+    "classes": [
+      "IdentityFusion"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "innovation.interfaces"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/fusion/registry.py",
+    "lines": 27,
+    "sha256": "75094044f0cee432c1101037fc0d3a385a34dda58e998bccb57b4092ccc0b691",
+    "classes": [],
+    "functions": [
+      "register_fusion",
+      "get_fusion",
+      "make_fusion",
+      "list_fusions",
+      "available_fusions"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/governance.py",
+    "lines": 464,
+    "sha256": "6fa95e293ea935e790ff6bea0279aef626e27e336c4e4fffaa119af40d62e2fa",
+    "classes": [],
+    "functions": [
+      "_sha256",
+      "_utc",
+      "_frozen_sha_at",
+      "adopt",
+      "_load_reference",
+      "regress",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/hpc_specs.py",
+    "lines": 441,
+    "sha256": "cec0a592bc65c4e38450d218fce6b51d63780fc2a86a9bc6c56d5420fe08be6f",
+    "classes": [],
+    "functions": [
+      "_pilot_script",
+      "_chain",
+      "_pilot_script_name",
+      "_submit_pilot_driver",
+      "generate",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/interfaces.py",
+    "lines": 98,
+    "sha256": "d79b517485f07f00071c9cb3e499e17449035b187c696035cd1ac8da6b90a322",
+    "classes": [
+      "ForecastBackbone",
+      "TextEncoder",
+      "FusionModule"
+    ],
+    "functions": [],
+    "imports": [
+      "__future__",
+      "abc"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/metadata_chain.py",
+    "lines": 253,
+    "sha256": "fa558dd4bdc4074d973e7ea9897f24a1d9936a34e9f2ee18cc9c2a97db3a242c",
+    "classes": [],
+    "functions": [
+      "_utc",
+      "yaml_top_level_scalars",
+      "_norm",
+      "read_layers",
+      "build",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/metrics.py",
+    "lines": 271,
+    "sha256": "789fe1bede202f57e82bfafbcdc5cb0988f8259e05b0b49cf7ac69a2ac25a616",
+    "classes": [],
+    "functions": [
+      "mse",
+      "mae",
+      "detect_peaks",
+      "aggregate_fixed_step",
+      "split_frame",
+      "season_start_year",
+      "season_bounds",
+      "series_peak_metrics",
+      "seasonal_peak_metrics",
+      "evaluate_predictions"
+    ],
+    "imports": [
+      "__future__",
+      "scipy.signal"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/paths.py",
+    "lines": 354,
+    "sha256": "1a8d40924a59decf3da6f70aa8c2a268545926951c66a3ec7dbf2526279748ee",
+    "classes": [],
+    "functions": [
+      "pilot_spec_metadata",
+      "canonical_model_key",
+      "display_name_for",
+      "fail_closed_bool",
+      "assert_test_access_gate",
+      "current_snapshot_sha256",
+      "governance_fields",
+      "plan_sha256",
+      "plan_sha256_status",
+      "ensure_innovation_dirs"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/run_artifacts.py",
+    "lines": 279,
+    "sha256": "4edb2727ab8ecb52f47a71e2766abb092dccfc9bed3443c144389dac7343cf10",
+    "classes": [],
+    "functions": [
+      "utc_now",
+      "sanitize",
+      "write_json",
+      "_yaml_scalar",
+      "write_min_yaml",
+      "sha256_file",
+      "state_dict_sha256",
+      "_create_tree",
+      "create_run_dir",
+      "create_test_eval_dir",
+      "append_registry",
+      "append_registry_v2",
+      "read_registry_v2",
+      "read_registry",
+      "write_run_status",
+      "write_checkpoint_manifest",
+      "restore_test"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/run_id.py",
+    "lines": 88,
+    "sha256": "b51781061aca67fded4ad4efbce7861bbd702449faaee8073b477f2f17178c76",
+    "classes": [],
+    "functions": [
+      "slug",
+      "utc_timestamp",
+      "git_sha",
+      "make_run_id",
+      "make_test_eval_id",
+      "parse_run_id"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/runner.py",
+    "lines": 610,
+    "sha256": "cbe94b7927b884746f2eae91db98c014ca1c0f38662b48c6cfae87841ef0377d",
+    "classes": [],
+    "functions": [
+      "environment_report",
+      "_git_status",
+      "_eligibility",
+      "build_components",
+      "run_one",
+      "find_completed_run",
+      "_rebuild",
+      "run_test_evaluation",
+      "_parse_args",
+      "spec_from_args",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones",
+      "innovation.backbones.fusion_forecaster",
+      "innovation.data_pipeline",
+      "innovation.encoders",
+      "innovation.fusion",
+      "innovation.paths",
+      "innovation.run_id",
+      "innovation.trainer"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/runtime_guard.py",
+    "lines": 141,
+    "sha256": "4c3eaeef75195ffde3df7c0d2b65578458696b924b6a195a1d42650d72bbf947",
+    "classes": [],
+    "functions": [
+      "_norm",
+      "resolved",
+      "banned_resolved",
+      "is_banned",
+      "_candidate_paths",
+      "check",
+      "assert_clean",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/same_source_invariant.py",
+    "lines": 153,
+    "sha256": "bbeec3071a60d79858311e2868ccb8b94f01e0e395e8173f2e9f998e8dce2362",
+    "classes": [],
+    "functions": [
+      "sha256_file",
+      "source_identity",
+      "_identity_complete",
+      "_export",
+      "_tensor_map",
+      "same_source_compare"
+    ],
+    "imports": [
+      "__future__",
+      "innovation"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/screening_artifacts.py",
+    "lines": 312,
+    "sha256": "5c10652207e87acbd2934173bfd4747b724f0a3cb99d2064e6100ed508e83330",
+    "classes": [],
+    "functions": [
+      "add_prediction_keys",
+      "_series",
+      "fixed_step_metrics",
+      "_null_safe_context_dim",
+      "_null_safe_context_dim",
+      "_sha256_bytes",
+      "prompt_statistics_metadata",
+      "_dir_bytes",
+      "resource_usage",
+      "screening_marks",
+      "access_counters",
+      "numeric_tolerance"
+    ],
+    "imports": [
+      "__future__",
+      "innovation"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/select_best_model.py",
+    "lines": 434,
+    "sha256": "22304a2747e453e8a915f0aec5806b81d47994683fde8bed65e2f0ba01b87a34",
+    "classes": [],
+    "functions": [
+      "assert_no_test_path",
+      "_read_json",
+      "load_legacy_eligibility",
+      "_eligibility_verdict",
+      "load_cohort_manifest",
+      "scan_runs",
+      "_mean",
+      "build_audit",
+      "freeze_winners",
+      "stage_rank",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "collections",
+      "innovation",
+      "innovation.paths",
+      "innovation.run_id"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/source_snapshot.py",
+    "lines": 215,
+    "sha256": "a23f670d8a141a30efaf4b90afdd5c627fc7a20f8fb4545d50c4455531c213ba",
+    "classes": [],
+    "functions": [
+      "_git",
+      "collect_paths",
+      "_aggregate",
+      "build",
+      "stamp_pilot_specs",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/storage_policy.py",
+    "lines": 191,
+    "sha256": "af5fcf887b8950e4fd98e18b33aa0daa80e9b4bc920c9d1225b8200b448ad179",
+    "classes": [],
+    "functions": [
+      "parse_quota",
+      "projected_row_bytes",
+      "capacity_projection",
+      "is_contained",
+      "deletion_allowed",
+      "is_valid_staging_name",
+      "staging_path"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/storage_verification.py",
+    "lines": 222,
+    "sha256": "2239a5f4ab22c7ece2067939428d206625ee01bebe7d1c62d0206df326eae10e",
+    "classes": [
+      "StorageVerificationError",
+      "StorageVerification"
+    ],
+    "functions": [
+      "_sentinel_side",
+      "storage_verdict",
+      "load_result"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/test_eval.py",
+    "lines": 335,
+    "sha256": "93a1338bfac30096a95448830bb2867d9966e3625df9a51c91453b86ae7dae0b",
+    "classes": [],
+    "functions": [
+      "_sha256_file",
+      "_atomic_write_json",
+      "resolve_spec_for_test",
+      "build_test_prediction_frame",
+      "baseline_predictions",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones.registry",
+      "innovation.data_pipeline",
+      "innovation.encoders.registry"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/trainer.py",
+    "lines": 151,
+    "sha256": "45e0b1c5c315e76bd623c9ab8b09debdffd2fd197467ed1907e547e79557bd79",
+    "classes": [],
+    "functions": [
+      "_ctx",
+      "train_epoch",
+      "evaluate_z",
+      "predict_frame",
+      "train_model"
+    ],
+    "imports": [
+      "__future__",
+      "cdc_calendar",
+      "early_stopping",
+      "innovation.data_pipeline"
+    ]
+  },
+  {
+    "path": "06_scripts/innovation/verify_source_snapshot.py",
+    "lines": 183,
+    "sha256": "783ae2768e8863627208dafe1e1bc411456120d6df126f87e986a5d9772e3111",
+    "classes": [],
+    "functions": [
+      "_is_within",
+      "_is_nested_root",
+      "verify",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.paths",
+      "innovation.source_snapshot"
+    ]
+  },
+  {
+    "path": "06_scripts/make_s1_earlystop_trainer.py",
+    "lines": 100,
+    "sha256": "b91a265f968ee627146fa06921b1d913c92babbebcf931f692b01c8019ffd3e9",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/md_to_docx.py",
+    "lines": 542,
+    "sha256": "7bfd69ae8cb398dc2bb27b98882023154da58551815f349c42908105011dcb9d",
+    "classes": [
+      "RelBag"
+    ],
+    "functions": [
+      "esc",
+      "png_size",
+      "run_xml",
+      "hyperlink_run",
+      "plain_runs",
+      "unescape_md",
+      "inline_runs",
+      "_is_block_start",
+      "parse_blocks",
+      "p",
+      "split_row",
+      "emit_table",
+      "emit_image",
+      "build_document_xml",
+      "convert",
+      "find_report"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/miflu_model.py",
+    "lines": 639,
+    "sha256": "0e6bdb61213bfdcc72e6a5b2733fc891a613baeb3dc52b514997c1507bfc15ef",
+    "classes": [
+      "LoRALinear",
+      "TimeSeriesEmbedder",
+      "ModalityAligner",
+      "ForecastingLLM",
+      "MIFlu"
+    ],
+    "functions": [
+      "apply_lora_to_gpt2_attention"
+    ],
+    "imports": [
+      "configs",
+      "transformers"
+    ]
+  },
+  {
+    "path": "06_scripts/parse_r1c_results.py",
+    "lines": 140,
+    "sha256": "56ab22135eaa0e3fcd7523866346dd785741f06bbfbbd7c8b173c003f1cfd9b4",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/parse_s1_results.py",
+    "lines": 113,
+    "sha256": "999edb2c9f8f0077b058e29a0381662bbf3050c2969a67994faca31322800b10",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/pte_pie_sensitivity.py",
+    "lines": 79,
+    "sha256": "8954951f4ea404d6c152d391c7c05d4571490f28813fbe6d1b54329e2a0e983d",
+    "classes": [],
+    "functions": [
+      "run",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/recipes.py",
+    "lines": 204,
+    "sha256": "7297ddf10e3015b7a1fcdb233509a48483b130e16767015c9a307acfd4b68948",
+    "classes": [],
+    "functions": [
+      "_trainable_params",
+      "_build_optimizer",
+      "_build_criterion",
+      "_build_scheduler",
+      "build_recipe",
+      "describe",
+      "_self_check"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/render_docx.py",
+    "lines": 65,
+    "sha256": "140da4a525f6f0d6e602fcff45cf8da8fb5c6ca3ba96a86b0e4053dac31db5cd",
+    "classes": [],
+    "functions": [
+      "docx_to_pdf",
+      "pdf_to_pngs",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/run_journal_experiments.py",
+    "lines": 128,
+    "sha256": "d89d5a176186a99dadeabd40d941577a6073f9fcf4801a01b09a0ae5cb3c319b",
+    "classes": [],
+    "functions": [
+      "build_experiments",
+      "run_one",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/s1_vs_trackc.py",
+    "lines": 75,
+    "sha256": "0ed72f3e7a6d92363a8a32d44a98367314d9d224f19e57e1da8cd08d4624d926",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/s1_write_csvs.py",
+    "lines": 83,
+    "sha256": "0cccb075331c62b221e8d1ed56f7e930b674e02b44a9929467b36cfdec89d72c",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/scaler_utils.py",
+    "lines": 244,
+    "sha256": "efac4e58ca85563012c55e5c9e74ab61035a7f7c578fb17658a1870a84462f2e",
+    "classes": [
+      "ScalerBundle"
+    ],
+    "functions": [
+      "_self_check"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/score_predictions_independent.py",
+    "lines": 261,
+    "sha256": "4040ea615cf50fc4ae20a321f30eb1c4467dcc630ab093e33d0916ebca64ae55",
+    "classes": [],
+    "functions": [
+      "load_cell",
+      "aggregate",
+      "coverage_report",
+      "crosscheck",
+      "main"
+    ],
+    "imports": [
+      "collections"
+    ]
+  },
+  {
+    "path": "06_scripts/score_test_stage5.py",
+    "lines": 367,
+    "sha256": "69f17599858e99618c68f75ca69f30bc8ffdb31a9a981f85e4f629f046327683",
+    "classes": [],
+    "functions": [
+      "log",
+      "load_nlinear_class",
+      "load_and_normalize",
+      "build_windows",
+      "compute_metrics",
+      "load_weights",
+      "build_stage6_backbone",
+      "predict_backbone",
+      "predict_miflu",
+      "predict_nlinear",
+      "naive_pred",
+      "row",
+      "dump_predictions",
+      "write_scaler",
+      "main"
+    ],
+    "imports": [
+      "configs",
+      "miflu_model",
+      "scaler_utils",
+      "textual_embedder",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/stage5_build_manifest.py",
+    "lines": 125,
+    "sha256": "60abdff0d3b8aaceda52f01ed7e5ab14a7d577e9fcc3f94345ae0f9246456a3c",
+    "classes": [],
+    "functions": [
+      "sha256"
+    ],
+    "imports": [
+      "datetime"
+    ]
+  },
+  {
+    "path": "06_scripts/stage5_package.py",
+    "lines": 54,
+    "sha256": "4f4849153b683260beee30a495d84226d497bb300191d339d0cf44ac707b2b12",
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/stage5_update_state.py",
+    "lines": 73,
+    "sha256": "322b17ba05fdb499ff02450cdc67d7e3212b1bbf25cb4529647e33e7f5942f5e",
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/stage5_verify_indices.py",
+    "lines": 73,
+    "sha256": "5d981be09fff9a88992b001865ede74c43d6b10f13425ceb47f3e1be1b7bbc2d",
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/stage5_verify_windows.py",
+    "lines": 49,
+    "sha256": "a459efb7fa63dde7fe14c498f003abf7100f93d799e254c56a5efd3d811876c0",
+    "classes": [],
+    "functions": [
+      "load"
+    ],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/stage5_windows_impact.py",
+    "lines": 56,
+    "sha256": "d425984a1d8545e78eccc3c5579de0c4c122adc8a66151caafeb9e74defa5fd4",
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/summarize_regional_table_vi.py",
+    "lines": 100,
+    "sha256": "8e670a92c9492d7194af83fcf7c82e5c5d082a8b80a336e98eeb9bf119cf5300",
+    "classes": [],
+    "functions": [],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/tests/innovation/_bootstrap.py",
+    "lines": 12,
+    "sha256": "2e421275933c93ee169a5c8691ec12197cc58110079f415c5c1d2e70904884a5",
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/_repro.py",
+    "lines": 162,
+    "sha256": "6a61cb99cb0ff520264ac37a9dcf379ae09dd9089321694a7d816b6597bb4f61",
+    "classes": [],
+    "functions": [
+      "tensor_sha256",
+      "deterministic_settings",
+      "make_inputs",
+      "build_old_and_adapter",
+      "old_forward_z",
+      "old_path_frame",
+      "diff_stats"
+    ],
+    "imports": [
+      "__future__",
+      "cdc_calendar",
+      "innovation",
+      "innovation.backbones.gpt2_miflu_adapter",
+      "innovation.data_pipeline",
+      "miflu_model",
+      "textual_embedder"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_aggregation_regression.py",
+    "lines": 121,
+    "sha256": "5130fe94018f3c4eba00bfeba57442f508d3d4e1e182ff5dd08f88ecd6943065",
+    "classes": [],
+    "functions": [
+      "run",
+      "test_aggregation_regression"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_architecture_equivalence.py",
+    "lines": 112,
+    "sha256": "dd03fecfc81f815825761cd1026a0e0f30b300b5ff9b4144bda5909c4c81f92d",
+    "classes": [],
+    "functions": [
+      "_report",
+      "test_every_backbone_declares_a_level_with_evidence",
+      "test_itransformer_not_called_faithful",
+      "test_patchtst_is_inspired_not_exact",
+      "test_dlinear_nlinear_faithful_with_evidence",
+      "test_phase1_llm_contracts_are_materially_distinct_without_loading_weights"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones",
+      "innovation.fusion"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_artifact_dirs.py",
+    "lines": 224,
+    "sha256": "a7faa51f82b3efd33c8a9074a3082b2b5d66c161fa01b9a724f5f84e4557f824",
+    "classes": [],
+    "functions": [
+      "_layout",
+      "test_without_initializer_pandas_to_csv_fails_this_is_the_569016_bug",
+      "test_stochastic_path_can_write_logs_train_history_after_init",
+      "test_baseline_path_can_write_predictions_after_init",
+      "test_all_required_subdirectories_exist_before_any_write",
+      "test_initializer_is_idempotent",
+      "test_directory_creation_is_restricted_to_the_four_names",
+      "test_path_traversal_is_rejected",
+      "test_nested_run_dir_is_rejected",
+      "test_symlink_escape_is_rejected",
+      "test_no_path_outside_out_root_is_created",
+      "_reg",
+      "test_unknown_run_key_rejected_before_any_directory_is_created",
+      "test_deferred_run_key_rejected",
+      "test_already_accepted_run_key_rejected",
+      "test_resolution_happens_before_directory_creation_in_the_source",
+      "test_failed_run_is_never_marked_accepted",
+      "_baseline_block",
+      "test_baseline_keeps_checkpoint_applicable_false",
+      "test_stochastic_rows_still_expect_checkpoints",
+      "test_no_test_or_holdout_path_is_referenced_by_the_initializer",
+      "test_repair_evidence_recorded"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_backbone_shapes.py",
+    "lines": 67,
+    "sha256": "e84cdb130a305c0a1f456628e7d7afe72397f4bfd2ec2947f5476e9277e98ec0",
+    "classes": [],
+    "functions": [
+      "test_nontext_backbones_shape",
+      "test_fusions_shape_and_identity_when_no_text",
+      "test_fusion_forecaster_with_text",
+      "test_arch_reports_flag_deviation"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones",
+      "innovation.backbones.fusion_forecaster",
+      "innovation.fusion"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_canonical_tensor_hash.py",
+    "lines": 186,
+    "sha256": "5dbdc92ef9332d91d0e6d75331844d5976f4ae2d7f460397895bfd844ceb7f7a",
+    "classes": [],
+    "functions": [
+      "_sd",
+      "test_same_tensors_same_hash",
+      "test_key_insertion_order_does_not_change_hash",
+      "test_container_reordering_same_hash_like_safetensors_offsets",
+      "test_key_change_changes_hash",
+      "test_dtype_change_changes_hash",
+      "test_shape_change_changes_hash",
+      "test_value_change_changes_hash",
+      "test_adding_a_key_changes_hash",
+      "test_length_prefix_prevents_concatenation_collisions",
+      "test_noncontiguous_tensor_is_normalised",
+      "test_hash_schema_is_versioned_and_feeds_the_digest",
+      "test_no_pickle_in_canonical_hash_source",
+      "test_canonical_hash_is_not_the_file_hash",
+      "test_dominant_cluster_ancestor_ignores_a_stray_module",
+      "test_dominant_cluster_ancestor_single_cluster",
+      "test_dominant_cluster_ancestor_returns_the_groups_level",
+      "test_dominant_cluster_ancestor_empty",
+      "test_hf_namespaces_include_pytorch_utils",
+      "test_identity_attrs_cover_the_declared_ids",
+      "test_reference_mapping_declares_the_blocks_rename",
+      "test_backbone_invariant_still_holds",
+      "test_storage_verdict_still_requires_exactness_and_publication"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_checkpoint_resume.py",
+    "lines": 57,
+    "sha256": "215cf961c6e962be88848f31c38eb5d25f4dddc089293797e566e27b3839e03e",
+    "classes": [
+      "_Tiny"
+    ],
+    "functions": [
+      "test_manifest_and_restore"
+    ],
+    "imports": [
+      "__future__",
+      "innovation"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_clean_ablations_controls.py",
+    "lines": 147,
+    "sha256": "847db33d246bc3aea0b491d4dafd893fcb33c7811e9d448eea2978a6a68f2997",
+    "classes": [],
+    "functions": [
+      "test_full_prompt_contains_all_three_components",
+      "test_without_dataset_information_removes_only_dataset",
+      "test_without_task_instruction_removes_only_task",
+      "test_without_input_variable_description_removes_only_variable",
+      "test_component_isolation_each_drop_removes_exactly_one_sentence",
+      "test_empty_component_set_yields_empty_prompt",
+      "test_unknown_component_rejected",
+      "_tokens",
+      "test_zero_text_control_zeroes_every_embedding",
+      "test_normal_text_mode_is_identity",
+      "test_shuffled_text_control_is_deterministic_and_preserves_values",
+      "test_unknown_text_mode_rejected",
+      "test_variant_registry_maps_every_variant_to_one_component",
+      "test_frozen_protocol_untouched"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.backbones",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_clean_gate.py",
+    "lines": 173,
+    "sha256": "1010c39f0ecdae44075b02a8a4604c7dd781fb81513bd29723ff0839860cceaf",
+    "classes": [],
+    "functions": [
+      "make_run_dir",
+      "test_run_key_construction",
+      "test_gate_dir_is_create_only",
+      "test_verify_complete_stochastic_run",
+      "test_verify_detects_missing_artifacts",
+      "test_verify_detects_wrong_peak_thresholds",
+      "test_verify_detects_unsupported_peak_logic",
+      "test_verify_baseline_semantics",
+      "test_verify_detects_failed_state",
+      "test_required_files_cover_the_frozen_contract",
+      "test_covered_paths_are_complete"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_clean_runner.py",
+    "lines": 188,
+    "sha256": "90ef549feecfa46b370a5206183c10027bac45d91f8c4c9b5b97eec8da160f7f",
+    "classes": [],
+    "functions": [
+      "base_spec",
+      "reg_with",
+      "test_resolves_a_unique_known_key",
+      "test_rejects_unknown_key",
+      "test_rejects_duplicate_key",
+      "test_rejects_malformed_spec",
+      "test_rejects_already_accepted",
+      "test_rejects_deferred_non_submittable_row",
+      "test_rejects_unbound_deferred_parent_even_if_submittable",
+      "test_all_eighteen_deferred_rows_are_refused",
+      "test_frame_covers_all_seven_variables",
+      "test_frame_physical_conversion_is_linear",
+      "test_primary_metric_from_full_frame_is_seven_variable",
+      "test_all_six_original_ablations_parent_to_gpt2_miflu",
+      "test_gpt2_miflu_controls_use_the_gpt2_encoder",
+      "test_multimodality_removal_flag_present",
+      "test_frozen_geometry_and_channel",
+      "test_baselines_are_deterministic_and_checkpoint_free",
+      "test_atomic_status_write_and_states"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_compact_input_normalization.py",
+    "lines": 178,
+    "sha256": "0e7f8a732de734c76b025b3f7c628d4555470f96f39c45ec93dd23ebbc99cb89",
+    "classes": [],
+    "functions": [
+      "_code_only",
+      "_deployment_root",
+      "test_gate_571800_run_key_no_longer_raises_keyerror",
+      "test_old_fragile_path_would_have_failed",
+      "test_library_source_contains_no_run_key_string_cut",
+      "test_every_immediate_run_key_resolves",
+      "test_resolved_model_is_always_a_known_model_token",
+      "test_deferred_run_keys_are_rejected",
+      "test_malformed_unknown_pathlike_rejected",
+      "test_non_string_rejected",
+      "test_ambiguous_run_key_rejected",
+      "test_bare_model_name_without_horizon_rejected",
+      "test_bare_model_name_with_horizon_resolves",
+      "test_unverified_alias_rejected",
+      "test_export_and_restore_share_one_resolution",
+      "test_cli_delegates_to_the_same_entry",
+      "test_no_registry_means_no_guess"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_d15_storage_predicate.py",
+    "lines": 213,
+    "sha256": "071610f9eae157da10629d0e71ad1be22d5be74c17695343096f1e0cf7480583",
+    "classes": [],
+    "functions": [
+      "test_no_backbone_passes_when_exact",
+      "test_no_backbone_fails_if_reconstruction_fails",
+      "test_no_backbone_fails_if_restoration_fails",
+      "test_unknown_backbone_state_fails_closed",
+      "test_backbone_passes_when_unchanged_frozen_state_excluded",
+      "test_backbone_fails_if_unchanged_frozen_state_retained",
+      "test_genuinely_changed_backbone_tensor_is_not_duplication",
+      "test_backbone_still_requires_exactness",
+      "test_storage_verdict_requires_zero_missing_and_unexpected",
+      "test_storage_verdict_requires_publication_and_containment",
+      "test_storage_verdict_fails_closed_on_empty_evidence",
+      "test_baseline_is_a_no_checkpoint_path_and_fails_closed_on_missing_input",
+      "_replay",
+      "test_gate_571855_four_failing_rows_now_pass",
+      "test_gate_571855_passing_llm_rows_still_pass",
+      "test_contract_with_unknown_backbone_flag_fails_closed",
+      "test_predicates_use_no_name_or_ratio_heuristics",
+      "test_contract_source_is_declared"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_d16_fail_closed_gate.py",
+    "lines": 219,
+    "sha256": "4fe7a84af93746c4f26ee696df3fffe330e8c1296c69baacd9d371e59906d916",
+    "classes": [],
+    "functions": [
+      "_checks",
+      "_evidence",
+      "_make",
+      "test_all_required_present_and_true_passes",
+      "test_missing_required_check_fails_closed",
+      "test_missing_required_evidence_fails_closed",
+      "test_required_check_false_fails",
+      "test_unknown_check_id_is_rejected",
+      "test_non_boolean_check_values_are_rejected",
+      "test_sentinel_out_of_place_is_rejected",
+      "test_the_exact_d16_scenario_now_fails",
+      "test_verdict_accepts_only_the_authoritative_structure",
+      "test_no_default_true_lookup_in_verdict_path",
+      "test_gate_delegates_to_the_typed_result",
+      "test_identity_mismatch_is_rejected_not_marked_same_source",
+      "test_different_run_key_is_rejected",
+      "test_incomplete_identity_is_refused",
+      "test_same_source_mode_is_declared_only_for_matching_identity",
+      "test_required_identity_fields_are_enforced",
+      "test_same_source_module_documents_the_independent_training_ban",
+      "test_legacy_13_check_record_still_validates"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_d5_asset_resolution.py",
+    "lines": 188,
+    "sha256": "26d7bb7db1ac41d17130282fdc771e470e6b012d2537fc27b589461c140846e1",
+    "classes": [],
+    "functions": [
+      "no_model_no_network",
+      "test_qwen_descriptor_fields",
+      "test_qwen_is_not_mislabelled_with_the_timellm_commit",
+      "test_verified_snapshot_is_preferred",
+      "test_missing_snapshot_fails_closed",
+      "test_wrong_size_fails_closed",
+      "test_wrong_revision_fails_closed",
+      "test_local_files_only_enforced_for_passthrough_too",
+      "test_gpt2_gets_no_qwen_arguments",
+      "test_pilot_spec_generation_is_model_free",
+      "_supports_no_write",
+      "test_eight_pilot_specs_unique",
+      "test_asset_module_touches_no_test_or_holdout_path"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_d6_gpt2_padding.py",
+    "lines": 257,
+    "sha256": "4a48622a35fb00323d1d3e727d1b3d26c9561cf2a1d72a47e53f033618bf45cb",
+    "classes": [
+      "FakeTokenizer",
+      "FakeEmbedding",
+      "FakeBackbone",
+      "_Guard"
+    ],
+    "functions": [
+      "no_load_no_net",
+      "_text_model",
+      "test_gpt2_without_pad_reuses_eos",
+      "test_no_vocab_growth_and_no_resize",
+      "test_qwen_existing_pad_token_is_untouched",
+      "test_missing_pad_and_eos_fails_closed",
+      "test_last_non_pad_selects_real_token",
+      "test_timecma_uses_last_non_padding_token",
+      "test_calf_pooling_ignores_padding",
+      "test_last_non_pad_shapes",
+      "test_prompt_edge_cases",
+      "test_g1_statistics_still_required",
+      "test_g2_routing_and_d5_snapshot_unchanged",
+      "test_source_never_resizes_or_adds_tokens",
+      "test_eight_pilot_specs_unchanged"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_deployment_completeness.py",
+    "lines": 186,
+    "sha256": "1a844faf8179c41bb27451dc4e63b7e2f26ebc75a2e4adfa6336ee940676d459",
+    "classes": [],
+    "functions": [
+      "deployed",
+      "test_empty_root_receives_every_manifest_member",
+      "test_all_recorded_hashes_match",
+      "test_spec_registry_is_at_the_path_clean_runner_reads",
+      "test_row_counts_598_580_18",
+      "test_all_580_executable_scripts_are_findable",
+      "test_clean_runner_and_gate_are_deployed",
+      "test_canonical_raw_data_and_scaler_are_deployed",
+      "test_asset_descriptors_and_bootstrap_metadata_deployed",
+      "test_clean_runner_resolves_representative_specs_without_models",
+      "test_all_18_deferred_rows_refused_in_the_deployed_root",
+      "test_archive_and_test_paths_not_discoverable",
+      "test_no_crlf_in_any_deployed_file",
+      "test_every_shell_script_passes_bash_n",
+      "test_bundle_excludes_forbidden_content"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_eligibility_gate.py",
+    "lines": 93,
+    "sha256": "acb6dc1216381f5c20ba515c8064e93f93a706d88544e0e49bee3ed6950d723d",
+    "classes": [],
+    "functions": [
+      "_mk",
+      "test_gate_excludes_ineligible"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.paths",
+      "innovation.run_id"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_finalize_baseline.py",
+    "lines": 518,
+    "sha256": "5f18051948a5a6f972a41490b55613eb2d11b30b082651c4550e8ff52914b657",
+    "classes": [],
+    "functions": [
+      "_deployment_root",
+      "_checkpoint_functions_must_not_run",
+      "_make_run",
+      "_run_finalize",
+      "_spec_for",
+      "test_spec_authority_is_the_frozen_arm",
+      "test_both_models_all_four_horizons_are_covered",
+      "test_row_321_last_value_naive_empty_checkpoints_dir_accepts",
+      "test_empty_git_commit_is_legitimate_provenance",
+      "test_row_321_absent_checkpoints_dir_also_accepts",
+      "test_every_baseline_row_accepts",
+      "test_unexpected_checkpoint_fails_closed_and_is_recorded",
+      "test_missing_prediction_fails_closed",
+      "test_missing_each_metric_fails_closed",
+      "test_missing_each_provenance_fails_closed",
+      "test_malformed_evidence_fails_closed",
+      "test_atomic_publication_manifest_last_and_content_match",
+      "test_source_run_dir_is_never_mutated_by_the_baseline_branch",
+      "test_stale_staging_is_quarantined_not_reused",
+      "test_repair_finalize_is_idempotent",
+      "_baseline_checks",
+      "_baseline_evidence",
+      "test_schema_baseline_record_passes",
+      "test_schema_missing_checkpoint_check_is_a_hard_fail",
+      "test_schema_baseline_claiming_checkpoint_true_fails",
+      "test_schema_baseline_missing_noncheckpoint_true_fails",
+      "test_schema_baseline_wrong_reason_rejected",
+      "test_schema_baseline_evidence_checkpoint_hash_must_be_sentinel",
+      "test_schema_stochastic_sentinels_mirror",
+      "test_schema_legacy_records_still_validate",
+      "test_storage_verdict_dict_roundtrip",
+      "test_driver_never_references_the_checkpoint_file_in_the_baseline_path",
+      "test_driver_branches_on_spec_checkpoint_applicability"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_make_backbone_kwargs.py",
+    "lines": 108,
+    "sha256": "4bc7d4235dfe4dea188aeb6bcf8c30916bb87d05489b0592dd837a57be8dd246",
+    "classes": [],
+    "functions": [
+      "_ctor_params",
+      "test_runner_does_not_pass_device_to_make_backbone",
+      "test_all_primary_backbones_accept_the_runners_call_signature",
+      "test_every_variant_kwarg_is_accepted_by_its_target_constructor",
+      "test_primary_registry_routing_is_registered",
+      "test_d9_evidence_recorded",
+      "test_gate_key_builder_matches_the_frozen_registry"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.backbones",
+      "innovation.encoders",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_no_overwrite.py",
+    "lines": 50,
+    "sha256": "bc9dedff2021212ed4999011357cfddcdb7b0eb28949a72b55f1e7c572b417fd",
+    "classes": [],
+    "functions": [
+      "test_create_only_run_dir",
+      "test_registry_is_append_only"
+    ],
+    "imports": [
+      "__future__",
+      "innovation"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_parentage_correction.py",
+    "lines": 149,
+    "sha256": "571064aa244e135fa47233f24e203d5be30383a26721ae3e3458faef3e4af7ef",
+    "classes": [],
+    "functions": [
+      "test_default_template_is_byte_identical_to_original",
+      "test_explicit_all_components_also_identical",
+      "test_sections_partition_the_template_exactly",
+      "test_each_ablation_removes_only_its_section",
+      "test_ablation_is_a_removal_not_a_reorder",
+      "test_unknown_component_ignored_safely",
+      "test_all_six_original_ablations_parented_to_gpt2_miflu",
+      "test_multimodality_removal_is_a_real_removal",
+      "test_controls_are_parent_scoped_not_generic",
+      "test_shuffled_text_semantics_frozen",
+      "test_corrected_audit_fixes_the_wording_error",
+      "test_old_audit_preserved_and_correction_recorded"
+    ],
+    "imports": [
+      "__future__",
+      "pathlib",
+      "textual_embedder"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_peak_criteria.py",
+    "lines": 74,
+    "sha256": "407e134b60e9acd1ffa1199e7d9584fee554609c6252f86b5c00dd85700d98e6",
+    "classes": [],
+    "functions": [
+      "_season_series",
+      "test_hit_requires_both_criteria",
+      "test_incomplete_season_not_scored",
+      "test_zero_denominator_reports_null_not_zero",
+      "test_tie_takes_earliest_week"
+    ],
+    "imports": [
+      "__future__",
+      "innovation"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_run_id.py",
+    "lines": 46,
+    "sha256": "17ca79aa993f8b746dfa55bb31aa27087e47ac9b37a94d00463568a3b9fc06d9",
+    "classes": [],
+    "functions": [
+      "test_round_trip",
+      "test_slug_and_unique",
+      "test_malformed_rejected"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.run_id"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_runner_import_path.py",
+    "lines": 86,
+    "sha256": "4e4705a7ca70d9297c7e306d986fc7bc64a0d03350e7cff8eab4a49f74c13116",
+    "classes": [],
+    "functions": [
+      "_fake_deployment_root",
+      "_run",
+      "test_runner_imports_when_parent_is_only_the_deployment_root",
+      "test_runner_reaches_spec_resolution_not_import_failure",
+      "test_scripts_root_is_what_gets_added_to_sys_path",
+      "test_innovation_package_parent_layout_is_as_assumed",
+      "test_repair_evidence_recorded"
+    ],
+    "imports": [
+      "__future__",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_runtime_path_guard.py",
+    "lines": 112,
+    "sha256": "90b7a1efb7f076339fec121c1a0ca3158e2de56646339f97f799fe15decf4ad6",
+    "classes": [],
+    "functions": [
+      "test_banned_root_is_declared",
+      "test_a_banned_path_is_detected",
+      "test_a_clean_deployment_root_is_not_flagged",
+      "test_resolution_collapses_dotdot_and_symlinks",
+      "test_dotdot_into_a_banned_marker_is_caught",
+      "test_check_is_clean_for_the_current_interpreter",
+      "test_assert_clean_raises_the_declared_code",
+      "test_check_reports_violations_not_silence"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_selection_model_key.py",
+    "lines": 120,
+    "sha256": "4842688b3bdde808dbb3ccaa29cc1c7a78339f108944ccb886b1975009f92f60",
+    "classes": [],
+    "functions": [
+      "_row",
+      "test_canonical_key_equivalence",
+      "test_baseline_found_every_horizon",
+      "test_grouping_not_split_by_spelling",
+      "test_legacy_ineligible_fails_closed",
+      "test_stages_distinct",
+      "test_selector_reads_validation_only",
+      "test_test_read_fails",
+      "test_missing_baseline_horizon_explicit",
+      "test_duplicate_cells_explicit",
+      "test_no_candidate_diagnostic_failure"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_source_snapshot_gate.py",
+    "lines": 197,
+    "sha256": "fcd049e2ea66c693a29369fc4c227ed7d952092f1d70804aa604c90e5bb44ef7",
+    "classes": [],
+    "functions": [
+      "_ensure_snapshot",
+      "_manifest",
+      "_materialise",
+      "_tmp",
+      "test_correct_explicit_root_passes",
+      "test_incorrect_deployment_root_fails",
+      "test_nested_snapshot_root_rejected",
+      "test_runtime_modification_fails",
+      "test_intact_nested_snapshot_cannot_hide_modified_runtime",
+      "test_missing_runtime_file_fails",
+      "test_controlled_scope_extra_fails",
+      "test_missing_manifest_fails",
+      "test_incorrect_expected_aggregate_fails",
+      "test_project_root_is_not_a_nested_root"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_stage_f_cohort.py",
+    "lines": 135,
+    "sha256": "d134491658ecf15a91a3d6bac08a079c94bb5fc7d420505d809c37e3a87a0de5",
+    "classes": [],
+    "functions": [
+      "_cohort",
+      "_row",
+      "test_manifest_size_and_sha",
+      "test_manifest_tamper_detected",
+      "test_unlisted_run_excluded",
+      "test_duplicate_cells_rejected",
+      "test_missing_cells_rejected",
+      "test_unresolved_provenance_no_winner",
+      "test_performance_cannot_alter_membership",
+      "test_test_paths_blocked",
+      "test_canonical_baseline_forms",
+      "test_determinism_shuffled"
+    ],
+    "imports": [
+      "__future__",
+      "innovation.paths"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_storage_policy.py",
+    "lines": 241,
+    "sha256": "6cdf44ee97da947412844ec36f68693a67836328247b9a47457911e2b7c9a94d",
+    "classes": [],
+    "functions": [
+      "test_parse_quota_reads_both_filesystems",
+      "test_parse_quota_gib_conversions",
+      "test_parse_quota_ignores_unknown_lines",
+      "_remaining",
+      "test_projection_within_limits_passes",
+      "test_projection_detects_overrun",
+      "test_projection_unknown_schema_uses_worst_case",
+      "test_projection_reports_remaining_rows",
+      "test_scratch_beyond_hard_limit_fails",
+      "test_containment_accepts_direct_child",
+      "test_containment_rejects_parent_and_sibling",
+      "test_containment_rejects_traversal",
+      "test_containment_rejects_empty_or_relative",
+      "test_containment_rejects_symlink_escape",
+      "test_deletion_allowed_for_eligible_partial_copy",
+      "test_deletion_refused_for_non_eligible_classes",
+      "test_deletion_refused_when_owner_unverified",
+      "test_deletion_refused_for_symlink",
+      "test_deletion_refused_outside_root",
+      "test_deletion_refused_without_manifest",
+      "test_staging_path_is_a_sibling_with_job_id",
+      "test_staging_name_validation",
+      "test_staging_is_contained_in_the_durable_root"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/innovation/test_test_gate.py",
+    "lines": 84,
+    "sha256": "ae58d9bf0825e55796208ff37eebd5d5930ad46ce90fce0afe752065274cb663",
+    "classes": [],
+    "functions": [
+      "_write_run",
+      "test_guard_rejects_test_paths",
+      "test_scan_runs_never_opens_test"
+    ],
+    "imports": [
+      "__future__",
+      "innovation",
+      "innovation.run_id"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/test_leakage_audit.py",
+    "lines": 152,
+    "sha256": "4fd5a998679aa37dcef52e2aa44566ec8805a90621549093760408e4b186dfbc",
+    "classes": [],
+    "functions": [
+      "_real_data",
+      "test_test_target_starts_after_val_end",
+      "test_scaler_fit_is_train_only",
+      "test_split_is_time_ordered_no_shuffle",
+      "test_revin_has_no_fit_and_is_per_sample"
+    ],
+    "imports": [
+      "miflu_model",
+      "sklearn.preprocessing",
+      "train_miflu"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/test_revin_math.py",
+    "lines": 71,
+    "sha256": "106f4a1ff051d624e30ea120a8cc21a86509cc191ee953c683b0d66402de8a41",
+    "classes": [],
+    "functions": [
+      "revin_inverse_check",
+      "output_projection_dim_check",
+      "test_revin_strictly_invertible",
+      "test_output_projection_dim_equals_L"
+    ],
+    "imports": [
+      "miflu_model"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/test_timing_metric.py",
+    "lines": 84,
+    "sha256": "df0908528bac8f47125e4d34022ba26b986e51f1a9da8bae87aff78ee8e877c9",
+    "classes": [],
+    "functions": [
+      "test_timing_is_null_when_no_peaks_matched",
+      "test_timing_reflects_nonzero_offset_on_matched_peak"
+    ],
+    "imports": [
+      "compute_miflu_indicators"
+    ]
+  },
+  {
+    "path": "06_scripts/tests/verify_forward.py",
+    "lines": 29,
+    "sha256": "b8751bd993fb1496a7a10429503bbeb110ab134ea26d1ecd03fac53457e327f2",
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "miflu_model"
+    ]
+  },
+  {
+    "path": "06_scripts/textual_embedder.py",
+    "lines": 302,
+    "sha256": "13b51b34f6253d0b65c941751ffca73ce05571eec2b9635a0889b4a3a7f4a302",
+    "classes": [
+      "TextualInputEmbedder"
+    ],
+    "functions": [
+      "compute_prompt_stats",
+      "miflu_prompt_sections",
+      "build_miflu_prompt_template",
+      "build_prompt",
+      "_build_prompt_legacy",
+      "build_prompt_6var",
+      "_format_prompt"
+    ],
+    "imports": [
+      "transformers"
+    ]
+  },
+  {
+    "path": "06_scripts/train_ablation.py",
+    "lines": 889,
+    "sha256": "80c908e80e527559c0e61717a7040642061caa2242b4291771e52e76f02a9a49",
+    "classes": [],
+    "functions": [
+      "build_prompt_no_dataset",
+      "build_prompt_no_task",
+      "build_prompt_no_vardesc",
+      "log_init",
+      "log",
+      "log_close",
+      "load_and_normalize",
+      "build_windows",
+      "train_epoch",
+      "evaluate",
+      "train_L",
+      "export_prediction_csv",
+      "main"
+    ],
+    "imports": [
+      "cdc_calendar",
+      "configs",
+      "datetime",
+      "early_stopping",
+      "miflu_model",
+      "recipes",
+      "scaler_utils",
+      "textual_embedder",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/train_backbone_966.py",
+    "lines": 402,
+    "sha256": "48f563450a8238c669141d4e9eb6c029d2139878d1a62ab707471fccdefa2411",
+    "classes": [],
+    "functions": [
+      "load_backbone_class",
+      "build_model",
+      "train_only_prompt_statistics",
+      "param_report",
+      "save_locked_ckpt",
+      "train_one",
+      "self_check",
+      "preflight",
+      "main"
+    ],
+    "imports": [
+      "configs",
+      "torch.utils.data",
+      "train_nlinear_966"
+    ]
+  },
+  {
+    "path": "06_scripts/train_baseline.py",
+    "lines": 187,
+    "sha256": "3c1b1c6208a2608077cc37060883568b36fec05b070381404331c3aeeb410a4a",
+    "classes": [],
+    "functions": [
+      "log_init",
+      "log",
+      "log_close",
+      "load_and_normalize",
+      "build_windows",
+      "train_epoch",
+      "evaluate",
+      "train_L",
+      "main"
+    ],
+    "imports": [
+      "configs",
+      "datetime",
+      "miflu_model",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/train_miflu.py",
+    "lines": 656,
+    "sha256": "179659bbe251e0e5dfc6151e58743d02240494ac0d1391efe64cd32fa1d83a34",
+    "classes": [],
+    "functions": [
+      "log_init",
+      "log",
+      "log_close",
+      "load_and_normalize",
+      "build_windows",
+      "train_epoch",
+      "evaluate",
+      "train_L",
+      "export_prediction_csv",
+      "main"
+    ],
+    "imports": [
+      "cdc_calendar",
+      "configs",
+      "datetime",
+      "miflu_model",
+      "scaler_utils",
+      "textual_embedder",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/train_naive_966.py",
+    "lines": 258,
+    "sha256": "e9bb21c661d80876c6be442b567a847ca0414894cd6aa2c337810877d3b092d3",
+    "classes": [],
+    "functions": [
+      "load_and_normalize",
+      "window_index",
+      "naive_predictions",
+      "evaluate",
+      "self_check",
+      "preflight",
+      "main"
+    ],
+    "imports": [
+      "configs",
+      "scaler_utils"
+    ]
+  },
+  {
+    "path": "06_scripts/train_nlinear_966.py",
+    "lines": 361,
+    "sha256": "38db0c2063a947025843805841e018e8cab23b3862487d8597e53e891a3f16c4",
+    "classes": [],
+    "functions": [
+      "load_nlinear_class",
+      "load_and_normalize",
+      "build_windows",
+      "eval_mse",
+      "train_one",
+      "self_check",
+      "preflight",
+      "main"
+    ],
+    "imports": [
+      "cdc_calendar",
+      "configs",
+      "scaler_utils",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/train_regional_baseline.py",
+    "lines": 201,
+    "sha256": "2ed1fe35b22e6948d209664d063bfeeba8e2cacc14f7e10e084aa81441cbaeb3",
+    "classes": [],
+    "functions": [
+      "log_init",
+      "log",
+      "log_close",
+      "load_and_normalize",
+      "train_epoch",
+      "evaluate_regional",
+      "train_L",
+      "main"
+    ],
+    "imports": [
+      "configs",
+      "datetime",
+      "miflu_model",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/train_regional_miflu.py",
+    "lines": 251,
+    "sha256": "d4b1f3922dcd5258ff6a01332888512cbd69bc4ced8ed2f09f5a5e180c1eee37",
+    "classes": [],
+    "functions": [
+      "log_init",
+      "log",
+      "log_close",
+      "build_regional_prompt",
+      "load_and_normalize",
+      "train_epoch",
+      "evaluate_regional",
+      "train_L",
+      "main"
+    ],
+    "imports": [
+      "configs",
+      "datetime",
+      "miflu_model",
+      "textual_embedder",
+      "torch.utils.data"
+    ]
+  },
+  {
+    "path": "06_scripts/v3/build_protocol_correction.py",
+    "lines": 124,
+    "sha256": "49267cab8fc0553d48c574fb79b0696175f57031d7b7df3120cadfe2957617bc",
+    "classes": [],
+    "functions": [
+      "load",
+      "dump"
+    ],
+    "imports": [
+      "__future__",
+      "datetime",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/v3/build_screening_freeze.py",
+    "lines": 407,
+    "sha256": "e9dac4982a518a477907517b423732c2493535ba67bc1f2ee233b5521fe00b70",
+    "classes": [],
+    "functions": [
+      "wj",
+      "wtext",
+      "sha"
+    ],
+    "imports": [
+      "__future__",
+      "datetime",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/v3_clean/build_clean_v3_prereg.py",
+    "lines": 377,
+    "sha256": "6321b831f3e625fc2b0db7013857eac64512bc6ca2b53ff8711be451e1dcb999",
+    "classes": [],
+    "functions": [
+      "sha256_file",
+      "read",
+      "grep_int",
+      "find_int"
+    ],
+    "imports": [
+      "__future__",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/v3_clean/build_final_freeze_documents.py",
+    "lines": 685,
+    "sha256": "62ac04fd909601724d4efbc06cdddc49bde729991353e53e4d25751b70c5739d",
+    "classes": [],
+    "functions": [
+      "sha256_file",
+      "verify_hash",
+      "run_keys",
+      "load_primary_identity",
+      "build_candidate_identity",
+      "build_comparator_freeze",
+      "main",
+      "write_json",
+      "write_candidate_md",
+      "write_step5",
+      "write_step6",
+      "write_step8",
+      "write_step9"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/v3_clean/final_test_analysis.py",
+    "lines": 523,
+    "sha256": "3f2037cdca6cabd9d3e7a50cf366bf32a0fe8d8a82a0cffb9d8c24f07d709619",
+    "classes": [],
+    "functions": [
+      "load_json",
+      "season_of_epiweek",
+      "build_calendar",
+      "list_runs",
+      "run_summary",
+      "seed_ci",
+      "per_seed_avg_mse_4l",
+      "paired_t",
+      "vs_deterministic",
+      "holm_bonferroni",
+      "load_seed_mean_curves",
+      "peak_metrics",
+      "hit_rates",
+      "build_access_ledger",
+      "build_analysis_dataset",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "cdc_calendar",
+      "scipy"
+    ]
+  },
+  {
+    "path": "06_scripts/v3_clean/final_test_figures.py",
+    "lines": 251,
+    "sha256": "e36e9aafedd767ca93e37d3ad045a0429fef3af22c3bda349c9aa737a346b265",
+    "classes": [],
+    "functions": [
+      "build_calendar",
+      "lead1_curve",
+      "peak_of",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "cdc_calendar",
+      "final_test_analysis"
+    ]
+  },
+  {
+    "path": "06_scripts/v3_clean/freeze_candidate_and_comparators.py",
+    "lines": 383,
+    "sha256": "160e89f11f44be64c03d78f3a145e42e48b896e679ecadb3462b90ba37e59b5f",
+    "classes": [],
+    "functions": [
+      "sha256_file",
+      "verify_and_hash",
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/v3_clean/resolve_deferred_and_freeze.py",
+    "lines": 439,
+    "sha256": "0b59f4c314ce96adff8d0229c9c2f72ce37a5d12740f90d8fd673812f93be1b6",
+    "classes": [],
+    "functions": [
+      "sha256_file",
+      "add",
+      "apply",
+      "guard_refuses",
+      "build_bundle"
+    ],
+    "imports": [
+      "__future__",
+      "collections",
+      "pathlib"
+    ]
+  },
+  {
+    "path": "06_scripts/verify_dataset.py",
+    "lines": 209,
+    "sha256": "7dc2c1661f7dc14d502116634ad0f9a04774425a6026d17ef7f1ef5ac26429a5",
+    "classes": [],
+    "functions": [
+      "load_and_split",
+      "compute_stats",
+      "build_comparison_table",
+      "generate_report",
+      "main"
+    ],
+    "imports": []
+  },
+  {
+    "path": "06_scripts/verify_metrics.py",
+    "lines": 113,
+    "sha256": "1c23931a8ae1cef7f6b1f8dcf3c0357c633a134939ae9a6491705f1d8bc67264",
+    "classes": [],
+    "functions": [],
+    "imports": [
+      "miflu_model"
+    ]
+  },
+  {
+    "path": "06_scripts/verify_npz_provenance.py",
+    "lines": 75,
+    "sha256": "5a1118f734a7ca63c360b5b81784dd830db23de78237b3c007548881308772ea",
+    "classes": [],
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "__future__"
+    ]
+  },
+  {
+    "path": "06_scripts/verify_report_parity.py",
+    "lines": 176,
+    "sha256": "9d19745ca37cd17f397351634c05f2dfc652dc0b292593948bb5ad062dbc6c29",
+    "classes": [],
+    "functions": [
+      "strip_md_syntax",
+      "md_content_units",
+      "main"
+    ],
+    "imports": [
+      "__future__",
+      "md_to_docx"
+    ]
+  },
+  {
+    "path": "06_scripts/verify_us_region.py",
+    "lines": 175,
+    "sha256": "7a1530d96f0f8e5740858b3dfab1f1d5348ad672a542fdb569780ba61f336f8d",
+    "classes": [],
+    "functions": [
+      "load_and_trim",
+      "chronological_split",
+      "compute_stats",
+      "print_stats",
+      "compare_with_gold",
+      "main"
+    ],
+    "imports": []
+  }
+]

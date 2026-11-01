@@ -1,0 +1,24 @@
+[
+  {
+    "candidate": 0,
+    "config": {
+      "C": 1.0,
+      "epsilon": 0.05
+    },
+    "val_mse": 0.2673782749655521,
+    "best_epoch": null,
+    "seconds": 0.37033917200005817,
+    "curve": []
+  },
+  {
+    "candidate": 1,
+    "config": {
+      "C": 10.0,
+      "epsilon": 0.05
+    },
+    "val_mse": 0.34993507891667036,
+    "best_epoch": null,
+    "seconds": 0.4407263469993268,
+    "curve": []
+  }
+]

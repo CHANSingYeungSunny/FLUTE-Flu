@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+gru,24,43,"GRU baseline (per-channel GRU, INSPIRED_SIMPLIFICATION)",4.343351364135742,1.4307196140289307,8.318349838256836,1.885702133178711,0.2895202934741974,16,549,74,170,14424,14424,,

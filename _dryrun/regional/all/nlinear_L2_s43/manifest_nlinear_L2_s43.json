@@ -1,0 +1,99 @@
+{
+  "table": "VI (regional HHS-10)",
+  "model": "nlinear",
+  "region": "all",
+  "L": 2,
+  "seed": 43,
+  "n_vars": 10,
+  "var_cols": [
+    "HHS1",
+    "HHS2",
+    "HHS3",
+    "HHS4",
+    "HHS5",
+    "HHS6",
+    "HHS7",
+    "HHS8",
+    "HHS9",
+    "HHS10"
+  ],
+  "profile": "us_region_hhs10",
+  "data_file": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\data\\raw\\us_region_raw.csv",
+  "data_sha256": "b4c7b05d5c7a150f4d07b594cfb83a7f37f19dd0c008c1e3881c0cfa37977e55",
+  "split": {
+    "train_end": 542,
+    "val_end": 650,
+    "n_rows": 1084
+  },
+  "containment": "strict",
+  "eval_space": "standardized_train_fit_z",
+  "n_eval_windows_rule": "eval_slice(W, batch=16) = (W // 16) * 16",
+  "probe_only": false,
+  "artefact_is_a_result": true,
+  "created_utc": "2026-11-01T15:31:07.762886+00:00",
+  "wall_seconds": 0.158,
+  "hardware": {
+    "run_device": "cpu",
+    "cuda_available": false,
+    "gpu_name": null,
+    "gpu_count": 0,
+    "gpu_capability": null,
+    "cuda_version": "12.4"
+  },
+  "slurm": {},
+  "library_versions": {
+    "python": "3.9.0",
+    "torch": "2.6.0+cu124",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3"
+  },
+  "code": {
+    "runner": {
+      "file": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\scripts\\train_regional.py",
+      "sha256": "9aab22576ae18f6cb764b6e69cae54e60f5c13a96211c47961e14f79693ca0e0"
+    }
+  },
+  "checkpoint": {
+    "path": "_dryrun/regional\\_ckpt\\ckpt_nlinear_L2_s43.pth",
+    "sha256": "2be2ab6f838b8cc44ee1f89b4034a9082961decc5d8620a5bcb19d0ad954dd34"
+  },
+  "artefacts": {
+    "npz": "pred_nlinear_L2_s43.npz",
+    "csv": "pred_nlinear_L2_s43.csv",
+    "results": "results_nlinear_L2_s43.csv"
+  },
+  "config": {
+    "T": 20,
+    "L_list": [
+      2,
+      3,
+      5,
+      10,
+      13,
+      15,
+      20
+    ],
+    "Lp": 4,
+    "S": 2,
+    "K": 4,
+    "epochs": 1,
+    "batch": 32,
+    "lr": 0.0005,
+    "lora_r": 4,
+    "text_embedder": "prompt",
+    "n_vars": 10,
+    "train_frac": 0.5,
+    "val_frac": 0.1,
+    "epochs_log": "epochs_nlinear_L2_s43.csv",
+    "n_train_windows": 32,
+    "n_val_windows": 16,
+    "n_test_windows": 433,
+    "n_eval_windows": 432,
+    "best_epoch": 0,
+    "best_val_rmse_phys": 1472.852294921875,
+    "params": {
+      "total_parameters": 42,
+      "trainable_parameters": 42
+    }
+  }
+}

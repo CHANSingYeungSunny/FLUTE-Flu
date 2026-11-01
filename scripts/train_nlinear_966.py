@@ -74,13 +74,29 @@ def load_nlinear_class():
 
 
 # ── Data prep (exact mirror of train_ablation.load_and_normalize + build_windows)
-def load_and_normalize(profile):
+def load_and_normalize(profile, split=None):
+    """Load the profile, fit the scaler on TRAIN rows only, return z-space data.
+
+    `split` is the rolling-origin hook (`scripts/walk_forward.py`): when given it
+    overrides the profile's own `(train_end, val_end)` borders and the scaler is
+    fitted on THAT fold's training prefix only. `split=None` (the default) is the
+    existing behaviour, byte-identical — the borders come from
+    `configs.split_for_profile` and nothing else changes.
+    """
     p = resolve_profile(profile)
     verify_profile_hash(profile)
     df = pd.read_csv(p["data_path"])
     data = df[VAR_COLS].values.astype(np.float32)
     n = len(data)
     t_end, v_end = split_for_profile(profile, n)
+    split_source = "profile"
+    if split is not None:
+        t_end, v_end = int(split[0]), int(split[1])
+        if not (0 < t_end < v_end <= n):
+            raise ValueError(
+                f"invalid rolling-origin split {split} for n={n}: need "
+                f"0 < train_end < val_end <= n")
+        split_source = "walk_forward_fold"
     bundle = ScalerBundle.fit_from_train(df, VAR_COLS, train_end=t_end,
                                          val_end=v_end)
     mean = bundle.mean_.reshape(1, -1).astype(np.float32)
@@ -88,7 +104,7 @@ def load_and_normalize(profile):
     data_norm = (data - mean) / std
     return {"data_norm": data_norm, "train_end": t_end, "val_end": v_end,
             "n": n, "train_df": df.iloc[:t_end], "scaler": bundle,
-            "profile": p}
+            "profile": p, "split_source": split_source}
 
 
 def build_windows(data_norm, T, L, train_end, val_end, containment="start"):

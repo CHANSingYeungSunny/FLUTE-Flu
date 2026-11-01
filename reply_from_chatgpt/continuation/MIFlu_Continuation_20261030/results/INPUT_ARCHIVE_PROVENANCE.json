@@ -1,0 +1,14 @@
+[
+  {
+    "uploaded_filename": "MLFlu_ChatGPT_Handoff_20261030(1).zip",
+    "purpose": "updated handoff",
+    "sha256": "ac7ce74644a6412a8014afe9622f504a6f623208d3f122d1d337339c3375bade",
+    "bytes": 29870822
+  },
+  {
+    "uploaded_filename": "MIFlu_Audit_Expanded_Benchmark_20261030(1).zip",
+    "purpose": "prior audit bundle",
+    "sha256": "0618c0a170d2a927102883c85028d2d9824e5d911d905b81db2529a4c7d27f6e",
+    "bytes": 84792346
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "model": "GRU",
+  "L": 48,
+  "seed": 43,
+  "fit_and_val_seconds": 11.185212912999305,
+  "test_inference_seconds": 0.012917467000079341,
+  "test_ms_per_origin": 0.08847580137040645,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.0031105917722220513,
+  "parameters": 15024,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

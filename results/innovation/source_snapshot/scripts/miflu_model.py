@@ -81,7 +81,7 @@ class LoRALinear(nn.Module):
         return delta
 
 
-def apply_lora_to_gpt2_attention(block, r=4, alpha=4.0):
+def apply_lora_to_gpt2_attention(block, r=4, alpha=4.0, dropout=0.05):
     """
     Apply LoRA to the multi-head attention layer of a GPT2 transformer block.
 
@@ -113,6 +113,7 @@ def apply_lora_to_gpt2_attention(block, r=4, alpha=4.0):
         out_features=out_features,
         r=r,
         alpha=alpha,
+        dropout=dropout,
     )
 
     attn._lora = lora
@@ -178,28 +179,25 @@ class TimeSeriesEmbedder(nn.Module):
         if means is None:
             means = x.mean(dim=-1, keepdim=True)  # (batch, N, 1)
         if stdevs is None:
-            stdevs = x.std(dim=-1, keepdim=True, unbiased=False) + 1e-5  # (batch, N, 1)
+            # Author GPT4TS_lora.py L111: stdev = torch.sqrt(torch.var(x, dim=1, keepdim=True, unbiased=False) + 1e-5)
+            stdevs = torch.sqrt(x.var(dim=-1, keepdim=True, unbiased=False) + 1e-5)  # (batch, N, 1)
 
         x_norm = (x - means) / stdevs  # (batch, N, T)
 
-        # ── Patching ──
-        # For each variable i: unfold T into patches of length Lp, stride S
-        # unfold: (batch, N, T) → (batch, N, num_patches, Lp)
-        patches = x_norm.unfold(dimension=-1, size=self.Lp, step=self.S)
-        # patches shape: (batch, N, num_patches, Lp)
-
-        # Add last patch (the final Lp time steps) — per formula floor((T-Lp)/S)+2
-        # unfold already gives floor((T-Lp)/S)+1 patches; add the final one
-        # Actually unfold gives (T - Lp) // S + 1 patches. The paper formula
-        # says floor((T-Lp)/S)+2, so we need one more.
-        # The extra patch: x_norm[:, :, -Lp:] (last Lp steps)
-        # But let's verify... unfold with T=104, Lp=24, S=2:
-        # (104-24)//2 + 1 = 80//2 + 1 = 41. Paper says 42 = (104-24)//2+2 = 42.
-        # So we need to append the last Lp steps as an additional patch.
-        last_patch = x_norm[:, :, -self.Lp:]  # (batch, N, Lp)
-        last_patch = last_patch.unsqueeze(2)   # (batch, N, 1, Lp)
-        patches = torch.cat([patches, last_patch], dim=2)
-        # patches: (batch, N, num_patches, Lp)
+        # ── Patching (author-faithful) ──
+        # recovery/author_repo/models/GPT4TS_lora.py:
+        #   self.padding_patch_layer = nn.ReplicationPad1d((0, self.stride))
+        #   self.patch_num += 1
+        #   x = self.padding_patch_layer(x)                        # (B, N, T+stride)
+        #   x = x.unfold(dimension=-1, size=patch_size, step=stride)
+        # With T=104, Lp=24, S=2: pad -> 106, unfold -> (106-24)//2+1 = 42 patches.
+        # The final patch is x[82:106] where x[104:106] REPLICATE the last value.
+        # (Earlier variant unfolded to 41 patches then duplicated the last one —
+        #  a different last-patch content. This matches the author exactly.)
+        x_pad = torch.nn.functional.pad(
+            x_norm, (0, self.S), mode="replicate")       # (batch, N, T + S)
+        patches = x_pad.unfold(dimension=-1, size=self.Lp, step=self.S)
+        # patches shape: (batch, N, num_patches, Lp)   num_patches == 42
 
         # Flatten variables and patches: (batch, N*num_patches, Lp)
         patches = patches.reshape(batch_size, self.total_patches, self.Lp)
@@ -270,7 +268,8 @@ class ForecastingLLM(nn.Module):
     def __init__(self, K=CONFIG["K"], D=CONFIG["D"], lora_r=CONFIG["lora_r"],
                  lora_alpha=CONFIG["lora_alpha"], L=CONFIG["L_list"][0],
                  N=CONFIG["N"], total_patches=294, use_text_ln=True,
-                 use_lora=True, gated_inject=False, unfreeze_first_k=0):
+                 use_lora=True, gated_inject=False, unfreeze_first_k=0,
+                 flatten_head=True, author_faithful=True, use_text=True):
         super().__init__()
         self.K = K
         self.D = D
@@ -281,6 +280,9 @@ class ForecastingLLM(nn.Module):
         self.use_text_ln = use_text_ln
         self.use_lora = use_lora
         self.gated_inject = gated_inject
+        self.flatten_head = flatten_head
+        self.author_faithful = bool(author_faithful)
+        self.use_text = bool(use_text)
         self.unfreeze_first_k = unfreeze_first_k
 
         # Load pretrained GPT2
@@ -336,15 +338,40 @@ class ForecastingLLM(nn.Module):
             ModalityAligner(D, n_heads=N_HEADS) if gated_inject else None
         )
 
+        # ── GPT2 Dropouts (attn_pdrop=0.1, resid_pdrop=0.1) ──
+        self.attn_dropout = nn.Dropout(0.1)
+        self.resid_dropout = nn.Dropout(0.1)
+        # GPT2Model also applies embd_pdrop=0.1 to the embedding tensor right
+        # after adding wpe (transformers GPT2Model.forward: `hidden_states =
+        # self.drop(hidden_states)`). Omitting it silently reduced the
+        # regularisation relative to the author's model.
+        self.embd_dropout = nn.Dropout(0.1)
+
         # ── Final LayerNorm ──
+        # Author GPT4TS_lora.py uses GPT2Model's ln_f (the standard final LayerNorm),
+        # NOT h[K-1].ln_2. These are DIFFERENT parameters.
         self.final_ln = nn.LayerNorm(D, eps=gpt2_full.config.layer_norm_epsilon)
-        # Copy from pretrained
-        self.final_ln.load_state_dict(gpt2_full.h[K - 1].ln_2.state_dict())
+        self.final_ln.load_state_dict(gpt2_full.ln_f.state_dict())
 
         # ── Output Projection ──
-        # Aggregate patches (mean) → project from D to N*L
-        # Per GPT4TS: mean across patch dim, then nn.Linear(D, N*L)
-        self.output_projection = nn.Linear(D, N * L)
+        # Two head variants (see forward()):
+        #   flatten_head=True  (reference-faithful, Time-Series-Library Flatten_Head):
+        #       keep each variable's patch sequence, flatten PER VARIABLE, then
+        #       Linear(num_patches * D, L). Preserves variable identity AND patch order.
+        #   flatten_head=False (legacy):
+        #       mean-pool over ALL (variable x patch) tokens -> Linear(D, N*L).
+        #       This collapses 7 variables x 42 patches into ONE 768-d vector before
+        #       projecting to 168 outputs, which discards variable identity and the
+        #       temporal order of patches — a severe information bottleneck.
+        self.num_patches = total_patches // N
+        if self.num_patches * N != total_patches:
+            raise ValueError(
+                f"total_patches={total_patches} is not divisible by N={N}; "
+                "cannot reshape into (N, num_patches, D)")
+        if self.flatten_head or self.author_faithful:
+            self.output_projection = nn.Linear(self.num_patches * D, L)
+        else:
+            self.output_projection = nn.Linear(D, N * L)
 
         # Free the full model to save memory
         del gpt2_full
@@ -361,25 +388,50 @@ class ForecastingLLM(nn.Module):
             y_hat: predictions (batch, N, L)
         """
         batch_size = htime.shape[0]
-        text_len = htext.shape[1]
+        text_len = htext.shape[1] if htext is not None else 0
 
         # ── Concatenate / fuse embeddings ──
-        if self.gated_inject and self.modality_aligner is not None:
+        if self.author_faithful:
+            # EXACT author architecture (recovery/author_repo/models/GPT4TS_lora.py):
+            #   x = rearrange(x, 'b m n p -> (b m) n p')      # channel independent
+            #   outputs = torch.cat((outputs, text_emb), axis=1)   # TEXT APPENDED
+            #   outputs = outputs[:, :self.patch_num, :]      # take FIRST patch_num
+            #   outputs = self.out_layer(outputs.reshape(B*M, -1))
+            # Channel-independence is the key: each of the N variables is pushed
+            # into the BATCH dim and runs through GPT2 on its own. Our earlier
+            # variant kept all N*P tokens in ONE sequence, letting variables attend
+            # to each other — a materially different computation.
+            htime_ci = htime.reshape(
+                batch_size * self.N, self.num_patches, self.D)      # (B*N, P, D)
+            if htext is not None and self.use_text:
+                htext_n = self.text_ln(htext) if self.use_text_ln else htext
+                # tile text across the channel dim -> (B*N, text_len, D)
+                if htext_n.shape[0] == batch_size:
+                    htext_ci = (htext_n.unsqueeze(1)
+                                .expand(batch_size, self.N, htext_n.shape[1], self.D)
+                                .reshape(batch_size * self.N, htext_n.shape[1], self.D))
+                else:
+                    htext_ci = htext_n.repeat(batch_size * self.N // htext_n.shape[0], 1, 1)
+                # TEXT APPENDED AFTER TIME PATCHES (author order)
+                hfuse = torch.cat([htime_ci, htext_ci], dim=1)      # (B*N, P+T, D)
+            else:
+                hfuse = htime_ci
+        elif self.gated_inject and self.modality_aligner is not None:
             # Gated cross-modal injection: text aligned into time stream.
-            # No text prefix is concatenated (text is already fused in).
             hfuse = self.modality_aligner(htime, htext)  # (batch, total_patches, D)
         else:
-            # TEXT FIRST so time patches can attend to text via causal attention
-            # Paper Section IV-C: hfuse = [htext || htime]
-            # Normalize text to match time embedding scale (std ratio was 16.5x)
-            htext = self.text_ln(htext) if self.use_text_ln else htext
-            hfuse = torch.cat([htext, htime], dim=1)  # (batch, text_len + total_patches, D)
+            # LEGACY: TEXT FIRST so time patches can attend to text.
+            # NOTE: this differs from the released author code, which appends text.
+            htext_n = self.text_ln(htext) if self.use_text_ln else htext
+            hfuse = torch.cat([htext_n, htime], dim=1)   # (batch, T + total_patches, D)
         total_len = hfuse.shape[1]
 
         # ── Add positional encodings ──
         positions = torch.arange(total_len, device=hfuse.device).unsqueeze(0)
         pos_embeds = self.wpe(positions)  # (1, total_len, D)
         hfuse = hfuse + pos_embeds
+        # Author path uses GPT2Model, which drops (embd_pdrop=0.1) here.
+        hfuse = self.embd_dropout(hfuse)
 
         # ── Pass through GPT2 transformer blocks ──
         hidden = hfuse
@@ -400,7 +452,11 @@ class ForecastingLLM(nn.Module):
         hidden = self.final_ln(hidden)
 
         # ── Extract the forecast portion ──
-        if self.gated_inject and self.modality_aligner is not None:
+        if self.author_faithful:
+            # Author: outputs[:, :self.patch_num, :] — take the FIRST patch_num
+            # tokens, which are the time patches (text was appended after them).
+            hforecast = hidden[:, :self.num_patches, :]     # (B*N, P, D)
+        elif self.gated_inject and self.modality_aligner is not None:
             # No text prefix was concatenated → keep the FULL sequence.
             hforecast = hidden[:, :self.total_patches, :]  # (batch, total_patches, D)
         else:
@@ -408,11 +464,27 @@ class ForecastingLLM(nn.Module):
             hforecast = hidden[:, -self.total_patches:, :]  # (batch, total_patches, D)
 
         # ── Output Projection ──
-        # Aggregate patches via mean, then project D → N*L
-        # Per GPT4TS: mean across patch dimension, nn.Linear(D, pred_len * num_vars)
-        h_agg = hforecast.mean(dim=1)                 # (batch, D)
-        y_flat = self.output_projection(h_agg)         # (batch, N * L)
-        y_hat = y_flat.reshape(batch_size, self.N, self.L)  # (batch, N, L)
+        if self.author_faithful:
+            # Author: out_layer = Linear(d_model * patch_num, pred_len), applied to
+            # outputs.reshape(B*M, -1) — per-variable flatten of the first patch_num
+            # time-patch tokens (already channel-independent here).
+            y_flat = self.output_projection(
+                hforecast.reshape(batch_size * self.N, -1))   # (B*N, L)
+            y_hat = y_flat.reshape(batch_size, self.N, self.L)
+        elif self.flatten_head:
+            # Reference-faithful (TSL Flatten_Head): the token order produced by
+            # TimeSeriesEmbedder is [var0_p0..var0_pP, var1_p0..var1_pP, ...],
+            # i.e. index = var_idx * num_patches + patch_idx. Undo that to get
+            # (batch, N, num_patches, D), then flatten PER VARIABLE so each
+            # variable keeps its own patch sequence before the linear head.
+            h = hforecast.reshape(batch_size, self.N, self.num_patches, self.D)
+            h = h.reshape(batch_size, self.N, self.num_patches * self.D)
+            y_hat = self.output_projection(h)          # (batch, N, L)
+        else:
+            # Legacy mean-pool head (kept for A/B comparison only).
+            h_agg = hforecast.mean(dim=1)              # (batch, D)
+            y_flat = self.output_projection(h_agg)     # (batch, N * L)
+            y_hat = y_flat.reshape(batch_size, self.N, self.L)
 
         return y_hat
 
@@ -457,14 +529,17 @@ class ForecastingLLM(nn.Module):
         attn_weights = (query @ key.transpose(-2, -1)) / math.sqrt(head_dim)
         attn_weights = attn_weights.masked_fill(causal_mask == 0, float("-inf"))
         attn_weights = F.softmax(attn_weights, dim=-1)
+        # Author GPT2: attn_pdrop=0.1 (dropout on attention weights after softmax)
+        attn_weights = self.attn_dropout(attn_weights)
         attn_output = attn_weights @ value
 
         # Reshape back: (batch, seq, embed_dim)
         attn_output = attn_output.permute(0, 2, 1, 3).contiguous()
         attn_output = attn_output.view(attn_output.shape[0], seq_len, embed_dim)
 
-        # Output projection
+        # Output projection + resid dropout (GPT2 resid_pdrop=0.1)
         attn_output = attn.c_proj(attn_output)
+        attn_output = self.resid_dropout(attn_output)
 
         return attn_output
 
@@ -498,9 +573,12 @@ class MIFlu(nn.Module):
         self, N=CONFIG["N"], T=CONFIG["T"], L=CONFIG["L_list"][0],
         Lp=CONFIG["Lp"], S=CONFIG["S"], K=CONFIG["K"], lora_r=CONFIG["lora_r"],
         D=CONFIG["D"], device="cpu", use_text_ln=True, use_lora=True,
-        gated_inject=False, unfreeze_first_k=0
+        gated_inject=False, unfreeze_first_k=0, flatten_head=True,
+        author_faithful=True, use_text=True
     ):
         super().__init__()
+        self.flatten_head = flatten_head
+        self.author_faithful = author_faithful
         self.N = N
         self.T = T
         self.L = L
@@ -514,7 +592,9 @@ class MIFlu(nn.Module):
         self.forecasting_llm = ForecastingLLM(
             K=K, D=D, lora_r=lora_r, L=L, N=N, total_patches=total_patches,
             use_text_ln=use_text_ln, use_lora=use_lora,
-            gated_inject=gated_inject, unfreeze_first_k=unfreeze_first_k
+            gated_inject=gated_inject, unfreeze_first_k=unfreeze_first_k,
+            flatten_head=flatten_head,
+            author_faithful=author_faithful, use_text=use_text
         )
 
         self.to(device)

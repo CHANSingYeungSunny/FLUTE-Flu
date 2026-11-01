@@ -1,10 +1,10 @@
 # START HERE — MLFlu Reproduction Guide
 
-> **中文**：这是 MIFlu 论文复现项目的入口导读。从这里开始，三步复现全部结果。
+> **中文**：这是 CHAN Sing Yeung 毕业设计（FYP）的入口导读。独立复现并创新扩展 MIFlu 方法。从这里开始，三步复现全部结果。
 
 ## 1. What is this?
 
-A **partial reproduction** of MIFlu (Moon et al., IEEE JBHI 2025) for influenza forecasting in Hong Kong. From the official 966-row ILI surveillance data to frozen predictions, authoritative MSE ranking tables, and a manuscript-ready report.
+An **independent reproduction and innovation study** by CHAN Sing Yeung Sunny (FYP, 2026). Reproduces and extends the MIFlu method (Moon et al., IEEE JBHI 2025) for influenza forecasting on US CDC National-Illness data. From the official 966-row dataset to frozen predictions, authoritative MSE ranking tables, and a manuscript-ready report.
 
 ## 2. Quick Start
 

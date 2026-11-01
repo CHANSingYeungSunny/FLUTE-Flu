@@ -1,0 +1,5 @@
+L,rows,dims,sha256,max_token_difference,scope
+24,317,768,837502311354c9ddf71e42fbdf5689b6bbbbd2f00c71055d0d226c3c1f44c0c8,300.9851951599121,static token matrix reused across origins; tokens NOT identical
+36,317,768,f70d1a141928f1fd65ba78bad30a9a167fa9315a4c22effc291aac2bd593b464,300.9851951599121,static token matrix reused across origins; tokens NOT identical
+48,317,768,25bf529f66842df18b09b7dd3f0418347c098f07222e0017fc75e80f3205edd5,300.9851951599121,static token matrix reused across origins; tokens NOT identical
+60,317,768,fe98826fef910fd3e0316b67b823274b7991084db67524125ac0c4eda29f4ac0,300.9851951599121,static token matrix reused across origins; tokens NOT identical

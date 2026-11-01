@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+itransformer,36,44,"re-implementation (Liu et al., ICLR 2024)",4.102583408355713,1.3722370862960815,8.168663024902344,1.8059841394424438,0.21086038649082184,9,537,62,158,76452,76452,,

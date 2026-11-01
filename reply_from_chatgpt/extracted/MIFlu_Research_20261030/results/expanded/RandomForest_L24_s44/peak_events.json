@@ -1,0 +1,67 @@
+[
+  {
+    "model": "RandomForest",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 799,
+    "pred_val": 32054.60936867177,
+    "PTE_wk": 2,
+    "PIE_pct": 63.50172500862767,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "RandomForest",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": NaN,
+    "pred_val": NaN,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "Missed"
+  },
+  {
+    "model": "RandomForest",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 906,
+    "pred_val": 29983.705826149355,
+    "PTE_wk": 1,
+    "PIE_pct": 73.07521895168718,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "RandomForest",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 848,
+    "pred_val": 28866.863903803966,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  },
+  {
+    "model": "RandomForest",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 869,
+    "pred_val": 20385.61872990203,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "model": "decision_tree",
+  "L": 60,
+  "seed": 42,
+  "profile": "author_966",
+  "containment": "strict",
+  "channel_agnostic": true,
+  "trainable_parameters": null,
+  "estimator": "DecisionTreeRegressor(max_depth=None, random_state=seed)",
+  "multioutput_wrapper": "native",
+  "n_train_windows": 513,
+  "n_val_windows": 38,
+  "n_test_windows": 134,
+  "val_mse_7var_z": 0.5571885432941378,
+  "val_mae_7var_z": 0.4441912052781644,
+  "test_mse_7var_z": 4.443978034041465,
+  "test_mae_7var_z": 1.4254831369635184,
+  "test_mse_ilitotal_z": 8.71707307291493,
+  "test_mae_ilitotal_z": 1.8181567683866344,
+  "selection": "none (sklearn estimator fitted on TRAIN only; val reported, not used to select)",
+  "protocol_source": "train_nlinear_966.build_windows / load_and_normalize (imported verbatim)",
+  "prediction_file": "pred_decision_tree_L60_s42.npz"
+}

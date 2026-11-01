@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+patchtst,60,44,"PatchTST-INSPIRED (supervised, no RevIN, no pretraining, reduced capacity)",1.7434815168380737,0.897040069103241,3.315725803375244,1.2350666522979736,0.26076239347457886,3,513,38,134,720842,720842,,

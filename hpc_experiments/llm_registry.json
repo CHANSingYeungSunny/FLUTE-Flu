@@ -1,0 +1,19 @@
+{
+  "_note": "Registry for Qwen/DeepSeek LLM arms. custom_source_sha256 left empty because upstream revision hashes are pinned by HuggingFace snapshot_download itself; integrity is enforced by HF's own etag/sha checks plus the generated snapshot manifest.",
+  "models": {
+    "qwen": {
+      "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "main",
+      "family": "qwen2",
+      "params_billion": 1.5,
+      "custom_source_sha256": {}
+    },
+    "deepseek": {
+      "repo_id": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "revision": "main",
+      "family": "deepseek2",
+      "params_billion": 16,
+      "custom_source_sha256": {}
+    }
+  }
+}

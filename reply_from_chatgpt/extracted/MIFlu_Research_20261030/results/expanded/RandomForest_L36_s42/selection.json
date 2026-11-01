@@ -1,0 +1,15 @@
+[
+  {
+    "candidate": 0,
+    "config": {
+      "n_estimators": 64,
+      "max_depth": 8,
+      "min_samples_leaf": 3,
+      "max_features": 0.5
+    },
+    "val_mse": 0.2476102491406843,
+    "best_epoch": null,
+    "seconds": 9.520032997000271,
+    "curve": []
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "Qwen/Qwen2.5-1.5B-Instruct": {
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "source": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct"
+  },
+  "deepseek-ai/DeepSeek-V2-Lite-Chat": {
+    "revision": "85864749cd611b4353ce1decdb286193298f64c7",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V2-Lite-Chat"
+  }
+}

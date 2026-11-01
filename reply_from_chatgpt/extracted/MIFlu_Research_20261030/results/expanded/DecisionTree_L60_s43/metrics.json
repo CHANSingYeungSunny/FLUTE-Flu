@@ -1,0 +1,22 @@
+{
+  "track": "EXPANDED_EXPLORATORY_966",
+  "model": "DecisionTree",
+  "L": 60,
+  "seed": 43,
+  "config_sha256": "0c96b39bf6132ad9598062af9fdd3096aaca4e85c6036d580ac6136b9397b1a0",
+  "dataset_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "reference_pair_anchor": "966|L24|seed42",
+  "cell_pair_key": "966|L60|seed43",
+  "val_mse": 0.3441769761813263,
+  "selected_candidate": 0,
+  "best_epoch": null,
+  "uses_text": false,
+  "mse_z_all7": 5.427787928714669,
+  "mae_z_all7": 1.615364460936489,
+  "mse_z_ili": 10.781855557226624,
+  "mae_z_ili": 2.1159262682104205,
+  "mse_counts2_ili": 873942193.3472044,
+  "mae_counts_ili": 19050.006540840837,
+  "n_origins": 134,
+  "n_elements": 56280
+}

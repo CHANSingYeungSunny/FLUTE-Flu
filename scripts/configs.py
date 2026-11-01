@@ -109,6 +109,35 @@ DATA_PROFILES = {
         "date_range_string": "between 2002 and 2020",
         "scaler_path": os.path.join(DATA_DIR, "scaler_miflu_author966.json"),
     },
+    # ── Byte-identical to the author's released file (2026-10-31) ──────────
+    # `author_966` above reads a REPROCESSED copy whose 7 numeric columns were
+    # verified bit-identical to the author's, but which carries renamed columns
+    # and an extra `release_date`. `author_repo_966` reads the author's own
+    # `national_illness.csv` byte-for-byte (SHA 2a96dfed…), so the training data
+    # of record has the same provenance as the paper's. The raw file names its
+    # numeric columns '1'..'6','OT'; `column_map` renames them IN MEMORY to the
+    # essay's variable names (see data/raw/COLUMN_MAP_national_illness.csv).
+    # Values are identical to `author_966`, so numbers remain comparable.
+    "author_repo_966": {
+        "data_path": os.path.join(DATA_DIR, "raw",
+                                  "national_illness_author_repo_966.csv"),
+        "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+        "n_rows": 966,
+        "split_rule": "author_676_97_193",
+        "train_end": 676,
+        "val_end": 773,
+        "date_range_string": "between 2002 and 2020",
+        "scaler_path": os.path.join(DATA_DIR, "scaler_miflu_author_repo_966.json"),
+        "column_map": {
+            "1": "% WEIGHTED ILI",
+            "2": "% UNWEIGHTED ILI",
+            "3": "AGE 0-4",
+            "4": "AGE 5-24",
+            "5": "ILITOTAL",
+            "6": "NUM. OF PROVIDERS",
+            "OT": "OT",
+        },
+    },
 }
 
 # Priority subset for the journal submission (no prompt ablations).
@@ -206,7 +235,7 @@ NATIONAL_CONFIG: dict = {
     "D": 768,                      # GPT2-small hidden size
     "attn_heads": 8,               # ModalityAligner cross-attention heads
     "batch_size": 16,
-    "learning_rate": 0.0005,
+    "learning_rate": 0.0001,    # author main_ILI_lora.py --learning_rate 0.0001
     "epochs": 20,
     "num_repetitions": 10,
     "seed": 42,

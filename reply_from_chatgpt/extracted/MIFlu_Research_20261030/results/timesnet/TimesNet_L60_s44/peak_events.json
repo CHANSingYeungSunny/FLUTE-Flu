@@ -1,0 +1,41 @@
+[
+  {
+    "model": "TimesNet",
+    "L": 60,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 803,
+    "pred_val": 50179.07695968822,
+    "PTE_wk": 2,
+    "PIE_pct": 42.86469915687434,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "TimesNet",
+    "L": 60,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": 853,
+    "pred_val": 53160.05492823385,
+    "PTE_wk": 1,
+    "PIE_pct": 24.117769945030183,
+    "status": "Hit"
+  },
+  {
+    "model": "TimesNet",
+    "L": 60,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 905,
+    "pred_val": 73977.24314238317,
+    "PTE_wk": 0,
+    "PIE_pct": 33.56988339882379,
+    "status": "MatchedNotHit"
+  }
+]

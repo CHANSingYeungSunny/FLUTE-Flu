@@ -1,0 +1,9 @@
+{
+  "check_date_HKT": "2026-10-30",
+  "hostname": "burgundy.hpc.cityu.edu.hk",
+  "fqdn_ssh_result": "Could not resolve hostname: Temporary failure in name resolution",
+  "guide_backup_ip": "144.214.138.99",
+  "backup_ssh_result": "Network is unreachable",
+  "remote_jobs_submitted": 0,
+  "private_keys_requested": false
+}

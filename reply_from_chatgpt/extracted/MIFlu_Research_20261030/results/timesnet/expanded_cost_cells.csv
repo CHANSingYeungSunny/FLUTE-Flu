@@ -1,0 +1,13 @@
+model,L,seed,fit_and_val_seconds,test_inference_seconds,test_ms_per_origin,device,gpu_hours,cpu_wall_hours,parameters,flops,uses_text,cost_scope
+TimesNet,24,42,12.434515865000321,0.04675859999952081,0.27505058823247536,cpu,0.0,0.003467020684722178,24327,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,24,43,8.322480013000131,0.043216883999775746,0.25421696470456323,cpu,0.0,0.0023238046936110853,24327,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,24,44,9.795004981000602,0.06828664899967407,0.40168617058631806,cpu,0.0,0.002739803230555632,24327,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,36,42,9.325950688000376,0.03854830900036177,0.243976639242796,cpu,0.0,0.0026012497213890938,25587,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,36,43,8.864792588000455,0.037760462999358424,0.23899027214783813,cpu,0.0,0.0024729314030555037,25587,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,36,44,8.908674180000162,0.044913531999554834,0.2842628607566762,cpu,0.0,0.002487107697777699,25587,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,48,42,9.799022304000573,0.03864811699986603,0.26471313013606873,cpu,0.0,0.0027326862280556774,26847,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,48,43,10.196344936999594,0.06211216399969999,0.42542578081986293,cpu,0.0,0.002849571416944248,26847,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,48,44,9.984448394000538,0.04948794899974018,0.338958554792741,cpu,0.0,0.0027872045397222996,26847,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,60,42,10.69406429799983,0.056970128000102704,0.4251502089559903,cpu,0.0,0.002986398451666648,28107,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,60,43,10.3967280199995,0.04080559900012304,0.30451939552330626,cpu,0.0,0.002899314894166562,28107,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+TimesNet,60,44,10.498152848000245,0.04869592700015346,0.3634024402996527,cpu,0.0,0.0029296802152778884,28107,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured

@@ -1,0 +1,13 @@
+model,L,seed,additional_wall_seconds,gpu_hours,device,note
+PeakBlend,24,42,0.047562390999701165,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,24,43,0.03949281699988205,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,24,44,0.03647893800007296,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,36,42,0.04556499000045733,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,36,43,0.047538005000205885,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,36,44,0.042321036999965145,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,48,42,0.03837028999987524,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,48,43,0.052788981999583484,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,48,44,0.046773774000030244,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,60,42,0.07737469699986832,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,60,43,0.04482730899962917,0,cpu,Additional validation-gate cost only; deployment requires both trained experts
+PeakBlend,60,44,0.04502476400011801,0,cpu,Additional validation-gate cost only; deployment requires both trained experts

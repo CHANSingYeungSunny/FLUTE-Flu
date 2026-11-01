@@ -1,0 +1,23 @@
+{
+  "track": "EXPANDED_EXPLORATORY_966",
+  "status": "Fixed before this script's new fits; old test results already exposed, so not prospective confirmation",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "epochs": 20,
+  "selection": "minimum validation all7 z-MSE; one frozen winner then one test evaluation per cell",
+  "classical": {},
+  "neural": {
+    "Autoformer": [
+      {
+        "width": 16,
+        "lr": 0.0005
+      }
+    ]
+  },
+  "notes": [
+    "Upstream Autoformer at same pinned Time-Series-Library commit; d_model16/d_ff32, one encoder/decoder, two heads, moving_avg25, label_len18; no calendar covariates. Separate config frozen before Autoformer fits."
+  ]
+}

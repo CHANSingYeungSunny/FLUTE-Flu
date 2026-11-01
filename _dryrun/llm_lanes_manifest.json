@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-01T15:48:59.359801+00:00",
+  "hf_home": null,
+  "hf_hub_cache": null,
+  "proxy": null,
+  "host": null,
+  "slurm_job_id": null,
+  "entries": [
+    {
+      "model": "tencent/Penguin-Encoder",
+      "label": null,
+      "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision_pinned": true,
+      "size_bytes": 10,
+      "n_files": null,
+      "config_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "snapshot_path": null,
+      "arch": null,
+      "params_b": 0.4,
+      "status": "UNSUPPORTED",
+      "reason": "requires_trust_remote_code: x",
+      "hidden_state": null,
+      "checked_utc": "2026-11-01T15:48:59.359801+00:00",
+      "extra": {}
+    },
+    {
+      "model": "tencent/Hunyuan-1.8B-Instruct",
+      "label": null,
+      "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision_pinned": true,
+      "size_bytes": 10,
+      "n_files": null,
+      "config_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "snapshot_path": null,
+      "arch": null,
+      "params_b": 1.8,
+      "status": "OK",
+      "reason": null,
+      "hidden_state": {
+        "available": true
+      },
+      "checked_utc": "2026-11-01T15:48:59.359801+00:00",
+      "extra": {}
+    },
+    {
+      "model": "tencent/WeMM-Embedding-2B",
+      "label": null,
+      "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision_pinned": true,
+      "size_bytes": 10,
+      "n_files": null,
+      "config_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "snapshot_path": null,
+      "arch": null,
+      "params_b": 3,
+      "status": "OK",
+      "reason": null,
+      "hidden_state": {
+        "available": true
+      },
+      "checked_utc": "2026-11-01T15:48:59.359801+00:00",
+      "extra": {}
+    },
+    {
+      "model": "Qwen/Qwen3.8-27B-FP8",
+      "label": null,
+      "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision_pinned": true,
+      "size_bytes": 10,
+      "n_files": null,
+      "config_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "snapshot_path": null,
+      "arch": null,
+      "params_b": 27.36,
+      "status": "OK",
+      "reason": null,
+      "hidden_state": {
+        "available": true
+      },
+      "checked_utc": "2026-11-01T15:48:59.359801+00:00",
+      "extra": {}
+    }
+  ],
+  "updated_utc": "2026-11-01T15:48:59.359801+00:00"
+}

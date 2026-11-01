@@ -1,0 +1,11 @@
+tencent/Penguin-Encoder	tencent_penguin_encoder	None	hpc	0.4
+tencent/Hunyuan-1.8B-Instruct	tencent_hunyuan_1p8b_instruct	None	hpc	1.8
+tencent/WeMM-Embedding-2B	tencent_wemm_embedding_2b	None	hpc	3
+tencent/Youtu-HiChunk	tencent_youtu_hichunk	None	hpc	4
+tencent/Hunyuan-4B-Instruct	tencent_hunyuan_4b_instruct	None	hpc	4
+tencent/WeMM-Embedding-4B	tencent_wemm_embedding_4b	None	hpc	5
+tencent/ContextPilot-8B	tencent_contextpilot_8b	None	hpc	8
+tencent/Hunyuan-7B-Instruct	tencent_hunyuan_7b_instruct	None	hpc	8
+tencent/KaLM-Embedding-Gemma3-12B	tencent_kalm_gemma3_12b	None	hpc	12
+tencent/ContextPilot-14B	tencent_contextpilot_14b	None	hpc	15
+deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	ds_r1_distill_32b	None	hpc	33

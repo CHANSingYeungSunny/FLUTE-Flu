@@ -59,7 +59,7 @@ DEFAULT_VAR_COLS = [
     "ILITOTAL", "NUM. OF PROVIDERS", "OT",
 ]
 
-EPS = 1e-8  # identical to train_miflu.load_and_normalize
+EPS = 0.0  # Author uses sklearn StandardScaler (NO epsilon). Matched exactly.
 
 
 class ScalerBundle:

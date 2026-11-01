@@ -1,0 +1,15 @@
+{
+  "model": "CNN",
+  "L": 24,
+  "seed": 43,
+  "fit_and_val_seconds": 1.363295683000615,
+  "test_inference_seconds": 0.008340805999978329,
+  "test_ms_per_origin": 0.049063564705754875,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.0003810101358334982,
+  "parameters": 36984,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

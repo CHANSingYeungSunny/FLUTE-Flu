@@ -1,0 +1,80 @@
+[
+  {
+    "model": "Autoformer",
+    "L": 24,
+    "seed": 43,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 803,
+    "pred_val": 25669.535131572746,
+    "PTE_wk": 2,
+    "PIE_pct": 70.77194916471208,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "Autoformer",
+    "L": 24,
+    "seed": 43,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": NaN,
+    "pred_val": NaN,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "Missed"
+  },
+  {
+    "model": "Autoformer",
+    "L": 24,
+    "seed": 43,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 905,
+    "pred_val": 44083.68268206436,
+    "PTE_wk": 0,
+    "PIE_pct": 60.41371567277295,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "Autoformer",
+    "L": 24,
+    "seed": 43,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 851,
+    "pred_val": 29704.548272457905,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  },
+  {
+    "model": "Autoformer",
+    "L": 24,
+    "seed": 43,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 884,
+    "pred_val": 29979.650413523428,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  },
+  {
+    "model": "Autoformer",
+    "L": 24,
+    "seed": 43,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 934,
+    "pred_val": 40480.28509976156,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  }
+]

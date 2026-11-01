@@ -1,0 +1,54 @@
+[
+  {
+    "model": "PCA-HistGB",
+    "L": 36,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": NaN,
+    "pred_val": NaN,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "Missed"
+  },
+  {
+    "model": "PCA-HistGB",
+    "L": 36,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": 856,
+    "pred_val": 23272.385481485024,
+    "PTE_wk": 2,
+    "PIE_pct": 66.78031067842133,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "PCA-HistGB",
+    "L": 36,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 905,
+    "pred_val": 23354.077715100477,
+    "PTE_wk": 0,
+    "PIE_pct": 79.02849525304605,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "PCA-HistGB",
+    "L": 36,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 795,
+    "pred_val": 25680.9673629204,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  }
+]

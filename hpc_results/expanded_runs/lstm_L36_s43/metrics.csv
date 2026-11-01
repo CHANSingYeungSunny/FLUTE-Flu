@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+lstm,36,43,"LSTM baseline (per-channel LSTM, INSPIRED_SIMPLIFICATION)",4.952051162719727,1.5275073051452637,9.091214179992676,2.0108280181884766,0.21750327944755554,16,537,62,158,19492,19492,,

@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+rnn,48,43,"RNN baseline (per-channel vanilla RNN, INSPIRED_SIMPLIFICATION)",5.370070457458496,1.6006431579589844,10.237173080444336,2.085825204849243,0.24936863780021667,15,525,50,146,7408,7408,,

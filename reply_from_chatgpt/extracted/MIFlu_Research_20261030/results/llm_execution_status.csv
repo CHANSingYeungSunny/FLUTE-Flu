@@ -1,0 +1,8 @@
+model,status,encoding_arm,generation_arm,blocker,MSE,MAE,PTE,PIE,measured_gpu_hours
+Qwen/Qwen2.5-1.5B-Instruct,NOT_RUN,planned,planned,local snapshot not supplied; paired encoding/generation runner supplied,,,,,
+deepseek-ai/DeepSeek-V2-Lite-Chat,NOT_RUN,planned,planned,local snapshot not supplied; remote custom-code implementation requires separate reviewed adapter,,,,,
+deepseek-ai/DeepSeek-V3-0324,NOT_RUN,planned,planned,local snapshot absent; multi-GPU memory and serving plan required; generic local runner not validated for this MoE,,,,,
+meta-llama/Llama-3.1-8B-Instruct,NOT_RUN,planned,planned,local snapshot not supplied; license/access must be satisfied,,,,,
+mistralai/Mistral-7B-Instruct-v0.3,NOT_RUN,planned,planned,local snapshot not supplied,,,,,
+GPT-4o API,NOT_RUN,not available through API,planned,no API credential or versioned endpoint supplied; hidden states unavailable; generation-only separate arm,,,,,
+Claude API,NOT_RUN,not available through API,planned,no API credential or versioned endpoint supplied; hidden states unavailable; generation-only separate arm,,,,,

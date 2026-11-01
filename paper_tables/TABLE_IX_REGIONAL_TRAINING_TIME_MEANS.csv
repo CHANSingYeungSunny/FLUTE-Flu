@@ -1,0 +1,2 @@
+model,L,n_seeds,minutes_mean,minutes_sd,gpu,partition
+nlinear,2,2,0.029,0.03676955262170047,,

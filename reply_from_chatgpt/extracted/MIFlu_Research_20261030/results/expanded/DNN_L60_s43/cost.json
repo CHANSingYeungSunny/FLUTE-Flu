@@ -1,0 +1,15 @@
+{
+  "model": "DNN",
+  "L": 60,
+  "seed": 43,
+  "fit_and_val_seconds": 1.0593602709996048,
+  "test_inference_seconds": 0.0022442210001827334,
+  "test_ms_per_origin": 0.016747917911811443,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.0002948901366666077,
+  "parameters": 78116,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

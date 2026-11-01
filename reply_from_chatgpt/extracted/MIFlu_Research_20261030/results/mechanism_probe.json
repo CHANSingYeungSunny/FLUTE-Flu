@@ -1,0 +1,11 @@
+{
+  "suffix": {
+    "max_output_perturbation": 0.0,
+    "text_gradient_norm": 0.0
+  },
+  "prefix": {
+    "max_output_perturbation": 2.496420070411178,
+    "text_gradient_norm": 13.19112067961402
+  },
+  "interpretation": "PASS generic graph controls only. MIFlu GPU/CPU contradiction UNRESOLVED; missing R1B code and GPU prevent matched replay."
+}

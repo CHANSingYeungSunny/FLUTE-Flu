@@ -1,0 +1,23 @@
+{
+  "model": "random_forest",
+  "L": 48,
+  "seed": 44,
+  "profile": "author_966",
+  "containment": "strict",
+  "channel_agnostic": true,
+  "trainable_parameters": null,
+  "estimator": "RandomForestRegressor(n_estimators=200, random_state=seed, n_jobs=-1)",
+  "multioutput_wrapper": "native",
+  "n_train_windows": 525,
+  "n_val_windows": 50,
+  "n_test_windows": 146,
+  "val_mse_7var_z": 0.23760636446450334,
+  "val_mae_7var_z": 0.31084906123889045,
+  "test_mse_7var_z": 4.000488206443078,
+  "test_mae_7var_z": 1.309795136696533,
+  "test_mse_ilitotal_z": 8.304922794277749,
+  "test_mae_ilitotal_z": 1.7008165914823141,
+  "selection": "none (sklearn estimator fitted on TRAIN only; val reported, not used to select)",
+  "protocol_source": "train_nlinear_966.build_windows / load_and_normalize (imported verbatim)",
+  "prediction_file": "pred_random_forest_L48_s44.npz"
+}

@@ -1,0 +1,9 @@
+model,n_true,n_hit,hit_rate_pct
+calf_llm,36,0,0.0
+dlinear,36,31,86.11111111111111
+itransformer,36,0,0.0
+miflu,36,15,41.666666666666664
+nlinear,36,36,100.0
+patchtst,36,0,0.0
+qwen_time_llm,36,1,2.7777777777777777
+timecma_llm,36,0,0.0

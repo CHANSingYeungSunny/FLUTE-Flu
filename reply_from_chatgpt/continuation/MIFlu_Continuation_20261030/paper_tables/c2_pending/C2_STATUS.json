@@ -1,0 +1,58 @@
+{
+  "expected_cells": 12,
+  "completed_cells": 0,
+  "missing_cells": [
+    [
+      24,
+      42
+    ],
+    [
+      24,
+      43
+    ],
+    [
+      24,
+      44
+    ],
+    [
+      36,
+      42
+    ],
+    [
+      36,
+      43
+    ],
+    [
+      36,
+      44
+    ],
+    [
+      48,
+      42
+    ],
+    [
+      48,
+      43
+    ],
+    [
+      48,
+      44
+    ],
+    [
+      60,
+      42
+    ],
+    [
+      60,
+      43
+    ],
+    [
+      60,
+      44
+    ]
+  ],
+  "state": "PENDING_OR_PARTIAL",
+  "reproduction_status": "PARTIAL_REPRODUCTION",
+  "UNIFIED_PAIR_KEY": "966|L24|seed42",
+  "caution": "Archived Track C comparator may differ in software/runtime; not a guaranteed one-factor causal contrast"
+}

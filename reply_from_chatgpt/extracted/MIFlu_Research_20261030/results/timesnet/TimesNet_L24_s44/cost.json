@@ -1,0 +1,15 @@
+{
+  "model": "TimesNet",
+  "L": 24,
+  "seed": 44,
+  "fit_and_val_seconds": 9.795004981000602,
+  "test_inference_seconds": 0.06828664899967407,
+  "test_ms_per_origin": 0.40168617058631806,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.002739803230555632,
+  "parameters": 24327,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

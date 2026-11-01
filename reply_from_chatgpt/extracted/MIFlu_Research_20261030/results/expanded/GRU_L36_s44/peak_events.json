@@ -1,0 +1,41 @@
+[
+  {
+    "model": "GRU",
+    "L": 36,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 802,
+    "pred_val": 51672.59468197264,
+    "PTE_wk": 1,
+    "PIE_pct": 41.16413809542211,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "GRU",
+    "L": 36,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": 855,
+    "pred_val": 52545.45078938827,
+    "PTE_wk": 1,
+    "PIE_pct": 24.99507401703646,
+    "status": "Hit"
+  },
+  {
+    "model": "GRU",
+    "L": 36,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 906,
+    "pred_val": 74311.808146948,
+    "PTE_wk": 1,
+    "PIE_pct": 33.269450572189015,
+    "status": "MatchedNotHit"
+  }
+]

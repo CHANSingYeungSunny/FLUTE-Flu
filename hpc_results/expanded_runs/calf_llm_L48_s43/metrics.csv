@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+calf_llm,48,43,"CALF-INSPIRED (frozen GPT-2, parallel branches, 2 alignment losses)",5.5311431884765625,1.6109702587127686,10.763504981994629,2.0592703819274902,0.3737127184867859,18,525,50,146,126550608,2110800,,

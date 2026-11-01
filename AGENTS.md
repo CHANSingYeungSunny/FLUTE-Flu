@@ -1,0 +1,198 @@
+﻿# AGENTS.md —PROJECT MEMORY & HANDOFF (read this first)
+
+> ## ?? MANDATORY PROTOCOL —applies to every agent, every session
+>
+> **R1. READ FIRST.** At the start of every session, read this file fully, then
+> `docs/METHODOLOGY_METRICS_AND_SPLIT.md`. Do not act before doing so. If a fact
+> here conflicts with your own assumption, **this file wins** —the numbers were
+> measured, your assumption was not.
+>
+> **R2. UPDATE AT THE END OF EVERY TURN** that changes anything (new number, new
+> file, new decision, new failure, new exclusion). Update: §1 state numbers, §1.3
+> artefact list, §6 roster, §7 next actions, and append one line to **§10 LEDGER**.
+> A turn that changes state without updating this file is an incomplete turn.
+>
+> **R3. NEVER OVERWRITE HISTORY.** Superseded numbers go to §10 with a date and a
+> reason; do not silently replace them. The ledger is the audit trail.
+>
+> **R4. PROGRESS IS MEASURED, NOT CLAIMED.** §11 defines the definition of done.
+> Mark an item —only when the artefact exists on disk and a command reproduces it.
+>
+> **R5. WHEN THE CONTEXT IS NEARLY EXHAUSTED**, stop doing science and spend the
+> remaining budget here (§10 + §7 + §11). This file is the only thing that survives.
+>
+> **R6. LANGUAGE SPLIT.** Reply to the user **in Simplified Chinese**. Write every
+> project artefact (code, comments, docs, commit messages, table headers, figure
+> titles, this file) **in English**. See `LANGUAGE_PREFERENCE.md` (gitignored,
+> local-only) for the rationale.
+>
+> *Rationale (context engineering):* long agent runs lose state at window
+> boundaries. The standard fix is an externalised, version-controlled scratchpad
+> that is (a) auto-injected into context, (b) written on every state change, and
+> (c) holds an explicit definition-of-done. This project uses `AGENTS.md` in that
+> role because the harness auto-loads it as workspace instructions —no separate
+> skill invocation is needed, so it cannot be skipped.
+
+---
+
+## 1. CURRENT STATE IN 10 LINES (2026-11-01) —details in `docs/STATE.md`
+
+1. **Reproduction (Table V) —target met.** 10-rep mean MSE **1.3045 / 1.3561 / 1.6543 / 1.6829** at L=24/36/48/60 —**4-horizon mean 1.4995 vs paper 1.4355 = +4.5%** (project criterion —% —. There is a **sign crossover** (we win L24/36, lose L48/60) —never claim "we beat the paper". —`docs/STATE.md` §1.1
+2. **Benchmark —204 cells on disk** (`hpc_results/expanded_runs/`: 16 models ? 4 horizons ? 3 seeds 42/43/44 + 12 NLinear). **MSE champion = PatchTST 1.6621**, NLinear 1.8716, DNN 2.1415, DLinear excluded everywhere. All numbers re-derived 2026-11-01 on the **shared evaluation windows 160/144/144/128** (`(W//16)*16`, MIFlu's own set —`scripts/eval_windows.py`); the same 10-line summary under the old 170-window rule was PatchTST 1.9613 / NLinear 2.0495 / DNN 2.3019. —`docs/STATE.md` §1.2
+3. **Peak skill (K&S: PTE —1 wk AND PIE —25%) —champion = NLinear 4/16** (PTE 1.68 wk, PIE 9.5%), the only model that passes, and only at step 0 (1 week ahead); every model fails from step 1. PatchTST has the best timing (1.24 wk, 6/16 within a week) but PIE 0/16 (32.8%), so **MSE champion —peak champion**. Both champions are **unchanged** by the window ruling (that 6 was 7 before). —`docs/STATE.md` §1.2
+4. **Efficiency** —slope(MSE vs log?? params) **+0.1171, R簡 0.0223**; Pareto set = **{NLinear 2,520; PatchTST 531,878}** params (PatchTST spends 211? the params for 11.2% lower MSE); seasonal-naive reference 5.5768 / 6.9446 / 6.5842 / 5.7471, beaten by all 16 arms on the 4-horizon mean. —`paper_tables/BENCH_EFFICIENCY.csv`, `paper_tables/BENCH_SEASONAL_NAIVE.csv`, `docs/WORK_BREAKDOWN.md` §13.A/§13.G
+5. **Hardware confound still open** —192 cells are A100-SXM4-80GB but **12 NLinear cells are V100-SXM2-32GB**; no timing claim may cross that mix. —`paper_tables/BENCH_GPU_PROVENANCE.csv`, `docs/WORK_BREAKDOWN.md` §13.E
+6. **MIFlu row 31/40 verified (02:23); the LLM lane is wired end-to-end but 0 LLM cell is measured.** Overnight: `720105` P0 MIFlu (stingy), `720106` Qwen P1 (gpu_a100), `720052` single writer (tiny), `720107` successor watcher (tiny - submits a `P1 P2` lane when P0 ends, cutoff 07:00). Weights are local for **10 arms** (8 OK + two 1.5B); `llm_cell` TODO **132** / BLOCKED 36; revisions pinned; `local_snapshot()` handles the two HF cache layouts. **NEXT SESSION, in this order: (1) `ls author_runs/.miflu_verify | wc -l` -> if 40, re-run `verify_miflu_oracle.py` then the analysis chain so the MIFlu row becomes quotable; (2) `tail code/queue/successor.log` + `grep DONE code/queue/queue_state.tsv` to prove whether any LLM cell actually ran, and if not, why; (3) run **Table VI regional, MIFlu only (21 cells, ~1 A100-h)** - the best value per GPU hour available; (4) `make_llm_lanes.py` then the 10 OK arms' 12-cell lanes; (5) rolling origin LAST (120-270 A100-h).** `docs/WORK_BREAKDOWN.md` 7 + `docs/PROGRESS_GATE.md`.
+7. **The 13 hard rules in §2 are the normative core** and are kept verbatim below; the hardware/partition policy (rule 13) is restated as an operator checklist in `docs/HPC_RUNBOOK.md`.
+8. **Every requested item's status** —§11 definition of done + §13 A? tables + §7 next actions + §8 open questions —is in `docs/WORK_BREAKDOWN.md`.
+9. **Author-repo fidelity** (matches, deviations that must be disclosed, author-code defects) —`docs/AUTHOR_REPO_FIDELITY.md`; **LLM arms** (roster, `qwen3_5`/`mlflu_llm` environment, measured load-test numbers, exclusions) —`docs/LLM_ARMS.md`.
+10. **History and process** —every dated state change is in `docs/LEDGER.md` (append-only; it begins with the 39 rows moved out of the old §10); the execution loop that reads and writes these files is `LOOP_ENGINEERING.md`.
+
+> **Notice —this file is now a short index, not the whole memory (rewritten 2026-11-01 because it exceeded the harness's 65536-byte workspace-instruction budget and was being truncated).** The sections moved out **verbatim**; no number, claim or rule was changed. Old section —new file: **§0, §1, §1.3, §5, §12 —`docs/STATE.md`** · **§3 —`docs/AUTHOR_REPO_FIDELITY.md`** · **§4 —`docs/HPC_RUNBOOK.md`** · **§6 —`docs/LLM_ARMS.md`** · **§7, §8, §11, §13 —`docs/WORK_BREAKDOWN.md`** · **§10 —`docs/LEDGER.md`** · **§2 and §9 stay here**. So `R2` now means: update `docs/STATE.md` (§1 numbers, §1.3 artefact list), `docs/LLM_ARMS.md` (§6 roster), `docs/WORK_BREAKDOWN.md` (§7 next actions), and append one row to `docs/LEDGER.md` (§10). The map of all of it is at the bottom of this file.
+
+---
+
+## 2. HARD RULES (violating these invalidates the paper)
+
+1. **Reproduction metric = 7-variable aggregate MSE/MAE in z-space.** Never
+   substitute ILITOTAL-only there (it is —.9??.0? larger; incomparable to Table V).
+2. **Benchmark peak metric = PTE/PIE on ILITOTAL de-normalised to patients.** The
+   7-var aggregate is a *loss*, not a series —it cannot be de-normalised (OT train
+   mean 493,629 vs %WEIGHTED ILI 1.74), so a "7-var aggregate curve" is meaningless.
+3. **DLinear is EXCLUDED everywhere** (user decision 2026-11-01). The essay's
+   Table V already benchmarks it, so it adds no new baseline. Never in a ranking,
+   table, or figure. NLinear is the sole linear family member.
+4. **Checkpoint selection = validation.** The author's code selects on **test**
+   (`main_ILI_lora.py` L211/L225) —that is leakage and must NOT be replicated.
+   Disclose the difference.
+5. **A-track (966 rows/3 seeds) vs B-track (1025 rows/10 seeds) numbers are never
+   comparable.** Paper's 1.4355 is a third protocol.
+6. **Text-pathway mechanism contradiction is UNRESOLVED** (GPU gradients nonzero vs
+   CPU effect exactly zero). Never claim it helps or doesn't.
+7. **Status is PARTIAL_REPRODUCTION —now "reproduced within 4.5% on the 4-horizon
+   mean"**. No "we beat the paper" claim.
+8. **MSE —accuracy.** MSE champion and peak champion are different models; report both.
+9. **MODEL-COMPARISON PROTOCOL (added 2026-11-01 —this is what a top-tier venue requires).**
+   Every model in a comparison table must be trained with the **same seed set** and reported
+   as the **mean over seeds (簣 sd)**, with the number of seeds stated in the caption.
+   - **Never** report a single validation-selected `best` checkpoint as a model's score:
+     that is selection bias and will be rejected.
+   - **Never** give one model more seeds than another (10 vs 3, or 3 vs 1). Unequal seed
+     counts make the table non-comparable.
+   - The benchmark therefore uses **seeds 42/43/44 for all arms including MIFlu**
+     (16 models ? 4 horizons ? 3 seeds = 192 cells + MIFlu 4 horizons ? 3 seeds = 12 cells).
+   - A model that is missing a required seed must be **re-trained** for that seed, not
+     substituted from a different protocol.
+   - **Exception (deliberate, one model only): MIFlu.** MIFlu's benchmark row is its
+     **reproduction run** —10 repetitions, seeds 2021??030 —because the paper must report
+     ONE MIFlu instance, not two. The 16 other arms use 3 seeds (42/43/44). The caption must
+     state both protocols, say MIFlu's is the reproduction protocol, and note that MIFlu is
+     therefore **excluded from the paired sign-flip tests** (no matched cells exist). No
+     other model may use a different seed count. (Approved 2026-11-01; the seed-42/43/44
+     design in the bullet above is **superseded** for MIFlu only and must not be used.)
+10. **TWO PROTOCOLS, NEVER MIXED.** The reproduction (Table V) uses **10 repetitions,
+    seeds 2021??030**, and reports a 10-rep mean. The benchmark uses **3 seeds, 42/43/44**.
+    These are separate experiments with separate numbers. An artefact produced under one
+    protocol (e.g. `author_runs/L24_s2021_pred/`, which is reproduction-protocol and
+    1 rep per horizon) **must never be used as a benchmark row**, and vice versa. Any table
+    that mixes them is invalid. This rule exists because mixing them caused a multi-turn
+    confusion on 2026-11-01.
+11. **FULL-ARTIFACT CONTRACT —every run must emit EVERYTHING in the same job.**
+    A training/evaluation run is **INCOMPLETE** unless it writes, in ONE execution:
+    (a) `results_*.csv` —MSE/MAE for the **7-variable aggregate**, **per variable**,
+    ILITOTAL-only, **and** the physical (de-normalised) units;
+    (b) **per-window predictions for ALL 7 variables** —`.npz` with `pred`/`target`
+    shaped `(W,7,L)` + `target_start_row`, and a CSV twin;
+    (c) therefore everything PTE/PIE, CRPS/WIS, paired tests and every figure need;
+    (d) a run manifest —seed, full config, library versions, wall-clock, param counts.
+    **A run that saves only scalar metrics is INVALID: delete it and re-run. Never
+    "patch it later" by retraining just to export predictions** —the export costs as much
+    as the original training, so the original run is pure waste. This rule exists because
+    the 2026-11-01 reproduction runs (40 trainings) wrote only MSE/MAE and forced a second
+    full training pass for MIFlu's benchmark row. Never repeat that mistake.
+    **Applicability:** governs every *new* run. The MIFlu runs in flight are being replaced
+    by runs that comply (7-channel export + manifest). Delete any partial-output run rather
+    than keeping it "for reference".
+12. **FULL PROVENANCE —every run record names its hardware and its location.**
+    From 2026-11-01 onward, every run manifest (and every table row quoting a number or a
+    timing) must carry, **measured, never assumed**:
+    (a) GPU model `torch.cuda.get_device_name(0)`, GPU count, compute capability
+    `torch.cuda.get_device_capability(0)`;
+    (b) **Slurm partition** (`stingy` / `gpu_a100` / `gpu_v100s` / `tiny` / `batch` / —;
+    (c) **Slurm node name** `SLURM_NODELIST` and `SLURM_JOB_ID`;
+    (d) start and end timestamps plus wall-clock seconds;
+    (e) library versions (python, torch, transformers) and the code identity.
+    **Hardware is held constant within any single comparison.** A100 (sm_80, TF32 on) and
+    V100 (sm_70, no TF32) differ in cuDNN kernel selection too, so mixing them in one table
+    confounds the model effect with the hardware effect. A table that unavoidably mixes GPU
+    models must state the mix, and **no timing claim may be drawn across it**.
+    **Baseline fact (user-confirmed 2026-11-01, twice): the 192 benchmark cells in
+    `hpc_results/expanded_runs/` were produced on A100 in the `stingy` partition of
+    CityU HPC *Burgundy*.** (The 12 NLinear cells were later found on V100 and must be
+    re-run —see §13.E.) Every new MIFlu run must therefore also be A100/`stingy` so the
+    final table is homogeneous; a run that lands on V100 is **invalid for the comparison
+    and must be re-run, never "adjusted"**.
+13. **PUBLICATION-GRADE RUNTIME POLICY —hardware and partition are part of the result.**
+    (a) **Any run whose number can appear in the paper must execute on an A100, in the
+    `stingy` partition** (primary choice), or `gpu_a100` **only if** its queue start is
+    acceptably short (it has been booked many hours to a full day ahead, which is usually
+    not viable).
+    (b) **Other partitions and other GPU models are for probing only** —feasibility,
+    deployability, "can this model load and forward at all". Such runs must **never** enter
+    `paper_tables/*`, any figure, or any claim. Mark them `probe_only=True` in their manifest
+    and keep them out of every aggregation.
+    (c) **Mandatory pre-flight**: before a real submission, probe on whatever node is free to
+    confirm it deploys, then **re-run the publication-grade pass on A100/`stingy`**. The probe
+    result is discarded; only the A100/`stingy` run counts.
+    (d) Every result table must state, in its note: **GPU = A100-SXM4-80GB, partition =
+    `stingy`, CityU HPC Burgundy.** If any row deviates, the table is invalid until fixed.
+    *This rule exists because the peak-skill champion (NLinear) was found to have been
+    measured on a V100 while its 15 competitors ran on A100 —a hardware confound that would
+    have invalidated the headline ranking.*
+
+---
+
+## 9. How to resume (checklist for the next agent)
+
+1. Read this file, then `docs/METHODOLOGY_METRICS_AND_SPLIT.md`.
+2. `ssh cityu "squeue -u sychan552"` —check `718448` (Qwen3.8 load test) and any
+   DeepSeek-32B download (`nohup` process on the login node, log at
+   `code/dl_ds32.log`).
+3. Verify local data: `hpc_results/expanded_runs/**/pred_*.npz` should number **204**.
+4. Re-run the chain in `SKILL.md` §3 (`analysis_expanded.py` —`analysis_postprocess.py` —   `seasonal_naive_baseline.py` —`plot_bench.py` —`plot_pareto.py`) and then
+   `python scripts/verify_bench_unchanged.py` + `python scripts/verify_miflu_oracle.py`
+   to confirm the tables/figures still reproduce on the shared `(W//16)*16` windows.
+5. Then execute §7 item 1.
+
+---
+
+> **Pointer:** step 5 above refers to §7, which now lives in `docs/WORK_BREAKDOWN.md` (NEXT ACTIONS). The resume order itself is unchanged.
+
+---
+
+## MAP OF THIS REPO'S MEMORY
+
+`AGENTS.md` is the always-loaded entry point. Everything below is loaded **on demand** and may be as long as it needs to be. Follow a pointer only when its "read it when" column applies.
+
+| File | What it holds | Read it when |
+|---|---|---|
+| **`AGENTS.md`** (this file) | `R1`?R6` protocol, the 13 hard rules (§2), the 10-line current state, this map | **first, every session —`R1`** |
+| `SKILL.md` | the **procedural playbook**: dataset identity proof + profiles, the `(W//16)*16` evaluation-window rule and every `n_eval_windows`, the two seed protocols, hardware policy, full-artefact contract, metric definitions (7-var z-space, PTE/PIE K&S, CRPS/WIS ? floor, Pareto efficiency, seasonal-naive), what must never be claimed, the author-code defects, open blockers | before changing/re-deriving **any** number, table, figure or protocol, before importing a model's predictions, and before writing the methodology/fidelity section |
+| `docs/PROGRESS_GATE.md` | the **per-turn write contract**: five files to update, turn-close checklist, freshness checker, recovery order | **every session after R1, and before ending any turn that changed something** |
+| `docs/STORAGE_PLAN.md` | measured capacity, what may be deleted and on what condition, the never-delete ground-truth list, and the pinned-revision record that makes a deleted checkpoint reproducible | **before deleting anything on the cluster, before planning a large run, or when a job dies with quota/space errors** |
+| `LOOP_ENGINEERING.md` | process: goal, one-iteration loop, allowed tools, RAG order, harness facts, constraints, iteration queue, failure protocol · depends on: `AGENTS.md`, `docs/WORK_BREAKDOWN.md` | before starting a work iteration |
+| `docs/STATE.md` | **what is true now**: §0 project identity, §1.1 reproduction numbers, §1.2 MSE + peak-skill rankings and key findings, §1.3 artefact list, §5 key code entry points, §12 context-engineering note · points to `docs/LEDGER.md`, `paper_tables/*`, `hpc_results/expanded_runs/**` | any time you need a number, a path, or a script entry point |
+| `docs/LEDGER.md` | the **entire** §10 ledger —the 39 rows moved from `AGENTS.md`, then every row appended since —append-only dated rows with their evidence cells, plus the append-only rules · depends on `AGENTS.md` (`R2`/`R3`) | before contradicting a number; when a claim needs provenance |
+| `docs/HPC_RUNBOOK.md` | §4 in full: ssh incantation, paths, partitions, disk, `conda`-is-gone environment tooling, A100 memory, `stingy` QOS, gotchas 1??2 · **plus §2 rule 13 as an operator checklist** · points to `docs/LLM_ARMS.md` | before any `ssh`/`scp`/`sbatch`, and before writing any environment instruction |
+| `docs/WORK_BREAKDOWN.md` | §11 definition of done, §13 A? status tables (G = the evaluation-window ruling), the §11??3 reconciliation note, §7 next actions, §8 open questions · points to `docs/MIFLU_MERGE_BLOCKED_20261101.md` | choosing the next action, or reporting "is X done?" |
+| `docs/AUTHOR_REPO_FIDELITY.md` | §3: what matches the author repo at file/hash/parameter level, the deviations that must be disclosed, the author-code defects · points to `recovery/author_repo/`, `docs/STATUS_20261031.md` | writing the paper's reproduction/fidelity section |
+| `docs/LLM_ARMS.md` | §6: downloaded/verified models, `qwen3_5` + `mlflu_llm` environment facts, measured GPU load test, final roster, additions, exclusions, cross-scale + reproducibility decisions · depends on `docs/HPC_RUNBOOK.md` | adding, timing, or claiming anything about an LLM arm |
+| `docs/METHODOLOGY_METRICS_AND_SPLIT.md` | metric and split rationale —**cite this in the paper** · normative companion to §2 rules 1— | **every session, right after this file —`R1`** |
+| `docs/BENCHMARK_MODEL_ROSTER.md` | the benchmark model roster (names, families, provenance) | need the model list or a family assignment |
+| `docs/MIFLU_MERGE_BLOCKED_20261101.md` | why the MIFlu **row** is withheld, the three contradicting local exports, and the alignment/provenance checks · points to `author_runs/` | touching the MIFlu benchmark row |
+| `docs/STATUS_20261031.md` | reproduction fix log + job history (evidence file, referenced by the ledger) | tracing a reproduction number to its run |
+| `paper_tables/*.csv` | every measured table the paper quotes (§1.3 lists them) | you need the numbers themselves |
+| `hpc_results/expanded_runs/**/pred_*.npz` | the raw per-window predictions (ground truth of every table) | re-deriving a metric instead of trusting a CSV |
+
+**How to traverse it (two hops max, by construction).** `AGENTS.md` —`docs/STATE.md` (any §1 number) —`docs/LEDGER.md` (the dated row) —the evidence file named in that row. For work planning: `AGENTS.md` —`docs/WORK_BREAKDOWN.md` —`docs/LEDGER.md`. For anything on the cluster: `AGENTS.md` —`docs/HPC_RUNBOOK.md` —`docs/LLM_ARMS.md` / the job script. Every file above opens with a *What this is / When to read it / What it points to / Depends on / Chain* header, so a chain never dead-ends.
+

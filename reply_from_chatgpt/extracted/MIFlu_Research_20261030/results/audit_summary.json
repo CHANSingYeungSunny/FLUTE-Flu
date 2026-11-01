@@ -1,0 +1,27 @@
+{
+  "verdict": "PARTIAL_REPRODUCTION",
+  "unified_pair_key": "966|L24|seed42",
+  "dataset_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "official_report_sha256": "73f97cc2439f56950b37fa9a8726cac1f84e375b54553700f93b2f196b2ea5f6",
+  "track_c_mse": 1.8651551027309432,
+  "paper_tableV_mean": 1.4355,
+  "descriptive_cross_protocol_gap_pct": 29.930693328522693,
+  "five_percent_upper_bound": 1.5072750000000001,
+  "miflu_nlinear_paired_seed_mean_difference": -0.18439445543819458,
+  "miflu_nlinear_exact_signflip_p": 0.25,
+  "n_independent_seeds": 3,
+  "mse_vs_peak_spearman_rho": -0.6722338334971893,
+  "mse_vs_peak_spearman_p": 0.06780888747509303,
+  "r1c_C0_mean": 1.8560778333333332,
+  "r1c_C1_mean": 1.8224623333333334,
+  "r1c_paired_delta": -0.03361550000000002,
+  "r1c_paired_t_p": 0.60693426554106,
+  "r1c_paired_delta_95ci": [
+    -0.27286570605409377,
+    0.20563470605409373
+  ],
+  "r1c_percent_gap_removed_within_R": 7.992694178287261,
+  "peak_consensus_31of36": "NOT_VERIFIABLE: peak_criteria.json absent; supplied event CSVs show 15/36",
+  "hpc": "BLOCKED: missing HPC_GUIDE, hostname DNS failure, no SSH keys in runtime",
+  "r1b_model": "MISSING: required by the supplied R1C trainer; cannot exactly retrain Track C from this archive"
+}

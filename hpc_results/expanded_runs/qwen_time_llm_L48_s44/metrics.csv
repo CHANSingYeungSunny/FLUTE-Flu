@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+qwen_time_llm,48,44,"Time-LLM-INSPIRED (frozen Qwen2.5-1.5B, patch prototype reprogramming, Prompt-as-Prefix)",5.465938568115234,1.6173388957977295,10.338324546813965,2.0743191242218018,0.29274123907089233,15,525,50,146,1544342896,628592,,

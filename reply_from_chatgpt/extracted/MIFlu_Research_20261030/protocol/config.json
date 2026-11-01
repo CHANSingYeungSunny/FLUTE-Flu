@@ -1,0 +1,28 @@
+{
+  "track": "EXPANDED_EXPLORATORY_966",
+  "status": "Fixed before this script's new fits; old test results already exposed, so not prospective confirmation",
+  "seeds": [42, 43, 44],
+  "epochs": 20,
+  "selection": "minimum validation all7 z-MSE; one frozen winner then one test evaluation per cell",
+  "classical": {
+    "DecisionTree": [{"max_depth": 4, "min_samples_leaf": 8}, {"max_depth": 8, "min_samples_leaf": 4}],
+    "RandomForest": [{"n_estimators": 64, "max_depth": 8, "min_samples_leaf": 3, "max_features": 0.5}],
+    "PCA-HistGB": [{"max_iter": 60, "max_leaf_nodes": 7, "learning_rate": 0.05, "l2_regularization": 1.0}],
+    "PCA-SVR": [{"C": 1.0, "epsilon": 0.05}, {"C": 10.0, "epsilon": 0.05}],
+    "KNN": [{"n_neighbors": 5}, {"n_neighbors": 15}]
+  },
+  "neural": {
+    "NLinear": [{"width": 0, "lr": 0.0005}],
+    "DNN": [{"width": 64, "lr": 0.0005}],
+    "CNN": [{"width": 16, "lr": 0.0005}],
+    "GRU": [{"width": 32, "lr": 0.0005}],
+    "TimesNet": [{"width": 16, "lr": 0.0005}]
+  },
+  "notes": [
+    "DLinear deliberately excluded from the expanded suite; present only as archived historical evidence.",
+    "All classical models consume all 104x7 standardized lag values; PCA-HistGB and PCA-SVR compress train targets to 8 PCA coordinates.",
+    "TimesNet uses unmodified vendored upstream model at pinned commit, compact configuration; not the original paper's optimized capacity.",
+    "No LLM or reasoning run is claimed by this configuration.",
+    "MSE_all7 must not be multiplied by the ILITOTAL variance; target-specific physical errors are computed separately."
+  ]
+}

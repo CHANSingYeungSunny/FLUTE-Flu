@@ -1,0 +1,23 @@
+{
+  "model": "svr",
+  "L": 24,
+  "seed": 43,
+  "profile": "author_966",
+  "containment": "strict",
+  "channel_agnostic": true,
+  "trainable_parameters": null,
+  "estimator": "SVR(C=1.0, epsilon=0.1) via MultiOutputRegressor",
+  "multioutput_wrapper": "MultiOutput",
+  "n_train_windows": 549,
+  "n_val_windows": 74,
+  "n_test_windows": 170,
+  "val_mse_7var_z": 0.28635903496508186,
+  "val_mae_7var_z": 0.3373184321805559,
+  "test_mse_7var_z": 5.236767445504101,
+  "test_mae_7var_z": 1.4939337414782976,
+  "test_mse_ilitotal_z": 10.539662259340316,
+  "test_mae_ilitotal_z": 2.026619750922209,
+  "selection": "none (sklearn estimator fitted on TRAIN only; val reported, not used to select)",
+  "protocol_source": "train_nlinear_966.build_windows / load_and_normalize (imported verbatim)",
+  "prediction_file": "pred_svr_L24_s43.npz"
+}

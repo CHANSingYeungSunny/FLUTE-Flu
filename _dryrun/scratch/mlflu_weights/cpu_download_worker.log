@@ -1,0 +1,272 @@
+[2026-11-01 23:21:36] === cpu_download_worker start ===
+[2026-11-01 23:21:36] job=LOCAL partition=none node=LAPTOP-2UVMC8L4
+[2026-11-01 23:21:36] scratch=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch manifest=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json venv=/c/Users/Asus/.venvs/mlflu_hpc dry_run=1
+[2026-11-01 23:21:36] HF_HOME=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/hf
+[2026-11-01 23:21:36] HF_HUB_CACHE=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/hf/hub
+[2026-11-01 23:21:36] HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+[2026-11-01 23:21:36] WARN: venv /c/Users/Asus/.venvs/mlflu_hpc not found; using /c/Users/Asus/AppData/Local/Programs/Python/Python39/python
+[2026-11-01 23:21:36] python=/c/Users/Asus/AppData/Local/Programs/Python/Python39/python (Python 3.9.0)
+2026-11-01 23:21:37.589746: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2026-11-01 23:21:37.589789: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+hf_hub 0.29.1 transformers 4.25.0 torch 2.6.0+cu124
+[2026-11-01 23:21:47] --- required arms (10 Tencent + DeepSeek-R1-Distill-Qwen-32B) ---
+tencent/Penguin-Encoder	tencent_penguin_encoder	None	hpc
+tencent/Hunyuan-1.8B-Instruct	tencent_hunyuan_1p8b_instruct	None	hpc
+tencent/WeMM-Embedding-2B	tencent_wemm_embedding_2b	None	hpc
+tencent/Youtu-HiChunk	tencent_youtu_hichunk	None	hpc
+tencent/Hunyuan-4B-Instruct	tencent_hunyuan_4b_instruct	None	hpc
+tencent/WeMM-Embedding-4B	tencent_wemm_embedding_4b	None	hpc
+tencent/ContextPilot-8B	tencent_contextpilot_8b	None	hpc
+tencent/Hunyuan-7B-Instruct	tencent_hunyuan_7b_instruct	None	hpc
+tencent/KaLM-Embedding-Gemma3-12B	tencent_kalm_gemma3_12b	None	hpc
+tencent/ContextPilot-14B	tencent_contextpilot_14b	None	hpc
+deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	ds_r1_distill_32b	None	hpc
+[2026-11-01 23:21:47] arms: 11
+[2026-11-01 23:21:47] no manifest yet: starting fresh
+[2026-11-01 23:21:47] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:47] DOWNLOAD tencent/Penguin-Encoder (label=tencent_penguin_encoder revision=None)
+[2026-11-01 23:21:47]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Penguin-Encoder --label tencent_penguin_encoder --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:47] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:47] DOWNLOAD tencent/Hunyuan-1.8B-Instruct (label=tencent_hunyuan_1p8b_instruct revision=None)
+[2026-11-01 23:21:47]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-1.8B-Instruct --label tencent_hunyuan_1p8b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/WeMM-Embedding-2B (label=tencent_wemm_embedding_2b revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/WeMM-Embedding-2B --label tencent_wemm_embedding_2b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/Youtu-HiChunk (label=tencent_youtu_hichunk revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Youtu-HiChunk --label tencent_youtu_hichunk --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/Hunyuan-4B-Instruct (label=tencent_hunyuan_4b_instruct revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-4B-Instruct --label tencent_hunyuan_4b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/WeMM-Embedding-4B (label=tencent_wemm_embedding_4b revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/WeMM-Embedding-4B --label tencent_wemm_embedding_4b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/ContextPilot-8B (label=tencent_contextpilot_8b revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/ContextPilot-8B --label tencent_contextpilot_8b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/Hunyuan-7B-Instruct (label=tencent_hunyuan_7b_instruct revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-7B-Instruct --label tencent_hunyuan_7b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/KaLM-Embedding-Gemma3-12B (label=tencent_kalm_gemma3_12b revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/KaLM-Embedding-Gemma3-12B --label tencent_kalm_gemma3_12b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD tencent/ContextPilot-14B (label=tencent_contextpilot_14b revision=None)
+[2026-11-01 23:21:48]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/ContextPilot-14B --label tencent_contextpilot_14b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:48] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:21:48] DOWNLOAD deepseek-ai/DeepSeek-R1-Distill-Qwen-32B (label=ds_r1_distill_32b revision=None)
+[2026-11-01 23:21:49]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --label ds_r1_distill_32b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:21:49] --- manifest validation ---
+manifest OK: C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json
+required=11 ok=0 unsupported=0 failed=0 missing=11
+  MISSING    tencent/Penguin-Encoder
+  MISSING    tencent/Hunyuan-1.8B-Instruct
+  MISSING    tencent/WeMM-Embedding-2B
+  MISSING    tencent/Youtu-HiChunk
+  MISSING    tencent/Hunyuan-4B-Instruct
+  MISSING    tencent/WeMM-Embedding-4B
+  MISSING    tencent/ContextPilot-8B
+  MISSING    tencent/Hunyuan-7B-Instruct
+  MISSING    tencent/KaLM-Embedding-Gemma3-12B
+  MISSING    tencent/ContextPilot-14B
+  MISSING    deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+complete=False
+[2026-11-01 23:21:49] finished=0 skipped=0 unsupported=0 failed=0
+[2026-11-01 23:21:49] === cpu_download_worker done (job LOCAL) ===
+[2026-11-01 23:21:55] === cpu_download_worker start ===
+[2026-11-01 23:21:55] job=LOCAL partition=none node=LAPTOP-2UVMC8L4
+[2026-11-01 23:21:55] scratch=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch manifest=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json venv=/c/Users/Asus/.venvs/mlflu_hpc dry_run=1
+[2026-11-01 23:21:55] HF_HOME=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/hf
+[2026-11-01 23:21:55] HF_HUB_CACHE=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/hf/hub
+[2026-11-01 23:21:55] HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+[2026-11-01 23:21:55] WARN: venv /c/Users/Asus/.venvs/mlflu_hpc not found; using /c/Users/Asus/AppData/Local/Programs/Python/Python39/python
+[2026-11-01 23:21:55] python=/c/Users/Asus/AppData/Local/Programs/Python/Python39/python (Python 3.9.0)
+2026-11-01 23:21:56.971137: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2026-11-01 23:21:56.971187: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+hf_hub 0.29.1 transformers 4.25.0 torch 2.6.0+cu124
+[2026-11-01 23:22:06] --- required arms (10 Tencent + DeepSeek-R1-Distill-Qwen-32B) ---
+tencent/Penguin-Encoder	tencent_penguin_encoder	None	hpc
+tencent/Hunyuan-1.8B-Instruct	tencent_hunyuan_1p8b_instruct	None	hpc
+tencent/WeMM-Embedding-2B	tencent_wemm_embedding_2b	None	hpc
+tencent/Youtu-HiChunk	tencent_youtu_hichunk	None	hpc
+tencent/Hunyuan-4B-Instruct	tencent_hunyuan_4b_instruct	None	hpc
+tencent/WeMM-Embedding-4B	tencent_wemm_embedding_4b	None	hpc
+tencent/ContextPilot-8B	tencent_contextpilot_8b	None	hpc
+tencent/Hunyuan-7B-Instruct	tencent_hunyuan_7b_instruct	None	hpc
+tencent/KaLM-Embedding-Gemma3-12B	tencent_kalm_gemma3_12b	None	hpc
+tencent/ContextPilot-14B	tencent_contextpilot_14b	None	hpc
+deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	ds_r1_distill_32b	None	hpc
+[2026-11-01 23:22:06] arms: 11
+manifest OK: C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json
+[2026-11-01 23:22:06] resuming from an existing manifest
+[2026-11-01 23:22:07] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:07] SKIP tencent/Penguin-Encoder (already OK in the manifest)
+[2026-11-01 23:22:07] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:07] DOWNLOAD tencent/Hunyuan-1.8B-Instruct (label=tencent_hunyuan_1p8b_instruct revision=None)
+[2026-11-01 23:22:07]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-1.8B-Instruct --label tencent_hunyuan_1p8b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:07] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:07] DOWNLOAD tencent/WeMM-Embedding-2B (label=tencent_wemm_embedding_2b revision=None)
+[2026-11-01 23:22:07]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/WeMM-Embedding-2B --label tencent_wemm_embedding_2b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:07] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:07] SKIP tencent/Youtu-HiChunk (already UNSUPPORTED in the manifest)
+[2026-11-01 23:22:08] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:08] DOWNLOAD tencent/Hunyuan-4B-Instruct (label=tencent_hunyuan_4b_instruct revision=None)
+[2026-11-01 23:22:08]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-4B-Instruct --label tencent_hunyuan_4b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:08] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:08] DOWNLOAD tencent/WeMM-Embedding-4B (label=tencent_wemm_embedding_4b revision=None)
+[2026-11-01 23:22:08]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/WeMM-Embedding-4B --label tencent_wemm_embedding_4b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:08] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:08] DOWNLOAD tencent/ContextPilot-8B (label=tencent_contextpilot_8b revision=None)
+[2026-11-01 23:22:08]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/ContextPilot-8B --label tencent_contextpilot_8b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:08] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:09] DOWNLOAD tencent/Hunyuan-7B-Instruct (label=tencent_hunyuan_7b_instruct revision=None)
+[2026-11-01 23:22:09]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-7B-Instruct --label tencent_hunyuan_7b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:09] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:09] DOWNLOAD tencent/KaLM-Embedding-Gemma3-12B (label=tencent_kalm_gemma3_12b revision=None)
+[2026-11-01 23:22:09]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/KaLM-Embedding-Gemma3-12B --label tencent_kalm_gemma3_12b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:09] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:09] DOWNLOAD tencent/ContextPilot-14B (label=tencent_contextpilot_14b revision=None)
+[2026-11-01 23:22:09]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model tencent/ContextPilot-14B --label tencent_contextpilot_14b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:09] wall remaining ~99999999s (budget 600s)
+[2026-11-01 23:22:09] DOWNLOAD deepseek-ai/DeepSeek-R1-Distill-Qwen-32B (label=ds_r1_distill_32b revision=None)
+[2026-11-01 23:22:09]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python /c/Users/Asus/Desktop/FYP code/MLFlu/hpc_experiments/weights_worker.py download --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --label ds_r1_distill_32b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json --max-params-b 8
+[2026-11-01 23:22:09] --- manifest validation ---
+manifest OK: C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch/mlflu_weights/weights_manifest.json
+required=11 ok=1 unsupported=1 failed=0 missing=9
+  MISSING    tencent/Hunyuan-1.8B-Instruct
+  MISSING    tencent/WeMM-Embedding-2B
+  MISSING    tencent/Hunyuan-4B-Instruct
+  MISSING    tencent/WeMM-Embedding-4B
+  MISSING    tencent/ContextPilot-8B
+  MISSING    tencent/Hunyuan-7B-Instruct
+  MISSING    tencent/KaLM-Embedding-Gemma3-12B
+  MISSING    tencent/ContextPilot-14B
+  MISSING    deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+  UNSUPPORTED tencent/Youtu-HiChunk
+complete=False
+[2026-11-01 23:22:10] finished=0 skipped=2 unsupported=0 failed=0
+[2026-11-01 23:22:10] === cpu_download_worker done (job LOCAL) ===
+[2026-11-01 23:31:53] === cpu_download_worker start ===
+[2026-11-01 23:31:54] job=LOCAL partition=none node=LAPTOP-2UVMC8L4
+[2026-11-01 23:31:54] R=C:\Users\Asus\Desktop\FYP code\MLFlu worker=C:\Users\Asus\Desktop\FYP code\MLFlu/code/weights_worker.py registry=C:\Users\Asus\Desktop\FYP code\MLFlu/code/queue/arms_registry.json
+[2026-11-01 23:31:54] manifest=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json log=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/cpu_download_worker.log venv=/home/sychan552/.venvs/mlflu_hpc dry_run=1
+[2026-11-01 23:31:54] HF_HOME=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache
+[2026-11-01 23:31:54] HF_HUB_CACHE=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache/hub
+[2026-11-01 23:31:54] HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+[2026-11-01 23:31:54] disk free: 277G on C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache; 277G on HOME
+[2026-11-01 23:31:54] WARN: venv /home/sychan552/.venvs/mlflu_hpc not found; using /c/Users/Asus/AppData/Local/Programs/Python/Python39/python
+[2026-11-01 23:31:54] python=/c/Users/Asus/AppData/Local/Programs/Python/Python39/python (Python 3.9.0)
+2026-11-01 23:31:56.617191: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2026-11-01 23:31:56.617485: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+hf_hub 0.29.1 transformers 4.25.0 torch 2.6.0+cu124
+[2026-11-01 23:32:08] --- required arms (10 Tencent + DeepSeek-R1-Distill-Qwen-32B), smallest first ---
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\python.exe: can't open file 'C:\Users\Asus\Desktop\FYP code\MLFlu\code\weights_worker.py': [Errno 2] No such file or directory
+[2026-11-01 23:32:08] FATAL: cannot read C:\Users\Asus\Desktop\FYP code\MLFlu/code/queue/arms_registry.json
+[2026-11-01 23:32:15] === cpu_download_worker start ===
+[2026-11-01 23:32:15] job=LOCAL partition=none node=LAPTOP-2UVMC8L4
+[2026-11-01 23:32:15] R=C:\Users\Asus\Desktop\FYP code\MLFlu worker=C:\Users\Asus\Desktop\FYP code\MLFlu/code/weights_worker.py registry=C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/queue/arms_registry.json
+[2026-11-01 23:32:15] manifest=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json log=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/cpu_download_worker.log venv=/home/sychan552/.venvs/mlflu_hpc dry_run=1
+[2026-11-01 23:32:15] HF_HOME=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache
+[2026-11-01 23:32:15] HF_HUB_CACHE=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache/hub
+[2026-11-01 23:32:15] HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+[2026-11-01 23:32:15] disk free: 277G on C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache; 277G on HOME
+[2026-11-01 23:32:15] WARN: venv /home/sychan552/.venvs/mlflu_hpc not found; using /c/Users/Asus/AppData/Local/Programs/Python/Python39/python
+[2026-11-01 23:32:16] python=/c/Users/Asus/AppData/Local/Programs/Python/Python39/python (Python 3.9.0)
+2026-11-01 23:32:17.183618: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2026-11-01 23:32:17.183817: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+hf_hub 0.29.1 transformers 4.25.0 torch 2.6.0+cu124
+[2026-11-01 23:32:27] --- required arms (10 Tencent + DeepSeek-R1-Distill-Qwen-32B), smallest first ---
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\python.exe: can't open file 'C:\Users\Asus\Desktop\FYP code\MLFlu\code\weights_worker.py': [Errno 2] No such file or directory
+[2026-11-01 23:32:27] FATAL: cannot read C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/queue/arms_registry.json
+[2026-11-01 23:32:30] === cpu_download_worker start ===
+[2026-11-01 23:32:30] job=LOCAL partition=none node=LAPTOP-2UVMC8L4
+[2026-11-01 23:32:30] R=C:\Users\Asus\Desktop\FYP code\MLFlu worker=C:\Users\Asus\Desktop\FYP code\MLFlu/code/weights_worker.py registry=C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/queue/arms_registry.json
+[2026-11-01 23:32:30] manifest=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json log=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/cpu_download_worker.log venv=/home/sychan552/.venvs/mlflu_hpc dry_run=1
+[2026-11-01 23:32:30] HF_HOME=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache
+[2026-11-01 23:32:30] HF_HUB_CACHE=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache/hub
+[2026-11-01 23:32:30] HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+[2026-11-01 23:32:30] disk free: 277G on C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache; 277G on HOME
+[2026-11-01 23:32:30] WARN: venv /home/sychan552/.venvs/mlflu_hpc not found; using /c/Users/Asus/AppData/Local/Programs/Python/Python39/python
+[2026-11-01 23:32:31] python=/c/Users/Asus/AppData/Local/Programs/Python/Python39/python (Python 3.9.0)
+2026-11-01 23:32:32.069878: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2026-11-01 23:32:32.070073: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+hf_hub 0.29.1 transformers 4.25.0 torch 2.6.0+cu124
+[2026-11-01 23:32:41] --- required arms (10 Tencent + DeepSeek-R1-Distill-Qwen-32B), smallest first ---
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\python.exe: can't open file 'C:\Users\Asus\Desktop\FYP code\MLFlu\code\weights_worker.py': [Errno 2] No such file or directory
+[2026-11-01 23:32:41] FATAL: cannot read C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/queue/arms_registry.json
+[2026-11-01 23:32:45] === cpu_download_worker start ===
+[2026-11-01 23:32:45] job=LOCAL partition=none node=LAPTOP-2UVMC8L4
+[2026-11-01 23:32:45] R=C:\Users\Asus\Desktop\FYP code\MLFlu worker=C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py registry=C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/queue/arms_registry.json
+[2026-11-01 23:32:45] manifest=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json log=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/cpu_download_worker.log venv=/home/sychan552/.venvs/mlflu_hpc dry_run=1
+[2026-11-01 23:32:45] HF_HOME=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache
+[2026-11-01 23:32:45] HF_HUB_CACHE=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache/hub
+[2026-11-01 23:32:45] HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+[2026-11-01 23:32:45] disk free: 277G on C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache; 277G on HOME
+[2026-11-01 23:32:46] WARN: venv /home/sychan552/.venvs/mlflu_hpc not found; using /c/Users/Asus/AppData/Local/Programs/Python/Python39/python
+[2026-11-01 23:32:46] python=/c/Users/Asus/AppData/Local/Programs/Python/Python39/python (Python 3.9.0)
+2026-11-01 23:32:47.212575: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2026-11-01 23:32:47.212780: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+hf_hub 0.29.1 transformers 4.25.0 torch 2.6.0+cu124
+[2026-11-01 23:32:56] --- required arms (10 Tencent + DeepSeek-R1-Distill-Qwen-32B), smallest first ---
+tencent/Penguin-Encoder	tencent_penguin_encoder	None	hpc	0.4
+tencent/Hunyuan-1.8B-Instruct	tencent_hunyuan_1p8b_instruct	None	hpc	1.8
+tencent/WeMM-Embedding-2B	tencent_wemm_embedding_2b	None	hpc	3
+tencent/Hunyuan-4B-Instruct	tencent_hunyuan_4b_instruct	None	hpc	4
+tencent/Youtu-HiChunk	tencent_youtu_hichunk	None	hpc	4
+tencent/WeMM-Embedding-4B	tencent_wemm_embedding_4b	None	hpc	5
+tencent/ContextPilot-8B	tencent_contextpilot_8b	None	hpc	8
+tencent/Hunyuan-7B-Instruct	tencent_hunyuan_7b_instruct	None	hpc	8
+tencent/KaLM-Embedding-Gemma3-12B	tencent_kalm_gemma3_12b	None	hpc	12
+tencent/ContextPilot-14B	tencent_contextpilot_14b	None	hpc	15
+deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	ds_r1_distill_32b	None	hpc	33
+[2026-11-01 23:32:56] arms: 11 (order above is the download order)
+manifest OK: C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json
+[2026-11-01 23:32:57] resuming from an existing manifest (C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json)
+[2026-11-01 23:32:57] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:57] SKIP tencent/Penguin-Encoder (already OK in the manifest)
+[2026-11-01 23:32:57] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:57] DOWNLOAD tencent/Hunyuan-1.8B-Instruct (label=tencent_hunyuan_1p8b_instruct size=1.8B revision=None)
+[2026-11-01 23:32:57]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-1.8B-Instruct --label tencent_hunyuan_1p8b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 1.8
+[2026-11-01 23:32:57] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:57] DOWNLOAD tencent/WeMM-Embedding-2B (label=tencent_wemm_embedding_2b size=3B revision=None)
+[2026-11-01 23:32:57]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/WeMM-Embedding-2B --label tencent_wemm_embedding_2b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 3
+[2026-11-01 23:32:58] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:58] DOWNLOAD tencent/Hunyuan-4B-Instruct (label=tencent_hunyuan_4b_instruct size=4B revision=None)
+[2026-11-01 23:32:58]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-4B-Instruct --label tencent_hunyuan_4b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 4
+[2026-11-01 23:32:58] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:58] SKIP tencent/Youtu-HiChunk (already UNSUPPORTED in the manifest)
+[2026-11-01 23:32:58] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:58] DOWNLOAD tencent/WeMM-Embedding-4B (label=tencent_wemm_embedding_4b size=5B revision=None)
+[2026-11-01 23:32:58]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/WeMM-Embedding-4B --label tencent_wemm_embedding_4b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 5
+[2026-11-01 23:32:58] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:58] DOWNLOAD tencent/ContextPilot-8B (label=tencent_contextpilot_8b size=8B revision=None)
+[2026-11-01 23:32:59]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/ContextPilot-8B --label tencent_contextpilot_8b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 8
+[2026-11-01 23:32:59] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:59] DOWNLOAD tencent/Hunyuan-7B-Instruct (label=tencent_hunyuan_7b_instruct size=8B revision=None)
+[2026-11-01 23:32:59]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/Hunyuan-7B-Instruct --label tencent_hunyuan_7b_instruct --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 8
+[2026-11-01 23:32:59] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:59] DOWNLOAD tencent/KaLM-Embedding-Gemma3-12B (label=tencent_kalm_gemma3_12b size=12B revision=None)
+[2026-11-01 23:32:59]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/KaLM-Embedding-Gemma3-12B --label tencent_kalm_gemma3_12b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 12
+[2026-11-01 23:32:59] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:32:59] DOWNLOAD tencent/ContextPilot-14B (label=tencent_contextpilot_14b size=15B revision=None)
+[2026-11-01 23:32:59]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model tencent/ContextPilot-14B --label tencent_contextpilot_14b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 15
+[2026-11-01 23:32:59] wall remaining ~99999999s (reserve 600s)
+[2026-11-01 23:33:00] DOWNLOAD deepseek-ai/DeepSeek-R1-Distill-Qwen-32B (label=ds_r1_distill_32b size=33B revision=None)
+[2026-11-01 23:33:00]   dry run: would call /c/Users/Asus/AppData/Local/Programs/Python/Python39/python C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py download --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --label ds_r1_distill_32b --manifest C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json --max-params-b 8 --params-b 33
+[2026-11-01 23:33:00] --- manifest validation ---
+manifest OK: C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json
+required=11 ok=1 unsupported=1 failed=0 missing=9
+  MISSING    tencent/Hunyuan-1.8B-Instruct
+  MISSING    tencent/WeMM-Embedding-2B
+  MISSING    tencent/Hunyuan-4B-Instruct
+  MISSING    tencent/WeMM-Embedding-4B
+  MISSING    tencent/ContextPilot-8B
+  MISSING    tencent/Hunyuan-7B-Instruct
+  MISSING    tencent/KaLM-Embedding-Gemma3-12B
+  MISSING    tencent/ContextPilot-14B
+  MISSING    deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+  UNSUPPORTED tencent/Youtu-HiChunk
+complete=False
+[2026-11-01 23:33:00] finished=0 skipped=2 unsupported=0 failed=0
+[2026-11-01 23:33:00] manifest: C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest.json
+[2026-11-01 23:33:00] === cpu_download_worker done (job LOCAL) ===

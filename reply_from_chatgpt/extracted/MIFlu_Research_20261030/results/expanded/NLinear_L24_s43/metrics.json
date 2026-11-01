@@ -1,0 +1,22 @@
+{
+  "track": "EXPANDED_EXPLORATORY_966",
+  "model": "NLinear",
+  "L": 24,
+  "seed": 43,
+  "config_sha256": "0c96b39bf6132ad9598062af9fdd3096aaca4e85c6036d580ac6136b9397b1a0",
+  "dataset_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "reference_pair_anchor": "966|L24|seed42",
+  "cell_pair_key": "966|L24|seed43",
+  "val_mse": 0.27813827991485596,
+  "selected_candidate": 0,
+  "best_epoch": 14,
+  "uses_text": false,
+  "mse_z_all7": 2.0929575225476325,
+  "mae_z_all7": 0.9461464943107301,
+  "mse_z_ili": 4.126631778098266,
+  "mae_z_ili": 1.3271944398053592,
+  "mse_counts2_ili": 334491369.1475147,
+  "mae_counts_ili": 11948.933731345589,
+  "n_origins": 170,
+  "n_elements": 28560
+}

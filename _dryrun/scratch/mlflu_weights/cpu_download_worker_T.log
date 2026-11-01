@@ -1,0 +1,10 @@
+[2026-11-01 23:41:27] === cpu_download_worker start ===
+[2026-11-01 23:41:27] job=LOCAL partition=none node=LAPTOP-2UVMC8L4 tag=T
+[2026-11-01 23:41:27] R=C:\Users\Asus\Desktop\FYP code\MLFlu worker=C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/weights_worker.py registry=C:\Users\Asus\Desktop\FYP code\MLFlu/hpc_experiments/queue/arms_registry.json
+[2026-11-01 23:41:27] manifest=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/weights_manifest_T.json log=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\mlflu_weights/cpu_download_worker_T.log venv=/home/sychan552/.venvs/mlflu_llm dry_run=1
+[2026-11-01 23:41:28] models filter: tencent/Penguin-Encoder,tencent/WeMM-Embedding-4B
+[2026-11-01 23:41:28] HF_HOME=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache
+[2026-11-01 23:41:28] HF_HUB_CACHE=C:\Users\Asus\Desktop\FYP code\MLFlu\_dryrun\scratch\hf_cache/hub
+[2026-11-01 23:41:28] HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+[2026-11-01 23:41:28] resolved: HF_HOME -> C:/Users/Asus/Desktop/FYP code/MLFlu/_dryrun/scratch/hf_cache (dev 439417264), HOME -> /c/Users/Asus (dev 439417264)
+[2026-11-01 23:41:28] FATAL: HF_HOME resolves onto the HOME filesystem (C:/Users/Asus/Desktop/FYP code/MLFlu/_dryrun/scratch/hf_cache); refusing to fill the home quota

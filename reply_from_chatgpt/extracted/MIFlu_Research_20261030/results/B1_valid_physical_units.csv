@@ -1,0 +1,9 @@
+model,MSE_z_all7,MAE_z_all7,MSE_z_ILITOTAL,MSE_counts2_ILITOTAL,MAE_z_ILITOTAL,MAE_counts_ILITOTAL,evidence
+miflu,1.8651551027309432,0.8841636451992373,3.7019891867844,300071219.88176614,1.2620606740929765,11362.524515914885,raw predictions independently rescored
+nlinear,2.049549558169138,0.9566012610586516,,,,,aggregate CSV only; target-only errors unavailable
+dlinear,2.3478315723513385,1.088443737002831,,,,,aggregate CSV only; target-only errors unavailable
+timecma_llm,2.670008999864343,1.0926607611564598,,,,,aggregate CSV only; target-only errors unavailable
+patchtst,3.9204704898246825,1.3826113933772692,,,,,aggregate CSV only; target-only errors unavailable
+itransformer,3.984698809487911,1.3544637354417812,,,,,aggregate CSV only; target-only errors unavailable
+qwen_time_llm,5.219554504424759,1.5784345727781437,,,,,aggregate CSV only; target-only errors unavailable
+calf_llm,5.51529965373516,1.6079749574818127,,,,,aggregate CSV only; target-only errors unavailable

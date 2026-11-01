@@ -1,0 +1,54 @@
+[
+  {
+    "model": "GRU",
+    "L": 48,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 803,
+    "pred_val": 45911.38118205033,
+    "PTE_wk": 2,
+    "PIE_pct": 47.7240169629425,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "GRU",
+    "L": 48,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": NaN,
+    "pred_val": NaN,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "Missed"
+  },
+  {
+    "model": "GRU",
+    "L": 48,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 906,
+    "pred_val": 64680.674559257925,
+    "PTE_wk": 1,
+    "PIE_pct": 41.918020051864616,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "GRU",
+    "L": 48,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 848,
+    "pred_val": 44115.85470567737,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  }
+]

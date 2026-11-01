@@ -1,0 +1,68 @@
+{
+  "project_author": "CHAN Sing Yeung Sunny",
+  "reference_paper_authors": "Moon, Shim, Kim & Hwang",
+  "reproduction_status": "PARTIAL_REPRODUCTION",
+  "text_pathway_status": "UNRESOLVED",
+  "UNIFIED_PAIR_KEY": "966|L24|seed42",
+  "models": {
+    "qwen": {
+      "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "trust_remote_code": false,
+      "parameter_estimate": 1540000000,
+      "expected_gpu_memory_GiB": [
+        6,
+        10
+      ],
+      "memory_scope": "planning estimate for frozen BF16, batch1, eager attention, <=2048 tokens; pilot required, not measured",
+      "custom_source_sha256": {},
+      "config_sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670"
+    },
+    "deepseek": {
+      "repo_id": "deepseek-ai/DeepSeek-V2-Lite-Chat",
+      "revision": "85864749cd611b4353ce1decdb286193298f64c7",
+      "trust_remote_code": true,
+      "parameter_estimate": 15700000000,
+      "expected_gpu_memory_GiB": [
+        34,
+        39
+      ],
+      "memory_scope": "planning estimate for frozen BF16, batch1, eager attention, <=2048 tokens; pilot required, not measured",
+      "custom_source_sha256": {
+        "modeling_deepseek.py": "7d8e5221095286eea991137760893fd7ba52727c0b4ebf48ec09e8bc56b45b9c",
+        "configuration_deepseek.py": "6de5e7445ab490a16482027b131d5bd6a003da9b58a182a11432115fac84ce59"
+      },
+      "config_sha256": "f346286b0f1c8b044252fd54cb4fa78b9fab6472a6e8bebb9edfe03d414ea03d"
+    }
+  },
+  "dtype": "bfloat16",
+  "attention": "eager",
+  "max_input_tokens": 2048,
+  "max_new_tokens": 96,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "horizons": [
+    24,
+    36,
+    48,
+    60
+  ],
+  "modes": [
+    "encoding_only",
+    "generation_augmented"
+  ],
+  "pca_components": 16,
+  "downstream": {
+    "n_estimators": 64,
+    "max_depth": 8,
+    "min_samples_leaf": 3,
+    "max_features": 0.5
+  },
+  "data_protocol": "author966 strict containment train676 val97 test193; train-only scaler",
+  "forecast_contract": "all7 z-space MSE/MAE and separate ILITOTAL target-only physical metrics; k1 peaks",
+  "cost_notes": "feature generation/encoding shared over 3 downstream seeds; count once",
+  "reasoning_definition": "bounded deterministic structured analysis generation; not a claim about hidden reasoning or forecast improvement"
+}

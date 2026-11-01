@@ -1,0 +1,15 @@
+{
+  "model": "PCA-HistGB",
+  "L": 24,
+  "seed": 43,
+  "fit_and_val_seconds": 6.338491110999712,
+  "test_inference_seconds": 0.00688464299946645,
+  "test_ms_per_origin": 0.04049789999686147,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.001762604376110883,
+  "parameters": null,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

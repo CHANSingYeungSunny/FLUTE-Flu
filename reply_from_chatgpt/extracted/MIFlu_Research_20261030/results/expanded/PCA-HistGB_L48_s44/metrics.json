@@ -1,0 +1,22 @@
+{
+  "track": "EXPANDED_EXPLORATORY_966",
+  "model": "PCA-HistGB",
+  "L": 48,
+  "seed": 44,
+  "config_sha256": "0c96b39bf6132ad9598062af9fdd3096aaca4e85c6036d580ac6136b9397b1a0",
+  "dataset_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "reference_pair_anchor": "966|L24|seed42",
+  "cell_pair_key": "966|L48|seed44",
+  "val_mse": 0.22139926988358477,
+  "selected_candidate": 0,
+  "best_epoch": null,
+  "uses_text": false,
+  "mse_z_all7": 4.63237842721144,
+  "mae_z_all7": 1.4463279574592212,
+  "mse_z_ili": 9.419624126530293,
+  "mae_z_ili": 1.901763801649362,
+  "mse_counts2_ili": 763524137.9326795,
+  "mae_counts_ili": 17121.869228078365,
+  "n_origins": 146,
+  "n_elements": 49056
+}

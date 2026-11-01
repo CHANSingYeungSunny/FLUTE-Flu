@@ -99,6 +99,12 @@ def assemble() -> dict[str, int]:
     copy_file(os.path.join(HANDOFF, "00_HANDOFF.md"), "00_HANDOFF.md")
     counts["00_HANDOFF.md"] = 1
 
+    # 00b — HPC guide (needed for GPU retraining)
+    hpc_guide = os.path.join(BASE, "HPC_GUIDE.md")
+    if os.path.exists(hpc_guide):
+        copy_file(hpc_guide, "00b_HPC_GUIDE.md")
+        counts["00b_HPC_GUIDE.md"] = 1
+
     # 01 — paper + analyses
     counts["01_paper"] = copy_named(os.path.join(BASE, "docs", "01_paper"), "01_paper",
                                      ["PAPER_EXPLAINED.md", "AUTHOR_REPO_EXPLAINED.md"])
@@ -134,7 +140,8 @@ The author CSV's `date` column is a synthetic 7-day index, not real CDC weeks.
 
     # 04 — current benchmark + authoritative report
     counts["04_benchmark"] = copy_tree(
-        os.path.join(BASE, "results", "v3_clean", "analysis", "peak_criteria"), "04_benchmark")
+        os.path.join(BASE, "results", "v3_clean", "analysis", "peak_criteria"), "04_benchmark",
+        extra_exclude_names=("s1es_runs",))  # exclude .pth checkpoint trees
     counts["04_benchmark"] += copy_named(
         os.path.join(BASE, "reports", "concise_final"), "04_benchmark",
         [REPORT_DOCX, "REPORT_精简终版.md", "CONCISE_FINAL_REPORT_CHANGELOG.md",
@@ -167,6 +174,11 @@ The author CSV's `date` column is a synthetic 7-day index, not real CDC weeks.
     counts["05_reproduction_audit"] += copy_named(
         os.path.join(BASE, "recovery"), "05_reproduction_audit",
         ["data_identity_report.md", "dataset_manifest.json", "manifest.json"])
+
+    # 05b — corrected model source (r1b_model.py with R1BCorrectedMIFlu)
+    r1b_dir = os.path.join(r1, "r0_r5_cpu_stage_20261006", "r1b")
+    counts["05b_r1b_model"] = copy_named(r1b_dir, "05b_r1b_model",
+                                          ["r1b_model.py", "R1B_MODEL_CONTRACT.md"])
 
     # 06 — scripts + tests
     counts["06_scripts"] = copy_tree(os.path.join(BASE, "scripts"), "06_scripts",

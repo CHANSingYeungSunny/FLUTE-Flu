@@ -1,0 +1,9 @@
+model,cells,n_true_peaks,n_hit,hit_rate_pct,mean_of_cell_PTE_wk,mean_of_cell_PIE_pct
+nlinear,12,36,36,100.0,0.28,3.14
+dlinear,12,36,31,86.1,0.92,17.72
+miflu,12,36,15,41.7,0.29,25.0
+qwen_time_llm,12,36,1,2.8,0.96,36.33
+timecma_llm,12,36,0,0.0,1.38,50.44
+patchtst,12,36,0,0.0,0.67,66.61
+itransformer,12,36,0,0.0,0.72,66.16
+calf_llm,12,36,0,0.0,0.93,81.25

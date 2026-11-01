@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+cnn,48,42,"CNN baseline (per-channel 1-D conv, INSPIRED_SIMPLIFICATION)",4.785982608795166,1.5767818689346313,9.565549850463867,1.994567632675171,0.6547555327415466,3,525,50,146,24048,24048,,

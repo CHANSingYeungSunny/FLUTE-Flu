@@ -1,0 +1,24 @@
+[
+  {
+    "candidate": 0,
+    "config": {
+      "max_depth": 4,
+      "min_samples_leaf": 8
+    },
+    "val_mse": 0.3441769761813263,
+    "best_epoch": null,
+    "seconds": 0.9336519899998166,
+    "curve": []
+  },
+  {
+    "candidate": 1,
+    "config": {
+      "max_depth": 8,
+      "min_samples_leaf": 4
+    },
+    "val_mse": 0.39269149419958777,
+    "best_epoch": null,
+    "seconds": 1.278646851999838,
+    "curve": []
+  }
+]

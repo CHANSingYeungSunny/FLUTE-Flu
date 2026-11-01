@@ -1,0 +1,13 @@
+model,L,seed,fit_and_val_seconds,test_inference_seconds,test_ms_per_origin,device,gpu_hours,cpu_wall_hours,parameters,flops,uses_text,cost_scope
+Autoformer,24,42,16.528756214999703,0.058540736000395555,0.3443572705905621,cpu,0.0,0.004607582486388916,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,24,43,12.534715325999969,0.048261076000017056,0.2838886823530415,cpu,0.0,0.003495271222777774,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,24,44,12.46880348600007,0.048813582000548195,0.2871387176502835,cpu,0.0,0.003477115852222394,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,36,42,12.77844842200011,0.049243866999859165,0.3116700443029061,cpu,0.0,0.003563247858055547,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,36,43,13.85578329100008,0.060865937000016856,0.3852274493671953,cpu,0.0,0.0038657358966666935,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,36,44,12.96444286499991,0.037421042999994825,0.2368420443037647,cpu,0.0,0.0036116288633333067,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,48,42,12.13101221099987,0.05154336399937165,0.3530367397217236,cpu,0.0,0.0033840432152775672,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,48,43,12.478026527000111,0.053874141999585845,0.36900097259990305,cpu,0.0,0.0034810835191665824,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,48,44,13.741335392999645,0.05827614600002562,0.39915168493168235,cpu,0.0,0.0038332254274999083,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,60,42,13.742486019000353,0.04231530400011252,0.31578585074710835,cpu,0.0,0.0038291114786112405,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,60,43,13.742972994999946,0.04333659399981116,0.3234074179090385,cpu,0.0,0.003829530441388821,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured
+Autoformer,60,44,13.681342826000218,0.041601744999752555,0.3104607835802429,cpu,0.0,0.0038119290474999917,6631,,False,includes all validation candidates; excludes environment setup; FLOPs unmeasured

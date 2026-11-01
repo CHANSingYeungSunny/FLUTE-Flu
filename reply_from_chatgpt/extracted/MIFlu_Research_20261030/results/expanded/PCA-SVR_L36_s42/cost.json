@@ -1,0 +1,15 @@
+{
+  "model": "PCA-SVR",
+  "L": 36,
+  "seed": 42,
+  "fit_and_val_seconds": 0.8265694660003646,
+  "test_inference_seconds": 0.181821606000085,
+  "test_ms_per_origin": 1.1507696582283862,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.000280108631111236,
+  "parameters": null,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

@@ -1,0 +1,22 @@
+{
+  "track": "EXPANDED_EXPLORATORY_966",
+  "model": "Autoformer",
+  "L": 24,
+  "seed": 42,
+  "config_sha256": "502e6422a157e2e1b745ea0217869196e51c952ded04c5cf3aaac1e928953aef",
+  "dataset_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "reference_pair_anchor": "966|L24|seed42",
+  "cell_pair_key": "966|L24|seed42",
+  "val_mse": 0.4457964301109314,
+  "selected_candidate": 0,
+  "best_epoch": 15,
+  "uses_text": false,
+  "mse_z_all7": 3.631020120295133,
+  "mae_z_all7": 1.3711267087514334,
+  "mse_z_ili": 7.666438484050223,
+  "mae_z_ili": 2.0048940175258574,
+  "mse_counts2_ili": 621416603.881465,
+  "mae_counts_ili": 18050.366272858275,
+  "n_origins": 170,
+  "n_elements": 28560
+}

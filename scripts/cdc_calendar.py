@@ -163,6 +163,18 @@ def load_week_calendar(raw_csv: str = DEFAULT_RAW) -> pd.DataFrame:
         week_start_date  datetime64[ns]  Sunday on which the epiweek begins
     """
     raw = pd.read_csv(raw_csv)
+    if "epiweek" not in raw.columns:
+        # The author's released national_illness.csv names the time column `date`
+        # (a datetime) rather than an integer `epiweek`. The profile
+        # `author_repo_966` reads that file byte-for-byte, so synthesise the
+        # epiweek code from the date instead of failing the export.
+        if "date" not in raw.columns:
+            raise KeyError(
+                f"{raw_csv} has neither 'epiweek' nor 'date'; cannot build a calendar")
+        _d = pd.to_datetime(raw["date"])
+        raw = raw.assign(
+            epiweek=(_d.dt.isocalendar().year.astype(int) * 100
+                     + _d.dt.isocalendar().week.astype(int)))
     raw_epi = raw["epiweek"].astype(int).tolist()
 
     canon, anomalies = canonicalize_epiweeks(raw_epi)

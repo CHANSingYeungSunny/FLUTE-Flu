@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+dnn,60,44,"DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)",2.5261194705963135,1.1258881092071533,4.6874542236328125,1.4063923358917236,0.2513982951641083,4,513,38,134,37692,37692,,

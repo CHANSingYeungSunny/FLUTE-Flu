@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+dlinear,24,42,"re-implementation (Zeng et al., AAAI 2023)",2.343385696411133,1.0853197574615479,4.362524032592773,1.4364981651306152,0.2887113392353058,14,549,74,170,5040,5040,,

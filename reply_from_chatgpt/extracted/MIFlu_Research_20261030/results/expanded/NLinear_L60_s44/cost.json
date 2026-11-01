@@ -1,0 +1,15 @@
+{
+  "model": "NLinear",
+  "L": 60,
+  "seed": 44,
+  "fit_and_val_seconds": 0.45044279499961704,
+  "test_inference_seconds": 0.0005311130007612519,
+  "test_ms_per_origin": 0.003963529856427253,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.00012527053000010508,
+  "parameters": 6300,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "EXPLORATORY; frozen before ensemble validation search; old test already exposed",
+  "name": "PeakBlend",
+  "experts": [
+    "new NLinear",
+    "new upstream TimesNet compact"
+  ],
+  "gate": "w=sigmoid(b0+b1*(last_ILITOTAL_z-train_q75)+b2*(last_ILITOTAL_z-ILI_z_4weeks_ago))",
+  "prediction": "w*NLinear+(1-w)*TimesNet",
+  "b0": [
+    -2,
+    0,
+    2
+  ],
+  "b1": [
+    0,
+    1,
+    2
+  ],
+  "b2": [
+    0,
+    1
+  ],
+  "objective": "validation all7 MSE + validation ILI MSE on true values above TRAIN ILI q90",
+  "no_tail_rule": "if no validation values exceed train q90, tail term is zero",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "test_policy": "evaluate selected gate once; no change to experts"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-01T15:21:55.208800+00:00",
+  "hf_home": null,
+  "hf_hub_cache": null,
+  "proxy": null,
+  "host": null,
+  "slurm_job_id": null,
+  "entries": [
+    {
+      "model": "tencent/Penguin-Encoder",
+      "label": "tencent_penguin_encoder",
+      "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision_pinned": true,
+      "size_bytes": 1234,
+      "n_files": null,
+      "config_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "snapshot_path": null,
+      "arch": null,
+      "params_b": null,
+      "status": "OK",
+      "reason": null,
+      "hidden_state": {
+        "available": true,
+        "n_layers": 2,
+        "shape": [
+          1,
+          8,
+          16
+        ],
+        "per_layer_shapes": [
+          [
+            1,
+            8,
+            16
+          ],
+          [
+            1,
+            8,
+            16
+          ],
+          [
+            1,
+            8,
+            16
+          ]
+        ]
+      },
+      "checked_utc": "2026-11-01T15:21:55.208800+00:00",
+      "extra": {}
+    },
+    {
+      "model": "tencent/Youtu-HiChunk",
+      "label": null,
+      "revision": "cccccccccccccccccccccccccccccccccccccccc",
+      "revision_pinned": true,
+      "size_bytes": 0,
+      "n_files": null,
+      "config_sha256": null,
+      "snapshot_path": null,
+      "arch": null,
+      "params_b": null,
+      "status": "UNSUPPORTED",
+      "reason": "architecture_not_supported: no hidden_states API",
+      "hidden_state": null,
+      "checked_utc": "2026-11-01T15:21:55.208800+00:00",
+      "extra": {}
+    }
+  ],
+  "updated_utc": "2026-11-01T15:21:55.208800+00:00"
+}

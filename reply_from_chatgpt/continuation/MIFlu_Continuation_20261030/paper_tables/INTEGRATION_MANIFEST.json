@@ -1,0 +1,10 @@
+{
+  "combined_model_instances": 19,
+  "original_track_c_instances": 8,
+  "new_cpu_instances": 11,
+  "combined_per_L_rows": 76,
+  "literature_peak_rows": 76,
+  "caveat": "Combined ordering descriptive only; retain protocol-specific ranks and separate cost cohorts",
+  "reproduction_status": "PARTIAL_REPRODUCTION",
+  "project_author": "CHAN Sing Yeung Sunny"
+}

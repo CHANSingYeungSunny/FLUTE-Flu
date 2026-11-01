@@ -1,0 +1,41 @@
+[
+  {
+    "model": "CNN",
+    "L": 60,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 803,
+    "pred_val": 37668.60521464143,
+    "PTE_wk": 2,
+    "PIE_pct": 57.10947228047929,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "CNN",
+    "L": 60,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": 852,
+    "pred_val": 42560.197410963476,
+    "PTE_wk": 2,
+    "PIE_pct": 39.24831914708185,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "CNN",
+    "L": 60,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 906,
+    "pred_val": 50933.01163314283,
+    "PTE_wk": 1,
+    "PIE_pct": 54.26315231663087,
+    "status": "MatchedNotHit"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "model": "RandomForest",
+  "L": 60,
+  "seed": 42,
+  "fit_and_val_seconds": 15.522301716999209,
+  "test_inference_seconds": 0.022716268000294804,
+  "test_ms_per_origin": 0.1695243880619015,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.004318060551388751,
+  "parameters": null,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

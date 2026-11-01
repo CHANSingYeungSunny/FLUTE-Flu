@@ -1,17 +1,17 @@
 {
-  "created_utc": "2026-10-30T09:52:35Z",
+  "created_utc": "2026-11-01T15:51:32Z",
   "scientific_protocol_version": "innov-v2.0",
   "implementation_source_version": "innov-v3.19-baseline-no-checkpoint-finalization",
   "protocol_version": "innov-v2.0",
-  "repository_head": "8d91ca42006dd6cc05dbb3db20968d9391e1961d",
-  "repository_head_short": "8d91ca4",
+  "repository_head": "ea620ad5b9f418b2526ba2642fbbcc9cd587e84f",
+  "repository_head_short": "ea620ad",
   "working_tree_dirty": true,
   "authoritative_plan": {
     "path": "docs/protocol_freeze/MIFlu_innovation_plan_v2.md",
     "sha256": "aa4ab1c8842e893a4690787e17add0ca193c86825fff9fd89f46952c7f9e7961"
   },
-  "n_files": 90,
-  "total_bytes": 749197,
+  "n_files": 91,
+  "total_bytes": 766900,
   "files": [
     {
       "path": "docs/protocol_freeze/MIFlu_innovation_plan_v2.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "scripts/cdc_calendar.py",
-      "size": 10991,
-      "sha256": "963751eec162a8eefa133c2eb29764b5a8791920d3a99cddf08f8d3d02e593ad"
+      "size": 11683,
+      "sha256": "5d744f653a7010d1a893e3a73d2e2d2712f2e48f63d36510f3241f7c2c15d8aa"
     },
     {
       "path": "scripts/compute_miflu_indicators.py",
@@ -30,8 +30,8 @@
     },
     {
       "path": "scripts/configs.py",
-      "size": 15276,
-      "sha256": "06eb39cd55df0bb8302d527b90dc5ac5923a43813bbc6acb28709e0d6d7b2bc9"
+      "size": 16840,
+      "sha256": "d92b77df4b46e5769de6c8827175edcb7e7da81ad567652007b7ac6fc726cff3"
     },
     {
       "path": "scripts/early_stopping.py",
@@ -57,6 +57,11 @@
       "path": "scripts/innovation/backbones/__init__.py",
       "size": 2494,
       "sha256": "32f4c7f0b6fee98ec2a3ba2a16bc20378173463dcfa8bee4bc49a55a9435367d"
+    },
+    {
+      "path": "scripts/innovation/backbones/classic_nn.py",
+      "size": 7969,
+      "sha256": "f20134473999f457bf2ff6ed84677f6d31cfd6d4cfbb43e769af26e2634914f6"
     },
     {
       "path": "scripts/innovation/backbones/dlinear.py",
@@ -85,8 +90,8 @@
     },
     {
       "path": "scripts/innovation/backbones/patchtst.py",
-      "size": 5069,
-      "sha256": "fb0db9160b0ace28ec597557430f650f078f53dbcda458218ef28f2ae7c77e67"
+      "size": 7305,
+      "sha256": "d43181e921be715d612070fdfbbf62d68b14e4bd41bdc89ce9f1a2143b7212a2"
     },
     {
       "path": "scripts/innovation/backbones/registry.py",
@@ -295,13 +300,13 @@
     },
     {
       "path": "scripts/miflu_model.py",
-      "size": 27160,
-      "sha256": "0e6bdb61213bfdcc72e6a5b2733fc891a613baeb3dc52b514997c1507bfc15ef"
+      "size": 32381,
+      "sha256": "64be44ccc1202289c88822a5758d218bd55b82eb4bdc7afcedda89560f65c95c"
     },
     {
       "path": "scripts/scaler_utils.py",
-      "size": 10915,
-      "sha256": "efac4e58ca85563012c55e5c9e74ab61035a7f7c578fb17658a1870a84462f2e"
+      "size": 10936,
+      "sha256": "35edeac8f7b83395cd1c278c2217c65775ea014171f8559a701d4d7796859a59"
     },
     {
       "path": "scripts/textual_embedder.py",
@@ -494,7 +499,7 @@
     ]
   },
   "aggregate_scheme": "sha256 of sorted '<path>:<sha256>' lines joined by '\\n'",
-  "aggregate_sha256": "8cde777165acbd3ed1d1b7f1c87565bb3d2c3e166f8f572bff660e8b8c848257",
+  "aggregate_sha256": "d2091f75c2b1b15cfb764432758682838f1ec1333f7bd8ca205b084388daede5",
   "snapshot_dir": "results/innovation/source_snapshot",
   "note": "content-addressed immutable snapshot of the UNCOMMITTED source; pilot specs carry aggregate_sha256 and the pilot startup check aborts on any deployed-file difference"
 }

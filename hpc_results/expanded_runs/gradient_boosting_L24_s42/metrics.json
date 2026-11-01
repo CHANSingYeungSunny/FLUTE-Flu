@@ -1,0 +1,23 @@
+{
+  "model": "gradient_boosting",
+  "L": 24,
+  "seed": 42,
+  "profile": "author_966",
+  "containment": "strict",
+  "channel_agnostic": true,
+  "trainable_parameters": null,
+  "estimator": "GradientBoostingRegressor(n_estimators=200, random_state=seed) via MultiOutputRegressor",
+  "multioutput_wrapper": "MultiOutput",
+  "n_train_windows": 549,
+  "n_val_windows": 74,
+  "n_test_windows": 170,
+  "val_mse_7var_z": 0.28140499775135946,
+  "val_mae_7var_z": 0.326826428050104,
+  "test_mse_7var_z": 3.5634103870495535,
+  "test_mae_7var_z": 1.2410038001385586,
+  "test_mse_ilitotal_z": 7.087150464575165,
+  "test_mae_ilitotal_z": 1.575264630884457,
+  "selection": "none (sklearn estimator fitted on TRAIN only; val reported, not used to select)",
+  "protocol_source": "train_nlinear_966.build_windows / load_and_normalize (imported verbatim)",
+  "prediction_file": "pred_gradient_boosting_L24_s42.npz"
+}

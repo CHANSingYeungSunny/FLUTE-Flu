@@ -1,0 +1,11 @@
+{
+  "peak_consensus_and_per_L_totals": "PASS",
+  "combined_tables_19_instances_76_model_L_rows": "PASS",
+  "target_conversion_and_no_missing_raw_imputation": "PASS",
+  "pinned_custom_model_source_hashes": "PASS",
+  "shell_syntax_explicit_single_A100_no_arrays": "PASS",
+  "python_source_parse": "PASS",
+  "tiny_random_model_runtime_tests": "PASS; full pretrained GPU jobs NOT RUN",
+  "cluster_submission": "NOT_ATTEMPTED: user requested preparation; network unavailable",
+  "full_C2_or_LLM_MSE": "UNAVAILABLE: no full experiment executed"
+}

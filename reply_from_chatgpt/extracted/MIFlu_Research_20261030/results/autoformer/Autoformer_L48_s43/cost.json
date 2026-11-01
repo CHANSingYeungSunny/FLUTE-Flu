@@ -1,0 +1,15 @@
+{
+  "model": "Autoformer",
+  "L": 48,
+  "seed": 43,
+  "fit_and_val_seconds": 12.478026527000111,
+  "test_inference_seconds": 0.053874141999585845,
+  "test_ms_per_origin": 0.36900097259990305,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.0034810835191665824,
+  "parameters": 6631,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "model": "DNN",
+    "L": 60,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 802,
+    "pred_val": 58853.85056602396,
+    "PTE_wk": 1,
+    "PIE_pct": 32.987359242029505,
+    "status": "MatchedNotHit"
+  },
+  {
+    "model": "DNN",
+    "L": 60,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": NaN,
+    "pred_val": NaN,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "Missed"
+  },
+  {
+    "model": "DNN",
+    "L": 60,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 905,
+    "pred_val": 100426.32568547875,
+    "PTE_wk": 0,
+    "PIE_pct": 9.819124885827236,
+    "status": "Hit"
+  },
+  {
+    "model": "DNN",
+    "L": 60,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 850,
+    "pred_val": 66615.52942372113,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  },
+  {
+    "model": "DNN",
+    "L": 60,
+    "seed": 42,
+    "metric": "legacy_k1",
+    "true_row": NaN,
+    "true_val": NaN,
+    "pred_row": 884,
+    "pred_val": 33190.651482041925,
+    "PTE_wk": NaN,
+    "PIE_pct": NaN,
+    "status": "FalsePeak"
+  }
+]

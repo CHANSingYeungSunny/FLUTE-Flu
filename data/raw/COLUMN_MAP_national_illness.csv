@@ -1,0 +1,10 @@
+author_column,author_position,essay_variable,previous_project_column,unit,description
+date,0,Time index (weekly),epiweek,datetime,"Weekly timestamp; the author repo labels it 'date', our earlier reprocessed file split it into epiweek + release_date"
+1,1,% WEIGHTED ILI,% WEIGHTED ILI,percent of visits,"Influenza-like illness, weighted by state population"
+2,2,% UNWEIGHTED ILI,% UNWEIGHTED ILI,percent of visits,"Influenza-like illness, unweighted"
+3,3,AGE 0-4,AGE 0-4,patient count,"ILI visits, age 0-4"
+4,4,AGE 5-24,AGE 5-24,patient count,"ILI visits, age 5-24"
+5,5,ILITOTAL,ILITOTAL,patient count,"Total ILI visits"
+6,6,NUM. OF PROVIDERS,NUM. OF PROVIDERS,count,"Number of reporting providers"
+OT,7,OT,OT,count,"7th channel; the author repo keeps the Time-Series-Library target name 'OT'"
+release_date,-1,(no author counterpart),release_date,datetime,"Present ONLY in our earlier reprocessed file; dropped when using the author's file"

@@ -1,0 +1,15 @@
+{
+  "model": "KNN",
+  "L": 60,
+  "seed": 43,
+  "fit_and_val_seconds": 0.013184454000111145,
+  "test_inference_seconds": 0.008246831999713322,
+  "test_ms_per_origin": 0.06154352238592031,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 5.953134999951241e-06,
+  "parameters": null,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "candidate": 0,
+    "config": {
+      "max_iter": 60,
+      "max_leaf_nodes": 7,
+      "learning_rate": 0.05,
+      "l2_regularization": 1.0
+    },
+    "val_mse": 0.22455096243557665,
+    "best_epoch": null,
+    "seconds": 6.170799076000549,
+    "curve": []
+  }
+]

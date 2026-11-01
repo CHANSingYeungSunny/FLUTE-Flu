@@ -1,0 +1,22 @@
+{
+  "track": "EXPANDED_EXPLORATORY_966",
+  "model": "TimesNet",
+  "L": 60,
+  "seed": 43,
+  "config_sha256": "0c96b39bf6132ad9598062af9fdd3096aaca4e85c6036d580ac6136b9397b1a0",
+  "dataset_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "reference_pair_anchor": "966|L24|seed42",
+  "cell_pair_key": "966|L60|seed43",
+  "val_mse": 0.2957792282104492,
+  "selected_candidate": 0,
+  "best_epoch": 3,
+  "uses_text": false,
+  "mse_z_all7": 2.185265371201747,
+  "mae_z_all7": 0.9568825686687135,
+  "mse_z_ili": 4.3858186635854155,
+  "mae_z_ili": 1.288572989029935,
+  "mse_counts2_ili": 355500216.278438,
+  "mae_counts_ili": 11601.218926277801,
+  "n_origins": 134,
+  "n_elements": 56280
+}

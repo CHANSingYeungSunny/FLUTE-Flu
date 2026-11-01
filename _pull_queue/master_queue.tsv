@@ -1,0 +1,213 @@
+task_id	kind	model	L	seed	priority	env	state	attempts	last_job	note
+miflu_L36_s2027	miflu_cell	MIFlu	36	2027	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.400796
+miflu_L36_s2028	miflu_cell	MIFlu	36	2028	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.302717
+miflu_L36_s2029	miflu_cell	MIFlu	36	2029	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.404061
+miflu_L36_s2030	miflu_cell	MIFlu	36	2030	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.328807
+miflu_L48_s2022	miflu_cell	MIFlu	48	2022	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.711215
+miflu_L48_s2023	miflu_cell	MIFlu	48	2023	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.663857
+miflu_L48_s2024	miflu_cell	MIFlu	48	2024	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.879495
+miflu_L48_s2025	miflu_cell	MIFlu	48	2025	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.723161
+miflu_L48_s2026	miflu_cell	MIFlu	48	2026	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.620327
+miflu_L48_s2027	miflu_cell	MIFlu	48	2027	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.628296
+miflu_L48_s2028	miflu_cell	MIFlu	48	2028	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.588157
+miflu_L48_s2029	miflu_cell	MIFlu	48	2029	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.570881
+miflu_L48_s2030	miflu_cell	MIFlu	48	2030	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.675020
+miflu_L60_s2021	miflu_cell	MIFlu	60	2021	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.599641
+miflu_L60_s2022	miflu_cell	MIFlu	60	2022	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.664878
+miflu_L60_s2023	miflu_cell	MIFlu	60	2023	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.821282
+miflu_L60_s2024	miflu_cell	MIFlu	60	2024	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.915250
+miflu_L60_s2026	miflu_cell	MIFlu	60	2026	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.984315
+miflu_L60_s2027	miflu_cell	MIFlu	60	2027	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.614602
+miflu_L60_s2028	miflu_cell	MIFlu	60	2028	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.401814
+miflu_L60_s2029	miflu_cell	MIFlu	60	2029	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.520661
+miflu_L60_s2030	miflu_cell	MIFlu	60	2030	P0	hpc	TODO	0	-	retrain+7var export+oracle gate; expected test_mse_all=1.895393
+qwen25_1_5b_L24_s42	llm_cell	Qwen/Qwen2.5-1.5B	24	42	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L24_s43	llm_cell	Qwen/Qwen2.5-1.5B	24	43	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L24_s44	llm_cell	Qwen/Qwen2.5-1.5B	24	44	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L36_s42	llm_cell	Qwen/Qwen2.5-1.5B	36	42	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L36_s43	llm_cell	Qwen/Qwen2.5-1.5B	36	43	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L36_s44	llm_cell	Qwen/Qwen2.5-1.5B	36	44	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L48_s42	llm_cell	Qwen/Qwen2.5-1.5B	48	42	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L48_s43	llm_cell	Qwen/Qwen2.5-1.5B	48	43	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L48_s44	llm_cell	Qwen/Qwen2.5-1.5B	48	44	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L60_s42	llm_cell	Qwen/Qwen2.5-1.5B	60	42	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L60_s43	llm_cell	Qwen/Qwen2.5-1.5B	60	43	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+qwen25_1_5b_L60_s44	llm_cell	Qwen/Qwen2.5-1.5B	60	44	P1	hpc	TODO	0	-	first real LLM benchmark row; revision already pinned in innovation/assets.py; params_b=1.5 bs=8
+probe_ds_r1_distill_qwen1_5b	llm_probe	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (qwen2 arch; revision sha not yet pinned in this repo)
+ds_r1_distill_qwen1_5b_L24_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L24_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L24_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L36_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L36_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L36_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L48_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L48_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L48_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L60_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L60_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+ds_r1_distill_qwen1_5b_L60_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	qwen2 arch; revision sha not yet pinned in this repo; params_b=1.5 bs=8; revision unpinned until the probe runs
+probe_tencent_penguin_encoder	llm_probe	tencent/Penguin-Encoder	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (0.4B feature-extraction native; mean-pooling read-out must be verified)
+tencent_penguin_encoder_L24_s42	llm_cell	tencent/Penguin-Encoder	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L24_s43	llm_cell	tencent/Penguin-Encoder	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L24_s44	llm_cell	tencent/Penguin-Encoder	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L36_s42	llm_cell	tencent/Penguin-Encoder	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L36_s43	llm_cell	tencent/Penguin-Encoder	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L36_s44	llm_cell	tencent/Penguin-Encoder	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L48_s42	llm_cell	tencent/Penguin-Encoder	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L48_s43	llm_cell	tencent/Penguin-Encoder	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L48_s44	llm_cell	tencent/Penguin-Encoder	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L60_s42	llm_cell	tencent/Penguin-Encoder	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L60_s43	llm_cell	tencent/Penguin-Encoder	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+tencent_penguin_encoder_L60_s44	llm_cell	tencent/Penguin-Encoder	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	0.4B feature-extraction native; mean-pooling read-out must be verified; params_b=0.4 bs=8; revision unpinned until the probe runs
+probe_tencent_hunyuan_1p8b_instruct	llm_probe	tencent/Hunyuan-1.8B-Instruct	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (2B; plain numeric prompt, chat template must not be applied)
+tencent_hunyuan_1p8b_instruct_L24_s42	llm_cell	tencent/Hunyuan-1.8B-Instruct	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L24_s43	llm_cell	tencent/Hunyuan-1.8B-Instruct	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L24_s44	llm_cell	tencent/Hunyuan-1.8B-Instruct	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L36_s42	llm_cell	tencent/Hunyuan-1.8B-Instruct	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L36_s43	llm_cell	tencent/Hunyuan-1.8B-Instruct	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L36_s44	llm_cell	tencent/Hunyuan-1.8B-Instruct	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L48_s42	llm_cell	tencent/Hunyuan-1.8B-Instruct	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L48_s43	llm_cell	tencent/Hunyuan-1.8B-Instruct	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L48_s44	llm_cell	tencent/Hunyuan-1.8B-Instruct	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L60_s42	llm_cell	tencent/Hunyuan-1.8B-Instruct	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L60_s43	llm_cell	tencent/Hunyuan-1.8B-Instruct	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_1p8b_instruct_L60_s44	llm_cell	tencent/Hunyuan-1.8B-Instruct	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	2B; plain numeric prompt, chat template must not be applied; params_b=1.8 bs=8; revision unpinned until the probe runs
+probe_tencent_wemm_embedding_2b	llm_probe	tencent/WeMM-Embedding-2B	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (3B embedding model; must return hidden states, not only a pooled vector)
+tencent_wemm_embedding_2b_L24_s42	llm_cell	tencent/WeMM-Embedding-2B	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L24_s43	llm_cell	tencent/WeMM-Embedding-2B	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L24_s44	llm_cell	tencent/WeMM-Embedding-2B	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L36_s42	llm_cell	tencent/WeMM-Embedding-2B	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L36_s43	llm_cell	tencent/WeMM-Embedding-2B	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L36_s44	llm_cell	tencent/WeMM-Embedding-2B	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L48_s42	llm_cell	tencent/WeMM-Embedding-2B	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L48_s43	llm_cell	tencent/WeMM-Embedding-2B	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L48_s44	llm_cell	tencent/WeMM-Embedding-2B	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L60_s42	llm_cell	tencent/WeMM-Embedding-2B	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L60_s43	llm_cell	tencent/WeMM-Embedding-2B	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_2b_L60_s44	llm_cell	tencent/WeMM-Embedding-2B	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	3B embedding model; must return hidden states, not only a pooled vector; params_b=3 bs=8; revision unpinned until the probe runs
+probe_tencent_youtu_hichunk	llm_probe	tencent/Youtu-HiChunk	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (4B; arch support check)
+tencent_youtu_hichunk_L24_s42	llm_cell	tencent/Youtu-HiChunk	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L24_s43	llm_cell	tencent/Youtu-HiChunk	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L24_s44	llm_cell	tencent/Youtu-HiChunk	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L36_s42	llm_cell	tencent/Youtu-HiChunk	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L36_s43	llm_cell	tencent/Youtu-HiChunk	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L36_s44	llm_cell	tencent/Youtu-HiChunk	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L48_s42	llm_cell	tencent/Youtu-HiChunk	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L48_s43	llm_cell	tencent/Youtu-HiChunk	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L48_s44	llm_cell	tencent/Youtu-HiChunk	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L60_s42	llm_cell	tencent/Youtu-HiChunk	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L60_s43	llm_cell	tencent/Youtu-HiChunk	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_youtu_hichunk_L60_s44	llm_cell	tencent/Youtu-HiChunk	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; arch support check; params_b=4 bs=8; revision unpinned until the probe runs
+probe_tencent_hunyuan_4b_instruct	llm_probe	tencent/Hunyuan-4B-Instruct	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (4B; chat template stripped)
+tencent_hunyuan_4b_instruct_L24_s42	llm_cell	tencent/Hunyuan-4B-Instruct	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L24_s43	llm_cell	tencent/Hunyuan-4B-Instruct	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L24_s44	llm_cell	tencent/Hunyuan-4B-Instruct	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L36_s42	llm_cell	tencent/Hunyuan-4B-Instruct	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L36_s43	llm_cell	tencent/Hunyuan-4B-Instruct	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L36_s44	llm_cell	tencent/Hunyuan-4B-Instruct	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L48_s42	llm_cell	tencent/Hunyuan-4B-Instruct	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L48_s43	llm_cell	tencent/Hunyuan-4B-Instruct	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L48_s44	llm_cell	tencent/Hunyuan-4B-Instruct	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L60_s42	llm_cell	tencent/Hunyuan-4B-Instruct	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L60_s43	llm_cell	tencent/Hunyuan-4B-Instruct	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+tencent_hunyuan_4b_instruct_L60_s44	llm_cell	tencent/Hunyuan-4B-Instruct	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	4B; chat template stripped; params_b=4 bs=8; revision unpinned until the probe runs
+probe_tencent_wemm_embedding_4b	llm_probe	tencent/WeMM-Embedding-4B	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (5B; best official embedding candidate)
+tencent_wemm_embedding_4b_L24_s42	llm_cell	tencent/WeMM-Embedding-4B	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L24_s43	llm_cell	tencent/WeMM-Embedding-4B	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L24_s44	llm_cell	tencent/WeMM-Embedding-4B	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L36_s42	llm_cell	tencent/WeMM-Embedding-4B	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L36_s43	llm_cell	tencent/WeMM-Embedding-4B	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L36_s44	llm_cell	tencent/WeMM-Embedding-4B	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L48_s42	llm_cell	tencent/WeMM-Embedding-4B	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L48_s43	llm_cell	tencent/WeMM-Embedding-4B	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L48_s44	llm_cell	tencent/WeMM-Embedding-4B	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L60_s42	llm_cell	tencent/WeMM-Embedding-4B	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L60_s43	llm_cell	tencent/WeMM-Embedding-4B	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+tencent_wemm_embedding_4b_L60_s44	llm_cell	tencent/WeMM-Embedding-4B	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	5B; best official embedding candidate; params_b=5 bs=8; revision unpinned until the probe runs
+probe_tencent_contextpilot_8b	llm_probe	tencent/ContextPilot-8B	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (8B; arch support check)
+tencent_contextpilot_8b_L24_s42	llm_cell	tencent/ContextPilot-8B	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L24_s43	llm_cell	tencent/ContextPilot-8B	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L24_s44	llm_cell	tencent/ContextPilot-8B	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L36_s42	llm_cell	tencent/ContextPilot-8B	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L36_s43	llm_cell	tencent/ContextPilot-8B	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L36_s44	llm_cell	tencent/ContextPilot-8B	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L48_s42	llm_cell	tencent/ContextPilot-8B	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L48_s43	llm_cell	tencent/ContextPilot-8B	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L48_s44	llm_cell	tencent/ContextPilot-8B	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L60_s42	llm_cell	tencent/ContextPilot-8B	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L60_s43	llm_cell	tencent/ContextPilot-8B	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_contextpilot_8b_L60_s44	llm_cell	tencent/ContextPilot-8B	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; arch support check; params_b=8 bs=4; revision unpinned until the probe runs
+probe_tencent_hunyuan_7b_instruct	llm_probe	tencent/Hunyuan-7B-Instruct	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (8B; chat template stripped)
+tencent_hunyuan_7b_instruct_L24_s42	llm_cell	tencent/Hunyuan-7B-Instruct	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L24_s43	llm_cell	tencent/Hunyuan-7B-Instruct	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L24_s44	llm_cell	tencent/Hunyuan-7B-Instruct	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L36_s42	llm_cell	tencent/Hunyuan-7B-Instruct	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L36_s43	llm_cell	tencent/Hunyuan-7B-Instruct	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L36_s44	llm_cell	tencent/Hunyuan-7B-Instruct	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L48_s42	llm_cell	tencent/Hunyuan-7B-Instruct	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L48_s43	llm_cell	tencent/Hunyuan-7B-Instruct	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L48_s44	llm_cell	tencent/Hunyuan-7B-Instruct	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L60_s42	llm_cell	tencent/Hunyuan-7B-Instruct	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L60_s43	llm_cell	tencent/Hunyuan-7B-Instruct	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+tencent_hunyuan_7b_instruct_L60_s44	llm_cell	tencent/Hunyuan-7B-Instruct	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	8B; chat template stripped; params_b=8 bs=4; revision unpinned until the probe runs
+probe_tencent_kalm_gemma3_12b	llm_probe	tencent/KaLM-Embedding-Gemma3-12B	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (12B Gemma-3; may need the transformers-5 env)
+tencent_kalm_gemma3_12b_L24_s42	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	24	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L24_s43	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	24	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L24_s44	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	24	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L36_s42	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	36	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L36_s43	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	36	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L36_s44	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	36	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L48_s42	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	48	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L48_s43	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	48	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L48_s44	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	48	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L60_s42	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	60	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L60_s43	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	60	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+tencent_kalm_gemma3_12b_L60_s44	llm_cell	tencent/KaLM-Embedding-Gemma3-12B	60	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	12B Gemma-3; may need the transformers-5 env; params_b=12 bs=2; revision unpinned until the probe runs
+probe_tencent_contextpilot_14b	llm_probe	tencent/ContextPilot-14B	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (15B; bf16 ~30 GB, batch 2-4)
+tencent_contextpilot_14b_L24_s42	llm_cell	tencent/ContextPilot-14B	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L24_s43	llm_cell	tencent/ContextPilot-14B	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L24_s44	llm_cell	tencent/ContextPilot-14B	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L36_s42	llm_cell	tencent/ContextPilot-14B	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L36_s43	llm_cell	tencent/ContextPilot-14B	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L36_s44	llm_cell	tencent/ContextPilot-14B	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L48_s42	llm_cell	tencent/ContextPilot-14B	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L48_s43	llm_cell	tencent/ContextPilot-14B	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L48_s44	llm_cell	tencent/ContextPilot-14B	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L60_s42	llm_cell	tencent/ContextPilot-14B	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L60_s43	llm_cell	tencent/ContextPilot-14B	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+tencent_contextpilot_14b_L60_s44	llm_cell	tencent/ContextPilot-14B	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	15B; bf16 ~30 GB, batch 2-4; params_b=15 bs=2; revision unpinned until the probe runs
+probe_qwen3p8_27b_fp8	llm_probe	Qwen/Qwen3.8-27B-FP8	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned)
+qwen3p8_27b_fp8_L24_s42	llm_cell	Qwen/Qwen3.8-27B-FP8	24	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L24_s43	llm_cell	Qwen/Qwen3.8-27B-FP8	24	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L24_s44	llm_cell	Qwen/Qwen3.8-27B-FP8	24	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L36_s42	llm_cell	Qwen/Qwen3.8-27B-FP8	36	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L36_s43	llm_cell	Qwen/Qwen3.8-27B-FP8	36	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L36_s44	llm_cell	Qwen/Qwen3.8-27B-FP8	36	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L48_s42	llm_cell	Qwen/Qwen3.8-27B-FP8	48	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L48_s43	llm_cell	Qwen/Qwen3.8-27B-FP8	48	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L48_s44	llm_cell	Qwen/Qwen3.8-27B-FP8	48	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L60_s42	llm_cell	Qwen/Qwen3.8-27B-FP8	60	42	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L60_s43	llm_cell	Qwen/Qwen3.8-27B-FP8	60	43	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+qwen3p8_27b_fp8_L60_s44	llm_cell	Qwen/Qwen3.8-27B-FP8	60	44	P2	llm	BLOCKED_MISSING_WEIGHTS	0	-	fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned; params_b=27.36 bs=1; revision unpinned until the probe runs
+probe_ds_r1_distill_32b	llm_probe	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	-	-	P2	hpc	TODO	0	-	CPU only: pin revision + download if missing + 2-layer hidden-state smoke (33B; needs load_in_8bit; the 66 GB transfer is incomplete)
+ds_r1_distill_32b_L24_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	24	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L24_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	24	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L24_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	24	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L36_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	36	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L36_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	36	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L36_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	36	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L48_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	48	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L48_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	48	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L48_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	48	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L60_s42	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	60	42	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L60_s43	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	60	43	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+ds_r1_distill_32b_L60_s44	llm_cell	deepseek-ai/DeepSeek-R1-Distill-Qwen-32B	60	44	P2	hpc	BLOCKED_MISSING_WEIGHTS	0	-	33B; needs load_in_8bit; the 66 GB transfer is incomplete; params_b=33 bs=1; revision unpinned until the probe runs
+p3_table6_hhs10_regional	unimplemented	-	-	-	P3	-	TODO	0	-	Table VI (regional HHS-10) run harness does not exist; placeholder from WORK_BREAKDOWN 13.D
+p3_table8_ablations	unimplemented	-	-	-	P3	-	TODO	0	-	Table VIII ablation arms have no runner; placeholder from WORK_BREAKDOWN 13.D
+p3_table9_training_time	unimplemented	-	-	-	P3	-	TODO	0	-	Table IX regional training time depends on the Table VI config; placeholder
+p3_rolling_origin_5fold	unimplemented	-	-	-	P3	-	TODO	0	-	rolling-origin (5 folds) needs a walk-forward split + retraining loop; placeholder
+final_import_miflu	finalise	-	-	-	P4	hpc	TODO	0	-	scripts/import_miflu_predictions.py over every DONE MIFlu cell; records n_cells. Idempotent.
+final_miflu_oracle	finalise	-	-	-	P4	hpc	TODO	0	-	scripts/verify_miflu_oracle.py - MUST print PASS with per-seed |d| <= 1e-5; output stored verbatim.
+final_analysis_chain	finalise	-	-	-	P4	hpc	TODO	0	-	analysis_expanded -> analysis_postprocess -> seasonal_naive_baseline -> plot_bench -> plot_pareto: MSE/MAE, PTE/PIE, K&S, CRPS/WIS, every figure.
+final_verify_bench	finalise	-	-	-	P4	hpc	TODO	0	-	verify_bench_unchanged.py; re-freeze the expected table when rows legitimately grow (keep the pre-freeze copy).
+final_llm_import	finalise	-	-	-	P4	hpc	TODO	0	-	per-LLM-group import + analysis refresh as LLM cells land; tolerates missing arms and reports n_arms.

@@ -1,0 +1,15 @@
+{
+  "model": "DecisionTree",
+  "L": 36,
+  "seed": 42,
+  "fit_and_val_seconds": 1.3562219490004281,
+  "test_inference_seconds": 0.0003083000001424807,
+  "test_ms_per_origin": 0.0019512658236865868,
+  "device": "cpu",
+  "gpu_hours": 0.0,
+  "cpu_wall_hours": 0.00037681395805571407,
+  "parameters": null,
+  "flops": null,
+  "uses_text": false,
+  "cost_scope": "includes all validation candidates; excludes environment setup; FLOPs unmeasured"
+}

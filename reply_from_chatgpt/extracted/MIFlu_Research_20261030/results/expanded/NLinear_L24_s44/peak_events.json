@@ -1,0 +1,41 @@
+[
+  {
+    "model": "NLinear",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 801,
+    "true_val": 87824.99823964015,
+    "pred_row": 801,
+    "pred_val": 85417.99510229751,
+    "PTE_wk": 0,
+    "PIE_pct": 2.740681110832316,
+    "status": "Hit"
+  },
+  {
+    "model": "NLinear",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 854,
+    "true_val": 70055.99979036488,
+    "pred_row": 854,
+    "pred_val": 72785.56030616537,
+    "PTE_wk": 0,
+    "PIE_pct": 3.896255172959361,
+    "status": "Hit"
+  },
+  {
+    "model": "NLinear",
+    "L": 24,
+    "seed": 44,
+    "metric": "legacy_k1",
+    "true_row": 905,
+    "true_val": 111361.00149653107,
+    "pred_row": 906,
+    "pred_val": 111286.96377045289,
+    "PTE_wk": 1,
+    "PIE_pct": 0.06648442909386798,
+    "status": "Hit"
+  }
+]

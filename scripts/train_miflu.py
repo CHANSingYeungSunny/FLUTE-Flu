@@ -33,8 +33,9 @@ from cdc_calendar import attach_calendar
 #   NOTE: 论文 Table X 仅称 "'OT' feature for long-term forecasting task"，未给公式、
 #   未称黑箱。OT=num_patients（全量）是基于 Fig 2(a) 图表量级反推出的实现选择，
 #   非论文明文定义；训练代码从未做 /100 缩放；StandardScaler 使常数缩放不影响训练。
-from configs import (CONFIG, VAR_COLS, set_seed,
+from configs import (CONFIG, DATA_PROFILES, VAR_COLS, set_seed,
                      resolve_profile, split_for_profile, verify_profile_hash)
+import walk_forward
 
 BASE_DIR = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
@@ -69,7 +70,7 @@ def log(msg=""):
 def log_close():
     if _log_file: _log_file.close()
 
-def load_and_normalize():
+def load_and_normalize(split=None):
     """Fit the StandardScaler on the TRAIN split only and persist it.
 
     ADVISOR Q3: the scaler's mean_/scale_ are written to
@@ -80,26 +81,51 @@ def load_and_normalize():
 
     The numerics are unchanged from the original implementation (float32 array,
     population std, +1e-8 epsilon) so previously published MSE/MAE remain valid.
+
+    `split` is the rolling-origin hook (`scripts/walk_forward.py`): when given it
+    overrides the profile's `(train_end, val_end)` borders and the scaler is
+    fitted on THAT fold's training prefix only. Because a fold scaler must never
+    replace the canonical one, the JSON is **not** written in that mode (the
+    canonical file keeps the protocol behind every published number).
+    `split=None` (the default) is the existing behaviour, byte-identical.
     """
     df = pd.read_csv(DATA_PATH)
+    # The author's released CSV names its numeric columns '1'..'6','OT'.
+    # `author_repo_966` renames them in memory to the essay's variable names so
+    # the file on disk can stay byte-identical to the author's.
+    _cmap = resolve_profile(ACTIVE_PROFILE).get("column_map")
+    if _cmap:
+        df = df.rename(columns=_cmap)
+        log(f"Profile {ACTIVE_PROFILE}: renamed columns via column_map -> {list(df.columns)}")
     # Full 2002-2021 data — distribution shift makes text embeddings valuable
     data = df[VAR_COLS].values.astype(np.float32)
     n = len(data)
     # Profile-aware split: project_1025 -> 717/819, author_966 -> 676/773.
     t_end, v_end = split_for_profile(ACTIVE_PROFILE, n)
+    if split is not None:
+        t_end, v_end = int(split[0]), int(split[1])
+        if not (0 < t_end < v_end <= n):
+            raise ValueError(
+                f"invalid rolling-origin split {split} for n={n}: need "
+                f"0 < train_end < val_end <= n")
 
     bundle = ScalerBundle.fit_from_train(df, VAR_COLS, train_end=t_end, val_end=v_end)
-    bundle.save_json(SCALER_PATH)
-    log(f"Scaler persisted -> {SCALER_PATH} "
-        f"(train_end={bundle.train_end}, val_end={bundle.val_end})")
+    if split is None:
+        bundle.save_json(SCALER_PATH)
+        log(f"Scaler persisted -> {SCALER_PATH} "
+            f"(train_end={bundle.train_end}, val_end={bundle.val_end})")
+    else:
+        log(f"ROLLING-ORIGIN fold scaler fitted on rows[0:{t_end}) only — the "
+            f"canonical scaler file {SCALER_PATH} is NOT overwritten")
 
     train_mean = bundle.mean_.reshape(1, -1).astype(np.float32)
     train_std = bundle.scale_.reshape(1, -1).astype(np.float32)
     data_norm = (data - train_mean) / train_std
     log(f"Data: {n} total | Train={t_end} | Val={v_end-t_end} | Test={n-v_end}")
     return {"data_norm": data_norm, "train_end": t_end, "val_end": v_end,
-            "train_df": df.iloc[:t_end], "train_mean": train_mean, "train_std": train_std,
-            "scaler": bundle}
+            "n": n, "train_df": df.iloc[:t_end], "train_mean": train_mean,
+            "train_std": train_std, "scaler": bundle,
+            "split_source": "fold" if split is not None else "profile"}
 
 def build_windows(data_norm, T, L, train_end, val_end, containment="start"):
     """Build sliding train/val/test windows with explicit split labels.
@@ -157,15 +183,64 @@ def build_windows(data_norm, T, L, train_end, val_end, containment="start"):
     return (X[splits==0], Y[splits==0], X[splits==1], Y[splits==1],
             X[splits==2], Y[splits==2], split_info)
 
-def train_epoch(model, loader, opt, crit, dev, prompt_cache, train_mean, train_std, clip=1.0):
+AUTHOR_TEXT_EMB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                   "assets", "text_emb")
+
+
+def load_author_text_emb(L, device="cpu"):
+    """Load the author's PRECOMPUTED text embedding for horizon L.
+
+    `recovery/author_repo/models/GPT4TS_lora.py` L132 does:
+
+        text_emb = np.loadtxt('./dataset/illness/text_emb/'
+                              'text_emb_label_0507_' + str(self.pred_len) + '.txt')
+        text_emb = np.tile(text_emb, (B, 1, 1))
+
+    i.e. a STATIC (n_tokens, 768) matrix, identical for every sample, tiled
+    across the batch. It is NOT a live GPT-2 encoding of a prompt. Using the
+    file directly is the only way to make the text branch byte-identical.
+
+    Returns: (1, n_tokens, 768) float32 tensor.
+    """
+    path = os.path.join(AUTHOR_TEXT_EMB_DIR, f"text_emb_label_0507_{L}.txt")
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f"author text embedding not found: {path}\n"
+            f"Stage the 4 files from "
+            f"recovery/author_repo/dataset/illness/text_emb/ into {AUTHOR_TEXT_EMB_DIR}")
+    arr = np.loadtxt(path, dtype=np.float64)
+    arr = np.atleast_2d(arr)
+    t = torch.tensor(arr, dtype=torch.float32, device=device).unsqueeze(0)
+    return t
+
+
+def _text_batch(prompt_cache, bsz):
+    """Expand one static text embedding to the batch, or `None` for the no-text arm.
+
+    `--no-text` / `--text-embedder none` (Table VIII "w/o multimodality") pass
+    `prompt_cache=None` all the way down; `MIFlu.forward` then substitutes a zeros
+    tensor, which `ForecastingLLM(use_text=False)` never concatenates. Keeping the
+    `None` path explicit is what makes the ablation a *switch* rather than a
+    silently different tensor.
+    """
+    if prompt_cache is None:
+        return None
+    return (prompt_cache.expand(bsz, -1, -1) if prompt_cache.shape[0] == 1
+            else prompt_cache[:bsz])
+
+
+def train_epoch(model, loader, opt, crit, dev, prompt_cache, train_mean, train_std, clip=0.0):
     model.train()
     loss_sum = 0.0
     for bx, by in loader:
         bx, by = bx.to(dev), by.to(dev)
         bsz = bx.size(0)
-        ht = prompt_cache.expand(bsz, -1, -1) if prompt_cache.shape[0] == 1 else prompt_cache[:bsz]
+        # Single-variable samples: (B, T, 1) → (B, 1, T) for model
+        if bx.dim() == 3 and bx.shape[2] == 1:
+            bx = bx.permute(0, 2, 1)  # (B, T, 1) → (B, 1, T)
+            by = by.permute(0, 2, 1)  # (B, L, 1) → (B, 1, L)
+        ht = _text_batch(prompt_cache, bsz)
         opt.zero_grad()
-        # yh_rev: StandardScaler space (metrics/loss) ; yh_phys: physical (unused in train)
         yh_rev, _, _, _ = model(bx, htext=ht, train_mean=train_mean, train_std=train_std)
         L = crit(yh_rev, by)
         if not torch.isfinite(L):
@@ -173,10 +248,38 @@ def train_epoch(model, loader, opt, crit, dev, prompt_cache, train_mean, train_s
             opt.zero_grad()
             continue
         L.backward()
-        torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
+        if clip > 0:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
         opt.step()
         loss_sum += L.item() * bsz
     return loss_sum / len(loader.dataset)
+
+def forward_all_vars(model, bx, ht, train_mean, train_std):
+    """Forward that accepts ANY number of variables.
+
+    The model is fully channel-independent (`author_faithful` path): each
+    variable runs through GPT-2 on its own and the flatten head is
+    Linear(num_patches*D, L) per variable. So a model built with N=1 and a
+    model built with N=7 compute exactly the same function; N only decides
+    how many variables are packed into one forward call.
+
+    When the DataLoader yields all-variable windows (B, N, T) but the model
+    was built for single-variable author-compatible batching (N=1), loop over
+    the variables and stack the results back to (B, N, L).
+    """
+    n_var = bx.shape[1]
+    if model.N == n_var:
+        return model(bx, htext=ht, train_mean=train_mean, train_std=train_std)
+    if model.N != 1:
+        raise ValueError(f"model.N={model.N} cannot consume {n_var} variables")
+    outs = []
+    for j in range(n_var):
+        tm_j = train_mean[:, j:j + 1]
+        ts_j = train_std[:, j:j + 1]
+        outs.append(model(bx[:, j:j + 1, :], htext=ht,
+                          train_mean=tm_j, train_std=ts_j))
+    return tuple(torch.cat([o[k] for o in outs], dim=1) for k in range(4))
+
 
 @torch.no_grad()
 def evaluate(model, loader, crit, dev, prompt_cache, train_mean, train_std, diag=False):
@@ -199,9 +302,10 @@ def evaluate(model, loader, crit, dev, prompt_cache, train_mean, train_std, diag
     for i, (bx, by) in enumerate(loader):
         bx = bx.to(dev)
         bsz = bx.size(0)
-        ht = prompt_cache.expand(bsz, -1, -1) if prompt_cache.shape[0] == 1 else prompt_cache[:bsz]
+        ht = _text_batch(prompt_cache, bsz)
         # Metrics MUST be in StandardScaler space (Section V-B): yh_rev vs Y (StdScaler target)
-        yh_rev, yh_phys, _, _ = model(bx, htext=ht, train_mean=train_mean, train_std=train_std)
+        yh_rev, yh_phys, _, _ = forward_all_vars(
+            model, bx, ht, train_mean, train_std)
         preds.append(yh_rev.cpu().numpy()); targets.append(by.numpy())
         # Physical track: prediction comes from the model; target is inverted here.
         preds_phys.append(yh_phys.cpu().numpy())
@@ -213,6 +317,8 @@ def evaluate(model, loader, crit, dev, prompt_cache, train_mean, train_std, diag
     p = np.concatenate(preds); t = np.concatenate(targets)
     mse_all = np.mean((p-t)**2); mae_all = np.mean(np.abs(p-t))
     mse_ili = np.mean((p[:,4,:]-t[:,4,:])**2); mae_ili = np.mean(np.abs(p[:,4,:]-t[:,4,:]))
+    # % WEIGHTED ILI (feat 0) — the metric the paper's test loader actually reports
+    mse_wili = np.mean((p[:,0,:]-t[:,0,:])**2); mae_wili = np.mean(np.abs(p[:,0,:]-t[:,0,:]))
     # ---- SUPPLEMENTARY: physical-unit (patient-count) metrics ----
     pp = np.concatenate(preds_phys); tt_p = np.concatenate(targets_phys)
     mse_ili_phys = float(np.mean((pp[:, 4, :] - tt_p[:, 4, :]) ** 2))
@@ -225,13 +331,14 @@ def evaluate(model, loader, crit, dev, prompt_cache, train_mean, train_std, diag
     else:
         pcc_ili = float("nan")
     if diag:
-        log(f"    [DIAG] MSE_AllVars={mse_all:.6f} MSE_ILITotal={mse_ili:.6f} PCC_ILI={pcc_ili:.4f}")
+        log(f"    [DIAG] MSE_AllVars={mse_all:.6f} MSE_ILITotal={mse_ili:.6f} MSE_WeightedILI={mse_wili:.6f} PCC_ILI={pcc_ili:.4f}")
         log(f"    [DIAG] SUPPLEMENTARY physical units: MSE_ILITotal={mse_ili_phys:.1f} "
             f"patients^2  MAE_ILITotal={mae_ili_phys:.1f} patients")
     # Return raw ILITOTAL (channel 4) series for the per-horizon prediction CSV.
     # Shapes: (n_windows, L) — caller assigns the correct `split` label.
     return (mse_all, mae_all, mse_ili, mae_ili, pcc_ili,
-            t[:, 4, :], p[:, 4, :], mse_ili_phys, mae_ili_phys)
+            t[:, 4, :], p[:, 4, :], mse_ili_phys, mae_ili_phys,
+            mse_wili, mae_wili)
 
 def train_L(data_dict, L, config, device, prompt_cache, seed=42, containment="start"):
     """Train ONE repetition for horizon L. Returns metrics + the per-rep checkpoint
@@ -263,14 +370,36 @@ def train_L(data_dict, L, config, device, prompt_cache, seed=42, containment="st
             f"{int(test_target_starts.min())} but val_end={data_dict['val_end']}")
     log(f"  L={L}: leakage guard OK — min test target-start index "
         f"= {int(test_target_starts.min())}, containment={containment}")
-    tl = DataLoader(TensorDataset(torch.from_numpy(Xt), torch.from_numpy(Yt)),
-                    batch_size=config["batch_size"], shuffle=True)
+    # ── Author-compatible single-variable batch composition for TRAINING ──
+    # Author's Dataset_Custom returns (T, 1) per sample — one (window, variable)
+    # pair per sample. batch_size=16 = 16 pairs per gradient step.
+    # We flatten (n_windows, N, T) → (n_windows*N, T, 1) to match exactly.
+    N = config["N"]; T_len = config["T"]
+    Xt_sv = Xt.reshape(-1, T_len, 1)  # (n_train*N, T, 1)
+    Yt_sv = Yt.reshape(-1, L, 1)      # (n_train*N, L, 1)
+    # Training: single-variable samples (author-compatible batching)
+    tl = DataLoader(TensorDataset(torch.from_numpy(Xt_sv), torch.from_numpy(Yt_sv)),
+                    batch_size=config["batch_size"], shuffle=True, drop_last=True)
+    # Val/Test: ALL-variable samples (for 7-var aggregate MSE + per-variable metrics)
     vl = DataLoader(TensorDataset(torch.from_numpy(Xv), torch.from_numpy(Yv)),
-                    batch_size=config["batch_size"], shuffle=False)
+                    batch_size=config["batch_size"], shuffle=True, drop_last=True)
     el = DataLoader(TensorDataset(torch.from_numpy(Xte), torch.from_numpy(Yte)),
-                    batch_size=config["batch_size"], shuffle=False)
-    model = MIFlu(N=config["N"], T=config["T"], L=L, Lp=config["Lp"],
-                  S=config["S"], K=config["K"], lora_r=config["lora_r"], device=device)
+                    batch_size=config["batch_size"], shuffle=False, drop_last=True)
+    # Author-compatible batching builds the model with N=1: the model is
+    # channel-independent, so N only controls how many variables share one
+    # forward call, never the parameters. Evaluation still feeds all 7
+    # variables via forward_all_vars(), which loops channels.
+    _n_model = 1 if os.environ.get("MIFLU_SINGLE_VAR", "1") == "1" else config["N"]
+    model = MIFlu(N=_n_model, T=config["T"], L=L, Lp=config["Lp"],
+                  S=config["S"], K=config["K"], lora_r=config["lora_r"], device=device,
+                  # The author concatenates the raw text embedding with no LayerNorm
+                  # (GPT4TS_lora.py L139). Our text_ln was an extra 1,536 parameters.
+                  use_text_ln=False,
+                  # Table VIII ablation switches: both default True (= the paper's
+                  # config), so an un-flagged run is unchanged.
+                  use_lora=bool(config.get("use_lora", True)),
+                  use_text=bool(config.get("use_text", True)),
+                  flatten_head=(os.environ.get("MIFLU_FLATTEN_HEAD", "1") != "0"))
     opt = torch.optim.Adam([p for p in model.parameters() if p.requires_grad], lr=config["learning_rate"])
     crit = nn.MSELoss()
     best_val = float('inf')
@@ -278,14 +407,20 @@ def train_L(data_dict, L, config, device, prompt_cache, seed=42, containment="st
     best_epoch = -1
     for ep in range(config["epochs"]):  # Fixed 20 epochs per Table IV — no early stopping
         t0 = time.time()
-        tl_loss = train_epoch(model, tl, opt, crit, device, prompt_cache, tm, ts, clip=1.0)
-        v_mse_all, v_mae_all, v_mse_ili, v_mae_ili, _, _, _, _, _ = evaluate(model, vl, crit, device, prompt_cache, tm, ts)
+        tl_loss = train_epoch(model, tl, opt, crit, device, prompt_cache, tm, ts, clip=0)
+        v_mse_all, v_mae_all, v_mse_ili, v_mae_ili, _, _, _, _, _, v_mse_wili, _ = evaluate(model, vl, crit, device, prompt_cache, tm, ts)
         dt = time.time() - t0
         if v_mse_all < best_val:
             best_val = v_mse_all
             best_epoch = ep
             best_state = {k: v.detach().clone() for k, v in model.state_dict().items()}
-        log(f"    ep {ep+1:2d}/{config['epochs']} | train_loss={tl_loss:.6f} | val_mse={v_mse_all:.6f}(All) {v_mse_ili:.4f}(ILI) | val_mae={v_mae_all:.6f} | {dt:.1f}s | GPU={torch.cuda.memory_allocated()/1e9:.2f}GB" if device=="cuda" else f"    ep {ep+1:2d}/{config['epochs']} | train_loss={tl_loss:.6f} | val_mse={v_mse_all:.6f}(All) {v_mse_ili:.4f}(ILI) | val_mae={v_mae_all:.6f} | {dt:.1f}s")
+        log(f"    ep {ep+1:2d}/{config['epochs']} | train_loss={tl_loss:.6f} | val_mse={v_mse_all:.6f}(All) {v_mse_ili:.4f}(ILI) | val_mae={v_mae_all:.6f} | lr={opt.param_groups[0]['lr']:.6f} | {dt:.1f}s | GPU={torch.cuda.memory_allocated()/1e9:.2f}GB" if device=="cuda" else f"    ep {ep+1:2d}/{config['epochs']} | train_loss={tl_loss:.6f} | val_mse={v_mse_all:.6f}(All) {v_mse_ili:.4f}(ILI) | val_mae={v_mae_all:.6f} | lr={opt.param_groups[0]['lr']:.6f} | {dt:.1f}s")
+        # Author's type1 LR schedule: lr = base_lr for ep < 3, then base_lr * 0.9^(ep-2)
+        lr_base = config["learning_rate"]
+        ep1 = ep + 1  # 1-indexed
+        new_lr = lr_base if ep1 < 3 else lr_base * (0.9 ** (ep1 - 3))
+        for pg in opt.param_groups:
+            pg['lr'] = new_lr
     # ---- Stage 5 test-isolation gate ----
     # Test scoring happens ONCE from the separate scoring entry, after every
     # scheduled checkpoint has been selected and locked. While DEFER_TEST=1 the
@@ -307,12 +442,13 @@ def train_L(data_dict, L, config, device, prompt_cache, seed=42, containment="st
                 "test_mse_ili": None, "test_mae_ili": None, "test_pcc_ili": None,
                 "test_mse_ili_phys": None, "test_mae_ili_phys": None,
                 "test_gt_ili": None, "test_pr_ili": None,
+                "test_mse_wili": None, "test_mae_wili": None,
                 "rep_ckpt": rep_ckpt, "best_val": best_val,
                 "best_epoch": best_epoch, "seed": seed,
                 "discarded": False, "test_deferred": True}
 
     (t_mse_all, t_mae_all, t_mse_ili, t_mae_ili, t_pcc_ili, t_gt_ili, t_pr_ili,
-     t_mse_ili_phys, t_mae_ili_phys) = evaluate(
+     t_mse_ili_phys, t_mae_ili_phys, t_mse_wili, t_mae_wili) = evaluate(
         model, el, crit, device, prompt_cache, tm, ts,
         diag=(L == CONFIG["L_list"][0]))
     # ── NaN-rep discipline: discard reps whose test prediction is non-finite ──
@@ -322,8 +458,9 @@ def train_L(data_dict, L, config, device, prompt_cache, seed=42, containment="st
         return {"L": L, "test_mse_all": np.nan, "test_mae_all": np.nan,
                 "test_mse_ili": np.nan, "test_mae_ili": np.nan, "test_pcc_ili": np.nan,
                 "test_mse_ili_phys": np.nan, "test_mae_ili_phys": np.nan,
+                "test_mse_wili": np.nan, "test_mae_wili": np.nan,
                 "rep_ckpt": None, "best_val": np.nan, "seed": seed, "discarded": True}
-    log(f"  L={L} DONE: test_mse={t_mse_all:.6f}(All) {t_mse_ili:.4f}(ILI) test_mae={t_mae_all:.6f} pcc={t_pcc_ili:.4f}")
+    log(f"  L={L} DONE: test_mse={t_mse_all:.6f}(All) {t_mse_ili:.4f}(ILI) {t_mse_wili:.4f}(WILI) test_mae={t_mae_all:.6f} pcc={t_pcc_ili:.4f}")
     # per-rep temp checkpoint; main() keeps only the best-val-loss rep as best_miflu_L{L}.pth
     os.makedirs(CKPT_DIR, exist_ok=True)
     rep_ckpt = os.path.join(CKPT_DIR, f"_rep_miflu_L{L}_seed{seed}.pth")
@@ -332,6 +469,7 @@ def train_L(data_dict, L, config, device, prompt_cache, seed=42, containment="st
     return {"L": L, "test_mse_all": t_mse_all, "test_mae_all": t_mae_all,
             "test_mse_ili": t_mse_ili, "test_mae_ili": t_mae_ili, "test_pcc_ili": t_pcc_ili,
             "test_mse_ili_phys": t_mse_ili_phys, "test_mae_ili_phys": t_mae_ili_phys,
+            "test_mse_wili": t_mse_wili, "test_mae_wili": t_mae_wili,
             "test_gt_ili": t_gt_ili, "test_pr_ili": t_pr_ili,
             "rep_ckpt": rep_ckpt, "best_val": best_val, "seed": seed, "discarded": False}
 
@@ -372,7 +510,11 @@ def export_prediction_csv(data_dict, L, config, device, prompt_cache,
     split_of_idx.update({int(sinfo["target_starts"][k]): "test" for k in sinfo["test_idx"]})
     # Global window index i -> target weeks start at i+T.
     model = MIFlu(N=config["N"], T=config["T"], L=L, Lp=config["Lp"],
-                  S=config["S"], K=config["K"], lora_r=config["lora_r"], device=device)
+                  S=config["S"], K=config["K"], lora_r=config["lora_r"], device=device,
+                  use_text_ln=False,
+                  use_lora=bool(config.get("use_lora", True)),
+                  use_text=bool(config.get("use_text", True)),
+                  flatten_head=(os.environ.get("MIFLU_FLATTEN_HEAD", "1") != "0"))
     model.load_state_dict(torch.load(best_rep["rep_ckpt"], map_location=device))
     model.eval()
 
@@ -439,7 +581,191 @@ def export_prediction_csv(data_dict, L, config, device, prompt_cache,
     return out_path
 
 
-def main():
+def resolve_variant(args, base_config=None):
+    """Resolve the Table VIII ablation flags into (effective config, embedder, record).
+
+    Pure function (no I/O, no torch) so the flag semantics are unit-testable on a
+    CPU without a GPT-2 download: `tests/test_miflu_ablations.py` asserts that
+
+    * with **no** ablation flag the returned config equals `CONFIG` (the paper's
+      configuration) and the embedder is `author_file` — i.e. defaults unchanged;
+    * `--no-lora` sets `use_lora=False` and nothing else;
+    * `--no-text` sets `use_text=False` and forces the embedder to `none`;
+    * `--num-layers K` sets `K` (the ForecastingLLM depth) only;
+    * `--text-embedder {author_file,prompt,none}` selects the text source, with
+      `none` implying `use_text=False`.
+
+    IMPORTANT — what `--no-text` can and cannot do here
+    ---------------------------------------------------
+    Under the default `author_faithful=True` path the text tokens are appended
+    **after** the time patches and the attention mask is **causal**
+    (`miflu_model.ForecastingLLM._lora_attention` builds a `tril` mask; the head
+    reads `hidden[:, :num_patches]`). The forecast tokens therefore cannot attend
+    to the text tokens at all, so `use_text=False` is expected to produce
+    **numerically identical predictions** to the full model. That is precisely the
+    "text-pathway mechanism contradiction" of `AGENTS.md` §2 rule 6 (GPU gradients
+    non-zero vs a CPU effect of exactly zero) and it is **verified**, not assumed,
+    by `tests/test_miflu_ablations.py`. Consequence for Table VIII: the
+    "w/o multimodality" row is a *structural* check, not a number that can move;
+    a text branch that can move a number needs a non-causal fusion
+    (`gated_inject`, `MIFlu(..., gated_inject=True)`), which this runner does not
+    expose.
+
+    Returns
+    -------
+    (eff : dict, text_embedder : str, record : dict)
+        `eff` is the config passed to `train_L`/`export_prediction_csv`;
+        `record` goes into the run manifest and the `--ablation-label`.
+    """
+    base = dict(base_config if base_config is not None else CONFIG)
+    eff = dict(base)
+    eff["num_repetitions"] = int(args.reps)
+    eff["epochs"] = int(args.epochs)
+    eff["batch_size"] = int(args.batch)
+    eff["learning_rate"] = float(args.learning_rate)
+
+    # ── Table VIII switches (additive; defaults = the paper's configuration) ──
+    explicit_embedder = getattr(args, "text_embedder", None)
+    if getattr(args, "no_text", False):
+        # `--no-text` IS the "no embedder" request: refuse only when the caller
+        # also named a real embedder explicitly (a contradiction, not a default).
+        if explicit_embedder not in (None, "none"):
+            raise SystemExit(
+                "--no-text removes the text branch entirely, so it cannot be "
+                f"combined with --text-embedder {explicit_embedder}; use "
+                "--text-embedder none (or drop --no-text to keep the text branch)")
+        embedder = "none"
+    else:
+        embedder = explicit_embedder or getattr(args, "text_source", "author_file")
+    if embedder not in ("author_file", "prompt", "none"):
+        raise SystemExit(f"--text-embedder must be author_file|prompt|none, "
+                         f"got {embedder!r}")
+    if getattr(args, "no_lora", False) and getattr(args, "no_text", False):
+        # Allowed (the paper's Table VIII rows are single-component removals), but
+        # refuse the *accidental* combination: two switches at once is a new row
+        # that is not in Table VIII.
+        raise SystemExit(
+            "--no-lora and --no-text are separate Table VIII rows; run them as "
+            "two single-component ablations, not one combined cell")
+
+    use_lora = not bool(getattr(args, "no_lora", False))
+    use_text = (not bool(getattr(args, "no_text", False))) and embedder != "none"
+    num_layers = getattr(args, "num_layers", None)
+    K = int(base["K"]) if num_layers is None else int(num_layers)
+    if K < 1:
+        raise SystemExit(f"--num-layers must be >= 1, got {K}")
+    if K > 12:
+        raise SystemExit(f"--num-layers {K} exceeds GPT-2's 12 blocks")
+
+    eff["K"] = K
+    eff["use_lora"] = use_lora
+    eff["use_text"] = use_text
+    eff["text_embedder"] = embedder
+
+    # Variant identity: what the queue names as a separate task kind / row.
+    parts = []
+    if not use_lora:
+        parts.append("no_lora")
+    if not use_text:
+        parts.append("no_text")
+    if K != int(base["K"]):
+        parts.append("K%d" % K)
+    if use_text and embedder != "author_file":
+        # a real text-source swap; `none` is already expressed by `no_text`
+        parts.append("emb_" + embedder)
+    variant = getattr(args, "ablation_label", None) or ("+".join(parts) or "full")
+
+    record = {
+        "variant": variant,
+        "use_lora": bool(use_lora),
+        "use_text": bool(use_text),
+        "num_layers": K,
+        "base_num_layers": int(base["K"]),
+        "lora_r": int(base["lora_r"]) if use_lora else 0,
+        "text_embedder": embedder,
+        "is_default_config": bool(use_lora and use_text
+                                  and K == int(base["K"])
+                                  and embedder == "author_file"),
+        "flags": {k: getattr(args, k, None) for k in
+                  ("no_lora", "no_text", "num_layers", "text_embedder",
+                   "text_source", "ablation_label")},
+    }
+    return eff, embedder, record
+
+
+def _sha256_file(path):
+    """SHA-256 of a file, or None when the path is missing/unreadable."""
+    import hashlib
+    if not path or not os.path.exists(path):
+        return None
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def write_run_manifest(path, *, L, seed, config, variant_record, fold,
+                       profile, containment, wall_seconds, ckpt_path,
+                       artefacts, best_rep=None):
+    """Write the per-cell manifest required by AGENTS.md rule 11(d) + rule 12.
+
+    Records, **measured and never assumed**: GPU name/count/capability, Slurm
+    partition/node/job id, start/end timestamps and wall-clock, library versions,
+    the code identity (sha256 of this runner and of `miflu_model.py`), the
+    checkpoint sha256 actually used, the full config, and the ablation variant
+    (`variant_record`) so a Table VIII row can never be mistaken for the full
+    model. `fold` records the rolling-origin geometry (None = fixed split).
+    """
+    import json
+    import platform
+    from datetime import timezone
+    hw = {"run_device": "cuda" if torch.cuda.is_available() else "cpu",
+          "cuda_available": bool(torch.cuda.is_available()),
+          "gpu_name": None, "gpu_count": 0, "gpu_capability": None,
+          "cuda_version": getattr(torch.version, "cuda", None)}
+    if torch.cuda.is_available():
+        hw.update({"gpu_name": torch.cuda.get_device_name(0),
+                   "gpu_count": int(torch.cuda.device_count()),
+                   "gpu_capability": list(torch.cuda.get_device_capability(0))})
+    payload = {
+        "model": "miflu", "L": int(L), "seed": int(seed),
+        "protocol": "paper_protocol (T=104, strict containment, 70/10/20)",
+        "profile": profile, "containment": containment,
+        "eval_space": "standardized_train_fit_z",
+        "n_eval_windows_rule": "eval_slice(W, batch=16) = (W // 16) * 16",
+        "variant": variant_record,
+        "ablation_variant": variant_record["variant"],
+        "fold": fold,
+        "created_utc": datetime.now(timezone.utc).isoformat(),
+        "end_utc": datetime.now(timezone.utc).isoformat(),
+        "wall_seconds": None if wall_seconds is None else round(float(wall_seconds), 3),
+        "hardware": hw,
+        "slurm": {k: os.environ[k] for k in
+                  ("SLURM_JOB_ID", "SLURM_JOB_PARTITION", "SLURM_NODELIST")
+                  if k in os.environ},
+        "library_versions": {"python": platform.python_version(),
+                             "torch": torch.__version__,
+                             "numpy": np.__version__,
+                             "pandas": pd.__version__},
+        "code": {"runner": {"file": os.path.abspath(__file__),
+                            "sha256": _sha256_file(__file__)},
+                 "model": {"file": os.path.abspath(sys.modules[MIFlu.__module__].__file__),
+                           "sha256": _sha256_file(
+                               sys.modules[MIFlu.__module__].__file__)}},
+        "checkpoint": {"path": ckpt_path, "sha256": _sha256_file(ckpt_path)},
+        "best_rep": best_rep,
+        "artefacts": artefacts,
+        "config": {k: (v if isinstance(v, (int, float, str, bool, type(None)))
+                       else str(v)) for k, v in config.items()},
+    }
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, indent=2)
+    return path
+
+
+def main(argv=None):
     # ── CLI (defaults are the authoritative essay config; overrides for HPC convenience) ──
     ap = argparse.ArgumentParser(description="MIFlu National training (authoritative config).")
     ap.add_argument("--horizon", type=int, default=None,
@@ -450,12 +776,42 @@ def main():
                     help="Training epochs (default 20, per essay Table IV).")
     ap.add_argument("--batch", type=int, default=CONFIG["batch_size"],
                     help="Batch size (default 16, per essay Table IV). Lower (e.g. 8) if OOM on HPC.")
-    ap.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility.")
+    ap.add_argument("--seed", type=int, default=2021, help="Random seed (author uses fix_seed=2021).")
+    ap.add_argument("--learning-rate", type=float, default=CONFIG["learning_rate"],
+                    help="Adam learning rate. Essay Table L228 (national ILI) = 0.0005; "
+                         "the released code default is 0.0001.")
+    ap.add_argument("--text-source", choices=["author_file", "prompt"],
+                    default="author_file",
+                    help="DEPRECATED alias of --text-embedder (kept so every "
+                         "existing call site keeps working). author_file = the "
+                         "author's precomputed text_emb_label_0507_<L>.txt "
+                         "(byte-identical to GPT4TS_lora.py L132). prompt = live GPT-2 "
+                         "encoding of a generated prompt (our earlier deviation).")
+    # ── Table VIII ablations (additive; every default = the paper's config) ──
+    ap.add_argument("--text-embedder", choices=["author_file", "prompt", "none"],
+                    default=None,
+                    help="Text-input embedder: author_file (default) | prompt (live "
+                         "GPT-2) | none (remove the text branch entirely). Overrides "
+                         "--text-source; `none` implies --no-text.")
+    ap.add_argument("--no-lora", action="store_true",
+                    help="Table VIII 'w/o LoRA': freeze the GPT-2 attention blocks "
+                         "without LoRA adapters (use_lora=False). Default off.")
+    ap.add_argument("--no-text", action="store_true",
+                    help="Table VIII 'w/o multimodality': remove the text branch "
+                         "(use_text=False, text_embedder=none). Default off.")
+    ap.add_argument("--num-layers", type=int, default=None,
+                    help="ForecastingLLM depth K (default: CONFIG['K'] = 6). The "
+                         "Table VIII K-sweep knob.")
+    ap.add_argument("--ablation-label", default=None,
+                    help="Variant name recorded in the manifest and in the results "
+                         "path (default: derived from the flags, e.g. 'no_lora').")
+    # ── rolling origin (additive; 0 = the existing fixed split) ─────────────
+    walk_forward.add_fold_argument(ap)
     ap.add_argument("--containment", choices=["start", "strict"], default="start",
                     help="target-split rule: 'start' = legacy (target start), "
                          "'strict' = Stage 5 (whole target inside its split)")
     ap.add_argument("--profile", default="project_1025",
-                    choices=sorted(("project_1025", "author_966")),
+                    choices=sorted(DATA_PROFILES),
                     help="Immutable dataset profile (project 1025-row snapshot "
                          "or author 966-row vintage).")
     ap.add_argument("--export-dir", default=None,
@@ -465,7 +821,7 @@ def main():
                          "published artifacts are never clobbered.")
     ap.add_argument("--ckpt-dir", default=None,
                     help="Checkpoint directory (default: <project>/checkpoints).")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
     # ---- Stage 5 A2 guard: containment must be explicit and strict ----
     import os as _os
     _req = _os.environ.get("A2_REQUIRE_STRICT") == "1"
@@ -502,12 +858,21 @@ def main():
         RESULTS_PATH = os.path.join(EXPORT_DIR, os.path.basename(RESULTS_PATH))
         LOG_PATH = os.path.join(EXPORT_DIR, f"training_miflu_log_{TS}.txt")
 
-    # Build effective config (batch/lr/T/K/Lp/S/lora_r fixed to the essay)
-    eff = dict(CONFIG)
-    eff["num_repetitions"] = args.reps
-    eff["epochs"] = args.epochs
-    eff["batch_size"] = args.batch
+    # Build effective config (batch/lr/T/K/Lp/S/lora_r fixed to the essay) plus
+    # the Table VIII ablation switches. `resolve_variant` is a pure function and
+    # returns CONFIG unchanged when no ablation flag is given.
+    eff, text_source, variant_record = resolve_variant(args, CONFIG)
     L_list = [args.horizon] if args.horizon is not None else CONFIG["L_list"]
+
+    # ── rolling origin (additive; --fold 0 = the existing fixed split) ──────
+    fold = None
+    fold_split = None
+    if args.fold:
+        fold = walk_forward.resolve_fold(
+            int(_prof["n_rows"]), args.fold,
+            horizons=(args.horizon,) if args.horizon is not None else
+            tuple(walk_forward.HORIZONS))
+        fold_split = (fold.train_end, fold.val_end)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     log_init(LOG_PATH)
@@ -516,6 +881,14 @@ def main():
     log("  PAPER PROTOCOL (MIFlu_paper.md)")
     log("=" * 60)
     log(f"  Evaluation protocol: paper protocol (NOT L=52 walk-forward)")
+    log(f"  Ablation variant: {variant_record['variant']}  "
+        f"(use_lora={variant_record['use_lora']}, "
+        f"use_text={variant_record['use_text']}, K={variant_record['num_layers']}, "
+        f"text_embedder={variant_record['text_embedder']})")
+    log(f"  Rolling-origin fold: "
+        + (f"{fold.label} train_end={fold.train_end} val_end={fold.val_end} "
+           f"test_end={fold.test_end}" if fold is not None
+           else "none (fixed 70/10/20 split)"))
     log(f"  Device: {device} {'(' + torch.cuda.get_device_name(0) + ')' if device=='cuda' else ''}")
     log(f"  Config: T={eff['T']}, L={L_list} (each L trained INDEPENDENTLY)")
     log(f"          K={eff['K']}, Lp={eff['Lp']}, S={eff['S']}, lora_r={eff['lora_r']}")
@@ -523,20 +896,42 @@ def main():
     log(f"          Normalization: StandardScaler fit on TRAIN only")
     log(f"          batch={eff['batch_size']}, lr={eff['learning_rate']}, epochs={eff['epochs']}, reps={eff['num_repetitions']}, seed={args.seed}")
     log()
-    data_dict = load_and_normalize(); log()
+    data_dict = load_and_normalize(split=fold_split)
+    if fold is not None:
+        # A fold may read rows[0:test_end] ONLY; truncating here stops
+        # build_windows from labelling the whole tail as "test".
+        data_dict = walk_forward.restrict_data(data_dict, fold)
+    log()
 
-    # ── Build text embedder once (shared across L) ──
-    log("Loading GPT2 text embedder...")
-    text_embedder = TextualInputEmbedder(device=device)
+    # ── Text source: author's precomputed embedding (default), live prompt, or
+    #    none (the Table VIII "w/o multimodality" arm). ──
+    if text_source == "prompt":
+        log("Loading GPT2 text embedder (prompt mode — OUR deviation)...")
+        text_embedder = TextualInputEmbedder(device=device)
+    elif text_source == "none":
+        log("Text source = NONE (Table VIII w/o multimodality): the text branch is "
+            "removed, not merely zeroed — use_text=False")
+    else:
+        log("Text source = AUTHOR FILE "
+            "(text_emb_label_0507_<L>.txt, byte-identical to GPT4TS_lora.py L132)")
     log()
 
     all_rows, t_start, saved_ckpts, best_rep_info = [], time.time(), [], {}
     for L in L_list:
-        # ── Build L-specific prompt (each L has different task instruction) ──
-        prompt = build_prompt(data_dict["train_df"], T=eff["T"], L=L,
-                              date_range_string=_prof["date_range_string"])
-        prompt_cache = text_embedder(prompt)  # (1, 367, 768)
-        log(f"  Prompt built for L={L}: {prompt_cache.shape[1]} tokens")
+        if text_source == "prompt":
+            # ── Build L-specific prompt (each L has different task instruction) ──
+            prompt = build_prompt(data_dict["train_df"], T=eff["T"], L=L,
+                                  date_range_string=_prof["date_range_string"])
+            prompt_cache = text_embedder(prompt)  # (1, 367, 768)
+            log(f"  Prompt built for L={L}: {prompt_cache.shape[1]} tokens")
+        elif text_source == "none":
+            prompt_cache = None
+            log(f"  No text embedding for L={L} (text branch removed)")
+        else:
+            # Author: static precomputed embedding, tiled across the batch.
+            prompt_cache = load_author_text_emb(L, device=device)
+            log(f"  Author text embedding L={L}: {tuple(prompt_cache.shape)} "
+                f"from text_emb_label_0507_{L}.txt")
         log(f"{'─'*50}"); log(f"  HORIZON L={L}"); log(f"{'─'*50}")
         L_reps = []
         best_rep, best_val = None, float('inf')
@@ -546,6 +941,7 @@ def main():
                         containment=args.containment); L_reps.append(r)
             all_rows.append({"L": L, "rep": rep+1,
                 "mse_ili": r["test_mse_ili"] if r.get("test_mse_ili") is not None else np.nan, "mae_ili": r["test_mae_ili"] if r.get("test_mae_ili") is not None else np.nan,
+                "mse_wili": r.get("test_mse_wili", np.nan), "mae_wili": r.get("test_mae_wili", np.nan),
                 # SUPPLEMENTARY physical-unit track (patient counts)
                 "mse_ili_phys": r["test_mse_ili_phys"],
                 "mae_ili_phys": r["test_mae_ili_phys"]})
@@ -580,6 +976,35 @@ def main():
                 data_dict, L, eff, device, prompt_cache, best_rep, EXPORT_DIR,
                 containment=args.containment)
             best_rep_info[L]["pred_csv"] = pred_csv
+            # ── run manifest (rule 11(d) + rule 12) ─────────────────────────
+            # Written for EVERY run (the ablation variant must be recorded, or a
+            # Table VIII row is indistinguishable from the full model). Additive:
+            # it is a new file and changes no existing artefact.
+            _arts = {"predictions_csv": pred_csv,
+                     "results_csv": RESULTS_PATH,
+                     "log": LOG_PATH}
+            _mpath = os.path.join(
+                EXPORT_DIR,
+                "manifest_miflu_L%d_s%d%s.json"
+                % (L, args.seed,
+                   "" if variant_record["variant"] == "full"
+                   else "_" + variant_record["variant"].replace("+", "_")))
+            try:
+                write_run_manifest(
+                    _mpath, L=L, seed=args.seed, config=eff,
+                    variant_record=variant_record,
+                    fold=None if fold is None else fold.as_dict(),
+                    profile=args.profile, containment=args.containment,
+                    wall_seconds=time.time() - t_start,
+                    ckpt_path=final_ckpt, artefacts=_arts,
+                    best_rep=(None if best_rep is None else
+                              {k: (v if isinstance(v, (int, float, str, bool,
+                                                       type(None))) else str(v))
+                               for k, v in best_rep.items()}))
+                log(f"  [MANIFEST] L={L} -> {_mpath} "
+                    f"(variant={variant_record['variant']})")
+            except Exception as _exc:      # never lose a finished cell to a manifest
+                log(f"  [MANIFEST][WARN] L={L}: {type(_exc).__name__}: {_exc}")
         else:
             log(f"  [WARN] L={L}: ALL reps discarded (non-finite) — no checkpoint saved!")
         # clean up any leftover temp rep checkpoints

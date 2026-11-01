@@ -1,0 +1,172 @@
+{
+    "_what":  "Single source of truth for the 14 frozen-encoder LLM arms (docs/LLM_ARMS.md 7.1). Read by make_queue.py (to emit the 12 cells + 1 probe row per arm) and by master_task.py (to choose the venv, encoder batch size and revision source). Edit here, then re-run make_queue.py --force only if you accept resetting state.",
+    "cells":  {
+                  "horizons":  [
+                                   24,
+                                   36,
+                                   48,
+                                   60
+                               ],
+                  "seeds":  [
+                                42,
+                                43,
+                                44
+                            ]
+              },
+    "arms":  [
+                 {
+                     "hf_id":  "Qwen/Qwen2.5-1.5B",
+                     "label":  "qwen25_1_5b",
+                     "priority":  "P1",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  "8faed761d45a263340a0528343f099c05c9a4323",
+                     "weights":  "downloaded",
+                     "note":  "first real LLM benchmark row; revision already pinned in innovation/assets.py",
+                     "params_b":  1.5
+                 },
+                 {
+                     "hf_id":  "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+                     "label":  "ds_r1_distill_qwen1_5b",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  null,
+                     "weights":  "downloaded",
+                     "note":  "qwen2 arch; revision sha not yet pinned in this repo",
+                     "params_b":  1.5
+                 },
+                 {
+                     "hf_id":  "tencent/Penguin-Encoder",
+                     "label":  "tencent_penguin_encoder",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "0.4B feature-extraction native; mean-pooling read-out must be verified",
+                     "params_b":  0.4
+                 },
+                 {
+                     "hf_id":  "tencent/Hunyuan-1.8B-Instruct",
+                     "label":  "tencent_hunyuan_1p8b_instruct",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "2B; plain numeric prompt, chat template must not be applied",
+                     "params_b":  1.8
+                 },
+                 {
+                     "hf_id":  "tencent/WeMM-Embedding-2B",
+                     "label":  "tencent_wemm_embedding_2b",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "3B embedding model; must return hidden states, not only a pooled vector",
+                     "params_b":  3
+                 },
+                 {
+                     "hf_id":  "tencent/Youtu-HiChunk",
+                     "label":  "tencent_youtu_hichunk",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "4B; arch support check",
+                     "params_b":  4
+                 },
+                 {
+                     "hf_id":  "tencent/Hunyuan-4B-Instruct",
+                     "label":  "tencent_hunyuan_4b_instruct",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "4B; chat template stripped",
+                     "params_b":  4
+                 },
+                 {
+                     "hf_id":  "tencent/WeMM-Embedding-4B",
+                     "label":  "tencent_wemm_embedding_4b",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  8,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "5B; best official embedding candidate",
+                     "params_b":  5
+                 },
+                 {
+                     "hf_id":  "tencent/ContextPilot-8B",
+                     "label":  "tencent_contextpilot_8b",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  4,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "8B; arch support check",
+                     "params_b":  8
+                 },
+                 {
+                     "hf_id":  "tencent/Hunyuan-7B-Instruct",
+                     "label":  "tencent_hunyuan_7b_instruct",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  4,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "8B; chat template stripped",
+                     "params_b":  8
+                 },
+                 {
+                     "hf_id":  "tencent/KaLM-Embedding-Gemma3-12B",
+                     "label":  "tencent_kalm_gemma3_12b",
+                     "priority":  "P2",
+                     "venv":  "llm",
+                     "encoder_batch_size":  2,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "12B Gemma-3; may need the transformers-5 env",
+                     "params_b":  12
+                 },
+                 {
+                     "hf_id":  "tencent/ContextPilot-14B",
+                     "label":  "tencent_contextpilot_14b",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  2,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "15B; bf16 ~30 GB, batch 2-4",
+                     "params_b":  15
+                 },
+                 {
+                     "hf_id":  "Qwen/Qwen3.8-27B-FP8",
+                     "label":  "qwen3p8_27b_fp8",
+                     "priority":  "P2",
+                     "venv":  "llm",
+                     "encoder_batch_size":  1,
+                     "revision":  null,
+                     "weights":  "downloaded",
+                     "note":  "fp8 dequantised to bf16 on sm_80 = 54.73 GB VRAM; 80 GB A100 only; revision not pinned",
+                     "params_b":  27.36
+                 },
+                 {
+                     "hf_id":  "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+                     "label":  "ds_r1_distill_32b",
+                     "priority":  "P2",
+                     "venv":  "hpc",
+                     "encoder_batch_size":  1,
+                     "revision":  null,
+                     "weights":  "missing",
+                     "note":  "33B; needs load_in_8bit; the 66 GB transfer is incomplete",
+                     "params_b":  33
+                 }
+             ]
+}

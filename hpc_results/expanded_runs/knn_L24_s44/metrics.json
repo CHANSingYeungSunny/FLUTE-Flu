@@ -1,0 +1,23 @@
+{
+  "model": "knn",
+  "L": 24,
+  "seed": 44,
+  "profile": "author_966",
+  "containment": "strict",
+  "channel_agnostic": true,
+  "trainable_parameters": null,
+  "estimator": "KNeighborsRegressor(n_neighbors=10, weights='distance')",
+  "multioutput_wrapper": "native",
+  "n_train_windows": 549,
+  "n_val_windows": 74,
+  "n_test_windows": 170,
+  "val_mse_7var_z": 0.39229282254761005,
+  "val_mae_7var_z": 0.40550067111539256,
+  "test_mse_7var_z": 3.712252348337892,
+  "test_mae_7var_z": 1.3266472950068164,
+  "test_mse_ilitotal_z": 7.548870393859803,
+  "test_mae_ilitotal_z": 1.8347044023368622,
+  "selection": "none (sklearn estimator fitted on TRAIN only; val reported, not used to select)",
+  "protocol_source": "train_nlinear_966.build_windows / load_and_normalize (imported verbatim)",
+  "prediction_file": "pred_knn_L24_s44.npz"
+}

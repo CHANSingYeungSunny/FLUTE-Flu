@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar
+timecma_llm,60,43,"TimeCMA-INSPIRED (frozen GPT-2, retrieval alignment, last-token branch)",3.016700506210327,1.182676076889038,6.957091808319092,1.7439320087432861,0.26622840762138367,3,513,38,134,126024612,1584804,,
