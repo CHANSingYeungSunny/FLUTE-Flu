@@ -22,7 +22,7 @@ We reproduced the paper's **Table V** on the official US CDC National-Illness 96
 | 60 | 1.3640 | 1.6829 | +23.4% | 0.7190 | 0.8596 | +19.6% |
 | **4L mean** | **1.4355** | **1.4995** | **+4.5%** | **0.7452** | **0.8043** | +7.9% |
 
-**Sign crossover 2–2**: we *beat* the paper at L=24 and L=36 but *lose* at L=48 and L=60 (longer horizons are harder for our run). Net **+4.5%** on the 4-horizon mean — a close, credible reproduction.
+**Sign crossover 2–2**: we *beat* the paper at L=24 and L=36 but *lose* at L=48 and L=60 (longer horizons are harder for our run). Net **+4.5%** on the 4-horizon mean — a close, credible reproduction. **Defensible claim only**: reproduced within 4.5% with a horizon-dependent sign — *not* a claim of superiority, and *not* "the paper is wrong". Every MIFlu cell is gated against the 40-run per-seed oracle at |Δ| ≤ 1e-5, so the numbers trace to individual runs, not a summary file.
 
 ### 28-Model Benchmark — Core Finding
 
@@ -37,7 +37,15 @@ We reproduced the paper's **Table V** on the official US CDC National-Illness 96
 
 ### Frozen LLM encoders (negative result)
 
-9 frozen LLM encoders (LLaMA, Qwen, DeepSeek-R1 distill, GPT-style, Gemini, Claude families) were merged into the benchmark. **All are poor**: mean MSE ≈ 4.80 (range 2.33–5.80), **none pass the Kramer & Shaman peak criterion**. LLM pre-trained knowledge does not transfer to influenza forecasting.
+11 frozen LLM encoders (Qwen2.5, DeepSeek-R1-distill ×5 sizes, Tencent Hunyuan ×3, Tencent ContextPilot ×2) were merged into the benchmark as feature extractors + a shared linear head. **All are poor**: best Tencent-Hunyuan-1.8B (MSE 4.7374), worst Qwen2.5-1.5B (5.2049) — every one ~3× worse than MIFlu (1.5574); **none pass the Kramer & Shaman peak criterion**. Pre-trained LLM representations do **not** transfer to influenza forecasting — the paper's most novel negative result.
+
+### Notable findings (from the 28-model benchmark)
+
+- **A linear model is #2.** NLinear reaches MSE 1.8716 with only **2,520 parameters**, versus PatchTST's 531,878. Architecture sophistication does *not* buy accuracy on a 966-row series.
+- **Published LLM forecasters do badly.** Qwen-Time-LLM (5.2557) and CALF-LLM (5.5785) are both large, published models — and both are beaten by a nearest-neighbour baseline (KNN, 3.7854).
+- **Model choice dominates.** The MSE spread is **3.4×** (1.6621 → 5.6155); which model you pick matters far more than any hyper-parameter tuning reported in the compared papers.
+- **More parameters ≠ better.** Regressing 4-horizon MSE on log₁₀(parameters) across the 11 parametric arms gives slope **+0.1171** and **R² = 0.0223** — i.e. more parameters trend *worse*, and the relationship is ~pure noise. Parameter count is not a selection criterion here.
+- **Significance is mostly established.** Of 136 model pairs, **109 are significant** after Holm–Bonferroni correction (NLinear vs PatchTST is the notable exception: p_holm = 0.114, not significant).
 
 ---
 
@@ -146,7 +154,7 @@ All three report types are produced in **both Chinese (zh) and English (en)** va
 - ✅ Table V reproduction (10-seed, +4.5%, sign crossover 2–2)
 - ✅ 28-model benchmark, 4 sub-benchmarks
 - ✅ Table VIII ablation (60/60 cells), MIFlu is the logarithmic-ladder champion
-- ✅ 9 frozen LLM encoders added (negative result)
+- ✅ 11 frozen LLM encoders added (negative result)
 - 🔄 Table VI (regional, 10-seed × 7 regions = 70 cells) running on HPC; Table IX (regional training time) gated behind it
 - 🔄 Rolling-origin evaluation queued on HPC (lower priority)
 
