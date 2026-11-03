@@ -1,0 +1,226 @@
+{
+  "model": "ds_r1_distill_qwen1_5b",
+  "L": 24,
+  "seed": 44,
+  "profile": "author_966",
+  "containment": "strict",
+  "eval_space": "standardized_train_fit_z",
+  "n_eval_windows_rule": "eval_slice(W, batch=16) = (W // 16) * 16",
+  "probe_only": false,
+  "mock_encoder": false,
+  "artefact_is_a_result": true,
+  "created_utc": "2026-11-02T00:54:03.381306+00:00",
+  "wall_seconds": 11.082,
+  "hardware": {
+    "run_device": "cuda",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "gpu_count": 1,
+    "gpu_capability": [
+      8,
+      0
+    ],
+    "cuda_version": "11.8"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "721227",
+    "SLURM_JOB_PARTITION": "gpu_a100",
+    "SLURM_NODELIST": "gpu-a100-07"
+  },
+  "library_versions": {
+    "python": "3.9.25",
+    "torch": "2.5.1",
+    "numpy": "2.0.1"
+  },
+  "code": {
+    "runner": {
+      "file": "/gpfs1/home/sychan552/stage5_a2_durable/code/train_backbone_966.py",
+      "sha256": "6cf1576e40fb808fba9640cffa8361691991f63ec0dc6aa99f8041d5b2fecd7b"
+    }
+  },
+  "encoder": {
+    "arm": "llm_encoder",
+    "model_id": "/home/sychan552/scratch/hf_cache/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B/snapshots/ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+    "revision": "ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+    "revision_pinned": true,
+    "mock_encoder": false,
+    "encoder": {
+      "class": "FrozenCausalLM",
+      "parameters": 1777088000,
+      "trainable_parameters": 0,
+      "frozen": true,
+      "eval_mode": false,
+      "hidden_dim": 1536,
+      "pooling": "masked_mean_last_hidden_state",
+      "loader": {
+        "factory": "AutoModelForCausalLM",
+        "dtype_keyword": "torch_dtype",
+        "dtype": "torch.bfloat16"
+      }
+    },
+    "head": {
+      "class": "nn.Linear",
+      "in_features": 1536,
+      "out_features": 24,
+      "parameters": 36888,
+      "shared_across_variables": true
+    },
+    "encoder_batch_size": 8,
+    "prompt_template_version": "v1",
+    "prompt_decimals": 4,
+    "device": "cuda:0",
+    "torch_version": "2.5.1",
+    "transformers_version": "4.57.6",
+    "python_version": "3.9.25",
+    "numpy_version": "2.0.1",
+    "determinism": {
+      "manual_seed": 68,
+      "cudnn_deterministic": true,
+      "cudnn_benchmark": false,
+      "sampling": "disabled (single forward, use_cache=False)"
+    },
+    "cache": {
+      "entries": 5551,
+      "hits": 0,
+      "misses": 0
+    }
+  },
+  "fold": null,
+  "config": {
+    "epochs": 20,
+    "batch": 16,
+    "encoder_batch_size": 8,
+    "max_train_windows": null,
+    "max_val_windows": null,
+    "encoder_device": "cuda",
+    "dry_run": false,
+    "epoch_rows": [
+      {
+        "epoch": 1,
+        "train_loss": 1.0961340921265739,
+        "val_mse_all": 0.7444610595703125,
+        "val_mae_all": 0.681786835193634
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.8004642767565591,
+        "val_mse_all": 0.7057603001594543,
+        "val_mae_all": 0.648261308670044
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.7560679112161909,
+        "val_mse_all": 0.6466357707977295,
+        "val_mae_all": 0.6272409558296204
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.7344364770821162,
+        "val_mse_all": 0.6780726909637451,
+        "val_mae_all": 0.6298964023590088
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.7308750229222434,
+        "val_mse_all": 0.6157249212265015,
+        "val_mae_all": 0.6140865683555603
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.7168003286634173,
+        "val_mse_all": 0.5514971613883972,
+        "val_mae_all": 0.601088285446167
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.7069005480834416,
+        "val_mse_all": 0.607468843460083,
+        "val_mae_all": 0.6177042722702026
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.6836152834551675,
+        "val_mse_all": 0.575589120388031,
+        "val_mae_all": 0.5948900580406189
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.6729282643113818,
+        "val_mse_all": 0.5576294660568237,
+        "val_mae_all": 0.585943341255188
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.6597459537642343,
+        "val_mse_all": 0.5438761115074158,
+        "val_mae_all": 0.6064200401306152
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.6527232536247798,
+        "val_mse_all": 0.5182123780250549,
+        "val_mae_all": 0.598200798034668
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.6127245383603233,
+        "val_mse_all": 0.5688197016716003,
+        "val_mae_all": 0.586336076259613
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.6325550743511745,
+        "val_mse_all": 0.5035327076911926,
+        "val_mae_all": 0.5854687094688416
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.6124878398009709,
+        "val_mse_all": 0.5042903423309326,
+        "val_mae_all": 0.5689473152160645
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.6116168311664036,
+        "val_mse_all": 0.5475013256072998,
+        "val_mae_all": 0.5824593305587769
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.6108261636325292,
+        "val_mse_all": 0.5470961928367615,
+        "val_mae_all": 0.5824993252754211
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.5787147266524179,
+        "val_mse_all": 0.5424878597259521,
+        "val_mae_all": 0.5778406858444214
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.5779201984405518,
+        "val_mse_all": 0.4936937391757965,
+        "val_mae_all": 0.5720931887626648
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.5921758438859667,
+        "val_mse_all": 0.4970299303531647,
+        "val_mae_all": 0.5771210193634033
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.5823375020708357,
+        "val_mse_all": 0.467396080493927,
+        "val_mae_all": 0.5538429617881775
+      }
+    ],
+    "n_train": 549,
+    "n_val": 74,
+    "n_test": 170,
+    "split_source": "profile",
+    "train_end": 676,
+    "val_end": 773
+  }
+}

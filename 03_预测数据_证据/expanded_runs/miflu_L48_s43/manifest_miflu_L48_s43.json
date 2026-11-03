@@ -1,0 +1,64 @@
+{
+  "L": 48,
+  "architecture": {
+    "flatten_head": true,
+    "text_emb_file": "assets/text_emb/text_emb_label_0507_48.txt",
+    "text_source": "author_file",
+    "trainable_parameters": 1673496,
+    "use_text_ln": false
+  },
+  "artifacts": {
+    "csv": "predictions_miflu_L48_s43.csv",
+    "npz": "pred_miflu_L48_s43.npz",
+    "results": "results_miflu_L48_s43.csv"
+  },
+  "checkpoint": {
+    "path": "/gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L48_s43/ckpt/best_miflu_L48.pth",
+    "provenance": "benchmark 1-rep ckpt (this run)",
+    "sha256": "b70ca962851536a37ad884468935451ef62463e0b588c44565d25d0c8f41f09f"
+  },
+  "config": {
+    "D": 768,
+    "K": 6,
+    "Lp": 24,
+    "N": 7,
+    "S": 2,
+    "T": 104,
+    "batch_size": 16,
+    "epochs": 20,
+    "learning_rate": 0.0001,
+    "lora_alpha": 4.0,
+    "lora_r": 4
+  },
+  "containment": "strict",
+  "environment": {
+    "device": "cuda",
+    "gpu_compute_capability": [
+      8,
+      0
+    ],
+    "gpu_count": 1,
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "gpu_total_vram_bytes": 85093777408,
+    "host": "gpu-a100-11",
+    "python": "3.9.25",
+    "slurm_job_id": "722981",
+    "slurm_nodelist": "gpu-a100-11",
+    "slurm_partition": "gpu_a100",
+    "torch": "2.5.1"
+  },
+  "generated_at": "2026-11-02T15:18:31+0800",
+  "model": "miflu",
+  "n_reps_expected": 1,
+  "profile": "author_repo_966",
+  "protocol": "benchmark_3seed_42_43_44",
+  "replication_index": 2,
+  "seed": 43,
+  "wall_clock_seconds_export": 15.2,
+  "windows": {
+    "n_leads": 48,
+    "n_test": 146,
+    "target_start_row_max": 918,
+    "target_start_row_min": 773
+  }
+}

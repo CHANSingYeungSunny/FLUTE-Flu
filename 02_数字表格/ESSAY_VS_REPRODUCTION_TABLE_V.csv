@@ -1,0 +1,6 @@
+model,L,paper_MSE,our_MSE,delta_pct,paper_MAE,our_MAE,protocol,delta_mae_pct
+MIFlu,24,1.542,1.3045,-15.4,0.726,0.7482,"reproduction 10-seed mean (2021-2030), validation-selected ckpt",3.1
+MIFlu,36,1.422,1.3561,-4.6,0.779,0.7712,"reproduction 10-seed mean (2021-2030), validation-selected ckpt",-1.0
+MIFlu,48,1.414,1.6543,17.0,0.757,0.8381,"reproduction 10-seed mean (2021-2030), validation-selected ckpt",10.7
+MIFlu,60,1.364,1.6829,23.4,0.719,0.8596,"reproduction 10-seed mean (2021-2030), validation-selected ckpt",19.6
+MIFlu,4L-mean,1.4355,1.4995,4.5,0.7452,0.8043,"reproduction 10-seed mean, sign crossover 2-2",7.9

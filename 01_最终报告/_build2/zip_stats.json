@@ -1,0 +1,25 @@
+{
+ "built_at": "2026-11-03 05:27:42",
+ "path": "01_\u6700\u7ec8\u62a5\u544a/PROJECT_HANDOFF.zip",
+ "entries": 1586,
+ "zip_bytes": 181884662,
+ "zip_mb": 173.5,
+ "input_bytes": 321082612,
+ "input_mb": 306.2,
+ "seconds": 12.6,
+ "crc_ok": true,
+ "excluded_dirs": [
+  ".git",
+  ".pytest_cache",
+  ".quarantine",
+  "99_\u65e7\u6587\u4ef6\u5b58\u6863",
+  "__pycache__",
+  "checkpoints",
+  "node_modules",
+  "old_wrong_reports",
+  "_tmp_*",
+  "01_\u6700\u7ec8\u62a5\u544a/_build",
+  "results/v3_clean/final",
+  "results/v3_clean/test_eval"
+ ]
+}

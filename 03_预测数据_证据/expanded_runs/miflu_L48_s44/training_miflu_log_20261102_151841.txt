@@ -1,0 +1,73 @@
+[15:18:41] ============================================================
+[15:18:41]   MIFlu — FULL MULTIMODAL (text prompt + time-series)
+[15:18:41]   PAPER PROTOCOL (MIFlu_paper.md)
+[15:18:41] ============================================================
+[15:18:41]   Evaluation protocol: paper protocol (NOT L=52 walk-forward)
+[15:18:41]   Ablation variant: full  (use_lora=True, use_text=True, K=6, text_embedder=author_file)
+[15:18:41]   Rolling-origin fold: none (fixed 70/10/20 split)
+[15:18:41]   Device: cuda (NVIDIA A100-SXM4-80GB)
+[15:18:41]   Config: T=104, L=[48] (each L trained INDEPENDENTLY)
+[15:18:41]           K=6, Lp=24, S=2, lora_r=4
+[15:18:41]           Split: static 70:10:20 (shuffle=False)
+[15:18:41]           Normalization: StandardScaler fit on TRAIN only
+[15:18:41]           batch=16, lr=0.0001, epochs=20, reps=1, seed=44
+[15:18:41] 
+[15:18:41] Profile author_repo_966: renamed columns via column_map -> ['date', '% WEIGHTED ILI', '% UNWEIGHTED ILI', 'AGE 0-4', 'AGE 5-24', 'ILITOTAL', 'NUM. OF PROVIDERS', 'OT']
+[15:18:41] Scaler persisted -> /gpfs1/home/sychan552/stage5_a2_durable/data/scaler_miflu_author_repo_966.json (train_end=676, val_end=773)
+[15:18:41] Data: 966 total | Train=676 | Val=97 | Test=193
+[15:18:41] 
+[15:18:41] Text source = AUTHOR FILE (text_emb_label_0507_<L>.txt, byte-identical to GPT4TS_lora.py L132)
+[15:18:41] 
+[15:18:41]   Author text embedding L=48: (1, 317, 768) from text_emb_label_0507_48.txt
+[15:18:41] ──────────────────────────────────────────────────
+[15:18:41]   HORIZON L=48
+[15:18:41] ──────────────────────────────────────────────────
+[15:18:41]   [L=48] Rep 1/1 ...
+[15:18:41]   L=48: train=525 val=50 test=146 windows (containment=strict)
+[15:18:41]   L=48: leakage guard OK — min test target-start index = 773, containment=strict
+[15:19:05]     ep  1/20 | train_loss=0.531120 | val_mse=0.310071(All) 0.4937(ILI) | val_mae=0.432031 | lr=0.000100 | 23.5s | GPU=0.73GB
+[15:19:29]     ep  2/20 | train_loss=0.416033 | val_mse=0.297548(All) 0.4883(ILI) | val_mae=0.407176 | lr=0.000100 | 23.4s | GPU=0.73GB
+[15:19:52]     ep  3/20 | train_loss=0.365707 | val_mse=0.220477(All) 0.3762(ILI) | val_mae=0.321542 | lr=0.000100 | 23.3s | GPU=0.73GB
+[15:20:15]     ep  4/20 | train_loss=0.336034 | val_mse=0.228026(All) 0.3912(ILI) | val_mae=0.331959 | lr=0.000100 | 23.3s | GPU=0.73GB
+[15:20:39]     ep  5/20 | train_loss=0.291770 | val_mse=0.223237(All) 0.3800(ILI) | val_mae=0.323074 | lr=0.000090 | 23.3s | GPU=0.73GB
+[15:21:02]     ep  6/20 | train_loss=0.252555 | val_mse=0.184572(All) 0.3043(ILI) | val_mae=0.299609 | lr=0.000081 | 23.3s | GPU=0.73GB
+[15:21:25]     ep  7/20 | train_loss=0.218459 | val_mse=0.211274(All) 0.3507(ILI) | val_mae=0.306396 | lr=0.000073 | 23.3s | GPU=0.73GB
+[15:21:49]     ep  8/20 | train_loss=0.192256 | val_mse=0.202842(All) 0.3424(ILI) | val_mae=0.298195 | lr=0.000066 | 23.3s | GPU=0.73GB
+[15:22:12]     ep  9/20 | train_loss=0.175084 | val_mse=0.216857(All) 0.3695(ILI) | val_mae=0.306950 | lr=0.000059 | 23.3s | GPU=0.73GB
+[15:22:35]     ep 10/20 | train_loss=0.161493 | val_mse=0.203788(All) 0.3464(ILI) | val_mae=0.298450 | lr=0.000053 | 23.3s | GPU=0.73GB
+[15:22:58]     ep 11/20 | train_loss=0.151084 | val_mse=0.198851(All) 0.3421(ILI) | val_mae=0.300363 | lr=0.000048 | 23.3s | GPU=0.73GB
+[15:23:22]     ep 12/20 | train_loss=0.143891 | val_mse=0.196537(All) 0.3305(ILI) | val_mae=0.289512 | lr=0.000043 | 23.3s | GPU=0.73GB
+[15:23:45]     ep 13/20 | train_loss=0.135663 | val_mse=0.210866(All) 0.3624(ILI) | val_mae=0.299520 | lr=0.000039 | 23.3s | GPU=0.73GB
+[15:24:08]     ep 14/20 | train_loss=0.130464 | val_mse=0.201041(All) 0.3429(ILI) | val_mae=0.294086 | lr=0.000035 | 23.3s | GPU=0.73GB
+[15:24:32]     ep 15/20 | train_loss=0.126946 | val_mse=0.205617(All) 0.3511(ILI) | val_mae=0.294982 | lr=0.000031 | 23.3s | GPU=0.73GB
+[15:24:55]     ep 16/20 | train_loss=0.121469 | val_mse=0.208747(All) 0.3567(ILI) | val_mae=0.297631 | lr=0.000028 | 23.3s | GPU=0.73GB
+[15:25:18]     ep 17/20 | train_loss=0.119082 | val_mse=0.204699(All) 0.3476(ILI) | val_mae=0.289982 | lr=0.000025 | 23.3s | GPU=0.73GB
+[15:25:42]     ep 18/20 | train_loss=0.115155 | val_mse=0.213549(All) 0.3634(ILI) | val_mae=0.294123 | lr=0.000023 | 23.3s | GPU=0.73GB
+[15:26:05]     ep 19/20 | train_loss=0.113817 | val_mse=0.219608(All) 0.3659(ILI) | val_mae=0.299574 | lr=0.000021 | 23.3s | GPU=0.73GB
+[15:26:29]     ep 20/20 | train_loss=0.110537 | val_mse=0.214723(All) 0.3544(ILI) | val_mae=0.300068 | lr=0.000019 | 23.3s | GPU=0.73GB
+[15:26:31]   L=48 DONE: test_mse=1.657890(All) 3.1302(ILI) 0.6771(WILI) test_mae=0.845805 pcc=0.8153
+[15:26:32]   [CKPT] L=48: kept rep seed=44 (best val_mse=0.184572) -> /gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L48_s44/ckpt/best_miflu_L48.pth
+[15:26:45]   [CSV] L=48: alignment check OK (max GT spread across overlapping windows = 0.00e+00)
+[15:26:45]   [CSV] L=48: predictions written -> /gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L48_s44/predictions_miflu_L48_paper_protocol.csv (train=25200, val=2400, test=7008 rows)
+[15:26:45]   [MANIFEST] L=48 -> /gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L48_s44/manifest_miflu_L48_s44.json (variant=full)
+[15:26:45]   [L=48] FINAL: MSE_AllVars=1.657890 MSE_ILITotal=3.130170
+[15:26:45] 
+[15:26:45] ============================================================
+[15:26:45]   FINAL RESULTS — ILITOTAL (paper protocol, mean ± std over 10 reps)
+[15:26:45] ============================================================
+[15:26:45]      L           MSE           MAE
+[15:26:45]   --------------------------------
+[15:26:45]     48      3.1302±nan        1.1623±nan  
+[15:26:45] ============================================================
+[15:26:45]   SUPPLEMENTARY — de-normalised (patient counts). NOT the paper's
+[15:26:45]   Table V metric: MIFlu §V-B de-normalises only for the REGIONAL task.
+[15:26:45]   Reported for interpretability of the figures only.
+[15:26:45]   --------------------------------------------------------------
+[15:26:45]     48  MSE=   253721424.0±nan       patients^2   MAE=  10464.5±nan     patients
+[15:26:45] ============================================================
+[15:26:45]   BEST-VAL CHECKPOINTS (one per horizon, rep with lowest val MSE):
+[15:26:45]     - L=48: seed=44  best_val_mse=0.184572  test_mse_ili=3.130170
+[15:26:45] ============================================================
+[15:26:45]   Total time: 8.1 min
+[15:26:45]   Raw per-rep results : /gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L48_s44/results_miflu_paper_protocol_20261102_151841.csv
+[15:26:45]   Tidy result table   : /gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L48_s44/results_miflu_paper_protocol_table_20261102_151841.csv

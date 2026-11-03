@@ -1,0 +1,31 @@
+[08:45:23] ============================================================
+[08:45:23]   MIFlu — FULL MULTIMODAL (text prompt + time-series)
+[08:45:23]   PAPER PROTOCOL (MIFlu_paper.md)
+[08:45:23] ============================================================
+[08:45:23]   Evaluation protocol: paper protocol (NOT L=52 walk-forward)
+[08:45:23]   Ablation variant: full  (use_lora=True, use_text=True, K=6, text_embedder=author_file)
+[08:45:23]   Rolling-origin fold: none (fixed 70/10/20 split)
+[08:45:23]   Device: cuda (NVIDIA A100-SXM4-80GB)
+[08:45:23]   Config: T=104, L=[24] (each L trained INDEPENDENTLY)
+[08:45:23]           K=6, Lp=24, S=2, lora_r=4
+[08:45:23]           Split: static 70:10:20 (shuffle=False)
+[08:45:23]           Normalization: StandardScaler fit on TRAIN only
+[08:45:23]           batch=16, lr=0.0001, epochs=20, reps=1, seed=43
+[08:45:23] 
+[08:45:23] Profile author_repo_966: renamed columns via column_map -> ['date', '% WEIGHTED ILI', '% UNWEIGHTED ILI', 'AGE 0-4', 'AGE 5-24', 'ILITOTAL', 'NUM. OF PROVIDERS', 'OT']
+[08:45:23] Scaler persisted -> /gpfs1/home/sychan552/stage5_a2_durable/data/scaler_miflu_author_repo_966.json (train_end=676, val_end=773)
+[08:45:23] Data: 966 total | Train=676 | Val=97 | Test=193
+[08:45:23] 
+[08:45:23] Text source = AUTHOR FILE (text_emb_label_0507_<L>.txt, byte-identical to GPT4TS_lora.py L132)
+[08:45:23] 
+[08:45:23]   Author text embedding L=24: (1, 317, 768) from text_emb_label_0507_24.txt
+[08:45:23] ──────────────────────────────────────────────────
+[08:45:23]   HORIZON L=24
+[08:45:23] ──────────────────────────────────────────────────
+[08:45:23]   [L=24] Rep 1/1 ...
+[08:45:23]   L=24: train=549 val=74 test=170 windows (containment=strict)
+[08:45:23]   L=24: leakage guard OK — min test target-start index = 773, containment=strict
+[08:45:49]     ep  1/20 | train_loss=0.501743 | val_mse=0.279006(All) 0.4745(ILI) | val_mae=0.368991 | lr=0.000100 | 24.9s | GPU=0.71GB
+[08:46:13]     ep  2/20 | train_loss=0.365139 | val_mse=0.248968(All) 0.4110(ILI) | val_mae=0.344326 | lr=0.000100 | 24.7s | GPU=0.71GB
+[08:46:38]     ep  3/20 | train_loss=0.315800 | val_mse=0.222852(All) 0.3869(ILI) | val_mae=0.307866 | lr=0.000100 | 24.7s | GPU=0.71GB
+[08:47:03]     ep  4/20 | train_loss=0.279094 | val_mse=0.241827(All) 0.4041(ILI) | val_mae=0.336781 | lr=0.000100 | 24.7s | GPU=0.71GB

@@ -1,0 +1,2 @@
+backbone,L,seed,fidelity_label,mse_all,mae_all,mse_ili,mae_ili,best_val,best_epoch,n_train,n_val,n_test,total_parameters,trainable_parameters,ckpt,ckpt_sidecar,model_id,revision,probe_only
+qwen25_1_5b,60,42,"frozen-LLM encoder + shared linear head (cross-scale probe, methodology item 3)",5.626468658447266,1.642828106880188,11.032242774963379,2.106534719467163,0.5141642689704895,14,513,38,134,1543806524,92220,,,/home/sychan552/scratch/hf_cache/models--Qwen--Qwen2.5-1.5B/snapshots/8faed761d45a263340a0528343f099c05c9a4323,8faed761d45a263340a0528343f099c05c9a4323,False

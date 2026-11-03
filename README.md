@@ -20,7 +20,7 @@ pip install -r requirements.txt
 python reproduce_all.py
 
 # 3. Verify report integrity
-python scripts/verify_report_parity.py
+python 05_程序代码/verify_report_parity.py
 ```
 
 > **Note**: The 8-model per-cell prediction files (14 `.npz` files) are packaged in `test_eval_download.tar.gz` / `r1c_logs.tgz` for size reasons. If missing, the scoring stage will report exactly what is absent — it will not silently skip.
@@ -50,16 +50,16 @@ python scripts/verify_report_parity.py
 ```
 MLFlu/
 ├── reproduce_all.py              # One-click reproduction entry (7 stages)
-├── data/                         # Official 966-row dataset + scaler + predictions
+├── 06_原始数据集/                         # Official 966-row dataset + scaler + predictions
 ├── checkpoints/                  # Trained model checkpoints (best_miflu_L*.pth)
 ├── results/v3_clean/             # Frozen predictions, peak criteria, figures
-├── hpc_results/
+├── 03_预测数据_证据/
 │   ├── official_repo_reproduction_20261006/   # Training logs + authoritative tables
 │   └── checkpoints/               # HPC-trained checkpoints
 ├── reports/concise_final/        # AUTHORITATIVE report (DOCX/PDF/MD)
-├── scripts/                      # Reproduction chain scripts (scoring, tables, report)
-├── paper_tables/                 # Flat copies of authoritative tables
-├── docs/                         # Glossary, evidence index, protocol freeze
+├── 05_程序代码/                      # Reproduction chain scripts (scoring, tables, report)
+├── 02_数字表格/                 # Flat copies of authoritative tables
+├── 04_详细说明文档/                         # Glossary, evidence index, protocol freeze
 ├── audit_20260930/               # Audit evidence (frozen)
 ├── tests/                        # Regression test suite (342 cases)
 └── handoff/                      # Compact handoff package builder
@@ -71,8 +71,8 @@ MLFlu/
 
 | Asset | Location | SHA256 |
 |-------|----------|--------|
-| Official 966-row data | `data/official_merged_ili_966.csv` | `2a96dfed…` |
-| Scaler params | `data/train_966_std_scaler.csv` | `bcb95d55…` |
+| Official 966-row data | `06_原始数据集/official_merged_ili_966.csv` | `2a96dfed…` |
+| Scaler params | `06_原始数据集/train_966_std_scaler.csv` | `bcb95d55…` |
 | Predictions (14 files) | `test_eval_download.tar.gz` / `r1c_logs.tgz` | see `AUDIT_TABLE_IV_TRACEABILITY.md` |
 | Model checkpoints | `checkpoints/best_miflu_L{24,36,48,60}.pth` | see manifests |
 | Authoritative report | `reports/concise_final/REPORT_精简终版.docx` | `73f97cc2…` |
@@ -91,7 +91,7 @@ MLFlu/
 > 6. **官方数据 SHA256**：`2a96dfed…`，不做静默修正。
 > 7. **MSE≠accuracy**：MSE 排名与 accuracy 衡量不可互换。
 >
-> **English summary**: (1) Table V numbers from two data chains are not comparable. (2) The text-pathway mechanism contradiction (constant text embedding vs. claimed text influence) is **unresolved** — no "reproduction success" claim is made. (3) Peak criteria (PTE≤1wk & PIE≤25%): NLinear 36/36, DLinear 31/36, MIFlu 15/36. Earlier docs misattributed DLinear's 31/36 to MIFlu — corrected. Peak analysis uses k=1 (one-week-ahead), not L=24–60 week lead forecasts. (4) Unified pair is fixed to 966|L24|seed42. (5) There is one authoritative report. (6) Official data SHA256 is verified. (7) MSE ranking is not interchangeable with accuracy metrics.
+> **English summary**: (1) Table V numbers from two 06_原始数据集 chains are not comparable. (2) The text-pathway mechanism contradiction (constant text embedding vs. claimed text influence) is **unresolved** — no "reproduction success" claim is made. (3) Peak criteria (PTE≤1wk & PIE≤25%): NLinear 36/36, DLinear 31/36, MIFlu 15/36. Earlier docs misattributed DLinear's 31/36 to MIFlu — corrected. Peak analysis uses k=1 (one-week-ahead), not L=24–60 week lead forecasts. (4) Unified pair is fixed to 966|L24|seed42. (5) There is one authoritative report. (6) Official data SHA256 is verified. (7) MSE ranking is not interchangeable with accuracy metrics.
 
 ---
 

@@ -89,7 +89,7 @@ ssh sychan552@burgundy.hpc.cityu.edu.hk "rm -rf /home/sychan552/scratch/CHATTIME
 | `stingy` | mixed (incl. `gpu-a100-03~06`) | **QOS-capped at 04:00:00** | Often has **idle A100s** → faster start. Use this by default. |
 | `gpu_v100s` | V100 | — | Avoid for 7B float16 (easy OOM). |
 
-**Default for all submit scripts:** `#SBATCH --partition=stingy` + `#SBATCH --gres=gpu:a100:1`.
+**Default for all submit 05_程序代码:** `#SBATCH --partition=stingy` + `#SBATCH --gres=gpu:a100:1`.
 - **Never** use bare `--gres=gpu:1` on `stingy` — it can schedule onto a V100 (mix node) → OOM.
 - **HARD RULE — `stingy` QOS wall-clock cap = `04:00:00` (4h).** Submitting with
   `--time=12:00:00` (or any value > 4h) FAILS immediately with
@@ -184,7 +184,7 @@ Verified-present: `sentencepiece`, `protobuf` (6.33.6), `scipy`, `matplotlib`, `
   ```
 - **PowerShell `scp` fallback** (no `--delete`; also uploads `.git/`+`__pycache__/`):
   ```powershell
-  scp -r scripts data reference/ChatTime submit_ili_fulltest.sh submit_chattime_repro.sh ILI.csv `
+  scp -r 05_程序代码 06_原始数据集 reference/ChatTime submit_ili_fulltest.sh submit_chattime_repro.sh ILI.csv `
     sychan552@burgundy.hpc.cityu.edu.hk:/home/sychan552/scratch/CHATTIME/Chattime/
   ```
   Lean upload: first `Remove-Item -Recurse -Force .git, __pycache__` locally.
@@ -199,36 +199,36 @@ Verified-present: `sentencepiece`, `protobuf` (6.33.6), `scipy`, `matplotlib`, `
 
 **The authoritative MIFlu pipeline IS the L=24/36/48/60 four-horizon INDEPENDENT sweep.**
 This is the only result source for the paper-protocol deliverable. See
-`docs/full_repo_audit_report.md` §A.3 and §B for the full rationale (and why the old
+`04_详细说明文档/full_repo_audit_report.md` §A.3 and §B for the full rationale (and why the old
 ChatTime L=52 line was archived).
 
-- Model: fine-tuned **MIFlu** (`scripts/train_miflu.py` + `miflu_model.py` +
+- Model: fine-tuned **MIFlu** (`05_程序代码/train_miflu.py` + `miflu_model.py` +
   `textual_embedder.py`), NOT the 7B ChatTime base.
 - Protocol: `L ∈ {24, 36, 48, 60}` are FOUR SEPARATE runs (each 10 reps, 70:10:20 split,
   scaler fit on TRAIN only, test target start strictly > val end). NOT a single rolling
   L=52 walk-forward.
-- Pipeline entry point: `scripts/submit_miflu_paper_protocol.sh`. Submit the four horizons
+- Pipeline entry point: `05_程序代码/submit_miflu_paper_protocol.sh`. Submit the four horizons
   as FOUR independent `stingy` jobs (one GPU each):
   ```bash
   for L in 24 36 48 60; do
-    MIFLU_HORIZON=$L sbatch /home/sychan552/scratch/CHATTIME/Chattime/scripts/submit_miflu_paper_protocol.sh
+    MIFLU_HORIZON=$L sbatch /home/sychan552/scratch/CHATTIME/Chattime/05_程序代码/submit_miflu_paper_protocol.sh
   done
   ```
 - Outputs (never confuse with the deprecated walk-forward CSV):
-  - `data/results_miflu_paper_protocol_*.csv` (raw per-rep)
-  - `data/results_miflu_paper_protocol_table_*.csv` (tidy table — the conclusion source)
-  - `data/predictions_miflu_L{L}_paper_protocol.csv` (per-horizon, `split` column)
+  - `06_原始数据集/results_miflu_paper_protocol_*.csv` (raw per-rep)
+  - `06_原始数据集/results_miflu_paper_protocol_table_*.csv` (tidy table — the conclusion source)
+  - `06_原始数据集/predictions_miflu_L{L}_paper_protocol.csv` (per-horizon, `split` column)
   - `checkpoints/best_miflu_L{L}.pth`
-  - Figures via `scripts/make_miflu_evaluation_figure.py` (reads the split-CSV, **test only**):
+  - Figures via `05_程序代码/make_miflu_evaluation_figure.py` (reads the split-CSV, **test only**):
     `fig_miflu_eval_continuous_L{L}.png` etc.
-- Metric/indicator computation: `scripts/compute_miflu_indicators.py` (per-horizon Timing /
+- Metric/indicator computation: `05_程序代码/compute_miflu_indicators.py` (per-horizon Timing /
   Peak-Hit / Peak-Intensity, Fix-Brief #3 semantics). Feature check: `feature_verification.py`.
 
 > **DEPRECATED (Phase 2 ChatTime comparison line — archived, do NOT run for Phase 1):**
 > The old ChatTime-1-7B-Chat L=52 continuous walk-forward (`Hist=104/Pred=52/stride=52`)
 > was archived on 2026-08-16 to `*_DEPRECATED.*`:
-> `submit_ili_fulltest_DEPRECATED.sh`, `scripts/run_ili_walkforward_DEPRECATED.py`,
-> `scripts/make_ili_fulltest_figure_DEPRECATED.py`, `scripts/compute_peak_metrics_DEPRECATED.py`.
+> `submit_ili_fulltest_DEPRECATED.sh`, `05_程序代码/run_ili_walkforward_DEPRECATED.py`,
+> `05_程序代码/make_ili_fulltest_figure_DEPRECATED.py`, `05_程序代码/compute_peak_metrics_DEPRECATED.py`.
 > Its figure was `results/ili/figures/fig_ili_fulltest_continuous.png` (FluSight aggregate MAE
 > over the full test period). It is kept only as a Phase-2 reference, NOT a Phase-1 deliverable.
 
@@ -237,16 +237,16 @@ On 2026-08-16 the local `train_miflu.py` was rewritten for the paper protocol (L
 independent sweep) but had **never been uploaded to HPC**. The remote still carried only the
 old ChatTime L=52 line, so two silently divergent pipelines existed. **Checklist before ANY
 future HPC run:**
-1. After editing any `scripts/*.py` or `submit_*.sh` LOCALLY, **re-upload it to HPC** (the
-   sandbox does NOT auto-sync). Verify with `ssh ... "ls -la --time-style=+%Y-%m-%d_%H:%M scripts/train_miflu.py"`
-   and confirm the mtime matches your local edit + `grep -n 'L_list' scripts/train_miflu.py`
+1. After editing any `05_程序代码/*.py` or `submit_*.sh` LOCALLY, **re-upload it to HPC** (the
+   sandbox does NOT auto-sync). Verify with `ssh ... "ls -la --time-style=+%Y-%m-%d_%H:%M 05_程序代码/train_miflu.py"`
+   and confirm the mtime matches your local edit + `grep -n 'L_list' 05_程序代码/train_miflu.py`
    shows `[24, 36, 48, 60]`.
 2. After editing `HPC_GUIDE.md` LOCALLY, **also update the copy on HPC** (HPC runs consult the
    remote copy). They drifted: the remote §6 still banned the L=24/36/48/60 sweep.
 3. Confirm the active `submit_*.sh` on HPC matches the intended protocol. If you see
    `submit_ili_fulltest*.sh` (non-DEPRECATED) or `run_ili_walkforward.py` active, you are on
    the OLD ChatTime line — stop and use `submit_miflu_paper_protocol.sh`.
-4. Re-run `docs/full_repo_audit_report.md` §B.5 sync check whenever protocol changes.
+4. Re-run `04_详细说明文档/full_repo_audit_report.md` §B.5 sync check whenever protocol changes.
 
 ## 7. Download Results Back
 
@@ -300,7 +300,7 @@ context arms**, never mixed:
   (fast pure-text re-run). Do NOT confuse A2 with A — they are different arms.
 - `national` is pure weather ONLY (reproduces job 502355). The old "Phase 2.5
   hijacked `--mode national`" bug is fixed; `--mode phase25` is its own flag.
-- Lean upload for a re-run: `scripts/` + `reference/ChatTime/` +
+- Lean upload for a re-run: `05_程序代码/` + `reference/ChatTime/` +
   `submit_ili_cgtsf.sh` + `PROJECT_STATE.md` (weather cache is uploaded with the
   project, so step (0) is a fast no-op if present).
 
@@ -310,7 +310,7 @@ context arms**, never mixed:
 - ZSTSF (ETT/Weather/Electric/Exchange/Traffic): Google Drive **folder** link, not
   auto-downloadable → manual fetch required. These block full Table 4/5 reproduction
   only; the ILI full-test walk-forward job (`submit_ili_fulltest.sh`) loads
-  `data/raw/national_ili.csv` directly + cached model and is unaffected.
+  `06_原始数据集/raw/national_ili.csv` directly + cached model and is unaffected.
 
 ## 10. 🔴 RESOURCE-REQUEST RED LINE (official manual, highest priority)
 
@@ -361,12 +361,12 @@ context arms**, never mixed:
 ## 12. Scratch Data-Retention Policy (official manual)
 
 - `scratch` (`/gpfs1/scratch/...`) has **NO backup**. "Unused files will be erased
-  regularly" — the cluster purges stale scratch data without notice.
+  regularly" — the cluster purges stale scratch 06_原始数据集 without notice.
 - **HARD RULE — pull important outputs off HPC after each job**:
   - After **every horizon completes**, `scp` back `checkpoints/best_miflu_L{L}.pth` AND
-    `data/predictions_miflu_L{L}_paper_protocol.csv` (and the results CSVs) to LOCAL.
+    `06_原始数据集/predictions_miflu_L{L}_paper_protocol.csv` (and the results CSVs) to LOCAL.
   - Do NOT rely on HPC scratch as long-term storage. Local landing dir:
-    `checkpoints/` + `data/` in this repo (already the convention).
+    `checkpoints/` + `06_原始数据集/` in this repo (already the convention).
   - This applies to Regional runs too (Table VI): `best_miflu_regional_L*.pth` etc.
 
 ## 13. Connection Reference (official)

@@ -1,0 +1,85 @@
+# PROTOCOL AMENDMENT — uniform 10-seed evaluation for every model (2026-11-02)
+
+**Status:** PROPOSED by the user on 2026-11-02 04:0x, superseding the "3 seeds 42/43/44"
+design in `AGENTS.md` §2 rule 9. It must be ratified in `AGENTS.md` once the re-run is
+scheduled, and it must be reflected in the paper's experimental-setup section.
+
+**What this is.** The decision record for replacing the mixed-seed benchmark
+(16 arms on 3 seeds, MIFlu on 10) with a single uniform protocol: **every model is evaluated
+on the same 10 seeds, 2021–2030, and reports the mean over repetitions.**
+
+**When to read it.** Before running, aggregating, tabulating or writing up any benchmark
+number, and before touching `AGENTS.md` §2 rule 9.
+
+**Supersedes:** `AGENTS.md` §2 rule 9 as written on 2026-11-01, including its MIFlu
+exception. That exception created exactly the inequality the same rule forbids two lines
+above it ("**Never** give one model more seeds than another (10 vs 3, or 3 vs 1). Unequal
+seed counts make the table non-comparable"). The rule was internally contradictory.
+
+**Provenance note, recorded honestly:** the rule cited "(Approved 2026-11-01)" with no
+author name attached, and on 2026-11-02 the user stated they have no memory of approving a
+3-seed design. A protocol the author does not endorse cannot bind the paper. It is therefore
+treated as **unratified** rather than silently kept.
+
+---
+
+## 1. THE AMENDED PROTOCOL
+
+| Item | Old (2026-11-01) | **New (2026-11-02)** |
+|---|---|---|
+| Seeds | 16 arms on 42/43/44; MIFlu on 2021–2030 | **all models on 2021–2030** |
+| Repetitions | 3 (arms) / 10 (MIFlu) | **10 for every model** |
+| Reported statistic | mean ± sd over seeds | **mean ± sd over 10 repetitions** (unchanged in form) |
+| Paired sign-flip tests | MIFlu **excluded** (no matched cells) | **valid for every model**, because every model now shares the same seed set |
+| Cells (non-LLM) | 16 × 4 × 3 = 192 (done) | 16 × 4 × 10 = **640** (192 must be re-run) |
+| Cells (MIFlu) | 4 × 10 = 40 | 40 — **already compliant, no re-run** |
+| Cells (LLM, 10 runnable arms) | 10 × 4 × 3 = 120 | 10 × 4 × 10 = **400** (≈2 A100-h at ~16 s/cell) |
+
+## 2. WHY THIS IS THE DEFENSIBLE CHOICE (three concrete gains)
+
+1. **Fairness.** Every model is trained on the same number of random draws from the same
+   seed set. No model is advantaged or disadvantaged by seed count.
+2. **Comparability.** The table caption can state one protocol, once: "all models reported
+   as the mean over 10 repetitions, seeds 2021–2030". The current split forces a two-protocol
+   caption and invites the reviewer question this amendment removes.
+3. **Statistical power.** With matched seeds, the paired sign-flip test becomes valid for
+   **all** arms including MIFlu. Today MIFlu is excluded from those tests purely because its
+   cells share no seed with the others — that exclusion disappears.
+
+## 3. WHY THIS IS *NOT* A COSMETIC CHANGE
+
+- The 192 existing non-LLM cells were trained on seeds 42/43/44. Under this amendment they
+  are **not** part of the reported set; they must either be re-run on 2021–2030 or retained
+  only as a documented pilot. **Do not average across the two seed sets.**
+- The 36 existing LLM cells are additionally invalid for a second, independent reason: the
+  seed never reached the training path (see `docs/LLM_SEED_BUG.md`), so their cross-seed sd
+  was exactly 0 by construction.
+- Any figure, table or claim derived from the mixed design must be regenerated.
+
+## 4. COST, STATED PLAINLY
+
+| Block | Cells | Rough cost |
+|---|---|---|
+| Non-LLM 16 arms × 4 L × 10 seeds | 640 | **10–40 A100-h** (classical arms are seconds; PatchTST/iTransformer minutes) |
+| LLM 10 arms × 4 L × 10 seeds | 400 | **≈2 A100-h** at ~16 s/cell warm |
+| MIFlu | 40 (already done) | 0 |
+| Regenerate tables + figures | — | minutes (CPU, writer lane) |
+
+The non-LLM block is the real cost. It is affordable over several days of allocation, and it
+does not block the sequence in `docs/EXECUTION_PLAN_PART3.md`: Table VI (one new table for
+~1 A100-hour) still comes first.
+
+## 5. WHAT MUST CHANGE ON DISK WHEN THIS IS EXECUTED
+
+1. `AGENTS.md` §2 rule 9 — replace the 3-seed text and delete the MIFlu exception; state the
+   uniform protocol, and note that the old design is superseded with this date and reason.
+2. `docs/STATE.md` §1.2 — every benchmark number derived from seeds 42/43/44 becomes
+   **superseded**; keep the values but label them *pilot, mixed-seed, not for publication*.
+3. `paper_tables/*` — regenerate from the 10-seed runs only; never blend.
+4. `docs/WORK_BREAKDOWN.md` §13 — add the 640-cell re-run as an explicit, high-priority tranche.
+5. `docs/LEDGER.md` — one row recording the amendment, its reason, its cost and its approver.
+
+## 6. THE ONE-LINE TEST FOR ANY FUTURE TABLE
+
+**If two models in one table were trained on different seed sets, or on different numbers of
+seeds, that table is invalid — regardless of how good the numbers look.**

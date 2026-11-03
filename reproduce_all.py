@@ -30,25 +30,25 @@ STAGES = [
     {
         "name": "score_predictions_independent",
         "desc": "独立评分 14 预测文件 → TRACK_C_TEST_MSE_RANKING.csv",
-        "script": "scripts/score_predictions_independent.py",
+        "script": "05_程序代码/score_predictions_independent.py",
         "outputs": ["results/v3_clean/scoring/TRACK_C_TEST_MSE_RANKING.csv"],
     },
     {
         "name": "verify_metrics",
         "desc": "逐模型逐 horizon 算术一致性硬校验",
-        "script": "scripts/verify_metrics.py",
+        "script": "05_程序代码/verify_metrics.py",
         "outputs": [],
     },
     {
         "name": "compute_pte_pie_track_c",
         "desc": "PTE/Pie 曲线数据 + fig13",
-        "script": "scripts/compute_pte_pie_track_c.py",
+        "script": "05_程序代码/compute_pte_pie_track_c.py",
         "outputs": ["results/v3_clean/scoring/TRACK_C_PTE_PIE_TABLE.csv"],
     },
     {
         "name": "parse_r1c_results",
         "desc": "R1C 日志解析 → PANEL_TABLE / SURVIVAL_*",
-        "script": "scripts/parse_r1c_results.py",
+        "script": "05_程序代码/parse_r1c_results.py",
         "outputs": [
             "results/v3_clean/final/STRICT_966_PANEL_TABLE.csv",
             "results/v3_clean/final/R1C_SURVIVAL_LEADERBOARD.csv",
@@ -57,22 +57,22 @@ STAGES = [
     {
         "name": "build_track_c_docx",
         "desc": "权威报告 DOCX + docx_inputs/ 权威表",
-        "script": "scripts/build_track_c_docx.py",
+        "script": "05_程序代码/build_track_c_docx.py",
         "outputs": [
             "reports/concise_final/REPORT_精简终版.docx",
-            "hpc_results/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_TEST_MSE_RANKING.csv",
+            "03_预测数据_证据/official_repo_reproduction_20261006/r1_v2_verification_20261007/docx_inputs/TRACK_C_TEST_MSE_RANKING.csv",
         ],
     },
     {
         "name": "extract_docx_to_md",
         "desc": "DOCX → MD 镜像 + 六个一致性串 + SHA 校验",
-        "script": "scripts/extract_docx_to_md.py",
+        "script": "05_程序代码/extract_docx_to_md.py",
         "outputs": ["reports/concise_final/REPORT_精简终版.md"],
     },
     {
         "name": "verify_report_parity",
         "desc": "DOCX↔MD 双向 parity 终检",
-        "script": "scripts/verify_report_parity.py",
+        "script": "05_程序代码/verify_report_parity.py",
         "outputs": [],
     },
 ]
@@ -120,7 +120,7 @@ def main() -> int:
     print(f"\n{'='*60}")
     print(f"全链完成：{limit} 个阶段全部 PASS")
     print(f"权威报告 DOCX: reports/concise_final/REPORT_精简终版.docx")
-    print(f"权威表: hpc_results/.../docx_inputs/TRACK_C_TEST_MSE_RANKING.csv")
+    print(f"权威表: 03_预测数据_证据/.../docx_inputs/TRACK_C_TEST_MSE_RANKING.csv")
     print(f"{'='*60}")
     return 0
 

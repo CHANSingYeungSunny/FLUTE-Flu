@@ -1,0 +1,39 @@
+[14:09:20] ============================================================
+[14:09:20]   MIFlu — FULL MULTIMODAL (text prompt + time-series)
+[14:09:20]   PAPER PROTOCOL (MIFlu_paper.md)
+[14:09:20] ============================================================
+[14:09:20]   Evaluation protocol: paper protocol (NOT L=52 walk-forward)
+[14:09:20]   Ablation variant: full  (use_lora=True, use_text=True, K=6, text_embedder=author_file)
+[14:09:20]   Rolling-origin fold: none (fixed 70/10/20 split)
+[14:09:20]   Device: cuda (NVIDIA A100-SXM4-80GB)
+[14:09:20]   Config: T=104, L=[36] (each L trained INDEPENDENTLY)
+[14:09:20]           K=6, Lp=24, S=2, lora_r=4
+[14:09:20]           Split: static 70:10:20 (shuffle=False)
+[14:09:20]           Normalization: StandardScaler fit on TRAIN only
+[14:09:20]           batch=16, lr=0.0001, epochs=20, reps=1, seed=43
+[14:09:20] 
+[14:09:20] Profile author_repo_966: renamed columns via column_map -> ['date', '% WEIGHTED ILI', '% UNWEIGHTED ILI', 'AGE 0-4', 'AGE 5-24', 'ILITOTAL', 'NUM. OF PROVIDERS', 'OT']
+[14:09:20] Scaler persisted -> /gpfs1/home/sychan552/stage5_a2_durable/data/scaler_miflu_author_repo_966.json (train_end=676, val_end=773)
+[14:09:20] Data: 966 total | Train=676 | Val=97 | Test=193
+[14:09:20] 
+[14:09:20] Text source = AUTHOR FILE (text_emb_label_0507_<L>.txt, byte-identical to GPT4TS_lora.py L132)
+[14:09:20] 
+[14:09:20]   Author text embedding L=36: (1, 317, 768) from text_emb_label_0507_36.txt
+[14:09:20] ──────────────────────────────────────────────────
+[14:09:20]   HORIZON L=36
+[14:09:20] ──────────────────────────────────────────────────
+[14:09:20]   [L=36] Rep 1/1 ...
+[14:09:20]   L=36: train=537 val=62 test=158 windows (containment=strict)
+[14:09:20]   L=36: leakage guard OK — min test target-start index = 773, containment=strict
+[14:09:45]     ep  1/20 | train_loss=0.523203 | val_mse=0.264172(All) 0.4289(ILI) | val_mae=0.389187 | lr=0.000100 | 24.0s | GPU=0.72GB
+[14:10:08]     ep  2/20 | train_loss=0.401402 | val_mse=0.223535(All) 0.3789(ILI) | val_mae=0.323062 | lr=0.000100 | 23.8s | GPU=0.72GB
+[14:10:32]     ep  3/20 | train_loss=0.350985 | val_mse=0.265458(All) 0.4510(ILI) | val_mae=0.353841 | lr=0.000100 | 23.8s | GPU=0.72GB
+[14:10:56]     ep  4/20 | train_loss=0.309984 | val_mse=0.222344(All) 0.3775(ILI) | val_mae=0.315809 | lr=0.000100 | 24.0s | GPU=0.72GB
+[14:11:20]     ep  5/20 | train_loss=0.274396 | val_mse=0.229293(All) 0.3772(ILI) | val_mae=0.344450 | lr=0.000090 | 23.8s | GPU=0.72GB
+[14:11:44]     ep  6/20 | train_loss=0.234034 | val_mse=0.176115(All) 0.2911(ILI) | val_mae=0.280649 | lr=0.000081 | 23.8s | GPU=0.72GB
+[14:12:08]     ep  7/20 | train_loss=0.211603 | val_mse=0.195901(All) 0.3333(ILI) | val_mae=0.291920 | lr=0.000073 | 23.8s | GPU=0.72GB
+[14:12:32]     ep  8/20 | train_loss=0.190099 | val_mse=0.228732(All) 0.3781(ILI) | val_mae=0.326103 | lr=0.000066 | 23.8s | GPU=0.72GB
+[14:12:55]     ep  9/20 | train_loss=0.171817 | val_mse=0.176277(All) 0.2855(ILI) | val_mae=0.283857 | lr=0.000059 | 23.8s | GPU=0.72GB
+[14:13:19]     ep 10/20 | train_loss=0.162885 | val_mse=0.201840(All) 0.3316(ILI) | val_mae=0.297283 | lr=0.000053 | 23.8s | GPU=0.72GB
+[14:13:43]     ep 11/20 | train_loss=0.152400 | val_mse=0.213596(All) 0.3518(ILI) | val_mae=0.299842 | lr=0.000048 | 23.8s | GPU=0.72GB
+[14:14:07]     ep 12/20 | train_loss=0.146489 | val_mse=0.199370(All) 0.3344(ILI) | val_mae=0.293307 | lr=0.000043 | 23.8s | GPU=0.72GB
