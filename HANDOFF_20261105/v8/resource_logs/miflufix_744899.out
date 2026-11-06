@@ -1,0 +1,18 @@
+=== T6_MIFLU_FIX START 2026-11-06T17:42:56Z host=gpu-a100-03 job=744899 ===
+GPU 0: NVIDIA A100-SXM4-80GB (UUID: GPU-5177403d-8fa8-8a6c-d470-04e5703dd4d4)
+MIFLU_FIX_RC=0
+miflu_fix peak_vram_mib=4816
+miflu_fix n_samples=46
+--- stdout tail ---
+       test MSE_7var_z=1.624383   (npz + results + manifest written)
+       pred_miflu_L36_t6miflufix.npz | results_miflu_L36_t6miflufix.csv | manifest_miflu_L36_t6miflufix.json
+
+==========================================================================
+SUMMARY
+  L=36 seed=2023  written
+
+[PASS] all requested cells exported
+--- stderr tail ---
+/gpfs1/scratch/sychan552/stage5_a2_durable/code/export_miflu_all7.py:424: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  sd = torch.load(ckpt, map_location=device)
+=== T6_MIFLU_FIX END 2026-11-06T17:43:42Z ===

@@ -1,0 +1,23 @@
+# TASK 2 local full-weight download manifest
+repo_id=google/timesfm-2.0-500m-pytorch
+revision=dc2443792ce5516872b89b37cf1bc058c3bf0c10
+local_dir=C:/models/mlflu_fm/timesfm_2_0_500m_pytorch
+name=timesfm_2_0_500m_pytorch
+start_utc=2026-11-06T15:09:45Z
+end_utc=2026-11-06T15:11:38Z
+file_count=13
+total_bytes=3990963772
+huggingface_hub_version=2.4.0
+684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1  1  .cache/huggingface/.gitignore
+e8893e2dcb3f4545ef67a0a5b7b769113d38eef1aa61c7c7ba14659b02af955f  195  .cache/huggingface/CACHEDIR.TAG
+61b593f044bc9e27f2672c6da3990bda596824e5c378f5c760684832c6b4edad  103  .cache/huggingface/download/.gitattributes.metadata
+bf10b1a8fe9a2919e6a61680bfe42d42ae9d72e44c795525b895897bb8feca99  103  .cache/huggingface/download/README.md.metadata
+533ff8f14ac7267fba269ffd7c671c50a24e8dbc57fd1841561eab4117b34c4b  104  .cache/huggingface/download/config.json.metadata
+318fe7aa27daad7c350a96e0392a13382e678be9ee155e139c5a63480a63e7cf  127  .cache/huggingface/download/model.safetensors.metadata
+7fa1953e7576cd3c83e93d026b31fd3031822a167a6b4042a38b8c79c7685a64  127  .cache/huggingface/download/torch_model.ckpt.metadata
+9250e4dfa8f0913bb0c1e89774ebef9316a7e45db411cbb73a9041c47f3cddfc  972  .cache/huggingface/trees/dc2443792ce5516872b89b37cf1bc058c3bf0c10.json
+ff901ca9c8561d9b61d532b304e807b1dfc607a357cc0d940ad39cd5a955b88a  1572  .gitattributes
+f9665708551e99a82fe69d5351770641d3ee5c5906cc65a84da2c641a1128789  7352  README.md
+6be4107f60a7e89ea619dbcc99f4d7d321ea02b7dd5124999f6bcfd404932e3a  692  config.json
+bb9d7022d8027325f4e656b7d5cf36dd919269fd79ad714eab41f5ba49cc1cfe  1995406976  model.safetensors
+a3a1362cdc26f0dde45c9790c438951ff02af96b2d1d6445fdb58f28c77e18de  1995545448  torch_model.ckpt

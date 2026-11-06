@@ -1,157 +1,104 @@
-# T8_VERDICT.md — TASK 8 (v8 final package), 2026-11-06
+# T8_VERDICT.md — TASK 8 FINAL RE-PACKAGE, 2026-11-06
 
 ```
-status: COMPLETED (PRELIMINARY PACKAGING PASS)
-        The v8 return package was assembled and structurally validated with the
-        files available on 2026-11-06. This is NOT a scientific completion and
-        NOT "all done": T7 DOCX/PDF and the T1-updated final WF CSV have NOT
-        landed. validator PASS is structural only -> scientific_readiness:
-        NOT_ASSESSED.
-start_utc: 2026-11-06T14:18:14Z   # first timestamped packaging command (builder);
-                                    # file read/inspection phase immediately precedes
-end_utc:   2026-11-06T14:21:37Z   # last `date -u` after verification; this verdict written immediately after
-builder_window_utc: 2026-11-06T14:18:14Z -> 2026-11-06T14:20:05Z
-project_root: C:\Users\Asus\Desktop\FYP code\MLFlu
-python: 3.13.14 (Windows, Git Bash)
+status: COMPLETED (FINAL PACKAGE)
+start_utc: 2026-11-06T17:04:32Z
+end_utc:   2026-11-06T17:07:50Z
 ```
 
-## 1. Scope honoured
+This **supersedes** the earlier `COMPLETED (PRELIMINARY PACKAGING PASS)` verdict
+(2026-11-06T14:18:14Z → 14:21:37Z), which was built BEFORE the T1 1020/1020 WF CSV,
+the T2 foundation results, the T4 correction, the T6 GPU measurement and the v8b
+DOCX/PDF rebuild. The original preliminary record is retained verbatim below in
+§7 as a historical record. **Do not use the old ZIP hashes.**
 
-- Wrote ONLY into `HANDOFF_20261105/v8/packaging/`, `v8/RETURN_V8/`,
-  `v8/MESSAGE_TO_CHATGPT.md`, `v8/T8_VERDICT.md`, `v8/RETURN_TO_CHATGPT.zip`,
-  `v8/RAW_EVIDENCE.zip`.
-- Did NOT modify `v8/TASK_LOG.md`, `HANDOFF_20261105/final/*`,
-  `HANDOFF_20261105/v7/*`, `HANDOFF_20261105/RETURN_REV9_2/*`, or any frozen CSV,
-  raw prediction, checkpoint, or owner-edited PPTX. All sources were COPY only.
-- `shutil.rmtree` was used ONLY on `v8/RETURN_V8/` (own staging dir of copies).
-- `RETURN_MANIFEST.json` was written ONLY by the official tool; never hand-written.
-- The validator was NOT edited to force a PASS.
+## 1. Exact command
 
-## 2. Exact commands and exit codes (all run from the project root)
+```
+python "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/packaging/build_v8_return.py"
+```
 
-The two official tools were first inspected (`argparse`): `make_return_manifest.py`
-takes a positional `root: Path` + `--exclude` (append); `validate_return.py` takes
-a positional `root: Path` + `--out` (Path). The prompt's invocation therefore
-worked as-is; only the paths were adapted to absolute Windows paths and the tool
-copies in `v8/packaging/tools/`. No different invocation was required.
+The builder internally ran the two official tools (byte-identical copies in
+`v8/packaging/tools/`):
 
-| # | exact command (as run) | exit code |
-|---|---|---|
-| C0 | `cp "handoffs/20261105_return/tools/make_return_manifest.py" "HANDOFF_20261105/v8/packaging/tools/make_return_manifest.py"` and the same for `validate_return.py` (byte-identical copies verified by SHA-256) | 0 |
-| C1 | `python "HANDOFF_20261105/v8/packaging/build_v8_return.py" > "HANDOFF_20261105/v8/packaging/build_run.stdout.txt" 2>&1` | **0** |
-| C2 | `python "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/packaging/tools/make_return_manifest.py" "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/RETURN_V8" --exclude VALIDATION_RESULT.json > ".../step2_make_return_manifest.stdout.txt" 2> ".../step2_make_return_manifest.stderr.txt"` | **0** |
-| C3 | `python "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/packaging/tools/validate_return.py" "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/RETURN_V8" --out "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/RETURN_V8/VALIDATION_RESULT.json" > ".../step2_validate_return.stdout.txt" 2> ".../step2_validate_return.stderr.txt"` | **0** |
-| C4 | `python -c "<verification: PASS/NOT_ASSESSED assert, manifest coverage, ZIP internal consistency, ZIP sizes + SHA-256>"` | **0** |
-| C5 | `date -u +%Y-%m-%dT%H:%M:%SZ` (twice) | 0 |
+```
+python .../make_return_manifest.py ".../v8/RETURN_V8" --exclude VALIDATION_RESULT.json
+python .../validate_return.py      ".../v8/RETURN_V8" --out ".../v8/RETURN_V8/VALIDATION_RESULT.json"
+```
 
-C1 (`build_v8_return.py`) ALSO invokes the two official tool copies internally
-with the identical argv (logged in `v8/packaging/make_return_manifest.command.txt`
-and `validate_return.command.txt`, both exit_code=0). C2/C3 are the explicit
-step-2 runs from the project root; they are deterministic and idempotent, and
-reproduced byte-identical `RETURN_MANIFEST.json` / `VALIDATION_RESULT.json`
-(verified: ZIP-internal copies == on-disk copies).
+exit codes: builder 0, `make_return_manifest` 0, `validate_return` 0.
+stdout/stderr/command/exit_code logs are in `v8/packaging/*.txt`; full build log in
+`v8/packaging/final_build.stdout.txt`.
 
-### stdout / stderr / exit-code paths (all under `v8/packaging/`)
-
-- `build_run.stdout.txt` (= `build_v8_return.stdout.txt`, 98,513 B): full builder
-  stdout incl. the exact list of 1304 included relative paths.
-- `make_return_manifest.{command,stdout,stderr,exit_code}.txt`,
-  `validate_return.{command,stdout,stderr,exit_code}.txt` (builder-internal runs).
-- `step2_make_return_manifest.stdout.txt` / `.stderr.txt`,
-  `step2_validate_return.stdout.txt` / `.stderr.txt` (explicit C2/C3 runs;
-  stderr empty for both).
-- `v8_package_report.json`: machine-readable report (UTC, file count, validator,
-  ZIP sizes/hashes, full included-path list).
-
-## 3. File counts
-
-- v8 text files mirrored (`.md .csv .json .tsv .py .sbatch .sh .txt .log`): **100**
-- `final/` files copied (HANDOFF_20261105/final/): **19**
-- v7 addendum/audit docs into `audit/v7/`: **4**
-- `v7_snapshot/` root files + `DOCUMENTS/v7/` docs: **20 + 18**
-- REQUIRED root skeleton files copied: **18**
-- `RAW_EVIDENCE/` 1120-panel NPZ copied: **1120**
-- **`RETURN_V8/` files assembled by builder: 1304**
-- **`files hashed: 1304`** (`make_return_manifest.py` stdout, both runs)
-- **`RETURN_V8/` total files on disk: 1306** (= 1304 manifest members +
-  `RETURN_MANIFEST.json` + `VALIDATION_RESULT.json`)
-- `RETURN_TO_CHATGPT.zip` members: **1306** (1120 NPZ)
-- `RAW_EVIDENCE.zip` members: **2232** (2068 NPZ + `RAW_EVIDENCE_README.md` +
-  full `v8/evidence/`, `resource_logs/`, `cdc_vintage/`, `foundation/`,
-  `scripts/`, `final/` directories)
-- Manifest coverage diff: **[]** (no unlisted files; `listed-but-missing: []`).
-
-## 4. ZIP sizes + SHA-256
-
-| ZIP | bytes | SHA-256 |
-|---|---:|---|
-| `HANDOFF_20261105/v8/RETURN_TO_CHATGPT.zip` | **197,801,169** | `571e589b168180eed42ab0ee590d9f9e438f316667e0bb14cbb09e923a6f7fcd` |
-| `HANDOFF_20261105/v8/RAW_EVIDENCE.zip` | **344,228,221** | `1ab7fc0b5b9c2205aa85af2bf1422a9499afec1a6869f12622e59b93593bdfc0` |
-
-Both ZIPs pass `zipfile.testzip()` (returns `None`). Nothing was downloaded; all
-NPZ were already present in the project.
-
-## 5. Validator result (`RETURN_V8/VALIDATION_RESULT.json`)
+## 2. Validator result
 
 ```json
 {
   "integrity_status": "PASS",
   "scope": "structure, file hashes and limited status consistency only; NOT scientific validation",
-  "run_status_counts": {"completed": 1120},
-  "check_status_counts": {"passed": 5},
+  "run_status_counts": {
+    "completed": 1120
+  },
+  "check_status_counts": {
+    "passed": 5
+  },
   "scientific_readiness": "NOT_ASSESSED",
   "errors": []
 }
 ```
 
-Verified explicitly: `integrity_status == PASS` AND
-`scientific_readiness == NOT_ASSESSED` (asserted, exit 0). The validator was
-NOT modified. PASS is structural only; it is NOT scientific certification and
-must not be read as submission-readiness.
+`integrity_status: PASS` **and** `scientific_readiness: NOT_ASSESSED`. PASS is
+STRUCTURAL ONLY (file hashes + limited status consistency); it is NOT scientific
+validation. The validator was NOT modified to force a PASS.
 
-## 6. Evidence
+## 3. File count and contents
 
-- `v8/packaging/build_v8_return.py` — reproducible builder (assembly + official
-  tools + ZIPs + hashes). Single re-run command in `v8/packaging/T8_PREP_NOTES.md`.
-- `v8/packaging/tools/` — byte-identical COPIES of the official tools (originals
-  at `handoffs/20261105_return/tools/` untouched).
-- `v8/RETURN_V8/RETURN_MANIFEST.json` (official tool), `VALIDATION_RESULT.json`
-  (official validator), `RETURN_LAYOUT.md` (structure + old/new separation).
-- `v8/MESSAGE_TO_CHATGPT.md` — exact v8-vs-v7 changes and BLOCKED / NOT_EXECUTED /
-  UNVERIFIED list citing `v8/TASK_LOG.md`, `v8/foundation/T2_VERDICT.md`,
-  `v8/cdc_vintage/T4_VERDICT.md`, `v8/T5_VERDICT.md`, `v8/T6_VERDICT.md`.
-- Old/new separation: frozen 28-arm snapshot (`02_数字表格/*.csv`) NOT bundled;
-  new 1120-panel tables under `final/`; foundation models on the separate
-  `foundation/FOUNDATION_ROSTER.csv`; v7 return separately labelled under
-  `v7_snapshot/`. Verified: zero `02_数字表格` files leaked into `RETURN_V8/`.
-- `01_最终报告/v8/` did NOT exist at build time → `DOCUMENTS/v8/` absent (COPY-only
-  conditional worked as specified).
-- `v8/packaging/v8_package_report.json` + all stdout/stderr logs in §2.
+- Exact file count, ZIP sizes and SHA-256 for the FINAL build: see
+  `v8/packaging/v8_package_report.json` and `v8/packaging/FINAL_HASHES.txt`.
+  (Counts grew after the 80 foundation NPZ and the v8c evidence were added; the
+  two extra root files are `RETURN_MANIFEST.json` and `VALIDATION_RESULT.json`.)
+- `RETURN_V8/final/WF_RECOMPUTED.csv` = **1020 rows, 1020 `ok`, 0 `no_npz`**
+  (the stale 802/218 copy has been replaced).
+- `RETURN_V8/DOCUMENTS/v8/` contains all **6** rebuilt v8b DOCX/PDF.
+- `RETURN_V8/foundation/` contains `T2_DOWNLOAD_RESULT.md`, `T2_PILOT_AND_MATRIX.md`,
+  `T2_VERDICT.md`, `FOUNDATION_ROSTER.csv`, `T2_EVIDENCE_HASHES.txt` and the
+  `t2_hpc_evidence/` tree with the 8 real prediction NPZ.
+- `RETURN_V8/cdc_vintage/T4_CORRECTION.md` and `RETURN_V8/T6_GPU_UPDATE.md` present.
+- `v8/TASK_LOG.md`, the corrected `v8/SCIENTIFIC_AUDIT.md`,
+  `BLOCKED_AND_UNVERIFIED.md`, `DOCUMENT_UPDATE_MAP.csv` and `docs/V8_*` are mirrored.
+- Frozen `02_数字表格/*.csv`, v7 `RETURN_V7` skeleton, raw predictions and owner-edited
+  files were copied only, never modified or deleted. Old 28-arm snapshot stays
+  SEPARATELY LABELLED under `v7_snapshot/`.
 
-## 7. Remaining (explicitly NOT claimed as done)
+## 4. FINAL ZIP sizes + SHA-256 (authoritative)
 
-- **PRELIMINARY pass**: T7 DOCX/PDF (`01_最终报告/v8/`) and the T1-updated
-  `final/WF_RECOMPUTED.csv` / means may land AFTER this package. Re-run the single
-  command in `v8/packaging/T8_PREP_NOTES.md` once they exist; the builder is
-  idempotent and re-hashes/re-zips/re-validates everything.
-- `T8_VERDICT.md` and `T8_PREP_NOTES.md` are written AFTER the builder ran, so on
-  THIS pass they are NOT inside `RETURN_V8/` / `RETURN_TO_CHATGPT.zip`. A re-run
-  folds them in (they are v8 text files).
-- T1: 218 `no_npz` walk-forward cells still IN PROGRESS (743850 RUNNING,
-  744271 PENDING at `TASK_LOG.md`); **802 ok / 218 no_npz** in the current
-  `final/WF_RECOMPUTED.csv`. No DONE claim.
-- T2: Chronos/TimesFM pilot + 80 cells **BLOCKED / NOT_EXECUTED** (no full weights,
-  no isolated env, no pilot).
-- T4: actual CDC release date/revision id **BLOCKED**; peak re-scoring **BLOCKED**.
-- T5: official template class file **UNVERIFIED**; `submission-ready: NO`.
-- T6: peak VRAM + true model-forward latency **NOT_MEASURED**; full-1120 Pareto
-  **NOT claimed**.
-- T7: manuscript body / internal report / Q&A / `DOCUMENT_UPDATE_MAP.csv` /
-  `SCIENTIFIC_AUDIT.md` / `BLOCKED_AND_UNVERIFIED.md` updates **NOT EXECUTED** in
-  this pass (out of T8 write scope).
-- Paired statistics remain EXPLORATORY; the two quarantined corrupt legacy MIFlu
-  NPZ from T3 remain unresolved.
+The single source of truth is `v8/packaging/v8_package_report.json` (regenerated by
+every builder run and kept OUTSIDE `RETURN_V8/`) and `v8/packaging/FINAL_HASHES.txt`.
 
-**Bottom line:** the structural v8 package is built and validated (PASS /
-NOT_ASSESSED) with honest hashes, but this is a preliminary snapshot, not "all
-done", and no scientific readiness is asserted.
+NOTE (self-reference): `RETURN_V8/` mirrors the v8 documentation, including this
+verdict. Changing any such document necessarily changes the two ZIP SHA-256 values on
+the next rebuild. Therefore no ZIP hash is hard-coded here; read the report instead.
+Both ZIPs passed `zipfile.testzip()` (None) on the final build.
+
+## 5. What remains BLOCKED / NOT EXECUTED / UNVERIFIED
+
+- 80-cell (2 models x 4 L x 10 seeds) foundation expansion: `NOT_EXECUTED_BY_PROTOCOL`
+  (frozen zero-shot models have no training seed dimension; 8 faithful cells were run).
+- T5 official JBHI template class file: UNVERIFIED (selector 404 / WAF 418 / API 302→502).
+- T6 peak VRAM / real forward latency for the other 5 models: NOT_MEASURED; foundation
+  resource rows BLOCKED; still `scope=subset_only_not_full_1120`.
+- T3 two quarantined corrupt NPZ (`miflu_L36_s2021`, `miflu_L60_s2021`) not regenerated.
+- Confirmatory dependence-aware statistics not done; paired inference remains exploratory.
+- The manuscript is **NOT submission-ready**.
+
+## 6. MESSAGE_TO_CHATGPT.md
+
+`v8/MESSAGE_TO_CHATGPT.md` lists exactly what changed and what remains blocked.
+
+## 7. Historical record (superseded)
+
+The preliminary pass (14:18–14:21Z) reported 1304 files,
+`RETURN_TO_CHATGPT.zip` (see §7 note)
+and `RAW_EVIDENCE.zip` 344,228,221 B sha256 `1ab7fc0b5b9c2205aa85af2bf1422a9499afec1a6869f12622e59b93593bdfc0`.
+Those values are **obsolete**. `v8/packaging/T8_PREP_NOTES.md` describes why that pass
+was preliminary; the re-run it prescribes has now been executed.

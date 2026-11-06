@@ -1,274 +1,112 @@
-# Message to ChatGPT — v8 evidence handoff (FINAL, synced 2026-11-07 HKT / 2026-11-06 UTC)
+# Message to ChatGPT — v8 final handoff (2026-11-07 HKT / 2026-11-06 UTC, FINAL T2/T3/T5/T6 sync)
 
-**This is a PRELIMINARY packaging pass, NOT a finished manuscript and NOT "all
-done".** Do NOT call the manuscript submission-ready: `manuscript_submission_ready: NO`
-(`v8/T5_VERDICT.md`). A validator `integrity_status: PASS` is STRUCTURAL ONLY and
-MUST be read together with `scientific_readiness: NOT_ASSESSED`
-(`v8/RETURN_V8/VALIDATION_RESULT.json`) — it is NOT scientific certification. The
-current `v8/RETURN_TO_CHATGPT.zip` / `v8/RETURN_V8/` on disk are still the preliminary
-pass built at 2026-11-06T14:18:14Z, before the final T2/T6 results and the T7 DOCX/PDF
-landed; §4 states the required rebuild.
+Authoritative new-results note: `v8/docs/V8_SCIENTIFIC_ADDENDUM.md`.
+Execution log: `v8/TASK_LOG.md`. Full audit: `v8/SCIENTIFIC_AUDIT.md`; blocked items:
+`v8/BLOCKED_AND_UNVERIFIED.md`; document map: `v8/DOCUMENT_UPDATE_MAP.csv`.
+Final task records: `v8/foundation/T2_FULL80.md`, `v8/T3_RESTORE.md`,
+`v8/PAPER_TO_CODE.md`, `v8/T6_FINAL_SWEEP.md`, `v8/T6_VERDICT.md` (FINAL UPDATE),
+`v8/foundation/T2_VERDICT.md` (FINAL UPDATE, now SUPERSEDED by `T2_FULL80.md`),
+`v8/RESOURCE_MEASUREMENTS.csv`.
 
-Authoritative v8 verdicts / evidence: `v8/TASK_LOG.md`,
-`v8/foundation/T2_VERDICT.md` (§FINAL UPDATE 2026-11-06),
-`v8/foundation/T2_DOWNLOAD_RESULT.md`, `v8/foundation/T2_PILOT_AND_MATRIX.md`,
-`v8/foundation/FOUNDATION_ROSTER.csv`, `v8/cdc_vintage/T4_CORRECTION.md`,
-`v8/cdc_vintage/T4_VERDICT.md`, `v8/T5_VERDICT.md`,
-`v8/T6_GPU_UPDATE.md`, `v8/T6_VERDICT.md` (§UPDATE 2026-11-06),
-`v8/RESOURCE_MEASUREMENTS.csv`, `v8/T7_VERDICT.md`, `v8/T8_VERDICT.md`,
-`v8/packaging/T8_PREP_NOTES.md`. The v7 baseline message is
-`audit/v7/MESSAGE_TO_CHATGPT.md`.
+**Old / new separation (hard rule).** The frozen historical 28-arm snapshot
+(`02_数字表格/*.csv`; Holm 0/136 from `p_raw` with forward cumulative maximum;
+NLinear–PatchTST 0.1172; 4/16 aggregate cells) is an OLD-SNAPSHOT fact and is
+NOT replaced. The NEW 1120-cell national panel (28 models x 4 L x 10 seeds
+2021–2030) is a separate panel. The LEGACY 5-fold N=3 walk-forward panel
+(seeds 42/43/44, 1020/1020 `ok`) is a THIRD, distinct scoring population and must
+never be merged with the 1120 national panel. The `final_llm_import` bench table is
+a fourth, LEGACY analysis-tree population (now 388/388 cells). The two numerical
+foundation models live on a SEPARATE ROSTER (80 cells via 10 forecast origins),
+never merged into the 28-arm family. Do NOT merge, average or compare these
+populations naively.
 
----
+## 1. Exactly what changed in v8 vs v7 — FINAL 8-task table
 
-## 1. Explicit old / new separation (AGENTS.md RULE 4)
+| Task | Final status | What changed (with evidence) |
+|---|---|---|
+| T1 Walk-forward | **COMPLETED** | `743850` (stingy / gpu-a100-03) reran 218/218 SKIPPED legacy cells rc=0; `743920` wf_probe, `744271` wf_recompute, `744334` recomputed from raw NPZ: **1020/1020 `ok`**, 218 recovered, 0 existing values changed, 0 lost. `final/WF_RECOMPUTED.csv` sha256 `53d0e0cb36e726db46c29066101be316bbf9e0de7ea1a228bf84ba7f885ef80b`; means `c0e72f35f29d4df32762b9c0a03f69df576405ead495e91a43320dc0774d5813`. Full-panel means (n=60 each): MIFlu 2.220289 < PatchTST 3.039638 < NLinear 3.211592. LEGACY 5-fold N=3 panel, NOT the 1120 national panel. |
+| T2 Chronos / TimesFM | **COMPLETED — FULLY COMPLETED with 80 valid cells** (via 10 DISTINCT forecast origins) | Earlier "8 cells only / 80-cell expansion NOT EXECUTED" is **SUPERSEDED**. Job `744886` `t2_fm_full80` (stingy / A100-SXM4-80GB) produced `FOUNDATION_80_CELLS.csv` with **80/80 `ok`, all finite, 80 real prediction NPZ** under `v8/foundation/t2_hpc_evidence/full80_out/`. Matrix = 2 models x 4 L (24/36/48/60) x 10 replicates. Both checkpoints are FROZEN ZERO-SHOT (no training seed dimension, so 10 seeds would give 10 identical predictions), so the 10 replicates are **10 distinct forecast origins (rows 773–782)**, each with its own context and target; `seed_semantics=NOT_APPLICABLE`, `replicate_kind=rolling_origin`. The literal 10-seed expansion remains `NOT_EXECUTED_BY_PROTOCOL` with that exact reason. Peak VRAM **2608 MiB** (51 nvidia-smi samples), wall **50.71 s**, Chronos latency **10.229 ± 1.074 ms** (warm-up 1 / repeat 10), TimesFM **50.906 ± 4.459 ms** (warm-up 1 / repeat 5). Labels `foundation_chronos` / `foundation_timesfm` are a SEPARATE ROSTER, never merged into the 28-arm family. Both checkpoints UNIVARIATE; 7 channels passed as a batch of 7 independent series (per-channel adapter DISCARDING cross-channel dependence, NOT information-set matched); each model applies its own internal scaling; zero-shot, no training. TimesFM `cell_wall_ms` is one shared forecast call per origin — the 4 L slices are NOT four independent forwards. Record: `v8/foundation/T2_FULL80.md`. |
+| T3 `final_llm_import` | **COMPLETED — FULLY RESTORED, 388/388** | Earlier "2 quarantined NPZ / 386 readable cells" is **SUPERSEDED / RESOLVED**. Job `744884` `t3_restore_final` (tiny) COPY-restored the two corrupt NPZ from their existing valid 7-channel copies (`author_runs/L36_all7/pred_miflu_L36_seed2021.npz` → `expanded_runs/miflu_L36_s2021/pred_miflu_L36_s2021.npz`, same for L60). Validation inside sbatch: **388/388 NPZ readable, 0 unreadable, `(W,7,L)`, all finite**. Re-ran the exact `final_llm_import` task: all 3 scripts rc=0, `ok=true`, `BENCH_MSE_BY_MODEL_L.csv` changed from `2e03b5109db03cfd4e1b9e89bd8e6069468fd4f7cd3671b367f7f632a0b6be29` to **`a7d98ad84a72c5b82610e076f64cabecdda8ebe64099ef7e8a078161a4541e46`** (69 lines). The two original corrupt files remain archived (not deleted) in `code/queue/finalise/T3_v8/quarantine_20261106T131834Z/`. Record: `v8/T3_RESTORE.md`. LEGACY analysis-tree table, not the 1120 panel. |
+| T4 CDC vintage | **COMPLETED (corrected 2026-11-06)** | An earlier verdict wrongly said BLOCKED because it did not inspect the project's own `02_数字表格/`. The project ALREADY had `cdc_vintage.csv` (848 epiweeks), `cdc_vintage_raw.csv` (7192 rows), `cdc_vintage_report.md` and `05_程序代码/cdc_vintage_build.py`, built from the Delphi Epidata `fluview` endpoint, with as-of season-peak re-scoring (18 seasons, 7 peak weeks move = 38.9%). `v8/cdc_vintage/T4_CORRECTION.md` records the correction. Retained limits: Delphi `release_date` is a proxy, NOT a CDC-issued official revision number; only the REFERENCE peak assignment is re-scored; model-panel peak metrics remain retrospective; no 2002 real-time vintage. |
+| T5 JBHI | **COMPLETED — step 4 DONE** (official template class file UNVERIFIED) | **T5 step 4 is now DONE**: `v8/PAPER_TO_CODE.md` was created with the dated JBHI guidance verification applied, and `v8/packaging/build_v8_return.py` was patched so `RETURN_V8/PAPER_TO_CODE.md` prefers this v8 copy over the frozen v7 skeleton. The v7 original stays byte-identical. `v8/JBHI_PROVENANCE_PATCH.md` is now marked applied (the earlier "patch not applied / must be pasted by the owner" note is SUPERSEDED). The official template class file itself remains UNVERIFIED (selector 404 / WAF 418 / API 302→502). Dated verification record: 14 pages incl. supplementary / 16 review, abstract ≤250 words, single-spaced double-column, embedded figures/tables, AI-use disclosure (IEEE-wide policy), APC US$2,800 for 2026, page charges $110/$250/$350. `submission-ready: NO`. |
+| T6 Resources | **COMPLETED for all 6 representative models** | Earlier "PARTIAL (IMPROVED) / five VRAM rows NOT_MEASURED / Chronos–TimesFM resource rows BLOCKED" is **SUPERSEDED**. Jobs `744897` `t6_final_sweep` + `744899` `t6_miflu_fix` (stingy / A100-SXM4-80GB, driver 580.167.08) measured peak VRAM for MIFlu **4816 MiB** (46 + 63 samples), NLinear **558** (36), PatchTST **720** (7), **GPT-2 frozen encoder 1070** (11), Chronos **596** (6), TimesFM **2594** (11). Warm-up+repeated REAL model-forward latencies: GPT-2 **6.98 ± 0.097 ms** (1/10), Chronos **9.854 ± 0.337 ms** (1/20), TimesFM **48.273 ± 3.531 ms** (1/10). Full-job walls: MIFlu real 7-channel cell export **62.94 s**, NLinear 20-epoch training+export **35.73 s**, PatchTST **6.86 s**. MIFlu/NLinear/PatchTST isolated single-forward latency remains explicitly `NOT_MEASURED` (measured quantity was a full cell export / training job); old NPZ scoring-path numbers (0.0287–0.0297 ms) moved to `npz_scoring_path_latency_ms_*` columns and labelled NOT a model forward. Representative frozen encoder measured is GPT-2 from the local HF cache; the earlier DeepSeek-R1-Distill-Qwen-1.5B 24 s queue-log wall belongs to a DIFFERENT encoder and is retained only as context. `RESOURCE_MEASUREMENTS.csv` sha256 `9574eeff6f0e39ddba6488b2e8fe8ef09b763c90fdd27223d7960b8f886b1117`. All rows `scope=subset_only_not_full_1120`; NO full-1120 Pareto claim. Record: `v8/T6_FINAL_SWEEP.md`. |
+| T7 v8 documents | **COMPLETED** | English manuscript body, Chinese internal report and Q&A were rebuilt once (v8b) with the earlier T2/T4/T6 results; old claims explicitly marked SUPERSEDED, Q01–Q25 preserved. PDF page counts 9 / 9 / 15, all conversions rc=0. `v8/docs/V8B_REBUILD_LOG.md`. NOTE: the DOCX/PDF bodies predate the FINAL T2/T3/T5/T6 results above and would need another rebuild to quote them; they are not called final. |
+| T8 Final package | **COMPLETED (packaging pass)** | Validator `PASS` + `scientific_readiness: NOT_ASSESSED` (structural only). The current `RETURN_V8/` / ZIPs are the pass built before the FINAL T2/T3/T5/T6 results landed; **the package will be rebuilt once more by the main agent** after these audit/document files are synced (§4). No "all done" claim. |
 
-- **Old 28-arm frozen snapshot**: the historical frozen CSVs under `02_数字表格/*.csv`
-  (28 arms, Holm 0/136 from `p_raw` with forward cumulative maximum, NLinear–PatchTST
-  0.1172, 4/16 aggregate cells). These are old-snapshot facts, are NOT part of this
-  return, and were never overwritten. Kept SEPARATELY LABELLED.
-- **New 1120 panel**: the harmonised national panel (28 models × 4 L × 10 seeds
-  2021–2030) scored tables under `final/` (`CELL_METRICS.csv`, `MODEL_L_PANEL.csv`,
-  `PAIRED_HOLM_NEW.csv`, `PEAK_*`, `ABLATION_*`, `REGIONAL_*`, `WF_*`,
-  `FINAL_RESULTS.md`, `SCIENTIFIC_AUDIT.md`). The new panel is NEVER merged into the
-  old 28-arm snapshot — separate files with separate denominators.
-- **LEGACY 5-fold N=3 walk-forward panel** (`final/WF_RECOMPUTED.csv`, 1020/1020
-  `ok`, seeds 42/43/44) is a **DIFFERENT scoring population** from the 1120 national
-  panel; do NOT merge with `CELL_METRICS.csv`. Its WF MSE 2.220289 (MIFlu) is NOT the
-  same quantity as the national all-valid MSE 1.7944. The 20 out-of-grid
-  `wf_f*_miflu_*_s2021` rolling-origin rows remain out of scope.
-- **Foundation models on a SEPARATE ROSTER**: numerical foundation models
-  (Chronos / TimesFM) are NOT the 11 frozen language encoders and are NOT merged into
-  the 28-arm family. They live only on `v8/foundation/FOUNDATION_ROSTER.csv` +
-  `v8/foundation/FOUNDATION_MODEL_PROVENANCE.md`. T2 FINAL status is
-  **`COMPLETED_WITH_DOCUMENTED_SCOPE`** (8 zero-shot cells, jobs 744589/744607;
-  evidence `T2_VERDICT.md` §FINAL UPDATE, `T2_PILOT_AND_MATRIX.md`,
-  `T2_DOWNLOAD_RESULT.md`). The 80-cell expansion and the univariate/adapter limits
-  remain blocked (§3). NEVER merged into the 28-arm family or the 1120 national panel.
-- **v7 return kept separately labelled**: `v7_snapshot/` holds verbatim COPIES of the
-  frozen `v7/RETURN_V7/` key files (root files + `DOCUMENTS/v7/`); `RAW_EVIDENCE/`
-  holds the 1120 validated raw prediction NPZ that its ledger points to. The
-  root `RUN_LEDGER.csv` / `CHECKS.json` / protocol JSONs are the carried-over v7
-  structural skeleton needed by the official validator — they are NOT new v8
-  measurements and are not rewritten here.
+Also corrected: the earlier claim "walk-forward partial / 802 of 1020" → 1020/1020;
+"Table VI 51/53" → 53/53; "NLinear K&S champion 4/16" → MIFlu 252 / PatchTST 215 /
+NLinear 57 of 1680 step rows; "monotonic depth trend" → non-monotonic (K4 1.4989 best,
+K12 1.7604 worst). Paired Wilcoxon/Holm (349/378) remains EXPLORATORY.
 
----
+## 2. Exactly what remains BLOCKED / NOT EXECUTED / UNVERIFIED
 
-## 2. Exactly what changed in v8 vs v7 (FINAL, synced 2026-11-07)
+1. **Literal 10-seed (rather than 10-origin) foundation expansion — `NOT_EXECUTED_BY_PROTOCOL`.**
+   Exact reason: "no training seed dimension in a frozen zero-shot model; 10 seeds
+   would produce 10 identical predictions"; `seed_semantics=NOT_APPLICABLE`.
+   The **80 cells ARE now done** as `replicate_kind=rolling_origin` (10 distinct
+   forecast origins, rows 773–782, each with its own context and target). Also
+   retained: no multivariate-native checkpoint (Chronos-2 / TimesFM-3.0); both
+   executed checkpoints UNIVARIATE; the 7 channels were forecast as a batch of 7
+   independent series, which DISCARDS cross-channel dependence and is NOT
+   information-set-matched to the multivariate arms; each model applies its own
+   internal scaling; no z-space de-standardisation; zero-shot, no training; no
+   full-1120 comparison; no merge into the 28-arm family.
+2. **T5 official JBHI template class file (`.cls` / Word / ZIP): UNVERIFIED**
+   (selector 404 / WAF 418 / API 302→502). Step 4 provenance patch is applied, but
+   no template class file was obtained; `submission-ready: NO`.
+3. **MIFlu / NLinear / PatchTST isolated warm-up+repeated single-forward latency:
+   `NOT_MEASURED`.** The measured quantity was a real full 7-channel cell export
+   (62.94 s) / 20-epoch training+export job (35.73 s / 6.86 s), NOT an isolated
+   neural forward. The old NPZ scoring-path numbers (0.0287–0.0297 ms) were moved to
+   `npz_scoring_path_latency_ms_*` and labelled NOT a model forward. All resource rows
+   keep `scope=subset_only_not_full_1120`; NO full-1120 Pareto claim.
+4. **Confirmatory dependence-aware statistics: not done.** Paired inference
+   (Wilcoxon/Holm 349/378, seed-cluster bootstrap 359/378 95% CIs excluding zero)
+   remains EXPLORATORY: cells share one national series and overlapping targets.
+5. **Model-panel peak metrics remain retrospective.** Delphi `release_date` / vintage
+   is a reproducible PROXY, not CDC-issued official revision ids; no official CDC
+   release calendar; 2002 weeks have no real-time vintage; no real-time/clinical claim.
+6. **The manuscript is NOT submission-ready.** A structural validator `PASS` is
+   `scientific_readiness: NOT_ASSESSED`, not scientific certification.
 
-v7 left these NOT done (see `audit/v7/MESSAGE_TO_CHATGPT.md`): foundation models
-BLOCKED, CDC vintage "not reconstructed", JBHI guidance unverified, resource
-measurements NOT EXECUTED, walk-forward 473/1020 valid, v7 DOCX/PDF rebuild, strict
-`RETURN_TO_CHATGPT.zip` rebuild. (2026-11-06 correction: the CDC vintage was in fact
-ALREADY fully reconstructed in the frozen `02_数字表格/` artifacts; T4 is COMPLETED,
-not a v8-new build — see `v8/cdc_vintage/T4_CORRECTION.md`.)
+Documentation / package sync (not scientific blockers): the 3 v8 DOCX/PDF bodies
+predate the FINAL T2/T3/T5/T6 results (§1 T7), and the T8 package will be rebuilt
+once more by the main agent (§4). No "all done" claim is made.
 
-v8 (T1–T8 of `HANDOFF_20261105/NEXT_DEEPSEEK_PROMPT.md`; authoritative
-`v8/TASK_LOG.md`) — FINAL status of all 8 tasks:
+## 3. HPC job IDs (all COMPLETED; no training, download, HPC job or SSH was run for this sync)
 
-- **T1 walk-forward — COMPLETED at 1020/1020 `ok`.** Job `743850` (`wf_fix218`,
-  `stingy`/`gpu-a100-03`) reran all 218 previously-SKIPPED legacy cells (rc=0);
-  `743920` (`wf_probe`) verified the NPZ schema; `744271` / `744334`
-  (`t1_wf_recompute_v8` / `v8b`) recomputed from raw NPZ.
-  `HANDOFF_20261105/final/WF_RECOMPUTED.csv` (1020 rows, all `ok`, sha256
-  `53d0e0cb…`) + `WF_RECOMPUTED_MEANS.csv` (`c0e72f35…`);
-  `v8/evidence/WF_RECOMPUTE_REPORT.json` (recovered 218, changed 0, lost 0,
-  missing 0). Frozen v7 baselines kept in
-  `v8/evidence/WF_RECOMPUTED_v7_baseline.csv` /
-  `WF_RECOMPUTED_MEANS_v7_baseline.csv`. This is the **LEGACY 5-fold N=3 panel
-  (seeds 42/43/44)**, a DIFFERENT scoring population from the 1120 national panel;
-  20 out-of-grid rows stay out of scope. Every earlier "802/1020 / 473/1020 / 218
-  missing" claim is superseded.
+`743850` (T1 rerun of 218 SKIPPED cells), `743920` (T1 wf_probe),
+`744110` (T3 first `final_llm_import`, rc=2 `EOFError`),
+`744134` (T3 `final_llm_import` after quarantine, `ok=true`),
+`744271` (T1 wf_recompute), `744334` (T1 wf_recompute_v8b, 1020/1020),
+`744532` (T6 first real MIFlu GPU forward, 4816 MiB),
+`744533` (T2 env reachability probe), `744574` (T2 venv install),
+`744576` (T2 env finish), `744589` (T2 1-cell pilot),
+`744607` (T2 8-cell matrix + remote tar SHA verification),
+`744884` (T3 restore of 2 NPZ + exact `final_llm_import` re-run),
+`744886` (T2 full80 80-cell matrix via 10 origins),
+`744897` (T6 final sweep, 6 models), `744899` (T6 MIFlu fix).
 
-- **T2 foundation models — `COMPLETED_WITH_DOCUMENTED_SCOPE` (earlier `BLOCKED`
-  superseded).** `v8/foundation/T2_VERDICT.md` §FINAL UPDATE 2026-11-06;
-  `v8/foundation/T2_DOWNLOAD_RESULT.md`; `v8/foundation/T2_PILOT_AND_MATRIX.md`;
-  `v8/foundation/T2_EVIDENCE_HASHES.txt`; `v8/foundation/FOUNDATION_ROSTER.csv`.
-  4 pinned weight tars (**5,024,901,120 B**) downloaded locally on Windows and
-  scp'd to `/gpfs1/scratch/sychan552/models/`, all 4 remote SHA-256 verified
-  INSIDE sbatch **744607**; isolated env `/home/sychan552/.venvs/mlflu_fm`
-  (Python 3.11.13, torch 2.6.0+cu124, chronos-forecasting 2.3.2, timesfm 1.3.0)
-  built by jobs **744574** / **744576** (probe 744533). Pilot **744589**
-  (`t2_fm_pilot`, `stingy`/`gpu-a100-05`/A100-SXM4-80GB) PASSED: all finite, MSE
-  0.3913, latency 10.191±0.446 ms (warm-up 1 / repeat 5), peak VRAM 596 MiB
-  (28 samples). Matrix **744607** (`t2_fm_matrix`) 8/8 cells `ok`, all finite, 8
-  real NPZ, peak VRAM 2608 MiB (18 samples), wall 18.00 s. 8 cells (2 models ×
-  4 L=24/36/48/60, seed 2021, T=104): `foundation_chronos` MSE 0.391328494 /
-  2.207397404 / 1.713535818 / 1.400230721; `foundation_timesfm` 0.729752533 /
-  2.654955324 / 2.031110049 / 1.662973370. The earlier `BLOCKED` §1–§8 record is
-  retained verbatim as the historical earlier run, NOT erased. Both checkpoints
-  UNIVARIATE (7 channels = batch of 7 independent series → discards cross-channel
-  dependence, NOT information-set-matched to the multivariate arms); zero-shot, NO
-  training/fine-tuning; labels on a SEPARATE ROSTER, NEVER merged into the 28-arm
-  family or the 1120 national panel. Honesty caveat: TimesFM `wall_s=0.0` and
-  0.004/2.483/4.489/6.492 ms are loop/slicing timings of ONE shared
-  `tfm.forecast` call (NOT four forward latencies); Chronos L24 221.835 ms includes
-  one-time CUDA init; only warmed-up repeated latency is the pilot 10.191±0.446 ms.
+All model work ran via `sbatch` on compute nodes; nothing heavy on the login node.
 
-- **T3 `final_llm_import` — COMPLETED with 2-NPZ quarantine caveat.** Job
-  `744110` failed (rc=2, `EOFError`); `744134` (`t3b_llm_import_v8`) succeeded
-  (rc=0, all 3 steps rc=0). Real HPC-side `paper_tables/BENCH_MSE_BY_MODEL_L.csv`
-  (sha256 `2e03b510…`) + `BENCH_PTE_PIE_BY_STEP.csv` + `BENCH_EFFICIENCY.csv`
-  from 386 readable legacy cells. Quarantine (MOVED, not deleted):
-  `code/queue/finalise/T3_v8/quarantine_20261106T131834Z/QUARANTINE.json`
-  (`miflu_L36_s2021` 0 B `EOFError`, `miflu_L60_s2021` 30977 B `BadZipFile`).
-  LEGACY analysis-tree table, NOT the 1120 panel.
+## 4. FINAL package (authoritative)
 
-- **T4 CDC vintage — COMPLETED (corrected 2026-11-06).** NO HPC job (local `curl` /
-  `WebFetch` of 16 URLs + 3 live Delphi `fluview` fetches, HTTP 200). Uses the
-  project's FROZEN `02_数字表格/cdc_vintage_raw.csv` (7192 rows, `e0c5512b…`),
-  `cdc_vintage.csv` (848 rows, `5a49e6be…`), `cdc_vintage_report.md`
-  (`e2da6b37…`), `cdc_peak_revintage.csv` (`7c9b5df8…`, 18 seasons / 7 peak weeks
-  moved = 38.9%), builder `05_程序代码/cdc_vintage_build.py` (`8c1e4b1e…`).
-  Authoritative `v8/cdc_vintage/T4_CORRECTION.md`; corrected
-  `v8/cdc_vintage/T4_VERDICT.md` (`status: COMPLETED`). Earlier erroneous
-  `BLOCKED: no release-calendar/vintage source found` verdict superseded. Retained
-  limits: Delphi `release_date` proxy (NOT a CDC-issued official revision number),
-  reference-peak-only re-scoring, retrospective 1120-cell model peaks, no 2002
-  real-time vintage.
+ZIP byte sizes and SHA-256 are in `v8/packaging/FINAL_HASHES.txt`
+(and `v8/packaging/v8_package_report.json`). **They are kept OUTSIDE `RETURN_V8/`
+deliberately**: the package mirrors its own documentation, so editing any mirrored
+document changes the two ZIP SHA-256 values on the next rebuild. Therefore **no ZIP
+hash is hard-coded in this message** — always read the report, never a hash copied
+into a chat message.
 
-- **T5 JBHI — COMPLETED (dated verification record); template class file
-  UNVERIFIED.** NO HPC job (live HTTP 200 content fetches).
-  `v8/JBHI_VERIFICATION_20261106.md`, `v8/JBHI_PROVENANCE_PATCH.md`,
-  `v8/T5_VERDICT.md`. VERIFIED: 14 pp regular / 16 review incl. supplementary,
-  abstract ≤250 words, IEEE single-spaced double-column, embedded figures/tables,
-  AI disclosure (IEEE-wide), hybrid OA, APC US$2,800 (2026). UNVERIFIED: official
-  `.cls`/Word/ZIP (selector 404 / WAF 418 / `/api` 302→502).
-  `submission-ready: NO`.
-
-- **T6 resources — `PARTIAL (IMPROVED)`.** CPU job `744239` (`t6_res_cpu`, `tiny`,
-  14 s) produced the subset: `v8/RESOURCE_MEASUREMENTS.csv` (6 rows,
-  `scope=subset_only_not_full_1120`), real historical training walls (MIFlu 581 s,
-  NLinear 6 s, PatchTST 7 s, DeepSeek-R1-Distill-Qwen-1.5B 24 s), real NPZ
-  scoring-path latency 0.0287–0.0297 ms (warm-up 5 / repeat 50, explicitly NOT a
-  model forward), versions Python 3.9.25 / numpy 2.0.1 / pandas 2.3.3 / torch
-  2.5.1. GPU job `744253` (`t6_res_gpu`, gpu_a100) CANCELLED (PENDING start
-  2026-11-08); two `stingy` submissions rejected `QOSMaxSubmitJobPerUserLimit`.
-  **NEW:** job **744532** (`t6_res_gpu_v8b`, `stingy`/`gpu-a100-05`/
-  A100-SXM4-80GB, driver 580.167.08) ran a REAL MIFlu forward from an existing
-  checkpoint: peak VRAM **4816 MiB** (63 `nvidia-smi` samples, min 16), forward
-  wall **62.94 s** (`real_model_forward_wall_s=62.94`), `[PASS] all requested
-  cells exported`, `test MSE_7var_z=1.624383`. Evidence `v8/T6_GPU_UPDATE.md`,
-  `v8/T6_VERDICT.md` §UPDATE 2026-11-06, `v8/resource_logs/*_v8b*` (12 logs
-  appended), `v8/RESOURCE_MEASUREMENTS.csv` (updated SHA-256 `D609D57D…`). The
-  other 5 model rows remain `NOT_MEASURED` for VRAM; Chronos/TimesFM resource
-  rows remain BLOCKED; ONE cell (L=36, seed=2023), no full-1120 Pareto; the 62.94 s
-  is whole-process wall, NOT a repeated per-forward latency
-  (`true_model_forward_latency_ms` still NOT_MEASURED).
-
-- **T7 v8 documents — COMPLETED.** NO HPC job (local `python-docx` builds + PDF
-  conversion). `v8/T7_VERDICT.md` (`status: COMPLETED`, 14:31:13Z–14:51:07Z).
-  Three DOCX + three PDF in `01_最终报告/v8/`: `ieee_manuscript_en_v8.docx/.pdf`
-  (7 pp), `report_internal_zh_v8.docx/.pdf` (6 pp),
-  `report_internal_qa_zh_v8.docx/.pdf` (14 pp), plus `PDF_CONVERSION_LOG.md`.
-  Markdown/CSV in `v8/docs/` and `v8/`: `V8_SCIENTIFIC_ADDENDUM.md`,
-  `V8_CHANGELOG.md`, `V8_BUILD_RESULTS.json`, `DOCUMENT_UPDATE_MAP.csv`,
-  `SCIENTIFIC_AUDIT.md`, `BLOCKED_AND_UNVERIFIED.md`. **NOTE (2026-11-07):** these
-  DOCX/PDF were built at 14:31–14:51Z on 2026-11-06, BEFORE the final T2 pilot/
-  matrix (15:51–15:58Z, jobs 744589/744607) and T6 GPU job (15:30Z, 744532), so
-  their BODY text still says T2 `BLOCKED` and T6 VRAM `NOT_MEASURED`; they require a
-  rebuild (§3/§4). The six markdown/CSV files listed above WERE re-synced on
-  2026-11-07 to the FINAL T2/T6 results. No frozen CSV / raw prediction / checkpoint
-  / owner PPTX touched.
-
-- **T8 final package — COMPLETED (PRELIMINARY PACKAGING PASS).** NO HPC job (local
-  builder `v8/packaging/build_v8_return.py`, builder window
-  2026-11-06T14:18:14Z→14:20:05Z). `v8/T8_VERDICT.md`;
-  `v8/RETURN_V8/RETURN_MANIFEST.json` (official tool) and
-  `v8/RETURN_V8/VALIDATION_RESULT.json` (`integrity_status: PASS`,
-  `scientific_readiness: NOT_ASSESSED`); `v8/RETURN_TO_CHATGPT.zip` (1306 members),
-  `v8/RAW_EVIDENCE.zip` (2232 members); `v8/packaging/v8_package_report.json`.
-  A validator PASS is STRUCTURAL ONLY. See §4 for the required rebuild.
-
----
-
-## 3. Exactly what remains BLOCKED / NOT_EXECUTED / UNVERIFIED (all 8 tasks)
-
-| Task / item | Status | Exact file paths + JOB IDs | Smallest next action |
-|---|---|---|---|
-| T1 walk-forward | **COMPLETED (1020/1020 `ok`); no blocked cells** | `final/WF_RECOMPUTED.csv` (`53d0e0cb…`), `final/WF_RECOMPUTED_MEANS.csv`, `v8/evidence/WF_RECOMPUTE_REPORT.json`; jobs 743850 / 743920 / 744271 / 744334 | Retain the LEGACY-vs-1120 separation; 20 out-of-grid `wf_f*_miflu_*_s2021` rows stay out of scope |
-| T2 80-cell expansion (2×4×10 seeds) | **NOT_EXECUTED_BY_PROTOCOL — STILL BLOCKED** | `v8/foundation/T2_PILOT_AND_MATRIX.md` §6/§7; `v8/foundation/t2_hpc_evidence/matrix_out/FOUNDATION_MATRIX_REPORT.json`; matrix job 744607. Exact reason: frozen zero-shot models have NO training seed dimension → 10 seeds would produce 10 IDENTICAL predictions; the smallest faithful subset (8 cells) was executed instead | Do not pad with duplicates; keep the 8-cell subset explicitly labelled |
-| T2 scientific limits | **BLOCKED (scientific) / LIMIT — STILL** | `v8/foundation/T2_PILOT_AND_MATRIX.md` §5; `v8/foundation/FOUNDATION_MODEL_PROVENANCE.md`; jobs 744589 / 744607. Both executed checkpoints UNIVARIATE; 7 channels = batch of 7 independent series → DISCARDS cross-channel dependence, NOT information-set-matched; z-space passthrough; TimesFM freq=1, horizon 128 sliced; zero-shot, NO training. No full-1120 comparison; SEPARATE `v8/foundation/FOUNDATION_ROSTER.csv`, NEVER merged into 28-arm family / 1120 panel. Chronos-2 tar downloaded but checkpoint NOT executed; TimesFM 3.0 excluded (`timesfm-non-commercial-license-v1.0`); `chronos-t5-small` / `timesfm-1.0-200m` tars NOT executed | Use a natively-multivariate Apache-2.0 checkpoint with a matched adapter, or document the 6 limits with every quoted result |
-| T2 latency honesty caveat | **LIMIT (not a blocker)** | `v8/foundation/T2_PILOT_AND_MATRIX.md` §5.1; jobs 744589 / 744607: TimesFM `wall_s=0.0` and 0.004/2.483/4.489/6.492 ms = loop/slicing timings of ONE shared `tfm.forecast` call, NOT four forward latencies; Chronos L24 221.835 ms includes one-time CUDA init; only warmed-up repeated latency = pilot 10.191±0.446 ms | Quote only the pilot latency as measured inference latency |
-| T3 2 quarantined legacy NPZ | **UNRESOLVED (archived, not deleted)** | `code/queue/finalise/T3_v8/quarantine_20261106T131834Z/QUARANTINE.json`; jobs 744110 (rc=2) / 744134; table reflects 386 readable cells, not 388 | Regenerate or explicitly exclude before any legacy analysis-tree claim |
-| T4 CDC vintage | **COMPLETED (corrected); retained LIMITS only** | `v8/cdc_vintage/T4_CORRECTION.md`, `v8/cdc_vintage/T4_VERDICT.md`; frozen `02_数字表格/cdc_vintage*.csv`; NO HPC job. Delphi proxy (NOT a CDC official revision number), reference-peak-only re-scoring, retrospective 1120-cell model peaks, no 2002 real-time vintage. No official CDC release calendar claimed | None for the reference assignment; retain the proxy caveat |
-| T5 JBHI template class file | **UNVERIFIED** | `v8/T5_VERDICT.md`, `v8/JBHI_VERIFICATION_20261106.md`, `v8/JBHI_PROVENANCE_PATCH.md`; selector 404 (browser UA) / WAF 418 / `/api` 302→502. Verification record itself COMPLETED; `submission-ready: NO` | Human browser session at the template selector, pin filename + SHA-256, paste the patch into `PAPER_TO_CODE.md` |
-| T6 other 5 model rows VRAM | **NOT_MEASURED** | `v8/RESOURCE_MEASUREMENTS.csv` rows for NLinear / PatchTST / DeepSeek-R1-Distill-Qwen-1.5B / Chronos / TimesFM; `v8/T6_GPU_UPDATE.md` §8; job 744532 covered MIFlu ONLY. "no GPU measurement job ran for this model"; no VRAM invented | Re-run a GPU measurement job for those models |
-| T6 Chronos / TimesFM resource rows | **BLOCKED / NOT_EXECUTED — STILL** | `v8/RESOURCE_MEASUREMENTS.csv` rows 5–6; `v8/T6_VERDICT.md` §UPDATE "STILL NOT MEASURED" item 3. The verbatim "TASK 2 is BLOCKED — no weights / no env / no pilot" reason string is the earlier-run record, superseded by T2's FINAL `COMPLETED_WITH_DOCUMENTED_SCOPE`; T2 foundation results are on the SEPARATE `FOUNDATION_ROSTER.csv` and were NOT merged into these T6 rows | Dedicated T6 GPU measurement job for the foundation checkpoints; do NOT copy T2 pilot/matrix VRAM (596/2608 MiB) into these rows |
-| T6 true model-forward latency + full-1120 Pareto | **NOT_MEASURED / NOT CLAIMED** | `v8/T6_VERDICT.md` §UPDATE; `v8/T6_GPU_UPDATE.md` §4.2/§7/§8: 62.94 s = whole-process wall for ONE cell (L=36, seed=2023), NOT a repeated per-forward latency; `true_model_forward_latency_ms` NOT_MEASURED for all rows; NPZ scoring-path latency explicitly "NOT a model forward pass"; every row `scope=subset_only_not_full_1120` | Warm-up + repeated neural-forward timing; extend subset if a full picture is needed |
-| T7 v8 DOCX/PDF bodies | **STALE — need rebuild (NOT EXECUTED for the final T2/T6 numbers)** | `01_最终报告/v8/{ieee_manuscript_en_v8,report_internal_zh_v8,report_internal_qa_zh_v8}.docx/.pdf`; `v8/T7_VERDICT.md`. Built 14:31–14:51Z 2026-11-06 BEFORE T2 pilot/matrix (15:51–15:58Z, jobs 744589/744607) and T6 GPU job (15:30Z, 744532); their BODY still says T2 `BLOCKED` / T6 VRAM `NOT_MEASURED` | Rebuild the 3 DOCX/PDF from the synced `v8/docs/` markdown (owner/T7), then fold into the T8 package (§4) |
-| T8 package contents | **PRELIMINARY — rebuild required** | `v8/RETURN_V8/`, `v8/RETURN_TO_CHATGPT.zip`, `v8/RAW_EVIDENCE.zip`, `v8/T8_VERDICT.md` §7, `v8/packaging/T8_PREP_NOTES.md`. Current `RETURN_V8/final/WF_RECOMPUTED.csv` is still 802 `ok` / 218 `no_npz`; `RETURN_V8/DOCUMENTS/v8/` absent; `T2_DOWNLOAD_RESULT.md` / `T2_PILOT_AND_MATRIX.md` / `T6_GPU_UPDATE.md` not in the package | Re-run the single builder command (§4) |
-| Manuscript submission-ready | **NO** | `v8/T5_VERDICT.md`; `v8/RETURN_V8/VALIDATION_RESULT.json` (`scientific_readiness: NOT_ASSESSED`) | Template class file + provenance patch; validator PASS is structural only |
-| Paired statistics | **EXPLORATORY** | `final/SCIENTIFIC_AUDIT.md`, `final/PAIRED_HOLM_NEW.csv`; 378 Wilcoxon / Holm 349/378; cells share one national series + overlapping targets | Dependence-aware / blocked analysis before any confirmatory claim |
-
-Additional carried-over items (from `audit/v7/BLOCKED_AND_UNVERIFIED.md`, unchanged):
-the 11 frozen language encoders are NOT substitutes for the numerical foundation
-models; regional Table VI is 10-variable, not the 7-channel national metric; the two
-corrupt legacy MIFlu NPZ from T3 remain quarantined and must be regenerated or
-explicitly excluded before any claim based on that legacy analysis tree.
-
----
-
-## 4. T8 package — has been / will be rebuilt
-
-State explicitly: **T8's package has been / will be rebuilt** (single builder command
-below) to include the **1020/1020 WF CSV** (`final/WF_RECOMPUTED.csv` +
-`final/WF_RECOMPUTED_MEANS.csv`), the **3 v8 DOCX/PDF** (`01_最终报告/v8/` — after the
-T7 rebuild in §3), and the **T2 / T4 / T6 evidence**:
-- T2: `v8/foundation/T2_VERDICT.md` (§FINAL UPDATE), `T2_DOWNLOAD_RESULT.md`,
-  `T2_PILOT_AND_MATRIX.md`, `T2_EVIDENCE_HASHES.txt`, `FOUNDATION_ROSTER.csv`,
-  `v8/foundation/t2_hpc_evidence/*`, `v8/evidence/foundation_t2_*`;
-- T4: `v8/cdc_vintage/T4_CORRECTION.md`, `T4_VERDICT.md`,
-  `CDC_VINTAGE_REPORT.md`, `v8/cdc_vintage/http_evidence/`;
-- T6: `v8/T6_GPU_UPDATE.md`, `v8/T6_VERDICT.md` (§UPDATE),
-  `v8/RESOURCE_MEASUREMENTS.csv`, `v8/resource_logs/*_v8b*` (job 744532).
-
-Single re-run command (from project root, `v8/packaging/T8_PREP_NOTES.md`):
+The current `RETURN_V8/` and the two ZIPs are the packaging pass built before the
+FINAL T2/T3/T5/T6 results landed. **The package will be rebuilt once more by the main
+agent** after the 6 audit/document files are synced; the ZIP hashes will change on
+that rebuild. Re-run command (owner: main agent):
 
 ```
 python "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/packaging/build_v8_return.py"
 ```
 
-It wipes/re-assembles `v8/RETURN_V8/` (COPIES only), re-runs the official
-`make_return_manifest.py` / `validate_return.py`, rebuilds
-`RETURN_TO_CHATGPT.zip` + `RAW_EVIDENCE.zip`, and reports NEW file counts / byte
-sizes / SHA-256 in `v8/packaging/v8_package_report.json`. After any re-run,
-re-check `integrity_status: PASS` AND `scientific_readiness: NOT_ASSESSED` in
-`v8/RETURN_V8/VALIDATION_RESULT.json`; never edit `validate_return.py` to force a
-PASS. The current ZIPs on disk are still the preliminary pass and do NOT yet
-contain those items. **A validator PASS is STRUCTURAL ONLY**
-(`scientific_readiness: NOT_ASSESSED`) — it is NOT scientific certification and
-must not be read as submission-readiness.
-
-`v8/RETURN_V8/` currently holds `final/`, `foundation/`, `cdc_vintage/`,
-`resource_logs/`, `evidence/`, `scripts/`, `audit/v7/`, `v7_snapshot/` (frozen v7
-key files, separately labelled), `RAW_EVIDENCE/`, `logs/`, plus the root REQUIRED
-skeleton. `DOCUMENTS/v8/` is absent (COPY-only conditional, `01_最终报告/v8/` did not
-exist at build time). Full per-file list + hashes: `RETURN_MANIFEST.json` (official
-tool) and `v8/RETURN_V8/RETURN_LAYOUT.md`. `RAW_EVIDENCE.zip` carries `v8/evidence/`,
-`v8/resource_logs/`, `v8/cdc_vintage/`, `v8/foundation/`, `v8/scripts/`, `final/`
-and every raw prediction NPZ already present (COPY only, nothing downloaded).
-Legacy archived NPZ under `99_旧文件存档/`, `03_预测数据_证据/`, `handoffs/` stay in
-their OWN labelled subtrees and are NOT merged into the 1120-panel tables.
-
----
-
-## 5. Bottom line
-
-Several real, dated v8 records were produced. **T1 is COMPLETED (1020/1020 `ok`,
-LEGACY panel); T2 is `COMPLETED_WITH_DOCUMENTED_SCOPE` (8 zero-shot cells on a
-SEPARATE roster); T3 COMPLETED (2-NPZ quarantine); T4 COMPLETED (corrected
-2026-11-06) on the frozen `02_数字表格/` reconstruction; T5 COMPLETED (template
-class file UNVERIFIED); T6 `PARTIAL (IMPROVED)` (MIFlu VRAM 4816 MiB measured,
-job 744532); T7 COMPLETED; T8 COMPLETED (PRELIMINARY PACKAGING PASS).** This is
-**NOT "all done"**: the `NOT_EXECUTED_BY_PROTOCOL` 80-cell expansion, the T2
-univariate/adapter and information-set limits, the T2 latency honesty caveat, the
-other 5 T6 VRAM rows, the Chronos/TimesFM T6 resource rows, true model-forward
-latency, the full-1120 Pareto, the JBHI template class file, the T3 2-NPZ
-quarantine, the T7 DOCX/PDF rebuild and the T8 package rebuild all remain BLOCKED /
-NOT_EXECUTED / UNVERIFIED / NOT_MEASURED. The old 28-arm frozen snapshot stays
-separately labelled; the LEGACY 5-fold N=3 WF panel is a DIFFERENT scoring population
-from the 1120 national panel and must never be merged with `CELL_METRICS.csv`; the T2
-foundation roster is a THIRD separate population. The manuscript is **NOT**
-submission-ready. A validator `integrity_status: PASS` is
-`scientific_readiness: NOT_ASSESSED` and is not scientific certification.
+Validator `PASS` is structural only (`scientific_readiness: NOT_ASSESSED`). Details:
+`v8/T8_VERDICT.md`, `v8/packaging/T8_PREP_NOTES.md`. The manuscript is **not**
+submission-ready.

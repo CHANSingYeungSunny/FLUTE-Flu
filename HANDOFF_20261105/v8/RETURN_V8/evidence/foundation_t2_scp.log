@@ -1,0 +1,5 @@
+SCP_START_UTC=2026-11-06T15:16:34Z
+CMD: timeout 1800s scp -o ServerAliveInterval=0 -o ServerAliveCountMax=0 -o BatchMode=yes -o PreferredAuthentications=publickey -o ConnectTimeout=10 <4 tars> cityu:/gpfs1/scratch/sychan552/models/
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html

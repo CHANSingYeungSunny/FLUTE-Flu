@@ -1,0 +1,18 @@
+ See https://github.com/google-research/timesfm/blob/master/README.md for updated APIs.
+Loaded PyTorch TimesFM, likely because python version is 3.11.13 (main, Jun  1 2026, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-14)].
+T6_MODEL_PROBE {
+  "model": "timesfm",
+  "device": "cuda",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.6.0+cu124",
+  "python": "3.11.13",
+  "load_s": 6.9875,
+  "warmup_runs": 1,
+  "repeat_runs": 10,
+  "batch": "7 independent series",
+  "precision": "float32",
+  "freq_indicator": 1,
+  "latency_mean_ms": 48.273,
+  "latency_std_ms": 3.531,
+  "status": "MEASURED"
+}

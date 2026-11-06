@@ -1,89 +1,129 @@
-# T4_VERDICT — CDC calendar / vintage (TASK 4)
+# T4_VERDICT — CDC calendar / vintage (TASK 4) — CORRECTED 2026-11-06
+
+> **CORRECTION (2026-11-06) — THIS VERDICT SUPERSEDES THE PREVIOUS ONE.**
+> The earlier verdict on this file (`status: PARTIAL`, primary label
+> `BLOCKED: no release-calendar/vintage source found`, peak re-scoring `BLOCKED`) was
+> **WRONG** and is **SUPERSEDED**. TASK 4 is **COMPLETED**. The complete CDC ILINet
+> vintage reconstruction and the re-scored season peaks already existed in the frozen
+> project directory `02_数字表格/` before this task ran; the earlier run failed to inspect
+> it. The authoritative dated record is `T4_CORRECTION.md`. The original commands, exit
+> codes and SHA-256 ledger are retained verbatim in §B / §C below as a historical record
+> of the verification work.
 
 ```
-status: PARTIAL
-start_utc: 2026-11-06T13:19:57Z
-end_utc:   2026-11-06T13:33:59Z
+status: COMPLETED
+corrected_utc: 2026-11-06
+start_utc: 2026-11-06T13:19:57Z   (original verification work, unchanged)
+end_utc:   2026-11-06T13:33:59Z   (original verification work, unchanged)
 scope:     HANDOFF_20261105/v8/cdc_vintage/   (write ONLY here; directory created)
 task:      TASK 4 of HANDOFF_20261105/NEXT_DEEPSEEK_PROMPT.md
+supersedes: prior `status: PARTIAL` / `BLOCKED: no release-calendar/vintage source found`
 ```
 
-**PARTIAL, not COMPLETED — one sub-step is BLOCKED.** A real Delphi-proxy vintage
-table WAS built from actually-fetched rows, but peak re-scoring with as-of data could
-NOT be completed, and the primary sub-goal (reconstruct the ACTUAL CDC release date /
-revision id) is genuinely impossible from the checked sources. Both are stated
-explicitly below. No result is fabricated; no frozen CSV, raw prediction, or peak CSV
-was modified; no file outside `HANDOFF_20261105/v8/cdc_vintage/` was written.
+**COMPLETED.** TASK 4 asked for "either a vintage table and re-scored peaks, or a
+documented BLOCKED". The project ALREADY contains a complete, frozen CDC ILINet vintage
+reconstruction AND a re-scored season-peak table, both built from the **Delphi Epidata
+`fluview` endpoint — the SAME source** the original verification work queried. The
+acceptance criterion "a vintage table and re-scored peaks" is therefore satisfied on
+disk. No result is fabricated; no frozen CSV, raw prediction, or peak CSV was modified;
+no file outside the allowed v8 set was written by this correction.
 
 ---
 
-## A. Sub-step status
+## A. Corrected evidence — frozen project artifacts (read + hash-verified 2026-11-06)
 
-| # | Sub-step | Status |
-|---:|---|---|
-| 1 | Fetch a small set of real vintage rows from Delphi Epidata (HTTP status, raw snippet, exact command) | **COMPLETED** (3 live API queries, all HTTP 200; 20 unique rows) |
-| 2 | Build `cdc_vintage.csv` with required columns, `cdc_official_revision_id = NOT_AVAILABLE`, affected weeks | **COMPLETED** |
-| 3 | Re-score peak assignment with as-of data | **BLOCKED** — exact missing input below |
-| 4 | Write `CDC_VINTAGE_REPORT.md` | **COMPLETED** |
-| 5 | Write `T4_VERDICT.md` | **COMPLETED** (this file) |
-| P | Reconstruct the **ACTUAL** CDC release date / CDC-issued revision id | **BLOCKED: no release-calendar/vintage source found** |
+All paths relative to project root `C:\Users\Asus\Desktop\FYP code\MLFlu`. SHA-256
+values re-computed on 2026-11-06 and match the project-owner-verified values exactly.
 
-### Retained primary BLOCKED label
+| Frozen artifact | Size / rows | SHA-256 | What it is |
+|---|---|---|---|
+| `02_数字表格/cdc_vintage_raw.csv` | 7192 data rows (7193 lines) | `e0c5512b2b6889780f345927708fee3ac3006ff59d78881dc6b55fa31fc7e9c8` | per-`(epiweek, issue)` release records, `lag<=8`; columns `epiweek,issue,release_date,lag,ili,wili,num_ili,num_patients,num_providers` |
+| `02_数字表格/cdc_vintage.csv` | 848 data rows (849 lines) | `5a49e6be748aed251e82084a2b83d8c2f92ca23ef72ef8f442b10481c611b2c9` | per-epiweek summary: first/last issue + release date + first/final ILITOTAL + revision; columns `epiweek,n_issues,first_issue,first_release_date,first_lag,last_issue,last_release_date,ilitotal_first,ilitotal_final,ilitotal_abs_revision,ilitotal_rel_revision_pct,revision_observed` |
+| `02_数字表格/cdc_vintage_report.md` | — | `e2da6b377abc318a311535cd593180d5ea62cd11ee03c31c3ee3fb2e67afd2d7` | documents coverage, revisions, season-peak FINAL vs AS-OF table, and interpretation limits |
+| `02_数字表格/cdc_peak_revintage.csv` | 21 seasons | `7c9b5df808a1f78cb2e097aec114b3a735b075f6c2a991c24ae3db3883d7a504` | season peaks re-scored on AS-OF (first print) vs FINAL, with `peak_week_shift` / `peak_shifted` |
+| `05_程序代码/cdc_vintage_build.py` | 16273 bytes, mtime 2026-11-06 19:51 | `8c1e4b1e31a4339e8d30d6c8f9e62fc181996d47fcea1cb9a5f2d2bceb2a079f` | the reproducible builder; docstring states it rebuilds `cdc_vintage_raw.csv`, `cdc_vintage.csv`, `cdc_peak_revintage.csv`; season boundary = MMWR week 40 of Y .. week 20 of Y+1 from `05_程序代码/innovation/metrics.py`; peak = argmax ILITOTAL, ties → earliest week |
 
-> `BLOCKED: no release-calendar/vintage source found`
+Verified first row of frozen `02_数字表格/cdc_vintage.csv`:
+`200340,2,200347,2003-11-28,7,200348,2003-12-05,2108.0,2115.0,7.0,0.332...,True`.
 
-Exact limitation: CDC publishes **no release calendar** and **no revision/version
-identifier** for ILINet. Verified on
-`https://www.cdc.gov/fluview/surveillance/past-reports.html` (200; no
-`release calendar` / `revision` / `revised` string in body, only "week ending" +
-final/archived values),
-`https://www.cdc.gov/fluview/index.html` (200; "All data are preliminary"),
-`https://stacks.cdc.gov/view/cdc/120452` (200; "The data presented each week are
-preliminary and may change as more data are received.").
-Archived final CSVs are single-snapshot values, **not a vintage**.
-CDC EPI `Release_Week` (2009/10–2014/15) is a publication-epiweek proxy, not a calendar
-release date or CDC revision number. Delphi `issue`/`release_date`/V5 `report_time`
-are Delphi-side proxies ("the date Delphi ingested the CDC weekly file"), not CDC-issued
-revision ids. Hence `cdc_official_revision_id = NOT_AVAILABLE` on every row.
+Key verified facts (from `02_数字表格/cdc_vintage_report.md` and
+`02_数字表格/cdc_peak_revintage.csv`, re-checked 2026-11-06):
 
-### BLOCKED sub-step 3 — peak re-scoring
-
-**Exact missing input:** an authoritative
-`step (test-window index) → absolute row index → CDC MMWR epiweek (YYYYWW)` mapping
-linking the frozen peak ground truth to the Delphi `issue`/`release_date` vintage,
-together with an official CDC-issued release date / revision id (which does not exist).
-
-Evidence (all read-only checks):
-- `06_原始数据集/scaler_miflu_national.json` and `scaler_miflu_author966.json` contain
-  only `mean, std, train_end (717/676), val_end (819/773), var_cols`. The split
-  boundaries are row indices, not weeks. No row→week mapping.
-- `99_旧文件存档/recovery/dataset_manifest.json` has only `first`/`last`/`n` summary
-  ranges (`author_dates` 2002-01-01→2020-06-30, `paper_exact_epiweeks` 200240..202113,
-  `project_epiweeks` 200201..202152), no per-row array.
-- Frozen peak tables are step-indexed with no epiweek/date column:
-  `02_数字表格/BENCH_PTE_PIE_BY_STEP.csv` (`model,family,L,step,weeks_ahead,...`),
-  `HANDOFF_20261105/final/PEAK_BY_STEP.csv` (`model,L,seed,step,pte,pie,passed,n`),
-  `HANDOFF_20261105/final/PEAK_EVENTS.csv` (`gt_week` is a numeric row index, e.g.
-  `801`/`798`, not `YYYYWW`). Scoring scripts `score_common.py` / `peak_events.py` are
-  **not present** in the Windows tree; only `05_程序代码/innovation/metrics.py` exists.
-- `06_原始数据集/raw/national_illness_author_repo_966.csv` (the paper's main 966-week
-  file) has no `epiweek`, only a synthetic 7-day `date` column. The reprocessed files'
-  `epiweek` labels are NOT CDC MMWR weeks (2002-01-01 ↔ `200240`; label year rolls over
-  in April), so joining them to Delphi MMWR epiweeks would require inventing an
-  alignment — forbidden.
-- The `release_date` columns in `national_illness_raw.csv` (8 distinct annual bulk
-  snapshot dates) and `national_illness_raw_paper_exact.csv` (target-week calendar
-  dates) are not CDC publication dates.
-
-**Smallest next action:** recover the scoring provenance (`score_common.py` /
-`peak_events.py` and their `test_window → absolute row → date` alignment from the HPC
-return package / `RAW_EVIDENCE.zip`), confirm the epiweek convention, then join that
-alignment to a full Delphi `issues` pull. No peak CSV was rewritten; no mapping was
-invented.
+- **1025** panel epiweeks; **848** with weekly release records; **177** without
+  (2002:33, 2003:39, 2004:19, 2005:19, 2006:19, 2007:19, 2008:19, 2010:9, 2013:1).
+- **7192** `(epiweek, issue)` rows with `lag<=8`.
+- **836 / 848** epiweeks revised (98.6%); |ILITOTAL revision| as % of first print:
+  p10 **5.2%**, median **21.8%**, p90 **51.8%**.
+- Season-peak table comparing FINAL vs AS-OF: **18 seasons scored**, **7 peak weeks
+  move = 38.9%** (2003-04, 2005-06, 2006-07, 2007-08, 2008-09, 2014-15, 2020-21).
+- The archived `06_原始数据集/raw/national_illness_raw.csv` `release_date` column has
+  only **8 distinct values** (2013-12-31, 2017-10-24, 2018-10-05, 2019-10-04,
+  2020-10-02, 2021-10-08, 2022-10-07, 2023-10-06; 1025 rows) — annual bulk snapshot
+  dates, **NOT a vintage**. The Delphi per-`(epiweek, issue)` `release_date` is what
+  makes a real-time reconstruction possible.
 
 ---
 
-## B. Commands + exit codes
+## ERROR CORRECTION — why the previous BLOCKED verdict was wrong
+
+1. **The source WAS found and already used.** The earlier subagent fetched **only 20
+   sample `(epiweek, issue)` rows** from `https://api.delphi.cmu.edu/epidata/fluview/`
+   (region `nat`) and then declared `BLOCKED: no release-calendar/vintage source found`
+   / `PARTIAL` (with peak re-scoring `BLOCKED`). That same Delphi `fluview` endpoint is
+   the data source of `05_程序代码/cdc_vintage_build.py`, which had **already** produced
+   the complete frozen reconstruction in `02_数字表格/`. The "no vintage source found"
+   conclusion was therefore factually wrong: the source existed and was in active use
+   inside the project.
+2. **`02_数字表格/` was not inspected.** The previous run did not check the project's own
+   `02_数字表格/` directory. Its §E.5 (and `CDC_VINTAGE_REPORT.md` §9) listed the frozen
+   filenames but explicitly declined to read their contents and dismissed them as
+   out-of-scope / frozen without inspecting them. Had `02_数字表格/cdc_vintage_report.md`
+   been opened, the 848/7192-row tables, the 18-season peak re-scoring and the written
+   interpretation limits would have been found. The `BLOCKED` verdict is the direct result
+   of that omission. The project owner caught the error.
+3. **The 20-row table here is a verification sample, NOT the deliverable.**
+   `HANDOFF_20261105/v8/cdc_vintage/cdc_vintage.csv` (20 rows, 6 epiweeks from 2015,
+   sha256 `ffc960e5654291d0b5517ec894f59aad02ebbf463392aa280fe5eae97fa870f2`) is only a
+   verification sample of the Delphi endpoint. It is **NOT** a replacement for the
+   frozen **7192-row** `02_数字表格/cdc_vintage_raw.csv`, nor for the frozen **848-row**
+   `02_数字表格/cdc_vintage.csv`, nor for `02_数字表格/cdc_peak_revintage.csv`. Treating the
+   20-row sample as "the" vintage and concluding the rest was impossible was the error.
+4. **Peak re-scoring WAS already done.** `02_数字表格/cdc_peak_revintage.csv` re-scores
+   the REFERENCE season-peak assignment on AS-OF first-print data vs FINAL and reports the
+   7/18 peak-week moves. The earlier claim that peak re-scoring is `BLOCKED` for lack of a
+   `step → MMWR epiweek` mapping conflated two different things: the frozen reconstruction
+   re-scores the **reference peak assignment** (by MMWR epiweek, from the builder's
+   `season_of`/`recess`), not the 1120-cell model panel (which remains retrospective —
+   see "Remaining scientific limits" below). The reference re-scoring is complete on disk.
+
+**Old verdict is SUPERSEDED, not deleted.** The original URL/status ledger, commands and
+hashes (§B/§C/§D) are retained as useful provenance that the Delphi endpoint is live
+and returns successive issues; only the `PARTIAL` / `BLOCKED` *conclusions* are corrected.
+
+---
+
+## Remaining scientific limits (MUST be kept — do not overclaim)
+
+1. **Delphi `release_date` is a Delphi-ingest proxy.** It is NOT a CDC-issued official
+   revision number and there is no CDC release calendar / official revision id. Do NOT
+   claim an official CDC vintage or revision number was reconstructed. The reconstruction
+   is explicitly a Delphi `(epiweek, issue)` vintage.
+2. **Re-scoring is of the REFERENCE peak assignment, NOT the 1120-cell model panel.**
+   `02_数字表格/cdc_vintage_report.md` §Interpretation limits states it "does not
+   re-score the 1120-cell model panel; it re-scores the *reference* peak assignment on
+   as-of data and quantifies peak-week instability". **Model peak metrics remain
+   retrospective**; no real-time / clinical claim is added.
+3. **2002 weeks have no real-time vintage.** 2002 epiweeks (and parts of 2003-04) have no
+   weekly release record in the archive (177 epiweeks missing overall); they first appear
+   in the 2013-12-31 bulk reload, so their `first_lag` is large and those weeks have NO
+   real-time vintage. The AS-OF series is the FIRST PRINT (lag 0), i.e. the value at the
+   end of week W, not the value at forecast issue W+1.
+4. **Archived final CSVs are NOT a vintage** (8 annual bulk snapshot dates only).
+5. The manuscript is **NOT** called submission-ready.
+
+---
+
+## B. Commands + exit codes (ORIGINAL WORK — RETAINED VERBATIM)
 
 All commands ran in Git Bash on Windows from
 `C:/Users/Asus/Desktop/FYP code/MLFlu`. Every Bash tool call returned **exit code 0**;
@@ -186,7 +226,7 @@ find . -type f ! -name "T4_VERDICT.md" | sort | while read -r f; do sha256sum "$
 
 ---
 
-## C. Output paths + SHA-256
+## C. Output paths + SHA-256 (ORIGINAL WORK — RETAINED VERBATIM)
 
 All paths relative to `HANDOFF_20261105/v8/cdc_vintage/`.
 
@@ -220,9 +260,15 @@ All paths relative to `HANDOFF_20261105/v8/cdc_vintage/`.
 | `http_evidence/v5_migration.body` | `16dddc154145dddb59deecbd1751a3c2b2cd6ba48b66574dce2f2924320d9a01` |
 | all `http_evidence/*.err` (empty) | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` (SHA-256 of empty file, 16 files) |
 
+> **Note (2026-11-06 correction):** `CDC_VINTAGE_REPORT.md` and `T4_VERDICT.md` in this
+> directory are edited by this correction, so their on-disk SHA-256 values now differ from
+> the two values recorded above. The hashes above are the ORIGINAL values at
+> `end_utc 2026-11-06T13:33:59Z`, retained verbatim as the original work record. The
+> frozen artifacts in §A are unchanged.
+
 ---
 
-## D. Evidence (what was actually fetched)
+## D. Evidence (original fetch work — retained as Delphi-endpoint provenance)
 
 3 live Delphi Epidata `fluview` queries, all HTTP 200, `result:1 / message:"success"`:
 
@@ -232,10 +278,11 @@ All paths relative to `HANDOFF_20261105/v8/cdc_vintage/`.
 | `https://api.delphi.cmu.edu/epidata/fluview/?regions=nat&epiweeks=201449-201501&issues=201501,201502` | 200 | 12 | 2015-01-16, 2015-01-23 |
 | `https://api.delphi.cmu.edu/epidata/fluview/?regions=nat&epiweeks=201501&issues=201501` | 200 | 1 | 2015-01-16 |
 
-`cdc_vintage.csv` = 20 unique `(epiweek, issue)` rows (6 epiweeks × up to 10 issues),
-`region=nat`, `cdc_official_revision_id = NOT_AVAILABLE`,
+`v8/cdc_vintage/cdc_vintage.csv` = 20 unique `(epiweek, issue)` rows (6 epiweeks × up to
+10 issues), `region=nat`, `cdc_official_revision_id = NOT_AVAILABLE`,
 `source_type = delphi_epidata_fluview_v4_issue_proxy`,
-`affected_weeks = 201449;201450;201451;201452;201453;201501`.
+`affected_weeks = 201449;201450;201451;201452;201453;201501`. This is a verification
+sample only (see ERROR CORRECTION §3).
 
 Reproduced the handoff's verified research: `wili` for epiweek 201501 across issues
 201501→201504 = 4.36093931545351 → 4.33436754449044 → 4.2909178182273 →
@@ -245,34 +292,41 @@ field-identical before dedup (PASS).
 
 16 unique URLs checked with status codes (200 except the deliberately attempted
 non-existent `.../api/fluview_v5.html` = 404). Full ledger and verified quotes are in
-`CDC_VINTAGE_REPORT.md` §3. Key verified limits: CDC EPI `Release_Week` covers
-**2009/10–2014/15**; Delphi scope starts **1997w40**; V3/V4 stopped receiving new
-data **2026-09-22** ("As of September 22, 2026, the V3 and V4 APIs no longer receive
-new data"); V5 `report_time` = "the date Delphi ingested the CDC weekly file".
-
-No API was unreachable. No error had to be recorded. The raw bodies, stderr and
-status/time/size TSVs are preserved under `http_evidence/`.
+`CDC_VINTAGE_REPORT.md` §3 (retained as provenance). Key verified limits: CDC EPI
+`Release_Week` covers **2009/10–2014/15**; Delphi scope starts **1997w40**; V3/V4
+stopped receiving new data **2026-09-22**; V5 `report_time` = "the date Delphi
+ingested the CDC weekly file". No API was unreachable. No error had to be recorded.
 
 ---
 
-## E. Remaining
+## E. Remaining (corrected)
 
-1. `BLOCKED: no release-calendar/vintage source found` — no CDC-issued release
-   calendar or revision id exists in the checked sources;
-   `cdc_official_revision_id` stays `NOT_AVAILABLE`.
-2. `BLOCKED` peak re-scoring — missing `step → CDC MMWR epiweek` mapping and official
-   CDC release dates; smallest next action in §A. No peak CSV rewritten.
-3. Optional (new task, not done): full Delphi `issues` pull for 1997w40→2026 (V3/V4
-   frozen 2026-09-22, or V5 `report_time` archive), still labelled **proxy** only.
-4. `HANDOFF_20261105/v8/TASK_LOG.md` and the v7 blocked/audit docs were NOT appended —
-   outside my write scope. TASK 7 (v8 documents) may cite this report.
-5. Prior out-of-scope artifacts `05_程序代码/cdc_vintage_build.py` and
-   `02_数字表格/cdc_peak_revintage.csv` (+ `cdc_vintage*.csv` / `_report.md`) exist but
-   were not run, modified, or adopted as my results; `02_数字表格/` is frozen under
-   AGENTS.md RULE 4. That script's own text states it does not re-score the 1120-cell
-   model panel, and it conflates Delphi `release_date` with "the CDC release calendar".
+1. TASK 4 is **COMPLETED**. Deliverables are the frozen artifacts in §A. No further
+   reconstruction is required.
+2. Scientific limits to honour in any write-up (see "Remaining scientific limits"):
+   Delphi `release_date` is a Delphi-ingest proxy, NOT a CDC-issued official revision
+   number; only the REFERENCE peak assignment is re-scored on as-of data (the 1120-cell
+   model panel peak metrics remain retrospective); 2002 weeks have no real-time vintage;
+   archived final CSVs are not a vintage. No official CDC release calendar / revision id
+   is claimed.
+3. This correction updates the v8 CDC/T4 records (`T4_VERDICT.md`,
+   `CDC_VINTAGE_REPORT.md`, `T4_CORRECTION.md`, `v8/TASK_LOG.md` T4 section,
+   `v8/SCIENTIFIC_AUDIT.md`, `v8/BLOCKED_AND_UNVERIFIED.md`,
+   `v8/DOCUMENT_UPDATE_MAP.csv`, `v8/docs/V8_SCIENTIFIC_ADDENDUM.md`,
+   `v8/docs/V8_CHANGELOG.md`, `v8/MESSAGE_TO_CHATGPT.md`). Other copies in
+   `HANDOFF_20261105/final/*`, `v7/*`, `01_最终报告/*`, `v8/RETURN_V8/*`,
+   `v8/T7_VERDICT.md`, `v8/T8_VERDICT.md` and the packaged ZIPs are explicitly OUT OF
+   SCOPE for this correction and may still carry the old wording; the owner must
+   reconcile those separately.
+4. `02_数字表格/*` is FROZEN — not modified. The 20-row `v8/cdc_vintage/cdc_vintage.csv`
+   is a verification sample, NOT a replacement for the frozen 7192-row table.
 
-**Honest bottom line:** a proxy vintage table was built and documented, but the
-ACTUAL CDC release date / revision id is not reconstructable and peaks were NOT
-re-scored. Therefore `PARTIAL` with one explicitly BLOCKED sub-step, never
-`COMPLETED`.
+**Honest bottom line (corrected 2026-11-06):** TASK 4 is `COMPLETED`. The complete CDC
+ILINet vintage reconstruction (7192 release records / 848 epiweek summaries) and the
+re-scored season-peak table (18 seasons, 7 peak weeks moved) already existed in
+`02_数字表格/`, built from the same Delphi `fluview` endpoint. The earlier
+`PARTIAL` / `BLOCKED: no release-calendar/vintage source found` verdict was erroneous
+because it inspected only a 20-row sample and never inspected `02_数字表格/`; it is
+SUPERSEDED. The retained scientific limits (Delphi proxy, reference-peak-only re-scoring,
+retrospective model peak metrics, no 2002 real-time vintage) still apply. The manuscript
+is NOT called submission-ready.

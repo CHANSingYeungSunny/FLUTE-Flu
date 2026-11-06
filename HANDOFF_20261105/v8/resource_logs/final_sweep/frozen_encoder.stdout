@@ -1,0 +1,26 @@
+T6_MODEL_PROBE {
+  "model": "frozen_encoder",
+  "device": "cuda",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.6.0+cu124",
+  "python": "3.11.13",
+  "cache_paths_checked": [
+    "/gpfs1/scratch/sychan552/stage5_a2_durable/hf_cache/hub",
+    "/gpfs1/scratch/sychan552/stage5_a2_durable/hf_cache",
+    "/gpfs1/scratch/sychan552/stage5_a2_durable/hf_cache/hub",
+    "/gpfs1/scratch/sychan552/stage5_a2_durable/hf_cache",
+    "/gpfs1/home/sychan552/.cache/huggingface/hub"
+  ],
+  "cache_hits": [
+    "/gpfs1/home/sychan552/.cache/huggingface/hub/models--gpt2"
+  ],
+  "load_s": 6.3224,
+  "model_path": "/gpfs1/home/sychan552/.cache/huggingface/hub/models--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "warmup_runs": 1,
+  "repeat_runs": 10,
+  "batch": "1 sequence x 104 tokens",
+  "precision": "float32",
+  "latency_mean_ms": 6.98,
+  "latency_std_ms": 0.097,
+  "status": "MEASURED"
+}

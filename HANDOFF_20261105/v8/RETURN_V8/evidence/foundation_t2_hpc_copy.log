@@ -1,0 +1,48 @@
+TASK 2 — HPC evidence copy-down (FINALIZATION), 2026-11-06
+============================================================
+Purpose: collect the already-computed T2 HPC outputs (small text/NPZ only) into
+v8/foundation/t2_hpc_evidence/ and hash them. NO training, NO download, NO model
+work, NO torch import, NO recursive du. The login node was used ONLY for this
+single transfer connection (AGENTS.md RULE 1).
+
+HPC source : /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t2_fm/
+Local dest : HANDOFF_20261105/v8/foundation/t2_hpc_evidence/   (subdir layout preserved)
+Host alias : cityu (burgundy.hpc.cityu.edu.hk, user sychan552)
+
+Step 0 — light read-only listing (1 ssh, timeout 25s, rc=0):
+  ssh -o ServerAliveInterval=0 -o ServerAliveCountMax=0 -o BatchMode=yes \
+      -o PreferredAuthentications=publickey -o ConnectTimeout=10 cityu \
+      '<cd BASE && ls -la; ls -la logs/ pilot_out/ matrix_out/>'
+  Confirmed all requested files exist; also found sbatch/py scripts at the base dir.
+
+Step 1 — the transfer (ONE ssh, tar stream over stdout), 2026-11-06T16:03:15Z..16:03:18Z:
+  timeout 120s ssh -o ServerAliveInterval=0 -o ServerAliveCountMax=0 \
+      -o BatchMode=yes -o PreferredAuthentications=publickey -o ConnectTimeout=10 cityu \
+    "cd $BASE && sha256sum logs/* pilot_out/* matrix_out/* t2_*.sbatch t2_*.py >&2 ; \
+     tar cf - logs pilot_out matrix_out t2_*.sbatch t2_*.py" \
+    > /tmp/t2_fm_xfer/t2_fm.tar 2> /tmp/t2_fm_xfer/t2_fm_ssh.stderr
+  - stdout (pure tar binary) -> t2_fm.tar ; stderr (ssh PQ warning + remote
+    sha256sum manifest) -> t2_fm_ssh.stderr. The two streams are separate.
+  - SSH_RC=0 ; received tar = 153600 bytes ; tar listing = 41 entries.
+  - tar xf t2_fm.tar -C <dest> ; EXTRACT_RC=0 ; 38 regular files extracted.
+  - The HPC-side sha256sum of every selected file was emitted on stderr in the
+    SAME session and is preserved verbatim in
+    v8/evidence/foundation_t2_remote_sha256.txt.
+
+Files copied (38): 20 in logs/, 2 in pilot_out/, 10 in matrix_out/,
+6 sbatch/py scripts at the base dir (document the exact commands). The full
+per-file SHA-256 list is in v8/foundation/T2_EVIDENCE_HASHES.txt.
+NOT copied (deliberately): the extracted/ model weights tree (multi-GB), any
+large tar, any non-listed file. Only small text/NPZ evidence was brought down.
+
+Cross-verification: local sha256sum of all 38 copied files was normalized and
+diffed against the HPC-side sha256sum manifest captured in the same ssh session:
+  remote lines: 38  local lines: 38
+  diff -> empty ; CROSS_VERIFY=ALL_MATCH
+Every copied file is byte-identical to the HPC original.
+
+Notes:
+- 0-byte .err files (env_*, matrix_744607, pilot_744589, *_vram_sample.err)
+  legitimately share the empty-file SHA-256 e3b0c442...; they are real empty
+  stderr logs, not missing files.
+- 8 matrix NPZ + 1 pilot NPZ prediction files were copied and hashed.

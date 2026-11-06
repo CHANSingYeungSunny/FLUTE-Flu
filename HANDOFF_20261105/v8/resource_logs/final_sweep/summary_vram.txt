@@ -1,0 +1,6 @@
+miflu peak_vram_mib=NOT_MEASURED n_samples=0 reason=no_usable_samples
+nlinear peak_vram_mib=558 min_vram_mib=16 n_samples=36 status=MEASURED
+patchtst peak_vram_mib=720 min_vram_mib=16 n_samples=7 status=MEASURED
+frozen_encoder peak_vram_mib=1070 min_vram_mib=16 n_samples=11 status=MEASURED
+chronos peak_vram_mib=596 min_vram_mib=16 n_samples=6 status=MEASURED
+timesfm peak_vram_mib=2594 min_vram_mib=16 n_samples=11 status=MEASURED

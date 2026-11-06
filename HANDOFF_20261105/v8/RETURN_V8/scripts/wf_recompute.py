@@ -144,7 +144,11 @@ def main():
     if a.baseline and os.path.exists(a.baseline):
         old = {(r["fold"], r["model"], r["L"], r["seed"]): r
                for r in csv.DictReader(open(a.baseline, encoding="utf-8"))}
-        new = {(r["fold"], r["model"], r["L"], r["seed"]): r for r in rows}
+        # Normalise every key component to str: `rows` holds int L/seed while the
+        # frozen baseline CSV yields strings. Without this cast the diff silently
+        # matched nothing (recovered_218_count=0) even when all cells were fixed.
+        new = {(str(r["fold"]), str(r["model"]), str(r["L"]), str(r["seed"])): r
+               for r in rows}
         recovered, changed, still_missing, lost = [], [], [], []
         for k, o in old.items():
             n = new.get(k)

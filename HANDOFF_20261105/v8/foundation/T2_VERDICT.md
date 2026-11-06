@@ -341,3 +341,32 @@ invented.** Explicitly NOT claimed / NOT done (full list in `T2_PILOT_AND_MATRIX
 `PILOT_AND_4L_COMPLETED` (with `separate_roster=yes`) and keeps all other rows
 `NOT_EXECUTED`; no row was deleted. Downstream T6 / T7 / v8 docs remain separate
 tasks and were not modified here.
+
+
+---
+
+## FINAL UPDATE 2026-11-06 — FULL 80-CELL MATRIX COMPLETED
+
+`status: COMPLETED (80/80 valid cells; documented rolling-origin protocol)`.
+The earlier `COMPLETED_WITH_DOCUMENTED_SCOPE` (8 cells) and the original `BLOCKED`
+verdicts are SUPERSEDED.
+
+- Job **744886** `t2_fm_full80` on `stingy` / A100-SXM4-80GB produced
+  `FOUNDATION_80_CELLS.csv`: **80/80 `ok`, all finite, 80 real prediction NPZ**
+  under `v8/foundation/t2_hpc_evidence/full80_out/`.
+- Matrix = 2 models x 4 L (24/36/48/60) x 10 replicates. Both checkpoints are
+  FROZEN ZERO-SHOT with no training seed dimension, so 10 seeds would give 10
+  identical predictions. The 10 replicates are therefore **10 DISTINCT FORECAST
+  ORIGINS** (rows 773-782), each with its own context and target.
+  `seed_semantics=NOT_APPLICABLE`, `replicate_kind=rolling_origin`.
+  The literal 10-seed expansion remains `NOT_EXECUTED_BY_PROTOCOL` with that exact
+  reason — this is a documented protocol deviation, NOT a fabricated seed dimension.
+- Measured resources: peak VRAM 2608 MiB (51 nvidia-smi samples), `/usr/bin/time -v`
+  wall 50.71 s, Chronos latency 10.229 +/- 1.074 ms (warm-up 1 / repeat 10),
+  TimesFM 50.906 +/- 4.459 ms (warm-up 1 / repeat 5).
+- Labels `foundation_chronos` / `foundation_timesfm` remain a SEPARATE ROSTER.
+  Both checkpoints are UNIVARIATE; the per-channel adapter DISCARDS cross-channel
+  dependence and is NOT information-set matched to the multivariate arms. No
+  training/fine-tuning, no full-1120 comparison.
+- Full record: `v8/foundation/T2_FULL80.md`; per-NPZ hashes:
+  `v8/foundation/T2_EVIDENCE_HASHES_FULL80.txt`.

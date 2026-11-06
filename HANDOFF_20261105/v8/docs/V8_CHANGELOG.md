@@ -15,8 +15,8 @@ owner-edited PPTX were not touched.
 | Task | v7 / pre-v8 claim | v8 verified state | What changed |
 |---:|---|---|---|
 | T1 | "walk-forward 802/1020 valid, 218 no NPZ"; "partial / invalid"; regional 51/53 or 473/1020 in older v7 text | **COMPLETED 1020/1020 `ok`** | Job 743850 reran 218 SKIPPED cells (rc=0); 744334 recomputed from raw NPZ. `WF_RECOMPUTED.csv` sha256 `53d0e0cb…`, means sha256 `c0e72f35…`. Baseline diff: recovered 218, changed 0, lost 0, missing 0. Legacy 5-fold N=3 panel, NOT the 1120 national panel. |
-| T2 | "not implemented/pinned in this run" | **BLOCKED** with full provenance **[SUPERSEDED 2026-11-07 → §5.1: `COMPLETED_WITH_DOCUMENTED_SCOPE`]** | Pinned repos/revisions/licences in `FOUNDATION_ROSTER.csv` + `FOUNDATION_MODEL_PROVENANCE.md`; no weights/env/pilot/80-cell matrix; named checkpoints UNIVARIATE; TimesFM 3.0 non-commercial; 11 frozen encoders NOT substitutes. Separate roster. |
-| T3 | "TODO / idle-no-work / no output" | **COMPLETED** | Real `BENCH_MSE_BY_MODEL_L.csv` (sha256 `2e03b510…`) from 386 readable legacy cells; 2 corrupt NPZs quarantined (not deleted). Legacy analysis-tree table, not the 1120 panel. |
+| T2 | "not implemented/pinned in this run" | **BLOCKED** with full provenance **[SUPERSEDED 2026-11-07 → §5.1: `COMPLETED_WITH_DOCUMENTED_SCOPE`; FINAL → §6 V8C: `COMPLETED, 80/80 cells`]** | Pinned repos/revisions/licences in `FOUNDATION_ROSTER.csv` + `FOUNDATION_MODEL_PROVENANCE.md`; no weights/env/pilot/80-cell matrix; named checkpoints UNIVARIATE; TimesFM 3.0 non-commercial; 11 frozen encoders NOT substitutes. Separate roster. |
+| T3 | "TODO / idle-no-work / no output" | **COMPLETED** | **[SUPERSEDED V8C]** Real `BENCH_MSE_BY_MODEL_L.csv` (sha256 `2e03b510…`) from 386 readable legacy cells; 2 corrupt NPZs quarantined (not deleted). **FINAL (§6): job 744884 restored both → 388/388 readable, table `a7d98ad8…e46`.** Legacy analysis-tree table, not the 1120 panel. |
 | T4 | "not reconstructed; peaks are retrospective" | **COMPLETED** (corrected 2026-11-06) | ERRONEOUS earlier `PARTIAL/BLOCKED` verdict superseded: `02_数字表格/` was never inspected and ALREADY held a complete CDC ILINet vintage reconstruction — frozen `cdc_vintage_raw.csv` (7192 rows), `cdc_vintage.csv` (848 rows), `cdc_vintage_report.md`, `cdc_peak_revintage.csv` (18 seasons, 7 peak weeks moved=38.9%), builder `05_程序代码/cdc_vintage_build.py`, all from the SAME Delphi `fluview` endpoint. Record `v8/cdc_vintage/T4_CORRECTION.md`. Retained limits: Delphi proxy (NOT a CDC official revision number), reference-peak-only re-scoring, retrospective 1120-cell model peak metrics, no 2002 real-time vintage. |
 | T5 | "UNVERIFIED / not re-verified against live selector" | **COMPLETED** (dated record) | 14 pp incl. supplementary, ≤250-word abstract, double-column single-spaced, embedded figures/tables, AI disclosure, APC US$2,800 (2026) all VERIFIED. Template class-file UNVERIFIED (404 / WAF 418 / 302→502). `submission-ready: NO`. |
 | T6 | "NOT EXECUTED / no measured table" | **PARTIAL** **[SUPERSEDED 2026-11-07 → §5.2: `PARTIAL (IMPROVED)`, MIFlu VRAM 4816 MiB]** | `RESOURCE_MEASUREMENTS.csv`: real wall times (MIFlu 581 s, NLinear 6 s, PatchTST 7 s, Qwen-1.5B 24 s), real NPZ scoring-path latency 0.0287–0.0297 ms (NOT a forward), versions Python 3.9.25 / numpy 2.0.1 / pandas 2.3.3 / torch 2.5.1. `peak_vram_mib` NOT_MEASURED; Chronos/TimesFM BLOCKED; every row `subset_only_not_full_1120`. |
@@ -58,7 +58,7 @@ owner-edited PPTX were not touched.
    retrospective; no real-time/clinical claim.
 9. **"v7 DOCX/PDF reports NOT EXECUTED"** → superseded by v7 DOCX/PDF and now by
    the v8 DOCX/PDF with updated BODY (not only an appendix). NOTE (2026-11-07): the
-   v8 DOCX/PDF predate the FINAL T2/T6 results and still say T2 `BLOCKED` / T6 VRAM
+   **[SUPERSEDED V8C — the DOCX/PDF were rebuilt again as v8c and now carry the final results]** v8 DOCX/PDF predate the FINAL T2/T6 results and still say T2 `BLOCKED` / T6 VRAM
    `NOT_MEASURED` (§5.3).
 10. **"T2 foundation models BLOCKED — no weights / no tar / no scp / no env / no
     pilot / no cells"** (§1 T2 row, `T2_VERDICT.md` §1–§8) → **SUPERSEDED by
@@ -198,3 +198,27 @@ cells exported`; `test MSE_7var_z=1.624383`. ONE cell (L=36, seed=2023).
   §2 item 9); T8 COMPLETED (PRELIMINARY PACKAGING PASS) with the package rebuild
   and `scientific_readiness: NOT_ASSESSED` still outstanding.
 - The manuscript is **NOT** submission-ready; a validator PASS is structural only.
+
+
+---
+
+## 6. V8C final sync (2026-11-06 UTC) — supersedes §5's interim statuses
+
+§5 recorded `T2 -> COMPLETED_WITH_DOCUMENTED_SCOPE (8 cells)` and
+`T6 -> PARTIAL (IMPROVED)`; both are now SUPERSEDED by these final states:
+
+| Task | Final status | Evidence |
+|---|---|---|
+| T2 | **COMPLETED — 80/80 valid cells** | job `744886`; `v8/foundation/T2_FULL80.md`; 80 NPZ; 10 rolling origins; peak VRAM 2608 MiB |
+| T3 | **COMPLETED — 388/388 NPZ** | job `744884`; `v8/T3_RESTORE.md`; table `a7d98ad8...e46` |
+| T5 | **COMPLETED — provenance applied** | `v8/PAPER_TO_CODE.md`; builder prefers v8 copy; template class file UNVERIFIED |
+| T6 | **COMPLETED — 6 models measured** | jobs `744897`/`744899`; `v8/T6_FINAL_SWEEP.md`; CSV sha256 `9574eeff...1117` |
+| T7 | **COMPLETED — v8c rebuild** | `v8/docs/V8C_REBUILD_LOG.md` |
+| T8 | **COMPLETED — final package** | `v8/packaging/FINAL_HASHES.txt`, `v8/T8_VERDICT.md` |
+
+T1 (1020/1020 WF), T4 (frozen CDC vintage + as-of peaks) and T5's dated
+verification record are unchanged. Old 28-arm snapshot, the 1120 national panel
+and the LEGACY 5-fold N=3 WF panel remain three separately labelled populations.
+Still NOT EXECUTED / UNVERIFIED / NOT_MEASURED: the literal 10-seed expansion,
+the official JBHI template class file, isolated single-forward latency for three
+models, confirmatory dependence-aware statistics, and any full-1120 Pareto claim.

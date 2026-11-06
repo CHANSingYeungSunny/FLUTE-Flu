@@ -1,0 +1,29 @@
+[A2] rolling-origin fold f3: train_end=431 val_end=494 test_end=617 — the fit may read rows [0:617) only
+[A2] run_config backbone=patchtst containment=strict profile=author_966 horizon=24 seed=42 device=cuda
+[A2] fidelity_label: PatchTST-INSPIRED (supervised, no RevIN, no pretraining, reduced capacity)
+[A2] fold f3: profile=author_966 n=617 train_end=431 val_end=494 test_end=617 split_source=walk_forward_fold (scaler re-fitted on this fold's train prefix only)
+  [patchtst] L=24 seed=42 params total=531,878 trainable=531,878
+    ep  1/20 | train_loss=0.878709 | val_mse=1.972268(All) | val_mae=1.119985
+    ep  2/20 | train_loss=0.602907 | val_mse=2.184016(All) | val_mae=1.167415
+    ep  3/20 | train_loss=0.458468 | val_mse=0.999633(All) | val_mae=0.749546
+    ep  4/20 | train_loss=0.386360 | val_mse=0.773759(All) | val_mae=0.686024
+    ep  5/20 | train_loss=0.346676 | val_mse=0.777643(All) | val_mae=0.677189
+    ep  6/20 | train_loss=0.245090 | val_mse=0.872154(All) | val_mae=0.728141
+    ep  7/20 | train_loss=0.207715 | val_mse=0.669238(All) | val_mae=0.638478
+    ep  8/20 | train_loss=0.185037 | val_mse=0.745953(All) | val_mae=0.650483
+    ep  9/20 | train_loss=0.182004 | val_mse=0.630475(All) | val_mae=0.592661
+    ep 10/20 | train_loss=0.146715 | val_mse=0.623589(All) | val_mae=0.594646
+    ep 11/20 | train_loss=0.128616 | val_mse=0.813532(All) | val_mae=0.685391
+    ep 12/20 | train_loss=0.115429 | val_mse=0.600343(All) | val_mae=0.580223
+    ep 13/20 | train_loss=0.104839 | val_mse=0.666520(All) | val_mae=0.601501
+    ep 14/20 | train_loss=0.100984 | val_mse=0.727170(All) | val_mae=0.627205
+    ep 15/20 | train_loss=0.100763 | val_mse=0.649741(All) | val_mae=0.585805
+    ep 16/20 | train_loss=0.098405 | val_mse=0.668195(All) | val_mae=0.608792
+    ep 17/20 | train_loss=0.080889 | val_mse=0.778525(All) | val_mae=0.655221
+    ep 18/20 | train_loss=0.086199 | val_mse=0.808042(All) | val_mae=0.669135
+    ep 19/20 | train_loss=0.132460 | val_mse=0.768619(All) | val_mae=0.664683
+    ep 20/20 | train_loss=0.126380 | val_mse=0.818630(All) | val_mae=0.674523
+[patchtst] predictions -> /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/final_sweep_out/patchtst/pred_patchtst_L24_s42.npz
+[patchtst] manifest -> /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/final_sweep_out/patchtst/manifest_patchtst_L24_s42.json
+[patchtst] L=24 seed=42 mse_all=0.576158 best_val=0.600343 best_epoch=11 (4.5s)
+[patchtst] DONE -> /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/final_sweep_out/patchtst/metrics.csv

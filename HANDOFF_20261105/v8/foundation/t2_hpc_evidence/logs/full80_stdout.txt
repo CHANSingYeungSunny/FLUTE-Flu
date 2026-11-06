@@ -1,0 +1,8 @@
+ See https://github.com/google-research/timesfm/blob/master/README.md for updated APIs.
+Loaded PyTorch TimesFM, likely because python version is 3.11.13 (main, Jun  1 2026, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-14)].
+DEVICE cuda NVIDIA A100-SXM4-80GB
+CHRONOS_LATENCY {"warmup_runs": 1, "repeat_runs": 10, "mean_ms": 10.229, "std_ms": 1.074}
+CHRONOS_CELLS_DONE 40 wall_s 0.588
+TIMESFM_LATENCY {"warmup_runs": 1, "repeat_runs": 5, "mean_ms": 50.906, "std_ms": 4.459}
+TIMESFM_CELLS_DONE 80 wall_s 0.553
+FULL80_SUMMARY {"cells": 80, "ok": 80, "npz": 80}

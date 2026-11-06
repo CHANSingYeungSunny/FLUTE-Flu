@@ -1,0 +1,29 @@
+{
+  "generated_utc": "2026-11-06T17:02:48Z",
+  "documents": {
+    "ieee_manuscript_en_v8": {
+      "docx_sha256": "2910848a9726ad7c513bbe099793a832fb37d22d7cf8449ad1f73549f367c756",
+      "docx_bytes": 47544,
+      "pdf_sha256": "bcbc73644b56eeda790302438564dc0683d1a0cdab27425a68a136cc9ef7329d",
+      "pdf_bytes": 403633,
+      "page_count": 9,
+      "convert_rc": 0
+    },
+    "report_internal_zh_v8": {
+      "docx_sha256": "31e8b8b858bfa13dd4d8da70dbe0d19b63f9075997f77113c9beb663dd52a755",
+      "docx_bytes": 45249,
+      "pdf_sha256": "5b255734191214626053f9557bde405005b8f2b33c423f4571a72365f3bb786e",
+      "pdf_bytes": 552646,
+      "page_count": 9,
+      "convert_rc": 0
+    },
+    "report_internal_qa_zh_v8": {
+      "docx_sha256": "55c7383281cf06cbc69e2c55b0fe544ef18ba62040c6a7c03923540004772749",
+      "docx_bytes": 60457,
+      "pdf_sha256": "48f598b0e58bf02278b6ddc2784577b25eab0bf5d4336c80e85fff31bac4dbec",
+      "pdf_bytes": 719589,
+      "page_count": 15,
+      "convert_rc": 0
+    }
+  }
+}

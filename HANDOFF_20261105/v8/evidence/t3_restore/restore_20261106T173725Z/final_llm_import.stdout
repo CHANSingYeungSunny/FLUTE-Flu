@@ -1,0 +1,5 @@
+[01:37:30] [finalise] QUEUE_FORCE_FINALISE=1: idempotence short-circuit disabled
+[01:39:01] [finalise] final_llm_import: steps=3 failed=0 n_cells=388 n_arms=17 proof_table=rewritten
+BRANCH=ok.finalise
+GATE=n_cells=388;n_arms=17
+NOTE=steps=3 failed=0 n_cells=388 n_arms=17 proof_table=rewritten

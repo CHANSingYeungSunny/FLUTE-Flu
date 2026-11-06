@@ -1,0 +1,71 @@
+=== T2_FULL80 START 2026-11-06T17:38:25Z host=gpu-a100-03 job=744886 ===
+GPU 0: NVIDIA A100-SXM4-80GB (UUID: GPU-5177403d-8fa8-8a6c-d470-04e5703dd4d4)
+NVIDIA A100-SXM4-80GB, 580.167.08, 81920 MiB
+FULL80_RC=0
+--- peak VRAM ---
+peak_vram_mib=2608
+n_samples=51
+--- stdout ---
+ See https://github.com/google-research/timesfm/blob/master/README.md for updated APIs.
+Loaded PyTorch TimesFM, likely because python version is 3.11.13 (main, Jun  1 2026, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-14)].
+DEVICE cuda NVIDIA A100-SXM4-80GB
+CHRONOS_LATENCY {"warmup_runs": 1, "repeat_runs": 10, "mean_ms": 10.229, "std_ms": 1.074}
+CHRONOS_CELLS_DONE 40 wall_s 0.588
+TIMESFM_LATENCY {"warmup_runs": 1, "repeat_runs": 5, "mean_ms": 50.906, "std_ms": 4.459}
+TIMESFM_CELLS_DONE 80 wall_s 0.553
+FULL80_SUMMARY {"cells": 80, "ok": 80, "npz": 80}
+--- stderr tail ---
+Loading weights:   0%|          | 0/101 [00:00<?, ?it/s]Loading weights: 100%|██████████| 101/101 [00:00<00:00, 2547.12it/s]
+--- time -v ---
+	Command being timed: "timeout 2400s /home/sychan552/.venvs/mlflu_fm/bin/python -u /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t2_fm/t2_full80.py"
+	User time (seconds): 11.08
+	System time (seconds): 2.97
+	Percent of CPU this job got: 27%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:50.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5088224
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 671881
+	Voluntary context switches: 20319
+	Involuntary context switches: 548
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- outputs ---
+total 657
+drwxr-xr-x 2 sychan552 sychan552 16384 Nov  7 01:39 .
+drwxr-xr-x 7 sychan552 sychan552  4096 Nov  7 01:38 ..
+-rw-r--r-- 1 sychan552 sychan552 24381 Nov  7 01:39 FOUNDATION_80_CELLS.csv
+-rw-r--r-- 1 sychan552 sychan552  2474 Nov  7 01:39 FOUNDATION_80_REPORT.json
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o0.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o1.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o2.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o3.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o4.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o5.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o6.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o7.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o8.npz
+-rw-r--r-- 1 sychan552 sychan552  4924 Nov  7 01:39 pred_foundation_chronos_L24_o9.npz
+-rw-r--r-- 1 sychan552 sychan552  5596 Nov  7 01:39 pred_foundation_chronos_L36_o0.npz
+-rw-r--r-- 1 sychan552 sychan552  5596 Nov  7 01:39 pred_foundation_chronos_L36_o1.npz
+-rw-r--r-- 1 sychan552 sychan552  5596 Nov  7 01:39 pred_foundation_chronos_L36_o2.npz
+-rw-r--r-- 1 sychan552 sychan552  5596 Nov  7 01:39 pred_foundation_chronos_L36_o3.npz
+-rw-r--r-- 1 sychan552 sychan552  5596 Nov  7 01:39 pred_foundation_chronos_L36_o4.npz
+--- NPZ count ---
+80
+--- CSV head ---
+L,T,all_finite,cell_wall_ms,device,forecast_call_wall_ms,label,mae_7var_z,mse_7var_z,npz,origin_index,origin_row,point_estimator,replicate_kind,repo_id,scope,seed_semantics,status,timing_note
+24,104,True,9.704,cuda,,foundation_chronos,0.38354600155631297,0.391328494214842,pred_foundation_chronos_L24_o0.npz,0,773,median quantile,rolling_origin,amazon/chronos-bolt-tiny,foundation_zero_shot_80cells_not_1120_panel,NOT_APPLICABLE,ok,
+36,104,True,10.863,cuda,,foundation_chronos,0.8228125978793258,2.2073974038407127,pred_foundation_chronos_L36_o0.npz,0,773,median quantile,rolling_origin,amazon/chronos-bolt-tiny,foundation_zero_shot_80cells_not_1120_panel,NOT_APPLICABLE,ok,
+48,104,True,10.598,cuda,,foundation_chronos,0.7144444235980304,1.7135358177616078,pred_foundation_chronos_L48_o0.npz,0,773,median quantile,rolling_origin,amazon/chronos-bolt-tiny,foundation_zero_shot_80cells_not_1120_panel,NOT_APPLICABLE,ok,
+=== T2_FULL80 END 2026-11-06T17:39:16Z ===

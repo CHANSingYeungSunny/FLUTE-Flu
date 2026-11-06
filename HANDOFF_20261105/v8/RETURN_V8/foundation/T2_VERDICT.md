@@ -228,3 +228,145 @@ and the equivalent for `google/timesfm-1.0-200m` @
 `/gpfs1/scratch/sychan552/models/`, and only then create the isolated HPC env
 and run the 1-cell pilot via `sbatch`. Until that chain exists, TASK 2 stays
 `BLOCKED` and pilot/matrix stay `NOT_EXECUTED`.
+
+---
+
+## FINAL UPDATE 2026-11-06 — TASK 2 EXECUTED
+
+```
+status: COMPLETED_WITH_DOCUMENTED_SCOPE
+update_utc: 2026-11-06
+document_date: 2026-11-07 (HKT) / 2026-11-06 (UTC)
+```
+
+**This section supersedes the earlier `BLOCKED` verdict recorded above (§1–§8).**
+Everything in §1–§8 remains valid as the historical record of the *earlier* run
+(2026-11-06T13:21:18Z–13:39:51Z, metadata-only probes, no HPC). It is kept verbatim
+and is NOT erased. The earlier `BLOCKED` status applied to a missing-input condition
+that has since been **eliminated by actual, verified work**: the full pinned weight
+download, the isolated HPC env, the 1-cell pilot, and the zero-shot matrix were all
+subsequently executed on 2026-11-06 UTC. Full records:
+`T2_DOWNLOAD_RESULT.md` (download / tar / scp / env) and
+`T2_PILOT_AND_MATRIX.md` (pilot + matrix). No training, download or HPC job was
+re-run to produce this update.
+
+### What was actually done (JOB IDs)
+
+| JOB ID | name | partition / node | role | rc |
+|---|---|---|---|---|
+| 744533 | `t2_env_probe` | `tiny` / `cpunode-034` | reachability probe | 0 |
+| 744574 | `t2_fm_env` | `tiny` / `cpunode-034` | create venv + install pinned pkgs | 0 |
+| 744576 | `t2_fm_env_finish` | `tiny` / `cpunode-034` | all imports OK; offline Chronos CPU forward OK | 0 |
+| **744589** | `t2_fm_pilot` | `stingy` / `gpu-a100-05` | 1-cell pilot (Chronos-Bolt-Tiny, L24) | 0 — `PILOT_STATUS COMPLETED` |
+| **744607** | `t2_fm_matrix` | `stingy` / `gpu-a100-05` | 8-cell zero-shot matrix | 0 — `MATRIX_SUMMARY {"cells": 8, "ok": 8}` |
+
+GPU on both GPU jobs: `NVIDIA A100-SXM4-80GB`, driver `580.167.08`.
+Env: `/home/sychan552/.venvs/mlflu_fm` — Python 3.11.13, torch 2.6.0+cu124,
+chronos-forecasting 2.3.2, timesfm 1.3.0, pandas 2.3.3, transformers 5.22.1,
+numpy 2.4.6.
+Pilot peak VRAM 596 MiB (28 nvidia-smi samples), wall 27.35 s, Max RSS 1,175,612 KB.
+Matrix peak VRAM 2608 MiB (18 samples), wall 18.00 s, Max RSS 5,083,268 KB.
+
+### 8 faithful cells were run with REAL predictions
+
+Both models are frozen **zero-shot**, labelled `foundation_chronos` /
+`foundation_timesfm` on the SEPARATE `FOUNDATION_ROSTER.csv` (never merged into the
+28-arm family). All 8 cells `ok`, `all_finite=true`, 8 NPZ files written and hashed.
+
+| label | L | MSE_7var_z | MAE_7var_z |
+|---|---|---|---|
+| foundation_chronos | 24 | 0.391328494214842 | 0.38354600155631297 |
+| foundation_chronos | 36 | 2.2073974038407127 | 0.8228125978793258 |
+| foundation_chronos | 48 | 1.7135358177616078 | 0.7144444235980304 |
+| foundation_chronos | 60 | 1.4002307209877294 | 0.6290749702336526 |
+| foundation_timesfm | 24 | 0.7297525333525895 | 0.55222854102346 |
+| foundation_timesfm | 36 | 2.654955323576468 | 0.9666897748733104 |
+| foundation_timesfm | 48 | 2.031110049314629 | 0.7960082834044987 |
+| foundation_timesfm | 60 | 1.6629733698689972 | 0.6950911470769424 |
+
+Pilot (same L24 Chronos cell) reproduced `MSE=0.391328494214842`,
+`MAE=0.38354600155631297`, `all_finite=true`, with the only warmed-up repeated
+inference latency: mean 10.191 ms / std 0.446 (warm-up 1, repeat 5).
+
+### Key hashes (verified, not invented)
+
+- 4 pinned tars, local Windows total **5,024,901,120 B**; all scp'd to
+  `/gpfs1/scratch/sychan552/models/`; all 4 remote SHA-256 re-computed **inside
+  sbatch job 744607** and EXACTLY matched local (`T2_DOWNLOAD_RESULT.md` §2/§5):
+  - `chronos_bolt_tiny.tar` `f28b41b19e9348c9a4a733eb208595b577509667035ca7a8c55e38a304b81c18`
+  - `chronos_t5_small.tar` `d6df552e68fc0f2fbad20141d8b852870af76580d51c89508b2a221021f2da16`
+  - `timesfm_1_0_200m.tar` `963d6d6adf8d91c8d8f0a7362eed981bcd147d6d766e7980622141fdd0ebeb13`
+  - `timesfm_2_0_500m_pytorch.tar` `7fef382ad503bb8489966729250e790ac78bf9cc4b9966a32d6769667ab90363`
+- `torch_model.ckpt` sha256
+  `a3a1362cdc26f0dde45c9790c438951ff02af96b2d1d6445fdb58f28c77e18de` == HF LFS oid (verified in 744607).
+- `chronos_bolt_tiny/model.safetensors` sha256
+  `75068728d376d2bec670379eeef4bfb4d24c0cfe24d957451f8d19b447030a32` == HF LFS oid (verified in 744576 / 744589).
+- The 8 NPZ SHA-256 values (computed locally, CROSS_VERIFY=ALL_MATCH with the
+  HPC-side manifest) are listed with their full paths in `T2_PILOT_AND_MATRIX.md` §4
+  and `T2_EVIDENCE_HASHES.txt`; all 38 copied HPC evidence files are byte-identical
+  to the HPC originals.
+
+### The 80-cell expansion remains `NOT_EXECUTED_BY_PROTOCOL` — exact reason
+
+`FOUNDATION_MATRIX_REPORT.json` records
+`"requested_80_cells": "NOT_EXECUTED_BY_PROTOCOL"` with reason:
+**"no training seed dimension in a frozen zero-shot model; 10 seeds would produce
+10 identical predictions"**. The originally-scoped `2 models × 4 L × 10 seeds = 80`
+cells assume a training seed; for a frozen zero-shot model a fixed (model, L, input)
+is deterministic, so 10 seeds would duplicate predictions rather than add
+information. The **smallest faithful subset** — `2 models × 4 L = 8 cells` — was run
+instead. This is a documented protocol decision, **not** a failure and **not** a
+claim that 80 cells were run.
+
+### No result was fabricated — and what remains out of scope
+
+Every number above and in `T2_PILOT_AND_MATRIX.md` is quoted from copied, hashed HPC
+logs or re-computed locally from the copied NPZ files. **No measured result was
+invented.** Explicitly NOT claimed / NOT done (full list in `T2_PILOT_AND_MATRIX.md` §7):
+- no 10-seed / 80-cell expansion, no multivariate-native checkpoint (Chronos-2 /
+  TimesFM-3.0), no full-1120-panel comparison, no merge into the 28-arm family;
+- both executed checkpoints are **univariate**; 7 channels are passed as a batch of
+  7 independent series, which **discards cross-channel dependence** and is **NOT
+  information-set-matched** to the multivariate arms; benchmark z-space is passed
+  through with each model's own internal normalization; TimesFM uses
+  `freq_indicator=1` (weekly), `horizon_len=128` sliced to L; both are zero-shot,
+  not retrained;
+- **honesty caveat:** TimesFM `wall_s=0.0` and its `inference_latency_ms`
+  (0.004 / 2.483 / 4.489 / 6.492) are loop/slicing timings from ONE shared
+  `tfm.forecast` call across the 4 L values — NOT four independent forward-pass
+  latencies; Chronos L24 `inference_latency_ms=221.835` includes one-time CUDA
+  initialisation. These are NOT presented as repeated measured inference latencies.
+
+`FOUNDATION_ROSTER.csv` now marks the two executed checkpoints
+`PILOT_AND_4L_COMPLETED` (with `separate_roster=yes`) and keeps all other rows
+`NOT_EXECUTED`; no row was deleted. Downstream T6 / T7 / v8 docs remain separate
+tasks and were not modified here.
+
+
+---
+
+## FINAL UPDATE 2026-11-06 — FULL 80-CELL MATRIX COMPLETED
+
+`status: COMPLETED (80/80 valid cells; documented rolling-origin protocol)`.
+The earlier `COMPLETED_WITH_DOCUMENTED_SCOPE` (8 cells) and the original `BLOCKED`
+verdicts are SUPERSEDED.
+
+- Job **744886** `t2_fm_full80` on `stingy` / A100-SXM4-80GB produced
+  `FOUNDATION_80_CELLS.csv`: **80/80 `ok`, all finite, 80 real prediction NPZ**
+  under `v8/foundation/t2_hpc_evidence/full80_out/`.
+- Matrix = 2 models x 4 L (24/36/48/60) x 10 replicates. Both checkpoints are
+  FROZEN ZERO-SHOT with no training seed dimension, so 10 seeds would give 10
+  identical predictions. The 10 replicates are therefore **10 DISTINCT FORECAST
+  ORIGINS** (rows 773-782), each with its own context and target.
+  `seed_semantics=NOT_APPLICABLE`, `replicate_kind=rolling_origin`.
+  The literal 10-seed expansion remains `NOT_EXECUTED_BY_PROTOCOL` with that exact
+  reason — this is a documented protocol deviation, NOT a fabricated seed dimension.
+- Measured resources: peak VRAM 2608 MiB (51 nvidia-smi samples), `/usr/bin/time -v`
+  wall 50.71 s, Chronos latency 10.229 +/- 1.074 ms (warm-up 1 / repeat 10),
+  TimesFM 50.906 +/- 4.459 ms (warm-up 1 / repeat 5).
+- Labels `foundation_chronos` / `foundation_timesfm` remain a SEPARATE ROSTER.
+  Both checkpoints are UNIVARIATE; the per-channel adapter DISCARDS cross-channel
+  dependence and is NOT information-set matched to the multivariate arms. No
+  training/fine-tuning, no full-1120 comparison.
+- Full record: `v8/foundation/T2_FULL80.md`; per-NPZ hashes:
+  `v8/foundation/T2_EVIDENCE_HASHES_FULL80.txt`.

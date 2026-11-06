@@ -1,0 +1,64 @@
+{
+  "generated_utc": "2026-11-06T18:15:15Z",
+  "documents": {
+    "ieee_manuscript_en_v8.docx": {
+      "docx_sha256": "756907d48981f70007fe22e284a4d53d403758baa4db36abbddbbb128f05ea5d",
+      "docx_bytes": 47759,
+      "pdf_sha256": "2d6b72e9c9b3efc63a9ae343798886252721df397216ba8a90455308d32d7796",
+      "pdf_bytes": 412569,
+      "convert_rc": 0,
+      "page_count": 10,
+      "paragraphs_replaced": 6
+    },
+    "report_internal_zh_v8.docx": {
+      "docx_sha256": "c8d760935bd31f71e9f965cf710e14eb0901b02455a0f4f58e037ea2b4a65cc9",
+      "docx_bytes": 45511,
+      "pdf_sha256": "3c7483c78f3d5d28c6eeb5ef40afacfcb035439bdce4bfacfdecefd503e2cf8f",
+      "pdf_bytes": 603814,
+      "convert_rc": 0,
+      "page_count": 10,
+      "paragraphs_replaced": 6
+    },
+    "report_internal_qa_zh_v8.docx": {
+      "docx_sha256": "e7815c51bb132ce7796d8df83cbf0c62308e28df0e3879d116257dc3e4160c42",
+      "docx_bytes": 60911,
+      "pdf_sha256": "574aacc2056b3e06562c06506ee64e83a9b4f4fd8d502eb361711a0c81ba5baf",
+      "pdf_bytes": 726141,
+      "convert_rc": 0,
+      "page_count": 16,
+      "paragraphs_replaced": 2
+    }
+  },
+  "commands": [
+    {
+      "cmd": "C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\primary-runtime\\dependencies\\node\\bin\\node.exe C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar.unpacked\\dsh\\node_modules\\@deepseek-ai\\libreoffice-kit\\lib\\cli.js convert --input C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\ieee_manuscript_en_v8.docx --output C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\ieee_manuscript_en_v8.pdf",
+      "rc": 0,
+      "stdout": "{\"backend\":\"native\",\"missingFonts\":[\"Courier\"],\"outputPath\":\"C:\\\\Users\\\\Asus\\\\Desktop\\\\FYP code\\\\MLFlu\\\\01_\u6700\u7ec8\u62a5\u544a\\\\v8\\\\ieee_manuscript_en_v8.pdf\"}",
+      "stderr": ""
+    },
+    {
+      "cmd": "C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\primary-runtime\\dependencies\\node\\bin\\node.exe C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar.unpacked\\dsh\\node_modules\\@deepseek-ai\\libreoffice-kit\\lib\\cli.js render --input C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\ieee_manuscript_en_v8.pdf --output-dir C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\_pages_v8c_ieee_manuscript_en_v8 --pages 1 --dpi 36",
+      "rc": 0
+    },
+    {
+      "cmd": "C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\primary-runtime\\dependencies\\node\\bin\\node.exe C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar.unpacked\\dsh\\node_modules\\@deepseek-ai\\libreoffice-kit\\lib\\cli.js convert --input C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\report_internal_zh_v8.docx --output C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\report_internal_zh_v8.pdf",
+      "rc": 0,
+      "stdout": "{\"backend\":\"native\",\"missingFonts\":[\"Courier\"],\"outputPath\":\"C:\\\\Users\\\\Asus\\\\Desktop\\\\FYP code\\\\MLFlu\\\\01_\u6700\u7ec8\u62a5\u544a\\\\v8\\\\report_internal_zh_v8.pdf\"}",
+      "stderr": ""
+    },
+    {
+      "cmd": "C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\primary-runtime\\dependencies\\node\\bin\\node.exe C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar.unpacked\\dsh\\node_modules\\@deepseek-ai\\libreoffice-kit\\lib\\cli.js render --input C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\report_internal_zh_v8.pdf --output-dir C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\_pages_v8c_report_internal_zh_v8 --pages 1 --dpi 36",
+      "rc": 0
+    },
+    {
+      "cmd": "C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\primary-runtime\\dependencies\\node\\bin\\node.exe C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar.unpacked\\dsh\\node_modules\\@deepseek-ai\\libreoffice-kit\\lib\\cli.js convert --input C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\report_internal_qa_zh_v8.docx --output C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\report_internal_qa_zh_v8.pdf",
+      "rc": 0,
+      "stdout": "{\"backend\":\"native\",\"missingFonts\":[\"Courier\"],\"outputPath\":\"C:\\\\Users\\\\Asus\\\\Desktop\\\\FYP code\\\\MLFlu\\\\01_\u6700\u7ec8\u62a5\u544a\\\\v8\\\\report_internal_qa_zh_v8.pdf\"}",
+      "stderr": ""
+    },
+    {
+      "cmd": "C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\primary-runtime\\dependencies\\node\\bin\\node.exe C:\\Users\\Asus\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar.unpacked\\dsh\\node_modules\\@deepseek-ai\\libreoffice-kit\\lib\\cli.js render --input C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\report_internal_qa_zh_v8.pdf --output-dir C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\01_\u6700\u7ec8\u62a5\u544a\\v8\\_pages_v8c_report_internal_qa_zh_v8 --pages 1 --dpi 36",
+      "rc": 0
+    }
+  ]
+}

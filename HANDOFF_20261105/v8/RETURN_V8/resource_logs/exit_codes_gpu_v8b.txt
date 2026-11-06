@@ -1,0 +1,4 @@
+nvidia_smi_L rc=0
+gpu_identity rc=0
+gpu_forward rc=0
+peak_vram_derivation rc=0

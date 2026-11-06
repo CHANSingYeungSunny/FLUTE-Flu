@@ -1,0 +1,62 @@
+{
+  "total_npz": 388,
+  "readable": 387,
+  "unreadable": [
+    {
+      "path": "/gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L48_s2021/pred_miflu_L48_s2021.npz",
+      "error": "AssertionError: "
+    }
+  ],
+  "restored": [
+    {
+      "path": "/gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L36_s2021/pred_miflu_L36_s2021.npz",
+      "pred_shape": [
+        158,
+        7,
+        36
+      ],
+      "space": "standardized_train_fit_z",
+      "protocol": "reproduction_10rep_seeds2021_2030",
+      "keys": [
+        "pred",
+        "target",
+        "target_start_row",
+        "L",
+        "seed",
+        "var_cols",
+        "model",
+        "profile",
+        "containment",
+        "space",
+        "partial",
+        "protocol"
+      ],
+      "finite": true
+    },
+    {
+      "path": "/gpfs1/home/sychan552/stage5_a2_durable/expanded_runs/miflu_L60_s2021/pred_miflu_L60_s2021.npz",
+      "pred_shape": [
+        134,
+        7,
+        60
+      ],
+      "space": "standardized_train_fit_z",
+      "protocol": "reproduction_10rep_seeds2021_2030",
+      "keys": [
+        "pred",
+        "target",
+        "target_start_row",
+        "L",
+        "seed",
+        "var_cols",
+        "model",
+        "profile",
+        "containment",
+        "space",
+        "partial",
+        "protocol"
+      ],
+      "finite": true
+    }
+  ]
+}

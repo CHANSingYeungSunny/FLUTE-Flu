@@ -23,6 +23,7 @@ Re-run (single command) once T7 DOCX/PDF and/or the final WF CSV land:
 Windows paths contain spaces -> everything is absolute pathlib.Path.
 shutil.rmtree is used ONLY on v8/RETURN_V8/ (our own staging dir).
 """
+import csv
 import hashlib
 import json
 import shutil
@@ -94,6 +95,16 @@ def sha256_file(p: Path) -> str:
     return h.hexdigest()
 
 
+def csv_rows(p: Path):
+    """Yield data rows (excluding the header) of a UTF-8 CSV, or yield nothing."""
+    if not p.is_file():
+        return
+    with p.open(encoding="utf-8", newline="") as fh:
+        r = csv.reader(fh)
+        next(r, None)
+        yield from r
+
+
 # ---------------------------------------------------------------------------
 # 1. ASSEMBLE RETURN_V8
 # ---------------------------------------------------------------------------
@@ -156,6 +167,16 @@ def assemble():
             log(f"[assemble][WARN] missing v7 required root file: {s}")
     log(f"[assemble] REQUIRED root skeleton copied: {len(REQUIRED)}")
 
+    # (e2) TASK 5 step 4: prefer the v8 PAPER_TO_CODE.md (which has the dated
+    # JBHI guidance verification applied) over the frozen v7 skeleton copy.
+    # The v7 original is NOT modified; it stays under v7_snapshot/.
+    v8_ptc = V8 / "PAPER_TO_CODE.md"
+    if v8_ptc.is_file():
+        copy(v8_ptc, RET / "PAPER_TO_CODE.md")
+        log("[assemble] v8 PAPER_TO_CODE.md with JBHI provenance applied -> root")
+    else:
+        log("[assemble][WARN] v8 PAPER_TO_CODE.md absent; v7 skeleton copy retained")
+
     # (f) RAW_EVIDENCE/ NPZ (root RUN_LEDGER prediction_path target).
     raw = V7RET / "RAW_EVIDENCE"
     nr = 0
@@ -195,6 +216,19 @@ def assemble():
             "(T7 DOCX/PDF may land AFTER this packaging pass)")
 
     # (j) structural layout / old-new separation note (NOT a scientific result).
+    # Dynamic status lines: never hard-code a stale claim about T2/T7/T1 files.
+    t1_note = ("`final/WF_RECOMPUTED.csv` in THIS build: "
+               + str(sum(1 for _ in csv_rows(RET / "final" / "WF_RECOMPUTED.csv")))
+               + " data rows; see `evidence/WF_RECOMPUTE_REPORT.json` for the "
+                 "validated status counts.")
+    t7_note = ("`DOCUMENTS/v8/` IS present in this build."
+               if (RET / "DOCUMENTS" / "v8").is_dir()
+               else "`DOCUMENTS/v8/` is absent in this build.")
+    t2_note = ("Foundation models (Chronos / TimesFM) are on a SEPARATE ROSTER "
+               "(`foundation/FOUNDATION_ROSTER.csv`), never merged into the 28-arm "
+               "family. Their current execution status is recorded in "
+               "`foundation/T2_VERDICT.md` and any `T2_*` update files; read those "
+               "instead of relying on a status string in this structural note.")
     (RET / "RETURN_LAYOUT.md").write_text(
         "# RETURN_V8 layout and old/new separation (structural note)\n\n"
         "This file describes the package layout. It is NOT a scientific result.\n\n"
@@ -212,16 +246,20 @@ def assemble():
         "- Root `RUN_LEDGER.csv`, `CHECKS.json`, `RETURN_SUMMARY.md`, protocol/plan\n"
         "  JSON etc. are the carried-over v7 structural skeleton needed by the\n"
         "  official validator; they are NOT new v8 measurements.\n"
-        "- `DOCUMENTS/v8/` — v8 DOCX/PDF only if `01_最终报告/v8/` existed at build\n"
-        "  time. It did NOT exist at the time of this build (see T8_PREP_NOTES.md).\n\n"
+        "- `DOCUMENTS/v8/` — v8 DOCX/PDF from `01_最终报告/v8/` (COPY only).\n\n"
+        "## Build-time status (generated dynamically, never hard-coded)\n\n"
+        + "- T1: " + t1_note + "\n"
+        + "- T7: " + t7_note + "\n"
+        + "- T2: " + t2_note + "\n\n"
         "## Old / new separation (AGENTS.md RULE 4)\n\n"
         "The frozen 28-arm historical snapshot (`02_数字表格/*.csv`, Holm 0/136,\n"
         "NLinear–PatchTST 0.1172, 4/16 aggregate cells) is a SEPARATE old-snapshot\n"
         "fact and is NOT part of this return. The NEW 1120-panel tables are under\n"
         "`final/` and are never merged into that old snapshot. The numerical\n"
-        "foundation models (Chronos / TimesFM) live on a SEPARATE ROSTER\n"
-        "(`foundation/FOUNDATION_ROSTER.csv`) and are NOT merged into the 28-arm\n"
-        "family; they remain BLOCKED (see `foundation/T2_VERDICT.md`).\n\n"
+        "foundation models (Chronos / TimesFM) live on a SEPARATE ROSTER and are\n"
+        "NOT merged into the 28-arm family. The legacy 5-fold N=3 walk-forward panel\n"
+        "(seeds 42/43/44) is ALSO a separate scoring population and must not be\n"
+        "merged with the national 1120-cell panel.\n\n"
         "A validator `integrity_status: PASS` is STRUCTURAL ONLY and MUST be read\n"
         "with `scientific_readiness: NOT_ASSESSED`.\n",
         encoding="utf-8")

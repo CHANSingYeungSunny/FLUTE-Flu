@@ -1,0 +1,29 @@
+[A2] rolling-origin fold f3: train_end=431 val_end=494 test_end=617 — the fit may read rows [0:617) only
+[A2] run_config backbone=nlinear containment=strict profile=author_966 horizon=24 seed=42 device=cuda
+[A2] fidelity_label: re-implementation (Zeng et al., AAAI 2023)
+[A2] fold f3: profile=author_966 n=617 train_end=431 val_end=494 test_end=617 split_source=walk_forward_fold (scaler re-fitted on this fold's train prefix only)
+  [nlinear] L=24 seed=42 params total=2,520 trainable=2,520
+    ep  1/20 | train_loss=1.447419 | val_mse=1.095068(All) | val_mae=0.819845
+    ep  2/20 | train_loss=1.015341 | val_mse=0.858268(All) | val_mae=0.741212
+    ep  3/20 | train_loss=0.859680 | val_mse=0.793411(All) | val_mae=0.714373
+    ep  4/20 | train_loss=0.801303 | val_mse=0.793168(All) | val_mae=0.711404
+    ep  5/20 | train_loss=0.771429 | val_mse=0.791312(All) | val_mae=0.707358
+    ep  6/20 | train_loss=0.738433 | val_mse=0.815757(All) | val_mae=0.720153
+    ep  7/20 | train_loss=0.714928 | val_mse=0.808238(All) | val_mae=0.712828
+    ep  8/20 | train_loss=0.698772 | val_mse=0.829332(All) | val_mae=0.721600
+    ep  9/20 | train_loss=0.680694 | val_mse=0.853172(All) | val_mae=0.731700
+    ep 10/20 | train_loss=0.667125 | val_mse=0.854028(All) | val_mae=0.731600
+    ep 11/20 | train_loss=0.653228 | val_mse=0.863246(All) | val_mae=0.733111
+    ep 12/20 | train_loss=0.647335 | val_mse=0.877000(All) | val_mae=0.734610
+    ep 13/20 | train_loss=0.632212 | val_mse=0.933328(All) | val_mae=0.765194
+    ep 14/20 | train_loss=0.626752 | val_mse=0.934126(All) | val_mae=0.760266
+    ep 15/20 | train_loss=0.613942 | val_mse=0.917202(All) | val_mae=0.750163
+    ep 16/20 | train_loss=0.608484 | val_mse=0.972942(All) | val_mae=0.777018
+    ep 17/20 | train_loss=0.602017 | val_mse=0.976192(All) | val_mae=0.780789
+    ep 18/20 | train_loss=0.594096 | val_mse=1.000312(All) | val_mae=0.784382
+    ep 19/20 | train_loss=0.588818 | val_mse=1.010589(All) | val_mae=0.789968
+    ep 20/20 | train_loss=0.586655 | val_mse=1.045651(All) | val_mae=0.800093
+[nlinear] predictions -> /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/final_sweep_out/nlinear/pred_nlinear_L24_s42.npz
+[nlinear] manifest -> /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/final_sweep_out/nlinear/manifest_nlinear_L24_s42.json
+[nlinear] L=24 seed=42 mse_all=0.389440 best_val=0.791312 best_epoch=4 (13.2s)
+[nlinear] DONE -> /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/final_sweep_out/nlinear/metrics.csv

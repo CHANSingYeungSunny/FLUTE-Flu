@@ -1,8 +1,48 @@
+# ⚠ CORRECTION (2026-11-06) — TASK 4 is `COMPLETED`; the verdict below is SUPERSEDED
+
+> **READ THIS FIRST.** The `PARTIAL` / `BLOCKED: no release-calendar/vintage source
+> found` / peak-re-scoring `BLOCKED` conclusions stated in §1, §8, §9, §10 and §11
+> below are **WRONG and SUPERSEDED**. The earlier run fetched only a **20-row verification
+> sample** from the Delphi Epidata `fluview` endpoint and never inspected the project's
+> own `02_数字表格/` directory, which **ALREADY contained a complete frozen CDC ILINet
+> vintage reconstruction and re-scored season peaks** — built by
+> `05_程序代码/cdc_vintage_build.py` from that SAME Delphi endpoint. The project owner
+> caught this error. Authoritative record: `T4_CORRECTION.md`. Corrected verdict:
+> `v8/cdc_vintage/T4_VERDICT.md` → `status: COMPLETED`.
+>
+> **The frozen deliverables (read + hash-verified 2026-11-06, NOT modified):**
+>
+> | Frozen artifact | SHA-256 |
+> |---|---|
+> | `02_数字表格/cdc_vintage_raw.csv` (7192 data rows) | `e0c5512b2b6889780f345927708fee3ac3006ff59d78881dc6b55fa31fc7e9c8` |
+> | `02_数字表格/cdc_vintage.csv` (848 data rows) | `5a49e6be748aed251e82084a2b83d8c2f92ca23ef72ef8f442b10481c611b2c9` |
+> | `02_数字表格/cdc_vintage_report.md` | `e2da6b377abc318a311535cd593180d5ea62cd11ee03c31c3ee3fb2e67afd2d7` |
+> | `02_数字表格/cdc_peak_revintage.csv` (18 seasons / 7 peak weeks moved = 38.9%) | `7c9b5df808a1f78cb2e097aec114b3a735b075f6c2a991c24ae3db3883d7a504` |
+> | `05_程序代码/cdc_vintage_build.py` (the builder) | `8c1e4b1e31a4339e8d30d6c8f9e62fc181996d47fcea1cb9a5f2d2bceb2a079f` |
+>
+> The 20-row `v8/cdc_vintage/cdc_vintage.csv` in this directory is **only a verification
+> sample, NOT a replacement** for the frozen 7192-row `cdc_vintage_raw.csv`, the frozen
+> 848-row `cdc_vintage.csv`, or `cdc_peak_revintage.csv`.
+>
+> **Retained scientific limits (do NOT overclaim):** Delphi `release_date` is a
+> Delphi-ingest proxy, NOT a CDC-issued official revision number; the reconstruction
+> re-scores the **REFERENCE** peak assignment on as-of data and does NOT re-score the
+> 1120-cell model panel (model peak metrics remain retrospective); 2002 weeks have no
+> real-time vintage; archived final CSVs (8 annual bulk snapshot dates) are NOT a
+> vintage. The manuscript is NOT called submission-ready.
+>
+> **Why the body below is kept:** §2–§7 URL/status evidence and raw HTTP bodies remain
+> useful, verified provenance that the Delphi endpoint is live and returns successive
+> `(epiweek, issue)` issues with changing values. They are retained unchanged. Only the
+> verdict/BLOCKED conclusions are corrected. `02_数字表格/*` is frozen and was not touched.
+
+---
+
 # CDC ILINet release-calendar / vintage — TASK 4 report
 
-**Date (UTC): 2026-11-06**
+**Date (UTC): 2026-11-06** (body below is the SUPERSEDED original; see correction header above)
 **Scope: `HANDOFF_20261105/v8/cdc_vintage/` only. No other file was written; no frozen CSV, raw prediction, or peak CSV was modified.**
-**Companion verdict: `T4_VERDICT.md` (status `PARTIAL`, with one BLOCKED sub-step).**
+**Companion verdict: `T4_VERDICT.md` — now `status: COMPLETED` (corrected 2026-11-06; was `PARTIAL` with one BLOCKED sub-step).**
 
 ---
 

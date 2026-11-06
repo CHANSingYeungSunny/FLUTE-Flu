@@ -1,0 +1,15 @@
+T6_MODEL_PROBE {
+  "model": "chronos",
+  "device": "cuda",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.6.0+cu124",
+  "python": "3.11.13",
+  "load_s": 0.4307,
+  "warmup_runs": 1,
+  "repeat_runs": 20,
+  "batch": "7 independent series",
+  "precision": "float32",
+  "latency_mean_ms": 9.854,
+  "latency_std_ms": 0.337,
+  "status": "MEASURED"
+}

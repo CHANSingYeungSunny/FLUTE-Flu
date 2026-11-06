@@ -1,0 +1,13 @@
+# FINAL_HASHES.txt — authoritative v8c package hashes (FINAL build)
+# build window 2026-11-06T18:22:19Z -> 2026-11-06T18:23:51Z
+# Kept OUTSIDE RETURN_V8/ on purpose: the package mirrors its own docs,
+# so hard-coded ZIP hashes inside it would be self-referential.
+
+RETURN_TO_CHATGPT.zip bytes=199883696 sha256=5433e8d8a799c418c4fd55db1e8884b1ec1f4b141f98790f0f51cdd39887ad03 testzip=None members=1434
+RAW_EVIDENCE.zip bytes=345006379 sha256=550977437230dafc257cb3a36b02837764afec411e90f286b41d3f3c3d083f75 testzip=None members=2562
+
+file_count_hashed=1432
+validator_exit_code=0
+integrity_status=PASS
+scientific_readiness=NOT_ASSESSED
+errors=[]

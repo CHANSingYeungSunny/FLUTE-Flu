@@ -167,6 +167,16 @@ def assemble():
             log(f"[assemble][WARN] missing v7 required root file: {s}")
     log(f"[assemble] REQUIRED root skeleton copied: {len(REQUIRED)}")
 
+    # (e2) TASK 5 step 4: prefer the v8 PAPER_TO_CODE.md (which has the dated
+    # JBHI guidance verification applied) over the frozen v7 skeleton copy.
+    # The v7 original is NOT modified; it stays under v7_snapshot/.
+    v8_ptc = V8 / "PAPER_TO_CODE.md"
+    if v8_ptc.is_file():
+        copy(v8_ptc, RET / "PAPER_TO_CODE.md")
+        log("[assemble] v8 PAPER_TO_CODE.md with JBHI provenance applied -> root")
+    else:
+        log("[assemble][WARN] v8 PAPER_TO_CODE.md absent; v7 skeleton copy retained")
+
     # (f) RAW_EVIDENCE/ NPZ (root RUN_LEDGER prediction_path target).
     raw = V7RET / "RAW_EVIDENCE"
     nr = 0

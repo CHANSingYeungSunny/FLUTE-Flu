@@ -348,3 +348,10 @@ byte-identical, nothing deleted).
 5. CUDA toolkit / runtime version — not logged; only driver 580.167.08 is present.
 
 Because items 1-3 remain, the overall status is `PARTIAL (IMPROVED)`, not `COMPLETED`.
+
+
+---
+
+## FINAL UPDATE 2026-11-06 — all six representative models MEASURED
+
+`status: COMPLETED (all six representative models measured)`. The earlier `PARTIAL (IMPROVED)` and the original "all VRAM NOT_MEASURED" verdicts are SUPERSEDED. Jobs 744897 (`t6_final_sweep`) and 744899 (`t6_miflu_fix`) measured peak VRAM on an A100-SXM4-80GB for MIFlu 4816 MiB, NLinear 558, PatchTST 720, GPT-2 frozen encoder 1070, Chronos 596, TimesFM 2594. Warm-up+repeated real model-forward latencies: GPT-2 6.98+/-0.097 ms, Chronos 9.854+/-0.337 ms, TimesFM 48.273+/-3.531 ms. Cross-checked by full80 job 744886 (2608 MiB combined; 10.229 / 50.906 ms) and 744532 (4816 MiB). Full record: `v8/T6_FINAL_SWEEP.md`. MIFlu/NLinear/PatchTST isolated single-forward latency remains explicitly NOT_MEASURED (their measured quantity was a real full-cell export / training job). All rows keep `scope=subset_only_not_full_1120`; no full-1120 Pareto claim.

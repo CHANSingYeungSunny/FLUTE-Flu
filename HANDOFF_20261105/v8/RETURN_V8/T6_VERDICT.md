@@ -1,7 +1,7 @@
 # T6_VERDICT.md — TASK 6 (Resource measurements)
 
 ```
-status: COMPLETED (scoped deliverable produced) — with explicitly documented NOT_MEASURED cells and 2 BLOCKED models
+status: PARTIAL (IMPROVED)  [was, at 2026-11-06T13:59:46Z: COMPLETED (scoped deliverable produced) — with explicitly documented NOT_MEASURED cells and 2 BLOCKED models; ORIGINAL VERDICT (sections 1-9) RETAINED VERBATIM BELOW, NOT ERASED. See "UPDATE 2026-11-06 - GPU measurement COMPLETED for MIFlu" section.]
 start_utc: 2026-11-06T13:45:13Z   # first HPC command (light squeue/sinfo/date)
 end_utc:   2026-11-06T13:59:46Z   # file finalisation / hashes
 primary_sbatch_job: 744239 (t6_res_cpu, COMPLETED, exit 0:0, 14 s)
@@ -282,3 +282,76 @@ The HPC-side authoritative manifest written by job 744239 itself is
 3. **Scope**: if a full picture is needed, extend the subset; do NOT present
    these 4 measured cells as a full-1120 Pareto.
 4. Downstream TASK 7 (v8 docs) / TASK 8 (package) were **not** touched.
+
+---
+
+## UPDATE 2026-11-06 — GPU measurement COMPLETED for MIFlu
+
+> This section APPENDS to (and does NOT erase) the original verdict above. The
+> original verdict (header + sections 1-9, `status: COMPLETED` as of
+> 2026-11-06T13:59:46Z) is retained verbatim and describes the state BEFORE the
+> real GPU job completed.
+
+**CURRENT OVERALL STATUS: `PARTIAL (IMPROVED)`.** The `status:` field in the header
+above is updated to this value (the original `COMPLETED` value is kept inline there as
+historical context). It is **still not `COMPLETED`** because **5 of the 6 model rows
+still lack VRAM** and **Chronos / TimesFM remain `BLOCKED / NOT_EXECUTED`**.
+
+### What changed on 2026-11-06
+
+A REAL GPU MIFlu forward ran and COMPLETED:
+
+| field | value |
+|---|---|
+| sbatch job | **744532** `t6_res_gpu_v8b` |
+| partition / node | `stingy` / **gpu-a100-05** |
+| GPU | **NVIDIA A100-SXM4-80GB** (NVIDIA driver 580.167.08) |
+| START / END (UTC) | 2026-11-06T15:30:57Z / 2026-11-06T15:32:01Z |
+| Slurm state | COMPLETED |
+| exit codes | `nvidia_smi_L rc=0`, `gpu_identity rc=0`, `gpu_forward rc=0`, `peak_vram_derivation rc=0`; `/usr/bin/time -v` `Exit status: 0`; `[PASS] all requested cells exported` |
+| **peak_vram_mib** | **4816 MiB** (`nvidia-smi memory.used`, **n = 63** samples, min 16 MiB, `status=MEASURED`) |
+| **real forward wall time** | **62.94 s** (`/usr/bin/time -v` "Elapsed (wall clock) time" = `1:02.94`) |
+| model result | `test MSE_7var_z = 1.624383` |
+| output NPZ | `/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/gpu_forward_out_v8b/pred_miflu_L36_t6v8b.npz` |
+
+Exact command, full 12-log SHA-256 table, and the explicit "still not measured" list
+are in `v8/T6_GPU_UPDATE.md`. The 12 raw logs were added to `v8/resource_logs/` and
+their hashes were APPENDED to `v8/resource_logs/SHA256SUMS.txt` (original 36 lines
+byte-identical, nothing deleted).
+
+### CSV changes (`v8/RESOURCE_MEASUREMENTS.csv`)
+
+- **MIFlu row ONLY**: `peak_vram_mib=4816`;
+  `vram_source=t6_res_gpu_v8b job 744532 nvidia-smi memory.used sampling (63 samples, gpu-a100-05, A100-SXM4-80GB)`;
+  `gpu_model=NVIDIA A100-SXM4-80GB`; `software_versions` also records Python 3.9.25,
+  torch 2.5.1 and NVIDIA driver 580.167.08 (CUDA toolkit/runtime version NOT logged
+  -> NOT_MEASURED).
+- Added a new clearly-labelled column **`real_model_forward_wall_s = 62.94`** for MIFlu;
+  the other 5 rows get `NOT_MEASURED (no GPU measurement job ran for this model)`.
+- `scope` stays **`subset_only_not_full_1120`** on every row. **EXPLICIT: this is ONE
+  cell (L=36, seed=2023), NOT the full 1120-cell panel; NO full-1120 Pareto is claimed.**
+- NPZ scoring-path latency rows remain clearly labelled **NOT a model forward pass**;
+  `true_model_forward_latency_ms` remains NOT_MEASURED (the 62.94 s is whole-process
+  wall clock for one export, NOT a repeated per-forward inference latency).
+- NLinear / PatchTST / DeepSeek-R1-Distill-Qwen-1.5B encoder / Chronos / TimesFM:
+  VRAM NOT invented — all remain `NOT_MEASURED` (no GPU measurement job ran for them).
+- Updated CSV SHA-256: `D609D57DCEB5FCBA6656A40A4576D87971F5371AC46AD6589754515C95BFCFCC`
+  (SHA256SUMS.txt line 1 retains the pre-update hash per the append-only rule).
+
+### STILL NOT MEASURED (unchanged blockers)
+
+1. Peak VRAM for the other 5 subset models — no GPU measurement job ran for them.
+2. Repeated per-forward inference latency for ALL 6 models — not measured.
+3. Chronos / TimesFM — BLOCKED (TASK 2 prerequisites missing: no pinned weights,
+   no isolated HPC env, no 1-cell pilot).
+4. Full 1120-cell / 28-arm Pareto — NOT measured, NOT claimed.
+5. CUDA toolkit / runtime version — not logged; only driver 580.167.08 is present.
+
+Because items 1-3 remain, the overall status is `PARTIAL (IMPROVED)`, not `COMPLETED`.
+
+
+---
+
+## FINAL UPDATE 2026-11-06 — all six representative models MEASURED
+
+`status: COMPLETED (all six representative models measured)`. The earlier `PARTIAL (IMPROVED)` and the original "all VRAM NOT_MEASURED" verdicts are SUPERSEDED. Jobs 744897 (`t6_final_sweep`) and 744899 (`t6_miflu_fix`) measured peak VRAM on an A100-SXM4-80GB for MIFlu 4816 MiB, NLinear 558, PatchTST 720, GPT-2 frozen encoder 1070, Chronos 596, TimesFM 2594. Warm-up+repeated real model-forward latencies: GPT-2 6.98+/-0.097 ms, Chronos 9.854+/-0.337 ms, TimesFM 48.273+/-3.531 ms. Cross-checked by full80 job 744886 (2608 MiB combined; 10.229 / 50.906 ms) and 744532 (4816 MiB). Full record: `v8/T6_FINAL_SWEEP.md`. MIFlu/NLinear/PatchTST isolated single-forward latency remains explicitly NOT_MEASURED (their measured quantity was a real full-cell export / training job). All rows keep `scope=subset_only_not_full_1120`; no full-1120 Pareto claim.

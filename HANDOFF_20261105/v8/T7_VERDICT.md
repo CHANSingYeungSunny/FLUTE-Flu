@@ -194,3 +194,17 @@ DOCX structural validation (python-docx 1.2.0):
 updated, explicit old/new separation, every superseded claim stated, verified
 page counts (7 / 6 / 14) and hashes, and an exact conversion log. The manuscript
 is NOT submission-ready; blocked scientific items remain honestly labelled.
+
+
+---
+
+## v8b rebuild (2026-11-06 UTC) — final T2/T4/T6 results in the DOCUMENT BODIES
+
+The three v8 DOCX/PDF pairs were rebuilt because the first build (14:31–14:51Z) predated the T2 foundation results and the T6 GPU measurement and still said T2 BLOCKED / all VRAM NOT_MEASURED. `V8B_REBUILD_LOG.md` and `V8B_BUILD_RESULTS.json` hold exact commands, exit codes, hashes and page counts. New page counts: English manuscript 9, Chinese internal report 9, Q&A 15. All six conversions rc=0. Old claims are explicitly marked SUPERSEDED, not silently overwritten. T7 remains COMPLETED with this rebuild included.
+
+
+---
+
+## v8c rebuild (2026-11-06 UTC) — FINAL results in the DOCUMENT BODIES
+
+The three v8 DOCX/PDF pairs were rebuilt a third time with `build_v8c_final.py` because v8b predated the full 80-cell T2 matrix, the T3 388/388 NPZ restore, the applied T5 provenance and the six-model T6 sweep. Page counts 10 / 10 / 16, all six conversions rc=0. See `v8/docs/V8C_REBUILD_LOG.md` and `V8C_BUILD_RESULTS.json`. Old claims are explicitly marked SUPERSEDED rather than silently overwritten. T7 remains COMPLETED.

@@ -1,0 +1,95 @@
+{
+  "matrix": "2 models x 4 L x 10 origins = 80 cells",
+  "labels": [
+    "foundation_chronos",
+    "foundation_timesfm"
+  ],
+  "seed_semantics": "NOT_APPLICABLE \u2014 frozen zero-shot model has no training seed dimension",
+  "literal_10_seed_expansion": "NOT_EXECUTED_BY_PROTOCOL",
+  "replicate_kind": "rolling_origin (10 distinct forecast origins, each with its own target)",
+  "origins": [
+    773,
+    774,
+    775,
+    776,
+    777,
+    778,
+    779,
+    780,
+    781,
+    782
+  ],
+  "L_values": [
+    24,
+    36,
+    48,
+    60
+  ],
+  "T": 104,
+  "adapter": "per-channel independent univariate forecasting (2-D input = batch of 7 series)",
+  "adapter_limits": [
+    "discards cross-channel dependence",
+    "NOT information-set matched to the multivariate arms",
+    "model applies its own internal scaling; benchmark z-space passed through"
+  ],
+  "separate_roster": true,
+  "merged_into_28_arm_family": false,
+  "data_file": "/gpfs1/scratch/sychan552/stage5_a2_durable/data/raw/national_illness_author_repo_966.csv",
+  "scaler": "/gpfs1/scratch/sychan552/stage5_a2_durable/data/scaler_miflu_author966.json",
+  "var_cols": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "OT"
+  ],
+  "torch": "2.6.0+cu124",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "chronos": {
+    "repo_id": "amazon/chronos-bolt-tiny",
+    "revision": "a0e552de83495b5c28c14c71c374f3e33280b340",
+    "licence": "apache-2.0",
+    "package": "chronos-forecasting 2.3.2"
+  },
+  "timesfm": {
+    "repo_id": "google/timesfm-2.0-500m-pytorch",
+    "revision": "dc2443792ce5516872b89b37cf1bc058c3bf0c10",
+    "licence": "apache-2.0",
+    "package": "timesfm 1.3.0",
+    "freq_indicator": 1,
+    "horizon_len": 128
+  },
+  "resources": {
+    "chronos": {
+      "load_s": 0.4878,
+      "inference_latency": {
+        "warmup_runs": 1,
+        "repeat_runs": 10,
+        "mean_ms": 10.229,
+        "std_ms": 1.074
+      },
+      "matrix_wall_s": 0.588,
+      "batch": "7 independent series per call",
+      "precision": "float32"
+    },
+    "timesfm": {
+      "load_s": 8.969,
+      "inference_latency": {
+        "warmup_runs": 1,
+        "repeat_runs": 5,
+        "mean_ms": 50.906,
+        "std_ms": 4.459
+      },
+      "matrix_wall_s": 0.553,
+      "batch": "7 independent series per call",
+      "precision": "float32"
+    },
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "peak_vram_mib": "from slurm job nvidia-smi sampling (see slurm stdout)"
+  },
+  "cells": 80,
+  "ok_cells": 80,
+  "npz_files": 80
+}

@@ -59,6 +59,8 @@ _*.err
 01_最终报告/_build/
 01_最终报告/.dsh-office-*/
 01_最终报告/_build2/verify/
+# per-page PDF renders used only for visual page-count inspection (regenerated on demand)
+01_最终报告/v8/_pages_*/
 
 # --- Large artefacts NOT for git (GitHub 100MB/file limit) ---
 # built packages (deliver as files, not via git)
@@ -99,3 +101,5 @@ _jbhi_authors.html
 _t1_missing218.txt
 # IDE plan scratch (project data, but not part of the deliverable)
 .codebuddy/plans/
+# tool-specific agent scratch (not part of the project deliverable)
+.workbuddy/

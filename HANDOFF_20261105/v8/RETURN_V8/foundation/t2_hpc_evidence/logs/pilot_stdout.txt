@@ -1,0 +1,71 @@
+MODEL_LOADED amazon/chronos-bolt-tiny device cuda load_wall_s 0.4794
+PILOT_RESULT {
+  "model": "amazon/chronos-bolt-tiny",
+  "revision": "a0e552de83495b5c28c14c71c374f3e33280b340",
+  "L": 24,
+  "T": 104,
+  "seed": 2021,
+  "adapter": "per-channel independent univariate forecasting (2-D input = batch)",
+  "adapter_limits": [
+    "discards cross-channel dependence",
+    "model applies its own internal scaling; benchmark z-space passed through",
+    "frozen zero-shot model has no training seed dimension"
+  ],
+  "device": "cuda",
+  "status": "COMPLETED",
+  "data": {
+    "file": "/gpfs1/scratch/sychan552/stage5_a2_durable/data/raw/national_illness_author_repo_966.csv",
+    "rows": 966,
+    "channels": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "OT"
+    ],
+    "test_start_row": 773,
+    "scaler": "/gpfs1/scratch/sychan552/stage5_a2_durable/data/scaler_miflu_author966.json",
+    "context_shape": [
+      104,
+      7
+    ],
+    "target_shape": [
+      24,
+      7
+    ]
+  },
+  "torch": "2.6.0+cu124",
+  "gpu_name": "NVIDIA A100-SXM4-80GB",
+  "load_wall_s": 0.4794,
+  "inference_latency_ms": {
+    "warmup_runs": 1,
+    "repeat_runs": 5,
+    "mean": 10.191,
+    "std": 0.446,
+    "all_runs": [
+      11.073,
+      9.988,
+      10.062,
+      9.858,
+      9.973
+    ]
+  },
+  "predictions": {
+    "quantile_shape": [
+      7,
+      9,
+      24
+    ],
+    "point_shape": [
+      24,
+      7
+    ],
+    "all_finite": true,
+    "mse_7var_z": 0.391328494214842,
+    "mae_7var_z": 0.38354600155631297,
+    "point_estimator": "median quantile (index q.shape[1]//2)"
+  }
+}
+PILOT_STATUS COMPLETED

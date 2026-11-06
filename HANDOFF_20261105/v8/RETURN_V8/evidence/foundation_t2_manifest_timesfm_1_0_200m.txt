@@ -1,0 +1,23 @@
+# TASK 2 local full-weight download manifest
+repo_id=google/timesfm-1.0-200m
+revision=8775f7531211ac864b739fe776b0b255c277e2be
+local_dir=C:/models/mlflu_fm/timesfm_1_0_200m
+name=timesfm_1_0_200m
+start_utc=2026-11-06T15:08:50Z
+end_utc=2026-11-06T15:09:24Z
+file_count=13
+total_bytes=814344460
+huggingface_hub_version=2.4.0
+684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1  1  .cache/huggingface/.gitignore
+e8893e2dcb3f4545ef67a0a5b7b769113d38eef1aa61c7c7ba14659b02af955f  195  .cache/huggingface/CACHEDIR.TAG
+9eb2512ae57c71098b9a88969330c3918624ab09f2baea29adb02a2e55352253  104  .cache/huggingface/download/.gitattributes.metadata
+b21e01e9a95377af05d6926cba00b37a16c35651914ce20a4cf4035146fb0644  104  .cache/huggingface/download/README.md.metadata
+dd82a73c1dda5573363d63b276df5c4ea84064d50f66df7513b5811980039279  104  .cache/huggingface/download/checkpoints/checkpoint_1100000/descriptor/descriptor.pbtxt.metadata
+4d8ea4e746b35256428e2f973b5849563e2f74ddd4f7d74d204bd6dcb13c3ff2  103  .cache/huggingface/download/checkpoints/checkpoint_1100000/metadata/metadata.metadata
+ebbd8f80d3df1fc359f818c13894494a20dfbbde59464cdf7ded798f5ee4e240  128  .cache/huggingface/download/checkpoints/checkpoint_1100000/state/checkpoint.metadata
+bbb4f521e7e7735299832df17f03bc17122acaffd56ee247f56b9c67b1d8a9fe  876  .cache/huggingface/trees/8775f7531211ac864b739fe776b0b255c277e2be.json
+5527087c659c45aadaeadea2c0415ed316b8ceba6d1f5d66a9be4a3bc4013f71  1603  .gitattributes
+b97dd24ea3dcaca1edcc5f7c83b2a6846c5afe8cb52f3470d53beeb9e492eebc  5732  README.md
+4a412bdeb978f1ef478cbc08da379f1144c7995e9084eb22ccc9b9b71797bd79  499  checkpoints/checkpoint_1100000/descriptor/descriptor.pbtxt
+75e01a2210116f37a21579974925fb671e171bcc3dbc62d86c3e4d5d59677a8f  43859  checkpoints/checkpoint_1100000/metadata/metadata
+d147f95bbe40ffeb1e8d61643925dd29eeb00b5696db33bf9f6e1887682f6391  814291152  checkpoints/checkpoint_1100000/state/checkpoint

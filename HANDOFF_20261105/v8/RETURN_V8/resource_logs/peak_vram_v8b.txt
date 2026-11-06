@@ -1,0 +1,6 @@
+sample_lines=63
+gpu_names=NVIDIA A100-SXM4-80GB
+peak_vram_mib=4816
+min_vram_mib=16
+peak_source=nvidia-smi memory.used MiB n_samples=63
+status=MEASURED
