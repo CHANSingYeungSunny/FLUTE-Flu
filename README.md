@@ -66,7 +66,39 @@ The O1 scoring repair is complete. `final/` holds harmonised scores on **two ide
 
 > **New results change an old conclusion.** On the harmonised panel, step-level peak passes are MIFlu **252/1680** (15.0%), PatchTST **215/1680** (12.8%), NLinear **57/1680** (3.4%) — so "NLinear is the peak champion" does **not** hold here. Event-level analysis (181,868 events) separates detection from timing/height: iTransformer 99.1% detection but PIE 71.2%; MIFlu 98.8% detection, PIE 30.4%. The 60-cell ablation ladder is **non-monotonic** (K4 best 1.4989, K12 worst 1.7604), contradicting the older "logarithmic-ladder champion / monotonic depth trend" claim. The historical 16-unit table, the new 1120 panel, the legacy 5-fold N=3 walk-forward panel, the CDC ILINet vintage reconstruction and the foundation roster are **separate populations** and must never be pooled.
 
-**Still blocked / unverified** (not findings): foundation models (Chronos/TimesFM) have source-pinned provenance, a separate roster and **8 zero-shot pilot cells**, but the 80-cell matrix is `NOT_EXECUTED_BY_PROTOCOL`; resource measurements are `PARTIAL` (one cell, MIFlu peak VRAM 4816 MiB on A100; five rows `NOT_MEASURED`), with no full-1120 Pareto claim; CDC vintage uses a Delphi ingest **proxy**, not a CDC-issued revision number; JBHI guidance was verified on 2026-11-06 (14/16 pp incl. supplementary, ≤250-word abstract, APC US$2,800) but the official template-selector download is **UNVERIFIED** and `manuscript_submission_ready: NO`. The expansion protocol was unfrozen when submitted — a disclosed **retrospective** deviation. Ten seeds estimate training variation, not independent epidemics. A structural validator `PASS` is `scientific_readiness: NOT_ASSESSED`, not scientific certification.
+**Still blocked / unverified** (not findings): foundation models (Chronos/TimesFM) are on a **separate roster**, use a **single-variable** adapter (7 channels predicted independently, so cross-channel dependence is lost and the information set is not equal to the multivariate arms), were run **zero-shot with no training**, and their 10 repetitions are **10 rolling origins (rows 773–782), not 10 training seeds** (`seed_semantics=NOT_APPLICABLE`); a literal 10-seed expansion remains `NOT_EXECUTED_BY_PROTOCOL`. Resource measurements are a **6-model subset** on one A100 (no full-1120 Pareto). CDC vintage uses a Delphi ingest **proxy**, not a CDC-issued revision number. JBHI guidance was verified on 2026-11-06 (14/16 pp incl. supplementary, ≤250-word abstract, APC US$2,800) but the official template-selector download is **UNVERIFIED** and `manuscript_submission_ready: NO`. The expansion protocol was unfrozen when submitted — a disclosed **retrospective** deviation. Ten seeds estimate training variation, not independent epidemics. A structural validator `PASS` is `scientific_readiness: NOT_ASSESSED`, not scientific certification.
+
+### Final v8c evidence package (verified 2026-11-07 03:46 HKT / 2026-11-06 19:46 UTC)
+
+Every figure below was re-checked against the files on disk and against Burgundy at that time.
+
+| Item | Verified value |
+|---|---|
+| National panel | `cellok.py count` → **COMPLETE 1120 / 1120**, `BY_REASON {}` |
+| Core | **COMPLETE 160 / 160** |
+| Foundation matrix (separate roster) | `FOUNDATION_80_CELLS.csv` → **80 / 80 `ok`**, all finite, 80 real NPZ (40 Chronos + 40 TimesFM); sha256 `6278267…92cf` |
+| Foundation pilot cost | peak VRAM **2608 MiB**; Chronos **10.229 ± 1.074 ms**, TimesFM **50.906 ± 4.459 ms** (warm-up + repeats) |
+| Legacy `final_llm_import` tree | **388 / 388 NPZ readable** (two previously corrupt files restored by COPY, originals quarantined not deleted); `BENCH_MSE_BY_MODEL_L.csv` sha256 `a7d98ad…1e46`, 69 lines |
+| Walk-forward (legacy N=3 panel) | `WF_RECOMPUTED.csv` **1020 / 1020 `ok`** |
+| Regional Table VI | **53 / 53** valid `mse_z` rows |
+| Six-model resource measurements | peak VRAM (MiB): MIFlu **4816**, NLinear **558**, PatchTST **720**, GPT-2 frozen encoder **1070**, Chronos **596**, TimesFM **2594**; latency 6.98 ± 0.097 / 9.854 ± 0.337 / 48.273 ± 3.531 ms; `RESOURCE_MEASUREMENTS.csv` sha256 `9574eef…1117` |
+| v8c documents | manuscript 10 pp, internal report 10 pp, Q&A companion 16 pp; all six DOCX/PDF conversions rc=0; hashes match `v8/docs/V8C_REBUILD_LOG.md` |
+| Return package | 1432 files hashed, 1434 members; validator `integrity_status: PASS`, `errors: []`, `scientific_readiness: NOT_ASSESSED` |
+| HPC jobs | 16 job IDs (`743850`, `743920`, `744110`, `744134`, `744271`, `744334`, `744532`, `744533`, `744574`, `744576`, `744589`, `744607`, `744884`, `744886`, `744897`, `744899`) — **all COMPLETED 0:0**; `squeue` empty |
+| Quota | home 23.9 GB / 50 GB soft; scratch 342 GB / 300 GB soft, **grace 8 days** |
+
+| Return ZIP (`HANDOFF_20261105/v8/`) | bytes | SHA-256 |
+|---|---:|---|
+| `RETURN_TO_CHATGPT.zip` | 199,883,696 | `5433e8d8a799c418c4fd55db1e8884b1ec1f4b141f98790f0f51cdd39887ad03` |
+| `RAW_EVIDENCE.zip` | 345,006,379 | `550977437230dafc257cb3a36b02837764afec411e90f286b41d3f3c3d083f75` |
+
+Authoritative hashes live **outside** the package in `HANDOFF_20261105/v8/packaging/FINAL_HASHES.txt`, because the package mirrors its own documents and would otherwise be self-referential. Both ZIPs extract into the same root. To refresh after any document edit:
+
+```bash
+python "C:/Users/Asus/Desktop/FYP code/MLFlu/HANDOFF_20261105/v8/packaging/build_v8_return.py"
+```
+
+**Not measured / not claimed:** isolated single-forward latency for MIFlu, NLinear and PatchTST (`NOT_MEASURED` — the old NPZ scoring-path numbers are not a forward pass), the official JBHI template class file (`UNVERIFIED`), an information-set-matched per-channel foundation adapter, dependence-aware confirmatory statistics, any full-1120 Pareto claim, and submission readiness.
 
 ---
 
@@ -176,13 +208,16 @@ Reports are produced in Chinese and English variants, built from the same pipeli
 - ✅ O1 scoring repair: **40/40** seven-channel MIFlu tensors recovered from checkpoints; `all_valid` and `crop` panels built from identical target populations
 - ✅ Walk-forward recomputation **1020/1020**; regional Table VI **53/53**; CDC ILINet vintage reconstruction complete (Delphi proxy)
 - ✅ 60-cell ablation ladder measured — **non-monotonic** (K4 best, K12 worst); old monotonic claim superseded
-- ✅ Revision 9.2 documents, v8 DOCX/PDF rebuild, dated JBHI guidance verification
-- ✅ HPC queue empty at last capture; no duplicate lanes or controllers
-- 🔄 Foundation models (Chronos/TimesFM): provenance + 8 zero-shot cells done, 80-cell matrix `NOT_EXECUTED_BY_PROTOCOL`
-- 🔄 Resource measurements `PARTIAL` (single cell, six model rows); full-1120 Pareto not claimed
+- ✅ Revision 9.2 documents plus **v8c** rebuild: manuscript 10 pp, internal report 10 pp, Q&A companion 16 pp; superseded claims marked SUPERSEDED in the body
+- ✅ `final_llm_import` legacy tree restored to **388/388** readable NPZ; table rebuilt (sha256 `a7d98ad…1e46`)
+- ✅ Foundation models (Chronos/TimesFM) on a **separate roster**: **80/80** zero-shot cells, real NPZ, measured latency/VRAM
+- ✅ Resource measurements for **six models** (MIFlu 4816, NLinear 558, PatchTST 720, GPT-2 encoder 1070, Chronos 596, TimesFM 2594 MiB peak VRAM)
+- ✅ Dated JBHI guidance verification; `v8/PAPER_TO_CODE.md` created and applied by the packager
+- ✅ HPC queue empty at capture; all 16 v8 job IDs COMPLETED 0:0; no duplicate lanes or controllers
 - 🔄 Official JBHI template-selector download UNVERIFIED; `manuscript_submission_ready: NO`
+- 🔄 Isolated single-forward latency NOT_MEASURED for MIFlu, NLinear, PatchTST
 - 🔄 Scratch quota 342 GB / 300 GB soft, grace 8 days — cleanup proposed separately; nothing deleted
-- ⛔ Not claimed: seasonal external validity, independent epidemics from repeated seeds, equivalence from non-rejection, O2 calibration, or venue acceptance
+- ⛔ Not claimed: seasonal external validity, independent epidemics from repeated seeds, equivalence from non-rejection, information-set-matched foundation adapter, full-1120 Pareto, O2 calibration, or venue acceptance
 
 ---
 
