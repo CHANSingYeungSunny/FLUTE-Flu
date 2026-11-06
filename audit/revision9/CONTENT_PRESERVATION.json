@@ -1,0 +1,25 @@
+{
+  "internal_all_original_paragraphs_preserved": true,
+  "internal_all_scientific_table_cells_preserved": true,
+  "internal_original_figures_byte_identical": 6,
+  "internal_qa_count": 25,
+  "unchanged_inputs": {
+    "presentation/Week12_Progress_Presentation.pptx": "40dc9d546933557e5b5b1add457ad86fceb20a4f3bb0e95dce9a813f03078e69",
+    "presentation/Week12_Progress_Presentation.pdf": "3bd271f3b88c8a4885b1e95a9d4c18f73fcf825d833c56e125384cf6391adc28",
+    "presentation/TALKING_SCRIPT.md": "a5868fcbd9ada0cd53e7694b65fcf810bd8905d89765f3488dad94f462c9114a",
+    "01_最终报告/progress_report_en.docx": "824b3b887e3bc6b0331978b0e941266a2469cb83f9e2bcbfc113bd2a845c3cb3",
+    "01_最终报告/progress_report_en.pdf": "b0da50e65f4cca2eb89a96ce73b73b0757f6d03718447329f36d64b6f4673a91"
+  },
+  "historical_csvs_byte_identical_to_revision8": 83,
+  "manuscript_tables": 5,
+  "manuscript_figures": 2,
+  "manuscript_references": 21,
+  "manuscript_abstract_words": 211,
+  "english_notes_script_segments_match": 13,
+  "english_notes_prose_cjk_characters_excluding_evidence_paths": 0,
+  "english_extended_qa_cited_explanations": 25,
+  "script_planned_seconds": 300,
+  "script_words": 606,
+  "human_rehearsal_executed": false,
+  "result_handoff_validator_cases_passed": 6
+}

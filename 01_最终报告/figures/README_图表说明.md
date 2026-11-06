@@ -56,3 +56,8 @@
 
 图由 `05_程序代码/` 中的脚本从 `03_预测数据_证据/expanded_runs/` 的预测数据生成。
 数据来源和指标定义见 `WHERE_EVERYTHING_IS.md`。
+
+
+## 四维汇报专用参数图
+
+fig_pareto_presentation.png 由 presentation/build_pareto_figure.py 从 BENCH_EFFICIENCY.csv 的 11 个非空参数量模型重画。所有点均保留，仅标注 NLinear 和 PatchTST 以便投影阅读；MIFlu 与编码器不在该子集。横轴为对数参数量，纵轴为平均 MSE，参数量不能替代实测运行时间。内部报告仍保留原完整标签版本。

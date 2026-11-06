@@ -1,0 +1,12 @@
+{
+  "integrity_status": "PASS",
+  "scope": "structure, file hashes and limited status consistency only; NOT scientific validation",
+  "run_status_counts": {
+    "completed": 1120
+  },
+  "check_status_counts": {
+    "passed": 5
+  },
+  "scientific_readiness": "NOT_ASSESSED",
+  "errors": []
+}

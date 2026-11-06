@@ -1,0 +1,34 @@
+{
+  "revision": "9.2",
+  "main_pages": 12,
+  "previous_main_pages": 25,
+  "companion_pages": 11,
+  "main_question_headings": 0,
+  "companion_questions": 25,
+  "question_answer_paragraphs_preserved_verbatim": 150,
+  "reference_entries_preserved_verbatim": 25,
+  "scientific_tables_preserved": 11,
+  "original_figure_assets_byte_identical": 6,
+  "all_23_final_pages_visually_reviewed": true,
+  "final_table_flow_fix_changed_only_main_pages": [
+    5,
+    6
+  ],
+  "main_other_10_pages_pixel_identical_to_prior_inspected_render": true,
+  "unchanged_artifact_hashes": {
+    "01_最终报告/progress_report_en.docx": "a6b6b08f3b65688d91e4d1c977c9d85678fff219895fa1685e55c16124f8127a",
+    "01_最终报告/progress_report_en.pdf": "3581c26f67f22628d3e08b79694b39ff11a24f09a0d3b36f506379e3d620ff2b",
+    "01_最终报告/progress_report_zh.docx": "6c1b443ae2062ec99c87ec1fd623f5666d36fae2cb90fe33a0a60bb1d872d209",
+    "01_最终报告/progress_report_zh.pdf": "c3bc9e0b24c2977cb6aea37198d48b37aab0099bc84aed6caac780886bb3b2e5",
+    "01_最终报告/ieee_manuscript_en.docx": "98b978fb22687ad1b435e3969f92d60cdf49055aa68b7416d36c4b1b353dd8c8",
+    "01_最终报告/ieee_manuscript_en.pdf": "3d220d865b0893a9d22eac6f58a80162d4b69aaccaf8010d670a6365fefa336a",
+    "presentation/Week12_Progress_Presentation.pptx": "40dc9d546933557e5b5b1add457ad86fceb20a4f3bb0e95dce9a813f03078e69",
+    "presentation/Week12_Progress_Presentation.pdf": "3bd271f3b88c8a4885b1e95a9d4c18f73fcf825d833c56e125384cf6391adc28",
+    "presentation/Presentation_Notes_EN.docx": "b3c8561c1eafce062523c850c9a47360aeaa6d1a427896d6b8aa036792564ad4",
+    "presentation/Presentation_Notes_EN.pdf": "8333c4eadb36db2dfdc347f81a9fd579bdea7cd7c496158e4a8469ff6073d830",
+    "presentation/TALKING_SCRIPT.md": "a5868fcbd9ada0cd53e7694b65fcf810bd8905d89765f3488dad94f462c9114a"
+  },
+  "frozen_csvs_unchanged": 83,
+  "new_scientific_result": false,
+  "model_or_hpc_execution": false
+}

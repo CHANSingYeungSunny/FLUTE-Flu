@@ -32,7 +32,7 @@ OUT = os.path.join(ROOT, "01_最终报告", "PROJECT_HANDOFF.zip")
 STATS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "zip_stats.json")
 
 EXCLUDE_DIRS = {".git", "__pycache__", "node_modules", "checkpoints", ".quarantine",
-                ".pytest_cache", "old_wrong_reports", "99_旧文件存档"}
+                ".pytest_cache", "old_wrong_reports", "99_旧文件存档", ".codebuddy"}
 EXCLUDE_PREFIXES = ("_tmp_", "_fix_", "_update_", "_chk", "_chkzip", "_gen_", "_add_", "_fin", "_make_", "_scan_", "_rename", "_verify_")
 EXCLUDE_PATHS = {
     "01_最终报告/_build",
@@ -44,7 +44,9 @@ EXCLUDE_GLOBS = (".tmp", ".bak")
 
 def skip(rel: str) -> bool:
     parts = rel.replace("\\", "/").split("/")
-    if parts[0] in EXCLUDE_DIRS:
+    # any component, not just the top-level one: nested __pycache__/.pytest_cache
+    # directories are created by test runs and must not enter the archive
+    if any(p in EXCLUDE_DIRS for p in parts if p):
         return True
     if any(p.startswith(EXCLUDE_PREFIXES) for p in parts if p):
         return True
@@ -52,6 +54,8 @@ def skip(rel: str) -> bool:
         return True
     norm = "/".join(parts)
     if norm == "01_最终报告/PROJECT_HANDOFF.zip":
+        return True
+    if norm == "01_最终报告/CHATGPT_CONTEXT_PACK.zip":
         return True
     for p in EXCLUDE_PATHS:
         if norm == p or norm.startswith(p + "/"):
@@ -92,6 +96,10 @@ def main() -> int:
         n = len(z.namelist())
         bad = z.testzip()
 
+    tops = {}
+    for rel, _ in files:
+        tops[rel.split("/")[0]] = tops.get(rel.split("/")[0], 0) + 1
+
     stats = {
         "built_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         "path": os.path.relpath(OUT, ROOT).replace(os.sep, "/"),
@@ -103,13 +111,11 @@ def main() -> int:
         "seconds": round(dt, 1),
         "crc_ok": bad is None,
         "excluded_dirs": sorted(EXCLUDE_DIRS) + ["_tmp_*", *sorted(EXCLUDE_PATHS)],
+        "top_counts": tops,
     }
     with open(STATS, "w", encoding="utf-8") as fh:
         json.dump(stats, fh, indent=1)
     print(json.dumps(stats, indent=1))
-    tops = {}
-    for rel, _ in files:
-        tops[rel.split("/")[0]] = tops.get(rel.split("/")[0], 0) + 1
     print("top-level entry counts:", dict(sorted(tops.items(), key=lambda kv: -kv[1])))
     return 0
 

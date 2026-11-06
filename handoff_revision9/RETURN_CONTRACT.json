@@ -1,0 +1,108 @@
+{
+  "contract_version": "MIFlu-return-9.2",
+  "capture_time_required": [
+    "UTC",
+    "Asia/Hong_Kong"
+  ],
+  "archives": [
+    "RETURN_TO_CHATGPT.zip",
+    "RAW_EVIDENCE.zip"
+  ],
+  "same_extraction_root": true,
+  "required_readable_files": [
+    "MESSAGE_TO_CHATGPT.md",
+    "RETURN_STATUS.json",
+    "RETURN_MANIFEST.json",
+    "SCIENTIFIC_AUDIT.md",
+    "PROTOCOL_DEVIATIONS.md",
+    "COMMANDS_EXECUTED.csv",
+    "RUN_LEDGER.csv",
+    "CONFIG_INDEX.json",
+    "PANEL_DEFINITION.json",
+    "VALIDATION_RESULT.json"
+  ],
+  "required_aggregation_or_explicit_block": [
+    "AGGREGATION/ACCURACY_FULL.csv",
+    "AGGREGATION/ACCURACY_CROPPED.csv",
+    "AGGREGATION/PEAK_BY_CELL.csv",
+    "AGGREGATION/PEAK_EVENT_MATCHES.csv",
+    "AGGREGATION/ABLATION_BY_CELL.csv",
+    "AGGREGATION/ABLATION_REFERENCE_MAP.csv",
+    "AGGREGATION/PAIRWISE_INPUTS.csv",
+    "AGGREGATION/PAIRWISE_RESULTS.csv",
+    "AGGREGATION/RESOURCE_MEASUREMENTS.csv",
+    "AGGREGATION/UNIQUE_CELL_MAP.csv"
+  ],
+  "manifest_schema": {
+    "schema_version": 1,
+    "files": [
+      {
+        "path": "relative POSIX path",
+        "bytes": "integer",
+        "sha256": "64 lowercase hexadecimal characters"
+      }
+    ]
+  },
+  "manifest_excludes": [
+    "RETURN_MANIFEST.json",
+    "VALIDATION_RESULT.json"
+  ],
+  "status_required_keys": [
+    "capture_time_utc",
+    "capture_time_hkt",
+    "core",
+    "national",
+    "ablation",
+    "table_vi",
+    "walk_forward",
+    "regional",
+    "live_hpc_access",
+    "quota",
+    "blocked_outputs",
+    "not_executed",
+    "received_base_package_sha256"
+  ],
+  "cell_identity_required": [
+    "model",
+    "forecast_length",
+    "seed",
+    "profile_sha256",
+    "training_config_sha256",
+    "scoring_spec_sha256",
+    "checkpoint_id",
+    "code_revision",
+    "window_panel"
+  ],
+  "prediction_required_metadata": [
+    "prediction_path",
+    "target_path_or_embedded_key",
+    "array_axis_order",
+    "channel_names",
+    "target_row_indices",
+    "forecast_origin_indices",
+    "lead_indices",
+    "normalised_or_physical_units",
+    "scaler_path",
+    "finite_value_check",
+    "shape_check"
+  ],
+  "aggregation_rules": [
+    "No mixed target rows/channels/leads within a declared comparison panel",
+    "Keep cropped and all-valid windows separate",
+    "Do not pool duplicate core/national configurations",
+    "Ablation reference must match protocol/seed/scoring panel",
+    "A blocked output must have an explicit reason in RETURN_STATUS.json",
+    "Never overwrite historical frozen CSVs"
+  ],
+  "integrity_pass_claim": "Structure, manifest membership, hashes and required-file/status declarations only",
+  "scientific_readiness_from_validator": "NOT_ASSESSED",
+  "preserve_original_protocol_and_deviations": true,
+  "do_not_backdate_freeze": true,
+  "document_organisation": {
+    "chinese_main": "report_internal_zh",
+    "chinese_qa_companion": "report_internal_qa_zh",
+    "questions": 25,
+    "keep_separate": true,
+    "update_affected_answers_with_new_evidence": true
+  }
+}

@@ -1,0 +1,33 @@
+# CODE CHANGES (patched Track-B scheduler, 2026-11-04)
+#
+# Base: the original files preserved on HPC at
+#   /gpfs1/scratch/sychan552/trackB_20261104/v2_backup/*.orig
+# Patched files are supplied verbatim under code/trackB_v2/ in this return tree.
+# No git working tree was available for the delivered project, so this is a
+# file-level patch record rather than a `git diff` against a named commit.
+#
+# NEW: code/trackB_v2/cellok.py
+#   + per-runner cell completeness validation (miflu / backbone / encoder / classical)
+#   + finite-value checks, valid npz, matched results-pair, manifest, predictions, log
+#   + count / pending / check / route subcommands
+# NEW: code/trackB_v2/run_lane_v2.sh
+#   - removed shared cursor + flock; + static stripe partition
+#   - SKIP only on validated completeness; + quarantine of partial cells
+#   - + classical routing via train_classical_966.py
+#   - + encoder pinned-revision weight preflight (blocked.tsv if missing)
+#   - + 3 retry passes with 2-attempt cap; + mkdir claims with dead-owner reclaim
+#   - + per-lane done sentinels
+# NEW: code/trackB_v2/controller_v2.sh
+#   - completion by validated cell count instead of results_*.csv file count
+#   - + mkdir singleton; + 450G warn / 900G pause; + opt-in prune
+#   - + core-phase gate for the 1120 phase
+#   - + one afterany successor per 23h generation (no 0-second churn)
+#   - + blocked/retry observability, no infinite loop when all remaining are blocked
+# NEW: code/trackB_v2/post_all_v2.sh
+#   - waits for validated all/phase.done; snapshots legacy TODOs
+#   - waits for Track-B GPU lanes to finish; one-shot mkdir guard on legacy driver
+# NEW: code/trackB_v2/write_sbatch.sh + per-phase *_v2.sbatch
+#   - gpu_a100 24h x2, stingy 06:00:00 x1 (QOS-valid), tiny controllers 24h
+#
+# NO changes were made to model code, loss functions, metrics, data files,
+# original CSVs, original reports, or the owner-edited PPTX.

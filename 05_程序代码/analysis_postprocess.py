@@ -197,8 +197,7 @@ for a, b in itertools.combinations(models, 2):
                   "ci_hi": float(np.percentile(boots, 97.5))})
 PT = pd.DataFrame(pairs).sort_values("p_raw").reset_index(drop=True)
 m = len(PT)
-PT["p_holm"] = np.minimum.accumulate(
-    np.clip(PT.p_raw * (m - np.arange(m)), 0, 1)[::-1])[::-1]
+PT["p_holm"] = np.minimum(1.0, np.maximum.accumulate(PT.p_raw.to_numpy() * (m - np.arange(m))))
 sd = piv.std()
 PT["effect_d"] = [abs(r.mean_diff) / np.sqrt((sd.get(r.model_a, np.nan) ** 2 +
                                               sd.get(r.model_b, np.nan) ** 2) / 2)

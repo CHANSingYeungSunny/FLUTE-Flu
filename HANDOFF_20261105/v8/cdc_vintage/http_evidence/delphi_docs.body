@@ -1,0 +1,845 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/delphi-epidata/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/delphi-epidata/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(1) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(4) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(1) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/delphi-epidata/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/delphi-epidata/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/delphi-epidata/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>FluView | Delphi Epidata API</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="FluView" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Documentation for the Delphi research group&#39;s Epidata API, providing access to curated streams of epidemic data and forecasts." />
+<meta property="og:description" content="Documentation for the Delphi research group&#39;s Epidata API, providing access to curated streams of epidemic data and forecasts." />
+<link rel="canonical" href="/delphi-epidata/api/fluview.html" />
+<meta property="og:url" content="/delphi-epidata/api/fluview.html" />
+<meta property="og:site_name" content="Delphi Epidata API" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="FluView" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Documentation for the Delphi research group&#39;s Epidata API, providing access to curated streams of epidemic data and forecasts.","headline":"FluView","url":"/delphi-epidata/api/fluview.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+        integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+        integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+        integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.getElementById('main-content'));"></script>
+<script src="/delphi-epidata/assets/js/tabs.js"></script>
+<script src="/delphi-epidata/assets/js/external-links.js"></script>
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/delphi-epidata/" class="site-title lh-tight">
+  Delphi Epidata API
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Epidata API Intro submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/" class="nav-list-link">Epidata API Intro</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/api_keys.html" class="nav-list-link">API Keys</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/privacy_statement.html" class="nav-list-link">Privacy Statement</a></li><li class="nav-list-item"><a href="/delphi-epidata/related_work.html" class="nav-list-link">Motivating Works</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/glossary.html" class="nav-list-link">Glossary</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Delphi V5 API submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/v5.html" class="nav-list-link">Delphi V5 API</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/v5_api_queries.html" class="nav-list-link">Understanding and Querying the V5 API</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5_meta.html" class="nav-list-link">V5 Metadata Discovery Endpoints</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Delphi V5 Sources and Signals submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/v5_signals.html" class="nav-list-link">Delphi V5 Sources and Signals</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/nssp.html" class="nav-list-link">NSSP ED Visits</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/nhsn.html" class="nav-list-link">NHSN Hospitalizations</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/nwss.html" class="nav-list-link">NWSS Wastewater</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/vha_respiratory.html" class="nav-list-link">VHA Respiratory</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/claims_outpatient.html" class="nav-list-link">Outpatient Claims</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/claims_inpatient.html" class="nav-list-link">Inpatient Claims</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/nchs_mortality.html" class="nav-list-link">NCHS Mortality Data</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/flusurv.html" class="nav-list-link">FluSurv-NET Hospitalizations</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/fluview_ilinet.html" class="nav-list-link">FluView ILINet Outpatient Illness</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/sleepcycle.html" class="nav-list-link">Sleep Cycle Nocturnal Coughs</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/fluview_resp_lab_clinical.html" class="nav-list-link">FluView Clinical Laboratory Surveillance</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/fluview_resp_lab_ph.html" class="nav-list-link">FluView Public Health Laboratory Surveillance</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/nrevss.html" class="nav-list-link">NREVSS Respiratory Viruses</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5-signals/epic-cosmos.html" class="nav-list-link">PopHive Claims</a></li></ul></li><li class="nav-list-item"><a href="/delphi-epidata/api/v5_migration.html" class="nav-list-link">V3/V4 to V5 Migration Guide</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Main Endpoint (COVIDcast V4) submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/covidcast.html" class="nav-list-link">Main Endpoint (COVIDcast V4)</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast_licensing.html" class="nav-list-link">Data Licensing</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Sources and Signals submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/covidcast_signals.html" class="nav-list-link">Data Sources and Signals</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast_meta.html" class="nav-list-link">Metadata</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/doctor-visits.html" class="nav-list-link">Doctor Visits</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/hospital-admissions.html" class="nav-list-link">Hospital Admissions</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/nchs-mortality.html" class="nav-list-link">NCHS Mortality Data</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/nhsn.html" class="nav-list-link">NHSN Respiratory Hospitalizations</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/nssp.html" class="nav-list-link">NSSP ED Visits</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/quidel.html" class="nav-list-link">Quidel</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Inactive Sources submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/covidcast-signals/inactive.html" class="nav-list-link">Inactive Sources</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/ght.html" class="nav-list-link">(COVIDcast) Google Health Trends</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/covid-act-now.html" class="nav-list-link">COVID Act Now</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/fb-survey.html" class="nav-list-link">COVID-19 Trends and Impact Survey</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/chng.html" class="nav-list-link">Change Healthcare</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/dsew-cpr.html" class="nav-list-link">Data Strategy and Execution Workgroup Community Profile Report</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/google-symptoms.html" class="nav-list-link">Google Symptom Search Trends</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/google-survey.html" class="nav-list-link">Google Symptom Surveys</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/hhs.html" class="nav-list-link">HHS Hospitalizations from NHSN</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/indicator-combination.html" class="nav-list-link">Indicator Combination</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/jhu-csse.html" class="nav-list-link">JHU Cases and Deaths</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/safegraph.html" class="nav-list-link">SafeGraph</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/usa-facts.html" class="nav-list-link">USAFacts Cases and Deaths</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast-signals/youtube-survey.html" class="nav-list-link">Youtube Survey</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast_api_queries.html" class="nav-list-link">Manually Constructing API Queries</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/missing_codes.html" class="nav-list-link">NaN Missing Codes</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast_geography.html" class="nav-list-link">Geographic Coding</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast_times.html" class="nav-list-link">Date Coding and Revisions</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covidcast_changelog.html" class="nav-list-link">Signal Changes</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Other Endpoints (V3) submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/README.html" class="nav-list-link">Other Endpoints (V3)</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Sources and Signals submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/epidata_signals.html" class="nav-list-link">Data Sources and Signals</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/fluview.html" class="nav-list-link">FluView</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/fluview_meta.html" class="nav-list-link">FluView Metadata</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/fluview_clinical.html" class="nav-list-link">FluView Clinical</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/flusurv.html" class="nav-list-link">Flusurv</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/rvdss.html" class="nav-list-link">Respiratory Virus Detections in Canada</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Inactive Sources (Other) submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/api/inactive_other.html" class="nav-list-link">Inactive Sources (Other)</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/api/cdc.html" class="nav-list-link">CDC Webpage Visits</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covid_hosp_facility_lookup.html" class="nav-list-link">COVID-19 Reported Patient Impact and Hospital Capacity - Facility lookup</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covid_hosp_facility.html" class="nav-list-link">COVID-19 Reported Patient Impact and Hospital Capacity by Facility</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/covid_hosp.html" class="nav-list-link">COVID-19 Reported Patient Impact and Hospital Capacity by State Timeseries</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/delphi.html" class="nav-list-link">Delphi Forecasts</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/dengue_sensors.html" class="nav-list-link">Dengue Digital Surveillance</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/dengue_nowcast.html" class="nav-list-link">Dengue Nowcast</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/sensors.html" class="nav-list-link">Digital Surveillance Sensors</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/ecdc_ili.html" class="nav-list-link">ECDC ILI</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/meta.html" class="nav-list-link">Epidata Metadata</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/gft.html" class="nav-list-link">Google Flu Trends</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/ght.html" class="nav-list-link">Google Health Trends</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/nowcast.html" class="nav-list-link">ILI Nearby Nowcast</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/kcdc_ili.html" class="nav-list-link">KCDC ILI</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/nidss_dengue.html" class="nav-list-link">NIDSS Dengue</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/nidss_flu.html" class="nav-list-link">NIDSS Flu</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/norostat.html" class="nav-list-link">NoroSTAT</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/meta_norostat.html" class="nav-list-link">NoroSTAT Metadata</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/paho_dengue.html" class="nav-list-link">PAHO Dengue</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/quidel.html" class="nav-list-link">Quidel</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/twitter.html" class="nav-list-link">Twitter Stream</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/wiki.html" class="nav-list-link">Wikipedia Access</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/delphi-epidata/api/geographic_codes.html" class="nav-list-link">Geographic Codes</a></li><li class="nav-list-item"><a href="/delphi-epidata/api/date_formats.html" class="nav-list-link">Date Formats</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="<i>inactive</i> COVID-19 Trends and Impact Survey submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/symptom-survey/" class="nav-list-link"><i>inactive</i> COVID-19 Trends and Impact Survey</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/data-access.html" class="nav-list-link">Getting Data Access</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/contingency-tables.html" class="nav-list-link">Contingency Tables</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/weights.html" class="nav-list-link">Survey Weights</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/coding.html" class="nav-list-link">Questions and Coding</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/modules.html" class="nav-list-link">Survey Modules & Randomization</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/problems.html" class="nav-list-link">Data and Sampling Errors</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/limitations.html" class="nav-list-link">Survey Limitations</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/publications.html" class="nav-list-link">Publications</a></li><li class="nav-list-item"><a href="/delphi-epidata/symptom-survey/end-of-survey.html" class="nav-list-link">End of CTIS Data Collection</a></li></ul></li><li class="nav-list-item"><a href="/delphi-epidata/api/client_libraries.html" class="nav-list-link">API Clients</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Developer Support submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/delphi-epidata/developer_support.html" class="nav-list-link">Developer Support</a><ul class="nav-list"><li class="nav-list-item"><a href="/delphi-epidata/epidata_development.html" class="nav-list-link">Development Guide</a></li><li class="nav-list-item"><a href="/delphi-epidata/new_endpoint_tutorial.html" class="nav-list-link">Adding a New API Endpoint</a></li></ul></li><li class="nav-list-item"><a href="/delphi-epidata/about_delphi.html" class="nav-list-link">About Delphi</a></li></ul>
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Delphi Epidata API" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Delphi Epidata API</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://delphi.cmu.edu/" class="site-button"
+          
+        >
+          CMU Delphi Research Group
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/delphi-epidata/api/README.html">Other Endpoints (V3)</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/delphi-epidata/api/epidata_signals.html">Data Sources and Signals</a></li>
+    <li class="breadcrumb-nav-list-item"><span>FluView</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <blockquote class="warning">
+  <p><strong>Heads up:</strong> This endpoint is part of the legacy V3 API, which is being phased out. An actively maintained equivalent is available in V5 under the source <a href="/delphi-epidata/api/v5-signals/fluview_ilinet.html"><code class="language-plaintext highlighter-rouge">fluview_ilinet</code></a>. See the <a href="/delphi-epidata/api/v5_migration.html">V3/V4 to V5 Migration Guide</a> for full details.</p>
+</blockquote>
+<h1 class="no_toc" id="fluview-ilinet">
+  
+  
+    <a href="#fluview-ilinet" class="anchor-heading" aria-labelledby="fluview-ilinet"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> FluView (ILINet)
+  
+  
+</h1>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Source Name</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">fluview</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Data Source</strong></td>
+      <td style="text-align: left"><a href="http://gis.cdc.gov/grasp/fluview/fluportaldashboard.html">United States Centers for Disease Control and Prevention (CDC)</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Geographic Levels</strong></td>
+      <td style="text-align: left">National, Department of Health &amp; Human Services (HHS) Regions, Census Divisions, State (see <a href="/delphi-epidata/api/geographic_codes.html#us-regions-and-states">Geographic Codes</a>), Cities (see <a href="/delphi-epidata/api/geographic_codes.html#fluview-cities">FluView Cities</a>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Temporal Granularity</strong></td>
+      <td style="text-align: left">Weekly (Epiweek)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reporting Cadence</strong></td>
+      <td style="text-align: left">Weekly (typically Fridays)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Temporal Scope Start</strong></td>
+      <td style="text-align: left">1997w40</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>License</strong></td>
+      <td style="text-align: left"><a href="https://www.usa.gov/government-works">Publicly Accessible US Government</a></td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 class="no_toc" id="overview">
+  
+  
+    <a href="#overview" class="anchor-heading" aria-labelledby="overview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Overview
+  
+  
+</h2>
+    
+
+<p>The <code class="language-plaintext highlighter-rouge">fluview</code> endpoint reports influenza-like illness (ILI) data sourced from the U.S. Outpatient Influenza-like Illness Surveillance Network (ILINet) dashboard. Data is sourced from both ILINet (public health labs) and WHO_NREVSS (clinical labs).</p>
+
+<p>General topics not specific to any particular endpoint are discussed in the
+<a href="/delphi-epidata/api/README.html">API overview</a>. Such topics include:
+<a href="/delphi-epidata/api/README.html#contributing">contributing</a>, <a href="/delphi-epidata/api/README.html#citing">citing</a>, and
+<a href="/delphi-epidata/api/README.html#data-licensing">data licensing</a>.</p>
+<h2 class="no_toc text-delta" id="table-of-contents">
+  
+  
+    <a href="#table-of-contents" class="anchor-heading" aria-labelledby="table-of-contents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Table of contents
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#estimation" id="markdown-toc-estimation">Estimation</a>    <ol>
+      <li><a href="#definition-of-ili" id="markdown-toc-definition-of-ili">Definition of ILI</a></li>
+      <li><a href="#weighted-vs-unweighted-ili" id="markdown-toc-weighted-vs-unweighted-ili">Weighted vs. Unweighted ILI</a></li>
+      <li><a href="#imputation" id="markdown-toc-imputation">Imputation</a></li>
+    </ol>
+  </li>
+  <li><a href="#lag-and-backfill" id="markdown-toc-lag-and-backfill">Lag and Backfill</a></li>
+  <li><a href="#limitations" id="markdown-toc-limitations">Limitations</a></li>
+  <li><a href="#the-api" id="markdown-toc-the-api">The API</a>    <ol>
+      <li><a href="#parameters" id="markdown-toc-parameters">Parameters</a>        <ol>
+          <li><a href="#required" id="markdown-toc-required">Required</a></li>
+          <li><a href="#optional" id="markdown-toc-optional">Optional</a></li>
+        </ol>
+      </li>
+      <li><a href="#response" id="markdown-toc-response">Response</a></li>
+    </ol>
+  </li>
+  <li><a href="#example-urls" id="markdown-toc-example-urls">Example URLs</a>    <ol>
+      <li><a href="#fluview-on-2015w01-national" id="markdown-toc-fluview-on-2015w01-national">FluView on 2015w01 (national)</a></li>
+      <li><a href="#fluview-in-hhs-regions-4-and-6-for-the-20142015-flu-season" id="markdown-toc-fluview-in-hhs-regions-4-and-6-for-the-20142015-flu-season">FluView in HHS Regions 4 and 6 for the 2014/2015 flu season</a></li>
+      <li><a href="#updates-to-fluview-on-2014w53-reported-from-2015w01-through-2015w10-national" id="markdown-toc-updates-to-fluview-on-2014w53-reported-from-2015w01-through-2015w10-national">Updates to FluView on 2014w53, reported from 2015w01 through 2015w10 (national)</a></li>
+    </ol>
+  </li>
+  <li><a href="#code-samples" id="markdown-toc-code-samples">Code Samples</a>    <ol>
+      <li><a href="#legacy-clients" id="markdown-toc-legacy-clients">Legacy Clients</a></li>
+    </ol>
+  </li>
+</ol>
+<h2 id="estimation">
+  
+  
+    <a href="#estimation" class="anchor-heading" aria-labelledby="estimation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Estimation
+  
+  
+</h2>
+    
+<h3 id="definition-of-ili">
+  
+  
+    <a href="#definition-of-ili" class="anchor-heading" aria-labelledby="definition-of-ili"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Definition of ILI
+  
+  
+</h3>
+    
+<p>For this system, ILI is defined as fever (temperature of 100°F [37.8°C] or greater) and a cough and/or a sore throat without a known cause other than influenza.</p>
+<h3 id="weighted-vs-unweighted-ili">
+  
+  
+    <a href="#weighted-vs-unweighted-ili" class="anchor-heading" aria-labelledby="weighted-vs-unweighted-ili"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Weighted vs. Unweighted ILI
+  
+  
+</h3>
+    
+<p>The <code class="language-plaintext highlighter-rouge">fluview</code> endpoint provides two percentage metrics: <code class="language-plaintext highlighter-rouge">ili</code> (unweighted) and <code class="language-plaintext highlighter-rouge">wili</code> (weighted).</p>
+
+<ul>
+  <li>
+    <p><strong>Unweighted (<code class="language-plaintext highlighter-rouge">ili</code>):</strong> Calculated simply as the number of ILI cases divided by the total number of patients seen:</p>
+
+\[ILI = 100 \cdot \frac{\text{num\_ili}}{\text{num\_patients}}\]
+  </li>
+  <li>
+    <p><strong>Weighted (<code class="language-plaintext highlighter-rouge">wili</code>):</strong> To produce a representative estimate for larger regions (like National or HHS Regions), the CDC weights the state-level data by state population. This corrects for the fact that some states may have higher provider participation rates than others relative to their actual population.</p>
+
+\[wILI_{region} = \sum_{s \in region} \left( \%ILI_s \times \frac{Pop_s}{Pop_{region}} \right)\]
+  </li>
+</ul>
+<h3 id="imputation">
+  
+  
+    <a href="#imputation" class="anchor-heading" aria-labelledby="imputation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Imputation
+  
+  
+</h3>
+    
+<p>State-level data was not publicly available from the CDC prior to the 2010-2011 flu season (2010w40). For dates prior to this, and for occasional missing reports, Delphi uses a sensor fusion approach (OLS regression) to impute state-level values based on the available regional data.</p>
+
+<p>Private imputed data may require specific authorization via the <code class="language-plaintext highlighter-rouge">auth</code> parameter.</p>
+
+<!-- Source code: src/acquisition/fluview/fluview_update.py, src/acquisition/fluview/impute_missing_values.py -->
+<h2 id="lag-and-backfill">
+  
+  
+    <a href="#lag-and-backfill" class="anchor-heading" aria-labelledby="lag-and-backfill"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Lag and Backfill
+  
+  
+</h2>
+    
+
+<p>The data is preliminary and subject to revision. Participating providers may report data late, or correct previously reported data. The <code class="language-plaintext highlighter-rouge">issues</code> and <code class="language-plaintext highlighter-rouge">lag</code> parameters in the API allow you to access historical versions of the data as they were reported on specific dates.</p>
+<h2 id="limitations">
+  
+  
+    <a href="#limitations" class="anchor-heading" aria-labelledby="limitations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Limitations
+  
+  
+</h2>
+    
+
+<p>ILINet is a voluntary system. While it covers all states, the coverage within a state may not be perfectly representative of the entire population. Also, ILI is a syndromic definition, not a laboratory diagnosis. It captures patients with flu-like symptoms, which can be caused by other respiratory pathogens (including SARS-CoV-2 and RSV).</p>
+<h2 id="the-api">
+  
+  
+    <a href="#the-api" class="anchor-heading" aria-labelledby="the-api"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> The API
+  
+  
+</h2>
+    
+
+<p>The base URL is: <a href="https://api.delphi.cmu.edu/epidata/fluview/">https://api.delphi.cmu.edu/epidata/fluview/</a></p>
+<h3 id="parameters">
+  
+  
+    <a href="#parameters" class="anchor-heading" aria-labelledby="parameters"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Parameters
+  
+  
+</h3>
+    
+<h4 id="required">
+  
+  
+    <a href="#required" class="anchor-heading" aria-labelledby="required"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Required
+  
+  
+</h4>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epiweeks</code></td>
+      <td>epiweeks (see <a href="/delphi-epidata/api/date_formats.html">Date Formats</a>)</td>
+      <td><code class="language-plaintext highlighter-rouge">list</code> of epiweeks</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">regions</code></td>
+      <td>regions</td>
+      <td><code class="language-plaintext highlighter-rouge">list</code> of region labels: <code class="language-plaintext highlighter-rouge">nat</code>, states, <code class="language-plaintext highlighter-rouge">hhs1</code>-<code class="language-plaintext highlighter-rouge">hhs10</code>, <code class="language-plaintext highlighter-rouge">cen1</code>-<code class="language-plaintext highlighter-rouge">cen9</code> (see <a href="/delphi-epidata/api/geographic_codes.html#us-regions-and-states">Geographic Codes</a>)</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="optional">
+  
+  
+    <a href="#optional" class="anchor-heading" aria-labelledby="optional"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Optional
+  
+  
+</h4>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">issues</code></td>
+      <td>issues (see <a href="/delphi-epidata/api/date_formats.html">Date Formats</a>)</td>
+      <td><code class="language-plaintext highlighter-rouge">list</code> of epiweeks</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lag</code></td>
+      <td># weeks between each epiweek and its issue</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">auth</code></td>
+      <td>password for private imputed data</td>
+      <td>string</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<blockquote class="note">
+  <p><strong>Notes:</strong></p>
+  <ul>
+    <li>If both <code class="language-plaintext highlighter-rouge">issues</code> and <code class="language-plaintext highlighter-rouge">lag</code> are specified, only <code class="language-plaintext highlighter-rouge">issues</code> is used.</li>
+    <li>If neither is specified, the current issues are used.</li>
+  </ul>
+</blockquote>
+<h3 id="response">
+  
+  
+    <a href="#response" class="anchor-heading" aria-labelledby="response"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Response
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result</code></td>
+      <td>result code: 1 = success, 2 = too many results, -2 = no results</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata</code></td>
+      <td>list of results</td>
+      <td>array of objects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].release_date</code></td>
+      <td>date when data was released</td>
+      <td>string or null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].region</code></td>
+      <td>region identifier</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].issue</code></td>
+      <td>epiweek of publication</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].epiweek</code></td>
+      <td>epiweek for which data is valid</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].lag</code></td>
+      <td>number of weeks between epiweek and issue</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_ili</code></td>
+      <td>number of ILI cases</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_patients</code></td>
+      <td>total number of patients</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_providers</code></td>
+      <td>number of reporting providers</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_age_0</code></td>
+      <td>number of ILI cases for ages 0-4</td>
+      <td>integer or null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_age_1</code></td>
+      <td>number of ILI cases for ages 5-24</td>
+      <td>integer or null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_age_2</code></td>
+      <td>number of ILI cases for ages 25-49</td>
+      <td>integer or null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_age_3</code></td>
+      <td>number of ILI cases for ages 50-64</td>
+      <td>integer or null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_age_4</code></td>
+      <td>number of ILI cases for ages 65+</td>
+      <td>integer or null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].num_age_5</code></td>
+      <td>number of ILI cases with unknown age</td>
+      <td>integer or null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].wili</code></td>
+      <td>weighted percent influenza-like illness</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">epidata[].ili</code></td>
+      <td>percent influenza-like illness</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">success</code> or error message</td>
+      <td>string</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<blockquote class="note">
+  <p><strong>Note:</strong> Private data (imputed values) is only returned if authorized via a valid <code class="language-plaintext highlighter-rouge">auth</code> token.</p>
+</blockquote>
+<h2 id="example-urls">
+  
+  
+    <a href="#example-urls" class="anchor-heading" aria-labelledby="example-urls"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Example URLs
+  
+  
+</h2>
+    
+<h3 id="fluview-on-2015w01-national">
+  
+  
+    <a href="#fluview-on-2015w01-national" class="anchor-heading" aria-labelledby="fluview-on-2015w01-national"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> FluView on 2015w01 (national)
+  
+  
+</h3>
+    
+<p><a href="https://api.delphi.cmu.edu/epidata/fluview/?regions=nat&amp;epiweeks=201501">https://api.delphi.cmu.edu/epidata/fluview/?regions=nat&amp;epiweeks=201501</a></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"epidata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"release_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="mi">201740</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"epiweek"</span><span class="p">:</span><span class="w"> </span><span class="mi">201501</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lag"</span><span class="p">:</span><span class="w"> </span><span class="mi">143</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_ili"</span><span class="p">:</span><span class="w"> </span><span class="mi">31483</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_patients"</span><span class="p">:</span><span class="w"> </span><span class="mi">771835</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_providers"</span><span class="p">:</span><span class="w"> </span><span class="mi">1958</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_age_0"</span><span class="p">:</span><span class="w"> </span><span class="mi">7160</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_age_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">9589</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_age_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_age_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">8072</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_age_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3614</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_age_5"</span><span class="p">:</span><span class="w"> </span><span class="mi">3048</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"wili"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.21374</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ili"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.07898</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="fluview-in-hhs-regions-4-and-6-for-the-20142015-flu-season">
+  
+  
+    <a href="#fluview-in-hhs-regions-4-and-6-for-the-20142015-flu-season" class="anchor-heading" aria-labelledby="fluview-in-hhs-regions-4-and-6-for-the-20142015-flu-season"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> FluView in HHS Regions 4 and 6 for the 2014/2015 flu season
+  
+  
+</h3>
+    
+
+<p><a href="https://api.delphi.cmu.edu/epidata/fluview/?regions=hhs4,hhs6&amp;epiweeks=201440-201520">https://api.delphi.cmu.edu/epidata/fluview/?regions=hhs4,hhs6&amp;epiweeks=201440-201520</a></p>
+<h3 id="updates-to-fluview-on-2014w53-reported-from-2015w01-through-2015w10-national">
+  
+  
+    <a href="#updates-to-fluview-on-2014w53-reported-from-2015w01-through-2015w10-national" class="anchor-heading" aria-labelledby="updates-to-fluview-on-2014w53-reported-from-2015w01-through-2015w10-national"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Updates to FluView on 2014w53, reported from 2015w01 through 2015w10 (national)
+  
+  
+</h3>
+    
+
+<p><a href="https://api.delphi.cmu.edu/epidata/fluview/?regions=nat&amp;epiweeks=201453&amp;issues=201501-201510">https://api.delphi.cmu.edu/epidata/fluview/?regions=nat&amp;epiweeks=201453&amp;issues=201501-201510</a></p>
+<h2 id="code-samples">
+  
+  
+    <a href="#code-samples" class="anchor-heading" aria-labelledby="code-samples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Code Samples
+  
+  
+</h2>
+    
+
+<p>Libraries are available for <a href="https://cmu-delphi.github.io/epidatr/">R</a> and <a href="https://cmu-delphi.github.io/epidatpy/">Python</a>.
+The following samples show how to import the library and fetch national FluView data for epiweeks <code class="language-plaintext highlighter-rouge">201501-201510</code>.</p>
+
+<div class="code-tabs">
+  <div class="tab-header">
+    <button class="active" data-tab="python">Python</button>
+    <button data-tab="r">R</button>
+
+  </div>
+
+  <div class="tab-content active" data-tab="python">
+
+    <p>Install the package using pip:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-e</span> <span class="s2">"git+https://github.com/cmu-delphi/epidatpy.git#egg=epidatpy"</span>
+</code></pre></div>    </div>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Import
+</span><span class="kn">from</span> <span class="nn">epidatpy</span> <span class="kn">import</span> <span class="n">EpiDataContext</span><span class="p">,</span> <span class="n">EpiRange</span>
+<span class="c1"># Fetch data
+</span><span class="n">epidata</span> <span class="o">=</span> <span class="n">EpiDataContext</span><span class="p">()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">epidata</span><span class="p">.</span><span class="n">pub_fluview</span><span class="p">(</span><span class="n">regions</span><span class="o">=</span><span class="s">"nat"</span><span class="p">,</span> <span class="n">epiweeks</span><span class="o">=</span><span class="n">EpiRange</span><span class="p">(</span><span class="mi">201501</span><span class="p">,</span> <span class="mi">201510</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">df</span><span class="p">())</span>
+</code></pre></div>    </div>
+  </div>
+
+  <div class="tab-content" data-tab="r">
+
+    <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">epidatr</span><span class="p">)</span><span class="w">
+</span><span class="c1"># Fetch data</span><span class="w">
+</span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pub_fluview</span><span class="p">(</span><span class="n">regions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"nat"</span><span class="p">,</span><span class="w"> </span><span class="n">epiweeks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">epirange</span><span class="p">(</span><span class="m">201501</span><span class="p">,</span><span class="w"> </span><span class="m">201510</span><span class="p">))</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+  </div>
+
+</div>
+<h3 id="legacy-clients">
+  
+  
+    <a href="#legacy-clients" class="anchor-heading" aria-labelledby="legacy-clients"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Legacy Clients
+  
+  
+</h3>
+    
+
+<p>We recommend using the modern client libraries mentioned above. Legacy clients are also available for <a href="https://pypi.org/project/delphi-epidata/">Python</a>, <a href="https://github.com/cmu-delphi/delphi-epidata/blob/dev/src/client/delphi_epidata.R">R</a>, and <a href="https://github.com/cmu-delphi/delphi-epidata/blob/dev/src/client/delphi_epidata.js">JavaScript</a>.</p>
+
+<div class="code-tabs">
+  <div class="tab-header">
+    <button class="active" data-tab="python">Python</button>
+    <button data-tab="r">R</button>
+    <button data-tab="js">JavaScript</button>
+  </div>
+
+  <div class="tab-content active" data-tab="python">
+
+    <p>Optionally install the package using pip(env):</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>delphi-epidata
+</code></pre></div>    </div>
+
+    <p>Otherwise, place <code class="language-plaintext highlighter-rouge">delphi_epidata.py</code> from this repo next to your python script.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Import
+</span><span class="kn">from</span> <span class="nn">delphi_epidata</span> <span class="kn">import</span> <span class="n">Epidata</span>
+<span class="c1"># Fetch data
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">Epidata</span><span class="p">.</span><span class="n">fluview</span><span class="p">([</span><span class="s">'nat'</span><span class="p">],</span> <span class="p">[</span><span class="n">Epidata</span><span class="p">.</span><span class="nb">range</span><span class="p">(</span><span class="mi">201501</span><span class="p">,</span> <span class="mi">201510</span><span class="p">)])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s">'result'</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="s">'message'</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s">'epidata'</span><span class="p">]))</span>
+</code></pre></div>    </div>
+  </div>
+
+  <div class="tab-content" data-tab="r">
+
+    <p>Place <code class="language-plaintext highlighter-rouge">delphi_epidata.R</code> from this repo next to your R script.</p>
+
+    <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"delphi_epidata.R"</span><span class="p">)</span><span class="w">
+</span><span class="c1"># Fetch data</span><span class="w">
+</span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Epidata</span><span class="o">$</span><span class="n">fluview</span><span class="p">(</span><span class="n">regions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s2">"nat"</span><span class="p">),</span><span class="w"> </span><span class="n">epiweeks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">Epidata</span><span class="o">$</span><span class="nf">range</span><span class="p">(</span><span class="m">201501</span><span class="p">,</span><span class="w"> </span><span class="m">201510</span><span class="p">)))</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">res</span><span class="o">$</span><span class="n">message</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">res</span><span class="o">$</span><span class="n">epidata</span><span class="p">))</span><span class="w">
+</span></code></pre></div>    </div>
+  </div>
+
+  <div class="tab-content" data-tab="js">
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Imports --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"delphi_epidata.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- Fetch data --&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">EpidataAsync</span><span class="p">.</span><span class="nx">fluview</span><span class="p">(</span><span class="dl">'</span><span class="s1">nat</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="nx">EpidataAsync</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">201501</span><span class="p">,</span> <span class="mi">201510</span><span class="p">)]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">result</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">epidata</span> <span class="o">!=</span> <span class="kc">null</span> <span class="p">?</span> <span class="nx">res</span><span class="p">.</span><span class="nx">epidata</span><span class="p">.</span><span class="nx">length</span> <span class="p">:</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">Copyright &copy; 2020, <a href='https://delphi.cmu.edu'>Delphi Research Group</a> at Carnegie Mellon University</p>
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+
+

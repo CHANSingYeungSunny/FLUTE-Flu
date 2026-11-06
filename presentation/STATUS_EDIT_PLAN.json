@@ -1,0 +1,220 @@
+{
+  "edits": [
+    {
+      "slide": 2,
+      "shape": "TextBox 6",
+      "old": "One shared study, with explicitly different analysis subsets",
+      "new": "Historical results, with explicitly different analysis subsets"
+    },
+    {
+      "slide": 3,
+      "shape": "TextBox 7",
+      "old": "966 rows, 7 channels. Chronological split 676 / 97 / 193. Full-window sensitivity remains open.",
+      "new": "966 rows, 7 channels. Split 676 / 97 / 193. New common scoring remains unresolved."
+    },
+    {
+      "slide": 11,
+      "shape": "TextBox 2",
+      "old": "The text pathway needs a controlled runtime check",
+      "new": "CPU tests confirm the inspected no-text invariant"
+    },
+    {
+      "slide": 11,
+      "shape": "TextBox 15",
+      "old": "Static inspection suggests\ntext invariance",
+      "new": "Fixed-weight CPU tests\nsupport text invariance"
+    },
+    {
+      "slide": 11,
+      "shape": "TextBox 16",
+      "old": "Archived model assertions:\nnot executed",
+      "new": "Three assertions passed\nZero skipped"
+    },
+    {
+      "slide": 11,
+      "shape": "TextBox 17",
+      "old": "Ablation 27/60\nowner-reported, not aggregated",
+      "new": "Ablation queue 60/60 DONE\nPer-variant analysis pending"
+    },
+    {
+      "slide": 11,
+      "shape": "TextBox 18",
+      "old": "Deterministic evaluation-path inference. Other fusion paths and training randomness require separate tests.",
+      "new": "Supplied CPU execution record. Training gradients and independent training trajectories remain unverified."
+    },
+    {
+      "slide": 12,
+      "shape": "TextBox 2",
+      "old": "O1 prioritises independent validation",
+      "new": "The ten-seed expansion remains in progress"
+    },
+    {
+      "slide": 12,
+      "shape": "TextBox 6",
+      "old": "Recover provenance and execute model checks",
+      "new": "Core outputs complete: 160/160"
+    },
+    {
+      "slide": 12,
+      "shape": "TextBox 8",
+      "old": "Validate across origins and regions",
+      "new": "National matrix in progress: 141/1120*"
+    },
+    {
+      "slide": 12,
+      "shape": "TextBox 10",
+      "old": "Add stronger numerical foundation controls",
+      "new": "Harmonise scoring, then validate regions"
+    },
+    {
+      "slide": 12,
+      "shape": "TextBox 11",
+      "old": "Optional O2: validation-only peak-height recalibration",
+      "new": "Optional O2 remains validation-only recalibration"
+    },
+    {
+      "slide": 12,
+      "shape": "TextBox 12",
+      "old": "0 new GPU training if suitable validation/test predictions exist. Validation exports remain unestablished; CPU time and money are unmeasured.",
+      "new": "*141/1120: owner report, 5 Nov 00:15 HKT; package 117/1120. O2: 0 new GPU training if suitable validation/test exports exist; CPU cost unmeasured."
+    },
+    {
+      "slide": 13,
+      "shape": "TextBox 8",
+      "old": "Proposed supervision decision: O1, with rolling-origin and regional validation before a new mechanism",
+      "new": "Next step: harmonise scoring, then validate across origins and regions"
+    },
+    {
+      "slide": 2,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 3,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 4,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 5,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 6,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 7,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 8,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 9,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 10,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 11,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 12,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 13,
+      "shape": "TextBox 3",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    },
+    {
+      "slide": 1,
+      "shape": "TextBox 1",
+      "old": "CHAN Sing Yeung Sunny   •   Experimental snapshot 3 November 2026",
+      "new": "CHAN Sing Yeung Sunny   •   Historical results 3 Nov   •   Status 5 Nov 2026"
+    }
+  ],
+  "notes": [
+    {
+      "slide": 1,
+      "text": "Planned timing 0:00–0:15\n\nEnglish script\nMy project re-evaluates multimodal LLMs for influenza forecasting. I examine MIFlu and compare twenty-eight implementations. The question is how model choice changes when average accuracy, peak errors, model size and statistical evidence are considered together.\n\n中文理解\n开场先说明研究问题：不是只复现一个分数，而是重新检查选模依据。标题中的 28 指整个比较名单，不表示四个维度都覆盖 28 个模型。副标题对应后面四条评价主线。\n\nFollow-up\nWhat is the contribution beyond reproduction?\nA four-axis re-evaluation with an explicit statistical correction and implementation/provenance limits. Broad negative-LLM findings already exist; this is the specific influenza audit, not a first-ever claim.\n\nPaper basis\nSimple-linear and LLM-removal critiques predate this project [4, 13]; Qiu et al.’s preprint reports conditional gains in larger cross-dataset settings [14]. Our narrower contribution connects audited influenza accuracy, peak endpoints, a cost subset and corrected inference. O1 checks persistence across origins/regions; Tashman motivates rolling-origin evaluation [23]. O2 adds validation-fitted height adjustment only if suitable prediction exports exist. A new mechanism cannot replace those checks or establish a universal verdict about LLM forecasting.\n简单线性及移除 LLM 的批评早已存在 [4, 13]，Qiu 等预印本又在更大跨数据集设置报告条件式收益 [14]。本地较窄贡献连接经审计流感精度、峰值端点、代价子集和正确推断。O1 检查跨原点/区域是否保持，Tashman 支持滚动原点评测 [23]。O2 仅在预测导出合适时加入验证集拟合峰高调整；新增机制不能替代检查，也不能确立对所有 LLM 的判决。\nReading locator: Zeng et al. [4], §4; Tan et al. [13], §3.2; Qiu et al. [14], abstract and §§3–5 (preprint); Tashman [23], publisher-indexed abstract.\n\nEvidence\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n02_数字表格/BENCH_PTE_PIE_BY_STEP.csv\naudit/CLAIM_AUDIT.md\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 2,
+      "text": "Planned timing 0:15–0:40\n\nEnglish script\nI use four evaluation axes. Accuracy measures overall prediction error. Peak skill measures timing and height. Parameter efficiency compares model size with error. Statistical evidence asks what differences the test design can support. Their coverage differs: twenty-eight, twenty-eight, eleven and seventeen models. Those denominators must stay separate.\n\n中文理解\n请按四个问题解释，不要说成四个独立数据集。参数图只有 11 个有导出参数量的模型；配对检验只有 17 个非编码器模型。覆盖范围不同，是导师很可能追问的地方。\n\nFollow-up\nWhy do the denominators differ?\nThe source exports have different membership. Accuracy/peak cover 28 retained arms. Parameter data cover 11, excluding MIFlu and encoders. Paired comparisons cover 17 including MIFlu, excluding DLinear and encoders.\n\nPaper basis\nThe families test different explanations: simple temporal mapping [4], patches and inverted variable tokens [3, 5], and explicit cross-modal alignment [7, 8]. This motivates diverse controls, not a claim that 28 is an optimal count. It also makes implementation fidelity important: a named adaptation may omit a paper’s decisive alignment or training component. DLinear is a relevant simple control in this literature. Its appearance in the source paper is not itself a scientific reason to omit it from a sensitivity analysis.\n各家族检验不同解释：简单时间映射 [4]、patch 与反转变量词元 [3, 5]，以及明确的跨模态对齐 [7, 8]。这支持采用多样对照，不证明 28 是最优数量，也使实现忠实度很重要：同名适配可能省略原文关键对齐或训练组件。DLinear 是这条文献中的相关简单对照；它曾出现在原论文，本身不是在敏感性分析中省略它的科学理由。\nReading locator: Zeng et al. [4], §4; PatchTST [3], §3.1; iTransformer [5], §3; CALF [7] and TimeCMA [8], author abstracts.\n\nEvidence\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n02_数字表格/BENCH_PTE_PIE_BY_STEP.csv\n02_数字表格/BENCH_EFFICIENCY.csv\n02_数字表格/BENCH_PAIRED_TESTS.csv\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 3,
+      "text": "Planned timing 0:40–1:05\n\nEnglish script\nThe historical reproduction uses ten seeds, while the wider benchmark uses three under shared cropped windows. Its twenty-eight implementations comprise thirteen conventional models, four LLM-based models and eleven frozen encoders. A new ten-seed expansion is underway. I keep its execution status separate from these historical results.\n\n中文理解\n本页两种协议均为历史结果。新的共同十种子扩展仍在进行，不能把新的执行计数当作已完成的公平比较。新 MIFlu 存储指标仍裁剪，其他 NPZ 用全窗口，需先统一评分。\n\nFollow-up\nWhy three seeds rather than ten for every model?\nThe retained benchmark is 28 × 4 × 3 = 336 cells. Three reflects the compute budget. More seeds can improve uncertainty; no adequate-power or no-benefit claim follows.\n\nPaper basis\nThe original three-seed citation is incorrect. PatchTST uses fixed-seed main results plus a five-seed supervised robustness check [3, App. A.6.1]; iTransformer reports five-run standard deviations [5, App. A.2, Table 5]. Neither passage establishes three seeds as their shared convention. Our choice is a compute compromise. Bouthillier et al. distinguish repeated-run precision from broader benchmark variation [19]. Extra seeds can improve the former; extra seasons/origins address different uncertainty. Ten reproduction repetitions do not make the separate three-seed benchmark equally precise.\n原来的三种子引用不正确。PatchTST 的主结果采用固定种子，另做五种子监督稳健性检查 [3，附录 A.6.1]；iTransformer 报告五次运行的标准差 [5，附录 A.2 表 5]。这些段落不能证明三种子是两文共同惯例。我们的选择属于算力折衷。Bouthillier 等区分重复运行精度和更广的基准变异 [19]：增加种子可改善前者，增加季节/原点处理另一类不确定性。十次复现不会让独立的三种子基准同样精确。\nReading locator: PatchTST [3], Appendix A.6.1; iTransformer [5], Appendix A.2 and Table 5; Bouthillier et al. [19], Appendix C.3.\n\nEvidence\n02_数字表格/ESSAY_VS_REPRODUCTION_TABLE_V.csv\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n05_程序代码/eval_windows.py\nhandoffs/20261105_return/RETURN_SUMMARY.md\naudit/return_review_20261105/RAW_RESCORE_SUMMARY.json\naudit/return_review_20261105/SUPPLIED_no_text_runtime.xml\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 4,
+      "text": "Planned timing 1:05–1:35\n\nEnglish script\nThe reproduction’s mean MSE is four point five percent higher than the paper table. It is lower at horizons twenty-four and thirty-six, but higher at forty-eight and sixty. MAE is seven point nine percent higher overall, with only one lower horizon. The two error measures need separate explanations, and the causes of the gaps remain unresolved.\n\n中文理解\n左图只画复现 MSE 的四个跨度，不要把基准预测曲线误说成十种子复现轨迹。右侧区分 MSE 两低两高与 MAE 一低三高。检查点、种子和配置可能解释差异，但未进行受控因果拆分，不能把原因说死。\n\nFollow-up\nDoes the figure prove an exact reproduction?\nNo. The plotted means are verified against the supplied reproduction CSV. Raw ten-seed predictions/logs and a pinned author revision remain unavailable for independent complete reproduction.\n\nPaper basis\nRepeated-run estimates and traceable evaluation address different weaknesses [19, 22]. The oracle checks the arithmetic of a transcribed record; saved predictions would check whether the pipeline produced it. The practical chain is run configuration → prediction → scoring code → cell → aggregate. A benchmark plot is another summary and cannot establish a ten-seed reproduction trajectory. Missing links limit the claim even when the mean is close. The imported panels remain useful illustrations if their true provenance is stated.\n重复运行估计与可追溯评测处理不同缺口 [19, 22]。oracle 核对转录记录的算术，保存预测才可核对流程是否产生该记录。实际链条是运行配置 → 预测 → 计分代码 → 单元 → 聚合。基准图是另一种摘要，不能建立十种子复现轨迹。即使均值接近，链条缺项仍限制主张；只要说明真实来源，沿用曲线仍可作示例。\nReading locator: Bouthillier et al. [19], variance analysis; Kapoor and Narayanan [22], model info sheets.\n\nEvidence\n02_数字表格/ESSAY_VS_REPRODUCTION_TABLE_V.csv\naudit/NUMERICAL_AUDIT.md\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 5,
+      "text": "Planned timing 1:35–2:00\n\nEnglish script\nMIFlu has the lowest observed mean MSE, about one point five five seven four. PatchTST and NLinear follow in that order, and MAE gives the same leading three. This comparison concerns project implementations on one national split. It does not show that the multimodal component caused MIFlu’s advantage.\n\n中文理解\n本页属于维度一。横向柱长是平均 MSE，越短越好；旁边 MAE 也是越低越好。只展示前三名是为了汇报可读性，内部报告保留完整 28 模型表。模型名称表示项目实现，未逐一证明与每篇原论文完全一致。\n\nFollow-up\nAre these the original algorithms with verified identical implementation?\nThey are project implementations/adaptations. Their exact equivalence to each published comparator has not been independently established. The ranking alone cannot prove method fidelity.\n\nPaper basis\nThe families test different explanations: simple temporal mapping [4], patches and inverted variable tokens [3, 5], and explicit cross-modal alignment [7, 8]. This motivates diverse controls, not a claim that 28 is an optimal count. It also makes implementation fidelity important: a named adaptation may omit a paper’s decisive alignment or training component. DLinear is a relevant simple control in this literature. Its appearance in the source paper is not itself a scientific reason to omit it from a sensitivity analysis.\n各家族检验不同解释：简单时间映射 [4]、patch 与反转变量词元 [3, 5]，以及明确的跨模态对齐 [7, 8]。这支持采用多样对照，不证明 28 是最优数量，也使实现忠实度很重要：同名适配可能省略原文关键对齐或训练组件。DLinear 是这条文献中的相关简单对照；它曾出现在原论文，本身不是在敏感性分析中省略它的科学理由。\nReading locator: Zeng et al. [4], §4; PatchTST [3], §3.1; iTransformer [5], §3; CALF [7] and TimeCMA [8], author abstracts.\n\nEvidence\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 6,
+      "text": "Planned timing 2:00–2:25\n\nEnglish script\nPeak errors use ILITOTAL in patient counts, rather than the seven-channel standardised loss. The joint screen requires timing error within one week and height error within twenty-five percent in the same aggregated cell. MIFlu and NLinear each pass four of sixteen cells. These are horizon–lead combinations, not independent seasons.\n\n中文理解\n本页属于维度二。PTE 是周误差，PIE 是峰高相对误差，不能把 PIE 叫概率校准。文献支持分别采用一周及 25% 容差；本项目把两者联合应用于平均误差，属于工程筛选，不是临床部署认证。\n\nFollow-up\nIs 4/16 an estimated 25% season-success probability?\nNo. There are four horizons times four fixed leads. The errors are aggregated within each cell before applying thresholds. Event-level success probabilities require a different analysis.\n\nPaper basis\nKramer and Shaman evaluate forecast-level peak accuracy by lead time [2]. Our sixteen configuration cells have a different denominator. Applying a threshold to an average is mathematically different from averaging event-level pass indicators. Thus 4/16 cannot be relabelled as season success probability. Bracher et al. discuss calibration of predictive distributions [18, §4.2]; small peak-height error does not establish it. Estimating event success requires retaining individual outcomes, defining the event denominator and accounting for dependence.\nKramer 与 Shaman 按提前时间评价逐预测峰值准确性 [2]，我们的十六个配置单元是另一种分母。对均值应用阈值，与对逐事件通过指示值取平均，在数学上不同，所以 4/16 不能改名为流行季成功概率。Bracher 等讨论预测分布校准 [18，第 4.2 节]，峰高误差小不等于已校准。估计事件成功率需保留逐事件结果、定义事件分母并处理依赖。\nReading locator: Kramer and Shaman [2], Forecast accuracy and comparison / Fig. 2; Bracher et al. [18], §4.2.\n\nEvidence\n02_数字表格/BENCH_PTE_PIE_BY_STEP.csv\naudit/LITERATURE_REVIEW.md source [2]\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 7,
+      "text": "Planned timing 2:25–2:50\n\nEnglish script\nThe grid shows different passing locations. NLinear passes the first lead at all four horizons. MIFlu passes three first-lead cells and the second lead at horizon forty-eight. Across all cells, NLinear has lower peak-height error, while MIFlu has better timing. The leading-three ordering is inverted at both ends between MSE and peak-height error.\n\n中文理解\n每行 16 格，分成 L24、L36、L48、L60 四组，每组 s0–s3。绿色表示同一格两项都通过。请先指出绿色位置，再解释同为 4/16 不代表同样表现。所谓 inverted at both ends 是具体两种排序不同，不是证明统计独立或全局脱钩。\n\nFollow-up\nDoes this demonstrate peak-skill decoupling?\nIt demonstrates local objective-dependent rankings and a timing–height trade-off. Overall correlations remain +0.736 for MSE–PIE and −0.429 for MSE–pass count. Independence or universal decoupling is not established.\n\nPaper basis\nZeng et al. describe NLinear’s last-value subtraction, linear map and addition back [4]. This gives a testable hypothesis about level handling, not a proven explanation for our peaks. The ranking mismatch itself follows a simpler distinction: MSE aggregates many points and seven channels, whereas PIE concentrates on detected ILITOTAL peak height [21 gives the error-measure context]. A model can improve many non-peak points yet worsen this endpoint. Controlled variants and peak/residual diagnostics are needed to attribute the observed trade-off to architecture.\nZeng 等说明 NLinear 先减最后一个值，经过线性映射，再加回该值 [4]。这提供水平处理的可检验假设，却非本地峰值成因的证明。排名差别有更直接的区别：MSE 聚合许多点和七通道，PIE 聚焦 ILITOTAL 检测峰高 [21 提供误差指标背景]。模型可能改善非峰点却使该端点较差。若要归因于架构，须有受控变体和峰值/残差诊断。\nReading locator: Zeng et al. [4], §4 NLinear; Hyndman and Koehler [21], §2.1.\n\nEvidence\n02_数字表格/BENCH_PTE_PIE_BY_STEP.csv\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 8,
+      "text": "Planned timing 2:50–3:15\n\nEnglish script\nThe parameter frontier covers eleven exported arms. NLinear is smaller, while PatchTST has lower MSE. PatchTST uses about two hundred and eleven times as many parameters for eleven point two percent lower observed MSE. The size fit explains only about two percent of observed MSE variation. Parameter count remains a size proxy, with runtime unmeasured.\n\n中文理解\n本页属于维度三。越靠左参数越少，越靠下 MSE 越低。互不支配的点构成子集前沿。MIFlu 与冻结编码器缺少这一参数导出，所以不能声称是 28 模型全局前沿。R² 低不等于容量无作用，也不能把观测增益叫噪声。\n\nFollow-up\nWhy is MIFlu absent, despite the study title mentioning LLMs?\nIts parameter count is not in the supplied efficiency export. Missing values remain missing. The full benchmark has 28 arms, but this measured subset has 11.\n\nPaper basis\niTransformer evaluates error alongside speed and memory [5, App. D], a precedent for considering performance with cost. Our cost axis is narrower: exported parameters. The two local frontier members follow from pairwise dominance in the eleven-model subset, not a paper’s recommendation of a universal winner. A Pareto graph removes dominated choices; the remaining choices still need a budget or acceptable-error preference. Missing MIFlu cost data prevents calling it the frontier of all 28 models.\niTransformer 同时评价误差、速度和内存 [5，附录 D]，是把表现与代价并列考虑的先例。我们的代价轴更窄，只用导出参数。两个前沿成员来自十一模型子集的两两支配关系，并非论文推荐的通用赢家。Pareto 图排除被支配选择；余下选择仍需预算或可接受误差偏好。MIFlu 代价缺失，使它不能称为全部 28 模型前沿。\nReading locator: iTransformer [5], Appendix D Model Efficiency; local BENCH_EFFICIENCY.csv.\n\nEvidence\n02_数字表格/BENCH_EFFICIENCY.csv\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 9,
+      "text": "Planned timing 3:15–3:45\n\nEnglish script\nThe paired family has seventeen models, including MIFlu. Proper Holm rejects zero of one hundred and thirty-six pairs. The NLinear–PatchTST p-value is zero point one one seven two. Coarse exact-test resolution already blocks the first Holm threshold, and dependent cells add concern. The observed gain remains. Equivalence is unproven.\n\n中文理解\n本页属于维度四。源导出 Holm 列方向错误，必须从原始 p 重算。17 模型包括 MIFlu，排除 DLinear 与 11 编码器。0/136 是当前检验设计与分辨率的限制，不能解释成所有模型一样好。精确网格恢复与六位小数导出直接重算均在显示精度上得到 0.1172。\n\nFollow-up\nWhy is the minimum adjusted p already above 0.05?\nAt n=12 the documented two-sided exact raw-p floor is 2/4096. Multiplying by the first Holm factor 136 gives about 0.0664. This family cannot pass the first threshold at that resolution. Dependence is a separate validity concern.\n\nPaper basis\nDemšar describes starting with the smallest p and stopping at the first failed Holm threshold [20]. Our first threshold is 0.05/136. The documented two-sided twelve-contribution sign-flip floor is 2/2^12; multiplying by 136 gives 0.06640625, so no pair can start the rejection sequence. This floor is local mathematical reasoning, not a result reported by Demšar for influenza. Holm permits dependence among valid p-values, but cannot repair invalid raw p-values from unjustified within-pair exchangeability. These are separate limitations.\nDemšar 说明 Holm 从最小 p 开始，在首次未通过阈值处停止 [20]。本项目第一阈值为 0.05/136；按已记录的十二贡献双侧符号翻转下限 2/2^12，乘 136 得 0.06640625，所以无法启动拒绝序列。这是本地数学推导，不是 Demšar 报告的流感结果。Holm 可处理有效 p 值之间的依赖，却不能修复因配对内部交换性不合理而无效的原始 p；两者是不同限制。\nReading locator: Demšar [20], §3.2.2 Holm step-down; local exact-enumeration derivation.\n\nEvidence\n02_数字表格/BENCH_PAIRED_TESTS.csv\naudit/HOLM_RECOMPUTATION.csv\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 10,
+      "text": "Planned timing 3:45–4:05\n\nEnglish script\nEleven frozen encoders with a linear readout all perform worse than the decision tree and pass zero joint cells. This is a negative result for the tested feature pipeline. Generation, prompting, fine-tuning and numerical time-series foundation models remain outside this test.\n\n中文理解\n这部分解释模型家族结果：冻结编码器加线性头，与直接生成、提示、微调、Chronos 等数值时序预训练并不是同一测试。可以报告所测配置表现差，但不能从结果单独判定是语义不迁移、容量不足还是读出选择造成。\n\nFollow-up\nDoes this prove that all LLM forecasting is ineffective?\nNo. It is restricted to the frozen-feature/readout protocol. Broader LLM-based and numerical foundation methods require their own faithful comparisons and controls.\n\nPaper basis\nTime-LLM freezes its LLM but adds learned reprogramming and a prompt prefix [6]. Thus “frozen” alone does not define the same experiment as our feature/linear-readout pipeline. Chronos instead learns forecasting from numerical sequences [9]. These method differences justify keeping our negative finding narrow. To isolate a readout bottleneck, vary the readout/alignment while holding the encoder fixed; to isolate pretraining, compare matched pretrained and random backbones. Our eleven-arm result does not make those controlled separations.\nTime-LLM 也冻结 LLM，却加入可学习重编程和提示前缀 [6]，所以“冻结”不等同于本项目特征/线性读出流程。Chronos 则从数值序列学习预测 [9]。这些方法差异支持缩小负面结论。要分离读出瓶颈，应固定编码器后改变读出/对齐；要分离预训练作用，应比较匹配的预训练和随机骨干。十一模型结果没有完成这些受控分离。\nReading locator: Time-LLM [6], author abstract; Chronos [9], §3.\n\nEvidence\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n02_数字表格/BENCH_PTE_PIE_BY_STEP.csv\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 11,
+      "text": "Planned timing 4:05–4:25\n\nEnglish script\nThe returned CPU log records three no-text assertions passed, with zero skips, under fixed-weight evaluation. This supports the inspected causal-mask explanation. It does not establish training-time text effects. The ablation queue reports sixty of sixty cells done, with per-variant analysis pending.\n\n中文理解\n三项 CPU 固定权重前向断言已在执行端通过、零跳过，本次仅核查日志和 JUnit。不能扩大到训练梯度、独立训练轨迹或所有融合路径。消融队列 60/60 DONE，逐变体趋势未聚合。\n\nFollow-up\nWhat do the three passing CPU tests establish?\nThey support the three named invariants for fixed weights, matched inputs and CPU evaluation in the supplied execution record. They do not establish training-time text/LoRA effects, all fusion paths or equality of independent training trajectories. Whole-archive collection still fails.\n\nPaper basis\nThe Transformer paper explains masking that prevents attention to subsequent positions [24, §3.1]. With the inspected ordering, time positions cannot acquire later text through these layers, and the head reads time positions. This is a structural argument about a fixed forward path, not certification of repository runtime or bitwise equality. The three archived assertions must control weights, inputs and evaluation randomness when comparing changed text and matched full/no-text outputs. The supplied JUnit now records three CPU assertions passed with zero skips; they were not rerun in this review. Independent training can consume randomness differently and requires its own test.\nTransformer 原文说明遮罩如何阻止关注后续位置 [24，第 3.1 节]。按已检查顺序，时间位置不能通过这些层取得后方文本，预测头又只读时间位置。这是固定前向路径的结构论证，不是仓库运行或逐位相等认证。三项归档断言须控制权重、输入和评估随机性，再比较更换文本及匹配完整/无文本输出，所附 JUnit 现记录三项 CPU 断言通过且零跳过；本次未重跑模型测试。独立训练可能不同地消耗随机数，须另测。\nReading locator: Vaswani et al. [24], §3.1 Decoder; local ForecastingLLM.forward and archived assertions.\n\nEvidence\n05_程序代码/miflu_model.py\ntests_archive/test_miflu_ablations.py\naudit/NO_TEXT_VERIFICATION.md\nhandoffs/20261105_return/RETURN_SUMMARY.md\naudit/return_review_20261105/RAW_RESCORE_SUMMARY.json\naudit/return_review_20261105/SUPPLIED_no_text_runtime.xml\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 12,
+      "text": "Planned timing 4:25–4:45\n\nEnglish script\nCore outputs are complete for one hundred and sixty cells. The national expansion remains unfinished: the package records one hundred and seventeen, followed by an owner report of one hundred and forty-one. Scoring windows still differ. O1 prioritises harmonisation, regional validation and stronger controls.\n\n中文理解\n160/160 是四模型核心产物完整，不是新的共同评分已完成。117 是打包快照，141 是 11 月 5 日 00:15 用户报告；本次没有实时查 HPC。DLinear 的 40 单元不属于全国 28 模型分母。O2 仍仅可选，需合规验证预测，CPU 成本未测。\n\nFollow-up\nDoes 160/160 mean the new benchmark is ready to publish?\nIt establishes core artefact completeness. Stored MIFlu scores use cropped windows while the other supplied models use all valid windows, and complete seven-channel MIFlu exports are missing. The national 1120 matrix, harmonised scoring and external-validity evidence remain incomplete.\n\nPaper basis\nKapoor and Narayanan ask for explicit reporting arguments rather than equating code availability with a valid result [22]. Here distinguish document rebuilding, CSV arithmetic, raw prediction rescoring and model retraining. A supervisor can begin with the CSV audit; the full bundle supports one raw-cell smoke check. Model text invariance needs the three named runtime assertions without skips in a pinned environment. The useful deliverable is a traceable evidence chain with exact commands and status. Passing one evidence level does not certify all the others.\nKapoor 与 Narayanan 要求明确报告论证，而非把代码可用等同于结果有效 [22]。这里应分开文档重建、CSV 算术、原始预测重评分与模型重训。导师可先运行 CSV 审计；完整包还支持一个原始单元 smoke 检查。模型文本不变性需在固定环境实际执行三项指定断言，且不能跳过。有用的交付是可追溯证据链、精确命令与状态，某一层通过不能认证其他所有层。\nReading locator: Kapoor and Narayanan [22], model info sheets; EXECUTION_STATUS.md and NO_TEXT_VERIFICATION.md.\n\nEvidence\naudit/INNOVATION_DECISION.md\naudit/REPO_AUDIT.md\naudit/GRADE_READINESS.md\nhandoffs/20261105_return/RETURN_SUMMARY.md\naudit/return_review_20261105/RAW_RESCORE_SUMMARY.json\naudit/return_review_20261105/SUPPLIED_no_text_runtime.xml\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    },
+    {
+      "slide": 13,
+      "text": "Planned timing 4:45–5:00\n\nEnglish script\nThe historical results show different choices for average error, peak height and parameter count. The new run must be scored consistently before changing those conclusions. I propose completing that comparison and validating across origins and regions. O1 remains the next supervision decision.\n\n中文理解\n结论保留旧科学结果，新实验不能混入旧排名。下一步先统一评分与完成全国扩展，再补区域和滚动原点。不能把作业完成当作统计显著、等效或投稿就绪。\n\nFollow-up\nWhat can you confidently defend today?\nThe exported arithmetic, bounded local trade-offs and proper Holm correction. The internal report Q01–Q25 supplies the explanations and evidence locators. Deployment value and complete independent reproduction remain unestablished.\n\nPaper basis\nKapoor and Narayanan ask for explicit reporting arguments rather than equating code availability with a valid result [22]. Here distinguish document rebuilding, CSV arithmetic, raw prediction rescoring and model retraining. A supervisor can begin with the CSV audit; the full bundle supports one raw-cell smoke check. Model text invariance needs the three named runtime assertions without skips in a pinned environment. The useful deliverable is a traceable evidence chain with exact commands and status. Passing one evidence level does not certify all the others.\nKapoor 与 Narayanan 要求明确报告论证，而非把代码可用等同于结果有效 [22]。这里应分开文档重建、CSV 算术、原始预测重评分与模型重训。导师可先运行 CSV 审计；完整包还支持一个原始单元 smoke 检查。模型文本不变性需在固定环境实际执行三项指定断言，且不能跳过。有用的交付是可追溯证据链、精确命令与状态，某一层通过不能认证其他所有层。\nReading locator: Kapoor and Narayanan [22], model info sheets; EXECUTION_STATUS.md and NO_TEXT_VERIFICATION.md.\n\nEvidence\n02_数字表格/BENCH_MSE_BY_MODEL_L.csv\n02_数字表格/BENCH_PTE_PIE_BY_STEP.csv\n02_数字表格/BENCH_PAIRED_TESTS.csv\nRequirements_ProjectProgressReport_2627A (1).pdf\nhandoffs/20261105_return/RETURN_SUMMARY.md\naudit/return_review_20261105/RAW_RESCORE_SUMMARY.json\naudit/return_review_20261105/SUPPLIED_no_text_runtime.xml\n\nActual human rehearsal and native PowerPoint inspection: not executed."
+    }
+  ]
+}

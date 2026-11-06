@@ -1,0 +1,5 @@
+2026-11-04T09:2xZ (local 17:2x HKT)
+command: sbatch /gpfs1/scratch/sychan552/trackB_20261104/pilot/pilot_miflu_L24_s2021.sbatch
+result: Submitted batch job 734040
+state at submission: PENDING (partition gpu_a100, reason Priority)
+profile author_repo_966, L=24, seed=2021, reps=1, epochs=20, containment strict

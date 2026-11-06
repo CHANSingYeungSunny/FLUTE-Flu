@@ -1,0 +1,23 @@
+	Command being timed: "timeout 600s /gpfs1/home/sychan552/.conda/envs/mlflu_hpc/bin/python -u /gpfs1/scratch/sychan552/stage5_a2_durable/code/export_miflu_all7.py --cells 36:2023 --ckpt /gpfs1/home/sychan552/stage5_a2_durable/author_runs/ckpt_L36_s2023/best_miflu_L36.pth --out-dir /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/gpu_forward_out_v8b --tag t6v8b --device cuda"
+	User time (seconds): 24.55
+	System time (seconds): 2.34
+	Percent of CPU this job got: 42%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:02.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1059100
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 384829
+	Voluntary context switches: 39464
+	Involuntary context switches: 157
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

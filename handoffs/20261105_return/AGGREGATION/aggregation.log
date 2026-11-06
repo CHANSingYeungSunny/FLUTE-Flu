@@ -1,0 +1,7 @@
+2026-11-04T20:3xZ
+command: python aggregate_core.py  (core/TRACKB_CORE_PARTIAL.csv)
+cells aggregated: 9 of 160 (all MIFlu L24, seeds 2021-2029 at capture)
+mse_all for L24 s2021 = 1.240157, identical to the reproduction oracle seed 2021
+note: the export CSV has ILI/WILI only, not ILITOTAL; PTE/PIE cannot be computed from it
+
+PEAK: python aggregate_peak.py -> 11 cells, 300 rows, 26 passes; MIFlu L24 s2021 step0 PTE 0.0 / PIE 18.796 (pass).

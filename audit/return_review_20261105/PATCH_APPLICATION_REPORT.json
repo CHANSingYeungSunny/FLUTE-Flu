@@ -1,0 +1,62 @@
+[
+  {
+    "filename": "ieee_manuscript_en.docx",
+    "base_sha256": "50283a6e456d369145948abaf2860e898cdd8030ddce7970484bbac07b443909",
+    "output_sha256": "b725dc8dfe0e1d319a53362be179a391f71761ec0d13971d07643d507e1e352d",
+    "paragraph_status_edits": 4,
+    "progress_status_cell_edits": 0,
+    "q_headings_preserved": 0,
+    "old_scientific_tables_preserved": true,
+    "scope": "status edits and appended addendum only; full updated DOCX/PDF layout requires local render review"
+  },
+  {
+    "filename": "ieee_manuscript_zh.docx",
+    "base_sha256": "a1817eef6d37ed3f688e2ddaf6c8b89712990ca471708befc510c1f1ecb6a172",
+    "output_sha256": "b8aaae2de0ff9e8f1c4b6c7d3ab9be3de10a903de6ae4cce967d887037cf09a3",
+    "paragraph_status_edits": 4,
+    "progress_status_cell_edits": 0,
+    "q_headings_preserved": 0,
+    "old_scientific_tables_preserved": true,
+    "scope": "status edits and appended addendum only; full updated DOCX/PDF layout requires local render review"
+  },
+  {
+    "filename": "progress_report_en.docx",
+    "base_sha256": "f894e8f8390ce65a96e2927bf4cbfd4bc4cc58912c327c9d0fd5696050bceecd",
+    "output_sha256": "5d8a61dd17d12a194d4d37c5d6d9e07b7a57d3fcb439c3ffe1f3539e7f47f312",
+    "paragraph_status_edits": 4,
+    "progress_status_cell_edits": 2,
+    "q_headings_preserved": 0,
+    "old_scientific_tables_preserved": true,
+    "scope": "status edits and appended addendum only; full updated DOCX/PDF layout requires local render review"
+  },
+  {
+    "filename": "progress_report_zh.docx",
+    "base_sha256": "d58e01fe44546ec06fd0c5d61bb422dda04dc425c767b7b2833929e5047d0746",
+    "output_sha256": "7c7a74c8ceebc7a4e036d2a9113517d1f4d0f5a19a2cf8a446841ee9e9ac7916",
+    "paragraph_status_edits": 4,
+    "progress_status_cell_edits": 2,
+    "q_headings_preserved": 0,
+    "old_scientific_tables_preserved": true,
+    "scope": "status edits and appended addendum only; full updated DOCX/PDF layout requires local render review"
+  },
+  {
+    "filename": "report_internal_en.docx",
+    "base_sha256": "c39b6fee530f6c2985de9958419a5f3a19fa193ae875674b719a4b74f9f40192",
+    "output_sha256": "b7d5ed82e7c590e2043bbe63a20f80cfcdd929789269cdd1dbb8a09d4dcadad4",
+    "paragraph_status_edits": 10,
+    "progress_status_cell_edits": 0,
+    "q_headings_preserved": 25,
+    "old_scientific_tables_preserved": true,
+    "scope": "status edits and appended addendum only; full updated DOCX/PDF layout requires local render review"
+  },
+  {
+    "filename": "report_internal_zh.docx",
+    "base_sha256": "7164d52c755ba69e729c74f5208bf879ab293be0bac45b94853d5e6de51af009",
+    "output_sha256": "6acfae9b8dbf2d2ba852e52bb86dca1cd9725076b3fb3dec74d350d78f576802",
+    "paragraph_status_edits": 10,
+    "progress_status_cell_edits": 0,
+    "q_headings_preserved": 25,
+    "old_scientific_tables_preserved": true,
+    "scope": "status edits and appended addendum only; full updated DOCX/PDF layout requires local render review"
+  }
+]

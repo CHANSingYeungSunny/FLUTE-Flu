@@ -1,0 +1,10 @@
+{
+  "integrity_status": "PASS",
+  "errors": [],
+  "warnings": [
+    "Declared counts and file presence are not scientific completeness checks. Raw scores, array/channel/window alignment, test validity and claims require independent review."
+  ],
+  "listed_files": 43,
+  "scientific_readiness": "NOT_ASSESSED",
+  "scope": "Structure, manifest membership, hashes and required-file/status declarations only"
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "Independent arithmetic and array-contract verification on supplied predictions only; no model training rerun",
+  "cells": 277,
+  "npz_seven_channel_cells": 237,
+  "miflu_ili_csv_cells": 40,
+  "issues": [],
+  "max_npz_mse_abs_delta": 7.748747767877262e-07
+}

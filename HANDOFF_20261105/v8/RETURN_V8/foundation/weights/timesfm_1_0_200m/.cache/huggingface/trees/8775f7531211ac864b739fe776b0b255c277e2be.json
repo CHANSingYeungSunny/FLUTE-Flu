@@ -1,0 +1,28 @@
+{
+ "format_version": 1,
+ "files": {
+  ".gitattributes": {
+   "size": 1603,
+   "blob_id": "baf22ce8251e40ee31c7d48f283645072c26fe12"
+  },
+  "README.md": {
+   "size": 5732,
+   "blob_id": "4266fd55f80e37feabf896a93f32ab871b9f7afc"
+  },
+  "checkpoints/checkpoint_1100000/descriptor/descriptor.pbtxt": {
+   "size": 499,
+   "blob_id": "15ec06abe1a5fb6da2e163feadd566197a1e7af1"
+  },
+  "checkpoints/checkpoint_1100000/metadata/metadata": {
+   "size": 43859,
+   "blob_id": "ff56f80e247a83a91ae67db6df5a19b67760ed2e"
+  },
+  "checkpoints/checkpoint_1100000/state/checkpoint": {
+   "size": 814291152,
+   "blob_id": "85cc7bb422daf831ce593a465b6b5f9a61ddfa94",
+   "lfs_sha256": "d147f95bbe40ffeb1e8d61643925dd29eeb00b5696db33bf9f6e1887682f6391",
+   "lfs_size": 814291152,
+   "xet_hash": "155317ea0f0f563e783aa335f3a9c3dbb1d7ee8f1180256e98325ea79187da4e"
+  }
+ }
+}

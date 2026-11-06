@@ -1,0 +1,37 @@
+=== T6_GPU_V8B START 2026-11-06T15:30:57Z job=744532 host=gpu-a100-05 ===
+--- gpu_forward stdout tail ---
+[all7] profile=author_repo_966 device=cuda cells=1
+[23:31:37] Profile author_repo_966: renamed columns via column_map -> ['date', '% WEIGHTED ILI', '% UNWEIGHTED ILI', 'AGE 0-4', 'AGE 5-24', 'ILITOTAL', 'NUM. OF PROVIDERS', 'OT']
+[23:31:37] Scaler persisted -> /gpfs1/scratch/sychan552/stage5_a2_durable/data/scaler_miflu_author_repo_966.json (train_end=676, val_end=773)
+[23:31:37] Data: 966 total | Train=676 | Val=97 | Test=193
+[all7] data: train_end=676 val_end=773
+
+=== L=36 seed=2023 ===
+  checkpoint: /gpfs1/home/sychan552/stage5_a2_durable/author_runs/ckpt_L36_s2023/best_miflu_L36.pth  [benchmark 1-rep ckpt (this run)]
+[TimeEmbedder] N=7, T=104, Lp=24, S=2
+[TimeEmbedder] num_patches=42, total=294
+[ForecastingLLM] K=6, lora_r=4, D=768, total_patches=294
+[ForecastingLLM] Output: (N=7) × (L=36) = 252
+  loaded state_dict (104 tensors), trainable=2,060,580
+  [ok] wrote /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/gpu_forward_out_v8b/predictions_miflu_L36_t6v8b.csv
+       rows: train=19332 val=2232 test=5688 | cols=33 | gt_spread=0.00e+00
+       test MSE_ILITOTAL_z=3.324371  MAE_ILITOTAL_z=1.158758
+       test MSE_7var_z=1.624383   (npz + results + manifest written)
+       pred_miflu_L36_t6v8b.npz | results_miflu_L36_t6v8b.csv | manifest_miflu_L36_t6v8b.json
+
+==========================================================================
+SUMMARY
+  L=36 seed=2023  written
+
+[PASS] all requested cells exported
+--- gpu_forward stderr tail ---
+/gpfs1/scratch/sychan552/stage5_a2_durable/code/export_miflu_all7.py:424: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  sd = torch.load(ckpt, map_location=device)
+--- peak vram ---
+sample_lines=63
+gpu_names=NVIDIA A100-SXM4-80GB
+peak_vram_mib=4816
+min_vram_mib=16
+peak_source=nvidia-smi memory.used MiB n_samples=63
+status=MEASURED
+=== T6_GPU_V8B END 2026-11-06T15:32:01Z ===

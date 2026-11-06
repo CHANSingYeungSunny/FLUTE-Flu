@@ -1,0 +1,8 @@
+Wed Nov  4 15:29:25 UTC 2026
+JOBID|NAME|STATE|TIME|NODELIST(REASON)
+735301|trackB_v2_all_l1|PENDING|0:00|(Priority)
+735300|trackB_v2_all_l0|PENDING|0:00|(Priority)
+735313|trackB_v2_all_l2|PENDING|0:00|(Priority)
+735298|trackB_v2_all_ctl|RUNNING|11:51|cpunode-057
+735299|trackB_v2_post_all|RUNNING|11:51|cpunode-057
+Last update in 0 seconds ago

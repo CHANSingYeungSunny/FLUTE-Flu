@@ -1,0 +1,44 @@
+[
+  {
+    "filename": "Week12_Progress_Presentation.pptx",
+    "bytes": 180676,
+    "sha256": "40dc9d546933557e5b5b1add457ad86fceb20a4f3bb0e95dce9a813f03078e69"
+  },
+  {
+    "filename": "Week12_Progress_Presentation.pdf",
+    "bytes": 418045,
+    "sha256": "3bd271f3b88c8a4885b1e95a9d4c18f73fcf825d833c56e125384cf6391adc28",
+    "pages": 13
+  },
+  {
+    "filename": "Presentation_Notes_EN_ZH.docx",
+    "bytes": 51351,
+    "sha256": "7a56cf45879bebd5bd0a81d4c01f00c168e25167c7d26b3e27710957993279d6"
+  },
+  {
+    "filename": "Presentation_Notes_EN_ZH.pdf",
+    "bytes": 501785,
+    "sha256": "9b54eec7a70afaea37c149fb07c82ce6ad697fc5e0f394281bcceb82a5b35818",
+    "pages": 15
+  },
+  {
+    "filename": "TALKING_SCRIPT.md",
+    "bytes": 6296,
+    "sha256": "a5868fcbd9ada0cd53e7694b65fcf810bd8905d89765f3488dad94f462c9114a"
+  },
+  {
+    "filename": "QA_SHEET.md",
+    "bytes": 14327,
+    "sha256": "2215c0df2538313a58c14d11fb5212e6c945db945d20a38213ad873d1a05581b"
+  },
+  {
+    "filename": "SUPERVISOR_EXPLANATION_GUIDE.md",
+    "bytes": 72830,
+    "sha256": "7450e6470600d8ccd371e02be6a3380d8136eaee0d8aecc38fc4decf6f1d9faa"
+  },
+  {
+    "filename": "deck_spec.json",
+    "bytes": 41893,
+    "sha256": "15e1b68df5cbb3174ab2af80c591145d4adc67256491448db4af09d68dd4d705"
+  }
+]

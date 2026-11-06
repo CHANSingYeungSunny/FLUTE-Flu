@@ -1,0 +1,17 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{review_layout}[2026/11/05 Author manuscript header compatibility]
+% Keep the publisher's body dimensions and column settings unchanged.
+% Suppress its sample LOGO/masthead and repair the author paragraph termination.
+\RequirePackage{etoolbox}
+\makeatletter
+\patchcmd{\@maketitle}{\@author\centerline\@specialpapernotice\par}{\@author\par\@specialpapernotice\par}{}{}
+\patchcmd{\@maketitle}{\@author\centerline\@specialpapernotice\par}{\@author\par\@specialpapernotice\par}{}{}
+\def\ps@reviewheads{%
+  \def\@oddhead{\normalfont\scriptsize\hfil\thepage}%
+  \def\@evenhead{\normalfont\scriptsize\thepage\hfil}%
+  \def\@oddfoot{}\def\@evenfoot{}}
+\let\ps@titlepagestyle\ps@reviewheads
+\AtBeginDocument{\pagestyle{reviewheads}}
+\makeatother
+% This publisher class leaves its bibliography heading empty.
+\patchcmd{\thebibliography}{\section*{\color{black}}}{\section*{\color{black}References}}{}{\PackageError{review_layout}{Bibliography-heading patch failed}{Check the supplied class version.}}

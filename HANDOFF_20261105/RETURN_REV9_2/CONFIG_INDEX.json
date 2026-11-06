@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-11-05T16:30:00Z",
+  "cell_identity_fields": [
+    "model",
+    "forecast_length",
+    "seed",
+    "profile_sha256",
+    "training_config_sha256",
+    "scoring_spec_sha256",
+    "checkpoint_id",
+    "code_revision",
+    "window_panel"
+  ],
+  "prediction_required_metadata": [
+    "prediction_path",
+    "target_path_or_embedded_key",
+    "array_axis_order",
+    "channel_names",
+    "target_row_indices",
+    "forecast_origin_indices",
+    "lead_indices",
+    "normalised_or_physical_units",
+    "scaler_path",
+    "finite_value_check",
+    "shape_check"
+  ],
+  "status": "SCHEMA_ONLY_NOT_POPULATED",
+  "reason": "Per-cell provenance for newly claimed cells cannot be emitted until valid 7-channel tensors exist. 1080 existing cells remain on HPC and are NOT re-claimed here.",
+  "sources": {
+    "cells_all": "trackB_20261104/all/cells_all.tsv",
+    "profile_map": "configs.resolve_profile",
+    "checker": "trackB_20261104/cellok.py"
+  }
+}

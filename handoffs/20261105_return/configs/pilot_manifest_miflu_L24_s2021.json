@@ -1,0 +1,112 @@
+{
+  "model": "miflu",
+  "L": 24,
+  "seed": 2021,
+  "protocol": "paper_protocol (T=104, strict containment, 70/10/20)",
+  "profile": "author_repo_966",
+  "containment": "strict",
+  "eval_space": "standardized_train_fit_z",
+  "n_eval_windows_rule": "eval_slice(W, batch=16) = (W // 16) * 16",
+  "variant": {
+    "variant": "full",
+    "use_lora": true,
+    "use_text": true,
+    "num_layers": 6,
+    "base_num_layers": 6,
+    "lora_r": 4,
+    "text_embedder": "author_file",
+    "is_default_config": true,
+    "flags": {
+      "no_lora": false,
+      "no_text": false,
+      "num_layers": null,
+      "text_embedder": null,
+      "text_source": "author_file",
+      "ablation_label": null
+    }
+  },
+  "ablation_variant": "full",
+  "fold": null,
+  "created_utc": "2026-11-04T09:41:56.855238+00:00",
+  "end_utc": "2026-11-04T09:41:56.855269+00:00",
+  "wall_seconds": 775.07,
+  "hardware": {
+    "run_device": "cuda",
+    "cuda_available": true,
+    "gpu_name": "Tesla V100S-PCIE-32GB",
+    "gpu_count": 1,
+    "gpu_capability": [
+      7,
+      0
+    ],
+    "cuda_version": "11.8"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "734051",
+    "SLURM_JOB_PARTITION": "stingy",
+    "SLURM_NODELIST": "gpu-v100s-01"
+  },
+  "library_versions": {
+    "python": "3.9.25",
+    "torch": "2.5.1",
+    "numpy": "2.0.1",
+    "pandas": "2.3.3"
+  },
+  "code": {
+    "runner": {
+      "file": "/gpfs1/scratch/sychan552/stage5_a2_durable/code/train_miflu.py",
+      "sha256": "751e49079eec1f7c837b5d5c05e102d4a1ffce7793cc2de2020fb78608d95a39"
+    },
+    "model": {
+      "file": "/gpfs1/scratch/sychan552/stage5_a2_durable/code/miflu_model.py",
+      "sha256": "64be44ccc1202289c88822a5758d218bd55b82eb4bdc7afcedda89560f65c95c"
+    }
+  },
+  "checkpoint": {
+    "path": "/gpfs1/scratch/sychan552/trackB_20261104/pilot/ckpt/best_miflu_L24.pth",
+    "sha256": "8e44e023de4616dad4289b647eb66c7c1967bef058e326d8bfffffd5a0a2f13d"
+  },
+  "best_rep": {
+    "L": 24,
+    "test_mse_all": "1.2364401",
+    "test_mae_all": "0.7184359",
+    "test_mse_ili": "2.4166987",
+    "test_mae_ili": "0.9882374",
+    "test_pcc_ili": 0.8666551702461626,
+    "test_mse_ili_phys": 195889776.0,
+    "test_mae_ili_phys": 8897.251953125,
+    "test_mse_wili": "0.64987576",
+    "test_mae_wili": "0.52818143",
+    "test_gt_ili": "[[-0.50658274 -0.50436133 -0.50258416 ...  3.7033868   3.9780684\n   4.201768  ]\n [-0.50436133 -0.50258416 -0.4675964  ...  3.9780684   4.201768\n   5.2560654 ]\n [-0.50258416 -0.4675964  -0.30954066 ...  4.201768    5.2560654\n   5.9530435 ]\n ...\n [ 0.67467016  0.51794726  0.4099851  ...  1.1551685   1.4431788\n   1.4730572 ]\n [ 0.51794726  0.4099851   0.3843274  ...  1.4431788   1.4730572\n   1.0825273 ]\n [ 0.4099851   0.3843274   0.41076258 ...  1.4730572   1.0825273\n   0.988227  ]]",
+    "test_pr_ili": "[[-0.51268137 -0.4538685  -0.46601188 ...  1.331049    1.5524038\n   1.6348299 ]\n [-0.50338614 -0.43016255 -0.45320773 ...  1.4153693   1.5961487\n   1.7010235 ]\n [-0.39291066 -0.35047132 -0.38475662 ...  1.4916328   1.6919696\n   1.8929142 ]\n ...\n [ 1.0247698   1.0430634   1.0726913  ...  6.5144215   7.302444\n   6.9508533 ]\n [ 1.1457562   1.0198053   1.1083429  ...  6.829126    6.8656945\n   6.8602543 ]\n [ 1.2107146   1.2161295   1.4084402  ...  6.308758    6.7907486\n   7.5286274 ]]",
+    "rep_ckpt": "/gpfs1/scratch/sychan552/trackB_20261104/pilot/ckpt/best_miflu_L24.pth",
+    "best_val": "0.2127002",
+    "seed": 2021,
+    "discarded": false
+  },
+  "artefacts": {
+    "predictions_csv": "/gpfs1/scratch/sychan552/trackB_20261104/pilot/export/predictions_miflu_L24_paper_protocol.csv",
+    "results_csv": "/gpfs1/scratch/sychan552/trackB_20261104/pilot/export/results_miflu_paper_protocol_20261104_172901.csv",
+    "log": "/gpfs1/scratch/sychan552/trackB_20261104/pilot/export/training_miflu_log_20261104_172901.txt"
+  },
+  "config": {
+    "T": 104,
+    "L_list": "[24, 36, 48, 60]",
+    "N": 7,
+    "Lp": 24,
+    "S": 2,
+    "K": 6,
+    "lora_r": 4,
+    "lora_alpha": 4.0,
+    "D": 768,
+    "attn_heads": 8,
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "epochs": 20,
+    "num_repetitions": 1,
+    "seed": 42,
+    "use_lora": true,
+    "use_text": true,
+    "text_embedder": "author_file"
+  }
+}

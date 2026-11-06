@@ -1,0 +1,56 @@
+=== UTC ===
+Thu Nov  5 16:30:16 UTC 2026
+=== gpt2 cache locations ===
+-- /gpfs1/scratch/sychan552/hf_cache --
+-- /gpfs1/scratch/sychan552/hf_cache/hub --
+-- /gpfs1/home/sychan552/.cache/huggingface/hub --
+/gpfs1/home/sychan552/.cache/huggingface/hub/.locks/models--gpt2
+/gpfs1/home/sychan552/.cache/huggingface/hub/models--gpt2
+-- /gpfs1/home/sychan552/.cache/huggingface --
+/gpfs1/home/sychan552/.cache/huggingface/hub/.locks/models--gpt2
+/gpfs1/home/sychan552/.cache/huggingface/hub/models--gpt2
+-- /home/sychan552/.cache/huggingface/hub --
+/home/sychan552/.cache/huggingface/hub/.locks/models--gpt2
+/home/sychan552/.cache/huggingface/hub/models--gpt2
+=== all gpt2 dirs (bounded) ===
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L36__seed48__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L48__seed43__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L24__seed48__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L48__seed47__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L48__seed46__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L60__seed43__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L60__seed49__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L36__seed45__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L24__seed47__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L36__seed46__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L60__seed46__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L60__seed45__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L48__seed42__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L36__seed51__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L48__seed50__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L60__seed48__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L36__seed50__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L24__seed44__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L60__seed42__w1
+/gpfs1/scratch/sychan552/_v318d/verify205/ssi/primary__gpt2_miflu__L60__seed47__w1
+=== gpt2 snapshots anywhere ===
+/gpfs1/scratch/sychan552/MLFLU/.cache/models--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e
+/gpfs1/scratch/sychan552/v3_cache/models--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e
+=== snapshot contents of first ===
+total 538065
+-rw-r--r-- 1 sychan552 sychan552       665 Aug 14 20:44 config.json
+-rw-r--r-- 1 sychan552 sychan552    456318 Aug 14 20:44 merges.txt
+-rw-r--r-- 1 sychan552 sychan552 548105171 Aug 14 20:44 model.safetensors
+-rw-r--r-- 1 sychan552 sychan552   1355256 Aug 14 20:44 tokenizer.json
+-rw-r--r-- 1 sychan552 sychan552        26 Aug 14 20:44 tokenizer_config.json
+-rw-r--r-- 1 sychan552 sychan552   1042301 Aug 14 20:44 vocab.json
+=== how did the successful v2 miflu lane set HF env? ===
+87:        # HF_HOME is set INLINE for this one command only, so later miflu cells keep
+104:          HF_HOME="$HFC" HF_HUB_CACHE="$HUFC" \
+105:          HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+=== core miflu cell manifest: text embedder info ===
+/gpfs1/scratch/sychan552/trackB_20261104/core/export/miflu/L36_s2021/manifest_miflu_L36_s2021.json
+"text_embedder"
+"text_embedder"
+"text_embedder"
+DONE

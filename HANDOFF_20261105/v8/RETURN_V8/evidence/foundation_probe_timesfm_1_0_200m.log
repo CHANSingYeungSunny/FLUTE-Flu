@@ -1,0 +1,25 @@
+# foundation_probe_timesfm_1_0_200m.log
+# captured_utc=2026-11-06T13:32:10Z
+# exact_command:
+#   timeout 180s env PYTHONPATH=C:/Users/Asus/AppData/Local/Temp/mlflu_hfhub_20261106 HF_HUB_DISABLE_TELEMETRY=1 HF_HUB_DISABLE_PROGRESS_BARS=1 HF_HUB_ETAG_TIMEOUT=15 HF_HUB_DOWNLOAD_TIMEOUT=60 python "HANDOFF_20261105/v8/foundation/foundation_hf_probe.py" --repo-id "google/timesfm-1.0-200m" --revision "8775f7531211ac864b739fe776b0b255c277e2be" --local-dir "HANDOFF_20261105/v8/foundation/weights/timesfm_1_0_200m" --allow-patterns config.json README.md
+# allow_patterns restricts to config.json + README.md ONLY (NO weight tensors fetched).
+# ---------------------------------------------------------------
+probe_start
+repo_id=google/timesfm-1.0-200m
+revision=8775f7531211ac864b739fe776b0b255c277e2be
+local_dir=HANDOFF_20261105/v8/foundation/weights/timesfm_1_0_200m
+allow_patterns=['config.json', 'README.md']
+huggingface_hub_version=2.4.0
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+snapshot_download_returned=C:\Users\Asus\Desktop\FYP code\MLFlu\HANDOFF_20261105\v8\foundation\weights\timesfm_1_0_200m
+STATUS=OK
+--- files present under local_dir ---
+FILE rel=README.md bytes=5732 sha256=b97dd24ea3dcaca1edcc5f7c83b2a6846c5afe8cb52f3470d53beeb9e492eebc
+FILE rel=.cache/huggingface/.gitignore bytes=1 sha256=684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1
+FILE rel=.cache/huggingface/CACHEDIR.TAG bytes=195 sha256=e8893e2dcb3f4545ef67a0a5b7b769113d38eef1aa61c7c7ba14659b02af955f
+FILE rel=.cache/huggingface/download/README.md.metadata bytes=102 sha256=6737d7c9b05d611b62230f672565a6049d1f1de5ef645878419f510017c6ed22
+FILE rel=.cache/huggingface/trees/8775f7531211ac864b739fe776b0b255c277e2be.json bytes=876 sha256=bbb4f521e7e7735299832df17f03bc17122acaffd56ee247f56b9c67b1d8a9fe
+FILE_COUNT=5
+TOTAL_BYTES=6906
+probe_end
+probe_exit_code=0

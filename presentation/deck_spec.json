@@ -1,0 +1,839 @@
+{
+  "title": "Re-evaluating Multimodal LLMs for Influenza Forecasting",
+  "subtitle": "A 28-Model Benchmark of Accuracy, Peak Skill, Parameter Efficiency and Statistical Evidence",
+  "author": "CHAN Sing Yeung",
+  "snapshot_date": "2026-11-03",
+  "revision": 8,
+  "slide_width_inches": 13.333333333333334,
+  "slide_height_inches": 7.5,
+  "planned_duration_seconds": 300,
+  "spoken_duration_status": "Planned 5:00; actual delivery and native PowerPoint inspection not executed",
+  "source_csv_sha256": {
+    "02_数字表格/BENCH_MSE_BY_FAMILY.post_evalwindow16_v100nlinear.csv": "e50f4267626b6a0edf108c3951f45fb2b2924f4332aaaf6d66cd3d6d349c0a27",
+    "02_数字表格/BENCH_MSE_BY_FAMILY.post_evalwindow16.csv": "e50f4267626b6a0edf108c3951f45fb2b2924f4332aaaf6d66cd3d6d349c0a27",
+    "02_数字表格/TRACK_C_LLM_NONLLM_GROUP_SUMMARY.csv": "805ec6341f41be3029598922c9f992672a603053398d0e8dc694a2f4e627644d",
+    "02_数字表格/TRACK_C_CELL_CLASSIFICATION.csv": "5c884cbaa63cac92d744d4f27ba4dba60e472aabe77c36477be63f74bfdf8ebd",
+    "02_数字表格/BENCH_KS_CHAMPION_DETAIL.post_evalwindow16.csv": "9b159035e6cd130c0bcf60607ed94de97bcaa948698557c292bc8b29f19159f1",
+    "02_数字表格/ESSAY_VS_REPRODUCTION_TABLE_V.csv": "34dfa7daf7930a6e54238996372c04bea3d4f88a21e960efd1eb332d17c74460",
+    "02_数字表格/TRACK_C_ILITOTAL_PER_L.csv": "c5d943331e015667822eee5ebe60589fc4db9a9da5b5adcca860a226b3e6737c",
+    "02_数字表格/TRACK_C_ILITOTAL_4L_MEAN.csv": "1114f52f2b99b173e4d99bfbfe934c04f402c8d7345e79220c66b434ab919195",
+    "02_数字表格/BENCH_PTE_PIE_BY_STEP.pre_evalwindow16.csv": "afb4e061b68dafd6081b6ea0211bfeb5b7365ba63aea57adda04e3a2c4648e06",
+    "02_数字表格/BENCH_MSE_BY_STEP_CLEAN.csv": "cb9a4c334fb9823a675eb1479ab5fef9cabbe8005ac60b29ddc747670c929ddf",
+    "02_数字表格/BENCH_MSE_BY_STEP.post_evalwindow16_v100nlinear.csv": "979fa75fe08e293b214ead4e5427d2be00d2d6dd304ad2b81db14075f79ba3ec",
+    "02_数字表格/BENCH_MSE_BY_FAMILY.pre_miflu.csv": "c64cdbefee7df11af4620fbf405baba4206932fc5c53742bf1aac49b4cd76c68",
+    "02_数字表格/TRACK_C_TEST_MAE_RANKING.csv": "4230edcc46e63c312977bbb957f0a284b7cef7def8018bf507dba427adbabc54",
+    "02_数字表格/BENCH_MSE_BY_STEP.pre_miflu.csv": "e75159f30057f0cefe8a104ff0e624de19589c8d3dfd9f88de1f4d4f3e997852",
+    "02_数字表格/BENCH_MSE_BY_MODEL_L.post_evalwindow16.csv": "94a2212343bcbd693046b489bd07667ea756881539fcd1a5ebe9c402b3edf6cd",
+    "02_数字表格/BENCH_CRPS_WIS.post_evalwindow16_v100nlinear.csv": "024881a9e239225ded1a7e1cb792c56f475ccab23916a3f41dac97c5b22de047",
+    "02_数字表格/BENCH_PTE_PIE_BY_STEP.post_evalwindow16.csv": "29e98441c29ab544f52dc597cb713ae0653f44b4e9c67bcdd0e7df0973a18830",
+    "02_数字表格/BENCH_PTE_PIE_BY_STEP.post_evalwindow16_v100nlinear.csv": "c55cec5132e13db495630512557f68cd2aebd7c426e82a744b811a7ed4d074c5",
+    "02_数字表格/BENCH_MSE_RANK_FULL.csv": "9d4ab5c82d857afd43b2edc0b692dfa68885fbd27100f0e13affde1c3d59c4f3",
+    "02_数字表格/BENCH_PTE_PIE_BY_STEP.pre_miflu.csv": "798a6cb58b4d52c71c1b11fe50b39b1f75d43585cf41b2547ee1384351cc85ab",
+    "02_数字表格/MIFLU_ESSAY_MSE_MAE_BY_STEP.csv": "8e5a3251f7fd57bdd914369da393cbd8754f284c8f6ca997abcf77583c289f7d",
+    "02_数字表格/BENCH_KS_CHAMPION_DETAIL.pre_evalwindow16.csv": "89fb37ab10a7d856d79f1ead4f1f4481d277b8cd475c4250d67e260bfca6b04b",
+    "02_数字表格/PER_STEP_PTE_PIE_BY_MODEL.csv": "2300130eed923b8cdfe5adc69e056d9ebdb08c5b146d5c317257b1d60c3fdd6f",
+    "02_数字表格/PTE_PIE_GROUP_SUMMARY.csv": "3105166de3e887e43660f99e6762d93b593fe8c465c8fa4b8c46b8b0f1423990",
+    "02_数字表格/BENCH_MSE_BY_SIDE.csv": "6029c16808215b012fa049aeb926e2da67eecf1a0cac9ce2b92535a9685fbe6f",
+    "02_数字表格/BENCH_GPU_PROVENANCE.post_evalwindow16.csv": "a78e21b3d0a5d7d90c1bd5687069317b9852148a0c141ea91a341ba770444f95",
+    "02_数字表格/BENCH_SEASONAL_NAIVE.csv": "88bee443a9a9d77f2f3dce6324f65baa6d6ff6e8cc0dae92047d3df8c8d87e3c",
+    "02_数字表格/TABLE_IX_REGIONAL_TRAINING_TIME.csv": "6c0533a4fb441c4a90791c4cf727fcb3f90541a44e18f3c939b911609b6963ff",
+    "02_数字表格/BENCH_MSE_BY_STEP_CLEAN.post_evalwindow16_v100nlinear.csv": "6a341627e643605a71c934777dc82b4018f21e674d527cbf79eb881a59ca37f1",
+    "02_数字表格/TRACK_C_STEPWISE_MSE_PTE_PIE.csv": "6541b16ef0d3f5721ff6844ac998155044130d2a2b42b999291702165a2246d8",
+    "02_数字表格/BENCH_MSE_BY_FAMILY.pre_evalwindow16.csv": "13fa544156c748fc0fc5b7211c89dc97e3645770b69cb9f303eaa5c05eb3ed53",
+    "02_数字表格/DENORMALIZED_MSE_MAE_BY_VARIABLE.csv": "8a9f0f265adc9ef3d50deffc05cb568b0dc8e7e17ba5db9cb391b9cf8d4d03e3",
+    "02_数字表格/TRACK_C_PER_HORIZON_CHAMPIONS.csv": "1bca33a9b3cce5b10a17ac6d88ea83ee86ba026e5e95cd879db9ff3a33931a0f",
+    "02_数字表格/BENCH_PAIRED_TESTS.pre_evalwindow16.csv": "17e0f514793a5273c567247f39c4c40160db072b223c1c5405e0122768301593",
+    "02_数字表格/TRACK_C_COST_SUMMARY.csv": "841f54cdc590fcbc9175024ffe992e9061e3f9fac98a14cee880408531964460",
+    "02_数字表格/BENCH_MSE_BY_MODEL_L.pre_miflu.csv": "3b1d5187652c6df67b69707ce5b0fd5f3520a7b1e2561e125a6ff3af9a1905ab",
+    "02_数字表格/TRACK_C_ILITOTAL_MSE_MAE.csv": "f9a541c5e2e75c3c4819aa242b9f162b4e292187741deb9a168e054c50c2f187",
+    "02_数字表格/BENCH_MSE_BY_SIDE.pre_miflu.csv": "8cf72ecf54728c559c569042626b7f1b3028d7ee73694c31e0350b5a4cddb2f8",
+    "02_数字表格/BENCH_EFFICIENCY.csv": "24e384ec66b417fa38bdd1ab28ffc4699eac4be9b6fec278438b37694a5365d5",
+    "02_数字表格/BENCH_EFFICIENCY.pre_evalwindow16.csv": "23d14d547099128c21330e99a48dedf41ad2a6ef4617e938f775312da9c6bbd2",
+    "02_数字表格/BENCH_KS_CHAMPION_DETAIL.csv": "de08adcbdead9c583303053709149aed1b7859d6b744059e00200ac2128c8a77",
+    "02_数字表格/TRACK_C_DELIVERABLE_MANIFEST.csv": "02ee70029b2865edd8e0971848f4a4b5415046ef2bb384820e4f8d3d90323d99",
+    "02_数字表格/BENCH_MSE_BY_MODEL_L.csv": "614232aabcd0d2b1109fed1cb2a9ba164628b81a334f8cff3e6e565aabf35653",
+    "02_数字表格/BENCH_PAIRED_TESTS.post_evalwindow16.csv": "0bdf452ed17d9a394a515264539a3e584d3772e87ebdad9b6019eda9f6bce22e",
+    "02_数字表格/BENCH_MSE_BY_STEP.csv": "cef8212f1e01be94067f502350b5df0a158281ed07e697171d0f04e411d62d11",
+    "02_数字表格/BENCH_MSE_BY_STEP_CLEAN.post_evalwindow16.csv": "6a341627e643605a71c934777dc82b4018f21e674d527cbf79eb881a59ca37f1",
+    "02_数字表格/BENCH_NLINEAR_A100_DELTA.csv": "c4d65a519cd7e1d50a1a937cb9f8815661b0c835e42b96cde74f1ea64e8b17f6",
+    "02_数字表格/BENCH_KS_CHAMPION_DETAIL.post_evalwindow16_v100nlinear.csv": "9b159035e6cd130c0bcf60607ed94de97bcaa948698557c292bc8b29f19159f1",
+    "02_数字表格/BENCH_MSE_BY_SIDE.post_evalwindow16.csv": "3e0478e9dd6804ef12fc0a8e9de98255e1c56912df448625aed277f2cdd78658",
+    "02_数字表格/BENCH_MSE_BY_STEP_CLEAN.pre_evalwindow16.csv": "eb6185586a0ab9b8ac2c578e9b17e693bee4730b02d22f956371e3aafa0217c8",
+    "02_数字表格/BENCH_SEASONAL_NAIVE.post_evalwindow16.csv": "88bee443a9a9d77f2f3dce6324f65baa6d6ff6e8cc0dae92047d3df8c8d87e3c",
+    "02_数字表格/BENCH_CRPS_WIS.pre_evalwindow16.csv": "dbbd7d23e7c75f6fe325d3f44247f05756dc25184adeecc2d6af08c69cc050fc",
+    "02_数字表格/BENCH_PTE_PIE_BY_STEP.csv": "f3f97383e0699855fae7cb92d403e7e5e0a5963c546b0c02a0a2f7b1e51a92a4",
+    "02_数字表格/BENCH_MSE_RANK_FULL.post_evalwindow16.csv": "03739f3efca1c11eef93a32f27aa021303d779b5e5efde6fac7e5e5d9ba6257a",
+    "02_数字表格/BENCH_MSE_BY_MODEL_L.pre_evalwindow16.csv": "497ac7d94488870a554b84b261acf8d9c587bd3783637df1085b90eed27c0d72",
+    "02_数字表格/BENCH_GPU_PROVENANCE.csv": "a78e21b3d0a5d7d90c1bd5687069317b9852148a0c141ea91a341ba770444f95",
+    "02_数字表格/BENCH_SEASONAL_NAIVE.post_evalwindow16_v100nlinear.csv": "88bee443a9a9d77f2f3dce6324f65baa6d6ff6e8cc0dae92047d3df8c8d87e3c",
+    "02_数字表格/EXPANDED_COMBINED_TEST_MSE_RANKING.csv": "09f8cddbf08350986dab54404118cd54a5aeee34cc5f48f865b9937b48a75626",
+    "02_数字表格/BENCH_EFFICIENCY.post_evalwindow16.csv": "3127fb331ba8a29dd234d5a034ed36c14b5d0783a748c07fa40d054c232fcd55",
+    "02_数字表格/BENCH_MSE_BY_SIDE.post_evalwindow16_v100nlinear.csv": "3e0478e9dd6804ef12fc0a8e9de98255e1c56912df448625aed277f2cdd78658",
+    "02_数字表格/BENCH_CRPS_WIS.post_evalwindow16.csv": "7b8d4779c1df797e43db61ddf207c6b77e3cf8b626b6f2dea1180b4d2cf75210",
+    "02_数字表格/BENCH_PAIRED_TESTS.csv": "f49181918eb658368dcc9a682d989366a8889a46f658afb4b00a681f50053090",
+    "02_数字表格/TRACK_C_MIFLU_RUN_MATRIX.csv": "b85653aa4ef561df9141895817181a53adf4a36dfe13e81f2f8d7b43b796b36d",
+    "02_数字表格/BENCH_MSE_BY_MODEL_L.post_evalwindow16_v100nlinear.csv": "3148e503ee7b84831cbfd9937957bb5e30dd3dbba3c9bde7f44880b53951491c",
+    "02_数字表格/BENCH_GPU_PROVENANCE.pre_evalwindow16.csv": "13bd76b395fe4040b4761efbc457f701945d6d2bb964d50321a918babf4f79e3",
+    "02_数字表格/TRACK_C_TEST_MSE_RANKING.csv": "71c49bf68ca6059a1cdcb5c14636a3b809a07785bbcb4953abcb5d8767b6a950",
+    "02_数字表格/BENCH_EFFICIENCY.post_evalwindow16_v100nlinear.csv": "3127fb331ba8a29dd234d5a034ed36c14b5d0783a748c07fa40d054c232fcd55",
+    "02_数字表格/BENCH_SEASONAL_NAIVE.pre_evalwindow16.csv": "8483ce5406e32d1fc6bc0851f1665f9530a37dc755cbb63e8560dc141a6c0e0b",
+    "02_数字表格/BENCH_MSE_BY_STEP.pre_evalwindow16.csv": "b486fa304be85998ccb673ddbf52f9f71d8f51eb9f1d4f1c0fecef09804bbaa7",
+    "02_数字表格/TABLE_IX_REGIONAL_TRAINING_TIME_MEANS.csv": "c84691c0afee973713d26aa0ac85f9f1430ff4df4baf2c8dddba4274db067225",
+    "02_数字表格/BENCH_PAIRED_TESTS.post_evalwindow16_v100nlinear.csv": "0bdf452ed17d9a394a515264539a3e584d3772e87ebdad9b6019eda9f6bce22e",
+    "02_数字表格/TRACK_C_PER_SEED_RANKINGS.csv": "cc318bde26eac070e444334ce919f686c255f865f398dce98d90024e0c531880",
+    "02_数字表格/TRACK_C_PAIRWISE_STATS_CORRECTED.csv": "3fd3b9cd888b2459c91fa69ff2afc131ab683af60875b29de119e5721a6277de",
+    "02_数字表格/BENCH_MSE_BY_FAMILY.csv": "0af7515e8359a98c3c4630f50285f5fb337e54acd9f79e555ad4ee498b5bf9a8",
+    "02_数字表格/PER_STEP_MSE_BY_MODEL.csv": "f51e608da0eba71549637c3238c34a65dde683038036beaf5e8b45aeff88fa76",
+    "02_数字表格/BENCH_MSE_RANK_FULL.post_evalwindow16_v100nlinear.csv": "ef60f0ba9ee2bb33065a741a1a8a5077348d7688639cfb4d5d4c06c2e1b29ffb",
+    "02_数字表格/BENCH_CRPS_WIS.csv": "ffe8625c3d095434116f639e9bce4794233d363e24fb8a3097374143ef7f5bba",
+    "02_数字表格/BENCH_MSE_RANK_FULL.pre_evalwindow16.csv": "ede2a44fbafd6847b74847ae3aa0d78ef10690cdb2866de8f931bfadb914b78c",
+    "02_数字表格/BENCH_MSE_BY_SIDE.pre_evalwindow16.csv": "00d336dbce87bc7bbd079c167022a782a4c0b979508b7c7db93aca1e796c52a9",
+    "02_数字表格/PER_STEP_PTE_PIE_PER_SEASON.csv": "ee22a375e480ce471fed141abdb424c589c5da648307fc86c6fe8333da4e7af3",
+    "02_数字表格/BENCH_MSE_BY_STEP.post_evalwindow16.csv": "81f32a98c07a3b7960c00dcc931c70b5951846b64d148efb5e1a222975f3066e",
+    "02_数字表格/BENCH_GPU_PROVENANCE.post_evalwindow16_v100nlinear.csv": "13bd76b395fe4040b4761efbc457f701945d6d2bb964d50321a918babf4f79e3",
+    "02_数字表格/TRACK_C_ILITOTAL_CONSOLIDATED.csv": "d06dc965fc32233adecc466d2ec10c618205f2e13c1540228a2145976d6d1e9c"
+  },
+  "assets_sha256": {
+    "fig_pareto_presentation.png": "439f1f4929798f28eb9d02bc3d96faeb92150c3fe0b9afe6616a227f5dd84c49"
+  },
+  "slides": [
+    {
+      "id": 1,
+      "title": "Re-evaluating Multimodal LLMs for Influenza Forecasting",
+      "layout": "cover",
+      "duration_seconds": 15,
+      "speaker_notes": "My project re-evaluates multimodal LLMs for influenza forecasting. I examine MIFlu and compare twenty-eight implementations. The question is how model choice changes when average accuracy, peak errors, model size and statistical evidence are considered together.",
+      "preparation_zh": "开场先说明研究问题：不是只复现一个分数，而是重新检查选模依据。标题中的 28 指整个比较名单，不表示四个维度都覆盖 28 个模型。副标题对应后面四条评价主线。",
+      "follow_up_question": "What is the contribution beyond reproduction?",
+      "follow_up_answer": "A four-axis re-evaluation with an explicit statistical correction and implementation/provenance limits. Broad negative-LLM findings already exist; this is the specific influenza audit, not a first-ever claim.",
+      "sources": [
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv",
+        "02_数字表格/BENCH_PTE_PIE_BY_STEP.csv",
+        "audit/CLAIM_AUDIT.md"
+      ],
+      "figure": null
+    },
+    {
+      "id": 2,
+      "title": "Four evaluation axes ask different questions",
+      "layout": "axes",
+      "duration_seconds": 25,
+      "speaker_notes": "I use four evaluation axes. Accuracy measures overall prediction error. Peak skill measures timing and height. Parameter efficiency compares model size with error. Statistical evidence asks what differences the test design can support. Their coverage differs: twenty-eight, twenty-eight, eleven and seventeen models. Those denominators must stay separate.",
+      "preparation_zh": "请按四个问题解释，不要说成四个独立数据集。参数图只有 11 个有导出参数量的模型；配对检验只有 17 个非编码器模型。覆盖范围不同，是导师很可能追问的地方。",
+      "follow_up_question": "Why do the denominators differ?",
+      "follow_up_answer": "The source exports have different membership. Accuracy/peak cover 28 retained arms. Parameter data cover 11, excluding MIFlu and encoders. Paired comparisons cover 17 including MIFlu, excluding DLinear and encoders.",
+      "sources": [
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv",
+        "02_数字表格/BENCH_PTE_PIE_BY_STEP.csv",
+        "02_数字表格/BENCH_EFFICIENCY.csv",
+        "02_数字表格/BENCH_PAIRED_TESTS.csv"
+      ],
+      "figure": null,
+      "axes": [
+        [
+          "1",
+          "Accuracy",
+          "MSE and MAE",
+          "28 models"
+        ],
+        [
+          "2",
+          "Peak skill",
+          "Timing, height and joint screen",
+          "28 models"
+        ],
+        [
+          "3",
+          "Parameter efficiency",
+          "MSE versus parameter count",
+          "11 models"
+        ],
+        [
+          "4",
+          "Statistical evidence",
+          "Paired tests with proper Holm",
+          "17 models"
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Reproduction and benchmarking use separate run sets",
+      "layout": "protocols",
+      "duration_seconds": 25,
+      "speaker_notes": "The historical reproduction uses ten seeds, while the wider benchmark uses three under shared cropped windows. Its twenty-eight implementations comprise thirteen conventional models, four LLM-based models and eleven frozen encoders. A new ten-seed expansion is underway. I keep its execution status separate from these historical results.",
+      "preparation_zh": "本页两种协议均为历史结果。新的共同十种子扩展仍在进行，不能把新的执行计数当作已完成的公平比较。新 MIFlu 存储指标仍裁剪，其他 NPZ 用全窗口，需先统一评分。",
+      "follow_up_question": "Why three seeds rather than ten for every model?",
+      "follow_up_answer": "The retained benchmark is 28 × 4 × 3 = 336 cells. Three reflects the compute budget. More seeds can improve uncertainty; no adequate-power or no-benefit claim follows.",
+      "sources": [
+        "02_数字表格/ESSAY_VS_REPRODUCTION_TABLE_V.csv",
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv",
+        "05_程序代码/eval_windows.py",
+        "handoffs/20261105_return/RETURN_SUMMARY.md",
+        "audit/return_review_20261105/RAW_RESCORE_SUMMARY.json",
+        "audit/return_review_20261105/SUPPLIED_no_text_runtime.xml"
+      ],
+      "figure": null,
+      "rows": [
+        [
+          "Purpose",
+          "Reproduction",
+          "Benchmark"
+        ],
+        [
+          "Seeds",
+          "2021–2030 (10)",
+          "42 / 43 / 44 (3)"
+        ],
+        [
+          "MIFlu mean MSE",
+          "1.4995",
+          "1.5574"
+        ],
+        [
+          "Scored windows",
+          "160 / 144 / 144 / 128",
+          "Same windows across arms"
+        ]
+      ],
+      "footer": "966 rows, 7 channels. Chronological split 676 / 97 / 193. Full-window sensitivity remains open."
+    },
+    {
+      "id": 4,
+      "title": "Reproduction differs by horizon and error measure",
+      "layout": "reproduction",
+      "duration_seconds": 30,
+      "speaker_notes": "The reproduction’s mean MSE is four point five percent higher than the paper table. It is lower at horizons twenty-four and thirty-six, but higher at forty-eight and sixty. MAE is seven point nine percent higher overall, with only one lower horizon. The two error measures need separate explanations, and the causes of the gaps remain unresolved.",
+      "preparation_zh": "左图只画复现 MSE 的四个跨度，不要把基准预测曲线误说成十种子复现轨迹。右侧区分 MSE 两低两高与 MAE 一低三高。检查点、种子和配置可能解释差异，但未进行受控因果拆分，不能把原因说死。",
+      "follow_up_question": "Does the figure prove an exact reproduction?",
+      "follow_up_answer": "No. The plotted means are verified against the supplied reproduction CSV. Raw ten-seed predictions/logs and a pinned author revision remain unavailable for independent complete reproduction.",
+      "sources": [
+        "02_数字表格/ESSAY_VS_REPRODUCTION_TABLE_V.csv",
+        "audit/NUMERICAL_AUDIT.md"
+      ],
+      "figure": null,
+      "horizons": [
+        "24",
+        "36",
+        "48",
+        "60"
+      ],
+      "ours": [
+        1.3045,
+        1.3561,
+        1.6543,
+        1.6829
+      ],
+      "paper": [
+        1.542,
+        1.422,
+        1.414,
+        1.364
+      ],
+      "mse_mean": [
+        1.4995,
+        1.4355
+      ],
+      "mae_mean": [
+        0.8043,
+        0.7452
+      ]
+    },
+    {
+      "id": 5,
+      "title": "MIFlu leads the observed average-error ranking",
+      "layout": "accuracy",
+      "duration_seconds": 25,
+      "speaker_notes": "MIFlu has the lowest observed mean MSE, about one point five five seven four. PatchTST and NLinear follow in that order, and MAE gives the same leading three. This comparison concerns project implementations on one national split. It does not show that the multimodal component caused MIFlu’s advantage.",
+      "preparation_zh": "本页属于维度一。横向柱长是平均 MSE，越短越好；旁边 MAE 也是越低越好。只展示前三名是为了汇报可读性，内部报告保留完整 28 模型表。模型名称表示项目实现，未逐一证明与每篇原论文完全一致。",
+      "follow_up_question": "Are these the original algorithms with verified identical implementation?",
+      "follow_up_answer": "They are project implementations/adaptations. Their exact equivalence to each published comparator has not been independently established. The ranking alone cannot prove method fidelity.",
+      "sources": [
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv"
+      ],
+      "figure": null,
+      "leaders": [
+        {
+          "key": "miflu",
+          "name": "MIFlu",
+          "mse": 1.5573892510322846,
+          "mae": 0.8199110495142963,
+          "pte": 1.1284722222222223,
+          "pie": 26.84601700655818,
+          "passes": 4
+        },
+        {
+          "key": "patchtst",
+          "name": "PatchTST",
+          "mse": 1.662077785403323,
+          "mae": 0.878609890790965,
+          "pte": 1.2395833333333333,
+          "pie": 32.75502910989205,
+          "passes": 0
+        },
+        {
+          "key": "nlinear",
+          "name": "NLinear",
+          "mse": 1.8715832984285194,
+          "mae": 0.9182564479461559,
+          "pte": 1.6770833333333333,
+          "pie": 9.476573088860869,
+          "passes": 4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Peak skill separates timing from height",
+      "layout": "peak_metrics",
+      "duration_seconds": 25,
+      "speaker_notes": "Peak errors use ILITOTAL in patient counts, rather than the seven-channel standardised loss. The joint screen requires timing error within one week and height error within twenty-five percent in the same aggregated cell. MIFlu and NLinear each pass four of sixteen cells. These are horizon–lead combinations, not independent seasons.",
+      "preparation_zh": "本页属于维度二。PTE 是周误差，PIE 是峰高相对误差，不能把 PIE 叫概率校准。文献支持分别采用一周及 25% 容差；本项目把两者联合应用于平均误差，属于工程筛选，不是临床部署认证。",
+      "follow_up_question": "Is 4/16 an estimated 25% season-success probability?",
+      "follow_up_answer": "No. There are four horizons times four fixed leads. The errors are aggregated within each cell before applying thresholds. Event-level success probabilities require a different analysis.",
+      "sources": [
+        "02_数字表格/BENCH_PTE_PIE_BY_STEP.csv",
+        "audit/LITERATURE_REVIEW.md source [2]"
+      ],
+      "figure": null,
+      "leaders": [
+        {
+          "key": "miflu",
+          "name": "MIFlu",
+          "mse": 1.5573892510322846,
+          "mae": 0.8199110495142963,
+          "pte": 1.1284722222222223,
+          "pie": 26.84601700655818,
+          "passes": 4
+        },
+        {
+          "key": "patchtst",
+          "name": "PatchTST",
+          "mse": 1.662077785403323,
+          "mae": 0.878609890790965,
+          "pte": 1.2395833333333333,
+          "pie": 32.75502910989205,
+          "passes": 0
+        },
+        {
+          "key": "nlinear",
+          "name": "NLinear",
+          "mse": 1.8715832984285194,
+          "mae": 0.9182564479461559,
+          "pte": 1.6770833333333333,
+          "pie": 9.476573088860869,
+          "passes": 4
+        }
+      ],
+      "tolerances": {
+        "pte_wk": 1,
+        "pie_pct": 25
+      },
+      "footer": "Project joint mean-error screen. Each denominator is 4 horizons × 4 leads."
+    },
+    {
+      "id": 7,
+      "title": "Equal pass counts hide different passing cells",
+      "layout": "peak_grid",
+      "duration_seconds": 25,
+      "speaker_notes": "The grid shows different passing locations. NLinear passes the first lead at all four horizons. MIFlu passes three first-lead cells and the second lead at horizon forty-eight. Across all cells, NLinear has lower peak-height error, while MIFlu has better timing. The leading-three ordering is inverted at both ends between MSE and peak-height error.",
+      "preparation_zh": "每行 16 格，分成 L24、L36、L48、L60 四组，每组 s0–s3。绿色表示同一格两项都通过。请先指出绿色位置，再解释同为 4/16 不代表同样表现。所谓 inverted at both ends 是具体两种排序不同，不是证明统计独立或全局脱钩。",
+      "follow_up_question": "Does this demonstrate peak-skill decoupling?",
+      "follow_up_answer": "It demonstrates local objective-dependent rankings and a timing–height trade-off. Overall correlations remain +0.736 for MSE–PIE and −0.429 for MSE–pass count. Independence or universal decoupling is not established.",
+      "sources": [
+        "02_数字表格/BENCH_PTE_PIE_BY_STEP.csv",
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv"
+      ],
+      "figure": null,
+      "grid": [
+        {
+          "name": "MIFlu",
+          "passes": 4,
+          "cells": [
+            {
+              "L": 24,
+              "step": 0,
+              "pass": true,
+              "pte": 0.0,
+              "pie": 18.306861181951955
+            },
+            {
+              "L": 24,
+              "step": 1,
+              "pass": false,
+              "pte": 0.8888888888888888,
+              "pie": 26.685997421045915
+            },
+            {
+              "L": 24,
+              "step": 2,
+              "pass": false,
+              "pte": 1.222222222222222,
+              "pie": 30.4721180370581
+            },
+            {
+              "L": 24,
+              "step": 3,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 31.6377134760051
+            },
+            {
+              "L": 36,
+              "step": 0,
+              "pass": true,
+              "pte": 0.0,
+              "pie": 18.6954493927958
+            },
+            {
+              "L": 36,
+              "step": 1,
+              "pass": false,
+              "pte": 0.7777777777777778,
+              "pie": 26.33332167256525
+            },
+            {
+              "L": 36,
+              "step": 2,
+              "pass": false,
+              "pte": 1.6666666666666667,
+              "pie": 31.514154299718047
+            },
+            {
+              "L": 36,
+              "step": 3,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 32.4268375100065
+            },
+            {
+              "L": 48,
+              "step": 0,
+              "pass": false,
+              "pte": 1.2222222222222223,
+              "pie": 18.0037211046175
+            },
+            {
+              "L": 48,
+              "step": 1,
+              "pass": true,
+              "pte": 0.6666666666666666,
+              "pie": 24.795466672157858
+            },
+            {
+              "L": 48,
+              "step": 2,
+              "pass": false,
+              "pte": 1.222222222222222,
+              "pie": 30.13307154660208
+            },
+            {
+              "L": 48,
+              "step": 3,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 33.23571077551539
+            },
+            {
+              "L": 60,
+              "step": 0,
+              "pass": true,
+              "pte": 0.1666666666666666,
+              "pie": 20.52976669447757
+            },
+            {
+              "L": 60,
+              "step": 1,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 25.79947823649242
+            },
+            {
+              "L": 60,
+              "step": 2,
+              "pass": false,
+              "pte": 2.2222222222222228,
+              "pie": 29.789787124935028
+            },
+            {
+              "L": 60,
+              "step": 3,
+              "pass": false,
+              "pte": 2.6666666666666665,
+              "pie": 31.17681695898641
+            }
+          ]
+        },
+        {
+          "name": "PatchTST",
+          "passes": 0,
+          "cells": [
+            {
+              "L": 24,
+              "step": 0,
+              "pass": false,
+              "pte": 0.6666666666666666,
+              "pie": 30.5802443234866
+            },
+            {
+              "L": 24,
+              "step": 1,
+              "pass": false,
+              "pte": 1.0,
+              "pie": 34.04374010874121
+            },
+            {
+              "L": 24,
+              "step": 2,
+              "pass": false,
+              "pte": 1.222222222222222,
+              "pie": 33.57248489376206
+            },
+            {
+              "L": 24,
+              "step": 3,
+              "pass": false,
+              "pte": 1.222222222222222,
+              "pie": 30.72192931945253
+            },
+            {
+              "L": 36,
+              "step": 0,
+              "pass": false,
+              "pte": 1.0000000000000002,
+              "pie": 26.23481163815818
+            },
+            {
+              "L": 36,
+              "step": 1,
+              "pass": false,
+              "pte": 1.6666666666666667,
+              "pie": 32.2468624151442
+            },
+            {
+              "L": 36,
+              "step": 2,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 31.24494224900417
+            },
+            {
+              "L": 36,
+              "step": 3,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 33.85381979743673
+            },
+            {
+              "L": 48,
+              "step": 0,
+              "pass": false,
+              "pte": 0.5555555555555555,
+              "pie": 30.35971945405116
+            },
+            {
+              "L": 48,
+              "step": 1,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 30.877981887257985
+            },
+            {
+              "L": 48,
+              "step": 2,
+              "pass": false,
+              "pte": 0.8888888888888888,
+              "pie": 35.15789420907932
+            },
+            {
+              "L": 48,
+              "step": 3,
+              "pass": false,
+              "pte": 0.8888888888888888,
+              "pie": 35.00180317706043
+            },
+            {
+              "L": 60,
+              "step": 0,
+              "pass": false,
+              "pte": 0.5,
+              "pie": 35.035331548501496
+            },
+            {
+              "L": 60,
+              "step": 1,
+              "pass": false,
+              "pte": 1.6666666666666667,
+              "pie": 34.34175749752995
+            },
+            {
+              "L": 60,
+              "step": 2,
+              "pass": false,
+              "pte": 2.2222222222222223,
+              "pie": 35.674383373317035
+            },
+            {
+              "L": 60,
+              "step": 3,
+              "pass": false,
+              "pte": 2.333333333333333,
+              "pie": 35.13275986628971
+            }
+          ]
+        },
+        {
+          "name": "NLinear",
+          "passes": 4,
+          "cells": [
+            {
+              "L": 24,
+              "step": 0,
+              "pass": true,
+              "pte": 0.1111111111111111,
+              "pie": 3.949499451620581
+            },
+            {
+              "L": 24,
+              "step": 1,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 8.410883447682211
+            },
+            {
+              "L": 24,
+              "step": 2,
+              "pass": false,
+              "pte": 2.333333333333333,
+              "pie": 11.94253065381917
+            },
+            {
+              "L": 24,
+              "step": 3,
+              "pass": false,
+              "pte": 2.6666666666666665,
+              "pie": 18.738577271663196
+            },
+            {
+              "L": 36,
+              "step": 0,
+              "pass": true,
+              "pte": 0.3333333333333333,
+              "pie": 4.180983045145238
+            },
+            {
+              "L": 36,
+              "step": 1,
+              "pass": false,
+              "pte": 1.3333333333333333,
+              "pie": 7.2223770219350145
+            },
+            {
+              "L": 36,
+              "step": 2,
+              "pass": false,
+              "pte": 2.111111111111111,
+              "pie": 15.312925910735167
+            },
+            {
+              "L": 36,
+              "step": 3,
+              "pass": false,
+              "pte": 2.6666666666666665,
+              "pie": 18.144738742877863
+            },
+            {
+              "L": 48,
+              "step": 0,
+              "pass": true,
+              "pte": 0.2222222222222222,
+              "pie": 2.418523357987448
+            },
+            {
+              "L": 48,
+              "step": 1,
+              "pass": false,
+              "pte": 1.222222222222222,
+              "pie": 4.727304310385342
+            },
+            {
+              "L": 48,
+              "step": 2,
+              "pass": false,
+              "pte": 2.222222222222222,
+              "pie": 9.97862422356621
+            },
+            {
+              "L": 48,
+              "step": 3,
+              "pass": false,
+              "pte": 2.777777777777777,
+              "pie": 16.654585693232647
+            },
+            {
+              "L": 60,
+              "step": 0,
+              "pass": true,
+              "pte": 0.1666666666666666,
+              "pie": 2.450033209588342
+            },
+            {
+              "L": 60,
+              "step": 1,
+              "pass": false,
+              "pte": 1.4444444444444444,
+              "pie": 4.541639573251085
+            },
+            {
+              "L": 60,
+              "step": 2,
+              "pass": false,
+              "pte": 2.555555555555556,
+              "pie": 9.951573883512747
+            },
+            {
+              "L": 60,
+              "step": 3,
+              "pass": false,
+              "pte": 3.333333333333333,
+              "pie": 13.000369624771652
+            }
+          ]
+        }
+      ],
+      "orders": {
+        "mse": [
+          "MIFlu",
+          "PatchTST",
+          "NLinear"
+        ],
+        "pie": [
+          "NLinear",
+          "MIFlu",
+          "PatchTST"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "title": "The parameter frontier exposes a size–error trade-off",
+      "layout": "pareto",
+      "duration_seconds": 25,
+      "speaker_notes": "The parameter frontier covers eleven exported arms. NLinear is smaller, while PatchTST has lower MSE. PatchTST uses about two hundred and eleven times as many parameters for eleven point two percent lower observed MSE. The size fit explains only about two percent of observed MSE variation. Parameter count remains a size proxy, with runtime unmeasured.",
+      "preparation_zh": "本页属于维度三。越靠左参数越少，越靠下 MSE 越低。互不支配的点构成子集前沿。MIFlu 与冻结编码器缺少这一参数导出，所以不能声称是 28 模型全局前沿。R² 低不等于容量无作用，也不能把观测增益叫噪声。",
+      "follow_up_question": "Why is MIFlu absent, despite the study title mentioning LLMs?",
+      "follow_up_answer": "Its parameter count is not in the supplied efficiency export. Missing values remain missing. The full benchmark has 28 arms, but this measured subset has 11.",
+      "sources": [
+        "02_数字表格/BENCH_EFFICIENCY.csv",
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv"
+      ],
+      "figure": "fig_pareto_presentation.png",
+      "parameter_ratio": 211.0626984126984,
+      "mse_reduction_pct": 11.194025571883886,
+      "r2": 0.022265628798760862,
+      "slope": 0.11714420475371808
+    },
+    {
+      "id": 9,
+      "title": "Correct Holm supports no familywise rejection",
+      "layout": "statistics",
+      "duration_seconds": 30,
+      "speaker_notes": "The paired family has seventeen models, including MIFlu. Proper Holm rejects zero of one hundred and thirty-six pairs. The NLinear–PatchTST p-value is zero point one one seven two. Coarse exact-test resolution already blocks the first Holm threshold, and dependent cells add concern. The observed gain remains. Equivalence is unproven.",
+      "preparation_zh": "本页属于维度四。源导出 Holm 列方向错误，必须从原始 p 重算。17 模型包括 MIFlu，排除 DLinear 与 11 编码器。0/136 是当前检验设计与分辨率的限制，不能解释成所有模型一样好。精确网格恢复与六位小数导出直接重算均在显示精度上得到 0.1172。",
+      "follow_up_question": "Why is the minimum adjusted p already above 0.05?",
+      "follow_up_answer": "At n=12 the documented two-sided exact raw-p floor is 2/4096. Multiplying by the first Holm factor 136 gives about 0.0664. This family cannot pass the first threshold at that resolution. Dependence is a separate validity concern.",
+      "sources": [
+        "02_数字表格/BENCH_PAIRED_TESTS.csv",
+        "audit/HOLM_RECOMPUTATION.csv"
+      ],
+      "figure": null,
+      "raw_count": 128,
+      "adjusted_count": 0,
+      "pair_count": 136,
+      "model_count": 17,
+      "frontier_adjusted_p": 0.1171875,
+      "minimum_adjusted_p": 0.06640625
+    },
+    {
+      "id": 10,
+      "title": "Frozen-feature encoders underperform in this protocol",
+      "layout": "encoders",
+      "duration_seconds": 20,
+      "speaker_notes": "Eleven frozen encoders with a linear readout all perform worse than the decision tree and pass zero joint cells. This is a negative result for the tested feature pipeline. Generation, prompting, fine-tuning and numerical time-series foundation models remain outside this test.",
+      "preparation_zh": "这部分解释模型家族结果：冻结编码器加线性头，与直接生成、提示、微调、Chronos 等数值时序预训练并不是同一测试。可以报告所测配置表现差，但不能从结果单独判定是语义不迁移、容量不足还是读出选择造成。",
+      "follow_up_question": "Does this prove that all LLM forecasting is ineffective?",
+      "follow_up_answer": "No. It is restricted to the frozen-feature/readout protocol. Broader LLM-based and numerical foundation methods require their own faithful comparisons and controls.",
+      "sources": [
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv",
+        "02_数字表格/BENCH_PTE_PIE_BY_STEP.csv"
+      ],
+      "figure": null,
+      "mse_min": 4.737408924629118,
+      "mse_max": 5.204928871441397,
+      "tree_mse": 4.31976494385358
+    },
+    {
+      "id": 11,
+      "title": "CPU tests confirm the inspected no-text invariant",
+      "layout": "text_path",
+      "duration_seconds": 20,
+      "speaker_notes": "The returned CPU log records three no-text assertions passed, with zero skips, under fixed-weight evaluation. This supports the inspected causal-mask explanation. It does not establish training-time text effects. The ablation queue reports sixty of sixty cells done, with per-variant analysis pending.",
+      "preparation_zh": "三项 CPU 固定权重前向断言已在执行端通过、零跳过，本次仅核查日志和 JUnit。不能扩大到训练梯度、独立训练轨迹或所有融合路径。消融队列 60/60 DONE，逐变体趋势未聚合。",
+      "follow_up_question": "What do the three passing CPU tests establish?",
+      "follow_up_answer": "They support the three named invariants for fixed weights, matched inputs and CPU evaluation in the supplied execution record. They do not establish training-time text/LoRA effects, all fusion paths or equality of independent training trajectories. Whole-archive collection still fails.",
+      "sources": [
+        "05_程序代码/miflu_model.py",
+        "tests_archive/test_miflu_ablations.py",
+        "audit/NO_TEXT_VERIFICATION.md",
+        "handoffs/20261105_return/RETURN_SUMMARY.md",
+        "audit/return_review_20261105/RAW_RESCORE_SUMMARY.json",
+        "audit/return_review_20261105/SUPPLIED_no_text_runtime.xml"
+      ],
+      "figure": null,
+      "ablation_done": 27,
+      "ablation_planned": 60
+    },
+    {
+      "id": 12,
+      "title": "The ten-seed expansion remains in progress",
+      "layout": "next_steps",
+      "duration_seconds": 20,
+      "speaker_notes": "Core outputs are complete for one hundred and sixty cells. The national expansion remains unfinished: the package records one hundred and seventeen, followed by an owner report of one hundred and forty-one. Scoring windows still differ. O1 prioritises harmonisation, regional validation and stronger controls.",
+      "preparation_zh": "160/160 是四模型核心产物完整，不是新的共同评分已完成。117 是打包快照，141 是 11 月 5 日 00:15 用户报告；本次没有实时查 HPC。DLinear 的 40 单元不属于全国 28 模型分母。O2 仍仅可选，需合规验证预测，CPU 成本未测。",
+      "follow_up_question": "Does 160/160 mean the new benchmark is ready to publish?",
+      "follow_up_answer": "It establishes core artefact completeness. Stored MIFlu scores use cropped windows while the other supplied models use all valid windows, and complete seven-channel MIFlu exports are missing. The national 1120 matrix, harmonised scoring and external-validity evidence remain incomplete.",
+      "sources": [
+        "audit/INNOVATION_DECISION.md",
+        "audit/REPO_AUDIT.md",
+        "audit/GRADE_READINESS.md",
+        "handoffs/20261105_return/RETURN_SUMMARY.md",
+        "audit/return_review_20261105/RAW_RESCORE_SUMMARY.json",
+        "audit/return_review_20261105/SUPPLIED_no_text_runtime.xml"
+      ],
+      "figure": null
+    },
+    {
+      "id": 13,
+      "title": "Model choice depends on the evaluation objective",
+      "layout": "closing",
+      "duration_seconds": 15,
+      "speaker_notes": "The historical results show different choices for average error, peak height and parameter count. The new run must be scored consistently before changing those conclusions. I propose completing that comparison and validating across origins and regions. O1 remains the next supervision decision.",
+      "preparation_zh": "结论保留旧科学结果，新实验不能混入旧排名。下一步先统一评分与完成全国扩展，再补区域和滚动原点。不能把作业完成当作统计显著、等效或投稿就绪。",
+      "follow_up_question": "What can you confidently defend today?",
+      "follow_up_answer": "The exported arithmetic, bounded local trade-offs and proper Holm correction. The internal report Q01–Q25 supplies the explanations and evidence locators. Deployment value and complete independent reproduction remain unestablished.",
+      "sources": [
+        "02_数字表格/BENCH_MSE_BY_MODEL_L.csv",
+        "02_数字表格/BENCH_PTE_PIE_BY_STEP.csv",
+        "02_数字表格/BENCH_PAIRED_TESTS.csv",
+        "Requirements_ProjectProgressReport_2627A (1).pdf",
+        "handoffs/20261105_return/RETURN_SUMMARY.md",
+        "audit/return_review_20261105/RAW_RESCORE_SUMMARY.json",
+        "audit/return_review_20261105/SUPPLIED_no_text_runtime.xml"
+      ],
+      "figure": null
+    }
+  ],
+  "spoken_script_whitespace_words": 606,
+  "execution_status_hkt": "2026-11-05 00:15 owner report; packaged snapshot 2026-11-04 23:35",
+  "historical_result_snapshot": "2026-11-03"
+}

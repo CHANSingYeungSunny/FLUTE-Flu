@@ -1,0 +1,7 @@
+SNAPSHOT AUDIT: PASS (arithmetic and source flags; source Holm column is defective)
+Ranking: MIFlu 1.5574, PatchTST 1.6621, NLinear 1.8716
+Raw p < 0.05: 128/136; proper Holm: 0/136; minimum adjusted p approximately 0.0664
+NLinear-PatchTST: corrected from rounded export 0.117180; enumeration-grid recovery 0.1171875
+Paired family: 17 models including MIFlu, excluding DLinear and the 11 encoders; 136 pairs.
+Archived suite: COLLECTION FAILED; model execution and GPU training: NOT EXECUTED
+Raw CPU smoke MSE: 1.76705057

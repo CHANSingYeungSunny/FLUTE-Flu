@@ -1,0 +1,47 @@
+# foundation_commit_and_pin_verification.txt
+# captured_utc=2026-11-06T13:29:14Z
+# tool=
+
+=== A. exact 401 error body for google/timesfm-2.0-500m (verifies NO valid repo) ===
+{"error":"Invalid username or password."}
+=== B. github release/tag/commit verification ===
+chronos releases/latest: tag_name='v2.3.2' name='v2.3.2' published_at='2026-09-08T14:06:51Z' target_commitish='main' html_url='https://github.com/amazon-science/chronos-forecasting/releases/tag/v2.3.2'
+timesfm tags:
+  name='v3.0.2' commit.sha='8cb0628371af142e16b8c232cc9fbf667ffb12f9'
+  name='v3.0.0' commit.sha='331c6d33cb1ac2611de3056d0ac7164aab6301eb'
+  name='v2.0.2' commit.sha='4a6c5cdae7ac73a450843e035fbfc3ffa08e9caf'
+  name='v2.0.1' commit.sha='8a22ca28a0239d34c095b1eba7fea92d22198e0c'
+  name='v1.2.6' commit.sha='e77303c5513c84aa8b32639851c3f7f92f59645e'
+  name='v1.2.1' commit.sha='e3d45d65687dd93109c94e152e2252c5be9c67f1'
+
+=== C. verify given commit SHAs via GitHub API /commits/<sha> ===
+github_commit repo=amazon-science/chronos-forecasting sha=0aba28e9360b6355d5a919596c90b16c25939f02 http_code=200
+github_commit repo=google-research/timesfm sha=331c6d33cb1ac2611de3056d0ac7164aab6301eb http_code=200
+github_commit repo=google-research/timesfm sha=e77303c5513c84aa8b32639851c3f7f92f59645e http_code=200
+foundation_gh_commit_0aba28e9360b6355d5a919596c90b16c25939f02.json | sha= 0aba28e9360b6355d5a919596c90b16c25939f02 | date= 2026-09-08T14:04:54Z | msg= Bump version to 2.3.2 (#533) | err= 
+foundation_gh_commit_331c6d33cb1ac2611de3056d0ac7164aab6301eb.json | sha= 331c6d33cb1ac2611de3056d0ac7164aab6301eb | date= 2026-08-28T23:40:21Z | msg= Update pyproject.toml | err= 
+foundation_gh_commit_e77303c5513c84aa8b32639851c3f7f92f59645e.json | sha= e77303c5513c84aa8b32639851c3f7f92f59645e | date= 2024-12-31T00:21:00Z | msg= Merge pull request #205 from google-research/rajat_dev | err= 
+
+=== D. HF pinned-revision resolve probes (config.json + README.md at exact SHA) ===
+pinned_resolve repo=amazon/chronos-bolt-tiny rev=a0e552de83495b5c28c14c71c374f3e33280b340 file=config.json http_code=307
+pinned_resolve repo=amazon/chronos-bolt-tiny rev=a0e552de83495b5c28c14c71c374f3e33280b340 file=README.md http_code=307
+pinned_resolve repo=amazon/chronos-t5-small rev=a971ba21945c4f1796b17a91fe69214b5f4ad472 file=config.json http_code=307
+pinned_resolve repo=amazon/chronos-t5-small rev=a971ba21945c4f1796b17a91fe69214b5f4ad472 file=README.md http_code=307
+pinned_resolve repo=amazon/chronos-2 rev=29ec3766d36d6f73f0696f85560a422f50e8498c file=config.json http_code=307
+pinned_resolve repo=amazon/chronos-2 rev=29ec3766d36d6f73f0696f85560a422f50e8498c file=README.md http_code=307
+pinned_resolve repo=google/timesfm-1.0-200m rev=8775f7531211ac864b739fe776b0b255c277e2be file=config.json http_code=404
+pinned_resolve repo=google/timesfm-1.0-200m rev=8775f7531211ac864b739fe776b0b255c277e2be file=README.md http_code=307
+pinned_resolve repo=google/timesfm-2.0-500m-pytorch rev=dc2443792ce5516872b89b37cf1bc058c3bf0c10 file=config.json http_code=307
+pinned_resolve repo=google/timesfm-2.0-500m-pytorch rev=dc2443792ce5516872b89b37cf1bc058c3bf0c10 file=README.md http_code=307
+pinned_resolve repo=google/timesfm-3.0-pytorch rev=43046b85ec22d584a13f8098c2ed39c889e129c2 file=config.json http_code=307
+pinned_resolve repo=google/timesfm-3.0-pytorch rev=43046b85ec22d584a13f8098c2ed39c889e129c2 file=README.md http_code=307
+
+=== E. HF API siblings (file lists) for the 3 probe targets ===
+foundation_hf_api_chronos_bolt_tiny.json id= amazon/chronos-bolt-tiny sha= a0e552de83495b5c28c14c71c374f3e33280b340
+  siblings= ['.gitattributes', 'README.md', 'config.json', 'model.safetensors']
+foundation_hf_api_chronos_t5_small.json id= amazon/chronos-t5-small sha= a971ba21945c4f1796b17a91fe69214b5f4ad472
+  siblings= ['.gitattributes', 'README.md', 'config.json', 'figures/main-figure.png', 'generation_config.json', 'model.safetensors']
+foundation_hf_api_timesfm_1_0_200m.json id= google/timesfm-1.0-200m sha= 8775f7531211ac864b739fe776b0b255c277e2be
+  siblings= ['.gitattributes', 'README.md', 'checkpoints/checkpoint_1100000/descriptor/descriptor.pbtxt', 'checkpoints/checkpoint_1100000/metadata/metadata', 'checkpoints/checkpoint_1100000/state/checkpoint']
+
+# end

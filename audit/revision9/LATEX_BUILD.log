@@ -1,0 +1,130 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./ieeecolor.cls
+
+LaTeX Warning: You have requested document class `ieeecolor',
+               but the document class provides `IEEEtran'.
+
+Document Class: IEEEtran 2002/11/18 revision V1.6b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- The source comments contain changelog notes.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- This is a 10 point document.
+) (./generic.sty) (./review_layout.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips
+/base/8r.enc}] [2] [3] [4
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+
+
+pdfTeX warning: pdflatex: pop empty color page stack 0
+ <./figures/peak_scatter.pdf> <./figures/pareto.pdf>]
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[5] (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+Underfull \hbox (badness 4713) in paragraph at lines 289--290
+[]\T1/ptm/m/n/8 Yuqi Nie, Nam H. Nguyen, Phan-wadee Sinthong and Jayant
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+[]\T1/ptm/m/n/8 Xavier Bouthillier et al., ``Ac-count-ing for Vari-ance in
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+\T1/ptm/m/n/8 Ma-chine Learn-ing Bench-marks,'' Pro-ceed-ings of Ma-chine
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+\T1/ptm/m/n/8 Learn-ing and Sys-tems 3, 2021. $\T1/pcr/m/n/8 https : / / procee
+dings .
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+\T1/pcr/m/n/8 mlsys . org / paper _ files / paper / 2021 / file /
+
+Underfull \hbox (badness 3769) in paragraph at lines 300--301
+\T1/ptm/m/n/8 In-for-ma-tion Pro-cess-ing Sys-tems 30, 2017. $\T1/pcr/m/n/8 htt
+ps : / / papers .
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
+\T1/pcr/m/n/8 neurips . cc / paper / 7181-[]attention-[]is-[]all-[]you-[]need .
+
+
+Underfull \hbox (badness 3557) in paragraph at lines 301--302
+[]\T1/ptm/m/n/8 Leonard J. Tash-man, ``Out-of-sample tests of fore-cast-ing ac-
+cu-
+
+Underfull \hbox (badness 5431) in paragraph at lines 301--302
+\T1/ptm/m/n/8 racy: an anal-y-sis and re-view,'' In-ter-na-tional Jour-nal of F
+ore-
+
+Underfull \hbox (badness 4660) in paragraph at lines 301--302
+\T1/ptm/m/n/8 cast-ing 16(4), 437--450, 2000. $\T1/pcr/m/n/8 https : / / doi . 
+org / 10 . 1016 /
+[6] (./main.aux) )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
+bo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on main.pdf (6 pages, 135692 bytes).
+Transcript written on main.log.
+

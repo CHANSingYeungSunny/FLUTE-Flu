@@ -1,0 +1,590 @@
+{
+  "scope": "Final page images inspected for layout, legibility, table/caption flow, glyphs, missing content and clipping; not native Office inspection",
+  "artifacts": [
+    {
+      "role": "Chinese internal report",
+      "sha256": "44fac8a1f3e15f2837bb470b04a0c60582e58d6d7ebbb95fd80cce813fb5b948",
+      "pages": 25,
+      "page_bounds_check_passed": true,
+      "all_pages_visually_reviewed": true,
+      "font_count": 33,
+      "fonts": [
+        {
+          "font": "BAAAAA+Carlito",
+          "embedded_bytes": 19072
+        },
+        {
+          "font": "CAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 72516
+        },
+        {
+          "font": "DAAAAA+Carlito",
+          "embedded_bytes": 20588
+        },
+        {
+          "font": "EAAAAA+Carlito-Bold",
+          "embedded_bytes": 4568
+        },
+        {
+          "font": "FAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 5192
+        },
+        {
+          "font": "GAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 6481
+        },
+        {
+          "font": "HAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 25426
+        },
+        {
+          "font": "IAAAAA+Carlito",
+          "embedded_bytes": 14124
+        },
+        {
+          "font": "JAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 16185
+        },
+        {
+          "font": "KAAAAA+Carlito",
+          "embedded_bytes": 7244
+        },
+        {
+          "font": "LAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 20001
+        },
+        {
+          "font": "MAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 84288
+        },
+        {
+          "font": "NAAAAA+Carlito-Bold",
+          "embedded_bytes": 7020
+        },
+        {
+          "font": "OAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 21671
+        },
+        {
+          "font": "PAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 29560
+        },
+        {
+          "font": "QAAAAA+Carlito-Bold",
+          "embedded_bytes": 10864
+        },
+        {
+          "font": "RAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 3245
+        },
+        {
+          "font": "SAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 16136
+        },
+        {
+          "font": "TAAAAA+Carlito",
+          "embedded_bytes": 17004
+        },
+        {
+          "font": "UAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 83153
+        },
+        {
+          "font": "VAAAAA+Carlito-Italic",
+          "embedded_bytes": 13684
+        },
+        {
+          "font": "WAAAAA+Carlito-Bold",
+          "embedded_bytes": 12092
+        },
+        {
+          "font": "XAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 58877
+        },
+        {
+          "font": "YAAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 88279
+        },
+        {
+          "font": "ZAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 11305
+        },
+        {
+          "font": "ABAAAA+Carlito-Bold",
+          "embedded_bytes": 10540
+        },
+        {
+          "font": "BBAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 86531
+        },
+        {
+          "font": "CBAAAA+Carlito-Italic",
+          "embedded_bytes": 10628
+        },
+        {
+          "font": "DBAAAA+Carlito-Bold",
+          "embedded_bytes": 5224
+        },
+        {
+          "font": "EBAAAA+NotoSerifCJKsc-Regular",
+          "embedded_bytes": 9728
+        },
+        {
+          "font": "FBAAAA+FrankRuhlHofshi-Bold",
+          "embedded_bytes": 2026
+        },
+        {
+          "font": "GBAAAA+Carlito-Bold",
+          "embedded_bytes": 5824
+        },
+        {
+          "font": "HBAAAA+FrankRuhlHofshi-Bold",
+          "embedded_bytes": 2026
+        }
+      ]
+    },
+    {
+      "role": "English FYP progress report",
+      "sha256": "b0da50e65f4cca2eb89a96ce73b73b0757f6d03718447329f36d64b6f4673a91",
+      "pages": 8,
+      "page_bounds_check_passed": true,
+      "all_pages_visually_reviewed": true,
+      "font_count": 12,
+      "fonts": [
+        {
+          "font": "BAAAAA+Carlito",
+          "embedded_bytes": 18160
+        },
+        {
+          "font": "CAAAAA+Carlito-Bold",
+          "embedded_bytes": 6032
+        },
+        {
+          "font": "DAAAAA+Carlito-Italic",
+          "embedded_bytes": 8704
+        },
+        {
+          "font": "EAAAAA+Carlito-Bold",
+          "embedded_bytes": 4728
+        },
+        {
+          "font": "FAAAAA+Carlito-Bold",
+          "embedded_bytes": 15148
+        },
+        {
+          "font": "GAAAAA+Carlito",
+          "embedded_bytes": 19232
+        },
+        {
+          "font": "HAAAAA+Carlito-Bold",
+          "embedded_bytes": 12504
+        },
+        {
+          "font": "IAAAAA+Carlito-Bold",
+          "embedded_bytes": 11412
+        },
+        {
+          "font": "JAAAAA+Carlito",
+          "embedded_bytes": 21068
+        },
+        {
+          "font": "KAAAAA+Carlito-Italic",
+          "embedded_bytes": 17184
+        },
+        {
+          "font": "LAAAAA+Carlito-Bold",
+          "embedded_bytes": 13536
+        },
+        {
+          "font": "MAAAAA+Carlito-Italic",
+          "embedded_bytes": 12588
+        }
+      ]
+    },
+    {
+      "role": "Canonical English LaTeX manuscript",
+      "sha256": "3d220d865b0893a9d22eac6f58a80162d4b69aaccaf8010d670a6365fefa336a",
+      "pages": 6,
+      "page_bounds_check_passed": true,
+      "all_pages_visually_reviewed": true,
+      "font_count": 9,
+      "fonts": [
+        {
+          "font": "ENGGKT+NimbusRomNo9L-Regu",
+          "embedded_bytes": 20954
+        },
+        {
+          "font": "NDLPVE+NimbusSanL-Regu",
+          "embedded_bytes": 9763
+        },
+        {
+          "font": "VNNWHG+NimbusSanL-BoldItal",
+          "embedded_bytes": 7959
+        },
+        {
+          "font": "ICNKAT+NimbusSanL-Bold",
+          "embedded_bytes": 12438
+        },
+        {
+          "font": "HFQVQD+NimbusSanL-ReguItal",
+          "embedded_bytes": 7315
+        },
+        {
+          "font": "FFHPFP+CMSY8",
+          "embedded_bytes": 7346
+        },
+        {
+          "font": "BMQQDV+DejaVuSans",
+          "embedded_bytes": 11900
+        },
+        {
+          "font": "BMQQDV+DejaVuSans",
+          "embedded_bytes": 11464
+        },
+        {
+          "font": "TZGDBE+NimbusMonL-Regu",
+          "embedded_bytes": 14094
+        }
+      ]
+    },
+    {
+      "role": "Editable English manuscript Word rendering",
+      "sha256": "cd46b2ce8eb470cac17fc351fd3f8382ce5ee4df5f5b1fdc97a70539ec9d3400",
+      "pages": 6,
+      "page_bounds_check_passed": true,
+      "all_pages_visually_reviewed": true,
+      "font_count": 9,
+      "fonts": [
+        {
+          "font": "BAAAAA+Carlito",
+          "embedded_bytes": 9900
+        },
+        {
+          "font": "CAAAAA+LiberationSerif",
+          "embedded_bytes": 14544
+        },
+        {
+          "font": "DAAAAA+LiberationSerif-Bold",
+          "embedded_bytes": 8204
+        },
+        {
+          "font": "EAAAAA+LiberationSerif",
+          "embedded_bytes": 23600
+        },
+        {
+          "font": "FAAAAA+Carlito",
+          "embedded_bytes": 7420
+        },
+        {
+          "font": "GAAAAA+Carlito-Italic",
+          "embedded_bytes": 11424
+        },
+        {
+          "font": "HAAAAA+LiberationSerif-Bold",
+          "embedded_bytes": 14904
+        },
+        {
+          "font": "IAAAAA+LiberationSerif",
+          "embedded_bytes": 21628
+        },
+        {
+          "font": "JAAAAA+LiberationSerif",
+          "embedded_bytes": 25300
+        }
+      ]
+    },
+    {
+      "role": "Presentation",
+      "sha256": "3bd271f3b88c8a4885b1e95a9d4c18f73fcf825d833c56e125384cf6391adc28",
+      "pages": 13,
+      "page_bounds_check_passed": true,
+      "all_pages_visually_reviewed": true,
+      "font_count": 34,
+      "fonts": [
+        {
+          "font": "BAAAAA+LiberationSans",
+          "embedded_bytes": 11212
+        },
+        {
+          "font": "CAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 9240
+        },
+        {
+          "font": "DAAAAA+LiberationSans",
+          "embedded_bytes": 10864
+        },
+        {
+          "font": "EAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 10908
+        },
+        {
+          "font": "FAAAAA+LiberationSans",
+          "embedded_bytes": 10340
+        },
+        {
+          "font": "GAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 13276
+        },
+        {
+          "font": "HAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 8336
+        },
+        {
+          "font": "IAAAAA+LiberationSans",
+          "embedded_bytes": 13976
+        },
+        {
+          "font": "JAAAAA+LiberationSans",
+          "embedded_bytes": 15148
+        },
+        {
+          "font": "KAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 8256
+        },
+        {
+          "font": "LAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 12684
+        },
+        {
+          "font": "MAAAAA+LiberationSans",
+          "embedded_bytes": 11716
+        },
+        {
+          "font": "NAAAAA+LiberationSans",
+          "embedded_bytes": 9872
+        },
+        {
+          "font": "OAAAAA+Carlito-Regular",
+          "embedded_bytes": 8780
+        },
+        {
+          "font": "PAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 10208
+        },
+        {
+          "font": "QAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 6672
+        },
+        {
+          "font": "RAAAAA+LiberationSans",
+          "embedded_bytes": 16636
+        },
+        {
+          "font": "SAAAAA+LiberationSans",
+          "embedded_bytes": 13324
+        },
+        {
+          "font": "TAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 12248
+        },
+        {
+          "font": "UAAAAA+LiberationSans",
+          "embedded_bytes": 9924
+        },
+        {
+          "font": "VAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 11692
+        },
+        {
+          "font": "WAAAAA+LiberationSans",
+          "embedded_bytes": 5644
+        },
+        {
+          "font": "XAAAAA+LiberationSans",
+          "embedded_bytes": 12672
+        },
+        {
+          "font": "YAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 5396
+        },
+        {
+          "font": "ZAAAAA+LiberationSans-Bold",
+          "embedded_bytes": 5992
+        },
+        {
+          "font": "ABAAAA+LiberationSans-Bold",
+          "embedded_bytes": 6148
+        },
+        {
+          "font": "BBAAAA+LiberationSans-Bold",
+          "embedded_bytes": 8344
+        },
+        {
+          "font": "CBAAAA+LiberationSans",
+          "embedded_bytes": 8952
+        },
+        {
+          "font": "DBAAAA+LiberationSans",
+          "embedded_bytes": 10964
+        },
+        {
+          "font": "EBAAAA+LiberationSans-Bold",
+          "embedded_bytes": 8640
+        },
+        {
+          "font": "FBAAAA+LiberationSans-Bold",
+          "embedded_bytes": 7208
+        },
+        {
+          "font": "GBAAAA+LiberationSans",
+          "embedded_bytes": 12240
+        },
+        {
+          "font": "HBAAAA+LiberationSans",
+          "embedded_bytes": 9444
+        },
+        {
+          "font": "IBAAAA+LiberationSans-Bold",
+          "embedded_bytes": 8860
+        }
+      ]
+    },
+    {
+      "role": "English preparation notes",
+      "sha256": "8333c4eadb36db2dfdc347f81a9fd579bdea7cd7c496158e4a8469ff6073d830",
+      "pages": 15,
+      "page_bounds_check_passed": true,
+      "all_pages_visually_reviewed": true,
+      "font_count": 9,
+      "fonts": [
+        {
+          "font": "BAAAAA+Carlito",
+          "embedded_bytes": 20832
+        },
+        {
+          "font": "CAAAAA+Carlito",
+          "embedded_bytes": 7444
+        },
+        {
+          "font": "DAAAAA+Carlito-Bold",
+          "embedded_bytes": 15052
+        },
+        {
+          "font": "EAAAAA+Carlito-Bold",
+          "embedded_bytes": 14460
+        },
+        {
+          "font": "FAAAAA+Carlito-Bold",
+          "embedded_bytes": 6476
+        },
+        {
+          "font": "GAAAAA+Carlito",
+          "embedded_bytes": 16220
+        },
+        {
+          "font": "HAAAAA+Carlito-Bold",
+          "embedded_bytes": 9040
+        },
+        {
+          "font": "IAAAAA+NotoSansCJKsc-Regular",
+          "embedded_bytes": 4789
+        },
+        {
+          "font": "JAAAAA+Carlito",
+          "embedded_bytes": 19112
+        }
+      ]
+    }
+  ],
+  "chinese_report_original_body_comparison": [
+    {
+      "page": 1,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 2,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 3,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 4,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 5,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 6,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 7,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 8,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 9,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 10,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 11,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 12,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 13,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 14,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 15,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 16,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 17,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 18,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 19,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 20,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 21,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 22,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 23,
+      "body_pixel_identical_excluding_footer": false
+    },
+    {
+      "page": 24,
+      "body_pixel_identical_excluding_footer": false
+    }
+  ],
+  "word_is_editable_companion_not_pixel_identical_latex": true,
+  "unchanged_deck_verified_by_hash_and_native_chart_checks": true,
+  "chinese_body_pixel_comparison_interpretation": "No exact page raster matches under the current rendering/font environment. Original DOCX paragraph prefix, scientific table cells and all six figure assets are identical; all 25 current pages were visually inspected. The updated total-page footer also differs."
+}

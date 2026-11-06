@@ -1,0 +1,457 @@
+tests_archive/innovation/test_runner_import_path.py::test_runner_imports_when_parent_is_only_the_deployment_root
+tests_archive/innovation/test_runner_import_path.py::test_runner_reaches_spec_resolution_not_import_failure
+tests_archive/innovation/test_runner_import_path.py::test_scripts_root_is_what_gets_added_to_sys_path
+tests_archive/innovation/test_runner_import_path.py::test_innovation_package_parent_layout_is_as_assumed
+tests_archive/innovation/test_runner_import_path.py::test_repair_evidence_recorded
+
+==================================== ERRORS ====================================
+___ ERROR collecting tests_archive/innovation/test_aggregation_regression.py ___
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_aggregation_regression.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_aggregation_regression.py:28: in <module>
+    from innovation import metrics as M  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+__ ERROR collecting tests_archive/innovation/test_architecture_equivalence.py __
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_architecture_equivalence.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_architecture_equivalence.py:19: in <module>
+    from innovation import fidelity as FID  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+_______ ERROR collecting tests_archive/innovation/test_artifact_dirs.py ________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_artifact_dirs.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_artifact_dirs.py:21: in <module>
+    from innovation import clean_runner as CR          # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+______ ERROR collecting tests_archive/innovation/test_backbone_shapes.py _______
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_backbone_shapes.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_backbone_shapes.py:11: in <module>
+    import torch  # noqa: E402
+    ^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'torch'
+___ ERROR collecting tests_archive/innovation/test_canonical_tensor_hash.py ____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_canonical_tensor_hash.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_canonical_tensor_hash.py:12: in <module>
+    import torch
+E   ModuleNotFoundError: No module named 'torch'
+_____ ERROR collecting tests_archive/innovation/test_checkpoint_resume.py ______
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_checkpoint_resume.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_checkpoint_resume.py:12: in <module>
+    import torch  # noqa: E402
+    ^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'torch'
+__ ERROR collecting tests_archive/innovation/test_clean_ablations_controls.py __
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_clean_ablations_controls.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_clean_ablations_controls.py:13: in <module>
+    import torch
+E   ModuleNotFoundError: No module named 'torch'
+_________ ERROR collecting tests_archive/innovation/test_clean_gate.py _________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_clean_gate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_clean_gate.py:18: in <module>
+    from innovation import clean_gate as CG  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+________ ERROR collecting tests_archive/innovation/test_clean_runner.py ________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_clean_runner.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_clean_runner.py:21: in <module>
+    from innovation import clean_metrics as CM            # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+_ ERROR collecting tests_archive/innovation/test_compact_input_normalization.py _
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_compact_input_normalization.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_compact_input_normalization.py:24: in <module>
+    from innovation import compact_checkpoint as CC        # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+___ ERROR collecting tests_archive/innovation/test_d15_storage_predicate.py ____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_d15_storage_predicate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_d15_storage_predicate.py:20: in <module>
+    from innovation import architecture_contract as AC         # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+____ ERROR collecting tests_archive/innovation/test_d16_fail_closed_gate.py ____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_d16_fail_closed_gate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_d16_fail_closed_gate.py:25: in <module>
+    from innovation import storage_verification as SV        # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+____ ERROR collecting tests_archive/innovation/test_d5_asset_resolution.py _____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_d5_asset_resolution.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_d5_asset_resolution.py:21: in <module>
+    from innovation import assets as AS  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+______ ERROR collecting tests_archive/innovation/test_d6_gpt2_padding.py _______
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_d6_gpt2_padding.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_d6_gpt2_padding.py:13: in <module>
+    import torch
+E   ModuleNotFoundError: No module named 'torch'
+__ ERROR collecting tests_archive/innovation/test_deployment_completeness.py ___
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_deployment_completeness.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_deployment_completeness.py:26: in <module>
+    from innovation import clean_runner as CR  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+______ ERROR collecting tests_archive/innovation/test_eligibility_gate.py ______
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_eligibility_gate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_eligibility_gate.py:21: in <module>
+    from innovation import run_artifacts as ART  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+_____ ERROR collecting tests_archive/innovation/test_finalize_baseline.py ______
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_finalize_baseline.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_finalize_baseline.py:25: in <module>
+    from innovation import baseline_finalize as BF               # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+____ ERROR collecting tests_archive/innovation/test_make_backbone_kwargs.py ____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_make_backbone_kwargs.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_make_backbone_kwargs.py:18: in <module>
+    from innovation import clean_runner as CR          # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+________ ERROR collecting tests_archive/innovation/test_no_overwrite.py ________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_no_overwrite.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_no_overwrite.py:12: in <module>
+    from innovation import run_artifacts as ART  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+____ ERROR collecting tests_archive/innovation/test_parentage_correction.py ____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_parentage_correction.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_parentage_correction.py:18: in <module>
+    from textual_embedder import (DEFAULT_MIFLU_PROMPT_COMPONENTS,  # noqa: E402
+E   ModuleNotFoundError: No module named 'textual_embedder'
+_______ ERROR collecting tests_archive/innovation/test_peak_criteria.py ________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_peak_criteria.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_peak_criteria.py:14: in <module>
+    from innovation import metrics as M  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+___________ ERROR collecting tests_archive/innovation/test_run_id.py ___________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_run_id.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_run_id.py:11: in <module>
+    from innovation.run_id import make_run_id, parse_run_id, slug  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+_____ ERROR collecting tests_archive/innovation/test_runtime_path_guard.py _____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_runtime_path_guard.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_runtime_path_guard.py:19: in <module>
+    from innovation import runtime_guard as RG  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+____ ERROR collecting tests_archive/innovation/test_selection_model_key.py _____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_selection_model_key.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_selection_model_key.py:17: in <module>
+    from innovation.paths import canonical_model_key  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+____ ERROR collecting tests_archive/innovation/test_source_snapshot_gate.py ____
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_source_snapshot_gate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_source_snapshot_gate.py:31: in <module>
+    from innovation import run_artifacts as ART  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+_______ ERROR collecting tests_archive/innovation/test_stage_f_cohort.py _______
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_stage_f_cohort.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_stage_f_cohort.py:15: in <module>
+    from innovation.paths import canonical_model_key  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+_______ ERROR collecting tests_archive/innovation/test_storage_policy.py _______
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_storage_policy.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_storage_policy.py:17: in <module>
+    from innovation import storage_policy as SP        # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+_________ ERROR collecting tests_archive/innovation/test_test_gate.py __________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/innovation/test_test_gate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/innovation/test_test_gate.py:19: in <module>
+    from innovation import run_artifacts as ART  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'innovation'
+__________ ERROR collecting tests_archive/test_cpu_download_worker.py __________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_cpu_download_worker.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_cpu_download_worker.py:45: in <module>
+    import weights_worker as ww                      # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'weights_worker'
+_____________ ERROR collecting tests_archive/test_leakage_audit.py _____________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_leakage_audit.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_leakage_audit.py:26: in <module>
+    import torch
+E   ModuleNotFoundError: No module named 'torch'
+_________ ERROR collecting tests_archive/test_llm_encoder_backbone.py __________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_llm_encoder_backbone.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_llm_encoder_backbone.py:37: in <module>
+    import torch
+E   ModuleNotFoundError: No module named 'torch'
+____________ ERROR collecting tests_archive/test_llm_probe_mode.py _____________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_llm_probe_mode.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_llm_probe_mode.py:35: in <module>
+    import train_backbone_966 as tb                  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'train_backbone_966'
+__________ ERROR collecting tests_archive/test_llm_seed_provenance.py __________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_llm_seed_provenance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_llm_seed_provenance.py:32: in <module>
+    import llm_seed_provenance as prov  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'llm_seed_provenance'
+____________ ERROR collecting tests_archive/test_miflu_ablations.py ____________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_miflu_ablations.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_miflu_ablations.py:33: in <module>
+    import torch
+E   ModuleNotFoundError: No module named 'torch'
+______________ ERROR collecting tests_archive/test_revin_math.py _______________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_revin_math.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_revin_math.py:20: in <module>
+    import torch
+E   ModuleNotFoundError: No module named 'torch'
+_____________ ERROR collecting tests_archive/test_timing_metric.py _____________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_timing_metric.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_timing_metric.py:24: in <module>
+    from compute_miflu_indicators import compute_peak_indicators
+E   ModuleNotFoundError: No module named 'compute_miflu_indicators'
+____________ ERROR collecting tests_archive/test_train_regional.py _____________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_train_regional.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_train_regional.py:38: in <module>
+    import train_regional as tr                      # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'train_regional'
+_____________ ERROR collecting tests_archive/test_walk_forward.py ______________
+ImportError while importing test module '/workspace/scratch/3ee30e2684d1/project_corrected/tests_archive/test_walk_forward.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests_archive/test_walk_forward.py:44: in <module>
+    import walk_forward as wf                       # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'walk_forward'
+=========================== short test summary info ============================
+ERROR tests_archive/innovation/test_aggregation_regression.py
+ERROR tests_archive/innovation/test_architecture_equivalence.py
+ERROR tests_archive/innovation/test_artifact_dirs.py
+ERROR tests_archive/innovation/test_backbone_shapes.py
+ERROR tests_archive/innovation/test_canonical_tensor_hash.py
+ERROR tests_archive/innovation/test_checkpoint_resume.py
+ERROR tests_archive/innovation/test_clean_ablations_controls.py
+ERROR tests_archive/innovation/test_clean_gate.py
+ERROR tests_archive/innovation/test_clean_runner.py
+ERROR tests_archive/innovation/test_compact_input_normalization.py
+ERROR tests_archive/innovation/test_d15_storage_predicate.py
+ERROR tests_archive/innovation/test_d16_fail_closed_gate.py
+ERROR tests_archive/innovation/test_d5_asset_resolution.py
+ERROR tests_archive/innovation/test_d6_gpt2_padding.py
+ERROR tests_archive/innovation/test_deployment_completeness.py
+ERROR tests_archive/innovation/test_eligibility_gate.py
+ERROR tests_archive/innovation/test_finalize_baseline.py
+ERROR tests_archive/innovation/test_make_backbone_kwargs.py
+ERROR tests_archive/innovation/test_no_overwrite.py
+ERROR tests_archive/innovation/test_parentage_correction.py
+ERROR tests_archive/innovation/test_peak_criteria.py
+ERROR tests_archive/innovation/test_run_id.py
+ERROR tests_archive/innovation/test_runtime_path_guard.py
+ERROR tests_archive/innovation/test_selection_model_key.py
+ERROR tests_archive/innovation/test_source_snapshot_gate.py
+ERROR tests_archive/innovation/test_stage_f_cohort.py
+ERROR tests_archive/innovation/test_storage_policy.py
+ERROR tests_archive/innovation/test_test_gate.py
+ERROR tests_archive/test_cpu_download_worker.py
+ERROR tests_archive/test_leakage_audit.py
+ERROR tests_archive/test_llm_encoder_backbone.py
+ERROR tests_archive/test_llm_probe_mode.py
+ERROR tests_archive/test_llm_seed_provenance.py
+ERROR tests_archive/test_miflu_ablations.py
+ERROR tests_archive/test_revin_math.py
+ERROR tests_archive/test_timing_metric.py
+ERROR tests_archive/test_train_regional.py
+ERROR tests_archive/test_walk_forward.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 38 errors during collection !!!!!!!!!!!!!!!!!!!
+5 tests collected, 38 errors in 10.34s

@@ -1,0 +1,69 @@
+{
+  "status": "partially_executed_submitted_in_progress",
+  "captured_utc": "2026-11-04T15:35:00Z",
+  "scheduler": "trackB_v2 (static stripes, mkdir claims, validated completion, 3 passes, retry cap 2)",
+  "families": {
+    "B_core_160": {
+      "planned": 160,
+      "validated_complete": 160,
+      "status": "completed"
+    },
+    "B_national_28x4x10": {
+      "planned": 1120,
+      "validated_complete": 117,
+      "status": "running_queued",
+      "job_ids": [
+        735300,
+        735301,
+        735313
+      ]
+    },
+    "C_rolling_origin": {
+      "planned_minimum": 3,
+      "submitted": 0,
+      "status": "not_executed",
+      "reason": "eligible-origin list not frozen from real calendar"
+    },
+    "C_regional": {
+      "submitted": 0,
+      "status": "not_executed",
+      "reason": "compatible regions/scalers/target units not frozen"
+    }
+  },
+  "controllers": {
+    "core": 735297,
+    "all": 735298,
+    "post_all": 735299
+  },
+  "legacy_queue": {
+    "table6_todo": 9,
+    "walk_forward_todo": 170,
+    "handoff": "post_all_v2.sh submits persistent_driver.sh exactly once after all/phase.done"
+  },
+  "cancelled_old_chain_jobs": [
+    734749,
+    734750,
+    734751,
+    734617,
+    734618,
+    734753,
+    734754,
+    734756,
+    734757,
+    735139,
+    735152,
+    735279,
+    735280,
+    735281,
+    735277,
+    735278,
+    734673,
+    734674,
+    734675,
+    734676,
+    734688
+  ],
+  "resource_policy": "3 GPU lanes (2 gpu_a100 24h, 1 stingy 6h QOS); controller on tiny 24h",
+  "quota_guard": "warn >450G, pause new submissions >900G; checkpoint prune is OPT-IN only",
+  "resume_policy": "controller resubmits any absent lane; lanes skip validated cells; per-lane done sentinels stop churn; controller renews once at 23h via afterany"
+}

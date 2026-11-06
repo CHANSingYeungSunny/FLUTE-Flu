@@ -1,0 +1,15 @@
+item,old_value,new_value,source_id,cause,status
+ablation cells complete,27/60,60/60,hpc:master_queue table8_cell,3 Nov snapshot was mid-run; all five variants x 12 cells are DONE with per-cell manifests,resolved
+Holm rejections (136 pairs),109/136,0/136,02_数字表格/BENCH_PAIRED_TESTS.csv + proper Holm,exported p_holm used reverse cumulative minimum,resolved
+NLinear-PatchTST adjusted p,0.1143,0.1172,same,proper Holm recomputation,resolved
+family decomposition,16 conventional + MIFlu + 3 LLM + 11,13 conventional + 4 LLM-based + 11,BENCH_MSE_BY_MODEL_L.csv,double count of the three published LLM baselines,resolved
+paired-test family,28 models implied,"17 non-encoder models incl MIFlu, excl DLinear and 11 encoders",same,"136 = C(17,2)",resolved
+job 722968,driver running,CANCELLED after 1d05h; child cells completed,sacct,driver cancelled after cells drained,resolved
+Table VI regional,queued/not started,"41 DONE, 1 RUNNING, 19 TODO, 30 SKIPPED",master_queue,partial execution,unresolved
+walk-forward,not run,"632 DONE, 170 TODO, 238 SKIPPED",master_queue,partial execution,unresolved
+1120 matrix submission,not submitted,submitted: 735300/735301/735313 + controller 735298,squeue/scontrol,09:14 UTC snapshot predates the patched v2 submission,resolved
+core 160 completion,80 results files counted as 80/160,160/160 validated complete cells,cellok.py + validated_counts.txt,completion check counted files from only one of three runner schemas,resolved
+classical model routing,--backbone decision_tree (invalid choice),train_classical_966.py --model,train_classical_966.py --help,200 cells would have failed deterministically,resolved
+data profiles,assumed identical,"7 channels identical (max diff 0.0), byte hashes differ",PROFILE_COMPARISON.md,different metadata columns/names,resolved
+Table VI regional,41 DONE/19 TODO,41 DONE/9 TODO/19 SKIPPED/1 stale RUNNING,logs/trackB_v2/ + master_queue.tsv,legacy driver stopped; handoff via post_all_v2,unresolved
+walk-forward,632 DONE/170 TODO,632 DONE/170 TODO/238 SKIPPED,master_queue.tsv,not started; pending post_all_v2,unresolved

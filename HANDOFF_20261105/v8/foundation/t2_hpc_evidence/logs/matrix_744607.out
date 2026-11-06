@@ -1,0 +1,90 @@
+=== T2_MATRIX START 2026-11-06T15:57:33Z host=gpu-a100-05 job=744607 ===
+GPU 0: NVIDIA A100-SXM4-80GB (UUID: GPU-cf93ded8-653b-23d0-25ec-18d7496c3a80)
+NVIDIA A100-SXM4-80GB, 580.167.08, 81920 MiB
+--- verify ALL FOUR remote tars INSIDE this compute-node job ---
+EXPECTED (local Windows sha256, size):
+  f28b41b19e9348c9a4a733eb208595b577509667035ca7a8c55e38a304b81c18  34652160  chronos_bolt_tiny.tar
+  d6df552e68fc0f2fbad20141d8b852870af76580d51c89508b2a221021f2da16  184893440  chronos_t5_small.tar
+  963d6d6adf8d91c8d8f0a7362eed981bcd147d6d766e7980622141fdd0ebeb13  814376960  timesfm_1_0_200m.tar
+  7fef382ad503bb8489966729250e790ac78bf9cc4b9966a32d6769667ab90363  3990978560  timesfm_2_0_500m_pytorch.tar
+REMOTE chronos_bolt_tiny.tar size=34652160 sha256=f28b41b19e9348c9a4a733eb208595b577509667035ca7a8c55e38a304b81c18
+REMOTE chronos_t5_small.tar size=184893440 sha256=d6df552e68fc0f2fbad20141d8b852870af76580d51c89508b2a221021f2da16
+REMOTE timesfm_1_0_200m.tar size=814376960 sha256=963d6d6adf8d91c8d8f0a7362eed981bcd147d6d766e7980622141fdd0ebeb13
+REMOTE timesfm_2_0_500m_pytorch.tar size=3990978560 sha256=7fef382ad503bb8489966729250e790ac78bf9cc4b9966a32d6769667ab90363
+TOTAL_REMOTE_TAR_BYTES=5024901120
+--- verify + extract TimesFM 2.0 tar INSIDE compute node ---
+tar_size=3990978560
+tar_sha256=7fef382ad503bb8489966729250e790ac78bf9cc4b9966a32d6769667ab90363
+EXPECTED_TAR_SHA256=7fef382ad503bb8489966729250e790ac78bf9cc4b9966a32d6769667ab90363
+TAR_EXTRACT_RC=0
+torch_model.ckpt sha256=a3a1362cdc26f0dde45c9790c438951ff02af96b2d1d6445fdb58f28c77e18de
+EXPECTED_LFS_OID=a3a1362cdc26f0dde45c9790c438951ff02af96b2d1d6445fdb58f28c77e18de
+MATRIX_RC=0
+--- peak VRAM ---
+peak_vram_mib=2608
+n_samples=18
+--- stdout ---
+ See https://github.com/google-research/timesfm/blob/master/README.md for updated APIs.
+Loaded PyTorch TimesFM, likely because python version is 3.11.13 (main, Jun  1 2026, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-14)].
+DEVICE cuda NVIDIA A100-SXM4-80GB
+CELL {"label": "foundation_chronos", "repo_id": "amazon/chronos-bolt-tiny", "L": 24, "seed": 2021, "T": 104, "mse_7var_z": 0.391328494214842, "mae_7var_z": 0.38354600155631297, "all_finite": true, "status": "ok", "wall_s": 0.2218, "load_s": 0.4241, "inference_latency_ms": 221.835, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_chronos_L24_s2021.npz", "quantile_shape": [7, 9, 24], "point_estimator": "median quantile"}
+CELL {"label": "foundation_chronos", "repo_id": "amazon/chronos-bolt-tiny", "L": 36, "seed": 2021, "T": 104, "mse_7var_z": 2.2073974038407127, "mae_7var_z": 0.8228125978793258, "all_finite": true, "status": "ok", "wall_s": 0.0104, "load_s": 0.4241, "inference_latency_ms": 10.38, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_chronos_L36_s2021.npz", "quantile_shape": [7, 9, 36], "point_estimator": "median quantile"}
+CELL {"label": "foundation_chronos", "repo_id": "amazon/chronos-bolt-tiny", "L": 48, "seed": 2021, "T": 104, "mse_7var_z": 1.7135358177616078, "mae_7var_z": 0.7144444235980304, "all_finite": true, "status": "ok", "wall_s": 0.0099, "load_s": 0.4241, "inference_latency_ms": 9.898, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_chronos_L48_s2021.npz", "quantile_shape": [7, 9, 48], "point_estimator": "median quantile"}
+CELL {"label": "foundation_chronos", "repo_id": "amazon/chronos-bolt-tiny", "L": 60, "seed": 2021, "T": 104, "mse_7var_z": 1.4002307209877294, "mae_7var_z": 0.6290749702336526, "all_finite": true, "status": "ok", "wall_s": 0.0101, "load_s": 0.4241, "inference_latency_ms": 10.109, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_chronos_L60_s2021.npz", "quantile_shape": [7, 9, 60], "point_estimator": "median quantile"}
+TIMESFM_FORECAST_OK (7, 128) (7, 128, 10)
+CELL {"label": "foundation_timesfm", "repo_id": "google/timesfm-2.0-500m-pytorch", "L": 24, "seed": 2021, "T": 104, "mse_7var_z": 0.7297525333525895, "mae_7var_z": 0.55222854102346, "all_finite": true, "status": "ok", "wall_s": 0.0, "load_s": 4.3873, "inference_latency_ms": 0.004, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_timesfm_L24_s2021.npz", "forecast_shape": [7, 128], "freq_indicator": 1, "point_estimator": "TimesFM mean forecast (horizon_len=128, sliced to L)"}
+CELL {"label": "foundation_timesfm", "repo_id": "google/timesfm-2.0-500m-pytorch", "L": 36, "seed": 2021, "T": 104, "mse_7var_z": 2.654955323576468, "mae_7var_z": 0.9666897748733104, "all_finite": true, "status": "ok", "wall_s": 0.0, "load_s": 4.3873, "inference_latency_ms": 2.483, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_timesfm_L36_s2021.npz", "forecast_shape": [7, 128], "freq_indicator": 1, "point_estimator": "TimesFM mean forecast (horizon_len=128, sliced to L)"}
+CELL {"label": "foundation_timesfm", "repo_id": "google/timesfm-2.0-500m-pytorch", "L": 48, "seed": 2021, "T": 104, "mse_7var_z": 2.031110049314629, "mae_7var_z": 0.7960082834044987, "all_finite": true, "status": "ok", "wall_s": 0.0, "load_s": 4.3873, "inference_latency_ms": 4.489, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_timesfm_L48_s2021.npz", "forecast_shape": [7, 128], "freq_indicator": 1, "point_estimator": "TimesFM mean forecast (horizon_len=128, sliced to L)"}
+CELL {"label": "foundation_timesfm", "repo_id": "google/timesfm-2.0-500m-pytorch", "L": 60, "seed": 2021, "T": 104, "mse_7var_z": 1.6629733698689972, "mae_7var_z": 0.6950911470769424, "all_finite": true, "status": "ok", "wall_s": 0.0, "load_s": 4.3873, "inference_latency_ms": 6.492, "device": "cuda", "scope": "foundation_zero_shot_subset_not_1120_panel", "npz": "pred_foundation_timesfm_L60_s2021.npz", "forecast_shape": [7, 128], "freq_indicator": 1, "point_estimator": "TimesFM mean forecast (horizon_len=128, sliced to L)"}
+MATRIX_SUMMARY {"cells": 8, "ok": 8}
+--- stderr tail ---
+Loading weights:   0%|          | 0/101 [00:00<?, ?it/s]Loading weights: 100%|██████████| 101/101 [00:00<00:00, 5603.58it/s]
+--- time -v ---
+	Command being timed: "timeout 3000s /home/sychan552/.venvs/mlflu_fm/bin/python -u /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t2_fm/t2_matrix.py"
+	User time (seconds): 10.19
+	System time (seconds): 2.07
+	Percent of CPU this job got: 68%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5083268
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 521414
+	Voluntary context switches: 2533
+	Involuntary context switches: 113
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- outputs ---
+total 66
+drwxr-xr-x 2 sychan552 sychan552 4096 Nov  6 23:58 .
+drwxr-xr-x 6 sychan552 sychan552 4096 Nov  6 23:57 ..
+-rw-r--r-- 1 sychan552 sychan552 2264 Nov  6 23:58 FOUNDATION_CELLS.csv
+-rw-r--r-- 1 sychan552 sychan552 1301 Nov  6 23:58 FOUNDATION_MATRIX_REPORT.json
+-rw-r--r-- 1 sychan552 sychan552 4016 Nov  6 23:57 pred_foundation_chronos_L24_s2021.npz
+-rw-r--r-- 1 sychan552 sychan552 4688 Nov  6 23:57 pred_foundation_chronos_L36_s2021.npz
+-rw-r--r-- 1 sychan552 sychan552 5360 Nov  6 23:57 pred_foundation_chronos_L48_s2021.npz
+-rw-r--r-- 1 sychan552 sychan552 6032 Nov  6 23:57 pred_foundation_chronos_L60_s2021.npz
+-rw-r--r-- 1 sychan552 sychan552 4044 Nov  6 23:58 pred_foundation_timesfm_L24_s2021.npz
+-rw-r--r-- 1 sychan552 sychan552 4716 Nov  6 23:58 pred_foundation_timesfm_L36_s2021.npz
+-rw-r--r-- 1 sychan552 sychan552 5388 Nov  6 23:58 pred_foundation_timesfm_L48_s2021.npz
+-rw-r--r-- 1 sychan552 sychan552 6060 Nov  6 23:58 pred_foundation_timesfm_L60_s2021.npz
+--- FOUNDATION_CELLS.csv ---
+L,T,all_finite,device,forecast_shape,freq_indicator,inference_latency_ms,label,load_s,mae_7var_z,mse_7var_z,npz,point_estimator,quantile_shape,repo_id,scope,seed,status,wall_s
+24,104,True,cuda,,,221.835,foundation_chronos,0.4241,0.38354600155631297,0.391328494214842,pred_foundation_chronos_L24_s2021.npz,median quantile,"[7, 9, 24]",amazon/chronos-bolt-tiny,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.2218
+36,104,True,cuda,,,10.38,foundation_chronos,0.4241,0.8228125978793258,2.2073974038407127,pred_foundation_chronos_L36_s2021.npz,median quantile,"[7, 9, 36]",amazon/chronos-bolt-tiny,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.0104
+48,104,True,cuda,,,9.898,foundation_chronos,0.4241,0.7144444235980304,1.7135358177616078,pred_foundation_chronos_L48_s2021.npz,median quantile,"[7, 9, 48]",amazon/chronos-bolt-tiny,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.0099
+60,104,True,cuda,,,10.109,foundation_chronos,0.4241,0.6290749702336526,1.4002307209877294,pred_foundation_chronos_L60_s2021.npz,median quantile,"[7, 9, 60]",amazon/chronos-bolt-tiny,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.0101
+24,104,True,cuda,"[7, 128]",1,0.004,foundation_timesfm,4.3873,0.55222854102346,0.7297525333525895,pred_foundation_timesfm_L24_s2021.npz,"TimesFM mean forecast (horizon_len=128, sliced to L)",,google/timesfm-2.0-500m-pytorch,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.0
+36,104,True,cuda,"[7, 128]",1,2.483,foundation_timesfm,4.3873,0.9666897748733104,2.654955323576468,pred_foundation_timesfm_L36_s2021.npz,"TimesFM mean forecast (horizon_len=128, sliced to L)",,google/timesfm-2.0-500m-pytorch,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.0
+48,104,True,cuda,"[7, 128]",1,4.489,foundation_timesfm,4.3873,0.7960082834044987,2.031110049314629,pred_foundation_timesfm_L48_s2021.npz,"TimesFM mean forecast (horizon_len=128, sliced to L)",,google/timesfm-2.0-500m-pytorch,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.0
+60,104,True,cuda,"[7, 128]",1,6.492,foundation_timesfm,4.3873,0.6950911470769424,1.6629733698689972,pred_foundation_timesfm_L60_s2021.npz,"TimesFM mean forecast (horizon_len=128, sliced to L)",,google/timesfm-2.0-500m-pytorch,foundation_zero_shot_subset_not_1120_panel,2021,ok,0.0
+=== T2_MATRIX END 2026-11-06T15:58:04Z ===

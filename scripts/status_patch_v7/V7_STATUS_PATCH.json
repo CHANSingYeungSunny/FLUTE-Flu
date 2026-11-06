@@ -1,0 +1,259 @@
+{
+  "version": 7,
+  "base": "DOCUMENTS/v6 from RETURN_TO_CHATGPT.zip",
+  "scope": "execution status and limitations only; numerical scientific tables preserved",
+  "files": [
+    {
+      "filename": "ieee_manuscript_en.docx",
+      "sha256": "50283a6e456d369145948abaf2860e898cdd8030ddce7970484bbac07b443909",
+      "paragraphs": [
+        {
+          "index": 4,
+          "old": "We audit an independent MIFlu reproduction and 28 forecasting implementations on a 966-row US national influenza series. The supplied reproduction table gives mean squared error (MSE) 1.4995 versus the published 1.4355, with lower MSE at two horizons and higher MSE at two. Under three benchmark seeds, MIFlu, PatchTST and NLinear achieve 1.5574, 1.6621 and 1.8716. A joint screen using literature-derived timing and intensity tolerances yields 4/16 passing aggregated cells for both NLinear and MIFlu and 0/16 for PatchTST. NLinear has lower mean peak-intensity error but higher mean timing error than MIFlu. Across 11 arms with parameter exports, the MSE–log-parameter fit has slope +0.1171 and R² 0.0223. An audit identifies an incorrect Holm routine in the supplied analysis: correcting 136 comparisons among 17 models yields no rejections, with NLinear–PatchTST p approximately 0.1172. This does not establish equivalence. Eleven frozen language encoders perform worse than a decision tree in the tested readout configuration. Ablation completion is owner-reported at 60/60 and is not aggregated. The findings are descriptive and limited to one split, retrospective peak detection and adapted implementations. We recommend reporting peak magnitude and timing alongside average error, then selecting on validation-defined costs and budgets before prospective deployment.",
+          "new": "We audit an independent MIFlu reproduction and 28 forecasting implementations on a 966-row US national influenza series. The supplied reproduction table gives mean squared error (MSE) 1.4995 versus the published 1.4355, with lower MSE at two horizons and higher MSE at two. Under three benchmark seeds, MIFlu, PatchTST and NLinear achieve 1.5574, 1.6621 and 1.8716. A joint screen using literature-derived timing and intensity tolerances yields 4/16 passing aggregated cells for both NLinear and MIFlu and 0/16 for PatchTST. NLinear has lower mean peak-intensity error but higher mean timing error than MIFlu. Across 11 arms with parameter exports, the MSE–log-parameter fit has slope +0.1171 and R² 0.0223. An audit identifies an incorrect Holm routine in the supplied analysis: correcting 136 comparisons among 17 models yields no rejections, with NLinear–PatchTST p approximately 0.1172. This does not establish equivalence. Eleven frozen language encoders perform worse than a decision tree in the tested readout configuration. The returned queue records ablation completion 60/60; per-variant aggregate analysis is pending. The findings are descriptive and limited to one split, retrospective peak detection and adapted implementations. We recommend reporting peak magnitude and timing alongside average error, then selecting on validation-defined costs and budgets before prospective deployment."
+        },
+        {
+          "index": 55,
+          "old": "Owner-reported status at 3 November 2026: 60/60 additional cells, job 722968. Burgundy queue and per-cell manifests show 60/60 DONE; the per-variant aggregate trend has not been recomputed. The baseline 12 cells are not part of the additional 60. No trend is inferred.",
+          "new": "Returned Burgundy queue evidence dated 4 November 2026 records 60/60 additional ablation cells DONE. Per-variant seven-channel aggregation remains pending; this review did not independently rerun the ablation jobs. Historical job 722968 is reported CANCELLED, not active. The baseline 12 cells are not part of the additional 60. No trend is inferred."
+        },
+        {
+          "index": 56,
+          "old": "F5 provisional conclusion. In miflu_model.py’s author_faithful path, text follows time tokens behind causal attention and the head reads the time tokens. Static inspection therefore predicts no text influence during deterministic evaluation. The supplied tests_archive/test_miflu_ablations.py explicitly asserts both text invariance and full/no-text equality with matched CPU initialisation. It was inspected statically, not executed here. Other fusion paths and training randomness require separate checks.",
+          "new": "F5 provisional conclusion. In miflu_model.py’s author_faithful path, text follows time tokens behind causal attention and the head reads the time tokens. Static inspection therefore predicts no text influence during deterministic evaluation. The supplied tests_archive/test_miflu_ablations.py explicitly asserts both text invariance and full/no-text equality with matched CPU initialisation. The supplied JUnit and runtime log now record three no-text assertions passed with zero skips under fixed-weight CPU evaluation; they were not rerun in this review. Other fusion paths and training randomness require separate checks."
+        },
+        {
+          "index": 58,
+          "old": "One national series and one chronological split do not establish regional or prospective utility. Peak matching can use future observations to define events and is a retrospective evaluation tool. Synthetic date labels require a verified CDC calendar mapping before season-specific claims. Parameter exports omit MIFlu and encoders. The 60/60 ablation status is owner-reported, not a live cluster check. Modern numerical foundation baselines, regional results, rolling origins and validated uncertainty are missing.",
+          "new": "One national series and one chronological split do not establish regional or prospective utility. Peak matching can use future observations to define events and is a retrospective evaluation tool. Synthetic date labels require a verified CDC calendar mapping before season-specific claims. Parameter exports omit MIFlu and encoders. The supplied queue log records 60/60 ablation cells DONE, but no per-variant aggregate trend has been independently verified. Modern numerical foundation baselines, regional results, rolling origins and validated uncertainty are missing."
+        }
+      ],
+      "cells": []
+    },
+    {
+      "filename": "ieee_manuscript_zh.docx",
+      "sha256": "a1817eef6d37ed3f688e2ddaf6c8b89712990ca471708befc510c1f1ecb6a172",
+      "paragraphs": [
+        {
+          "index": 4,
+          "old": "本文审计 MIFlu 的独立复现及美国全国流感 966 行序列上的 28 个预测实现。复现表平均 MSE 为 1.4995，原文为 1.4355，逐跨度两低两高。三种子基准中，MIFlu、PatchTST、NLinear 分别为 1.5574、1.6621、1.8716。采用文献容差的联合筛选下，NLinear 与 MIFlu 各通过 4/16 聚合单元，PatchTST 为 0/16。NLinear 峰高误差更低，但时间误差高于 MIFlu。11 个有参数导出的模型中，MSE 对对数参数的斜率为 +0.1171，R² 为 0.0223。源 Holm 程序存在错误；修正 17 模型的 136 配对后，没有拒绝，NLinear–PatchTST 的 p 约 0.1172，不能据此证明等价。11 个冻结语言编码器在所测读出配置中均差于决策树。消融仅有用户报告的 60/60 完成，尚未聚合。结论受单次划分、回顾性峰检测及适配实现限制。建议并列报告峰高、时间与平均误差，并在前瞻部署前依验证阶段确定的代价与预算选模。",
+          "new": "本文审计 MIFlu 的独立复现及美国全国流感 966 行序列上的 28 个预测实现。复现表平均 MSE 为 1.4995，原文为 1.4355，逐跨度两低两高。三种子基准中，MIFlu、PatchTST、NLinear 分别为 1.5574、1.6621、1.8716。采用文献容差的联合筛选下，NLinear 与 MIFlu 各通过 4/16 聚合单元，PatchTST 为 0/16。NLinear 峰高误差更低，但时间误差高于 MIFlu。11 个有参数导出的模型中，MSE 对对数参数的斜率为 +0.1171，R² 为 0.0223。源 Holm 程序存在错误；修正 17 模型的 136 配对后，没有拒绝，NLinear–PatchTST 的 p 约 0.1172，不能据此证明等价。11 个冻结语言编码器在所测读出配置中均差于决策树。回传队列记录消融 60/60 为 DONE，逐变体趋势尚未核实。结论受单次划分、回顾性峰检测及适配实现限制。建议并列报告峰高、时间与平均误差，并在前瞻部署前依验证阶段确定的代价与预算选模。"
+        },
+        {
+          "index": 55,
+          "old": "用户报告截至 2026 年 11 月 3 日：新增 60 单元中完成 27，作业 722968。Burgundy 队列与逐格 manifest 显示 60/60 已完成；逐变体聚合趋势尚未重算。参考 12 单元不计入新增 60 单元。不推断趋势。",
+          "new": "2026 年 11 月 4 日回传的 Burgundy 队列记录显示新增消融单元 60/60 为 DONE。逐变体七通道聚合仍待完成；本次未独立重跑消融作业。历史作业 722968 的回传状态为 CANCELLED，不是仍在运行。参考 12 单元不计入新增 60 单元。不推断趋势。"
+        },
+        {
+          "index": 56,
+          "old": "F5 暂定结论。 miflu_model.py 的 author_faithful 路径将文本置于时间词元之后，使用因果注意力，预测头只读取时间词元。静态检查因此推断确定性评估时文本不影响输出。所附 tests_archive/test_miflu_ablations.py 明确断言文本不变性，以及匹配 CPU 初始化时完整与无文本模型相同。本次仅静态检查，未执行。其他融合路径及训练随机性须分别验证。",
+          "new": "F5 暂定结论。 miflu_model.py 的 author_faithful 路径将文本置于时间词元之后，使用因果注意力，预测头只读取时间词元。静态检查因此推断确定性评估时文本不影响输出。所附 tests_archive/test_miflu_ablations.py 明确断言文本不变性，以及匹配 CPU 初始化时完整与无文本模型相同。现有所附 JUnit 与运行日志记录三项固定权重 CPU no-text 断言通过、零跳过；本次审阅未重跑这些模型测试。其他融合路径及训练随机性须分别验证。"
+        },
+        {
+          "index": 58,
+          "old": "单一全国序列与单次时序划分不能证明区域或前瞻效用。峰值匹配可使用未来观测定义事件，只能作为回顾性评测工具。合成日期标签必须与 CDC 日历核实映射后才能作逐季判断。参数导出缺少 MIFlu 与编码器。60/60 的消融状态来自用户报告，而非实时集群检查。现代数值基础模型、区域结果、滚动原点及经过验证的不确定性仍缺失。",
+          "new": "单一全国序列与单次时序划分不能证明区域或前瞻效用。峰值匹配可使用未来观测定义事件，只能作为回顾性评测工具。合成日期标签必须与 CDC 日历核实映射后才能作逐季判断。参数导出缺少 MIFlu 与编码器。所附队列日志记录消融 60/60 为 DONE，但尚未独立核实逐变体聚合趋势。现代数值基础模型、区域结果、滚动原点及经过验证的不确定性仍缺失。"
+        }
+      ],
+      "cells": []
+    },
+    {
+      "filename": "progress_report_en.docx",
+      "sha256": "f894e8f8390ce65a96e2927bf4cbfd4bc4cc58912c327c9d0fd5696050bceecd",
+      "paragraphs": [
+        {
+          "index": 21,
+          "old": "Progress against plan. The supplied exports contain the reproduction table and 28 × 4 × 3 benchmark cell means. The original suite is supplied under tests_archive/, but cannot be collected cleanly here. My audit now recomputes the CSV aggregates and has seven new CPU tests. The ablation remains owner-reported at 60/60 with no per-variant aggregation. Regional and rolling-origin evaluation are incomplete.",
+          "new": "Progress against plan. The supplied exports contain the reproduction table and 28 × 4 × 3 benchmark cell means. The original suite is supplied under tests_archive/, but cannot be collected cleanly here. My audit now recomputes the CSV aggregates and has seven new CPU tests. The returned queue reports 60/60 ablation cells DONE; per-variant aggregation remains pending. Regional and rolling-origin evaluation are incomplete."
+        },
+        {
+          "index": 47,
+          "old": "Owner-reported status at 3 November 2026: 60/60 additional cells, job 722968. Burgundy queue and per-cell manifests show 60/60 DONE; the per-variant aggregate trend has not been recomputed. The baseline 12 cells are not part of the additional 60. No trend is inferred.",
+          "new": "Returned Burgundy queue evidence dated 4 November 2026 records 60/60 additional ablation cells DONE. Per-variant seven-channel aggregation remains pending; this review did not independently rerun the ablation jobs. Historical job 722968 is reported CANCELLED, not active. The baseline 12 cells are not part of the additional 60. No trend is inferred."
+        },
+        {
+          "index": 48,
+          "old": "F5 provisional conclusion. In miflu_model.py’s author_faithful path, text follows time tokens behind causal attention and the head reads the time tokens. Static inspection therefore predicts no text influence during deterministic evaluation. The supplied tests_archive/test_miflu_ablations.py explicitly asserts both text invariance and full/no-text equality with matched CPU initialisation. It was inspected statically, not executed here. Other fusion paths and training randomness require separate checks.",
+          "new": "F5 provisional conclusion. In miflu_model.py’s author_faithful path, text follows time tokens behind causal attention and the head reads the time tokens. Static inspection therefore predicts no text influence during deterministic evaluation. The supplied tests_archive/test_miflu_ablations.py explicitly asserts both text invariance and full/no-text equality with matched CPU initialisation. The supplied JUnit and runtime log now record three no-text assertions passed with zero skips under fixed-weight CPU evaluation; they were not rerun in this review. Other fusion paths and training randomness require separate checks."
+        },
+        {
+          "index": 52,
+          "old": "These are planning estimates supplied in the task, not measured research scores. 45% is 60/60. The other estimates are not independently measured.",
+          "new": "The ablation queue completion is 100% (60/60), while its per-variant analysis remains pending. Other project-completion percentages are owner planning estimates, not measured research scores. The old statement equating 45% with 60/60 was incorrect."
+        }
+      ],
+      "cells": [
+        {
+          "table": 10,
+          "row": 5,
+          "col": 1,
+          "old": "Partly, owner reports 60/60",
+          "new": "Queue DONE 60/60; analysis pending"
+        },
+        {
+          "table": 10,
+          "row": 5,
+          "col": 2,
+          "old": "45%",
+          "new": "100% queue only"
+        }
+      ]
+    },
+    {
+      "filename": "progress_report_zh.docx",
+      "sha256": "d58e01fe44546ec06fd0c5d61bb422dda04dc425c767b7b2833929e5047d0746",
+      "paragraphs": [
+        {
+          "index": 21,
+          "old": "对照计划的进度。 所附导出包含复现表和 28 × 4 × 3 基准单元聚合。原测试已包含在 tests_archive/，但本环境无法完整收集。本次审计重算 CSV 聚合，并新增七个 CPU 测试。消融仍为用户报告的 60/60，未逐变体聚合。区域与滚动原点评测尚未完成。",
+          "new": "对照计划的进度。 所附导出包含复现表和 28 × 4 × 3 基准单元聚合。原测试已包含在 tests_archive/，但本环境无法完整收集。本次审计重算 CSV 聚合，并新增七个 CPU 测试。回传队列记录消融 60/60 为 DONE，逐变体聚合仍待完成。区域与滚动原点评测尚未完成。"
+        },
+        {
+          "index": 47,
+          "old": "用户报告截至 2026 年 11 月 3 日：新增 60 单元中完成 27，作业 722968。Burgundy 队列与逐格 manifest 显示 60/60 已完成；逐变体聚合趋势尚未重算。参考 12 单元不计入新增 60 单元。不推断趋势。",
+          "new": "2026 年 11 月 4 日回传的 Burgundy 队列记录显示新增消融单元 60/60 为 DONE。逐变体七通道聚合仍待完成；本次未独立重跑消融作业。历史作业 722968 的回传状态为 CANCELLED，不是仍在运行。参考 12 单元不计入新增 60 单元。不推断趋势。"
+        },
+        {
+          "index": 48,
+          "old": "F5 暂定结论。 miflu_model.py 的 author_faithful 路径将文本置于时间词元之后，使用因果注意力，预测头只读取时间词元。静态检查因此推断确定性评估时文本不影响输出。所附 tests_archive/test_miflu_ablations.py 明确断言文本不变性，以及匹配 CPU 初始化时完整与无文本模型相同。本次仅静态检查，未执行。其他融合路径及训练随机性须分别验证。",
+          "new": "F5 暂定结论。 miflu_model.py 的 author_faithful 路径将文本置于时间词元之后，使用因果注意力，预测头只读取时间词元。静态检查因此推断确定性评估时文本不影响输出。所附 tests_archive/test_miflu_ablations.py 明确断言文本不变性，以及匹配 CPU 初始化时完整与无文本模型相同。现有所附 JUnit 与运行日志记录三项固定权重 CPU no-text 断言通过、零跳过；本次审阅未重跑这些模型测试。其他融合路径及训练随机性须分别验证。"
+        },
+        {
+          "index": 52,
+          "old": "这些是任务给定的项目进度估计，不是研究评分。45% 等于 60/60；其他比例未独立测量。",
+          "new": "消融队列完成度为 100%（60/60），逐变体分析仍待完成。其余项目完成比例属于用户规划估计，不是研究评分。旧文将 45% 等同于 60/60 的说法有误。"
+        }
+      ],
+      "cells": [
+        {
+          "table": 10,
+          "row": 5,
+          "col": 1,
+          "old": "部分，用户报告 60/60",
+          "new": "队列 DONE 60/60；分析待完成"
+        },
+        {
+          "table": 10,
+          "row": 5,
+          "col": 2,
+          "old": "45%",
+          "new": "队列完成 100%"
+        }
+      ]
+    },
+    {
+      "filename": "report_internal_en.docx",
+      "sha256": "c39b6fee530f6c2985de9958419a5f3a19fa193ae875674b719a4b74f9f40192",
+      "paragraphs": [
+        {
+          "index": 18,
+          "old": "Run python scripts/verify_snapshot.py --raw-smoke and python -m pytest tests/test_snapshot_audit.py -q from the repository root. The audit re-derives headline aggregates, peak flags, correlations, regression, Holm adjustment and one raw prediction MSE. Seven newly added CPU audit tests passed; they are separate from the archived model suite. The corrected ZIP supplies tests_archive/. Collection fails under the historical layout and missing model dependencies. No archived-suite pass count or reliable collected total is claimed. Training, live HPC status and upstream code were not rerun. The original source CSVs are retained unchanged, with a separate corrected Holm export.",
+          "new": "Run python scripts/verify_snapshot.py --raw-smoke and python -m pytest tests/test_snapshot_audit.py -q from the repository root. The audit re-derives headline aggregates, peak flags, correlations, regression, Holm adjustment and one raw prediction MSE. Seven newly added CPU audit tests passed; they are separate from the archived model suite. The corrected ZIP supplies tests_archive/. Collection fails under the historical layout and missing model dependencies. No archived-suite pass count or reliable collected total is claimed. The return supplies GPU execution and scheduler records, including core artefact completion 160/160. This review did not rerun training, connect to live HPC or execute pinned upstream code. See the v7 addendum for dated national counts and remaining limits. The original source CSVs are retained unchanged, with a separate corrected Holm export."
+        },
+        {
+          "index": 201,
+          "old": "Owner-reported status at 3 November 2026: 60/60 additional cells, job 722968. Burgundy queue and per-cell manifests show 60/60 DONE; the per-variant aggregate trend has not been recomputed. The baseline 12 cells are not part of the additional 60. No trend is inferred.",
+          "new": "Returned Burgundy queue evidence dated 4 November 2026 records 60/60 additional ablation cells DONE. Per-variant seven-channel aggregation remains pending; this review did not independently rerun the ablation jobs. Historical job 722968 is reported CANCELLED, not active. The baseline 12 cells are not part of the additional 60. No trend is inferred."
+        },
+        {
+          "index": 202,
+          "old": "F5 provisional conclusion. In miflu_model.py’s author_faithful path, text follows time tokens behind causal attention and the head reads the time tokens. Static inspection therefore predicts no text influence during deterministic evaluation. The supplied tests_archive/test_miflu_ablations.py explicitly asserts both text invariance and full/no-text equality with matched CPU initialisation. It was inspected statically, not executed here. Other fusion paths and training randomness require separate checks.",
+          "new": "F5 provisional conclusion. In miflu_model.py’s author_faithful path, text follows time tokens behind causal attention and the head reads the time tokens. Static inspection therefore predicts no text influence during deterministic evaluation. The supplied tests_archive/test_miflu_ablations.py explicitly asserts both text invariance and full/no-text equality with matched CPU initialisation. The supplied JUnit and runtime log now record three no-text assertions passed with zero skips under fixed-weight CPU evaluation; they were not rerun in this review. Other fusion paths and training randomness require separate checks."
+        },
+        {
+          "index": 204,
+          "old": "Answer and local evidence. In the inspected author_faithful path, time tokens precede text tokens. Causal attention permits each position to read only its own or earlier positions, and the head reads the time-token positions. Those positions therefore cannot use later text in a deterministic evaluation forward pass. The supplied archive explicitly asserts text invariance and matched-initialisation full/no-text CPU equality, but those model tests were not executed here. Other fusion paths, dropout and independently trained trajectories require separate checks. The exact files and commands are in audit/NO_TEXT_VERIFICATION.md.",
+          "new": "Answer and local evidence. In the inspected author_faithful path, time tokens precede text tokens. Causal attention permits each position to read only its own or earlier positions, and the head reads the time-token positions. Those positions therefore cannot use later text in a deterministic evaluation forward pass. The supplied archive explicitly asserts text invariance and matched-initialisation full/no-text CPU equality, and the supplied JUnit now records those three fixed-weight CPU model assertions passed with zero skips; this review did not rerun them. Other fusion paths, dropout and independently trained trajectories require separate checks. The exact files and commands are in audit/NO_TEXT_VERIFICATION.md."
+        },
+        {
+          "index": 205,
+          "old": "Paper-based reasoning. The Transformer paper explains masking that prevents attention to subsequent positions [24, §3.1]. With the inspected ordering, time positions cannot acquire later text through these layers, and the head reads time positions. This is a structural argument about a fixed forward path, not certification of repository runtime or bitwise equality. The three archived assertions must control weights, inputs and evaluation randomness when comparing changed text and matched full/no-text outputs. They remain not executed. Independent training can consume randomness differently and requires its own test.",
+          "new": "Paper-based reasoning. The Transformer paper explains masking that prevents attention to subsequent positions [24, §3.1]. With the inspected ordering, time positions cannot acquire later text through these layers, and the head reads time positions. This is a structural argument about a fixed forward path, not certification of repository runtime or bitwise equality. The three archived assertions must control weights, inputs and evaluation randomness when comparing changed text and matched full/no-text outputs. The supplied JUnit now records three assertions passed with zero skips on CPU; this is returned execution evidence, not a new model-test run in this review. Independent training can consume randomness differently and requires its own test."
+        },
+        {
+          "index": 210,
+          "old": "Answer and local evidence. It is an owner-reported operational snapshot as of 3 November, not a live scheduler result or an aggregated model comparison. The additional design has five arms, each with four horizons and three seeds: 60 cells beyond the 12-cell reference. Without per-arm result exports, completion is not evidence of a depth trend or a benefit of LoRA. Do not infer a completed no-text ablation from the presence of its test assertions. We need run-level outputs, status and provenance before reporting scientific results.",
+          "new": "Answer and local evidence. It is queue-completion evidence in the returned 4 November records, not an aggregated model comparison or an independently rerun ablation study. The additional design has five arms, each with four horizons and three seeds: 60 cells beyond the 12-cell reference. Without per-arm result exports, completion is not evidence of a depth trend or a benefit of LoRA. Do not infer a completed no-text ablation from the presence of its test assertions. We need run-level outputs, status and provenance before reporting scientific results."
+        },
+        {
+          "index": 216,
+          "old": "One national series and one chronological split do not establish regional or prospective utility. Peak matching can use future observations to define events and is a retrospective evaluation tool. Synthetic date labels require a verified CDC calendar mapping before season-specific claims. Parameter exports omit MIFlu and encoders. The 60/60 ablation status is owner-reported, not a live cluster check. Modern numerical foundation baselines, regional results, rolling origins and validated uncertainty are missing.",
+          "new": "One national series and one chronological split do not establish regional or prospective utility. Peak matching can use future observations to define events and is a retrospective evaluation tool. Synthetic date labels require a verified CDC calendar mapping before season-specific claims. Parameter exports omit MIFlu and encoders. The supplied queue log records 60/60 ablation cells DONE, but no per-variant aggregate trend has been independently verified. Modern numerical foundation baselines, regional results, rolling origins and validated uncertainty are missing."
+        },
+        {
+          "index": 226,
+          "old": "Run python scripts/verify_snapshot.py --raw-smoke and python -m pytest tests/test_snapshot_audit.py -q from the repository root. The audit re-derives headline aggregates, peak flags, correlations, regression, Holm adjustment and one raw prediction MSE. Seven newly added CPU audit tests passed; they are separate from the archived model suite. The corrected ZIP supplies tests_archive/. Collection fails under the historical layout and missing model dependencies. No archived-suite pass count or reliable collected total is claimed. Training, live HPC status and upstream code were not rerun. The original source CSVs are retained unchanged, with a separate corrected Holm export.",
+          "new": "Run python scripts/verify_snapshot.py --raw-smoke and python -m pytest tests/test_snapshot_audit.py -q from the repository root. The audit re-derives headline aggregates, peak flags, correlations, regression, Holm adjustment and one raw prediction MSE. Seven newly added CPU audit tests passed; they are separate from the archived model suite. The corrected ZIP supplies tests_archive/. Collection fails under the historical layout and missing model dependencies. No archived-suite pass count or reliable collected total is claimed. The return supplies GPU execution and scheduler records, including core artefact completion 160/160. This review did not rerun training, connect to live HPC or execute pinned upstream code. See the v7 addendum for dated national counts and remaining limits. The original source CSVs are retained unchanged, with a separate corrected Holm export."
+        },
+        {
+          "index": 228,
+          "old": "Unverified items: pinned upstream checkpoint/loader protocol and learning rate; archived suite execution and no-text runtime test; ten-seed raw reproduction logs; model revisions/licences; live ablation and regional status; real CDC calendar mapping; current JBHI author limits/JCR record and next-cycle venue dates. Each requires its primary artefact, not a further prose assertion.",
+          "new": "Unverified items: pinned upstream checkpoint/loader protocol and learning rate; whole archived-suite execution beyond the three returned passing CPU no-text checks; ten-seed raw reproduction logs; model revisions/licences; ablation aggregate provenance and updated regional status; real CDC calendar mapping; current JBHI author limits/JCR record and next-cycle venue dates. Each requires its primary artefact, not a further prose assertion."
+        },
+        {
+          "index": 230,
+          "old": "Answer and local evidence. The documented CPU commands reproduce CSV headline arithmetic, correct Holm and one raw prediction-cell MSE. Seven new CPU audit checks passed. The historical archive was supplied, but collection failed and its model assertions are not counted as passed. Full GPU training, all-run raw rescoring, live HPC, pinned upstream identity and no-text runtime remain unexecuted or unverified. Hardware provenance also lacks complete retained-cell coverage. A polished document does not close those gaps. Use the exact follow-up commands in audit/EXECUTION_STATUS.md and audit/NO_TEXT_VERIFICATION.md.",
+          "new": "Answer and local evidence. The documented CPU commands reproduce CSV headline arithmetic, correct Holm and one raw prediction-cell MSE. Seven new CPU audit checks passed. Whole-archive collection still failed. The supplied JUnit records three fixed-weight CPU no-text assertions passed with zero skips, while returned core artefacts satisfy 160/160 completeness checks. The national 1120 matrix remains in progress. Full common-panel scoring, pinned upstream identity and independent-training text effects remain unresolved; this review did not rerun GPU training or connect to live HPC. Hardware provenance also lacks complete retained-cell coverage. A polished document does not close those gaps. Use the exact follow-up commands in audit/EXECUTION_STATUS.md and audit/NO_TEXT_VERIFICATION.md."
+        }
+      ],
+      "cells": []
+    },
+    {
+      "filename": "report_internal_zh.docx",
+      "sha256": "7164d52c755ba69e729c74f5208bf879ab293be0bac45b94853d5e6de51af009",
+      "paragraphs": [
+        {
+          "index": 18,
+          "old": "在仓库根目录运行 python scripts/verify_snapshot.py --raw-smoke 及 python -m pytest tests/test_snapshot_audit.py -q。审计重算主要聚合值、峰值标记、相关系数、回归、Holm 校正和一个原始预测 MSE。七个新增 CPU 审计测试已通过，它们与归档模型测试分开。修正 ZIP 已提供 tests_archive/，但历史目录布局及模型依赖缺失导致收集失败。本次不主张归档测试通过数或可靠总数。本次未重跑训练、未查询实时 HPC，亦未运行上游代码。原 CSV 保持不变，Holm 修正另行导出。",
+          "new": "在仓库根目录运行 python scripts/verify_snapshot.py --raw-smoke 及 python -m pytest tests/test_snapshot_audit.py -q。审计重算主要聚合值、峰值标记、相关系数、回归、Holm 校正和一个原始预测 MSE。七个新增 CPU 审计测试已通过，它们与归档模型测试分开。修正 ZIP 已提供 tests_archive/，但历史目录布局及模型依赖缺失导致收集失败。本次不主张归档测试通过数或可靠总数。回传包现提供 GPU 执行和调度记录，包括核心单元产物完整性 160/160。本次审阅未重跑训练、连接实时 HPC 或执行固定版本上游代码；全国矩阵的分时计数及限制见 v7 增补。原 CSV 保持不变，Holm 修正另行导出。"
+        },
+        {
+          "index": 201,
+          "old": "用户报告截至 2026 年 11 月 3 日：新增 60 单元中完成 27，作业 722968。Burgundy 队列与逐格 manifest 显示 60/60 已完成；逐变体聚合趋势尚未重算。参考 12 单元不计入新增 60 单元。不推断趋势。",
+          "new": "2026 年 11 月 4 日回传的 Burgundy 队列记录显示新增消融单元 60/60 为 DONE。逐变体七通道聚合仍待完成；本次未独立重跑消融作业。历史作业 722968 的回传状态为 CANCELLED，不是仍在运行。参考 12 单元不计入新增 60 单元。不推断趋势。"
+        },
+        {
+          "index": 202,
+          "old": "F5 暂定结论。 miflu_model.py 的 author_faithful 路径将文本置于时间词元之后，使用因果注意力，预测头只读取时间词元。静态检查因此推断确定性评估时文本不影响输出。所附 tests_archive/test_miflu_ablations.py 明确断言文本不变性，以及匹配 CPU 初始化时完整与无文本模型相同。本次仅静态检查，未执行。其他融合路径及训练随机性须分别验证。",
+          "new": "F5 暂定结论。 miflu_model.py 的 author_faithful 路径将文本置于时间词元之后，使用因果注意力，预测头只读取时间词元。静态检查因此推断确定性评估时文本不影响输出。所附 tests_archive/test_miflu_ablations.py 明确断言文本不变性，以及匹配 CPU 初始化时完整与无文本模型相同。现有所附 JUnit 与运行日志记录三项固定权重 CPU no-text 断言通过、零跳过；本次审阅未重跑这些模型测试。其他融合路径及训练随机性须分别验证。"
+        },
+        {
+          "index": 204,
+          "old": "直接回答与本地证据。 已检查的 author_faithful 路径把时间词元放在文本词元前。因果注意力只允许每个位置读取自身或更早位置，预测头又只读取时间词元位置。因此在确定性评估前向过程中，这些位置无法利用后面的文本。所附归档明确断言文本不变性，以及匹配初始化的完整/无文本 CPU 输出相同，但本次没有执行这些模型测试。其他融合路径、dropout 和独立训练轨迹仍需分别检查。精确文件与命令见 audit/NO_TEXT_VERIFICATION.md。",
+          "new": "直接回答与本地证据。 已检查的 author_faithful 路径把时间词元放在文本词元前。因果注意力只允许每个位置读取自身或更早位置，预测头又只读取时间词元位置。因此在确定性评估前向过程中，这些位置无法利用后面的文本。所附归档明确断言文本不变性，以及匹配初始化的完整/无文本 CPU 输出相同，所附 JUnit 现记录三项固定权重 CPU 模型断言通过、零跳过；本次审阅未重跑它们。其他融合路径、dropout 和独立训练轨迹仍需分别检查。精确文件与命令见 audit/NO_TEXT_VERIFICATION.md。"
+        },
+        {
+          "index": 205,
+          "old": "文献依据与选择理由。 Transformer 原文说明遮罩如何阻止关注后续位置 [24，第 3.1 节]。按已检查顺序，时间位置不能通过这些层取得后方文本，预测头又只读时间位置。这是固定前向路径的结构论证，不是仓库运行或逐位相等认证。三项归档断言须控制权重、输入和评估随机性，再比较更换文本及匹配完整/无文本输出，当前仍未执行。独立训练可能不同地消耗随机数，须另测。",
+          "new": "文献依据与选择理由。 Transformer 原文说明遮罩如何阻止关注后续位置 [24，第 3.1 节]。按已检查顺序，时间位置不能通过这些层取得后方文本，预测头又只读时间位置。这是固定前向路径的结构论证，不是仓库运行或逐位相等认证。三项归档断言须控制权重、输入和评估随机性，再比较更换文本及匹配完整/无文本输出，所附 JUnit 现记录三项 CPU 断言通过且零跳过；这是回传执行证据，本次未重跑模型测试。独立训练可能不同地消耗随机数，须另测。"
+        },
+        {
+          "index": 210,
+          "old": "直接回答与本地证据。 这是截至 11 月 3 日用户报告的运行状态快照，不是实时调度器查询，也不是已聚合的模型比较。新增设计有五个变体，每个四跨度、三种子，合计 60 单元；参考模型另有 12 单元。没有逐变体结果导出，就不能从完成数量推断深度趋势或 LoRA 收益。存在 no-text 测试断言，也不代表已完成相应消融实验。报告科学结果前，需要逐运行输出、状态及来源。",
+          "new": "直接回答与本地证据。 这是 11 月 4 日回传记录中的队列完成证据，不是已聚合的模型比较，也不是本次独立重跑的消融研究。新增设计有五个变体，每个四跨度、三种子，合计 60 单元；参考模型另有 12 单元。没有逐变体结果导出，就不能从完成数量推断深度趋势或 LoRA 收益。存在 no-text 测试断言，也不代表已完成相应消融实验。报告科学结果前，需要逐运行输出、状态及来源。"
+        },
+        {
+          "index": 216,
+          "old": "单一全国序列与单次时序划分不能证明区域或前瞻效用。峰值匹配可使用未来观测定义事件，只能作为回顾性评测工具。合成日期标签必须与 CDC 日历核实映射后才能作逐季判断。参数导出缺少 MIFlu 与编码器。60/60 的消融状态来自用户报告，而非实时集群检查。现代数值基础模型、区域结果、滚动原点及经过验证的不确定性仍缺失。",
+          "new": "单一全国序列与单次时序划分不能证明区域或前瞻效用。峰值匹配可使用未来观测定义事件，只能作为回顾性评测工具。合成日期标签必须与 CDC 日历核实映射后才能作逐季判断。参数导出缺少 MIFlu 与编码器。所附队列日志记录消融 60/60 为 DONE，但尚未独立核实逐变体聚合趋势。现代数值基础模型、区域结果、滚动原点及经过验证的不确定性仍缺失。"
+        },
+        {
+          "index": 226,
+          "old": "在仓库根目录运行 python scripts/verify_snapshot.py --raw-smoke 及 python -m pytest tests/test_snapshot_audit.py -q。审计重算主要聚合值、峰值标记、相关系数、回归、Holm 校正和一个原始预测 MSE。七个新增 CPU 审计测试已通过，它们与归档模型测试分开。修正 ZIP 已提供 tests_archive/，但历史目录布局及模型依赖缺失导致收集失败。本次不主张归档测试通过数或可靠总数。本次未重跑训练、未查询实时 HPC，亦未运行上游代码。原 CSV 保持不变，Holm 修正另行导出。",
+          "new": "在仓库根目录运行 python scripts/verify_snapshot.py --raw-smoke 及 python -m pytest tests/test_snapshot_audit.py -q。审计重算主要聚合值、峰值标记、相关系数、回归、Holm 校正和一个原始预测 MSE。七个新增 CPU 审计测试已通过，它们与归档模型测试分开。修正 ZIP 已提供 tests_archive/，但历史目录布局及模型依赖缺失导致收集失败。本次不主张归档测试通过数或可靠总数。回传包现提供 GPU 执行和调度记录，包括核心单元产物完整性 160/160。本次审阅未重跑训练、连接实时 HPC 或执行固定版本上游代码；全国矩阵的分时计数及限制见 v7 增补。原 CSV 保持不变，Holm 修正另行导出。"
+        },
+        {
+          "index": 228,
+          "old": "待核实项：固定上游版本的检查点、加载器与学习率；归档测试执行与 no-text 运行测试；十种子原始复现日志；模型版本与许可；实时消融及区域状态；真实 CDC 日历映射；当前 JBHI 作者限制、JCR 记录及下一轮会议日期。每项都需原始证据，不能靠文字断言补足。",
+          "new": "待核实项：固定上游版本的检查点、加载器与学习率；三项已回传通过的 CPU no-text 检查以外的归档测试执行；十种子原始复现日志；模型版本与许可；消融聚合来源与更新的区域状态；真实 CDC 日历映射；当前 JBHI 作者限制、JCR 记录及下一轮会议日期。每项都需原始证据，不能靠文字断言补足。"
+        },
+        {
+          "index": 230,
+          "old": "直接回答与本地证据。 文档中的 CPU 命令可以重算 CSV 主要聚合、正确 Holm 和一个原始预测单元的 MSE；七个新增 CPU 审计检查已通过。历史归档已经提供，但收集失败，不能把其中模型断言算作通过。完整 GPU 训练、全运行原始重评分、实时 HPC、固定上游身份和 no-text 运行测试仍未执行或未核实，硬件来源也未完整覆盖正式单元。文档排版完善不能补足这些证据。精确后续命令见 audit/EXECUTION_STATUS.md 与 audit/NO_TEXT_VERIFICATION.md。",
+          "new": "直接回答与本地证据。 文档中的 CPU 命令可以重算 CSV 主要聚合、正确 Holm 和一个原始预测单元的 MSE；七个新增 CPU 审计检查已通过。整个历史归档的收集仍失败。所附 JUnit 记录三项固定权重 CPU no-text 断言通过且零跳过，核心产物满足 160/160 完整性检查；全国 1120 矩阵仍在进行。完整共同面板评分及固定上游身份仍待核实，本次未重跑 GPU 训练或连接实时 HPC，硬件来源也未完整覆盖正式单元。文档排版完善不能补足这些证据。精确后续命令见 audit/EXECUTION_STATUS.md 与 audit/NO_TEXT_VERIFICATION.md。"
+        }
+      ],
+      "cells": []
+    }
+  ]
+}

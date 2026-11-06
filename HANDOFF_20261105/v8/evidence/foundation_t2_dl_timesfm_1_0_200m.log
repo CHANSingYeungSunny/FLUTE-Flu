@@ -1,0 +1,28 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+START_UTC=2026-11-06T15:08:50Z
+REPO_ID=google/timesfm-1.0-200m
+REVISION=8775f7531211ac864b739fe776b0b255c277e2be
+LOCAL_DIR=C:/models/mlflu_fm/timesfm_1_0_200m
+NAME=timesfm_1_0_200m
+HFHUB_VERSION=2.4.0
+HFHUB_LOADED_FROM=C:\models\mlflu_fm\_deps\huggingface_hub\__init__.py
+TREE_URL=https://huggingface.co/google/timesfm-1.0-200m/tree/8775f7531211ac864b739fe776b0b255c277e2be
+SNAPSHOT_RETURNED=C:\models\mlflu_fm\timesfm_1_0_200m
+MANIFEST=HANDOFF_20261105/v8/evidence\foundation_t2_manifest_timesfm_1_0_200m.txt
+FILE_COUNT=13
+TOTAL_BYTES=814344460
+END_UTC=2026-11-06T15:09:24Z
+FILE 1 684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1 .cache/huggingface/.gitignore
+FILE 195 e8893e2dcb3f4545ef67a0a5b7b769113d38eef1aa61c7c7ba14659b02af955f .cache/huggingface/CACHEDIR.TAG
+FILE 104 9eb2512ae57c71098b9a88969330c3918624ab09f2baea29adb02a2e55352253 .cache/huggingface/download/.gitattributes.metadata
+FILE 104 b21e01e9a95377af05d6926cba00b37a16c35651914ce20a4cf4035146fb0644 .cache/huggingface/download/README.md.metadata
+FILE 104 dd82a73c1dda5573363d63b276df5c4ea84064d50f66df7513b5811980039279 .cache/huggingface/download/checkpoints/checkpoint_1100000/descriptor/descriptor.pbtxt.metadata
+FILE 103 4d8ea4e746b35256428e2f973b5849563e2f74ddd4f7d74d204bd6dcb13c3ff2 .cache/huggingface/download/checkpoints/checkpoint_1100000/metadata/metadata.metadata
+FILE 128 ebbd8f80d3df1fc359f818c13894494a20dfbbde59464cdf7ded798f5ee4e240 .cache/huggingface/download/checkpoints/checkpoint_1100000/state/checkpoint.metadata
+FILE 876 bbb4f521e7e7735299832df17f03bc17122acaffd56ee247f56b9c67b1d8a9fe .cache/huggingface/trees/8775f7531211ac864b739fe776b0b255c277e2be.json
+FILE 1603 5527087c659c45aadaeadea2c0415ed316b8ceba6d1f5d66a9be4a3bc4013f71 .gitattributes
+FILE 5732 b97dd24ea3dcaca1edcc5f7c83b2a6846c5afe8cb52f3470d53beeb9e492eebc README.md
+FILE 499 4a412bdeb978f1ef478cbc08da379f1144c7995e9084eb22ccc9b9b71797bd79 checkpoints/checkpoint_1100000/descriptor/descriptor.pbtxt
+FILE 43859 75e01a2210116f37a21579974925fb671e171bcc3dbc62d86c3e4d5d59677a8f checkpoints/checkpoint_1100000/metadata/metadata
+FILE 814291152 d147f95bbe40ffeb1e8d61643925dd29eeb00b5696db33bf9f6e1887682f6391 checkpoints/checkpoint_1100000/state/checkpoint
+STATUS=OK

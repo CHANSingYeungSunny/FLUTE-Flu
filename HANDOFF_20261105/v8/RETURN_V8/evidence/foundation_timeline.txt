@@ -1,0 +1,14 @@
+# foundation_timeline.txt
+# All times UTC, observed on 2026-11-06 from the Windows project root.
+start_utc=2026-11-06T13:21:18Z
+http_status_sweep_utc=2026-11-06T13:23:36Z
+commit_and_pin_verification_utc=2026-11-06T13:29:14Z
+probe_chronos_bolt_tiny_utc=2026-11-06T13:32:00Z
+probe_chronos_t5_small_utc=2026-11-06T13:32:06Z
+probe_timesfm_1_0_200m_utc=2026-11-06T13:32:10Z
+extra_verification_utc=2026-11-06T13:33:06Z
+verdict_start_utc=2026-11-06T13:21:18Z
+verdict_end_utc=2026-11-06T13:39:51Z
+final_utc=2026-11-06T13:42:05Z
+# manifest foundation_all_files.sha256 generated at final_utc (self-excluded).
+# No HPC/ssh/sbatch was used at any point.

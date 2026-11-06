@@ -1,0 +1,8 @@
+{
+  "updated_utc": "2026-11-05T14:26:09.319894+00:00",
+  "attempt": 3,
+  "tcp22": true,
+  "ssh": true,
+  "shell_recovered": false,
+  "diagnosis": "gotcha 11: auth OK, exec/sftp zero bytes; login shell cannot spawn; retry cannot fix; needs D-state process to clear or sysadmin"
+}

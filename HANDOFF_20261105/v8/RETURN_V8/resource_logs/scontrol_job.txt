@@ -1,0 +1,31 @@
+JobId=744239 JobName=t6_res_cpu
+   UserId=sychan552(90731875) GroupId=sychan552(90731875) MCS_label=N/A
+   Priority=962 Nice=0 Account=ga_bms_kkhchan QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:15:00 TimeMin=N/A
+   SubmitTime=2026-11-06T21:51:26 EligibleTime=2026-11-06T21:51:26
+   AccrueTime=2026-11-06T21:51:26
+   StartTime=2026-11-06T21:51:27 EndTime=2026-11-06T22:06:27 Deadline=N/A
+   PreemptEligibleTime=2026-11-06T21:51:27 PreemptTime=None
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-06T21:51:27 Scheduler=Main
+   Partition=tiny AllocNode:Sid=hpclogin02:2789813
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=cpunode-034
+   BatchHost=cpunode-034
+   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=4,mem=8G,node=1,billing=5
+   AllocTRES=cpu=4,mem=8G,node=1,billing=5
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=8G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/t6_res_cpu.sbatch
+   WorkDir=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res
+   StdErr=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/logs/t6_res_cpu_744239.err
+   StdIn=/dev/null
+   StdOut=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/logs/t6_res_cpu_744239.out
+   Power=
+   TresPerTask=cpu:4
+   
+

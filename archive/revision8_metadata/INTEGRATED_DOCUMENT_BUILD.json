@@ -1,0 +1,50 @@
+[
+  {
+    "file": "ieee_manuscript_en.docx",
+    "q_headings": 0,
+    "scientific_tables_preserved": true,
+    "figures": 3
+  },
+  {
+    "file": "ieee_manuscript_zh.docx",
+    "q_headings": 0,
+    "scientific_tables_preserved": true,
+    "figures": 3
+  },
+  {
+    "file": "progress_report_en.docx",
+    "q_headings": 0,
+    "scientific_tables_preserved": true,
+    "figures": 2
+  },
+  {
+    "file": "progress_report_zh.docx",
+    "q_headings": 0,
+    "scientific_tables_preserved": true,
+    "figures": 2
+  },
+  {
+    "file": "report_internal_en.docx",
+    "q_headings": 25,
+    "scientific_tables_preserved": true,
+    "figures": 6
+  },
+  {
+    "file": "report_internal_zh.docx",
+    "q_headings": 25,
+    "scientific_tables_preserved": true,
+    "figures": 6
+  },
+  {
+    "file": "record_for_journal_en.docx",
+    "q_headings": 25,
+    "basis": "complete audited internal report plus journal evidence register",
+    "figures": 6
+  },
+  {
+    "file": "record_for_journal_zh.docx",
+    "q_headings": 25,
+    "basis": "complete audited internal report plus journal evidence register",
+    "figures": 6
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-05T16:51:42.914996+00:00",
+  "validator": {
+    "integrity_status": "PASS",
+    "errors": [],
+    "warnings": [
+      "Declared counts and file presence are not scientific completeness checks. Raw scores, array/channel/window alignment, test validity and claims require independent review."
+    ],
+    "listed_files": 43,
+    "scientific_readiness": "NOT_ASSESSED",
+    "scope": "Structure, manifest membership, hashes and required-file/status declarations only"
+  },
+  "validator_final_exit": 0,
+  "zips": [
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\HANDOFF_20261105\\RETURN_TO_CHATGPT.zip",
+      "bytes": 58510,
+      "sha256": "e7cd5f07888261e095875986b4885dedbca15ef50ecb60bb74edabf920b47018",
+      "members": 31
+    },
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\FYP code\\MLFlu\\HANDOFF_20261105\\RAW_EVIDENCE.zip",
+      "bytes": 1004508,
+      "sha256": "07e9136798c8f175bd986c619a3e8bcb7d6ad2651d6a3d5c3bbc35d2a8c3e690",
+      "members": 14
+    }
+  ]
+}

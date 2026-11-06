@@ -1,0 +1,15 @@
+{
+  "grid_cells": 1020,
+  "status_counts": {
+    "ok": 1020
+  },
+  "baseline_diff": {
+    "recovered_218_count": 218,
+    "changed_existing_ok_values": 0,
+    "changed_examples": [],
+    "lost_existing_ok": 0,
+    "lost_examples": [],
+    "still_missing": 0,
+    "still_missing_examples": []
+  }
+}

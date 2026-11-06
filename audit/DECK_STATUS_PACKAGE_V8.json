@@ -1,0 +1,150 @@
+{
+  "sha256": "40dc9d546933557e5b5b1add457ad86fceb20a4f3bb0e95dce9a813f03078e69",
+  "edited_parts": [
+    "ppt/slides/slide2.xml",
+    "ppt/slides/slide3.xml",
+    "ppt/slides/slide11.xml",
+    "ppt/slides/slide12.xml",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/slide4.xml",
+    "ppt/slides/slide5.xml",
+    "ppt/slides/slide6.xml",
+    "ppt/slides/slide7.xml",
+    "ppt/slides/slide8.xml",
+    "ppt/slides/slide9.xml",
+    "ppt/slides/slide10.xml",
+    "ppt/slides/slide1.xml",
+    "ppt/notesSlides/notesSlide1.xml",
+    "ppt/notesSlides/notesSlide2.xml",
+    "ppt/notesSlides/notesSlide3.xml",
+    "ppt/notesSlides/notesSlide4.xml",
+    "ppt/notesSlides/notesSlide5.xml",
+    "ppt/notesSlides/notesSlide6.xml",
+    "ppt/notesSlides/notesSlide7.xml",
+    "ppt/notesSlides/notesSlide8.xml",
+    "ppt/notesSlides/notesSlide9.xml",
+    "ppt/notesSlides/notesSlide10.xml",
+    "ppt/notesSlides/notesSlide11.xml",
+    "ppt/notesSlides/notesSlide12.xml",
+    "ppt/notesSlides/notesSlide13.xml",
+    "ppt/charts/chart2.xml",
+    "ppt/charts/chart1.xml"
+  ],
+  "axis_encoding_repairs": [
+    {
+      "part": "ppt/charts/chart2.xml",
+      "old": "-2068027336",
+      "new": "2226939960"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "old": "-2113994440",
+      "new": "2180972856"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "old": "-2068027336",
+      "new": "2226939960"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "old": "-2113994440",
+      "new": "2180972856"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "old": "-2113994440",
+      "new": "2180972856"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "old": "-2068027336",
+      "new": "2226939960"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "old": "-2068027336",
+      "new": "2226939960"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "old": "-2113994440",
+      "new": "2180972856"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "old": "-2068027336",
+      "new": "2226939960"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "old": "-2113994440",
+      "new": "2180972856"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "old": "-2113994440",
+      "new": "2180972856"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "old": "-2068027336",
+      "new": "2226939960"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.8715832984285194",
+      "new": "1.871583298428519"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.6620777854033231",
+      "new": "1.662077785403323"
+    },
+    {
+      "part": "ppt/charts/chart2.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.5573892510322846",
+      "new": "1.557389251032285"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.3561000000000001",
+      "new": "1.3561"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.6543000000000001",
+      "new": "1.6543"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.6829000000000001",
+      "new": "1.6829"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.4219999999999999",
+      "new": "1.422"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.4139999999999999",
+      "new": "1.414"
+    },
+    {
+      "part": "ppt/charts/chart1.xml",
+      "kind": "unchanged_workbook_numeric_cache_lexeme",
+      "old": "1.3640000000000001",
+      "new": "1.364"
+    }
+  ],
+  "scope": "status text/notes; unsigned axis IDs and workbook-matched numeric cache serialization; displayed science and embedded workbook bytes preserved"
+}

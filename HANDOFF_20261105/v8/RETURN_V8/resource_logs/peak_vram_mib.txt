@@ -1,0 +1,2 @@
+peak_vram_mib=NOT_MEASURED
+reason=no GPU allocated in this job (sbatch --partition=tiny, no --gres=gpu requested; nvidia-smi -L found no usable device). Peak VRAM therefore cannot be sampled.

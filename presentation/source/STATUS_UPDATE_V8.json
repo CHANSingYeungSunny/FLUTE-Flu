@@ -1,0 +1,10 @@
+{
+  "revision": 8,
+  "owner_master_sha256": "d6d25afa551a6bc2bac97ba5b6911fa7616f816a32036c954e96ee6bc440ab10",
+  "current_sha256": "40dc9d546933557e5b5b1add457ad86fceb20a4f3bb0e95dce9a813f03078e69",
+  "source_layout_retained": true,
+  "editable_charts": 2,
+  "embedded_workbooks_byte_preserved": true,
+  "authoring": "Artifact Tool imported existing source and authored edit plan; export dropped charts so original package was patched using that plan; schema/cache serialization repairs validated independently",
+  "scope": "dated execution/status/limitations and synchronised notes; historical scientific results unchanged"
+}

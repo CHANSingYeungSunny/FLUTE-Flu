@@ -1,0 +1,55 @@
+{
+  "revision": 4,
+  "comparison": "byte comparison against saved revision 3",
+  "unchanged_files": {
+    "01_\u6700\u7ec8\u62a5\u544a/progress_report_en.docx": {
+      "byte_identical_to_revision3": true,
+      "sha256": "d43661d9c5568f0ffc7acea582c6c6b0495fb3380337c390baa2f8f158c12cd0"
+    },
+    "01_\u6700\u7ec8\u62a5\u544a/progress_report_en.pdf": {
+      "byte_identical_to_revision3": true,
+      "sha256": "e30dc35c73d025179fcbb49a1963db41ab0e55f723fc7e5c80c6a102aa46d801"
+    },
+    "01_\u6700\u7ec8\u62a5\u544a/progress_report_zh.docx": {
+      "byte_identical_to_revision3": true,
+      "sha256": "91826b59704632bbc0c00057c8c6888b3ad987acd31b2d0c97fbecaefeb80760"
+    },
+    "01_\u6700\u7ec8\u62a5\u544a/progress_report_zh.pdf": {
+      "byte_identical_to_revision3": true,
+      "sha256": "e516d8877f67842e2fa82a9760f7a7ab2b550888c89f25488d2270af9d85e876"
+    },
+    "01_\u6700\u7ec8\u62a5\u544a/ieee_manuscript_en.docx": {
+      "byte_identical_to_revision3": true,
+      "sha256": "9270fe5181d6a2fa21c8d62c6fe2e24bcfbab108ddbd449c6a8d47111036127a"
+    },
+    "01_\u6700\u7ec8\u62a5\u544a/ieee_manuscript_en.pdf": {
+      "byte_identical_to_revision3": true,
+      "sha256": "c5bd84d37430e4d41c81b7ff4c54ab3ca870070a714c0e2e03245aff85dd2ed8"
+    },
+    "01_\u6700\u7ec8\u62a5\u544a/ieee_manuscript_zh.docx": {
+      "byte_identical_to_revision3": true,
+      "sha256": "46b6d828041d20e07d7dbfb9a37b59226fabb6f8ce73a0d904e3022fc7a85297"
+    },
+    "01_\u6700\u7ec8\u62a5\u544a/ieee_manuscript_zh.pdf": {
+      "byte_identical_to_revision3": true,
+      "sha256": "36a4d44d260189aae1d3bdbcfe46d381125ecb3157561ee6a04de0b19a6f6da3"
+    },
+    "presentation/Week12_Progress_Presentation.pptx": {
+      "byte_identical_to_revision3": true,
+      "sha256": "d6d25afa551a6bc2bac97ba5b6911fa7616f816a32036c954e96ee6bc440ab10"
+    },
+    "presentation/Week12_Progress_Presentation.pdf": {
+      "byte_identical_to_revision3": true,
+      "sha256": "9293667a533770885a50029fde4b242ac461b07b841d2ac035c4fff426ab462b"
+    },
+    "presentation/TALKING_SCRIPT.md": {
+      "byte_identical_to_revision3": true,
+      "sha256": "51367075195505f4e14773287a82082411b17c4f7d2dd89f65446e42ba29d857"
+    }
+  },
+  "changed_reports": {
+    "report_internal_en": 20,
+    "report_internal_zh": 23
+  },
+  "changed_notes_pages": 15
+}

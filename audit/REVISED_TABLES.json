@@ -1,0 +1,1579 @@
+{
+  "data": {
+    "caption": {
+      "en": "Data and evaluation contract",
+      "zh": "数据与评测约定"
+    },
+    "cols": [
+      {
+        "en": "Item",
+        "zh": "项目"
+      },
+      {
+        "en": "Value",
+        "zh": "数值"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "en": "Rows and channels",
+          "zh": "行数与通道"
+        },
+        "966 × 7"
+      ],
+      [
+        {
+          "en": "Chronological split",
+          "zh": "时序划分"
+        },
+        "676 / 97 / 193"
+      ],
+      [
+        {
+          "en": "Train / validation / test indices",
+          "zh": "训练 / 验证 / 测试下标"
+        },
+        "0–675 / 676–772 / 773–965"
+      ],
+      [
+        {
+          "en": "History and horizons",
+          "zh": "历史与跨度"
+        },
+        "T=104; L=24/36/48/60"
+      ],
+      [
+        {
+          "en": "Available / scored windows",
+          "zh": "可用 / 计分窗口"
+        },
+        "170/160; 158/144; 146/144; 134/128"
+      ],
+      [
+        {
+          "en": "ILITOTAL train mean / SD",
+          "zh": "ILITOTAL 训练均值 / 标准差"
+        },
+        "9,439.84 / 9,003.15"
+      ],
+      [
+        {
+          "en": "Local numeric identity",
+          "zh": "本地数值一致性"
+        },
+        {
+          "en": "max |difference| = 0",
+          "zh": "最大绝对差 = 0"
+        }
+      ]
+    ],
+    "widths": [
+      6,
+      10.4
+    ],
+    "fs": 9,
+    "note": {
+      "en": "Identity compares the two supplied 966-row files after selecting their seven matching numeric columns. It does not re-establish byte identity with an independently downloaded upstream file. Dates in the author-format file are synthetic labels.",
+      "zh": "一致性是选择本包两个 966 行文件中相应七列后比较，不能重新证明与独立下载的作者文件逐字节相同。作者格式文件的日期为合成标签。"
+    }
+  },
+  "protocols": {
+    "caption": {
+      "en": "Separate reproduction and benchmark protocols",
+      "zh": "分开的复现与基准协议"
+    },
+    "cols": [
+      {
+        "en": "Item",
+        "zh": "项目"
+      },
+      {
+        "en": "Reproduction",
+        "zh": "复现"
+      },
+      {
+        "en": "Benchmark",
+        "zh": "基准"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "en": "Seeds",
+          "zh": "种子"
+        },
+        "2021–2030 (10)",
+        "42/43/44 (3)"
+      ],
+      [
+        {
+          "en": "Models",
+          "zh": "模型"
+        },
+        "MIFlu",
+        {
+          "en": "13 conventional + 4 LLM-based + 11 frozen encoders",
+          "zh": "13 传统 + 4 基于 LLM + 11 冻结编码器"
+        }
+      ],
+      [
+        {
+          "en": "Selection",
+          "zh": "选择"
+        },
+        {
+          "en": "Validation checkpoint",
+          "zh": "验证集检查点"
+        },
+        {
+          "en": "Validation checkpoint",
+          "zh": "验证集检查点"
+        }
+      ],
+      [
+        {
+          "en": "Scores",
+          "zh": "指标"
+        },
+        "7-variable z-space MSE / MAE",
+        "7-variable MSE / MAE; ILITOTAL PTE / PIE"
+      ],
+      [
+        {
+          "en": "Windows",
+          "zh": "窗口"
+        },
+        "160 / 144 / 144 / 128",
+        "160 / 144 / 144 / 128"
+      ]
+    ],
+    "widths": [
+      3,
+      6.7,
+      6.7
+    ],
+    "fs": 8.7,
+    "note": {
+      "en": "Three seeds are a compute-budget choice, not a universal venue rule. Reproduction and benchmark estimates use different seed sets. Do not substitute one for the other. Exact upstream protocol defects remain to be checked against a pinned author revision.",
+      "zh": "三个种子是算力预算选择，不是统一的会议规则。复现与基准采用不同种子集合，不能相互替换。作者上游具体协议缺陷仍须对照固定版本核实。"
+    }
+  },
+  "reproduction": {
+    "caption": {
+      "en": "MIFlu reproduction compared with the paper",
+      "zh": "MIFlu 复现与原文对照"
+    },
+    "cols": [
+      {
+        "en": "Horizon",
+        "zh": "跨度"
+      },
+      {
+        "en": "Our MSE ± SD",
+        "zh": "本文 MSE ± 标准差"
+      },
+      {
+        "en": "Paper MSE",
+        "zh": "原文 MSE"
+      },
+      "Δ MSE",
+      {
+        "en": "Our MAE",
+        "zh": "本文 MAE"
+      },
+      {
+        "en": "Paper MAE",
+        "zh": "原文 MAE"
+      },
+      "Δ MAE"
+    ],
+    "rows": [
+      [
+        "L=24",
+        "1.3045 ± 0.0883",
+        "1.5420",
+        "-15.4%",
+        "0.7482",
+        "0.7260",
+        "+3.1%"
+      ],
+      [
+        "L=36",
+        "1.3561 ± 0.1603",
+        "1.4220",
+        "-4.6%",
+        "0.7712",
+        "0.7790",
+        "-1.0%"
+      ],
+      [
+        "L=48",
+        "1.6543 ± 0.1064",
+        "1.4140",
+        "+17.0%",
+        "0.8381",
+        "0.7570",
+        "+10.7%"
+      ],
+      [
+        "L=60",
+        "1.6829 ± 0.2109",
+        "1.3640",
+        "+23.4%",
+        "0.8596",
+        "0.7190",
+        "+19.6%"
+      ],
+      [
+        {
+          "en": "4-horizon mean",
+          "zh": "四跨度均值"
+        },
+        "1.4995",
+        "1.4355",
+        "+4.5%",
+        "0.8043",
+        "0.7452",
+        "+7.9%"
+      ]
+    ],
+    "widths": [
+      2,
+      3.3,
+      1.8,
+      1.8,
+      1.8,
+      1.8,
+      1.8
+    ],
+    "fs": 8.1,
+    "note": {
+      "en": "Source: ESSAY_VS_REPRODUCTION_TABLE_V.csv, lines 2–6. SD is recomputed from the code-transcribed ten-seed oracle; its raw run logs are not included. Positive differences mean higher error.",
+      "zh": "来源：ESSAY_VS_REPRODUCTION_TABLE_V.csv 第 2–6 行。标准差由代码中转录的十种子 oracle 重算；原始运行日志未随包提供。正差表示误差更高。"
+    }
+  },
+  "oracle": {
+    "caption": {
+      "en": "Code-transcribed reproduction oracle",
+      "zh": "代码中转录的复现 oracle"
+    },
+    "cols": [
+      "Seed",
+      "L24",
+      "L36",
+      "L48",
+      "L60"
+    ],
+    "rows": [
+      [
+        "2021",
+        "1.240157",
+        "1.314358",
+        "1.482299",
+        "1.599641"
+      ],
+      [
+        "2022",
+        "1.201078",
+        "1.306645",
+        "1.711215",
+        "1.664878"
+      ],
+      [
+        "2023",
+        "1.284212",
+        "1.269466",
+        "1.663857",
+        "1.821282"
+      ],
+      [
+        "2024",
+        "1.259462",
+        "1.154099",
+        "1.879495",
+        "1.915250"
+      ],
+      [
+        "2025",
+        "1.464643",
+        "1.767328",
+        "1.723161",
+        "1.410785"
+      ],
+      [
+        "2026",
+        "1.368497",
+        "1.312511",
+        "1.620327",
+        "1.984315"
+      ],
+      [
+        "2027",
+        "1.392309",
+        "1.400796",
+        "1.628296",
+        "1.614602"
+      ],
+      [
+        "2028",
+        "1.230425",
+        "1.302717",
+        "1.588157",
+        "1.401814"
+      ],
+      [
+        "2029",
+        "1.231536",
+        "1.404061",
+        "1.570881",
+        "1.520661"
+      ],
+      [
+        "2030",
+        "1.373057",
+        "1.328807",
+        "1.675020",
+        "1.895393"
+      ]
+    ],
+    "widths": [
+      2.4,
+      3.5,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "fs": 8.8,
+    "note": {
+      "en": "Arithmetic checked against the reproduction CSV. The source is the ORACLE constant in dlv/data.py and verify_miflu_oracle.py. Raw ten-seed run logs were not supplied, so this is not an independent raw-prediction verification.",
+      "zh": "已核算其均值并与复现 CSV 对照。来源为 dlv/data.py 与 verify_miflu_oracle.py 的 ORACLE 常量。十种子原始运行日志未提供，因此不能称为独立原始预测验证。"
+    }
+  },
+  "benchmark": {
+    "caption": {
+      "en": "Accuracy of all retained benchmark arms",
+      "zh": "全部保留模型的精度"
+    },
+    "cols": [
+      "#",
+      {
+        "en": "Model",
+        "zh": "模型"
+      },
+      "L24",
+      "L36",
+      "L48",
+      "L60",
+      {
+        "en": "Mean MSE",
+        "zh": "平均 MSE"
+      },
+      {
+        "en": "Mean MAE",
+        "zh": "平均 MAE"
+      }
+    ],
+    "rows": [
+      [
+        "1",
+        "MIFlu",
+        "1.3323",
+        "1.2632",
+        "1.7774",
+        "1.8567",
+        "1.5574",
+        "0.8199"
+      ],
+      [
+        "2",
+        "PatchTST",
+        "1.4402",
+        "1.6154",
+        "1.9288",
+        "1.6640",
+        "1.6621",
+        "0.8786"
+      ],
+      [
+        "3",
+        "NLinear",
+        "1.7971",
+        "1.7950",
+        "1.9574",
+        "1.9368",
+        "1.8716",
+        "0.9183"
+      ],
+      [
+        "4",
+        "DNN",
+        "1.8920",
+        "1.7684",
+        "2.2603",
+        "2.6451",
+        "2.1415",
+        "1.0057"
+      ],
+      [
+        "5",
+        "TimeCMA",
+        "2.3281",
+        "2.5794",
+        "2.7104",
+        "2.8146",
+        "2.6081",
+        "1.0676"
+      ],
+      [
+        "6",
+        "Gradient Boosting",
+        "3.5658",
+        "3.6867",
+        "3.6533",
+        "3.7521",
+        "3.6645",
+        "1.2521"
+      ],
+      [
+        "7",
+        "KNN",
+        "3.7231",
+        "3.7623",
+        "3.7740",
+        "3.8820",
+        "3.7854",
+        "1.3293"
+      ],
+      [
+        "8",
+        "Random Forest",
+        "3.5486",
+        "3.8251",
+        "4.0159",
+        "4.1710",
+        "3.8901",
+        "1.2779"
+      ],
+      [
+        "9",
+        "iTransformer",
+        "3.7656",
+        "4.0596",
+        "4.0438",
+        "4.1088",
+        "3.9945",
+        "1.3476"
+      ],
+      [
+        "10",
+        "Decision Tree",
+        "4.5340",
+        "4.1380",
+        "4.2186",
+        "4.3884",
+        "4.3198",
+        "1.3798"
+      ],
+      [
+        "11",
+        "Hunyuan-1.8B",
+        "4.5629",
+        "4.5877",
+        "4.7111",
+        "5.0879",
+        "4.7374",
+        "1.4755"
+      ],
+      [
+        "12",
+        "Hunyuan-7B",
+        "4.3438",
+        "4.6624",
+        "4.9201",
+        "5.1120",
+        "4.7596",
+        "1.4685"
+      ],
+      [
+        "13",
+        "DeepSeek-R1-Qwen-1.5B",
+        "4.6012",
+        "4.6242",
+        "4.9245",
+        "4.9963",
+        "4.7866",
+        "1.5002"
+      ],
+      [
+        "14",
+        "DeepSeek-R1-Llama-8B",
+        "4.4337",
+        "4.7715",
+        "4.8929",
+        "5.2019",
+        "4.8250",
+        "1.4786"
+      ],
+      [
+        "15",
+        "GRU",
+        "4.2895",
+        "5.3099",
+        "5.1751",
+        "4.7736",
+        "4.8870",
+        "1.5174"
+      ],
+      [
+        "16",
+        "DeepSeek-R1-32B",
+        "4.4401",
+        "4.8565",
+        "5.0136",
+        "5.4386",
+        "4.9372",
+        "1.4935"
+      ],
+      [
+        "17",
+        "LSTM",
+        "4.4965",
+        "5.1359",
+        "5.2088",
+        "5.1939",
+        "5.0088",
+        "1.5303"
+      ],
+      [
+        "18",
+        "DeepSeek-R1-Qwen-14B",
+        "4.4976",
+        "4.9164",
+        "5.1687",
+        "5.4838",
+        "5.0166",
+        "1.5019"
+      ],
+      [
+        "19",
+        "DeepSeek-R1-Qwen-7B",
+        "4.5551",
+        "4.9991",
+        "5.2417",
+        "5.3272",
+        "5.0308",
+        "1.5133"
+      ],
+      [
+        "20",
+        "RNN",
+        "4.4222",
+        "5.2893",
+        "5.3424",
+        "5.2157",
+        "5.0674",
+        "1.5634"
+      ],
+      [
+        "21",
+        "ContextPilot-8B",
+        "4.6094",
+        "5.1318",
+        "5.2895",
+        "5.3065",
+        "5.0843",
+        "1.5255"
+      ],
+      [
+        "22",
+        "Hunyuan-4B",
+        "4.7383",
+        "5.0535",
+        "5.2876",
+        "5.4474",
+        "5.1317",
+        "1.5450"
+      ],
+      [
+        "23",
+        "ContextPilot-14B",
+        "4.7674",
+        "5.1566",
+        "5.2168",
+        "5.6388",
+        "5.1949",
+        "1.5407"
+      ],
+      [
+        "24",
+        "Qwen2.5-1.5B",
+        "4.7840",
+        "5.0587",
+        "5.4546",
+        "5.5224",
+        "5.2049",
+        "1.5725"
+      ],
+      [
+        "25",
+        "Qwen-Time",
+        "4.7190",
+        "5.1325",
+        "5.6894",
+        "5.4818",
+        "5.2557",
+        "1.5794"
+      ],
+      [
+        "26",
+        "SVR",
+        "5.2248",
+        "5.3581",
+        "5.3781",
+        "5.3940",
+        "5.3388",
+        "1.4986"
+      ],
+      [
+        "27",
+        "CALF",
+        "5.3624",
+        "5.5113",
+        "5.6442",
+        "5.7962",
+        "5.5785",
+        "1.6190"
+      ],
+      [
+        "28",
+        "CNN",
+        "5.5021",
+        "5.3098",
+        "5.2801",
+        "6.3698",
+        "5.6155",
+        "1.6720"
+      ]
+    ],
+    "widths": [
+      0.65,
+      4.2,
+      1.8,
+      1.8,
+      1.8,
+      1.8,
+      1.9,
+      1.9
+    ],
+    "fs": 8.1,
+    "note": {
+      "en": "Source: BENCH_MSE_BY_MODEL_L.csv, keyed by model and L. Each row averages three seeds on 160/144/144/128 windows. DLinear is excluded by project choice; that exclusion needs a documented sensitivity analysis. Names denote project implementations, whose equivalence to published methods is not established by this ranking.",
+      "zh": "来源：BENCH_MSE_BY_MODEL_L.csv，按 model 和 L 定位。各行由三个种子在 160/144/144/128 个窗口上聚合。项目主动排除了 DLinear，发表前需补充理由与敏感性分析。名称指本项目实现，排名本身不能证明与原论文方法完全等价。"
+    }
+  },
+  "peak_summary": {
+    "caption": {
+      "en": "Peak timing and intensity error",
+      "zh": "峰值时间与强度误差"
+    },
+    "cols": [
+      {
+        "en": "Model",
+        "zh": "模型"
+      },
+      "PTE (wk)",
+      "PIE (%)",
+      {
+        "en": "Joint passes",
+        "zh": "联合通过"
+      },
+      "s0 PTE",
+      "s0 PIE (%)"
+    ],
+    "rows": [
+      [
+        "MIFlu",
+        "1.128",
+        "26.846",
+        "4/16",
+        "0.347",
+        "18.884"
+      ],
+      [
+        "PatchTST",
+        "1.240",
+        "32.755",
+        "0/16",
+        "0.681",
+        "30.553"
+      ],
+      [
+        "NLinear",
+        "1.677",
+        "9.477",
+        "4/16",
+        "0.208",
+        "3.250"
+      ]
+    ],
+    "widths": [
+      3.4,
+      2.4,
+      2.4,
+      2.4,
+      2.4,
+      2.4
+    ],
+    "fs": 8.5,
+    "note": {
+      "en": "Means are across 16 (L, step) cells. Passes apply PTE ≤ 1 week and PIE ≤ 25% to each cell’s aggregated errors, not to each individual season. PIE is point-forecast magnitude error, not probabilistic calibration.",
+      "zh": "均值跨越 16 个（L，step）单元。通过数是在各单元的聚合误差上应用 PTE ≤ 1 周且 PIE ≤ 25%，不是逐季达标率。PIE 衡量点预测的峰高误差，不是概率校准。"
+    }
+  },
+  "grid": {
+    "caption": {
+      "en": "Joint peak screen for each horizon and lead",
+      "zh": "各跨度与提前步的联合峰值筛选"
+    },
+    "cols": [
+      {
+        "en": "Model",
+        "zh": "模型"
+      },
+      "L",
+      "s0",
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "rows": [
+      [
+        "NLinear",
+        "24",
+        "PASS 0.111 / 3.949",
+        "fail 1.333 / 8.411",
+        "fail 2.333 / 11.943",
+        "fail 2.667 / 18.739"
+      ],
+      [
+        "NLinear",
+        "36",
+        "PASS 0.333 / 4.181",
+        "fail 1.333 / 7.222",
+        "fail 2.111 / 15.313",
+        "fail 2.667 / 18.145"
+      ],
+      [
+        "NLinear",
+        "48",
+        "PASS 0.222 / 2.419",
+        "fail 1.222 / 4.727",
+        "fail 2.222 / 9.979",
+        "fail 2.778 / 16.655"
+      ],
+      [
+        "NLinear",
+        "60",
+        "PASS 0.167 / 2.450",
+        "fail 1.444 / 4.542",
+        "fail 2.556 / 9.952",
+        "fail 3.333 / 13.000"
+      ],
+      [
+        "MIFlu",
+        "24",
+        "PASS 0.000 / 18.307",
+        "fail 0.889 / 26.686",
+        "fail 1.222 / 30.472",
+        "fail 1.333 / 31.638"
+      ],
+      [
+        "MIFlu",
+        "36",
+        "PASS 0.000 / 18.695",
+        "fail 0.778 / 26.333",
+        "fail 1.667 / 31.514",
+        "fail 1.333 / 32.427"
+      ],
+      [
+        "MIFlu",
+        "48",
+        "fail 1.222 / 18.004",
+        "PASS 0.667 / 24.795",
+        "fail 1.222 / 30.133",
+        "fail 1.333 / 33.236"
+      ],
+      [
+        "MIFlu",
+        "60",
+        "PASS 0.167 / 20.530",
+        "fail 1.333 / 25.799",
+        "fail 2.222 / 29.790",
+        "fail 2.667 / 31.177"
+      ],
+      [
+        "PatchTST",
+        "24",
+        "fail 0.667 / 30.580",
+        "fail 1.000 / 34.044",
+        "fail 1.222 / 33.572",
+        "fail 1.222 / 30.722"
+      ],
+      [
+        "PatchTST",
+        "36",
+        "fail 1.000 / 26.235",
+        "fail 1.667 / 32.247",
+        "fail 1.333 / 31.245",
+        "fail 1.333 / 33.854"
+      ],
+      [
+        "PatchTST",
+        "48",
+        "fail 0.556 / 30.360",
+        "fail 1.333 / 30.878",
+        "fail 0.889 / 35.158",
+        "fail 0.889 / 35.002"
+      ],
+      [
+        "PatchTST",
+        "60",
+        "fail 0.500 / 35.035",
+        "fail 1.667 / 34.342",
+        "fail 2.222 / 35.674",
+        "fail 2.333 / 35.133"
+      ]
+    ],
+    "widths": [
+      2.1,
+      0.8,
+      3.35,
+      3.35,
+      3.35,
+      3.35
+    ],
+    "fs": 8.1,
+    "note": {
+      "en": "Each entry gives PTE in weeks / PIE in percent. s0–s3 are the first to fourth forecast weeks. The detector uses prominence 0.15 × range, distance 15, and ±8-week matching. These detector settings and joint aggregation are project choices. Source: BENCH_PTE_PIE_BY_STEP.csv.",
+      "zh": "每格为 PTE（周）/ PIE（%）。s0–s3 是预测的第 1–4 周。峰检测使用突出度 0.15 × 极差、间距 15、±8 周匹配。检测设置及联合聚合均为项目选择。来源：BENCH_PTE_PIE_BY_STEP.csv。"
+    }
+  },
+  "efficiency": {
+    "caption": {
+      "en": "Parameter analysis and rank associations",
+      "zh": "参数分析与秩相关"
+    },
+    "cols": [
+      {
+        "en": "Quantity",
+        "zh": "量"
+      },
+      {
+        "en": "Value",
+        "zh": "数值"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "en": "Regression slope / R²",
+          "zh": "回归斜率 / R²"
+        },
+        "+0.1171 / 0.0223"
+      ],
+      [
+        {
+          "en": "Models with parameter exports",
+          "zh": "有参数量导出的模型"
+        },
+        "11"
+      ],
+      [
+        {
+          "en": "Subset Pareto set",
+          "zh": "子集帕累托集合"
+        },
+        "NLinear 2,520; PatchTST 531,878"
+      ],
+      [
+        {
+          "en": "Parameter ratio",
+          "zh": "参数比"
+        },
+        "211.1×"
+      ],
+      [
+        {
+          "en": "Descriptive MSE reduction",
+          "zh": "描述性 MSE 降幅"
+        },
+        "11.2%"
+      ],
+      [
+        {
+          "en": "ρ(MSE, PIE)",
+          "zh": "ρ(MSE, PIE)"
+        },
+        "+0.736 (p < 0.0001)"
+      ],
+      [
+        {
+          "en": "ρ(MSE, passes)",
+          "zh": "ρ(MSE, 通过数)"
+        },
+        "-0.429 (p = 0.023)"
+      ]
+    ],
+    "widths": [
+      9.8,
+      6.5
+    ],
+    "fs": 8.5,
+    "note": {
+      "en": "The Pareto analysis includes only 11 arms with parameter exports. MIFlu and the frozen encoders are not in that subset. Missing parameter counts are not zero. Parameter count is not a measurement of latency, memory or energy. Correlations are descriptive across models on one test set.",
+      "zh": "帕累托分析只纳入有参数量导出的 11 个模型，未包括 MIFlu 与冻结编码器。缺失参数量不等于零。参数量不等于延迟、内存或能耗。相关系数只是同一测试集上跨模型的描述性结果。"
+    }
+  },
+  "paired": {
+    "caption": {
+      "en": "Paired comparisons with corrected Holm adjustment",
+      "zh": "使用正确 Holm 校正的配对比较"
+    },
+    "cols": [
+      {
+        "en": "Model A",
+        "zh": "模型 A"
+      },
+      {
+        "en": "Model B",
+        "zh": "模型 B"
+      },
+      "Δ MSE",
+      "p raw",
+      "p Holm",
+      {
+        "en": "Effect*",
+        "zh": "效应*"
+      }
+    ],
+    "rows": [
+      [
+        "NLinear",
+        "PatchTST",
+        "+0.2095",
+        "0.005859",
+        "0.1172",
+        "1.15"
+      ],
+      [
+        "Gradient Boosting",
+        "RNN",
+        "-1.4029",
+        "0.000488",
+        "0.0664",
+        "4.86"
+      ],
+      [
+        "KNN",
+        "NLinear",
+        "+1.9138",
+        "0.000488",
+        "0.0664",
+        "22.29"
+      ],
+      [
+        "KNN",
+        "MIFlu",
+        "+2.2280",
+        "0.000488",
+        "0.0664",
+        "9.89"
+      ],
+      [
+        "KNN",
+        "LSTM",
+        "-1.2234",
+        "0.000488",
+        "0.0664",
+        "5.28"
+      ],
+      [
+        "iTransformer",
+        "TimeCMA",
+        "+1.3863",
+        "0.000488",
+        "0.0664",
+        "7.02"
+      ],
+      [
+        "iTransformer",
+        "SVR",
+        "-1.3443",
+        "0.000488",
+        "0.0664",
+        "10.61"
+      ]
+    ],
+    "widths": [
+      3.4,
+      3.4,
+      2.4,
+      2.4,
+      2.4,
+      1.8
+    ],
+    "fs": 8.3,
+    "note": {
+      "en": "136 pairs cover 17 models, not all 28. n = 12 matched horizon × seed cells. Forward cumulative-max Holm yields 0/136 rejections. The shown p values recover the exact 1/4096 enumeration grid from six-decimal exports; recomputing directly from rounded exports gives NLinear–PatchTST 0.117180 instead of 0.1171875. *The source effect uses pooled model SD, not paired-difference SD. Cell dependence limits inference.",
+      "zh": "136 对来自 17 个模型，并未覆盖全部 28 个模型。n = 12 个配对跨度 × 种子单元。前向累计最大值 Holm 得到 0/136 个拒绝。所示 p 值由六位小数导出恢复 1/4096 枚举网格；直接从四舍五入导出重算时，NLinear–PatchTST 为 0.117180，而非 0.1171875。*源效应量采用模型合并标准差，不是配对差的标准差。单元相关性限制统计推断。"
+    }
+  },
+  "encoders": {
+    "caption": {
+      "en": "Frozen encoders with shared linear readout",
+      "zh": "冻结编码器加共享线性读出"
+    },
+    "cols": [
+      {
+        "en": "Encoder",
+        "zh": "编码器"
+      },
+      "MSE",
+      {
+        "en": "vs MIFlu",
+        "zh": "相对 MIFlu"
+      },
+      "PTE",
+      "PIE (%)",
+      {
+        "en": "Passes",
+        "zh": "通过"
+      }
+    ],
+    "rows": [
+      [
+        "Hunyuan-1.8B",
+        "4.7374",
+        "3.04×",
+        "4.406",
+        "71.428",
+        "0/16"
+      ],
+      [
+        "Hunyuan-7B",
+        "4.7596",
+        "3.06×",
+        "5.309",
+        "75.399",
+        "0/16"
+      ],
+      [
+        "DeepSeek-R1-Qwen-1.5B",
+        "4.7866",
+        "3.07×",
+        "5.792",
+        "78.061",
+        "0/16"
+      ],
+      [
+        "DeepSeek-R1-Llama-8B",
+        "4.8250",
+        "3.10×",
+        "4.306",
+        "77.121",
+        "0/16"
+      ],
+      [
+        "DeepSeek-R1-32B",
+        "4.9372",
+        "3.17×",
+        "3.889",
+        "77.730",
+        "0/16"
+      ],
+      [
+        "DeepSeek-R1-Qwen-14B",
+        "5.0166",
+        "3.22×",
+        "4.149",
+        "76.350",
+        "0/16"
+      ],
+      [
+        "DeepSeek-R1-Qwen-7B",
+        "5.0308",
+        "3.23×",
+        "4.458",
+        "76.373",
+        "0/16"
+      ],
+      [
+        "ContextPilot-8B",
+        "5.0843",
+        "3.26×",
+        "4.962",
+        "78.918",
+        "0/16"
+      ],
+      [
+        "Hunyuan-4B",
+        "5.1317",
+        "3.30×",
+        "3.003",
+        "78.840",
+        "0/16"
+      ],
+      [
+        "ContextPilot-14B",
+        "5.1949",
+        "3.34×",
+        "4.965",
+        "77.764",
+        "0/16"
+      ],
+      [
+        "Qwen2.5-1.5B",
+        "5.2049",
+        "3.34×",
+        "5.333",
+        "74.650",
+        "0/16"
+      ]
+    ],
+    "widths": [
+      5.6,
+      2.1,
+      2.1,
+      2.1,
+      2.1,
+      2.1
+    ],
+    "fs": 8.3,
+    "note": {
+      "en": "11 retained encoders × 4 horizons × 3 seeds = 132 cells. The historical plan included two additional embedding-only arms, giving 156 planned cells; those 24 omitted cells are outside the 28-model roster. The result tests only this frozen-feature pipeline.",
+      "zh": "11 个保留编码器 × 4 跨度 × 3 种子 = 132 单元。历史计划还包含两个仅嵌入模型，总计 156 单元；未纳入的 24 单元不属于 28 模型正式名单。此结果只评价该冻结特征流程。"
+    }
+  },
+  "ablation": {
+    "caption": {
+      "en": "Ablation design and snapshot status",
+      "zh": "消融设计与快照状态"
+    },
+    "cols": [
+      {
+        "en": "Variant",
+        "zh": "变体"
+      },
+      {
+        "en": "Flag",
+        "zh": "参数"
+      },
+      {
+        "en": "Cells",
+        "zh": "单元"
+      },
+      {
+        "en": "Status",
+        "zh": "状态"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "en": "Reference K=6",
+          "zh": "参考 K=6"
+        },
+        "default",
+        "12",
+        {
+          "en": "Already in benchmark",
+          "zh": "已在基准中"
+        }
+      ],
+      [
+        "no_lora",
+        "--no-lora",
+        "12",
+        {
+          "en": "Not aggregated",
+          "zh": "尚未聚合"
+        }
+      ],
+      [
+        "K=2",
+        "--num-layers 2",
+        "12",
+        {
+          "en": "Not aggregated",
+          "zh": "尚未聚合"
+        }
+      ],
+      [
+        "K=4",
+        "--num-layers 4",
+        "12",
+        {
+          "en": "Not aggregated",
+          "zh": "尚未聚合"
+        }
+      ],
+      [
+        "K=8",
+        "--num-layers 8",
+        "12",
+        {
+          "en": "Not aggregated",
+          "zh": "尚未聚合"
+        }
+      ],
+      [
+        "K=12",
+        "--num-layers 12",
+        "12",
+        {
+          "en": "Not aggregated",
+          "zh": "尚未聚合"
+        }
+      ]
+    ],
+    "widths": [
+      2.7,
+      5.1,
+      1.4,
+      7
+    ],
+    "fs": 8.4,
+    "note": {
+      "en": "Owner-reported status at 3 November 2026: 27/60 additional cells, job 722968. No live HPC check or per-variant result export was available. The baseline 12 cells are not part of the additional 60. No trend is inferred.",
+      "zh": "用户报告截至 2026 年 11 月 3 日：新增 60 单元中完成 27，作业 722968。本次未连接 HPC，也无逐变体结果导出。参考 12 单元不计入新增 60 单元。不推断趋势。"
+    }
+  },
+  "planning": {
+    "caption": {
+      "en": "Original planning periods and current evidence",
+      "zh": "原计划时段与当前证据"
+    },
+    "cols": [
+      {
+        "en": "Period",
+        "zh": "时段"
+      },
+      {
+        "en": "Planned work",
+        "zh": "计划工作"
+      },
+      {
+        "en": "Snapshot status",
+        "zh": "快照状态"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "en": "Sep 2026",
+          "zh": "2026 年 9 月"
+        },
+        {
+          "en": "Read MIFlu and establish data contract",
+          "zh": "阅读 MIFlu 并确定数据约定"
+        },
+        {
+          "en": "Local data equality checked",
+          "zh": "本地数据一致性已核实"
+        }
+      ],
+      [
+        {
+          "en": "Oct 2026",
+          "zh": "2026 年 10 月"
+        },
+        {
+          "en": "Reproduce Table V",
+          "zh": "复现表 V"
+        },
+        {
+          "en": "CSV and oracle arithmetic checked",
+          "zh": "CSV 与 oracle 算术已核实"
+        }
+      ],
+      [
+        {
+          "en": "Nov 2026",
+          "zh": "2026 年 11 月"
+        },
+        {
+          "en": "Benchmark and ablation; progress presentation",
+          "zh": "基准、消融与进度汇报"
+        },
+        {
+          "en": "28-arm CSV complete; ablation reported 27/60",
+          "zh": "28 模型 CSV 完整；消融报告为 27/60"
+        }
+      ],
+      [
+        {
+          "en": "Nov–Dec 2026",
+          "zh": "2026 年 11–12 月"
+        },
+        {
+          "en": "Regional and rolling-origin validation",
+          "zh": "区域与滚动原点验证"
+        },
+        {
+          "en": "Not completed in this snapshot",
+          "zh": "快照中尚未完成"
+        }
+      ],
+      [
+        {
+          "en": "Jan–Apr 2027",
+          "zh": "2027 年 1–4 月"
+        },
+        {
+          "en": "Manuscript strengthening and submission decision",
+          "zh": "强化手稿并决定投稿"
+        },
+        {
+          "en": "Planned, conditional on validation",
+          "zh": "计划中，取决于验证结果"
+        }
+      ]
+    ],
+    "widths": [
+      3,
+      7,
+      6.4
+    ],
+    "fs": 8.8,
+    "note": {
+      "en": "This is a reconstruction from the supplied plan, annotated at 3 November 2026. No contemporaneously signed September chart was available.",
+      "zh": "此表根据所附计划重构，并标注 2026 年 11 月 3 日状态；未提供当时签署的九月原始图表。"
+    }
+  },
+  "objectives": {
+    "caption": {
+      "en": "Objectives addressed and estimated completion",
+      "zh": "已处理目标与估计完成度"
+    },
+    "cols": [
+      {
+        "en": "Objective",
+        "zh": "目标"
+      },
+      {
+        "en": "Addressed",
+        "zh": "是否处理"
+      },
+      {
+        "en": "Estimated completion",
+        "zh": "估计完成度"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "en": "Reproduction arithmetic",
+          "zh": "复现算术"
+        },
+        {
+          "en": "Yes, source provenance limited",
+          "zh": "是，原始来源仍有限"
+        },
+        "100%"
+      ],
+      [
+        {
+          "en": "28-arm benchmark export",
+          "zh": "28 模型基准导出"
+        },
+        {
+          "en": "Yes, arithmetic verified",
+          "zh": "是，算术已核实"
+        },
+        "100%"
+      ],
+      [
+        {
+          "en": "Peak and efficiency evaluation",
+          "zh": "峰值与效率评估"
+        },
+        {
+          "en": "Yes, interpretation corrected",
+          "zh": "是，解释已修正"
+        },
+        "100%"
+      ],
+      [
+        {
+          "en": "Frozen encoder axis",
+          "zh": "冻结编码器维度"
+        },
+        {
+          "en": "Yes, retained arms only",
+          "zh": "是，仅保留模型"
+        },
+        "100%"
+      ],
+      [
+        {
+          "en": "Ablation",
+          "zh": "消融"
+        },
+        {
+          "en": "Partly, owner reports 27/60",
+          "zh": "部分，用户报告 27/60"
+        },
+        "45%"
+      ],
+      [
+        {
+          "en": "Rolling origin",
+          "zh": "滚动原点"
+        },
+        {
+          "en": "Code stage, not evaluated",
+          "zh": "代码阶段，未评测"
+        },
+        "15%"
+      ],
+      [
+        {
+          "en": "Manuscript",
+          "zh": "手稿"
+        },
+        {
+          "en": "Draft; publication evidence incomplete",
+          "zh": "草稿，发表证据未齐"
+        },
+        "70%"
+      ]
+    ],
+    "widths": [
+      6.5,
+      7,
+      2.9
+    ],
+    "fs": 8.7,
+    "note": {
+      "en": "These are planning estimates supplied in the task, not measured research scores. 45% is 27/60. The other estimates are not independently measured.",
+      "zh": "这些是任务给定的项目进度估计，不是研究评分。45% 等于 27/60；其他比例未独立测量。"
+    }
+  },
+  "schedule": {
+    "caption": {
+      "en": "Work schedule and expected outputs",
+      "zh": "工作安排与预期产物"
+    },
+    "cols": [
+      {
+        "en": "Target date",
+        "zh": "目标日期"
+      },
+      {
+        "en": "Task",
+        "zh": "任务"
+      },
+      {
+        "en": "Expected output and fallback",
+        "zh": "预期输出与替代方案"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "en": "By 16 Nov 2026",
+          "zh": "2026-11-16 前"
+        },
+        {
+          "en": "Pull and verify ablation exports",
+          "zh": "取回并核实消融导出"
+        },
+        {
+          "en": "Measured table if complete; otherwise retain incomplete label",
+          "zh": "完成则报告实测表，否则保留未完成标签"
+        }
+      ],
+      [
+        {
+          "en": "16–20 Nov 2026",
+          "zh": "2026-11-16 至 20"
+        },
+        {
+          "en": "Present to supervisor and assessor",
+          "zh": "向导师及评阅人汇报"
+        },
+        {
+          "en": "Appointment and attendance must be confirmed by student",
+          "zh": "学生须确认预约及双方出席"
+        }
+      ],
+      [
+        {
+          "en": "20 Nov 2026 23:59 HKT",
+          "zh": "2026-11-20 香港时间 23:59"
+        },
+        {
+          "en": "Submit through FYP InfoNet",
+          "zh": "经 FYP InfoNet 提交"
+        },
+        {
+          "en": "Submission receipt; late penalties apply",
+          "zh": "保存回执，迟交有扣分"
+        }
+      ],
+      [
+        {
+          "en": "By 30 Nov 2026",
+          "zh": "2026-11-30 前"
+        },
+        {
+          "en": "Regional table and timing provenance",
+          "zh": "区域结果及计时来源"
+        },
+        {
+          "en": "Complete denominators and hardware details; no assumed trend",
+          "zh": "报告完整分母与硬件，无预设趋势"
+        }
+      ],
+      [
+        {
+          "en": "By 31 Dec 2026",
+          "zh": "2026-12-31 前"
+        },
+        {
+          "en": "Rolling origins and detector sensitivity",
+          "zh": "滚动原点与检测敏感性"
+        },
+        {
+          "en": "Season-level uncertainty and full-window sensitivity",
+          "zh": "逐季不确定性与全窗口敏感性"
+        }
+      ],
+      [
+        {
+          "en": "Jan–Apr 2027",
+          "zh": "2027 年 1–4 月"
+        },
+        {
+          "en": "Publication decision",
+          "zh": "决定投稿"
+        },
+        {
+          "en": "JBHI-oriented draft only if evidence and scope are adequate",
+          "zh": "证据与范围适当后才考虑 JBHI 投稿"
+        }
+      ]
+    ],
+    "widths": [
+      3.6,
+      5.5,
+      7.3
+    ],
+    "fs": 8.6,
+    "note": {
+      "en": "Dates are targets. Queue availability, measured runtime and supervisor approval determine feasibility. No conference deadline is inferred from this schedule.",
+      "zh": "日期为目标，能否执行取决于排队、实测运行时间与导师决定；此表不推断会议截止日。"
+    }
+  }
+}

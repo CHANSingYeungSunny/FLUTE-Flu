@@ -1,197 +1,71 @@
-# -*- coding: utf-8 -*-
-"""Verification of the six 01_最终报告.
-
-1. every DOCX reopens and its text is non-trivial
-2. the Chinese documents' text round-trips as valid UTF-8 Chinese (no mojibake),
-   checked on the DOCX via python-docx AND via an independent LibreOffice text
-   export, and on the PDF via embedded-font inspection
-3. the reproduction table still shows the sign crossover (WIN WIN LOSS LOSS)
-4. every place that says "not yet available" is listed
-5. no document claims that the reproduction beat the paper
+#!/usr/bin/env python3
+"""Portable verification of the revised DOCX/PDF text, sections and key values.
+Visual review is separate. No claim that this replaces the original model tests.
 """
-from __future__ import annotations
-
-import os
-import re
-import subprocess
-import sys
-import unicodedata
-import builtins
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from docx import Document  # noqa: E402
-
-from dlv import data as D  # noqa: E402
-
-OUT = os.path.join(D.ROOT, "01_最终报告")
-V = os.path.join(os.path.dirname(os.path.abspath(__file__)), "verify")
-NODE = (r"C:\Users\Asus\AppData\Local\Programs\DeepSeek Harness\resources\runtime"
-        r"\primary-runtime\dependencies\node\bin\node.exe")
-CLI = (r"C:\Users\Asus\AppData\Local\Programs\DeepSeek Harness\resources"
-       r"\app.asar.unpacked\dsh\node_modules\@deepseek-ai\libreoffice-kit\lib\cli.js")
-
-DOCS = ["report_internal_en", "report_internal_zh", "progress_report_en",
-        "progress_report_zh", "ieee_manuscript_en", "ieee_manuscript_zh"]
-
-MOJIBAKE = ["Ã", "Â", "â€", "ï¿½", "æ\u0088", "\ufffd", "å¤", "ç\u009a", "é\u0080"]
-NOT_AVAIL = ["not yet available", "Not yet available", "not yet available in this repo",
-             "尚未获得", "尚未取回", "尚未合并"]
-
-
-def cjk_ratio(s):
-    letters = [c for c in s if not c.isspace()]
-    if not letters:
-        return 0.0
-    cjk = sum(1 for c in letters if 0x4E00 <= ord(c) <= 0x9FFF)
-    return cjk / len(letters)
-
-
-def docx_text(path):
-    d = Document(path)
-    parts = [p.text for p in d.paragraphs]
-    for t in d.tables:
-        for row in t.rows:
-            for c in row.cells:
-                parts.append(c.text)
-    return "\n".join(parts)
-
-
-def pdf_fonts(path):
-    raw = open(path, "rb").read()
-    names = set(re.findall(rb"/BaseFont\s*/([A-Za-z0-9+\-_,.#]+)", raw))
-    return sorted(n.decode("latin-1") for n in names)
-
-
-def lo_text(path, out_txt):
-    if os.path.exists(out_txt):
-        os.remove(out_txt)
-    r = subprocess.run([NODE, CLI, "convert", "--input", path, "--output", out_txt],
-                       capture_output=True, text=True)
-    if not os.path.exists(out_txt):
-        return None, (r.stderr or "")[:200]
-    return open(out_txt, encoding="utf-8", errors="replace").read(), ""
-
-
+from pathlib import Path
+import re,json
+from docx import Document
+ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'01_最终报告'
 def main():
-    os.makedirs(V, exist_ok=True)
-    try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except Exception:
-        pass
-    log = open(os.path.join(V, "report.txt"), "w", encoding="utf-8")
-
-    def out(*a):
-        s = " ".join(str(x) for x in a)
-        builtins.print(s)
-        log.write(s + "\n")
-
-    fail = 0
-    print = out  # noqa: A001  (local redirection for the rest of the function)
-    print("=" * 78)
-    print("1. DOCX reopen + text size")
-    print("=" * 78)
-    texts = {}
-    for n in DOCS:
-        p = os.path.join(OUT, n + ".docx")
-        t = docx_text(p)
-        texts[n] = t
-        with open(os.path.join(V, n + ".docx.txt"), "w", encoding="utf-8") as fh:
-            fh.write(t)
-        ok = len(t) > 3000
-        fail += 0 if ok else 1
-        print(f"  {n:<24} {len(t):>7,} chars   {'OK' if ok else 'TOO SHORT'}")
-
-    print()
-    print("=" * 78)
-    print("2. Chinese round-trip")
-    print("=" * 78)
-    for n in ("report_internal_zh", "progress_report_zh", "ieee_manuscript_zh"):
-        t = texts[n]
-        r = cjk_ratio(t)
-        bad = [m for m in MOJIBAKE if m in t]
-        # independent path: LibreOffice text export of the same DOCX
-        lt, err = lo_text(os.path.join(OUT, n + ".docx"),
-                          os.path.join(V, n + ".lo.txt"))
-        lo_r = cjk_ratio(lt) if lt else 0.0
-        quote = re.sub(r"\s+", "", t)[1000:1020]
-        ok = (r > 0.30 and not bad and lt is not None and lo_r > 0.30)
-        fail += 0 if ok else 1
-        print(f"  {n}")
-        print(f"    python-docx : {len(t):,} chars, CJK ratio {r:.3f}, mojibake markers {bad or 'none'}")
-        print(f"    LibreOffice : {len(lt) if lt else 0:,} chars, CJK ratio {lo_r:.3f}  {err}")
-        print(f"    proof (20 chars): {quote}")
-        print(f"    {'PASS' if ok else 'FAIL'}")
-
-    print()
-    print("=" * 78)
-    print("3. PDF: signature, size, page count, embedded fonts")
-    print("=" * 78)
-    for n in DOCS:
-        p = os.path.join(OUT, n + ".pdf")
-        raw = open(p, "rb").read()
-        pages = len(re.findall(rb"/Type\s*/Page[^s]", raw))
-        fonts = pdf_fonts(p)
-        cjk_font = [f for f in fonts if re.search(r"SimSun|SimHei|YaHei|Song|Hei|Ming|Noto.*CJK|Droid",
-                                                  f, re.I)]
-        ok = raw[:5] == b"%PDF-" and len(raw) > 50_000 and pages > 0
-        if n.endswith("_zh"):
-            ok = ok and bool(cjk_font)
-        fail += 0 if ok else 1
-        print(f"  {n:<24} {len(raw):>9,} B  {pages:>3} pages  fonts={len(fonts):>2}  "
-              f"cjk_font={cjk_font or '—'}  {'OK' if ok else 'CHECK'}")
-
-    print()
-    print("=" * 78)
-    print("4. The reproduction table still shows the sign crossover")
-    print("=" * 78)
-    for n in ("report_internal_en", "report_internal_zh", "ieee_manuscript_en", "ieee_manuscript_zh"):
-        d = Document(os.path.join(OUT, n + ".docx"))
-        found = None
-        for t in d.tables:
-            signs = [row.cells[4].text.strip() for row in t.rows
-                     if len(row.cells) >= 8 and row.cells[0].text.strip().startswith("L=")]
-            if len(signs) == 4:
-                found = signs
-                break
-        want_win = ("WIN", "胜")
-        ok = found is not None and all(s in want_win for s in found[:2]) and all(
-            s in ("LOSS", "负") for s in found[2:])
-        fail += 0 if ok else 1
-        print(f"  {n:<24} signs={found}  {'OK (2 wins then 2 losses)' if ok else 'MISSING'}")
-
-    print()
-    print("=" * 78)
-    print("5. 'not yet available' inventory (every place it is written)")
-    print("=" * 78)
-    for n in DOCS:
-        hits = []
-        for line in texts[n].split("\n"):
-            if any(k in line for k in NOT_AVAIL):
-                hits.append(line.strip())
-        print(f"  {n}: {len({h[:60] for h in hits})} distinct line(s)")
-        for h in sorted(set(hits))[:8]:
-            print("     -", h[:150])
-
-    print()
-    print("=" * 78)
-    print("6. No claim that the reproduction beat the paper")
-    print("=" * 78)
-    pat = re.compile(r"(beat|exceed|outperform|surpass|超过|优于)(s|ed)?\s*(the\s+)?(paper|original|作者|论文)",
-                     re.I)
-    for n in DOCS:
-        t = texts[n]
-        hits = []
-        for m in pat.finditer(t):
-            ctx = t[max(0, m.start() - 90):m.end() + 40].replace("\n", " ")
-            hits.append(ctx)
-        print(f"  {n}: {len(hits)} hit(s)")
-        for h in hits:
-            print("     ...", h[:170])
-    print()
-    print(f"FAILURES: {fail}")
-    return 1 if fail else 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+ try:import fitz
+ except ImportError:raise SystemExit('Install pymupdf for independent PDF text verification.')
+ checks=[];fail=[]
+ for kind in ['report_internal','progress_report','ieee_manuscript','record_for_journal']:
+  for lang in ['en','zh']:
+   name=f'{kind}_{lang}';d=Document(OUT/(name+'.docx'));txt='\n'.join([p.text for p in d.paragraphs]+[c.text for t in d.tables for row in t.rows for c in row.cells]);pdf=fitz.open(OUT/(name+'.pdf'));pdftext='\n'.join(x.get_text() for x in pdf)
+   cjk=lambda s:sum('\u4e00'<=x<='\u9fff' for x in s)/max(1,len(''.join(s.split())))
+   if 'CHAN Sing Yeung Sunny' in txt or d.core_properties.author!='CHAN Sing Yeung':fail.append(name+' old formal author')
+   if 'CHAN Sing Yeung' not in txt or 'CHAN Sing Yeung' not in pdftext:fail.append(name+' corrected author absent')
+   row={'document':name,'pages':len(pdf),'tables':len(d.tables),'figures':len(d.inline_shapes),'cjk_ratio_docx':cjk(txt),'cjk_ratio_pdf':cjk(pdftext)}
+   for token in ['1.4995','1.4355','0.8043','0.7452','1.5574','1.6621','1.8716','0.1172','60/60']:
+    if token=='60/60' and name=='ieee_manuscript_en':continue
+    if token not in txt:fail.append(name+' missing DOCX '+token)
+   for token in ['1.4995','1.5574','0.1172']:
+    if token not in pdftext:fail.append(name+' missing PDF '+token)
+   if lang=='zh' and (cjk(txt)<=.30 or cjk(pdftext)<=.30):fail.append(name+' CJK ratio below .30 or missing glyphs')
+   fonts=sorted({f[3] for page in pdf for f in page.get_fonts()});row['embedded_font_names']=fonts
+   if lang=='zh' and not any(re.search(r'CJK|SimSun|YaHei|DroidSansFallback|SourceHan',f,re.I) for f in fonts):fail.append(name+' no embedded CJK font; extraction alone is insufficient')
+   if any(x in txt for x in ['109 of 136','0.1143','exactly reversed','pure noise','asserted by tests/test_miflu_ablations']):fail.append(name+' stale claim')
+   if kind=='progress_report':
+    nums=[int(x.group(1)) for p in d.paragraphs if p.style.name.startswith('Heading') and (x:=re.match(r'^(\d+)\.',p.text))]
+    if nums!=[1,2,3,4,6,7,8]:fail.append(name+' template numbering '+str(nums))
+    if not 7<=len(pdf)<=9:fail.append(name+' outside 7–9 page target')
+   if kind in ['report_internal','record_for_journal']:
+    nums=[int(x.group(1)) for p in d.paragraphs if p.style.name=='Heading 1' and (x:=re.match(r'^(\d+)\s',p.text))]
+    if nums!=list(range(1,16) if kind=='record_for_journal' else range(1,13)):fail.append(name+' internal sections '+str(nums))
+    qd=d;qt=txt;qp=pdftext
+    if name=='report_internal_zh':
+     main_questions=[p.text for p in d.paragraphs if re.match(r'^Q\d{2}\b',p.text)]
+     if main_questions:fail.append(name+' Q&A not separated')
+     qd=Document(OUT/'report_internal_qa_zh.docx');qt='\n'.join(p.text for p in qd.paragraphs)
+     with fitz.open(OUT/'report_internal_qa_zh.pdf') as qpdf:qp='\n'.join(p.get_text() for p in qpdf);row['qa_companion_pages']=len(qpdf)
+    questions=[int(m.group(1)) for p in qd.paragraphs if p.style.name=='Heading 3' and (m:=re.match(r'^Q(\d{2})\b',p.text))]
+    row['qa_items']=0 if name=='report_internal_zh' else len(questions)
+    if name=='report_internal_zh':row['qa_companion_items']=len(questions)
+    from qa_literature import SUPPORT
+    refs_present={int(m.group(1)) for p in qd.paragraphs if (m:=re.match(r'^\[(\d+)\]',p.text))}
+    row['literature_backed_questions']=0
+    for qid,support in SUPPORT.items():
+     if support[lang] not in qt or support['locator'] not in qt:fail.append(name+f' missing paper reasoning or locator Q{qid:02d}')
+     elif not set(support['refs'])<=refs_present:fail.append(name+f' unresolved citation Q{qid:02d}')
+     else:row['literature_backed_questions']+=1
+    if refs_present!=set(range(1,26)):fail.append(name+' incomplete 25-reference list')
+    if ('Paper-based reasoning.' if lang=='en' else '文献依据与选择理由。') not in qp:fail.append(name+' missing PDF paper reasoning')
+    if questions!=list(range(1,26)):fail.append(name+' restored Q01–Q25 order/coverage '+str(questions))
+    for question in range(1,26):
+     if f'Q{question:02d}' not in qp:fail.append(name+f' missing PDF Q{question:02d}')
+   if kind=='ieee_manuscript':
+    if len(d.tables)!=(5 if lang=='en' else 8):fail.append(name+' scientific table count')
+    if lang=='en':
+     par=d.paragraphs;abstract=next((p.text.split('—',1)[1] for p in par if p.text.startswith('Abstract—')),None)
+     if abstract is None:
+      idx=next(i for i,p in enumerate(par) if p.text=='Abstract');abstract=par[idx+1].text
+     words=len(abstract.split());row['abstract_words']=words
+     if words>250:fail.append(name+' long abstract')
+   checks.append(row)
+ (ROOT/'audit/DOCUMENT_VERIFICATION.json').write_text(json.dumps({'checks':checks,'failures':fail,'scope':'DOCX and independently extracted PDF text; English manuscript PDF is local LaTeX, other report PDFs are LibreOffice; visual review is separate'},ensure_ascii=False,indent=2))
+ for c in checks:print(c)
+ print('FAILURES:',len(fail))
+ for x in fail:print(x)
+ return bool(fail)
+if __name__=='__main__':raise SystemExit(main())

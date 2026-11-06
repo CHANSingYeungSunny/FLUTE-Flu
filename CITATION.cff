@@ -1,15 +1,15 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite this repository. The reference paper is listed under preferred-citation."
 type: software
-title: "MLFlu: Influenza Forecasting Reproduction & Innovation (FYP)"
+title: "MIFlu reproduction and influenza forecasting audit"
 version: "1.0.0"
 date-released: "2026-10-30"
 license: MIT
 authors:
   - family-names: "CHAN"
-    given-names: "Sing Yeung Sunny"
+    given-names: "Sing Yeung"
 repository-code: "https://github.com/CHANSingYeungSunny/FLUTE-Flu"
-abstract: "Independent reproduction and innovation study of MIFlu for influenza forecasting on US CDC National-Illness 966-row data. Full pipeline from training to frozen predictions, authoritative MSE ranking tables, and manuscript-ready report. MSE 1.8652 vs paper 1.4355 (+29.9%, PARTIAL_REPRODUCTION)."
+abstract: "Independent influenza forecasting reproduction and 28-implementation evaluation across accuracy, peak skill, parameter efficiency and statistical evidence. Reproduction mean MSE 1.4995 versus paper 1.4355 (+4.5%). Correct Holm rejects 0/136 pairs at the present exact-test resolution; this does not establish equivalence. Single-split findings and adapted implementations remain limited; manuscript not submission-ready."
 keywords:
   - influenza forecasting
   - multimodal fusion
@@ -22,13 +22,13 @@ preferred-citation:
   title: "MIFlu: Large Language Model-Based Multimodal Influenza Forecasting Scheme"
   authors:
     - family-names: "Moon"
-      given-names: "Jinha"
+      given-names: "Jaeuk"
     - family-names: "Shim"
-      given-names: "Seongjun"
+      given-names: "Jonghwa"
     - family-names: "Kim"
-      given-names: "Minha"
+      given-names: "Eunbeen"
     - family-names: "Hwang"
-      given-names: "Jae-Hyun"
+      given-names: "Eenjun"
   journal: "IEEE Journal of Biomedical and Health Informatics"
   volume: 29
   number: 10

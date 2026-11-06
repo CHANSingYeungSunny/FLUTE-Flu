@@ -1,0 +1,11 @@
+path	bytes	status
+/gpfs1/scratch/sychan552/hf_cache/models--Qwen--Qwen3.8-27B-FP8	30890100513	deleted_unused
+/gpfs1/scratch/sychan552/hf_cache/models--tencent--Penguin-Encoder	882283093	deleted_unused
+/gpfs1/scratch/sychan552/hf_cache/models--tencent--WeMM-Embedding-2B	5461770945	deleted_unused
+/gpfs1/scratch/sychan552/hf_cache/models--tencent--WeMM-Embedding-4B	10367617075	deleted_unused
+/gpfs1/scratch/sychan552/hf_cache/models--tencent--Youtu-HiChunk	8173649505	deleted_unused
+/gpfs1/scratch/sychan552/hf_cache/models--Qwen--Qwen2.5-1.5B	3098993287	deleted_duplicate_of_hub
+/gpfs1/scratch/sychan552/hf_cache/models--tencent--ContextPilot-8B	16398169807	deleted_duplicate_of_hub
+/gpfs1/scratch/sychan552/hf_cache/models--tencent--Hunyuan-1.8B-Instruct	3588557778	deleted_duplicate_of_hub
+/gpfs1/scratch/sychan552/hf_cache/models--tencent--Hunyuan-4B-Instruct	8449934881	deleted_duplicate_of_hub
+/gpfs1/scratch/sychan552/hf_cache/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-32B	10346153900	deleted_duplicate_of_hub

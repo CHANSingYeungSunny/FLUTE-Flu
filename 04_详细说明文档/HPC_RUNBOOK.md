@@ -1,3 +1,26 @@
+# AGENT HARD RULE (read AGENTS.md first)
+
+---
+
+## HARD RULE — Burgundy login node (2026-11-05 incident, applies to EVERY agent)
+
+**All model work must run via `sbatch` on a compute node.** Never run inference,
+`torch.load`, `import torch/transformers`, recursive `du -sh` or downloads on the
+login node — that caused a ~2-hour outage on 2026-11-05. Login node is only for
+`squeue`/`sacct`/`scontrol`/`mmlsquota`/short `ls`/`cat`.
+
+If ssh authenticates but returns zero bytes: disable
+`ServerAliveInterval/CountMax`, open ONE connection with no retry loop, and issue
+`pkill` as the **FIRST** command in the first shell window (a `D`-state task keeps
+`SIGKILL` pending; `ps` first lost a real window). Never `scancel`.
+
+Full rules: **`AGENTS.md`** (root). SOP: `04_详细说明文档/HPC_LOGIN_NODE_DSTATE_RECOVERY.md`.
+Incident: `HANDOFF_20261105/INCIDENT_20261105_LOGIN_NODE_DSTATE.md`.
+Tool: `05_程序代码/hpc_login_node_recover.py`.
+Also: a `legacy_done.tsv` row is NOT a validated cell, and `squeue -h` prints a
+`Last update ...` line so `grep -q .` is not a valid job-existence guard.
+
+
 # 04_详细说明文档/HPC_RUNBOOK.md — CityU HPC Burgundy, operational
 
 > **What this is:** everything needed to *operate* the cluster, moved verbatim out of `AGENTS.md` §4 — the ssh incantation, paths, partitions, disk, the environment-tooling facts (`conda` is gone), A100 memory measurements, `stingy` QOS, and the twelve gotchas each of which already cost hours. Ends with `AGENTS.md` §2 rule 13 restated as an operator checklist.
@@ -225,3 +248,9 @@ filter matches no required arm, and line 201 requires >=11 arms when the filter 
 A wrong model string therefore fails in **5 seconds** having downloaded nothing (jobs 720364
 and 720519 both did exactly this). **Rule: never type model ids from memory - read the
 registry first, then pass the exact strings.**
+
+---
+
+## ADDENDUM 2026-11-05 (kill-first recovery; refines gotchas 10-12)
+
+**Validated on 2026-11-05.** Gotcha 11's "remote `pkill` is impossible" is **conditional on no shell existing**. A `D`-state task does not discard `SIGKILL`; the signal is pending and delivered when the task leaves D. When a brief shell window appears, issue `pkill -9 -u "$USER" -f '…'` as the **first** command (bracket self-exclusion, `timeout 4` guards), then capture. Do NOT run `ps`, `du -sh` or heavy imports first — a `ps` call consumed the 14:43:55 UTC window. Disable `ServerAliveInterval/CountMax` (set 0) so your own client does not produce a false `Timeout, server not responding`. One connection only; no retry loop (C5). **No inference / checkpoint load / HF import / recursive `du` on the login node** — `sbatch` it. Full method: `04_详细说明文档/HPC_LOGIN_NODE_DSTATE_RECOVERY.md`; incident: `HANDOFF_20261105/INCIDENT_20261105_LOGIN_NODE_DSTATE.md`; tool: `05_程序代码/hpc_login_node_recover.py`. Verified no Slurm job was killed (all lanes COMPLETED 0:0).

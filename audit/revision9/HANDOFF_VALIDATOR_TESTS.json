@@ -1,0 +1,58 @@
+{
+  "executed": true,
+  "test_scope": "Synthetic return-package integrity validator; no forecasting or archived model tests executed",
+  "cases": [
+    {
+      "case": "valid required structure with explicit blocked outputs",
+      "expected_integrity": "PASS",
+      "actual_integrity": "PASS",
+      "scientific_readiness": "NOT_ASSESSED",
+      "errors": []
+    },
+    {
+      "case": "hash mismatch",
+      "expected_integrity": "FAIL",
+      "actual_integrity": "FAIL",
+      "scientific_readiness": "NOT_ASSESSED",
+      "errors": [
+        "Size/hash mismatch: MESSAGE_TO_CHATGPT.md"
+      ]
+    },
+    {
+      "case": "unlisted file",
+      "expected_integrity": "FAIL",
+      "actual_integrity": "FAIL",
+      "scientific_readiness": "NOT_ASSESSED",
+      "errors": [
+        "Unlisted file: unexpected.tmp"
+      ]
+    },
+    {
+      "case": "aggregation missing without block reason",
+      "expected_integrity": "FAIL",
+      "actual_integrity": "FAIL",
+      "scientific_readiness": "NOT_ASSESSED",
+      "errors": [
+        "Aggregation neither supplied nor explicitly blocked: AGGREGATION/ACCURACY_FULL.csv"
+      ]
+    },
+    {
+      "case": "incomplete declared matrix labelled complete",
+      "expected_integrity": "FAIL",
+      "actual_integrity": "FAIL",
+      "scientific_readiness": "NOT_ASSESSED",
+      "errors": [
+        "national incorrectly declares complete"
+      ]
+    },
+    {
+      "case": "required file missing even after manifest regeneration",
+      "expected_integrity": "FAIL",
+      "actual_integrity": "FAIL",
+      "scientific_readiness": "NOT_ASSESSED",
+      "errors": [
+        "Required readable file missing: CONFIG_INDEX.json"
+      ]
+    }
+  ]
+}

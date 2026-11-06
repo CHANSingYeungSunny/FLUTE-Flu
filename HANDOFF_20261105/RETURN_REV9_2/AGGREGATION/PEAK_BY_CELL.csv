@@ -1,0 +1,2 @@
+status,reason,planned_denominator,available,source
+BLOCKED,"PENDING_CPU_ARRAY_740344: measured 345s/cell, 40 cells, 4 concurrent tasks; pilot 740312 validated (170,7,24), ch4 target equality 1.776e-15. 0 tensors at capture. Will be generated from real NPZ once array completes.",40 MIFlu cells,1080 national cells validated but not independently rescored here,RETURN_STATUS.json / SCIENTIFIC_AUDIT.md

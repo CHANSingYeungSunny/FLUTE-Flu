@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "name": "cell_completeness",
+      "status": "passed",
+      "command": "cellok.py count all/export all/cells_all.tsv",
+      "exit_code": 0,
+      "log_path": "logs/EXECUTION_LOG.md"
+    },
+    {
+      "name": "seven_channel_target_equality",
+      "status": "passed",
+      "command": "python compare_40_npz_targets",
+      "exit_code": 0,
+      "log_path": "logs/EXECUTION_LOG.md"
+    },
+    {
+      "name": "harmonised_scoring",
+      "status": "passed",
+      "command": "python score_common.py",
+      "exit_code": 0,
+      "log_path": "logs/EXECUTION_LOG.md"
+    },
+    {
+      "name": "event_peak_matching",
+      "status": "passed",
+      "command": "python peak_events.py",
+      "exit_code": 0,
+      "log_path": "logs/EXECUTION_LOG.md"
+    },
+    {
+      "name": "legacy_aggregation",
+      "status": "passed",
+      "command": "python legacy_agg.py",
+      "exit_code": 0,
+      "log_path": "logs/EXECUTION_LOG.md"
+    }
+  ]
+}

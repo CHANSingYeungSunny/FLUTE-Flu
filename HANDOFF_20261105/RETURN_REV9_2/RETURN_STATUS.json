@@ -1,0 +1,208 @@
+{
+  "contract_version": "MIFlu-return-9.2",
+  "capture_time_utc": "2026-11-05T16:50:36Z",
+  "capture_time_hkt": "2026-11-06 00:49 HKT",
+  "status_label": "IN_PROGRESS",
+  "live_hpc_access": true,
+  "live_hpc_method": "ssh BatchMode publickey; scontrol/sacct/mmlsquota/cellok.py; read-only",
+  "received_base_package_sha256": {
+    "MIFlu_Full_Project_Rev9_2_20261105.zip": "1f8b4cdcee6a68aac04ffdf2705ddc92b65ee6374cdf49f74b64f70a50f7821b",
+    "MIFlu_DeepSeek_Handoff_Rev9_2_20261105.zip": "9b53135a7a773eb3c2183e05e4dc2c50bc5fb768c6f8b9ead6a64d0c5d8bc77d",
+    "MIFlu_Overleaf_Rev9_20261105.zip": "c20cd03d422c4ff8"
+  },
+  "core": {
+    "planned": 160,
+    "validated_complete": 160,
+    "blocked": 0,
+    "roster": "MIFlu, NLinear, PatchTST, DLinear x 4 lengths x seeds 2021-2030",
+    "note": "DLinear lies OUTSIDE the 1120 national roster; do not add 160+1120"
+  },
+  "national": {
+    "planned": 1120,
+    "validated_complete": 1080,
+    "blocked": 40,
+    "blocked_model": "ds_r1_distill_qwen1_5b",
+    "blocked_reason": "HF cache layout mismatch -> LocalEntryNotFoundError; 2 attempts; quarantined",
+    "remediation": "run_lane_v2.sh patched to choose HUFC per cell; one rerun job 740183 submitted"
+  },
+  "ablation": {
+    "reported_done": 60,
+    "verified_predictive_trend": false,
+    "reason": "per-run values, reference alignment and paired differences not aggregated; DONE label != measurement"
+  },
+  "table_vi": {
+    "legacy_todo_rows": 19,
+    "legacy_done_rows": 189,
+    "warning": "legacy_lane.sh writes DONE after ANY attempt; last 50 tasks rc=3 skip.impossible/bad task id. 189/189 is NOT validated completion"
+  },
+  "walk_forward": {
+    "legacy_todo_rows": 170,
+    "validated": false,
+    "warning": "same unconditional-DONE defect"
+  },
+  "regional": {
+    "eligible_regions_verified": 0,
+    "executed": false
+  },
+  "quota": {
+    "home_kb": 23374512,
+    "home_soft_kb": 52428800,
+    "home_hard_kb": 104857600,
+    "scratch_kb": 329469744,
+    "scratch_soft_kb": 314572800,
+    "scratch_hard_kb": 1073741824,
+    "grace_days": 9,
+    "note": "measured at capture; no dataset/checkpoint/raw prediction/encoder cache deleted"
+  },
+  "seven_channel_miflu": {
+    "planned": 40,
+    "npz_present": 0,
+    "job_739549": "PENDING gpu_a100 StartTime=2026-11-07T13:20:16",
+    "cpu_pilot_740296": "COMPLETED exit 0:0 but EXPORT_RC=1 — GPT-2 cache layout error (HF_HOME pointed at encoder cache)",
+    "checkpoints_present": 40,
+    "cpu_pilot_740312": "COMPLETED 00:05:48 exit 0:0; valid (170,7,24) tensor; WALL=345s/cell on CPU tiny cpunode-058",
+    "partition_change_attempt": "scontrol update job=739549 partition=stingy DENIED (users may not change partition); job untouched",
+    "pilot_verification": {
+      "npz_shape": [
+        170,
+        7,
+        24
+      ],
+      "panel": "all_valid_strict",
+      "target_start_row_min": 773,
+      "target_start_row_max": 942,
+      "n_test": 170,
+      "finite": true,
+      "mse_all_z": 1.7439234256744385,
+      "csv_rows": 19032,
+      "csv_splits": [
+        "train",
+        "val",
+        "test"
+      ],
+      "abs_week_minus_step_relation": "VERIFIED on test: 4080 matched (start,step) pairs on ch4, max|diff| = 1.776e-15",
+      "npz_starts_are_subset_of_csv_reconstructed": true,
+      "note": "CSV has 793 reconstructed unique starts (104..942, all splits); NPZ test-only 170 (773..942). The relation must be restricted to the TEST split, not applied to all CSV rows."
+    },
+    "full_recovery_740344": "SUBMITTED: array 0-7%4 on tiny (CPU compute nodes), 40 cells, 5 cells/task, wall 4h, measured ~345s/cell -> ~29min/task; distinct label trackB_v2_7ch_cpu_array; preserves GPU job 739549",
+    "npz_present_at_capture": 4,
+    "provenance_per_cell": true,
+    "tensors_verified": [
+      {
+        "cell": "L24_s2021",
+        "shape": [
+          170,
+          7,
+          24
+        ],
+        "starts": [
+          773,
+          942
+        ],
+        "mse_all_z": 1.743923,
+        "valid": true
+      },
+      {
+        "cell": "L24_s2022",
+        "shape": [
+          170,
+          7,
+          24
+        ],
+        "starts": [
+          773,
+          942
+        ],
+        "mse_all_z": 1.686578,
+        "valid": true
+      },
+      {
+        "cell": "L24_s2023",
+        "shape": [
+          170,
+          7,
+          24
+        ],
+        "starts": [
+          773,
+          942
+        ],
+        "mse_all_z": 1.804358,
+        "valid": true
+      },
+      {
+        "cell": "L24_s2024",
+        "shape": [
+          170,
+          7,
+          24
+        ],
+        "starts": [
+          773,
+          942
+        ],
+        "mse_all_z": 1.816547,
+        "valid": true
+      }
+    ],
+    "array_740344_status": "4/40 done, 0 failures, 4 tasks RUNNING + 4 queued (JobArrayTaskLimit)",
+    "tensors_in_raw_evidence": 4
+  },
+  "jobs_at_capture": {
+    "739549": "miflu_7ch_export PENDING (Priority)",
+    "739626": "mlflu_p3_driver RUNNING",
+    "739628": "mlflu_p3_s1 PENDING (Priority)",
+    "740183": "trackB_v2_fix40 PENDING (Priority)",
+    "740296": "trackB_v2_7ch_cpu_pilot RUNNING tiny",
+    "740344": "trackB_v2_7ch_cpu_array 4/8 tasks RUNNING tiny"
+  },
+  "no_jobs_cancelled_this_session": true,
+  "blocked_outputs": {
+    "AGGREGATION/ACCURACY_FULL.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/ACCURACY_CROPPED.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/PEAK_BY_CELL.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/PEAK_EVENT_MATCHES.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/ABLATION_BY_CELL.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/ABLATION_REFERENCE_MAP.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/PAIRWISE_INPUTS.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/PAIRWISE_RESULTS.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/RESOURCE_MEASUREMENTS.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented.",
+    "AGGREGATION/UNIQUE_CELL_MAP.csv": "PENDING_CPU_ARRAY_740344 / BLOCKED: 4 of 40 seven-channel MIFlu tensors at capture; measured CPU recovery (pilot 740312 validated, 345 s/cell) running as array 740344; 40 encoder cells still wait on job 740183 (gpu_a100 StartTime 2026-11-07). No value invented."
+  },
+  "blocked_reason": "Updated: the 7-channel MIFlu blocker is now being removed by CPU array 740344 (measured/verified path). Until those 40 tensors exist, the two accuracy panels, event-level peaks, paired statistics and new Holm remain BLOCKED. 40 encoder cells still wait on job 740183 (gpu_a100, 11-07). No value is invented.",
+  "not_executed": [
+    "aggregate_core.py (window contract not yet re-verified; no 7ch inputs)",
+    "aggregate_peak.py (no harmonised predictions)",
+    "event-level peak matching",
+    "block-resampled paired statistics",
+    "new-family Holm",
+    "rolling origins >=3",
+    "regions >=3",
+    "CDC calendar/vintage verification",
+    "Chronos/TimesFM controls",
+    "O2 calibration",
+    "native Microsoft Office inspection",
+    "cloud Overleaf compilation",
+    "human presentation rehearsal",
+    "three no-text CPU assertions in THIS environment (prior run 3 passed/0 skipped, evidence not bundled)"
+  ],
+  "historical_snapshot_preserved": true,
+  "scientific_readiness": "NOT_ASSESSED",
+  "hf_cache_layout_traps": {
+    "encoders": "ds_r1_distill_qwen1_5b pinned snapshot lives in LEGACY layout hf_cache/models--... ; run_lane_v2.sh patched to pick HUFC per cell",
+    "miflu_gpt2": "GPT-2 lives in DEFAULT user cache /gpfs1/home/sychan552/.cache/huggingface/hub ; MIFlu cells must NOT override HF_HOME to hf_cache"
+  },
+  "o1_status": "UNBLOCKED_IN_PROGRESS: measured CPU recovery producing validated 7-channel tensors; 4/40 at capture",
+  "blocked_outputs_list": [
+    "AGGREGATION/ACCURACY_FULL.csv",
+    "AGGREGATION/ACCURACY_CROPPED.csv",
+    "AGGREGATION/PEAK_BY_CELL.csv",
+    "AGGREGATION/PEAK_EVENT_MATCHES.csv",
+    "AGGREGATION/ABLATION_BY_CELL.csv",
+    "AGGREGATION/ABLATION_REFERENCE_MAP.csv",
+    "AGGREGATION/PAIRWISE_INPUTS.csv",
+    "AGGREGATION/PAIRWISE_RESULTS.csv",
+    "AGGREGATION/RESOURCE_MEASUREMENTS.csv",
+    "AGGREGATION/UNIQUE_CELL_MAP.csv"
+  ]
+}

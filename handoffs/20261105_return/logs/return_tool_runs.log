@@ -1,0 +1,111 @@
+# Integrity tool runs — REAL outputs and exit codes
+# Scope: these tools check return structure, file hashes and limited status
+# consistency ONLY. They do NOT validate scientific assumptions, model
+# equivalence, training execution, statistics, literature or publication
+# readiness. A PASS may describe a completely blocked but honestly documented
+# return.
+
+$ python tools/make_return_manifest.py . --exclude VALIDATION_RESULT.json
+files hashed: 896
+EXIT 0
+
+make_return_manifest.py: pass1/pass2/pass3
+{
+
+  "integrity_status": "PASS",
+
+  "scope": "structure, file hashes and limited status consistency only; NOT scientific validation",
+
+  "run_status_counts": {
+
+    "completed": 117,
+
+    "queued": 1003
+
+  },
+
+  "check_status_counts": {
+
+    "passed": 17,
+
+    "failed": 1,
+
+    "not_executed": 4
+
+  },
+
+  "scientific_readiness": "NOT_ASSESSED",
+
+  "errors": []
+
+}
+
+
+{
+
+  "integrity_status": "PASS",
+
+  "scope": "structure, file hashes and limited status consistency only; NOT scientific validation",
+
+  "run_status_counts": {
+
+    "completed": 117,
+
+    "queued": 1003
+
+  },
+
+  "check_status_counts": {
+
+    "passed": 17,
+
+    "failed": 1,
+
+    "not_executed": 4
+
+  },
+
+  "scientific_readiness": "NOT_ASSESSED",
+
+  "errors": []
+
+}
+
+
+{
+
+  "integrity_status": "PASS",
+
+  "scope": "structure, file hashes and limited status consistency only; NOT scientific validation",
+
+  "run_status_counts": {
+
+    "completed": 117,
+
+    "queued": 1003
+
+  },
+
+  "check_status_counts": {
+
+    "passed": 17,
+
+    "failed": 1,
+
+    "not_executed": 4
+
+  },
+
+  "scientific_readiness": "NOT_ASSESSED",
+
+  "errors": []
+
+}
+
+
+FINAL EXIT 0
+Conclusion: integrity_status PASS, errors [], scientific_readiness NOT_ASSESSED.
+run_status_counts: completed 117, queued 1003.
+check_status_counts: passed 17, failed 1, not_executed 4.
+The single FAILED check is `archive_collection` (pytest --collect-only exit 2,
+38 import errors). It is retained as a real failure, not hidden.

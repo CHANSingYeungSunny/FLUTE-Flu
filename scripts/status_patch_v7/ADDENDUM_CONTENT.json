@@ -1,0 +1,134 @@
+{
+  "en": {
+    "title": "MIFlu execution status addendum",
+    "subtitle": "Revision 7 for the six v6 reports   5 November 2026 Hong Kong time",
+    "opening": "This addendum updates execution status and limitations in DOCUMENTS/v6. All old-snapshot reproduction, 28-arm accuracy, peak, efficiency and Holm results remain unchanged. Core completion is an artefact-completeness finding; it is not a finished common scientific comparison.",
+    "h1": "Dated execution status",
+    "headers": [
+      "Item",
+      "Status and evidence"
+    ],
+    "rows": [
+      [
+        "Core Track B",
+        "160/160 artefact-complete: MIFlu, NLinear, PatchTST and DLinear; four forecast lengths, ten seeds. Confirmed on the supplied files with cellok.py."
+      ],
+      [
+        "National 28-arm matrix",
+        "In progress. Package ledger: 117 completed / 1003 queued at 4 Nov 23:35 HKT. LIVE_STATUS_DRIFT records 139/1120 at 23:47. Owner handoff reports 141/1120 at 5 Nov 00:15; no live connection was made here."
+      ],
+      [
+        "Pending and partial work",
+        "Owner reports 13 empty decision_tree partial directories and two pending gpu_a100 lanes at 00:15. These are live-state reports, not additional completed outputs in this ZIP."
+      ],
+      [
+        "Ablation",
+        "Supplied queue log records 60/60 DONE. Per-variant seven-channel aggregate trends and raw ablation payloads have not been independently verified in this review."
+      ],
+      [
+        "Regional and walk-forward",
+        "Not started in the v2 successor chain. Owner lists Table VI 19 TODO and WF 170 TODO. Earlier legacy DONE rows exist; do not describe all prior regional/WF work as unstarted."
+      ],
+      [
+        "Storage quota",
+        "At 00:15 the owner reports approximately 306/300 GB soft, 10-day grace, 1024 GB hard; no final prune. The supplied quota log uses KB units. This is dated evidence, not a current reading."
+      ],
+      [
+        "No-text runtime",
+        "Supplied JUnit: three named assertions passed, zero skips/failures/errors, on CPU. Fixed-weight/eval scope only. Whole archived-suite collection still failed."
+      ]
+    ],
+    "last1": "Core and national panels overlap in model/length/seed. DLinear contributes 40 extra core controls outside the 28-arm denominator. Do not add 160 to 1120 or pool duplicate configurations as independent replicates.",
+    "h2": "Independent review and remaining limits",
+    "p2": [
+      "Both uploaded ZIP sizes and SHA-256 values match the handoff. All manifest-listed file hashes match. The validator as received reports FAIL because of one unlisted 1,835,008-byte temporary prediction file in core/miflu/L36_s2029. Quarantining only that transient file in the extracted review copy gives PASS; neither uploaded ZIP nor its source manifest was rewritten. The original FAIL, quarantine record and normalised PASS are retained.",
+      "Artefact checks confirm core 160/160 and the supplied national snapshot 117/1120. Independent raw-array scoring covers 237 seven-channel NPZ cells, with stored MSE/MAE matching within numerical tolerance. Forty MIFlu CSV cells support independent ILITOTAL scoring; the complete seven-channel MIFlu prediction tensors are not attached.",
+      "A common scoring panel remains unresolved: MIFlu manifests and stored test metrics use the historical crop, while the other supplied model NPZ metrics use all valid windows. MIFlu CSV exports contain all valid windows, allowing an ILITOTAL check after reconstructing target start as abs_week minus step. Do not compare the stored scalar metrics as one harmonised core leaderboard. Full seven-channel MIFlu exports are needed for the common all-window MSE panel.",
+      "PROTOCOL_LOCK.json still has frozen:false and a null lock timestamp, despite submission. This is a disclosed deviation. Do not backdate the lock or call these comparisons prospective confirmation. Further confirmatory work needs a genuinely dated lock before new evaluation.",
+      "PROFILE_COMPARISON.md and its log report that author_966 and author_repo_966 have different byte hashes but identical aligned numeric values in all seven channels, maximum absolute difference 0.0. This review inspected that evidence; the original dataset files were not supplied for an independent repeat. Synthetic date labels do not establish the real CDC calendar or real-time availability.",
+      "The JUnit record supports the three specified fixed-weight CPU assertions. It does not establish text/LoRA gradient reachability, all fusion paths or equality of independently trained trajectories. Some resolved configs are explicitly reconstructed, and MIFlu manifest config.seed can retain 42 while the effective run seed is recorded separately. Runtime configuration provenance still needs reconciliation."
+    ],
+    "h3": "Pending aggregation and next return",
+    "intro3": "On the verified Burgundy work directory, the requested commands are below. They were not executed in this review; the two aggregation scripts are not included in the returned source tree, so their exact paths and current contents must first be verified at the execution end.",
+    "commands": [
+      "python cellok.py count all/export all/cells_all.tsv",
+      "python aggregate_core.py",
+      "python aggregate_peak.py"
+    ],
+    "wait": [
+      "Complete or explicitly account for every national planned cell, including blocked and failed entries; export the current ledger, scheduler state and quota with timestamps.",
+      "Harmonise full-window and cropped scoring for every model, preserve original metrics as historical records, and supply complete seven-channel MIFlu validation/test tensors plus actual resolved runtime configs.",
+      "Recompute complete point/peak tables from raw predictions. The existing TRACKB_PEAK_PARTIAL.csv is partial; event-level matched/unmatched peak evaluation is not implemented. No new peak values are inserted into the reports.",
+      "Aggregate the 60/60 ablation outputs and verify their provenance. Queue DONE alone does not establish a depth or LoRA effect.",
+      "Confirm actual Table VI/WF denominators before resuming the successor chain. Complete regional/rolling-origin validation, numerical foundation controls, dependence-aware statistics, hardware coverage and calendar/vintage checks. Some remain necessary even after 1120/1120 completion."
+    ],
+    "end": "The old results remain: Holm 0/136, unadjusted 128/136, minimum adjusted p about 0.0664 and NLinear–PatchTST 0.1172; 13 conventional + 4 LLM-based + 11 frozen encoders. Those values describe the old snapshot, not a new ten-seed inference result. No full Track B conclusion, equivalence, clinical deployment claim or publication readiness is established.",
+    "sources": "Evidence locators: RUN_LEDGER.csv; HPC_VALIDATED_CELLS.tsv; logs/trackB_v2/validated_counts.txt; tests/no_text_runtime.xml; logs/hpc_evidence.log; PROFILE_COMPARISON.md; PROTOCOL_LOCK.json; AGGREGATION/TRACKB_PEAK_PARTIAL.csv; LIVE_STATUS_DRIFT.md; attached MESSAGE_TO_CHATGPT.md and README(2).md. The latter two supply the 00:15 owner report."
+  },
+  "zh": {
+    "title": "MIFlu 执行状态增补",
+    "subtitle": "六份 v6 报告通用修订 7   2026 年 11 月 5 日香港时间",
+    "opening": "本增补仅更新 DOCUMENTS/v6 的执行状态与限制。旧快照的复现、28 模型精度、峰值、效率和 Holm 数字均保持不变。核心单元完成表示产物完整性通过，不等于已完成共同协议下的科学比较。",
+    "h1": "按时间区分的执行状态",
+    "headers": [
+      "事项",
+      "状态及证据"
+    ],
+    "rows": [
+      [
+        "Track B 核心",
+        "160/160 产物完整：MIFlu、NLinear、PatchTST、DLinear，四个预测长度与十种子。本次对所附文件运行 cellok.py 检查相符。"
+      ],
+      [
+        "全国 28 模型矩阵",
+        "仍在进行。11 月 4 日 23:35 HKT 账本为 117 完成、1003 排队；LIVE_STATUS_DRIFT 记录 23:47 为 139/1120。用户在 11 月 5 日 00:15 交接时报告 141/1120；本次未连接实时 HPC。"
+      ],
+      [
+        "待运行及部分目录",
+        "用户在 00:15 报告 13 个空 decision_tree 部分目录、两个 gpu_a100 通道待调度。这是分时运行状态，不是本 ZIP 中额外完成的结果。"
+      ],
+      [
+        "消融",
+        "所附队列日志记录 60/60 为 DONE。逐变体七通道聚合趋势及原始消融产物未在本次独立核实。"
+      ],
+      [
+        "区域与滚动原点",
+        "v2 后继链尚未开始。用户列 Table VI 为 19 TODO、WF 为 170 TODO。旧链已有 DONE 行，不能说所有历史区域和 WF 工作都未开始。"
+      ],
+      [
+        "存储配额",
+        "00:15 用户报告约 306/300 GB 软配额、宽限 10 天、硬配额 1024 GB；尚未最终清理。所附配额日志采用 KB 单位。这不是本次实时读取。"
+      ],
+      [
+        "no-text 运行测试",
+        "所附 JUnit 记录三项具名 CPU 断言通过，零跳过、失败及错误；范围仅限固定权重评估。整个历史归档测试收集仍失败。"
+      ]
+    ],
+    "last1": "核心与全国面板的模型、预测长度及种子有重叠。DLinear 的 40 个核心控制单元不在原 28 模型分母内。不能将 160 加到 1120，也不能把重复配置合并成独立重复。",
+    "h2": "独立核查与尚存限制",
+    "p2": [
+      "两个上传 ZIP 的字节数与 SHA-256 均符合交接声明，manifest 列出的文件哈希也全部相符。但原样运行 validator 得到 FAIL：core/miflu/L36_s2029 多出一个未列入清单的 1,835,008 字节临时预测文件。仅在解压审阅副本隔离该文件后得到 PASS；上传 ZIP 及原 manifest 均未改写。原 FAIL、隔离记录和规范化 PASS 一并保留。",
+      "产物检查证实核心 160/160 与全国快照 117/1120。对 237 个七通道 NPZ 单元独立重算 MSE/MAE，与所存指标在数值容差内一致。另有 40 个 MIFlu CSV 单元可独立核查 ILITOTAL 误差，但未附完整七通道 MIFlu 预测张量。",
+      "共同评分面板仍待统一：MIFlu manifest 与所存测试指标采用历史裁剪窗口，其他已附模型 NPZ 指标采用全部有效窗口。MIFlu CSV 包含全部窗口，可由 abs_week 减 step 重建目标起点并核查 ILITOTAL。不能把现有标量指标直接当作已统一的核心排行榜；全窗口七通道 MSE 比较仍需 MIFlu 完整预测导出。",
+      "PROTOCOL_LOCK.json 仍为 frozen:false、锁定时间为空，但矩阵已经提交。必须披露这一偏离，不能倒填时间或声称前瞻确认。后续确认性比较应在新增评测前真实锁定并保存哈希。",
+      "PROFILE_COMPARISON.md 及日志报告 author_966 与 author_repo_966 字节哈希不同，但对齐的七个数值通道完全一致，最大绝对差为 0.0。本次已查看该证据；没有附原始数据文件供本次独立重算。合成日期标签不能证明真实 CDC 日历或实时数据可得性。",
+      "JUnit 记录支持三项固定权重 CPU 断言，不证明训练中的文本或 LoRA 梯度可达性、所有融合路径或独立训练轨迹相等。部分配置明确为事后重建；MIFlu manifest 的 config.seed 可能仍为 42，而实际运行种子另行记录，配置来源仍需协调核实。"
+    ],
+    "h3": "待完成聚合与下一次回传",
+    "intro3": "以下为交接要求的 Burgundy 工作目录命令。本次未执行；两个聚合脚本并未包含在回传源码中，执行端须先核对实际路径与当前内容。",
+    "commands": [
+      "python cellok.py count all/export all/cells_all.tsv",
+      "python aggregate_core.py",
+      "python aggregate_peak.py"
+    ],
+    "wait": [
+      "完成或逐项解释全国全部计划单元，保留 blocked 和 failed；回传带时间戳的最新账本、调度状态与配额。",
+      "逐模型统一全部窗口和历史裁剪评分，旧指标作为历史记录保留；补齐 MIFlu 七通道验证和测试张量，以及真实运行时的完整配置。",
+      "从原预测重算完整点误差与峰值表。TRACKB_PEAK_PARTIAL.csv 仍是部分结果；逐事件匹配及漏检、误检分析尚未实现。本次不把新的峰值数字写入旧报告。",
+      "聚合 60/60 消融输出并核实来源。队列 DONE 本身不能证明深度或 LoRA 收益。",
+      "恢复后继链前核实 Table VI/WF 的实际分母。继续区域与滚动原点、数值时序基础模型、处理依赖的统计、硬件覆盖及日历和数据版本检查。其中部分任务即使达到 1120/1120 仍然需要。"
+    ],
+    "end": "保留的旧结果为 Holm 0/136、未校正 128/136、最小校正 p 约 0.0664、NLinear–PatchTST 0.1172；家族为 13 个传统模型、4 个基于 LLM 的模型和 11 个冻结编码器。这些属于旧快照，不是新的十种子推断结果。本次不建立完整 Track B 结论、等效性、临床部署或投稿就绪主张。",
+    "sources": "证据位置：RUN_LEDGER.csv；HPC_VALIDATED_CELLS.tsv；logs/trackB_v2/validated_counts.txt；tests/no_text_runtime.xml；logs/hpc_evidence.log；PROFILE_COMPARISON.md；PROTOCOL_LOCK.json；AGGREGATION/TRACKB_PEAK_PARTIAL.csv；LIVE_STATUS_DRIFT.md；单独所附 MESSAGE_TO_CHATGPT.md 和 README(2).md。00:15 的用户报告来自后两份附件。"
+  }
+}

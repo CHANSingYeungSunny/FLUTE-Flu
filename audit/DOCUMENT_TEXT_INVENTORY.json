@@ -1,0 +1,65 @@
+[
+  {
+    "file": "ieee_manuscript_en.docx",
+    "paragraphs": 109,
+    "tables": 5,
+    "inline_figures": 2,
+    "text_sha256": "4dac5dba91ac4b80ee14dece6b6e7b79ece2e85d48b9c741b2c5febdb5d4c1a9"
+  },
+  {
+    "file": "ieee_manuscript_zh.docx",
+    "paragraphs": 92,
+    "tables": 8,
+    "inline_figures": 3,
+    "text_sha256": "2a8faad1c8d12a9f0c5ec5428ab207e99001edae8857a0f4a6f7a13ea06a53b3"
+  },
+  {
+    "file": "progress_report_en.docx",
+    "paragraphs": 68,
+    "tables": 12,
+    "inline_figures": 2,
+    "text_sha256": "9490531c69fcfdcc9d2c7a1d56ee4a9a53b889daa65bcd8e7b8f449b93259b09"
+  },
+  {
+    "file": "progress_report_zh.docx",
+    "paragraphs": 68,
+    "tables": 12,
+    "inline_figures": 2,
+    "text_sha256": "0405f2fc696f40bd623756950978ad4317dfc3f6469e78e81ed4cfb5c99010e0"
+  },
+  {
+    "file": "record_for_journal_en.docx",
+    "paragraphs": 288,
+    "tables": 12,
+    "inline_figures": 6,
+    "text_sha256": "664ce33c0757074c9e19a08a682434d7bc3851ce9689a4a9742a07895350a279"
+  },
+  {
+    "file": "record_for_journal_zh.docx",
+    "paragraphs": 288,
+    "tables": 12,
+    "inline_figures": 6,
+    "text_sha256": "d221b8f908c3bcd764c1b46fa35444ae741c30add5ccda13fb99d9a0bde39e3f"
+  },
+  {
+    "file": "report_internal_en.docx",
+    "paragraphs": 268,
+    "tables": 12,
+    "inline_figures": 6,
+    "text_sha256": "6173110b2bd469fc5dd4dfa493e13a6b8640961220a3fd5e129997df0c8ce45b"
+  },
+  {
+    "file": "report_internal_qa_zh.docx",
+    "paragraphs": 206,
+    "tables": 0,
+    "inline_figures": 0,
+    "text_sha256": "fafc736f0919ce4bd95aefd9b7551604e25228aa20e0a8cc9dd9f6a662f4b170"
+  },
+  {
+    "file": "report_internal_zh.docx",
+    "paragraphs": 130,
+    "tables": 12,
+    "inline_figures": 6,
+    "text_sha256": "2ca7ab42e944b575227cfd5906b9b595a43892a96f12ab07975c363a39d09e90"
+  }
+]

@@ -1,0 +1,381 @@
+{
+  "models": 28,
+  "families": {
+    "classical_ml": 5,
+    "linear": 1,
+    "llm": 4,
+    "llm_encoder": 11,
+    "neural": 5,
+    "transformer": 2
+  },
+  "ranking": [
+    {
+      "model": "miflu",
+      "mse": 1.5573892510322846,
+      "mae": 0.8199110495142963,
+      "family": "llm",
+      "PTE": 1.1284722222222223,
+      "PIE": 26.84601700655818,
+      "passes": 4
+    },
+    {
+      "model": "patchtst",
+      "mse": 1.662077785403323,
+      "mae": 0.878609890790965,
+      "family": "transformer",
+      "PTE": 1.2395833333333333,
+      "PIE": 32.75502910989205,
+      "passes": 0
+    },
+    {
+      "model": "nlinear",
+      "mse": 1.8715832984285194,
+      "mae": 0.9182564479461559,
+      "family": "linear",
+      "PTE": 1.6770833333333333,
+      "PIE": 9.476573088860869,
+      "passes": 4
+    },
+    {
+      "model": "dnn",
+      "mse": 2.1414788208390636,
+      "mae": 1.005734900143043,
+      "family": "neural",
+      "PTE": 2.548611111111111,
+      "PIE": 41.60488090323133,
+      "passes": 0
+    },
+    {
+      "model": "timecma_llm",
+      "mse": 2.6081388405205224,
+      "mae": 1.0675564477027435,
+      "family": "llm",
+      "PTE": 2.329861111111111,
+      "PIE": 53.621748247440806,
+      "passes": 0
+    },
+    {
+      "model": "gradient_boosting",
+      "mse": 3.6645070863688796,
+      "mae": 1.252115775582536,
+      "family": "classical_ml",
+      "PTE": 4.958333333333333,
+      "PIE": 59.71069959668875,
+      "passes": 0
+    },
+    {
+      "model": "knn",
+      "mse": 3.7853594872562333,
+      "mae": 1.3293416547956398,
+      "family": "classical_ml",
+      "PTE": 2.7604166666666665,
+      "PIE": 67.90324060289736,
+      "passes": 0
+    },
+    {
+      "model": "random_forest",
+      "mse": 3.8901456040576656,
+      "mae": 1.277924385338681,
+      "family": "classical_ml",
+      "PTE": 5.440972222222222,
+      "PIE": 66.75892667466411,
+      "passes": 0
+    },
+    {
+      "model": "itransformer",
+      "mse": 3.9944539952428695,
+      "mae": 1.3476296090653164,
+      "family": "transformer",
+      "PTE": 2.1180555555555554,
+      "PIE": 69.30250680596461,
+      "passes": 0
+    },
+    {
+      "model": "decision_tree",
+      "mse": 4.31976494385358,
+      "mae": 1.3798151721160934,
+      "family": "classical_ml",
+      "PTE": 4.996527777777778,
+      "PIE": 53.94522055957758,
+      "passes": 0
+    },
+    {
+      "model": "tencent_hunyuan_1p8b_instruct",
+      "mse": 4.737408924629118,
+      "mae": 1.4754556600180622,
+      "family": "llm_encoder",
+      "PTE": 4.40625,
+      "PIE": 71.42751004496058,
+      "passes": 0
+    },
+    {
+      "model": "tencent_hunyuan_7b_instruct",
+      "mse": 4.759590203455037,
+      "mae": 1.468496574523694,
+      "family": "llm_encoder",
+      "PTE": 5.309027777777778,
+      "PIE": 75.39901323671826,
+      "passes": 0
+    },
+    {
+      "model": "ds_r1_distill_qwen1_5b",
+      "mse": 4.786555204820641,
+      "mae": 1.5001798625798934,
+      "family": "llm_encoder",
+      "PTE": 5.791666666666667,
+      "PIE": 78.06139293472685,
+      "passes": 0
+    },
+    {
+      "model": "ds_r1_distill_llama8b",
+      "mse": 4.824980404213911,
+      "mae": 1.4786200566236296,
+      "family": "llm_encoder",
+      "PTE": 4.305555555555555,
+      "PIE": 77.12124119307839,
+      "passes": 0
+    },
+    {
+      "model": "gru",
+      "mse": 4.887016514967012,
+      "mae": 1.517351801021817,
+      "family": "neural",
+      "PTE": 2.486111111111111,
+      "PIE": 61.117130136564136,
+      "passes": 0
+    },
+    {
+      "model": "ds_r1_distill_32b",
+      "mse": 4.937191258751004,
+      "mae": 1.493452137957232,
+      "family": "llm_encoder",
+      "PTE": 3.888888888888889,
+      "PIE": 77.72957359156372,
+      "passes": 0
+    },
+    {
+      "model": "lstm",
+      "mse": 5.008792418607296,
+      "mae": 1.5303482861064919,
+      "family": "neural",
+      "PTE": 3.5381944444444446,
+      "PIE": 66.60317527730474,
+      "passes": 0
+    },
+    {
+      "model": "ds_r1_distill_qwen14b",
+      "mse": 5.0166172940527005,
+      "mae": 1.5018926814075724,
+      "family": "llm_encoder",
+      "PTE": 4.149305555555555,
+      "PIE": 76.34991413867512,
+      "passes": 0
+    },
+    {
+      "model": "ds_r1_distill_qwen7b",
+      "mse": 5.030764373814842,
+      "mae": 1.513305242155238,
+      "family": "llm_encoder",
+      "PTE": 4.458333333333334,
+      "PIE": 76.37267610529136,
+      "passes": 0
+    },
+    {
+      "model": "rnn",
+      "mse": 5.0674068325954185,
+      "mae": 1.5633881245162502,
+      "family": "neural",
+      "PTE": 2.4756944444444446,
+      "PIE": 60.65267085951401,
+      "passes": 0
+    },
+    {
+      "model": "tencent_contextpilot_8b",
+      "mse": 5.08429301355569,
+      "mae": 1.5254843764080581,
+      "family": "llm_encoder",
+      "PTE": 4.961805555555555,
+      "PIE": 78.91849496186609,
+      "passes": 0
+    },
+    {
+      "model": "tencent_hunyuan_4b_instruct",
+      "mse": 5.131683064657239,
+      "mae": 1.5449922331495471,
+      "family": "llm_encoder",
+      "PTE": 3.0034722222222223,
+      "PIE": 78.84039908364082,
+      "passes": 0
+    },
+    {
+      "model": "tencent_contextpilot_14b",
+      "mse": 5.194917897738371,
+      "mae": 1.540735532513196,
+      "family": "llm_encoder",
+      "PTE": 4.965277777777778,
+      "PIE": 77.76427224911154,
+      "passes": 0
+    },
+    {
+      "model": "qwen25_1_5b",
+      "mse": 5.204928871441397,
+      "mae": 1.5724632257676703,
+      "family": "llm_encoder",
+      "PTE": 5.333333333333333,
+      "PIE": 74.65027694870746,
+      "passes": 0
+    },
+    {
+      "model": "qwen_time_llm",
+      "mse": 5.25567405551176,
+      "mae": 1.5794175695950994,
+      "family": "llm",
+      "PTE": 3.017361111111111,
+      "PIE": 52.08372628233454,
+      "passes": 0
+    },
+    {
+      "model": "svr",
+      "mse": 5.3387686518758315,
+      "mae": 1.498639967955461,
+      "family": "classical_ml",
+      "PTE": 3.375,
+      "PIE": 79.54018474784716,
+      "passes": 0
+    },
+    {
+      "model": "calf_llm",
+      "mse": 5.578515572300372,
+      "mae": 1.6189580564346295,
+      "family": "llm",
+      "PTE": 3.875,
+      "PIE": 80.4789899478173,
+      "passes": 0
+    },
+    {
+      "model": "cnn",
+      "mse": 5.615465943006331,
+      "mae": 1.6719538978370039,
+      "family": "neural",
+      "PTE": 6.604166666666667,
+      "PIE": 81.93821627979209,
+      "passes": 0
+    }
+  ],
+  "spread": 3.6056919869481767,
+  "slope": 0.11714420475371808,
+  "r2": 0.022265628798760862,
+  "rho_pie": [
+    0.735632183908046,
+    8.183577877063863e-06
+  ],
+  "rho_passes": [
+    -0.42918850218717064,
+    0.022661698892914493
+  ],
+  "raw_significant_pairs": 128,
+  "corrected_significant_pairs": 0,
+  "pair": {
+    "model_a": "nlinear",
+    "model_b": "patchtst",
+    "n": 12,
+    "mean_diff": 0.209506,
+    "wins_a": 2,
+    "p_raw": 0.005859,
+    "ci_lo": 0.101533,
+    "ci_hi": 0.306713,
+    "p_holm": 0.114258,
+    "effect_d": 1.146605,
+    "p_holm_recomputed": 0.11717999999999999,
+    "p_raw_grid_recovered": 0.005859375,
+    "p_holm_grid_recovered": 0.1171875
+  },
+  "pair_raw_rank": 117,
+  "source_holm_max_error": 0.16503900000000005,
+  "data_numeric_maxdiff": 0.0,
+  "reproduction": [
+    {
+      "model": "MIFlu",
+      "L": "24",
+      "paper_MSE": 1.542,
+      "our_MSE": 1.3045,
+      "delta_pct": -15.4,
+      "paper_MAE": 0.726,
+      "our_MAE": 0.7482,
+      "protocol": "reproduction 10-seed mean (2021-2030), validation-selected ckpt",
+      "delta_mae_pct": 3.1
+    },
+    {
+      "model": "MIFlu",
+      "L": "36",
+      "paper_MSE": 1.422,
+      "our_MSE": 1.3561,
+      "delta_pct": -4.6,
+      "paper_MAE": 0.779,
+      "our_MAE": 0.7712,
+      "protocol": "reproduction 10-seed mean (2021-2030), validation-selected ckpt",
+      "delta_mae_pct": -1.0
+    },
+    {
+      "model": "MIFlu",
+      "L": "48",
+      "paper_MSE": 1.414,
+      "our_MSE": 1.6543,
+      "delta_pct": 17.0,
+      "paper_MAE": 0.757,
+      "our_MAE": 0.8381,
+      "protocol": "reproduction 10-seed mean (2021-2030), validation-selected ckpt",
+      "delta_mae_pct": 10.7
+    },
+    {
+      "model": "MIFlu",
+      "L": "60",
+      "paper_MSE": 1.364,
+      "our_MSE": 1.6829,
+      "delta_pct": 23.4,
+      "paper_MAE": 0.719,
+      "our_MAE": 0.8596,
+      "protocol": "reproduction 10-seed mean (2021-2030), validation-selected ckpt",
+      "delta_mae_pct": 19.6
+    },
+    {
+      "model": "MIFlu",
+      "L": "4L-mean",
+      "paper_MSE": 1.4355,
+      "our_MSE": 1.4995,
+      "delta_pct": 4.5,
+      "paper_MAE": 0.7452,
+      "our_MAE": 0.8043,
+      "protocol": "reproduction 10-seed mean, sign crossover 2-2",
+      "delta_mae_pct": 7.9
+    }
+  ],
+  "ablation_status": "Supplied queue at 4 November 2026 reports 60/60 DONE; per-variant aggregation not verified; live cluster not contacted",
+  "original_test_suite": "Archived files supplied; collection has import/dependency errors; no passing-suite or reliable total claimed",
+  "full_28_pair_coverage": false,
+  "pair_models": [
+    "calf_llm",
+    "cnn",
+    "decision_tree",
+    "dnn",
+    "gradient_boosting",
+    "gru",
+    "itransformer",
+    "knn",
+    "lstm",
+    "miflu",
+    "nlinear",
+    "patchtst",
+    "qwen_time_llm",
+    "random_forest",
+    "rnn",
+    "svr",
+    "timecma_llm"
+  ],
+  "raw_smoke": {
+    "path": "03_预测数据_证据/expanded_runs/nlinear_L24_s42/pred_nlinear_L24_s42.npz",
+    "evaluated_windows": 160,
+    "mse": 1.7670505695896623,
+    "min_target_start_row": 773
+  }
+}

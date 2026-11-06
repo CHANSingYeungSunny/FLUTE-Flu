@@ -1,0 +1,10 @@
+model,L,seed,mse_all,mae_all,mse_ili,mse_wili,pcc,wall_s,gpu,results,pred
+miflu,24,2021,1.240157,0.716001,2.445931,0.6380,0.8637,,,export/miflu/L24_s2021/results_miflu_paper_protocol_table_20261104_191724.csv,export/miflu/L24_s2021/predictions_miflu_L24_paper_protocol.csv
+miflu,24,2022,1.201078,0.723927,2.477037,0.6416,0.8851,,,export/miflu/L24_s2022/results_miflu_paper_protocol_table_20261104_195947.csv,export/miflu/L24_s2022/predictions_miflu_L24_paper_protocol.csv
+miflu,24,2023,1.284212,0.726619,2.616505,0.6677,0.8608,,,export/miflu/L24_s2023/results_miflu_paper_protocol_table_20261104_192603.csv,export/miflu/L24_s2023/predictions_miflu_L24_paper_protocol.csv
+miflu,24,2024,1.259462,0.720994,2.474668,0.6143,0.8679,,,export/miflu/L24_s2024/results_miflu_paper_protocol_table_20261104_200838.csv,export/miflu/L24_s2024/predictions_miflu_L24_paper_protocol.csv
+miflu,24,2025,1.464643,0.800988,2.808533,0.6754,0.8689,,,export/miflu/L24_s2025/results_miflu_paper_protocol_table_20261104_193441.csv,export/miflu/L24_s2025/predictions_miflu_L24_paper_protocol.csv
+miflu,24,2027,1.392309,0.790021,2.517097,0.6276,0.8656,,,export/miflu/L24_s2027/results_miflu_paper_protocol_table_20261104_194320.csv,export/miflu/L24_s2027/predictions_miflu_L24_paper_protocol.csv
+miflu,24,2029,1.231536,0.756406,2.209419,0.6561,0.8708,,,export/miflu/L24_s2029/results_miflu_paper_protocol_table_20261104_195159.csv,export/miflu/L24_s2029/predictions_miflu_L24_paper_protocol.csv
+miflu,36,2021,1.314358,0.748769,2.657777,0.5246,0.9105,,,export/miflu/L36_s2021/results_miflu_paper_protocol_table_20261104_200038.csv,export/miflu/L36_s2021/predictions_miflu_L36_paper_protocol.csv
+miflu,36,2023,1.269466,0.741850,2.697488,0.5616,0.9004,,,export/miflu/L36_s2023/results_miflu_paper_protocol_table_20261104_200859.csv,export/miflu/L36_s2023/predictions_miflu_L36_paper_protocol.csv

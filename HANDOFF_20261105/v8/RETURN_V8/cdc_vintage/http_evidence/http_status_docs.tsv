@@ -1,0 +1,8 @@
+name	http_code	time_total_s	size_bytes	curl_rc	url
+delphi_docs	200	0.643663	58997	0	https://cmu-delphi.github.io/delphi-epidata/api/fluview.html
+epidatr_pub_fluview	200	0.488494	19560	0	https://cmu-delphi.github.io/epidatr/dev/reference/pub_fluview.html
+cdc_past_reports	200	1.062620	207688	0	https://www.cdc.gov/fluview/surveillance/past-reports.html
+cdc_fluview_index	200	0.133446	37713	0	https://www.cdc.gov/fluview/index.html
+cdc_stacks_120452	200	0.509529	65570	0	https://stacks.cdc.gov/view/cdc/120452
+cdcepi_data	200	0.574194	6599	0	https://cdcepi.github.io/flu/data.html
+cdcepi_ili_1415	200	0.734398	158838	0	https://cdcepi.github.io/flu/data/ILI_2014_2015.csv

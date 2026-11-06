@@ -1,0 +1,16 @@
+[2026-11-05T14:39:30Z] NO_DEADLINE_WAIT_START single_connection=True client_timeout=DISABLED
+[2026-11-05T14:40:01Z] still waiting elapsed=30s lines=0
+[2026-11-05T14:40:31Z] still waiting elapsed=60s lines=0
+[2026-11-05T14:41:01Z] still waiting elapsed=90s lines=0
+[2026-11-05T14:41:31Z] still waiting elapsed=120s lines=0
+[2026-11-05T14:42:01Z] still waiting elapsed=150s lines=0
+[2026-11-05T14:42:31Z] still waiting elapsed=180s lines=0
+[2026-11-05T14:43:01Z] still waiting elapsed=210s lines=0
+[2026-11-05T14:43:31Z] still waiting elapsed=240s lines=0
+[2026-11-05T14:43:55Z] OUT SHELL_OK
+[2026-11-05T14:43:55Z] OUT === UTC / HKT ===
+[2026-11-05T14:43:56Z] OUT === WHO / LOAD (D-state check) ===
+[2026-11-05T14:44:01Z] still waiting elapsed=270s lines=6
+[2026-11-05T14:44:02Z] OUT === PS (look for D/D+ STAT) ===
+[2026-11-05T14:44:11Z] SSH_EXIT 255 elapsed=280s lines=8
+[2026-11-05T14:44:11Z] WAIT_END

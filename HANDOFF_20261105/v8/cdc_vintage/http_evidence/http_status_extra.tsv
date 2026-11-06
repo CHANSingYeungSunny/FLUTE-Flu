@@ -1,0 +1,5 @@
+name	http_code	time_total_s	size_bytes	curl_rc	url
+delphi_multiweek	200	1.142258	3569	0	https://api.delphi.cmu.edu/epidata/fluview/?regions=nat&epiweeks=201449-201501&issues=201501,201502
+wayback_cdx	200	6.297808	653	0	https://web.archive.org/cdx/search/cdx?url=cdc.gov/fluview/surveillance/past-reports.html&output=json&limit=3&filter=statuscode:200
+swh_search	200	2.512893	1050	0	https://archive.softwareheritage.org/api/1/origin/search/ILINet/?limit=3
+github_mirror	200	0.520370	5205	0	https://raw.githubusercontent.com/Emergent-Epidemics/US_influenza_data_1998_09-2019/master/README.md

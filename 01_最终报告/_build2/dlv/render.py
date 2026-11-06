@@ -153,6 +153,14 @@ def repeat_header(row):
     trPr.append(el)
 
 
+def no_split_row(row):
+    """Keep a row's cells on one page (Word breaks rows mid-cell by default)."""
+    trPr = row._tr.get_or_add_trPr()
+    el = OxmlElement("w:cantSplit")
+    el.set(qn("w:val"), "true")
+    trPr.append(el)
+
+
 def keep_with_next(par):
     par.paragraph_format.keep_with_next = True
 
@@ -178,10 +186,26 @@ def _footer_field(par, lang):
 
 
 # ------------------------------------------------------------------ document
+def _roman(n):
+    vals = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"),
+            (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+    out = ""
+    for v, s in vals:
+        while n >= v:
+            out += s
+            n -= v
+    return out
+
+
+_CAP_NUM = re.compile(r"^(?:Table|表)\s*[0-9]+[a-zA-Z]?\.\s*", re.U)
+
+
 class Doc:
     def __init__(self, lang, *, font_size=10.5, margin_cm=2.1, serif=False,
-                 footer_left="", landscape=False, h_sizes=None):
+                 footer_left="", landscape=False, h_sizes=None, table_roman=False):
         self.lang = lang
+        self.table_counter = 0
+        self.table_roman = table_roman
         self.doc = Document()
         self.font_size = font_size
         self.accent = ACCENT
@@ -253,7 +277,7 @@ class Doc:
                  ascii_font=HEAD_FONT["en"], ea_font=HEAD_FONT["zh"])
         return p
 
-    def p(self, text, size=None, italic=False, color=INK, align=None, space_after=None):
+    def p(self, text, size=None, italic=False, color=INK, align=None, space_after=None, bold=False):
         par = self.doc.add_paragraph()
         if align == "center":
             par.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -263,7 +287,7 @@ class Doc:
             par.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         if space_after is not None:
             par.paragraph_format.space_after = Pt(space_after)
-        add_rich(par, text, self.lang, size or self.font_size, italic=italic, color=color)
+        add_rich(par, text, self.lang, size or self.font_size, italic=italic, bold=bold, color=color)
         return par
 
     def bullets(self, items, numbered=False, size=None):
@@ -339,7 +363,20 @@ class Doc:
 
     # ---------------------------------------------------------------- table
     def table(self, t, number_label=None):
+        self.table_counter += 1
         cap = t["caption"][self.lang]
+        # Captions may carry a stale hand-written number; the document numbers its
+        # own tables, so the number is stripped and re-applied here.
+        cap = _CAP_NUM.sub("", cap)
+        if number_label is None:
+            n = self.table_counter
+            if self.lang == "zh":
+                number_label = f"表 {n}"
+            elif self.table_roman:
+                number_label = f"TABLE {_roman(n)}"
+            else:
+                number_label = f"Table {n}"
+        cap = f"{number_label}. {cap}"
         note = t["note"][self.lang]
         cols = t["cols"]
         rows = t["rows"]
@@ -360,9 +397,15 @@ class Doc:
         tb.style = "Table Grid"
         tb.alignment = WD_TABLE_ALIGNMENT.CENTER
         tb.autofit = False
+        if widths:
+            # LibreOffice lays a fixed table out from w:tblGrid, not from the
+            # individual w:tcW cells, so the grid must carry the widths too.
+            for j, w in enumerate(widths):
+                tb.columns[j].width = Cm(w)
 
         hdr = tb.rows[0]
         repeat_header(hdr)
+        no_split_row(hdr)
         for j, c in enumerate(cols):
             cell = hdr.cells[j]
             if widths:
@@ -379,6 +422,7 @@ class Doc:
 
         for i, row in enumerate(rows):
             tr = tb.add_row()
+            no_split_row(tr)
             for j, val in enumerate(row):
                 cell = tr.cells[j]
                 if widths:
@@ -421,7 +465,7 @@ class Doc:
 
     def save(self, path):
         self.doc.core_properties.title = os.path.basename(path)
-        self.doc.core_properties.author = "FYP MLFlu project"
+        self.doc.core_properties.author = "CHAN Sing Yeung"
         self.doc.core_properties.comments = "Generated from measured artefacts; see MANIFEST.md"
         self.doc.save(path)
         return path

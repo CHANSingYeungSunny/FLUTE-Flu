@@ -1,0 +1,22 @@
+{
+  "revision": "9.1",
+  "student_number": "58324980",
+  "student_name": "CHAN Sing Yeung",
+  "cityu_email": "sychan552-c@my.cityu.edu.hk",
+  "programme_major": "BEng — Computer and Data Engineering",
+  "project_code": "KHC-04",
+  "project_title": "Re-evaluating Multimodal LLMs for Influenza Forecasting",
+  "supervisor": "KHC - Prof CHAN, Katie",
+  "assessor": "YNS - Prof SUN, Yanni",
+  "remark": "Software",
+  "meeting_counts": null,
+  "weekly_hours": null,
+  "prior_registered_title": "Multimodal Transformer-Based Forecasting of H5N1",
+  "prior_title_status": "Owner states changeable; historical initial idea, not current report title",
+  "summary_planning_chart_last_uploaded_as_supplied": "2026-09-24 23:07:20",
+  "upload_timestamp_scope": "Summary and planning chart only; not progress-report submission or proof of chart contents",
+  "course": "EE4080",
+  "academic_year_term": "2026/27 A",
+  "metadata_source": "source_snapshots/Project_Summary_and_Planning_Chart_owner_20261105.pdf, page 1, Part A",
+  "required_blank_fields_source": "Requirements_ProjectProgressReport_2627A (1).pdf, page 2, Part A"
+}

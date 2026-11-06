@@ -1,0 +1,8 @@
+metric,old_snapshot,new_1120_panel,note
+MIFlu mean MSE,1.4995,1.4994,crop panel; unchanged
+MIFlu all-valid MSE,NA,1.7944,new panel
+PatchTST crop MSE,1.6621,1.6352,new seeds/protocol
+NLinear crop MSE,1.8716,1.9027,new seeds/protocol
+NLinear peak passes,4/16,57/1680,not the same denominator
+MIFlu peak passes,4/16,252/1680,not the same denominator
+Ablation trend,monotonic claim,non-monotonic,K4 best K12 worst

@@ -1,0 +1,52 @@
+{
+  "revision": "9.1",
+  "scope": "FYP Part A administrative metadata only; historical scientific content and dated execution status unchanged",
+  "owner_source": {
+    "path": "source_snapshots/Project_Summary_and_Planning_Chart_owner_20261105.pdf",
+    "page": 1,
+    "section": "A. Student and Project Information",
+    "sha256": "d6e9f03d56661b838c6db2acd882991ad729aca3cd2da3014b965449bd08fb1d"
+  },
+  "official_progress_template": {
+    "path": "Requirements_ProjectProgressReport_2627A (1).pdf",
+    "page": 2,
+    "sha256": "e09b65cc81d20ff99b7629e09fd0826d74004ce62341041b0774875137d1d8d3",
+    "explicit_fields": [
+      "Number of meetings with supervisor / assessor",
+      "Average number of hours spent on the project on weekly basis"
+    ]
+  },
+  "confirmed_values": {
+    "programme_major": "BEng — Computer and Data Engineering",
+    "course": "EE4080",
+    "academic_year_term": "2026/27 A"
+  },
+  "meeting_counts": null,
+  "weekly_hours": null,
+  "required_fields_retained_blank": true,
+  "scientific_values_imported_from_planning_chart": false,
+  "hpc_queried": false,
+  "new_model_tests_executed": false,
+  "checks": [
+    {
+      "language": "en",
+      "pages": 8,
+      "paragraphs_unchanged": true,
+      "scientific_tables_unchanged": 11,
+      "figure_assets_byte_identical": 2,
+      "part_a_rows": 12,
+      "docx_sha256": "a6b6b08f3b65688d91e4d1c977c9d85678fff219895fa1685e55c16124f8127a",
+      "pdf_sha256": "3581c26f67f22628d3e08b79694b39ff11a24f09a0d3b36f506379e3d620ff2b"
+    },
+    {
+      "language": "zh",
+      "pages": 8,
+      "paragraphs_unchanged": true,
+      "scientific_tables_unchanged": 11,
+      "figure_assets_byte_identical": 2,
+      "part_a_rows": 12,
+      "docx_sha256": "6c1b443ae2062ec99c87ec1fd623f5666d36fae2cb90fe33a0a60bb1d872d209",
+      "pdf_sha256": "c3bc9e0b24c2977cb6aea37198d48b37aab0099bc84aed6caac780886bb3b2e5"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-05T15:22:48.780861+00:00",
+  "ssh_exit": 0,
+  "shell_appeared": true,
+  "kill_commands_issued": true,
+  "pkill_rcs": [
+    "PKILL_A=1",
+    "PKILL_B=1",
+    "PKILL_C=1",
+    "PKILL_D=0",
+    "PKILL_E=1",
+    "PKILL_ROUND2=1"
+  ],
+  "capture_done": true,
+  "lines": 28
+}

@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "name": "snapshot_raw_smoke",
+      "status": "passed",
+      "command": "python scripts/verify_snapshot.py --raw-smoke",
+      "exit_code": 0,
+      "log_path": "logs/verify_snapshot.log",
+      "scope": "CSV arithmetic, ranking, corrected Holm, raw CPU smoke MSE"
+    },
+    {
+      "name": "snapshot_audit_tests",
+      "status": "passed",
+      "command": "python -m pytest tests/test_snapshot_audit.py -q",
+      "exit_code": 0,
+      "log_path": "logs/pytest_snapshot_audit.log",
+      "scope": "7 tests"
+    },
+    {
+      "name": "archive_collection",
+      "status": "failed",
+      "command": "python -m pytest tests_archive --collect-only -q",
+      "exit_code": 2,
+      "log_path": "logs/pytest_archive_collect.log",
+      "scope": "expected import errors from archived scripts/ layout; not a scientific failure"
+    },
+    {
+      "name": "no_text_runtime_three_assertions",
+      "status": "passed",
+      "command": "PYTHONPATH=05_程序代码 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python -m pytest -q -rs --junitxml=tests/no_text_runtime.xml tests_archive/test_miflu_ablations.py -k 'no_text_makes_the_forward_pass_ignore_the_text_tensor or default_text_pathway_is_masked_out_documented_state or no_text_and_full_arms_agree_bitwise_on_cpu'",
+      "exit_code": 0,
+      "log_path": "logs/no_text_runtime.log",
+      "junit_path": "tests/no_text_runtime.xml",
+      "scope": "3 passed, 0 skipped: cached GPT-2 CPU, eval mode, identical inputs/weights"
+    },
+    {
+      "name": "hpc_scheduler_and_queue_evidence",
+      "status": "passed",
+      "command": "ssh sychan552@burgundy.hpc.cityu.edu.hk 'sinfo; squeue; sacct -j 722968; awk queue_state'",
+      "exit_code": 0,
+      "log_path": "logs/hpc_evidence.log",
+      "scope": "job 722968 CANCELLED on cpunode-042; table8 60 DONE; table6 41 DONE/1 RUNNING/19 TODO; wf 632 DONE/170 TODO"
+    },
+    {
+      "name": "table8_status_reconciliation",
+      "status": "passed",
+      "command": "awk -F'\\t' '$2==\"table8_cell\"{c[$8]++}END{...}' code/queue/master_queue.tsv",
+      "exit_code": 0,
+      "log_path": "logs/hpc_evidence.log",
+      "scope": "60/60 table8 cells DONE, 0 failed; resolves 27/60 snapshot as stale"
+    },
+    {
+      "name": "new_common_benchmark_submission",
+      "status": "passed",
+      "command": "sbatch all/lane0_v2.sbatch lane1_v2.sbatch lane2_v2.sbatch",
+      "exit_code": 0,
+      "log_path": "logs/trackB_v2/v2_submit.log",
+      "reason": "revised protocol code not deployed; protocol lock not frozen; see REPRODUCE.md",
+      "scope": "Slurm submission only; job IDs 735300/735301/735313. NOT completion evidence."
+    },
+    {
+      "name": "paper_to_code_pin",
+      "status": "not_executed",
+      "command": "locate PDF + official repo commit",
+      "exit_code": null,
+      "log_path": null,
+      "reason": "full text/pinned commit not verified in this session"
+    },
+    {
+      "name": "git_snapshot",
+      "status": "not_executed",
+      "command": "git rev-parse HEAD",
+      "exit_code": null,
+      "log_path": null,
+      "reason": "delivered project is not a git working tree"
+    },
+    {
+      "name": "trackB_pilot_submission",
+      "status": "passed",
+      "command": "sbatch pilot_miflu_L24_s2021.sbatch",
+      "exit_code": 0,
+      "log_path": "logs/pilot_submit.log",
+      "scope": "job 734040 submitted; queued at capture time; no result yet"
+    },
+    {
+      "name": "trackB_pilot_completed",
+      "status": "passed",
+      "command": "sbatch pilot_miflu_L24_s2021.sbatch (job 734051, stingy/V100)",
+      "exit_code": 0,
+      "log_path": "logs/pilot_734051.log",
+      "scope": "20 epochs, 37.3 s/epoch, test windows 170; MSE_AllVars 1.236440, MSE_ILI 2.416699, MAE 0.718436, PCC 0.8667; V100, not A100"
+    },
+    {
+      "name": "trackB_core_lanes_submitted",
+      "status": "passed",
+      "command": "sbatch lane0.sbatch; sbatch lane1.sbatch",
+      "exit_code": 0,
+      "log_path": "logs/core_lanes_submit.log",
+      "scope": "160 cells, jobs 734295/734296 on gpu_a100, PENDING at capture time"
+    },
+    {
+      "name": "trackB_core_aggregation_partial",
+      "status": "passed",
+      "command": "python core/aggregate_core.py",
+      "exit_code": 0,
+      "log_path": "AGGREGATION/aggregation.log",
+      "scope": "Partial step aggregation from real cells; NOT a full-panel result and NOT event-level peak detection."
+    },
+    {
+      "name": "trackB_peak_partial",
+      "status": "passed",
+      "command": "python core/aggregate_peak.py",
+      "exit_code": 0,
+      "log_path": "AGGREGATION/aggregation.log",
+      "scope": "Partial step-level PTE/PIE from real cells; NOT event-level matched/unmatched peaks."
+    },
+    {
+      "name": "scheduler_v2_bash_syntax",
+      "status": "passed",
+      "command": "bash -n cellok.py run_lane_v2.sh controller_v2.sh post_all_v2.sh write_sbatch.sh and all *_v2.sbatch",
+      "exit_code": 0,
+      "log_path": "logs/trackB_v2/syntax_check.log",
+      "scope": "Shell syntax of 12 files only; no model execution."
+    },
+    {
+      "name": "cellok_py_compile",
+      "status": "passed",
+      "command": "python -m py_compile cellok.py",
+      "exit_code": 0,
+      "log_path": "logs/trackB_v2/syntax_check.log",
+      "scope": "Python syntax only."
+    },
+    {
+      "name": "core_160_validated_completion",
+      "status": "passed",
+      "command": "python cellok.py count core/export core/cells.tsv",
+      "exit_code": 0,
+      "log_path": "logs/trackB_v2/validated_counts.txt",
+      "scope": "Artefact completeness (metrics/predictions/manifest/log, finite values). NOT scientific correctness."
+    },
+    {
+      "name": "all_1120_validated_completion_partial",
+      "status": "passed",
+      "command": "python cellok.py count all/export all/cells_all.tsv",
+      "exit_code": 0,
+      "log_path": "logs/trackB_v2/validated_counts.txt",
+      "scope": "Partial snapshot: COMPLETE 117 / 1120. NOT completion of the matrix."
+    },
+    {
+      "name": "old_chain_cancellation",
+      "status": "passed",
+      "command": "scancel <old trackB job ids>; scontrol show job",
+      "exit_code": 0,
+      "log_path": "logs/trackB_v2/cancel_verification.log",
+      "scope": "All 21 old chain jobs confirmed CANCELLED; stops duplicate/flock controllers."
+    },
+    {
+      "name": "profile_numeric_equivalence",
+      "status": "passed",
+      "command": "python compare 7 aligned channels of author_966 vs author_repo_966",
+      "exit_code": 0,
+      "log_path": "logs/trackB_v2/profile_comparison.log",
+      "scope": "max abs diff 0.0 on all 7 channels; byte hashes differ. See PROFILE_COMPARISON.md."
+    },
+    {
+      "name": "event_level_peak_detection",
+      "status": "not_executed",
+      "command": null,
+      "exit_code": null,
+      "log_path": null,
+      "reason": "Requires pre-defined detector and monotonic one-to-one event matching; not implemented."
+    },
+    {
+      "name": "jbhi_official_guidance_verification",
+      "status": "not_executed",
+      "command": null,
+      "exit_code": null,
+      "log_path": null,
+      "reason": "Official regular-author guidance / fees / AI-use disclosure not read from the official site."
+    },
+    {
+      "name": "return_package_integrity",
+      "status": "passed",
+      "command": "python tools/make_return_manifest.py . --exclude VALIDATION_RESULT.json; python tools/validate_return.py . --out VALIDATION_RESULT.json",
+      "exit_code": 0,
+      "log_path": "logs/return_tool_runs.log",
+      "scope": "structure/hash/status consistency ONLY; NOT scientific validation"
+    }
+  ]
+}

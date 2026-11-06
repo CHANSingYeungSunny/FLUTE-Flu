@@ -1,0 +1,9 @@
+Submitted batch job 735297
+Submitted batch job 735298
+Submitted batch job 735299
+Submitted batch job 735300
+Submitted batch job 735301
+lane2 first submit rejected: QOSMaxWallDurationPerJobLimit (24h > 6h stingy QOS)
+patched all/lane2_v2.sbatch --time=06:00:00
+Submitted batch job 735313
+exit 0

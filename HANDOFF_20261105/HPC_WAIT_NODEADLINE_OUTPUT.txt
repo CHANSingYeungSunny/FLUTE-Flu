@@ -1,0 +1,8 @@
+SHELL_OK
+=== UTC / HKT ===
+Thu Nov  5 14:43:55 UTC 2026
+Thu Nov  5 22:43:56 HKT 2026
+=== WHO / LOAD (D-state check) ===
+ 22:43:56 up 3 days, 18:39, 76 users,  load average: 20.37, 23.73, 25.52
+76
+=== PS (look for D/D+ STAT) ===

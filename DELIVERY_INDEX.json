@@ -1,0 +1,71 @@
+{
+  "release": "revision9.2",
+  "scientific_snapshot": "historical audited results; no new result panel",
+  "execution_capture": "last owner handoff 2026-11-05 00:15 HKT, not live",
+  "requested_deliverables": [
+    {
+      "role": "Chinese internal report",
+      "files": [
+        "01_最终报告/report_internal_zh.docx",
+        "01_最终报告/report_internal_zh.pdf"
+      ]
+    },
+    {
+      "role": "Chinese Q&A companion",
+      "files": [
+        "01_最终报告/report_internal_qa_zh.docx",
+        "01_最终报告/report_internal_qa_zh.pdf"
+      ]
+    },
+    {
+      "role": "English FYP progress report",
+      "files": [
+        "01_最终报告/progress_report_en.docx",
+        "01_最终报告/progress_report_en.pdf"
+      ]
+    },
+    {
+      "role": "English journal manuscript",
+      "files": [
+        "01_最终报告/ieee_manuscript_en.docx",
+        "01_最终报告/ieee_manuscript_en.pdf",
+        "manuscript/overleaf/main.tex"
+      ]
+    },
+    {
+      "role": "Presentation",
+      "files": [
+        "presentation/Week12_Progress_Presentation.pptx",
+        "presentation/Week12_Progress_Presentation.pdf"
+      ]
+    },
+    {
+      "role": "English speaking notes",
+      "files": [
+        "presentation/Presentation_Notes_EN.docx",
+        "presentation/Presentation_Notes_EN.pdf",
+        "presentation/TALKING_SCRIPT.md"
+      ]
+    },
+    {
+      "role": "DeepSeek handoff",
+      "files": [
+        "handoff_revision9/PROMPT_TO_DEEPSEEK.md",
+        "handoff_revision9/PROMPT_RETURN_TO_CHATGPT.md",
+        "handoff_revision9/RETURN_CONTRACT.json"
+      ]
+    }
+  ],
+  "unchanged_current_artifacts": [
+    "FYP reports revision9.1",
+    "English manuscript revision9",
+    "owner-layout deck revision8",
+    "English notes revision9 and 606-word timed script"
+  ],
+  "older_context": [
+    "Chinese manuscript revision8",
+    "other bilingual report/journal pairs"
+  ],
+  "administrative_update": "FYP Part A only; programme/course/term confirmed; meetings and weekly hours required and blank",
+  "document_organisation": "Chinese main report contains scientific narrative/tables/figures; complete Q01–Q25 are in separate companion"
+}

@@ -1,0 +1,3 @@
+name	http_code	time_total_s	size_bytes	curl_rc	url
+v5_ilinet_signal	200	0.667932	57647	0	https://cmu-delphi.github.io/delphi-epidata/api/v5-signals/fluview_ilinet.html
+v5_migration	200	0.611630	50957	0	https://cmu-delphi.github.io/delphi-epidata/api/v5_migration.html

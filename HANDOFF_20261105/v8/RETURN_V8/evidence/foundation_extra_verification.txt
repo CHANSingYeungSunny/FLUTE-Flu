@@ -1,0 +1,16 @@
+# foundation_extra_verification.txt
+# captured_utc=2026-11-06T13:33:06Z
+=== A. amazon/chronos-bolt-base HF API ===
+http_code=200
+id= amazon/chronos-bolt-base sha= 5d9f166d69f47aef3401367a7b842e78fe97b121 license= apache-2.0 gated= False
+siblings= ['.gitattributes', 'README.md', 'config.json', 'model.safetensors']
+pinned resolve at 5d9f166d69f47aef3401367a7b842e78fe97b121 :
+  config.json http_code=307
+  README.md http_code=307
+
+=== B. autogluon/chronos_datasets HF API (config count) ===
+http_code=200
+id= autogluon/chronos_datasets sha= eeecad0b82a8c237e212ce6f8d1abecb513e2cec
+cardData.configs len= 67
+siblings_count= 1243
+# end

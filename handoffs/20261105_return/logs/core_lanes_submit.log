@@ -1,0 +1,5 @@
+2026-11-04T18:29Z (local 18:29 HKT)
+command: sbatch lane0.sbatch; sbatch lane1.sbatch (gpu_a100, 24h, 1 GPU each)
+result: Submitted batch job 734295 (lane0); Submitted batch job 734296 (lane1)
+state at submission: PENDING (Priority)
+cells: 160 = MIFlu/NLinear/PatchTST/DLinear x L{24,36,48,60} x seeds 2021-2030

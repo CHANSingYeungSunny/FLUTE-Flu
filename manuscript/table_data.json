@@ -1,0 +1,375 @@
+{
+  "protocol": {
+    "rows": [
+      [
+        "Analysis",
+        "Runs or models",
+        "Evaluation"
+      ],
+      [
+        "Reproduction",
+        "MIFlu; 10 seeds",
+        "Reference-table comparison"
+      ],
+      [
+        "Accuracy and peaks",
+        "28 models; 3 seeds",
+        "4 lengths; 16 peak cells/model"
+      ],
+      [
+        "Parameters",
+        "11 models",
+        "Exported size and MSE"
+      ],
+      [
+        "Paired comparisons",
+        "17 models",
+        "136 pairs; 12 contributions/pair"
+      ]
+    ],
+    "caption": "Separate evaluation populations and run sets",
+    "note": "The roster contains 13 conventional models, four LLM-based models and 11 frozen encoders. Each analysis uses its stated denominator.",
+    "widths": [
+      0.95,
+      1.1,
+      1.3
+    ]
+  },
+  "reproduction": {
+    "rows": [
+      [
+        "Length",
+        "Our MSE ± SD",
+        "Reference MSE",
+        "Our MAE",
+        "Reference MAE"
+      ],
+      [
+        "L=24",
+        "1.3045 ± 0.0883",
+        "1.5420",
+        "0.7482",
+        "0.7260"
+      ],
+      [
+        "L=36",
+        "1.3561 ± 0.1603",
+        "1.4220",
+        "0.7712",
+        "0.7790"
+      ],
+      [
+        "L=48",
+        "1.6543 ± 0.1064",
+        "1.4140",
+        "0.8381",
+        "0.7570"
+      ],
+      [
+        "L=60",
+        "1.6829 ± 0.2109",
+        "1.3640",
+        "0.8596",
+        "0.7190"
+      ],
+      [
+        "4-horizon mean",
+        "1.4995",
+        "1.4355",
+        "0.8043",
+        "0.7452"
+      ]
+    ],
+    "caption": "MIFlu reproduction under its separate ten-seed protocol",
+    "note": "SD is reconstructed from the archived score record. Original run predictions are unavailable for independent rescoring. The four-length row reports the aggregate comparison.",
+    "widths": [
+      0.48,
+      1.0,
+      0.63,
+      0.61,
+      0.63
+    ]
+  },
+  "accuracy": {
+    "rows": [
+      [
+        "Rank",
+        "Implementation",
+        "Mean MSE",
+        "Mean MAE"
+      ],
+      [
+        "1",
+        "MIFlu",
+        "1.5574",
+        "0.8199"
+      ],
+      [
+        "2",
+        "PatchTST",
+        "1.6621",
+        "0.8786"
+      ],
+      [
+        "3",
+        "NLinear",
+        "1.8716",
+        "0.9183"
+      ],
+      [
+        "4",
+        "DNN",
+        "2.1415",
+        "1.0057"
+      ],
+      [
+        "5",
+        "TimeCMA",
+        "2.6081",
+        "1.0676"
+      ],
+      [
+        "6",
+        "Gradient Boosting",
+        "3.6645",
+        "1.2521"
+      ],
+      [
+        "7",
+        "KNN",
+        "3.7854",
+        "1.3293"
+      ],
+      [
+        "8",
+        "Random Forest",
+        "3.8901",
+        "1.2779"
+      ],
+      [
+        "9",
+        "iTransformer",
+        "3.9945",
+        "1.3476"
+      ],
+      [
+        "10",
+        "Decision Tree",
+        "4.3198",
+        "1.3798"
+      ],
+      [
+        "11",
+        "Hunyuan-1.8B",
+        "4.7374",
+        "1.4755"
+      ],
+      [
+        "12",
+        "Hunyuan-7B",
+        "4.7596",
+        "1.4685"
+      ],
+      [
+        "13",
+        "DeepSeek-R1-Qwen-1.5B",
+        "4.7866",
+        "1.5002"
+      ],
+      [
+        "14",
+        "DeepSeek-R1-Llama-8B",
+        "4.8250",
+        "1.4786"
+      ],
+      [
+        "15",
+        "GRU",
+        "4.8870",
+        "1.5174"
+      ],
+      [
+        "16",
+        "DeepSeek-R1-32B",
+        "4.9372",
+        "1.4935"
+      ],
+      [
+        "17",
+        "LSTM",
+        "5.0088",
+        "1.5303"
+      ],
+      [
+        "18",
+        "DeepSeek-R1-Qwen-14B",
+        "5.0166",
+        "1.5019"
+      ],
+      [
+        "19",
+        "DeepSeek-R1-Qwen-7B",
+        "5.0308",
+        "1.5133"
+      ],
+      [
+        "20",
+        "RNN",
+        "5.0674",
+        "1.5634"
+      ],
+      [
+        "21",
+        "ContextPilot-8B",
+        "5.0843",
+        "1.5255"
+      ],
+      [
+        "22",
+        "Hunyuan-4B",
+        "5.1317",
+        "1.5450"
+      ],
+      [
+        "23",
+        "ContextPilot-14B",
+        "5.1949",
+        "1.5407"
+      ],
+      [
+        "24",
+        "Qwen2.5-1.5B",
+        "5.2049",
+        "1.5725"
+      ],
+      [
+        "25",
+        "Qwen-Time",
+        "5.2557",
+        "1.5794"
+      ],
+      [
+        "26",
+        "SVR",
+        "5.3388",
+        "1.4986"
+      ],
+      [
+        "27",
+        "CALF",
+        "5.5785",
+        "1.6190"
+      ],
+      [
+        "28",
+        "CNN",
+        "5.6155",
+        "1.6720"
+      ]
+    ],
+    "caption": "Average errors of the 28 retained implementations",
+    "note": "Three benchmark seeds, four forecast lengths and the declared cropped-window contract. Names label project implementations; method fidelity is not established by the ranking.",
+    "widths": [
+      0.45,
+      1.43,
+      0.74,
+      0.73
+    ]
+  },
+  "peaks": {
+    "rows": [
+      [
+        "Model",
+        "PTE (weeks)",
+        "PIE (%)",
+        "Joint passes"
+      ],
+      [
+        "MIFlu",
+        "1.128",
+        "26.846",
+        "4/16"
+      ],
+      [
+        "PatchTST",
+        "1.240",
+        "32.755",
+        "0/16"
+      ],
+      [
+        "NLinear",
+        "1.677",
+        "9.477",
+        "4/16"
+      ]
+    ],
+    "caption": "Mean peak errors and the joint aggregated-cell screen",
+    "note": "The denominator is four forecast lengths times four leads. A pass requires mean PTE at most one week and mean PIE at most 25% in the same cell; it is not a seasonal success probability.",
+    "widths": [
+      1.03,
+      0.78,
+      0.78,
+      0.76
+    ]
+  },
+  "paired": {
+    "rows": [
+      [
+        "Model A",
+        "Model B",
+        "Raw p",
+        "Adjusted p"
+      ],
+      [
+        "NLinear",
+        "PatchTST",
+        "0.005859",
+        "0.1172"
+      ],
+      [
+        "Gradient Boosting",
+        "RNN",
+        "0.000488",
+        "0.0664"
+      ],
+      [
+        "KNN",
+        "NLinear",
+        "0.000488",
+        "0.0664"
+      ],
+      [
+        "KNN",
+        "MIFlu",
+        "0.000488",
+        "0.0664"
+      ],
+      [
+        "KNN",
+        "LSTM",
+        "0.000488",
+        "0.0664"
+      ],
+      [
+        "iTransformer",
+        "TimeCMA",
+        "0.000488",
+        "0.0664"
+      ],
+      [
+        "iTransformer",
+        "SVR",
+        "0.000488",
+        "0.0664"
+      ]
+    ],
+    "caption": "Selected comparisons with recomputed Holm adjustment",
+    "note": "Family: 17 non-encoder models including MIFlu, excluding DLinear and frozen encoders. There are 136 pairs and 12 matched contributions per pair. Raw p-values are rounded exports; adjusted values shown at four decimals.",
+    "widths": [
+      1.01,
+      1.0,
+      0.68,
+      0.66
+    ]
+  }
+}

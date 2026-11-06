@@ -1,66 +1,30 @@
-# 从这里开始（1 分钟看懂）
-
-## 这个项目做什么
-
-把一篇论文（**MIFlu**，Moon 等，IEEE JBHI 2025）独立复现了一遍，又额外做了 **28 个模型的对比**，
-用来回答一个实际问题：
-
-> 公共卫生部门要预测流感，到底该用哪个模型？
-
-数据：美国 CDC 全国流感数据，**966 周 × 7 个指标**。
+# AGENT HARD RULE (read AGENTS.md first)
 
 ---
 
-## 我只想做一件事，打开哪个文件？
+## HARD RULE — Burgundy login node (2026-11-05 incident, applies to EVERY agent)
 
-| 我想…… | 打开这个 |
-|---------|---------|
-| **读最终报告（中文，最全）** | `01_最终报告/report_internal_zh.pdf` ← 20 页 |
-| **读简版（中文，给老师）** | `01_最终报告/progress_report_zh.pdf` ← 5 页 |
-| **读论文稿（中文）** | `01_最终报告/ieee_manuscript_zh.pdf` ← 6 页 |
-| **要 Word 版去改** | 同名 `.docx`，都在 `01_最终报告/` |
-| **查某个模型的准确率** | `02_数字表格/BENCH_MSE_BY_MODEL_L.csv` |
-| **查峰值预测准不准** | `02_数字表格/BENCH_PTE_PIE_BY_STEP.csv` |
-| **看原始预测数据** | `03_预测数据_证据/expanded_runs/<模型>_L<跨度>_s<种子>/` |
-| **发给 ChatGPT 写论文** | `01_最终报告/PROJECT_HANDOFF.zip` + `01_最终报告/chatgpt_prompt.md` |
-| **文件在哪都搞不清** | 打开 `WHERE_EVERYTHING_IS.md` |
+**All model work must run via `sbatch` on a compute node.** Never run inference,
+`torch.load`, `import torch/transformers`, recursive `du -sh` or downloads on the
+login node — that caused a ~2-hour outage on 2026-11-05. Login node is only for
+`squeue`/`sacct`/`scontrol`/`mmlsquota`/short `ls`/`cat`.
 
----
+If ssh authenticates but returns zero bytes: disable
+`ServerAliveInterval/CountMax`, open ONE connection with no retry loop, and issue
+`pkill` as the **FIRST** command in the first shell window (a `D`-state task keeps
+`SIGKILL` pending; `ps` first lost a real window). Never `scancel`.
 
-## 5 个最重要的结论
+Full rules: **`AGENTS.md`** (root). SOP: `04_详细说明文档/HPC_LOGIN_NODE_DSTATE_RECOVERY.md`.
+Incident: `HANDOFF_20261105/INCIDENT_20261105_LOGIN_NODE_DSTATE.md`.
+Tool: `05_程序代码/hpc_login_node_recover.py`.
+Also: a `legacy_done.tsv` row is NOT a validated cell, and `squeue -h` prints a
+`Last update ...` line so `grep -q .` is not a valid job-existence guard.
 
-| 问题 | 答案 |
-|------|------|
-| 复现成功了吗？ | **基本成功**。4 个跨度平均 1.4995，论文是 1.4355 → **差 4.5%**（2 个更好、2 个更差） |
-| 谁最准？ | **MIFlu 自己，1.5574**（第二名 PatchTST 1.6621） |
-| 谁预测峰值最准？ | **NLinear 和 MIFlu 并列**，各通过 4 次 Kramer & Shaman 标准 |
-| LLM 有用吗？ | **没用**。11 个 LLM 模型最好 4.7374，比 MIFlu 差 3 倍 |
-| 该用哪个？ | **MIFlu**（最准）或 **NLinear**（只要 0.3% 参数量、峰值也准） |
 
----
+# Start here revision 9.2
 
-## 文件夹只有 7 个
+Read README.md and DELIVERY_INDEX.json for current roles. For DeepSeek execution, follow handoff_revision9/PROMPT_TO_DEEPSEEK.md and RETURN_CONTRACT.json. For a future return to ChatGPT, use handoff_revision9/PROMPT_RETURN_TO_CHATGPT.md. Historical scientific results remain distinct from dated execution status. Do not use older prompts or manuscript builders to overwrite this release. The current authoring entry point is scripts/build_delivery_v9.py.
 
-| 文件夹 | 里面是什么 | 你会用到吗 |
-|--------|-----------|-----------|
-| **`01_最终报告/`** | 3 份报告 × 中英 × Word/PDF + 图 + 打包 | ✅ **最常用** |
-| **`02_数字表格/`** | 所有 CSV 数字表 | ✅ 查数据 |
-| **`03_预测数据_证据/`** | 原始预测 npz（重新计算的唯一来源） | ⭕ 偶尔查证 |
-| **`04_详细说明文档/`** | 详细文档、名词解释、踩坑记录 | ⭕ 有疑问时 |
-| **`05_程序代码/`** | 所有可运行代码 | ⭕ 要重跑时 |
-| **`06_原始数据集/`** | 966 行原始数据 | ⭕ 重跑时 |
-| **`99_旧文件存档/`** | 历史记录、日志、旧实验 | ❌ **不用打开** |
+Revision 9.1 changes FYP Part A metadata only. The official progress template requires meetings and weekly hours; keep them blank until the owner supplies actual values. The manuscript, internal report, deck and English notes retain revision-9 scientific contents.
 
-> `99_旧文件存档/` 里都是历史记录，**写论文时完全不需要看**，一样都没删，只是挪走了。
-
----
-
-## 重新生成报告（如果需要）
-
-```bash
-python 01_最终报告/_build2/build_docs.py    # 生成 6 个 Word
-python 01_最终报告/_build2/to_pdf.py        # 转 6 个 PDF
-python 01_最终报告/_build2/verify_docs.py   # 检查（必须 FAILURES: 0）
-```
-
-所有数字都从 `02_数字表格/*.csv` 自动读取，不会凭记忆写。
+Revision 9.2: the Chinese main internal report is concise; Q01–Q25 and all paper reasoning are in 01_最终报告/report_internal_qa_zh.docx / .pdf. The full build now runs scripts/split_internal_qa_zh.py after the current Chinese addendum. Keep these two documents separate and synchronized.

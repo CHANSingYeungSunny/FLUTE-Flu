@@ -1,0 +1,25 @@
+# foundation_http_status.txt
+# captured_utc=2026-11-06T13:23:36Z
+# tool=curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP
+# flags: -sS -o /dev/null --connect-timeout 6 --max-time 20 -A MLFlu-provenance-probe/1.0 ; NO -L (raw status, redirects not followed)
+# format: http_code|url_effective|redirect_url|curl_rc|url
+# http_code=000 means no HTTP response was received (DNS/TCP/timeout/TLS failure)
+# ---------------------------------------------------------------
+200|https://huggingface.co/||rc=0|https://huggingface.co
+200|https://huggingface.co/api/models/amazon/chronos-bolt-tiny||rc=0|https://huggingface.co/api/models/amazon/chronos-bolt-tiny
+200|https://huggingface.co/api/models/amazon/chronos-t5-small||rc=0|https://huggingface.co/api/models/amazon/chronos-t5-small
+200|https://huggingface.co/api/models/amazon/chronos-bolt-base||rc=0|https://huggingface.co/api/models/amazon/chronos-bolt-base
+200|https://huggingface.co/api/models/amazon/chronos-2||rc=0|https://huggingface.co/api/models/amazon/chronos-2
+200|https://huggingface.co/api/models/google/timesfm-1.0-200m||rc=0|https://huggingface.co/api/models/google/timesfm-1.0-200m
+200|https://huggingface.co/api/models/google/timesfm-2.0-500m-pytorch||rc=0|https://huggingface.co/api/models/google/timesfm-2.0-500m-pytorch
+401|https://huggingface.co/api/models/google/timesfm-2.0-500m||rc=0|https://huggingface.co/api/models/google/timesfm-2.0-500m
+200|https://huggingface.co/api/models/google/timesfm-3.0-pytorch||rc=0|https://huggingface.co/api/models/google/timesfm-3.0-pytorch
+401|https://huggingface.co/google/timesfm-2.0-500m/resolve/main/config.json||rc=0|https://huggingface.co/google/timesfm-2.0-500m/resolve/main/config.json
+200|https://huggingface.co/api/datasets/autogluon/chronos_datasets||rc=0|https://huggingface.co/api/datasets/autogluon/chronos_datasets
+200|https://github.com/amazon-science/chronos-forecasting||rc=0|https://github.com/amazon-science/chronos-forecasting
+200|https://github.com/google-research/timesfm||rc=0|https://github.com/google-research/timesfm
+200|https://api.github.com/repos/amazon-science/chronos-forecasting/releases/latest||rc=0|https://api.github.com/repos/amazon-science/chronos-forecasting/releases/latest
+200|https://api.github.com/repos/google-research/timesfm/tags||rc=0|https://api.github.com/repos/google-research/timesfm/tags
+200|https://pypi.org/pypi/chronos-forecasting/json||rc=0|https://pypi.org/pypi/chronos-forecasting/json
+200|https://pypi.org/pypi/timesfm/json||rc=0|https://pypi.org/pypi/timesfm/json
+200|https://arxiv.org/abs/2310.10688v4||rc=0|https://arxiv.org/abs/2310.10688v4

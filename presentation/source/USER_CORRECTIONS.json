@@ -1,0 +1,21 @@
+{
+  "revision": 3,
+  "filename": "Week12_User_Corrected.pptx",
+  "uploaded_filename": "Week12_Progress_Presentation(1).pptx",
+  "sha256": "d6d25afa551a6bc2bac97ba5b6911fa7616f816a32036c954e96ee6bc440ab10",
+  "previous_pptx_sha256": "bf569115a2c5a79b0ce1902204a682b411fc9ff8cdbd6bf5266a0017786f4cbb",
+  "changes": [
+    "Slide 1 cover author changed to CHAN Sing Yeung; author textbox resized by user.",
+    "Slide 13 school-deadline line removed.",
+    "Office package/theme/formatting saved by user; preserved without reauthoring."
+  ],
+  "unchanged": [
+    "13 slides; all scientific text, chart values and semantic speaker notes unchanged.",
+    "Small slide footers still use the author name from the uploaded deck; preserved exactly."
+  ],
+  "propagation": [
+    "Formal author in six reports, report metadata, README and presentation preparation notes changed to CHAN Sing Yeung.",
+    "School deadline retained in written planning material; removal from closing slide is not evidence the school deadline changed.",
+    "Q01–Q25 retained in both internal reports."
+  ]
+}

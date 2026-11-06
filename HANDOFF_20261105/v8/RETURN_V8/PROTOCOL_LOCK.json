@@ -1,0 +1,97 @@
+{
+  "status": "draft_not_frozen",
+  "tracks": {
+    "A": "paper-comparison reproduction (2021-2030, disclosed deviations)",
+    "B": "new common benchmark (28 arms, 2021-2030, 966 profile)",
+    "C": "rolling origins and regional external validity"
+  },
+  "seeds": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "historical_seeds": [
+    42,
+    43,
+    44
+  ],
+  "horizons": [
+    24,
+    36,
+    48,
+    60
+  ],
+  "lookback": 104,
+  "data": {
+    "rows": 966,
+    "channels": 7,
+    "boundaries": [
+      0,
+      676,
+      773,
+      966
+    ],
+    "sha256": "2A96DFED7DB532F0A36B6FDDB3F4091E665B3D36B7662292589E3BBCA95EBFE5"
+  },
+  "evaluation_panels": {
+    "historical_crop": [
+      160,
+      144,
+      144,
+      128
+    ],
+    "all_valid_windows": [
+      170,
+      158,
+      146,
+      134
+    ]
+  },
+  "checkpoint_selection": "validation_only",
+  "primary_metric": "7-variable z-space MSE/MAE",
+  "secondary": "ILITOTAL original-unit PTE/PIE, event-level errors",
+  "holm": "forward cumulative maximum of sorted scaled raw p, clipped to 1, restored to order",
+  "test_exposure": "historical test outcomes already inspected; new comparisons are retrospective",
+  "frozen": false,
+  "note": "Draft only. Do not submit a new matrix until this file is frozen and hashed.",
+  "lock_timestamp_utc": null,
+  "deviation": {
+    "recorded_utc": "2026-11-04T15:35:00Z",
+    "fact": "The 1120-cell matrix was submitted BEFORE this protocol lock was frozen/hashed.",
+    "evidence_job_ids": [
+      734673,
+      734674,
+      734675,
+      734676,
+      734749,
+      734750,
+      734751,
+      735300,
+      735301,
+      735313
+    ],
+    "consequence": "Historical test outcomes were already inspected. Nothing here may be described as prospective pre-registration. No timestamp is back-dated.",
+    "required_next_step": "Freeze and hash the lock before any NEW confirmatory comparison; label all current comparisons exploratory/retrospective."
+  },
+  "historical_test_exposure": "already inspected (see test_exposure)",
+  "data_profiles": {
+    "author_966": {
+      "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+      "used_by": "backbone / classical / encoder cells"
+    },
+    "author_repo_966": {
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+      "used_by": "MIFlu cells"
+    },
+    "verified_utc": "2026-11-04T15:35:00Z",
+    "numeric_equivalence": "7 model channels identical, max abs diff 0.0 (see PROFILE_COMPARISON.md)",
+    "calendar": "epiweek/date labels synthetic; real CDC calendar NOT verified"
+  }
+}

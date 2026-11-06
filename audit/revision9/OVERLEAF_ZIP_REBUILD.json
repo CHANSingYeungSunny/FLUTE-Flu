@@ -1,0 +1,11 @@
+{
+  "source_zip": "MIFlu_Overleaf_Rev9_20261105.zip",
+  "sha256": "c20cd03d422c4ff81db70c65b1799f8792a021ea337ffca1ba0d33a02f69ffb5",
+  "extracted_cleanly": true,
+  "local_pdflatex_passes": 2,
+  "exit_code": 0,
+  "pages": 6,
+  "overfull_boxes": false,
+  "unresolved_references": false,
+  "cloud_overleaf_executed": false
+}

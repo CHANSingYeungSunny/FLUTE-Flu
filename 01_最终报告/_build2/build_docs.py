@@ -134,9 +134,10 @@ def build_internal(lang):
     meta = text_internal.META_EN if lang == "en" else text_internal.META_ZH
     d.title("Reproducing MIFlu and Benchmarking Influenza Forecasting" if lang == "en"
             else "复现 MIFlu 并基准评估流感预测",
-            sub=("Internal technical report — reproduction, 16-arm benchmark, peak skill, and 11 frozen LLM encoders"
+            sub=("Internal technical report — a leak-free reproduction, a 28-model benchmark, the peak-skill "
+                 "criterion, and 11 frozen LLM encoders"
                  if lang == "en" else
-                 "内部技术报告——复现、16 模型基准、峰值技巧与 11 个冻结 LLM 编码器"),
+                 "内部技术报告——无泄漏复现、28 模型基准、峰值技巧判据与 11 个冻结 LLM 编码器"),
             kicker=("FINAL-YEAR PROJECT · CITY UNIVERSITY OF HONG KONG · DEPARTMENT OF ELECTRICAL ENGINEERING"
                     if lang == "en" else "毕业设计 · 香港城市大学 · 电子工程学系"))
     d.kv(meta)
@@ -156,15 +157,14 @@ def build_progress(lang):
             footer_left=("FYP progress report" if lang == "en" else "FYP 进度报告"))
     head = ("CITY UNIVERSITY OF HONG KONG" if lang == "en" else "香港城市大学")
     dept = ("Department of Electrical Engineering" if lang == "en" else "电子工程学系")
-    d.title(head + " — " + ("Progress Report" if lang == "en" else "进度报告"),
-            sub=dept + ("   ·   FYP Progress Report, Semester A 2026/27"
-                        if lang == "en" else "   ·   毕业设计进度报告，2026/27 学年 A 学期"),
+    d.title(head,
+            sub=(dept + "   ·   FYP Progress Report, Semester A 2026/27"
+                 if lang == "en" else dept + "   ·   毕业设计进度报告，2026/27 学年 A 学期"),
             kicker=("SUBMISSION: FYP InfoNet, by 11:59 pm 20 November 2026"
                     if lang == "en" else "提交：FYP InfoNet，2026 年 11 月 20 日 23:59 前"))
-    d.kv([("Project title" if lang == "en" else "项目题目",
-           text_progress.TITLE_EN if lang == "en" else text_progress.TITLE_ZH),
-          ("Report date" if lang == "en" else "报告日期",
-           "2 November 2026" if lang == "en" else "2026 年 11 月 2 日")])
+    d.h(1, "PART A" if lang == "en" else "PART A")
+    d.kv(text_progress.PART_A_EN if lang == "en" else text_progress.PART_A_ZH)
+    d.h(1, "PART B" if lang == "en" else "PART B")
     render(d, text_progress.blocks(lang))
     path = os.path.join(OUT, f"progress_report_{lang}.docx")
     d.save(path)
@@ -173,7 +173,7 @@ def build_progress(lang):
 
 def build_ieee(lang):
     d = Doc(lang, font_size=9.0, margin_cm=1.6, serif=True, footer_left="",
-            h_sizes=[12, 9.8, 9.4, 9.0])
+            h_sizes=[12, 9.8, 9.4, 9.0], table_roman=True)
     render(d, text_ieee.blocks(lang))
     path = os.path.join(OUT, f"ieee_manuscript_{lang}.docx")
     d.save(path)
@@ -191,4 +191,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    from build_revised import build
+    build()

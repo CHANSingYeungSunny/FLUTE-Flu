@@ -1,0 +1,341 @@
+2026-11-04T15:13:03Z lane0 SKIP_COMPLETE calf_llm_L24_s2021
+2026-11-04T15:13:03Z lane0 SKIP_COMPLETE calf_llm_L24_s2024
+2026-11-04T15:13:03Z lane0 SKIP_COMPLETE calf_llm_L24_s2027
+2026-11-04T15:13:03Z lane0 SKIP_COMPLETE calf_llm_L24_s2030
+2026-11-04T15:13:03Z lane0 SKIP_COMPLETE calf_llm_L36_s2023
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L36_s2026
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L36_s2029
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L48_s2022
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L48_s2025
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L48_s2028
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L60_s2021
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L60_s2024
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L60_s2027
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE calf_llm_L60_s2030
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L24_s2023
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L24_s2026
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L24_s2029
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L36_s2022
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L36_s2025
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L36_s2028
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L48_s2021
+2026-11-04T15:13:04Z lane0 SKIP_COMPLETE cnn_L48_s2024
+2026-11-04T15:13:05Z lane0 SKIP_COMPLETE cnn_L48_s2027
+2026-11-04T15:13:05Z lane0 SKIP_COMPLETE cnn_L48_s2030
+2026-11-04T15:13:05Z lane0 SKIP_COMPLETE cnn_L60_s2023
+2026-11-04T15:13:05Z lane0 SKIP_COMPLETE cnn_L60_s2026
+2026-11-04T15:13:05Z lane0 SKIP_COMPLETE cnn_L60_s2029
+2026-11-04T15:13:05Z lane0 QUARANTINED decision_tree_L24_s2022 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L24_s2022_20261104T151305Z
+2026-11-04T15:13:05Z lane0 START decision_tree_L24_s2022 route=classical attempt=1 slurm=735279
+[decision_tree] L=24 seed=2022 profile=author_966 train=549 val=74 test=170 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.494160  test_mse=4.492411 (ILITOTAL 7.582738)  test_mae=1.417845
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L24_s2022/pred_decision_tree_L24_s2022.npz
+2026-11-04T15:13:11Z lane0 END_OK decision_tree_L24_s2022 rc=0
+2026-11-04T15:13:11Z lane0 QUARANTINED decision_tree_L24_s2025 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L24_s2025_20261104T151311Z
+2026-11-04T15:13:11Z lane0 START decision_tree_L24_s2025 route=classical attempt=1 slurm=735279
+[decision_tree] L=24 seed=2025 profile=author_966 train=549 val=74 test=170 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.478163  test_mse=4.317633 (ILITOTAL 8.212796)  test_mae=1.385757
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L24_s2025/pred_decision_tree_L24_s2025.npz
+2026-11-04T15:13:15Z lane0 END_OK decision_tree_L24_s2025 rc=0
+2026-11-04T15:13:15Z lane0 QUARANTINED decision_tree_L24_s2028 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L24_s2028_20261104T151315Z
+2026-11-04T15:13:15Z lane0 START decision_tree_L24_s2028 route=classical attempt=1 slurm=735279
+[decision_tree] L=24 seed=2028 profile=author_966 train=549 val=74 test=170 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.477259  test_mse=4.640087 (ILITOTAL 8.010503)  test_mae=1.452350
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L24_s2028/pred_decision_tree_L24_s2028.npz
+2026-11-04T15:13:18Z lane0 END_OK decision_tree_L24_s2028 rc=0
+2026-11-04T15:13:18Z lane0 QUARANTINED decision_tree_L36_s2021 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L36_s2021_20261104T151318Z
+2026-11-04T15:13:18Z lane0 START decision_tree_L36_s2021 route=classical attempt=1 slurm=735279
+[decision_tree] L=36 seed=2021 profile=author_966 train=537 val=62 test=158 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.486196  test_mse=3.908507 (ILITOTAL 8.122006)  test_mae=1.301158
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L36_s2021/pred_decision_tree_L36_s2021.npz
+2026-11-04T15:13:22Z lane0 END_OK decision_tree_L36_s2021 rc=0
+2026-11-04T15:13:22Z lane0 QUARANTINED decision_tree_L36_s2024 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L36_s2024_20261104T151322Z
+2026-11-04T15:13:22Z lane0 START decision_tree_L36_s2024 route=classical attempt=1 slurm=735279
+[decision_tree] L=36 seed=2024 profile=author_966 train=537 val=62 test=158 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.468594  test_mse=3.906540 (ILITOTAL 8.073866)  test_mae=1.304346
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L36_s2024/pred_decision_tree_L36_s2024.npz
+2026-11-04T15:13:25Z lane0 END_OK decision_tree_L36_s2024 rc=0
+2026-11-04T15:13:25Z lane0 QUARANTINED decision_tree_L36_s2027 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L36_s2027_20261104T151325Z
+2026-11-04T15:13:25Z lane0 START decision_tree_L36_s2027 route=classical attempt=1 slurm=735279
+[decision_tree] L=36 seed=2027 profile=author_966 train=537 val=62 test=158 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.485806  test_mse=4.049015 (ILITOTAL 8.091530)  test_mae=1.333363
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L36_s2027/pred_decision_tree_L36_s2027.npz
+2026-11-04T15:13:29Z lane0 END_OK decision_tree_L36_s2027 rc=0
+2026-11-04T15:13:29Z lane0 QUARANTINED decision_tree_L36_s2030 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L36_s2030_20261104T151329Z
+2026-11-04T15:13:29Z lane0 START decision_tree_L36_s2030 route=classical attempt=1 slurm=735279
+[decision_tree] L=36 seed=2030 profile=author_966 train=537 val=62 test=158 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.601840  test_mse=3.980470 (ILITOTAL 8.116543)  test_mae=1.314598
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L36_s2030/pred_decision_tree_L36_s2030.npz
+2026-11-04T15:13:33Z lane0 END_OK decision_tree_L36_s2030 rc=0
+2026-11-04T15:13:33Z lane0 QUARANTINED decision_tree_L48_s2023 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L48_s2023_20261104T151333Z
+2026-11-04T15:13:33Z lane0 START decision_tree_L48_s2023 route=classical attempt=1 slurm=735279
+[decision_tree] L=48 seed=2023 profile=author_966 train=525 val=50 test=146 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.568670  test_mse=4.470911 (ILITOTAL 9.048341)  test_mae=1.402626
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L48_s2023/pred_decision_tree_L48_s2023.npz
+2026-11-04T15:13:36Z lane0 END_OK decision_tree_L48_s2023 rc=0
+2026-11-04T15:13:36Z lane0 QUARANTINED decision_tree_L48_s2026 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L48_s2026_20261104T151336Z
+2026-11-04T15:13:36Z lane0 START decision_tree_L48_s2026 route=classical attempt=1 slurm=735279
+[decision_tree] L=48 seed=2026 profile=author_966 train=525 val=50 test=146 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.537090  test_mse=4.286606 (ILITOTAL 8.661208)  test_mae=1.369405
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L48_s2026/pred_decision_tree_L48_s2026.npz
+2026-11-04T15:13:40Z lane0 END_OK decision_tree_L48_s2026 rc=0
+2026-11-04T15:13:40Z lane0 QUARANTINED decision_tree_L48_s2029 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L48_s2029_20261104T151340Z
+2026-11-04T15:13:40Z lane0 START decision_tree_L48_s2029 route=classical attempt=1 slurm=735279
+[decision_tree] L=48 seed=2029 profile=author_966 train=525 val=50 test=146 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.497220  test_mse=4.180795 (ILITOTAL 8.446884)  test_mae=1.364361
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L48_s2029/pred_decision_tree_L48_s2029.npz
+2026-11-04T15:13:44Z lane0 END_OK decision_tree_L48_s2029 rc=0
+2026-11-04T15:13:44Z lane0 QUARANTINED decision_tree_L60_s2022 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L60_s2022_20261104T151344Z
+2026-11-04T15:13:44Z lane0 START decision_tree_L60_s2022 route=classical attempt=1 slurm=735279
+[decision_tree] L=60 seed=2022 profile=author_966 train=513 val=38 test=134 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.532730  test_mse=4.307920 (ILITOTAL 8.488527)  test_mae=1.414557
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L60_s2022/pred_decision_tree_L60_s2022.npz
+2026-11-04T15:13:47Z lane0 END_OK decision_tree_L60_s2022 rc=0
+2026-11-04T15:13:47Z lane0 QUARANTINED decision_tree_L60_s2025 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L60_s2025_20261104T151347Z
+2026-11-04T15:13:47Z lane0 START decision_tree_L60_s2025 route=classical attempt=1 slurm=735279
+[decision_tree] L=60 seed=2025 profile=author_966 train=513 val=38 test=134 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.461256  test_mse=4.369281 (ILITOTAL 8.726033)  test_mae=1.417159
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L60_s2025/pred_decision_tree_L60_s2025.npz
+2026-11-04T15:13:51Z lane0 END_OK decision_tree_L60_s2025 rc=0
+2026-11-04T15:13:51Z lane0 QUARANTINED decision_tree_L60_s2028 -> /gpfs1/scratch/sychan552/trackB_20261104/all/partial/decision_tree_L60_s2028_20261104T151351Z
+2026-11-04T15:13:51Z lane0 START decision_tree_L60_s2028 route=classical attempt=1 slurm=735279
+[decision_tree] L=60 seed=2028 profile=author_966 train=513 val=38 test=134 windows (containment=strict, fold=0)
+[decision_tree] val_mse=0.539670  test_mse=4.344191 (ILITOTAL 8.568316)  test_mae=1.417813
+[decision_tree] wrote /gpfs1/scratch/sychan552/trackB_20261104/all/export/decision_tree/L60_s2028/pred_decision_tree_L60_s2028.npz
+2026-11-04T15:13:55Z lane0 END_OK decision_tree_L60_s2028 rc=0
+2026-11-04T15:13:55Z lane0 SKIP_COMPLETE dnn_L24_s2021
+2026-11-04T15:13:55Z lane0 SKIP_COMPLETE dnn_L24_s2024
+2026-11-04T15:13:55Z lane0 SKIP_COMPLETE dnn_L24_s2027
+2026-11-04T15:13:55Z lane0 SKIP_COMPLETE dnn_L24_s2030
+2026-11-04T15:13:55Z lane0 SKIP_COMPLETE dnn_L36_s2023
+2026-11-04T15:13:55Z lane0 SKIP_COMPLETE dnn_L36_s2026
+2026-11-04T15:13:55Z lane0 START dnn_L36_s2029 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=36 seed=2029 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=36 seed=2029 params total=34,596 trainable=34,596
+    ep  1/20 | train_loss=0.827505 | val_mse=0.400059(All) | val_mae=0.479518
+    ep  2/20 | train_loss=0.560511 | val_mse=0.248925(All) | val_mae=0.335580
+    ep  3/20 | train_loss=0.492215 | val_mse=0.253367(All) | val_mae=0.348442
+    ep  4/20 | train_loss=0.440351 | val_mse=0.241783(All) | val_mae=0.342843
+    ep  5/20 | train_loss=0.403082 | val_mse=0.247405(All) | val_mae=0.346943
+    ep  6/20 | train_loss=0.365790 | val_mse=0.213503(All) | val_mae=0.320326
+    ep  7/20 | train_loss=0.333960 | val_mse=0.244321(All) | val_mae=0.352893
+    ep  8/20 | train_loss=0.315002 | val_mse=0.234525(All) | val_mae=0.342153
+    ep  9/20 | train_loss=0.299222 | val_mse=0.227228(All) | val_mae=0.336505
+    ep 10/20 | train_loss=0.283516 | val_mse=0.218703(All) | val_mae=0.322159
+    ep 11/20 | train_loss=0.270618 | val_mse=0.230151(All) | val_mae=0.340723
+    ep 12/20 | train_loss=0.261241 | val_mse=0.228685(All) | val_mae=0.325517
+    ep 13/20 | train_loss=0.250913 | val_mse=0.242542(All) | val_mae=0.342885
+    ep 14/20 | train_loss=0.238576 | val_mse=0.234553(All) | val_mae=0.331481
+    ep 15/20 | train_loss=0.235747 | val_mse=0.231752(All) | val_mae=0.335516
+    ep 16/20 | train_loss=0.225176 | val_mse=0.241969(All) | val_mae=0.339295
+    ep 17/20 | train_loss=0.213204 | val_mse=0.239671(All) | val_mae=0.336911
+    ep 18/20 | train_loss=0.205945 | val_mse=0.231602(All) | val_mae=0.325655
+    ep 19/20 | train_loss=0.198518 | val_mse=0.248405(All) | val_mae=0.332933
+    ep 20/20 | train_loss=0.193938 | val_mse=0.231461(All) | val_mae=0.321369
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L36_s2029/pred_dnn_L36_s2029.npz
+[dnn] L=36 seed=2029 mse_all=2.082889 best_val=0.213503 best_epoch=5 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L36_s2029/metrics.csv
+2026-11-04T15:13:59Z lane0 END_OK dnn_L36_s2029 rc=0
+2026-11-04T15:13:59Z lane0 START dnn_L48_s2022 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=48 seed=2022 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=48 seed=2022 params total=36,144 trainable=36,144
+    ep  1/20 | train_loss=0.859512 | val_mse=0.467392(All) | val_mae=0.516171
+    ep  2/20 | train_loss=0.581578 | val_mse=0.222634(All) | val_mae=0.328403
+    ep  3/20 | train_loss=0.511580 | val_mse=0.249569(All) | val_mae=0.349421
+    ep  4/20 | train_loss=0.473722 | val_mse=0.249440(All) | val_mae=0.350939
+    ep  5/20 | train_loss=0.438064 | val_mse=0.245007(All) | val_mae=0.344932
+    ep  6/20 | train_loss=0.404386 | val_mse=0.249049(All) | val_mae=0.353003
+    ep  7/20 | train_loss=0.381113 | val_mse=0.262016(All) | val_mae=0.368426
+    ep  8/20 | train_loss=0.359938 | val_mse=0.245281(All) | val_mae=0.354683
+    ep  9/20 | train_loss=0.341474 | val_mse=0.266726(All) | val_mae=0.376627
+    ep 10/20 | train_loss=0.328770 | val_mse=0.276246(All) | val_mae=0.380627
+    ep 11/20 | train_loss=0.314761 | val_mse=0.241646(All) | val_mae=0.348493
+    ep 12/20 | train_loss=0.302936 | val_mse=0.251234(All) | val_mae=0.356600
+    ep 13/20 | train_loss=0.293056 | val_mse=0.256725(All) | val_mae=0.350325
+    ep 14/20 | train_loss=0.285921 | val_mse=0.230614(All) | val_mae=0.340518
+    ep 15/20 | train_loss=0.274827 | val_mse=0.232623(All) | val_mae=0.339938
+    ep 16/20 | train_loss=0.266396 | val_mse=0.270027(All) | val_mae=0.361181
+    ep 17/20 | train_loss=0.258046 | val_mse=0.257748(All) | val_mae=0.362572
+    ep 18/20 | train_loss=0.248589 | val_mse=0.285654(All) | val_mae=0.377485
+    ep 19/20 | train_loss=0.240365 | val_mse=0.267123(All) | val_mae=0.363302
+    ep 20/20 | train_loss=0.234281 | val_mse=0.269108(All) | val_mae=0.366364
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L48_s2022/pred_dnn_L48_s2022.npz
+[dnn] L=48 seed=2022 mse_all=2.568887 best_val=0.222634 best_epoch=1 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L48_s2022/metrics.csv
+2026-11-04T15:14:04Z lane0 END_OK dnn_L48_s2022 rc=0
+2026-11-04T15:14:04Z lane0 START dnn_L48_s2025 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=48 seed=2025 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=48 seed=2025 params total=36,144 trainable=36,144
+    ep  1/20 | train_loss=0.871774 | val_mse=0.531048(All) | val_mae=0.546557
+    ep  2/20 | train_loss=0.600344 | val_mse=0.249102(All) | val_mae=0.342933
+    ep  3/20 | train_loss=0.511900 | val_mse=0.241694(All) | val_mae=0.347268
+    ep  4/20 | train_loss=0.470056 | val_mse=0.251412(All) | val_mae=0.351190
+    ep  5/20 | train_loss=0.433529 | val_mse=0.232604(All) | val_mae=0.333476
+    ep  6/20 | train_loss=0.400396 | val_mse=0.253424(All) | val_mae=0.351107
+    ep  7/20 | train_loss=0.378920 | val_mse=0.224411(All) | val_mae=0.331876
+    ep  8/20 | train_loss=0.350032 | val_mse=0.233513(All) | val_mae=0.339950
+    ep  9/20 | train_loss=0.335261 | val_mse=0.264965(All) | val_mae=0.369882
+    ep 10/20 | train_loss=0.324704 | val_mse=0.249349(All) | val_mae=0.358558
+    ep 11/20 | train_loss=0.307617 | val_mse=0.266882(All) | val_mae=0.362103
+    ep 12/20 | train_loss=0.296774 | val_mse=0.278314(All) | val_mae=0.375407
+    ep 13/20 | train_loss=0.286583 | val_mse=0.265247(All) | val_mae=0.361239
+    ep 14/20 | train_loss=0.275880 | val_mse=0.293781(All) | val_mae=0.386593
+    ep 15/20 | train_loss=0.267067 | val_mse=0.249486(All) | val_mae=0.351423
+    ep 16/20 | train_loss=0.255611 | val_mse=0.264623(All) | val_mae=0.361950
+    ep 17/20 | train_loss=0.249394 | val_mse=0.285809(All) | val_mae=0.378413
+    ep 18/20 | train_loss=0.241566 | val_mse=0.261936(All) | val_mae=0.362807
+    ep 19/20 | train_loss=0.233076 | val_mse=0.271070(All) | val_mae=0.359239
+    ep 20/20 | train_loss=0.228004 | val_mse=0.314449(All) | val_mae=0.399603
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L48_s2025/pred_dnn_L48_s2025.npz
+[dnn] L=48 seed=2025 mse_all=2.061918 best_val=0.224411 best_epoch=6 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L48_s2025/metrics.csv
+2026-11-04T15:14:08Z lane0 END_OK dnn_L48_s2025 rc=0
+2026-11-04T15:14:08Z lane0 START dnn_L48_s2028 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=48 seed=2028 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=48 seed=2028 params total=36,144 trainable=36,144
+    ep  1/20 | train_loss=0.855895 | val_mse=0.443562(All) | val_mae=0.506613
+    ep  2/20 | train_loss=0.588686 | val_mse=0.228133(All) | val_mae=0.327245
+    ep  3/20 | train_loss=0.511309 | val_mse=0.243955(All) | val_mae=0.347700
+    ep  4/20 | train_loss=0.470611 | val_mse=0.233804(All) | val_mae=0.338964
+    ep  5/20 | train_loss=0.433582 | val_mse=0.231917(All) | val_mae=0.337950
+    ep  6/20 | train_loss=0.402339 | val_mse=0.241056(All) | val_mae=0.342083
+    ep  7/20 | train_loss=0.376597 | val_mse=0.236471(All) | val_mae=0.352198
+    ep  8/20 | train_loss=0.357213 | val_mse=0.275512(All) | val_mae=0.371075
+    ep  9/20 | train_loss=0.341021 | val_mse=0.251865(All) | val_mae=0.365565
+    ep 10/20 | train_loss=0.323261 | val_mse=0.249253(All) | val_mae=0.356524
+    ep 11/20 | train_loss=0.310569 | val_mse=0.244799(All) | val_mae=0.351792
+    ep 12/20 | train_loss=0.299469 | val_mse=0.256390(All) | val_mae=0.368288
+    ep 13/20 | train_loss=0.289410 | val_mse=0.248066(All) | val_mae=0.355170
+    ep 14/20 | train_loss=0.280207 | val_mse=0.261898(All) | val_mae=0.361467
+    ep 15/20 | train_loss=0.269074 | val_mse=0.262305(All) | val_mae=0.367416
+    ep 16/20 | train_loss=0.259435 | val_mse=0.229055(All) | val_mae=0.334778
+    ep 17/20 | train_loss=0.254860 | val_mse=0.248753(All) | val_mae=0.352954
+    ep 18/20 | train_loss=0.244947 | val_mse=0.251740(All) | val_mae=0.359070
+    ep 19/20 | train_loss=0.236685 | val_mse=0.266223(All) | val_mae=0.363841
+    ep 20/20 | train_loss=0.229838 | val_mse=0.254535(All) | val_mae=0.361660
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L48_s2028/pred_dnn_L48_s2028.npz
+[dnn] L=48 seed=2028 mse_all=2.572275 best_val=0.228133 best_epoch=1 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L48_s2028/metrics.csv
+2026-11-04T15:14:12Z lane0 END_OK dnn_L48_s2028 rc=0
+2026-11-04T15:14:12Z lane0 START dnn_L60_s2021 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=60 seed=2021 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=60 seed=2021 params total=37,692 trainable=37,692
+    ep  1/20 | train_loss=0.863473 | val_mse=0.498244(All) | val_mae=0.540986
+    ep  2/20 | train_loss=0.615752 | val_mse=0.249682(All) | val_mae=0.351401
+    ep  3/20 | train_loss=0.527036 | val_mse=0.257629(All) | val_mae=0.358568
+    ep  4/20 | train_loss=0.495450 | val_mse=0.273086(All) | val_mae=0.365346
+    ep  5/20 | train_loss=0.459581 | val_mse=0.280919(All) | val_mae=0.376438
+    ep  6/20 | train_loss=0.490325 | val_mse=0.266969(All) | val_mae=0.368221
+    ep  7/20 | train_loss=0.417441 | val_mse=0.288894(All) | val_mae=0.386905
+    ep  8/20 | train_loss=0.389496 | val_mse=0.279309(All) | val_mae=0.380229
+    ep  9/20 | train_loss=0.375418 | val_mse=0.277153(All) | val_mae=0.375895
+    ep 10/20 | train_loss=0.357810 | val_mse=0.303020(All) | val_mae=0.401774
+    ep 11/20 | train_loss=0.347614 | val_mse=0.303588(All) | val_mae=0.395176
+    ep 12/20 | train_loss=0.359492 | val_mse=0.308190(All) | val_mae=0.399347
+    ep 13/20 | train_loss=0.329004 | val_mse=0.281025(All) | val_mae=0.380738
+    ep 14/20 | train_loss=0.313744 | val_mse=0.312392(All) | val_mae=0.401461
+    ep 15/20 | train_loss=0.334634 | val_mse=0.346659(All) | val_mae=0.436091
+    ep 16/20 | train_loss=0.303502 | val_mse=0.308142(All) | val_mae=0.395332
+    ep 17/20 | train_loss=0.289111 | val_mse=0.337518(All) | val_mae=0.417232
+    ep 18/20 | train_loss=0.283032 | val_mse=0.294495(All) | val_mae=0.382992
+    ep 19/20 | train_loss=0.272606 | val_mse=0.313743(All) | val_mae=0.401428
+    ep 20/20 | train_loss=0.274734 | val_mse=0.312753(All) | val_mae=0.403780
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2021/pred_dnn_L60_s2021.npz
+[dnn] L=60 seed=2021 mse_all=2.957687 best_val=0.249682 best_epoch=1 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2021/metrics.csv
+2026-11-04T15:14:17Z lane0 END_OK dnn_L60_s2021 rc=0
+2026-11-04T15:14:17Z lane0 START dnn_L60_s2024 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=60 seed=2024 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=60 seed=2024 params total=37,692 trainable=37,692
+    ep  1/20 | train_loss=0.851229 | val_mse=0.465690(All) | val_mae=0.521352
+    ep  2/20 | train_loss=0.593892 | val_mse=0.240299(All) | val_mae=0.338244
+    ep  3/20 | train_loss=0.522422 | val_mse=0.259695(All) | val_mae=0.361163
+    ep  4/20 | train_loss=0.492162 | val_mse=0.261293(All) | val_mae=0.354564
+    ep  5/20 | train_loss=0.463614 | val_mse=0.242648(All) | val_mae=0.339159
+    ep  6/20 | train_loss=0.440819 | val_mse=0.257237(All) | val_mae=0.351262
+    ep  7/20 | train_loss=0.416688 | val_mse=0.250458(All) | val_mae=0.343960
+    ep  8/20 | train_loss=0.394799 | val_mse=0.276063(All) | val_mae=0.384312
+    ep  9/20 | train_loss=0.373554 | val_mse=0.251777(All) | val_mae=0.353709
+    ep 10/20 | train_loss=0.356547 | val_mse=0.286194(All) | val_mae=0.388890
+    ep 11/20 | train_loss=0.342944 | val_mse=0.273259(All) | val_mae=0.377993
+    ep 12/20 | train_loss=0.337722 | val_mse=0.250311(All) | val_mae=0.357749
+    ep 13/20 | train_loss=0.320357 | val_mse=0.282285(All) | val_mae=0.385430
+    ep 14/20 | train_loss=0.309363 | val_mse=0.279416(All) | val_mae=0.381184
+    ep 15/20 | train_loss=0.304281 | val_mse=0.288681(All) | val_mae=0.390622
+    ep 16/20 | train_loss=0.293202 | val_mse=0.292043(All) | val_mae=0.394582
+    ep 17/20 | train_loss=0.281175 | val_mse=0.287003(All) | val_mae=0.385588
+    ep 18/20 | train_loss=0.275886 | val_mse=0.282406(All) | val_mae=0.380257
+    ep 19/20 | train_loss=0.271001 | val_mse=0.278443(All) | val_mae=0.373130
+    ep 20/20 | train_loss=0.267191 | val_mse=0.306625(All) | val_mae=0.402379
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2024/pred_dnn_L60_s2024.npz
+[dnn] L=60 seed=2024 mse_all=2.852289 best_val=0.240299 best_epoch=1 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2024/metrics.csv
+2026-11-04T15:14:21Z lane0 END_OK dnn_L60_s2024 rc=0
+2026-11-04T15:14:21Z lane0 START dnn_L60_s2027 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=60 seed=2027 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=60 seed=2027 params total=37,692 trainable=37,692
+    ep  1/20 | train_loss=0.857761 | val_mse=0.480507(All) | val_mae=0.530060
+    ep  2/20 | train_loss=0.604048 | val_mse=0.232468(All) | val_mae=0.336502
+    ep  3/20 | train_loss=0.518486 | val_mse=0.254200(All) | val_mae=0.356462
+    ep  4/20 | train_loss=0.486332 | val_mse=0.245897(All) | val_mae=0.353448
+    ep  5/20 | train_loss=0.450003 | val_mse=0.261513(All) | val_mae=0.366617
+    ep  6/20 | train_loss=0.473050 | val_mse=0.284258(All) | val_mae=0.395470
+    ep  7/20 | train_loss=0.405643 | val_mse=0.280209(All) | val_mae=0.396032
+    ep  8/20 | train_loss=0.379942 | val_mse=0.295767(All) | val_mae=0.405715
+    ep  9/20 | train_loss=0.363000 | val_mse=0.290810(All) | val_mae=0.395371
+    ep 10/20 | train_loss=0.355210 | val_mse=0.304860(All) | val_mae=0.411944
+    ep 11/20 | train_loss=0.381679 | val_mse=0.327408(All) | val_mae=0.418589
+    ep 12/20 | train_loss=0.336287 | val_mse=0.282774(All) | val_mae=0.388069
+    ep 13/20 | train_loss=0.317741 | val_mse=0.303892(All) | val_mae=0.404400
+    ep 14/20 | train_loss=0.311051 | val_mse=0.308354(All) | val_mae=0.403147
+    ep 15/20 | train_loss=0.298742 | val_mse=0.293269(All) | val_mae=0.396880
+    ep 16/20 | train_loss=0.289391 | val_mse=0.316533(All) | val_mae=0.416500
+    ep 17/20 | train_loss=0.282443 | val_mse=0.272560(All) | val_mae=0.373263
+    ep 18/20 | train_loss=0.277536 | val_mse=0.310448(All) | val_mae=0.398601
+    ep 19/20 | train_loss=0.273128 | val_mse=0.310825(All) | val_mae=0.402285
+    ep 20/20 | train_loss=0.258918 | val_mse=0.306835(All) | val_mae=0.394048
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2027/pred_dnn_L60_s2027.npz
+[dnn] L=60 seed=2027 mse_all=2.831938 best_val=0.232468 best_epoch=1 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2027/metrics.csv
+2026-11-04T15:14:25Z lane0 END_OK dnn_L60_s2027 rc=0
+2026-11-04T15:14:25Z lane0 START dnn_L60_s2030 route=backbone attempt=1 slurm=735279
+[A2] run_config backbone=dnn containment=strict profile=author_966 horizon=60 seed=2030 device=cuda
+[A2] fidelity_label: DNN baseline (per-channel MLP, INSPIRED_SIMPLIFICATION)
+  [dnn] L=60 seed=2030 params total=37,692 trainable=37,692
+    ep  1/20 | train_loss=0.910443 | val_mse=0.483828(All) | val_mae=0.531177
+    ep  2/20 | train_loss=0.603562 | val_mse=0.259339(All) | val_mae=0.355853
+    ep  3/20 | train_loss=0.518713 | val_mse=0.253512(All) | val_mae=0.351515
+    ep  4/20 | train_loss=0.540355 | val_mse=0.255851(All) | val_mae=0.362176
+    ep  5/20 | train_loss=0.453857 | val_mse=0.254578(All) | val_mae=0.358556
+    ep  6/20 | train_loss=0.431527 | val_mse=0.244567(All) | val_mae=0.350610
+    ep  7/20 | train_loss=0.452968 | val_mse=0.266050(All) | val_mae=0.377282
+    ep  8/20 | train_loss=0.389741 | val_mse=0.249123(All) | val_mae=0.368159
+    ep  9/20 | train_loss=0.363883 | val_mse=0.264238(All) | val_mae=0.376274
+    ep 10/20 | train_loss=0.351212 | val_mse=0.290180(All) | val_mae=0.395757
+    ep 11/20 | train_loss=0.344740 | val_mse=0.276228(All) | val_mae=0.391929
+    ep 12/20 | train_loss=0.333646 | val_mse=0.280313(All) | val_mae=0.380651
+    ep 13/20 | train_loss=0.320365 | val_mse=0.277589(All) | val_mae=0.389707
+    ep 14/20 | train_loss=0.308237 | val_mse=0.265427(All) | val_mae=0.374648
+    ep 15/20 | train_loss=0.297827 | val_mse=0.308540(All) | val_mae=0.416164
+    ep 16/20 | train_loss=0.295307 | val_mse=0.278283(All) | val_mae=0.392020
+    ep 17/20 | train_loss=0.282736 | val_mse=0.310828(All) | val_mae=0.412651
+    ep 18/20 | train_loss=0.272467 | val_mse=0.292911(All) | val_mae=0.388622
+    ep 19/20 | train_loss=0.272400 | val_mse=0.297586(All) | val_mae=0.395838
+    ep 20/20 | train_loss=0.260217 | val_mse=0.304777(All) | val_mae=0.393426
+[dnn] predictions -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2030/pred_dnn_L60_s2030.npz
+[dnn] L=60 seed=2030 mse_all=2.266260 best_val=0.244567 best_epoch=5 (1.9s)
+[dnn] DONE -> /gpfs1/scratch/sychan552/trackB_20261104/all/export/dnn/L60_s2030/metrics.csv
+2026-11-04T15:14:30Z lane0 END_OK dnn_L60_s2030 rc=0
+2026-11-04T15:14:30Z lane0 START ds_r1_distill_32b_L24_s2023 route=encoder attempt=1 slurm=735279
+[A2] run_config backbone=llm_encoder containment=strict profile=author_966 horizon=24 seed=2023 device=cuda
+[A2] llm_encoder: model_id=deepseek-ai/DeepSeek-R1-Distill-Qwen-32B revision=711ad2ea6aa40cfca18895e8aca02ab92df1a746 encoder_batch_size=8 mock_encoder=False epochs=20 max_train=None max_val=None dry_run=False
+[A2] fidelity_label: frozen-LLM encoder + shared linear head (cross-scale probe, methodology item 3)
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:01<00:13,  1.94s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:03<00:11,  1.99s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:05<00:10,  2.01s/it]Loading checkpoint shards:  50%|█████     | 4/8 [00:08<00:08,  2.01s/it]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:09<00:05,  1.98s/it]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:12<00:04,  2.02s/it]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:14<00:02,  2.12s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:14<00:00,  1.64s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:14<00:00,  1.87s/it]

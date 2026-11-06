@@ -1,0 +1,1887 @@
+run_id,panel,target,metric,value,denominator,note
+CORE|national|dlinear|L24|s2021,zspace,mse_all,mse_all,2.287444829940796,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2021,zspace,mae_all,mae_all,1.0625243186950684,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2021,zspace,mse_ili,mse_ili,4.267100811004639,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2021,zspace,mae_ili,mae_ili,1.4088414907455444,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2021,zspace,best_val,best_val,0.2898194491863251,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2021,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2021,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2022,zspace,mse_all,mse_all,2.2740530967712402,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2022,zspace,mae_all,mae_all,1.0597832202911377,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2022,zspace,mse_ili,mse_ili,4.239695072174072,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2022,zspace,mae_ili,mae_ili,1.4050654172897339,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2022,zspace,best_val,best_val,0.2857120931148529,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2022,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2022,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2023,zspace,mse_all,mse_all,2.267843246459961,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2023,zspace,mae_all,mae_all,1.056843876838684,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2023,zspace,mse_ili,mse_ili,4.2464141845703125,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2023,zspace,mae_ili,mae_ili,1.4041303396224976,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2023,zspace,best_val,best_val,0.28761371970176697,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2023,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2023,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2024,zspace,mse_all,mse_all,2.247714042663574,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2024,zspace,mae_all,mae_all,1.046937108039856,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2024,zspace,mse_ili,mse_ili,4.226585865020752,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2024,zspace,mae_ili,mae_ili,1.3922282457351685,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2024,zspace,best_val,best_val,0.2872653305530548,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2024,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2024,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2025,zspace,mse_all,mse_all,2.327939510345459,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2025,zspace,mae_all,mae_all,1.0738972425460815,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2025,zspace,mse_ili,mse_ili,4.341564178466797,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2025,zspace,mae_ili,mae_ili,1.4164303541183472,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2025,zspace,best_val,best_val,0.2867955267429352,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2025,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2025,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2026,zspace,mse_all,mse_all,2.313283681869507,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2026,zspace,mae_all,mae_all,1.0689663887023926,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2026,zspace,mse_ili,mse_ili,4.320705890655518,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2026,zspace,mae_ili,mae_ili,1.4132474660873413,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2026,zspace,best_val,best_val,0.2888689339160919,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2026,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2026,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2027,zspace,mse_all,mse_all,2.3013176918029785,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2027,zspace,mae_all,mae_all,1.067875862121582,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2027,zspace,mse_ili,mse_ili,4.277438640594482,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2027,zspace,mae_ili,mae_ili,1.4129890203475952,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2027,zspace,best_val,best_val,0.288791686296463,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2027,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2027,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2028,zspace,mse_all,mse_all,2.277677536010742,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2028,zspace,mae_all,mae_all,1.059541940689087,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2028,zspace,mse_ili,mse_ili,4.26132345199585,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2028,zspace,mae_ili,mae_ili,1.4045134782791138,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2028,zspace,best_val,best_val,0.2869672179222107,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2028,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2028,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2029,zspace,mse_all,mse_all,2.383115530014038,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2029,zspace,mae_all,mae_all,1.0945804119110107,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2029,zspace,mse_ili,mse_ili,4.427740573883057,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2029,zspace,mae_ili,mae_ili,1.4409103393554688,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2029,zspace,best_val,best_val,0.28955838084220886,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2029,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2029,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2030,zspace,mse_all,mse_all,2.300724983215332,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2030,zspace,mae_all,mae_all,1.0635792016983032,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2030,zspace,mse_ili,mse_ili,4.322659015655518,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2030,zspace,mae_ili,mae_ili,1.4084876775741577,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2030,zspace,best_val,best_val,0.2912490665912628,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2030,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L24|s2030,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2021,zspace,mse_all,mse_all,2.306893825531006,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2021,zspace,mae_all,mae_all,1.0753718614578247,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2021,zspace,mse_ili,mse_ili,4.317269325256348,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2021,zspace,mae_ili,mae_ili,1.3999124765396118,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2021,zspace,best_val,best_val,0.2587432265281677,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2021,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2021,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2022,zspace,mse_all,mse_all,2.280778408050537,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2022,zspace,mae_all,mae_all,1.0683114528656006,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2022,zspace,mse_ili,mse_ili,4.249875545501709,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2022,zspace,mae_ili,mae_ili,1.390012502670288,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2022,zspace,best_val,best_val,0.2554866075515747,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2022,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2022,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2023,zspace,mse_all,mse_all,2.311192512512207,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2023,zspace,mae_all,mae_all,1.080998182296753,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2023,zspace,mse_ili,mse_ili,4.288835048675537,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2023,zspace,mae_ili,mae_ili,1.4012892246246338,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2023,zspace,best_val,best_val,0.25774702429771423,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2023,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2023,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2024,zspace,mse_all,mse_all,2.2554571628570557,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2024,zspace,mae_all,mae_all,1.0578944683074951,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2024,zspace,mse_ili,mse_ili,4.24686861038208,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2024,zspace,mae_ili,mae_ili,1.3782227039337158,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2024,zspace,best_val,best_val,0.2592480778694153,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2024,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2024,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2025,zspace,mse_all,mse_all,2.3024067878723145,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2025,zspace,mae_all,mae_all,1.0767652988433838,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2025,zspace,mse_ili,mse_ili,4.268060684204102,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2025,zspace,mae_ili,mae_ili,1.3998907804489136,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2025,zspace,best_val,best_val,0.2603403925895691,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2025,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2025,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2026,zspace,mse_all,mse_all,2.2828211784362793,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2026,zspace,mae_all,mae_all,1.069040298461914,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2026,zspace,mse_ili,mse_ili,4.259325981140137,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2026,zspace,mae_ili,mae_ili,1.390392541885376,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2026,zspace,best_val,best_val,0.25487878918647766,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2026,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2026,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2027,zspace,mse_all,mse_all,2.2433576583862305,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2027,zspace,mae_all,mae_all,1.056414008140564,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2027,zspace,mse_ili,mse_ili,4.186450004577637,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2027,zspace,mae_ili,mae_ili,1.3769161701202393,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2027,zspace,best_val,best_val,0.25688350200653076,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2027,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2027,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2028,zspace,mse_all,mse_all,2.3439412117004395,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2028,zspace,mae_all,mae_all,1.0916303396224976,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2028,zspace,mse_ili,mse_ili,4.360202789306641,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2028,zspace,mae_ili,mae_ili,1.4165236949920654,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2028,zspace,best_val,best_val,0.25484922528266907,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2028,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2028,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2029,zspace,mse_all,mse_all,2.2925844192504883,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2029,zspace,mae_all,mae_all,1.0747520923614502,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2029,zspace,mse_ili,mse_ili,4.261409759521484,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2029,zspace,mae_ili,mae_ili,1.3955875635147095,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2029,zspace,best_val,best_val,0.25700563192367554,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2029,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2029,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2030,zspace,mse_all,mse_all,2.2697341442108154,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2030,zspace,mae_all,mae_all,1.06730055809021,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2030,zspace,mse_ili,mse_ili,4.251930236816406,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2030,zspace,mae_ili,mae_ili,1.3892301321029663,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2030,zspace,best_val,best_val,0.25390416383743286,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2030,zspace,total_parameters,total_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L36|s2030,zspace,trainable_parameters,trainable_parameters,7560.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2021,zspace,mse_all,mse_all,2.363558530807495,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2021,zspace,mae_all,mae_all,1.1009780168533325,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2021,zspace,mse_ili,mse_ili,4.390000343322754,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2021,zspace,mae_ili,mae_ili,1.4153857231140137,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2021,zspace,best_val,best_val,0.24793526530265808,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2021,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2021,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2022,zspace,mse_all,mse_all,2.345996379852295,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2022,zspace,mae_all,mae_all,1.0932163000106812,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2022,zspace,mse_ili,mse_ili,4.375422477722168,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2022,zspace,mae_ili,mae_ili,1.409389853477478,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2022,zspace,best_val,best_val,0.2475997805595398,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2022,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2022,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2023,zspace,mse_all,mse_all,2.3590171337127686,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2023,zspace,mae_all,mae_all,1.1024442911148071,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2023,zspace,mse_ili,mse_ili,4.369176864624023,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2023,zspace,mae_ili,mae_ili,1.4202136993408203,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2023,zspace,best_val,best_val,0.24982710182666779,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2023,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2023,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2024,zspace,mse_all,mse_all,2.331113815307617,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2024,zspace,mae_all,mae_all,1.0945744514465332,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2024,zspace,mse_ili,mse_ili,4.353576183319092,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2024,zspace,mae_ili,mae_ili,1.4162062406539917,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2024,zspace,best_val,best_val,0.24546627700328827,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2024,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2024,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2025,zspace,mse_all,mse_all,2.3750011920928955,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2025,zspace,mae_all,mae_all,1.1064777374267578,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2025,zspace,mse_ili,mse_ili,4.413919925689697,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2025,zspace,mae_ili,mae_ili,1.4230775833129883,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2025,zspace,best_val,best_val,0.24724146723747253,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2025,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2025,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2026,zspace,mse_all,mse_all,2.3478705883026123,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2026,zspace,mae_all,mae_all,1.0953593254089355,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2026,zspace,mse_ili,mse_ili,4.3662109375,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2026,zspace,mae_ili,mae_ili,1.4081214666366577,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2026,zspace,best_val,best_val,0.24879534542560577,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2026,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2026,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2027,zspace,mse_all,mse_all,2.384761095046997,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2027,zspace,mae_all,mae_all,1.1081463098526,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2027,zspace,mse_ili,mse_ili,4.4370245933532715,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2027,zspace,mae_ili,mae_ili,1.4243464469909668,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2027,zspace,best_val,best_val,0.25125426054000854,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2027,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2027,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2028,zspace,mse_all,mse_all,2.340318202972412,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2028,zspace,mae_all,mae_all,1.093606948852539,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2028,zspace,mse_ili,mse_ili,4.344584941864014,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2028,zspace,mae_ili,mae_ili,1.4086788892745972,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2028,zspace,best_val,best_val,0.2474300116300583,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2028,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2028,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2029,zspace,mse_all,mse_all,2.342853307723999,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2029,zspace,mae_all,mae_all,1.0933393239974976,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2029,zspace,mse_ili,mse_ili,4.380634784698486,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2029,zspace,mae_ili,mae_ili,1.405988335609436,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2029,zspace,best_val,best_val,0.2471092939376831,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2029,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2029,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2030,zspace,mse_all,mse_all,2.303295850753784,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2030,zspace,mae_all,mae_all,1.0842260122299194,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2030,zspace,mse_ili,mse_ili,4.301220417022705,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2030,zspace,mae_ili,mae_ili,1.39869225025177,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2030,zspace,best_val,best_val,0.2474064975976944,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2030,zspace,total_parameters,total_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L48|s2030,zspace,trainable_parameters,trainable_parameters,10080.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2021,zspace,mse_all,mse_all,2.4332728385925293,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2021,zspace,mae_all,mae_all,1.115854263305664,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2021,zspace,mse_ili,mse_ili,4.591601371765137,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2021,zspace,mae_ili,mae_ili,1.4444295167922974,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2021,zspace,best_val,best_val,0.26276904344558716,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2021,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2021,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2022,zspace,mse_all,mse_all,2.459761381149292,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2022,zspace,mae_all,mae_all,1.1250832080841064,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2022,zspace,mse_ili,mse_ili,4.631067752838135,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2022,zspace,mae_ili,mae_ili,1.4546860456466675,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2022,zspace,best_val,best_val,0.2632023096084595,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2022,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2022,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2023,zspace,mse_all,mse_all,2.4359467029571533,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2023,zspace,mae_all,mae_all,1.1159435510635376,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2023,zspace,mse_ili,mse_ili,4.595882892608643,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2023,zspace,mae_ili,mae_ili,1.4409898519515991,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2023,zspace,best_val,best_val,0.26456218957901,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2023,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2023,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2024,zspace,mse_all,mse_all,2.4874660968780518,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2024,zspace,mae_all,mae_all,1.130974531173706,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2024,zspace,mse_ili,mse_ili,4.676853656768799,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2024,zspace,mae_ili,mae_ili,1.4621230363845825,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2024,zspace,best_val,best_val,0.26805397868156433,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2024,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2024,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2025,zspace,mse_all,mse_all,2.493009328842163,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2025,zspace,mae_all,mae_all,1.1374996900558472,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2025,zspace,mse_ili,mse_ili,4.676486968994141,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2025,zspace,mae_ili,mae_ili,1.4680532217025757,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2025,zspace,best_val,best_val,0.2635960280895233,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2025,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2025,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2026,zspace,mse_all,mse_all,2.4736642837524414,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2026,zspace,mae_all,mae_all,1.127690315246582,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2026,zspace,mse_ili,mse_ili,4.656125545501709,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2026,zspace,mae_ili,mae_ili,1.4584230184555054,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2026,zspace,best_val,best_val,0.26156675815582275,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2026,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2026,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2027,zspace,mse_all,mse_all,2.4506149291992188,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2027,zspace,mae_all,mae_all,1.1187318563461304,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2027,zspace,mse_ili,mse_ili,4.631162166595459,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2027,zspace,mae_ili,mae_ili,1.4461402893066406,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2027,zspace,best_val,best_val,0.265683114528656,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2027,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2027,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2028,zspace,mse_all,mse_all,2.4582722187042236,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2028,zspace,mae_all,mae_all,1.1233125925064087,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2028,zspace,mse_ili,mse_ili,4.629170894622803,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2028,zspace,mae_ili,mae_ili,1.454696774482727,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2028,zspace,best_val,best_val,0.26167818903923035,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2028,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2028,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2029,zspace,mse_all,mse_all,2.4617979526519775,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2029,zspace,mae_all,mae_all,1.1256860494613647,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2029,zspace,mse_ili,mse_ili,4.640128135681152,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2029,zspace,mae_ili,mae_ili,1.457082986831665,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2029,zspace,best_val,best_val,0.26476168632507324,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2029,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2029,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2030,zspace,mse_all,mse_all,2.4614224433898926,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2030,zspace,mae_all,mae_all,1.129210114479065,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2030,zspace,mse_ili,mse_ili,4.627816200256348,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2030,zspace,mae_ili,mae_ili,1.463855266571045,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2030,zspace,best_val,best_val,0.2623315453529358,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2030,zspace,total_parameters,total_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|dlinear|L60|s2030,zspace,trainable_parameters,trainable_parameters,12600.0,one_cell,from metrics.csv
+CORE|national|miflu|L24|s2021,zspace,mse_ili,mse_ili,2.4459312,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2021,zspace,mae_ili,mae_ili,0.995665,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2021,zspace,mse_wili,mse_wili,0.63795125,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2021,zspace,mae_wili,mae_wili,0.508947,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2021,zspace,mse_ili_phys,mse_ili_phys,198253984.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2021,zspace,mae_ili_phys,mae_ili_phys,8963.6923828125,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2022,zspace,mse_ili,mse_ili,2.4770367,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2022,zspace,mae_ili,mae_ili,1.0290682,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2022,zspace,mse_wili,mse_wili,0.6416434,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2022,zspace,mae_wili,mae_wili,0.5436871,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2022,zspace,mse_ili_phys,mse_ili_phys,200700688.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2022,zspace,mae_ili_phys,mae_ili_phys,9259.193359375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2023,zspace,mse_ili,mse_ili,2.6165054,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2023,zspace,mae_ili,mae_ili,1.0396018,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2023,zspace,mse_wili,mse_wili,0.6677034,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2023,zspace,mae_wili,mae_wili,0.52888376,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2023,zspace,mse_ili_phys,mse_ili_phys,212085456.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2023,zspace,mae_ili_phys,mae_ili_phys,9359.693359375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2024,zspace,mse_ili,mse_ili,2.4746678,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2024,zspace,mae_ili,mae_ili,1.010283,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2024,zspace,mse_wili,mse_wili,0.6143387,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2024,zspace,mae_wili,mae_wili,0.49838644,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2024,zspace,mse_ili_phys,mse_ili_phys,200588576.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2024,zspace,mae_ili_phys,mae_ili_phys,9095.732421875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2025,zspace,mse_ili,mse_ili,2.808533,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2025,zspace,mae_ili,mae_ili,1.1111478,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2025,zspace,mse_wili,mse_wili,0.67544776,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2025,zspace,mae_wili,mae_wili,0.55126786,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2025,zspace,mse_ili_phys,mse_ili_phys,227615568.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2025,zspace,mae_ili_phys,mae_ili_phys,10001.34375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2026,zspace,mse_ili,mse_ili,2.6466925,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2026,zspace,mae_ili,mae_ili,1.0490241,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2026,zspace,mse_wili,mse_wili,0.6737945,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2026,zspace,mae_wili,mae_wili,0.55772144,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2026,zspace,mse_ili_phys,mse_ili_phys,214452944.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2026,zspace,mae_ili_phys,mae_ili_phys,9438.40625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2027,zspace,mse_ili,mse_ili,2.5170965,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2027,zspace,mae_ili,mae_ili,1.0401795,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2027,zspace,mse_wili,mse_wili,0.6275793,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2027,zspace,mae_wili,mae_wili,0.52934635,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2027,zspace,mse_ili_phys,mse_ili_phys,204027664.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2027,zspace,mae_ili_phys,mae_ili_phys,9364.8935546875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2028,zspace,mse_ili,mse_ili,2.429047,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2028,zspace,mae_ili,mae_ili,1.0171568,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2028,zspace,mse_wili,mse_wili,0.6079123,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2028,zspace,mae_wili,mae_wili,0.50733274,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2028,zspace,mse_ili_phys,mse_ili_phys,196890688.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2028,zspace,mae_ili_phys,mae_ili_phys,9157.6181640625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2029,zspace,mse_ili,mse_ili,2.2094185,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2029,zspace,mae_ili,mae_ili,1.0033189,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2029,zspace,mse_wili,mse_wili,0.65612614,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2029,zspace,mae_wili,mae_wili,0.56625277,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2029,zspace,mse_ili_phys,mse_ili_phys,178996400.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2029,zspace,mae_ili_phys,mae_ili_phys,9026.4013671875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2030,zspace,mse_ili,mse_ili,2.7974777,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2030,zspace,mae_ili,mae_ili,1.062351,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2030,zspace,mse_wili,mse_wili,0.6310865,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2030,zspace,mae_wili,mae_wili,0.5214152,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2030,zspace,mse_ili_phys,mse_ili_phys,226669296.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L24|s2030,zspace,mae_ili_phys,mae_ili_phys,9558.306640625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2021,zspace,mse_ili,mse_ili,2.6577773,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2021,zspace,mae_ili,mae_ili,1.067798,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2021,zspace,mse_wili,mse_wili,0.5245912,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2021,zspace,mae_wili,mae_wili,0.4637067,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2021,zspace,mse_ili_phys,mse_ili_phys,215430000.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2021,zspace,mae_ili_phys,mae_ili_phys,9613.4912109375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2022,zspace,mse_ili,mse_ili,2.6647246,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2022,zspace,mae_ili,mae_ili,1.046554,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2022,zspace,mse_wili,mse_wili,0.52852553,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2022,zspace,mae_wili,mae_wili,0.4629701,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2022,zspace,mse_ili_phys,mse_ili_phys,215993968.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2022,zspace,mae_ili_phys,mae_ili_phys,9422.2861328125,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2023,zspace,mse_ili,mse_ili,2.6974876,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2023,zspace,mae_ili,mae_ili,1.079131,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2023,zspace,mse_wili,mse_wili,0.5616326,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2023,zspace,mae_wili,mae_wili,0.50008494,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2023,zspace,mse_ili_phys,mse_ili_phys,218342032.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2023,zspace,mae_ili_phys,mae_ili_phys,9698.05078125,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2024,zspace,mse_ili,mse_ili,2.211428,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2024,zspace,mae_ili,mae_ili,0.95100856,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2024,zspace,mse_wili,mse_wili,0.4908201,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2024,zspace,mae_wili,mae_wili,0.45818588,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2024,zspace,mse_ili_phys,mse_ili_phys,179251200.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2024,zspace,mae_ili_phys,mae_ili_phys,8562.0751953125,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2025,zspace,mse_ili,mse_ili,2.7852387,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2025,zspace,mae_ili,mae_ili,1.132572,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2025,zspace,mse_wili,mse_wili,0.5911954,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2025,zspace,mae_wili,mae_wili,0.52480555,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2025,zspace,mse_ili_phys,mse_ili_phys,225587104.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2025,zspace,mae_ili_phys,mae_ili_phys,10184.66796875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2026,zspace,mse_ili,mse_ili,2.3625178,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2026,zspace,mae_ili,mae_ili,1.0620931,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2026,zspace,mse_wili,mse_wili,0.6476423,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2026,zspace,mae_wili,mae_wili,0.5462055,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2026,zspace,mse_ili_phys,mse_ili_phys,191459648.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2026,zspace,mae_ili_phys,mae_ili_phys,9559.91796875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2027,zspace,mse_ili,mse_ili,2.929853,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2027,zspace,mae_ili,mae_ili,1.1903236,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2027,zspace,mse_wili,mse_wili,0.5980406,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2027,zspace,mae_wili,mae_wili,0.53372353,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2027,zspace,mse_ili_phys,mse_ili_phys,232188048.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2027,zspace,mae_ili_phys,mae_ili_phys,10572.572265625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2028,zspace,mse_ili,mse_ili,2.6086333,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2028,zspace,mae_ili,mae_ili,1.1009496,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2028,zspace,mse_wili,mse_wili,0.61877406,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2028,zspace,mae_wili,mae_wili,0.5528456,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2028,zspace,mse_ili_phys,mse_ili_phys,211419920.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2028,zspace,mae_ili_phys,mae_ili_phys,9910.013671875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2029,zspace,mse_ili,mse_ili,2.888612,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2029,zspace,mae_ili,mae_ili,1.1253777,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2029,zspace,mse_wili,mse_wili,0.59813607,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2029,zspace,mae_wili,mae_wili,0.5177982,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2029,zspace,mse_ili_phys,mse_ili_phys,234047088.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2029,zspace,mae_ili_phys,mae_ili_phys,10127.21875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2030,zspace,mse_ili,mse_ili,2.6082835,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2030,zspace,mae_ili,mae_ili,1.0905346,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2030,zspace,mse_wili,mse_wili,0.5800729,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2030,zspace,mae_wili,mae_wili,0.51536804,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2030,zspace,mse_ili_phys,mse_ili_phys,211419008.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L36|s2030,zspace,mae_ili_phys,mae_ili_phys,9818.2490234375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2021,zspace,mse_ili,mse_ili,2.7891653,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2021,zspace,mae_ili,mae_ili,1.0740784,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2021,zspace,mse_wili,mse_wili,0.59875405,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2021,zspace,mae_wili,mae_wili,0.48844877,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2021,zspace,mse_ili_phys,mse_ili_phys,226080688.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2021,zspace,mae_ili_phys,mae_ili_phys,9670.0927734375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2022,zspace,mse_ili,mse_ili,3.0986922,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2022,zspace,mae_ili,mae_ili,1.1829857,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2022,zspace,mse_wili,mse_wili,0.76084816,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2022,zspace,mae_wili,mae_wili,0.5875904,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2022,zspace,mse_ili_phys,mse_ili_phys,251168736.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2022,zspace,mae_ili_phys,mae_ili_phys,10650.52734375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2023,zspace,mse_ili,mse_ili,2.9036071,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2023,zspace,mae_ili,mae_ili,1.1086012,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2023,zspace,mse_wili,mse_wili,0.66516423,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2023,zspace,mae_wili,mae_wili,0.5244541,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2023,zspace,mse_ili_phys,mse_ili_phys,235356992.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2023,zspace,mae_ili_phys,mae_ili_phys,9980.90625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2024,zspace,mse_ili,mse_ili,3.6968474,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2024,zspace,mae_ili,mae_ili,1.3057966,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2024,zspace,mse_wili,mse_wili,0.7352453,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2024,zspace,mae_wili,mae_wili,0.5912707,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2024,zspace,mse_ili_phys,mse_ili_phys,297302656.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2024,zspace,mae_ili_phys,mae_ili_phys,11651.693359375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2025,zspace,mse_ili,mse_ili,3.053447,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2025,zspace,mae_ili,mae_ili,1.1925756,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2025,zspace,mse_wili,mse_wili,0.6843373,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2025,zspace,mae_wili,mae_wili,0.56974703,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2025,zspace,mse_ili_phys,mse_ili_phys,247451744.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2025,zspace,mae_ili_phys,mae_ili_phys,10733.498046875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2026,zspace,mse_ili,mse_ili,3.0946157,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2026,zspace,mae_ili,mae_ili,1.134273,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2026,zspace,mse_wili,mse_wili,0.627564,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2026,zspace,mae_wili,mae_wili,0.49922603,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2026,zspace,mse_ili_phys,mse_ili_phys,250830128.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2026,zspace,mae_ili_phys,mae_ili_phys,10211.361328125,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2027,zspace,mse_ili,mse_ili,3.0237143,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2027,zspace,mae_ili,mae_ili,1.1851686,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2027,zspace,mse_wili,mse_wili,0.67876744,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2027,zspace,mae_wili,mae_wili,0.54853857,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2027,zspace,mse_ili_phys,mse_ili_phys,243930640.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2027,zspace,mae_ili_phys,mae_ili_phys,10623.2294921875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2028,zspace,mse_ili,mse_ili,2.943376,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2028,zspace,mae_ili,mae_ili,1.1105764,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2028,zspace,mse_wili,mse_wili,0.6762688,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2028,zspace,mae_wili,mae_wili,0.5210441,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2028,zspace,mse_ili_phys,mse_ili_phys,238580288.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2028,zspace,mae_ili_phys,mae_ili_phys,9998.6708984375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2029,zspace,mse_ili,mse_ili,3.2001126,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2029,zspace,mae_ili,mae_ili,1.151519,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2029,zspace,mse_wili,mse_wili,0.69352114,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2029,zspace,mae_wili,mae_wili,0.53238684,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2029,zspace,mse_ili_phys,mse_ili_phys,259381936.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2029,zspace,mae_ili_phys,mae_ili_phys,10366.77734375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2030,zspace,mse_ili,mse_ili,3.2610514,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2030,zspace,mae_ili,mae_ili,1.2381411,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2030,zspace,mse_wili,mse_wili,0.6875507,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2030,zspace,mae_wili,mae_wili,0.5551663,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2030,zspace,mse_ili_phys,mse_ili_phys,264092848.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L48|s2030,zspace,mae_ili_phys,mae_ili_phys,11137.3447265625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2021,zspace,mse_ili,mse_ili,2.9149826,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2021,zspace,mae_ili,mae_ili,1.174696,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2021,zspace,mse_wili,mse_wili,0.5631643,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2021,zspace,mae_wili,mae_wili,0.5114545,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2021,zspace,mse_ili_phys,mse_ili_phys,235387104.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2021,zspace,mae_ili_phys,mae_ili_phys,10548.693359375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2022,zspace,mse_ili,mse_ili,2.8855658,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2022,zspace,mae_ili,mae_ili,1.1644765,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2022,zspace,mse_wili,mse_wili,0.5939654,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2022,zspace,mae_wili,mae_wili,0.5455614,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2022,zspace,mse_ili_phys,mse_ili_phys,233797152.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2022,zspace,mae_ili_phys,mae_ili_phys,10478.384765625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2023,zspace,mse_ili,mse_ili,2.8556275,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2023,zspace,mae_ili,mae_ili,1.1777954,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2023,zspace,mse_wili,mse_wili,0.56560874,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2023,zspace,mae_wili,mae_wili,0.52589726,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2023,zspace,mse_ili_phys,mse_ili_phys,229563184.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2023,zspace,mae_ili_phys,mae_ili_phys,10514.2275390625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2024,zspace,mse_ili,mse_ili,3.5514917,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2024,zspace,mae_ili,mae_ili,1.3505287,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2024,zspace,mse_wili,mse_wili,0.84435475,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2024,zspace,mae_wili,mae_wili,0.6537395,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2024,zspace,mse_ili_phys,mse_ili_phys,287872416.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2024,zspace,mae_ili_phys,mae_ili_phys,12159.0166015625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2025,zspace,mse_ili,mse_ili,2.664511,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2025,zspace,mae_ili,mae_ili,1.0771394,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2025,zspace,mse_wili,mse_wili,0.5600406,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2025,zspace,mae_wili,mae_wili,0.50374657,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2025,zspace,mse_ili_phys,mse_ili_phys,215966768.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2025,zspace,mae_ili_phys,mae_ili_phys,9697.0029296875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2026,zspace,mse_ili,mse_ili,3.7538896,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2026,zspace,mae_ili,mae_ili,1.384508,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2026,zspace,mse_wili,mse_wili,0.67874044,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2026,zspace,mae_wili,mae_wili,0.59330314,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2026,zspace,mse_ili_phys,mse_ili_phys,303941824.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2026,zspace,mae_ili_phys,mae_ili_phys,12454.1572265625,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2027,zspace,mse_ili,mse_ili,2.4273534,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2027,zspace,mae_ili,mae_ili,1.0274749,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2027,zspace,mse_wili,mse_wili,0.5431735,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2027,zspace,mae_wili,mae_wili,0.48871517,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2027,zspace,mse_ili_phys,mse_ili_phys,196316576.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2027,zspace,mae_ili_phys,mae_ili_phys,9223.1669921875,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2028,zspace,mse_ili,mse_ili,2.7318685,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2028,zspace,mae_ili,mae_ili,1.0511968,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2028,zspace,mse_wili,mse_wili,0.5077656,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2028,zspace,mae_wili,mae_wili,0.42689326,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2028,zspace,mse_ili_phys,mse_ili_phys,221436416.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2028,zspace,mae_ili_phys,mae_ili_phys,9464.0849609375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2029,zspace,mse_ili,mse_ili,2.4782069,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2029,zspace,mae_ili,mae_ili,1.0370051,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2029,zspace,mse_wili,mse_wili,0.5262192,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2029,zspace,mae_wili,mae_wili,0.48494452,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2029,zspace,mse_ili_phys,mse_ili_phys,200436672.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2029,zspace,mae_ili_phys,mae_ili_phys,9309.6162109375,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2030,zspace,mse_ili,mse_ili,3.382958,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2030,zspace,mae_ili,mae_ili,1.3100103,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2030,zspace,mse_wili,mse_wili,0.632459,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2030,zspace,mae_wili,mae_wili,0.5656531,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2030,zspace,mse_ili_phys,mse_ili_phys,271100704.0,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|miflu|L60|s2030,zspace,mae_ili_phys,mae_ili_phys,11705.3408203125,one_cell,from results csv in RAW_EVIDENCE/cells
+CORE|national|nlinear|L24|s2021,zspace,mse_all,mse_all,2.1911556720733643,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2021,zspace,mae_all,mae_all,0.9851135611534119,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2021,zspace,mse_ili,mse_ili,4.319180965423584,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2021,zspace,mae_ili,mae_ili,1.3753554821014404,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2021,zspace,best_val,best_val,0.2711630165576935,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2021,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2021,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2022,zspace,mse_all,mse_all,2.198711633682251,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2022,zspace,mae_all,mae_all,0.9902356266975403,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2022,zspace,mse_ili,mse_ili,4.357715606689453,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2022,zspace,mae_ili,mae_ili,1.3907676935195923,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2022,zspace,best_val,best_val,0.2720850110054016,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2022,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2022,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2023,zspace,mse_all,mse_all,2.2183101177215576,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2023,zspace,mae_all,mae_all,0.9956835508346558,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2023,zspace,mse_ili,mse_ili,4.366491317749023,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2023,zspace,mae_ili,mae_ili,1.3731878995895386,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2023,zspace,best_val,best_val,0.2706563472747803,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2023,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2023,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2024,zspace,mse_all,mse_all,2.1238696575164795,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2024,zspace,mae_all,mae_all,0.962663471698761,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2024,zspace,mse_ili,mse_ili,4.1930999755859375,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2024,zspace,mae_ili,mae_ili,1.350014567375183,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2024,zspace,best_val,best_val,0.2720293402671814,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2024,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2024,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2025,zspace,mse_all,mse_all,2.117586374282837,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2025,zspace,mae_all,mae_all,0.9612641334533691,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2025,zspace,mse_ili,mse_ili,4.17318868637085,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2025,zspace,mae_ili,mae_ili,1.3477171659469604,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2025,zspace,best_val,best_val,0.269223153591156,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2025,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2025,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2026,zspace,mse_all,mse_all,2.145899772644043,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2026,zspace,mae_all,mae_all,0.9684523940086365,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2026,zspace,mse_ili,mse_ili,4.248149871826172,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2026,zspace,mae_ili,mae_ili,1.3573299646377563,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2026,zspace,best_val,best_val,0.27083635330200195,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2026,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2026,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2027,zspace,mse_all,mse_all,2.1007308959960938,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2027,zspace,mae_all,mae_all,0.9572645425796509,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2027,zspace,mse_ili,mse_ili,4.161512851715088,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2027,zspace,mae_ili,mae_ili,1.3568514585494995,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2027,zspace,best_val,best_val,0.2759970426559448,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2027,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2027,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2028,zspace,mse_all,mse_all,2.2578349113464355,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2028,zspace,mae_all,mae_all,1.0121352672576904,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2028,zspace,mse_ili,mse_ili,4.464817047119141,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2028,zspace,mae_ili,mae_ili,1.408644437789917,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2028,zspace,best_val,best_val,0.26770883798599243,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2028,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2028,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2029,zspace,mse_all,mse_all,2.1214613914489746,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2029,zspace,mae_all,mae_all,0.9556443691253662,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2029,zspace,mse_ili,mse_ili,4.175481796264648,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2029,zspace,mae_ili,mae_ili,1.3378443717956543,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2029,zspace,best_val,best_val,0.27193474769592285,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2029,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2029,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2030,zspace,mse_all,mse_all,2.110646963119507,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2030,zspace,mae_all,mae_all,0.9525015354156494,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2030,zspace,mse_ili,mse_ili,4.145163059234619,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2030,zspace,mae_ili,mae_ili,1.3132224082946777,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2030,zspace,best_val,best_val,0.27676671743392944,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2030,zspace,total_parameters,total_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L24|s2030,zspace,trainable_parameters,trainable_parameters,2520.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2021,zspace,mse_all,mse_all,2.0076470375061035,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2021,zspace,mae_all,mae_all,0.9436216354370117,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2021,zspace,mse_ili,mse_ili,3.9325451850891113,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2021,zspace,mae_ili,mae_ili,1.279822587966919,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2021,zspace,best_val,best_val,0.24383854866027832,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2021,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2021,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2022,zspace,mse_all,mse_all,2.0202102661132812,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2022,zspace,mae_all,mae_all,0.9414613842964172,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2022,zspace,mse_ili,mse_ili,3.9404118061065674,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2022,zspace,mae_ili,mae_ili,1.2675257921218872,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2022,zspace,best_val,best_val,0.2416112720966339,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2022,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2022,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2023,zspace,mse_all,mse_all,2.0393965244293213,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2023,zspace,mae_all,mae_all,0.9505999088287354,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2023,zspace,mse_ili,mse_ili,3.991671085357666,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2023,zspace,mae_ili,mae_ili,1.2924911975860596,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2023,zspace,best_val,best_val,0.24110440909862518,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2023,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2023,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2024,zspace,mse_all,mse_all,2.09057354927063,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2024,zspace,mae_all,mae_all,0.9656772017478943,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2024,zspace,mse_ili,mse_ili,4.1132307052612305,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2024,zspace,mae_ili,mae_ili,1.3111159801483154,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2024,zspace,best_val,best_val,0.24274912476539612,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2024,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2024,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2025,zspace,mse_all,mse_all,2.079477310180664,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2025,zspace,mae_all,mae_all,0.9639753103256226,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2025,zspace,mse_ili,mse_ili,4.089288711547852,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2025,zspace,mae_ili,mae_ili,1.3091365098953247,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2025,zspace,best_val,best_val,0.24357646703720093,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2025,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2025,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2026,zspace,mse_all,mse_all,2.0124435424804688,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2026,zspace,mae_all,mae_all,0.9413402080535889,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2026,zspace,mse_ili,mse_ili,3.9653162956237793,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2026,zspace,mae_ili,mae_ili,1.296301245689392,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2026,zspace,best_val,best_val,0.2491549551486969,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2026,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2026,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2027,zspace,mse_all,mse_all,1.9956517219543457,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2027,zspace,mae_all,mae_all,0.9380189776420593,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2027,zspace,mse_ili,mse_ili,3.901165246963501,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2027,zspace,mae_ili,mae_ili,1.2785104513168335,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2027,zspace,best_val,best_val,0.24162030220031738,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2027,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2027,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2028,zspace,mse_all,mse_all,2.1300079822540283,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2028,zspace,mae_all,mae_all,0.9792861342430115,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2028,zspace,mse_ili,mse_ili,4.178072452545166,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2028,zspace,mae_ili,mae_ili,1.3285861015319824,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2028,zspace,best_val,best_val,0.23990683257579803,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2028,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2028,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2029,zspace,mse_all,mse_all,2.0048766136169434,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2029,zspace,mae_all,mae_all,0.9387781620025635,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2029,zspace,mse_ili,mse_ili,3.9271533489227295,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2029,zspace,mae_ili,mae_ili,1.2702205181121826,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2029,zspace,best_val,best_val,0.24453897774219513,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2029,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2029,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2030,zspace,mse_all,mse_all,2.099595785140991,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2030,zspace,mae_all,mae_all,0.9680961966514587,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2030,zspace,mse_ili,mse_ili,4.133275032043457,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2030,zspace,mae_ili,mae_ili,1.3085492849349976,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2030,zspace,best_val,best_val,0.23372314870357513,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2030,zspace,total_parameters,total_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L36|s2030,zspace,trainable_parameters,trainable_parameters,3780.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2021,zspace,mse_all,mse_all,2.0954487323760986,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2021,zspace,mae_all,mae_all,0.9782726168632507,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2021,zspace,mse_ili,mse_ili,4.124666690826416,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2021,zspace,mae_ili,mae_ili,1.322394847869873,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2021,zspace,best_val,best_val,0.23403598368167877,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2021,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2021,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2022,zspace,mse_all,mse_all,1.9774518013000488,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2022,zspace,mae_all,mae_all,0.9464367032051086,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2022,zspace,mse_ili,mse_ili,3.868173837661743,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2022,zspace,mae_ili,mae_ili,1.2745131254196167,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2022,zspace,best_val,best_val,0.23058964312076569,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2022,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2022,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2023,zspace,mse_all,mse_all,1.9704362154006958,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2023,zspace,mae_all,mae_all,0.9444906711578369,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2023,zspace,mse_ili,mse_ili,3.8533923625946045,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2023,zspace,mae_ili,mae_ili,1.2609212398529053,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2023,zspace,best_val,best_val,0.23547503352165222,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2023,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2023,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2024,zspace,mse_all,mse_all,2.05853271484375,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2024,zspace,mae_all,mae_all,0.96756911277771,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2024,zspace,mse_ili,mse_ili,4.036993503570557,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2024,zspace,mae_ili,mae_ili,1.3039079904556274,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2024,zspace,best_val,best_val,0.23473681509494781,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2024,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2024,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2025,zspace,mse_all,mse_all,2.127128839492798,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2025,zspace,mae_all,mae_all,0.9802077412605286,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2025,zspace,mse_ili,mse_ili,4.171128749847412,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2025,zspace,mae_ili,mae_ili,1.30886971950531,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2025,zspace,best_val,best_val,0.22746963798999786,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2025,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2025,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2026,zspace,mse_all,mse_all,2.0580811500549316,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2026,zspace,mae_all,mae_all,0.9572924375534058,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2026,zspace,mse_ili,mse_ili,4.052705764770508,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2026,zspace,mae_ili,mae_ili,1.277582049369812,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2026,zspace,best_val,best_val,0.23196092247962952,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2026,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2026,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2027,zspace,mse_all,mse_all,2.009889841079712,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2027,zspace,mae_all,mae_all,0.9530584216117859,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2027,zspace,mse_ili,mse_ili,3.935706377029419,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2027,zspace,mae_ili,mae_ili,1.2810404300689697,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2027,zspace,best_val,best_val,0.23457220196723938,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2027,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2027,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2028,zspace,mse_all,mse_all,2.009932041168213,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2028,zspace,mae_all,mae_all,0.9524054527282715,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2028,zspace,mse_ili,mse_ili,3.9416911602020264,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2028,zspace,mae_ili,mae_ili,1.28223717212677,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2028,zspace,best_val,best_val,0.22710038721561432,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2028,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2028,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2029,zspace,mse_all,mse_all,1.979374647140503,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2029,zspace,mae_all,mae_all,0.948566734790802,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2029,zspace,mse_ili,mse_ili,3.8667540550231934,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2029,zspace,mae_ili,mae_ili,1.2760143280029297,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2029,zspace,best_val,best_val,0.23258313536643982,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2029,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2029,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2030,zspace,mse_all,mse_all,2.148432731628418,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2030,zspace,mae_all,mae_all,0.9857600331306458,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2030,zspace,mse_ili,mse_ili,4.226032733917236,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2030,zspace,mae_ili,mae_ili,1.3240770101547241,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2030,zspace,best_val,best_val,0.22566640377044678,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2030,zspace,total_parameters,total_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L48|s2030,zspace,trainable_parameters,trainable_parameters,5040.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2021,zspace,mse_all,mse_all,2.0725324153900146,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2021,zspace,mae_all,mae_all,0.976094126701355,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2021,zspace,mse_ili,mse_ili,4.087151050567627,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2021,zspace,mae_ili,mae_ili,1.3150361776351929,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2021,zspace,best_val,best_val,0.2412136346101761,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2021,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2021,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2022,zspace,mse_all,mse_all,2.141878128051758,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2022,zspace,mae_all,mae_all,0.9907748699188232,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2022,zspace,mse_ili,mse_ili,4.243436336517334,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2022,zspace,mae_ili,mae_ili,1.332154393196106,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2022,zspace,best_val,best_val,0.2445521354675293,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2022,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2022,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2023,zspace,mse_all,mse_all,2.032816171646118,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2023,zspace,mae_all,mae_all,0.9672771692276001,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2023,zspace,mse_ili,mse_ili,4.026383399963379,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2023,zspace,mae_ili,mae_ili,1.299917459487915,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2023,zspace,best_val,best_val,0.24855145812034607,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2023,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2023,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2024,zspace,mse_all,mse_all,2.009551525115967,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2024,zspace,mae_all,mae_all,0.9599814414978027,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2024,zspace,mse_ili,mse_ili,3.9720020294189453,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2024,zspace,mae_ili,mae_ili,1.2898026704788208,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2024,zspace,best_val,best_val,0.24452772736549377,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2024,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2024,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2025,zspace,mse_all,mse_all,2.0836257934570312,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2025,zspace,mae_all,mae_all,0.9752711653709412,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2025,zspace,mse_ili,mse_ili,4.120474815368652,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2025,zspace,mae_ili,mae_ili,1.3152084350585938,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2025,zspace,best_val,best_val,0.2450653314590454,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2025,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2025,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2026,zspace,mse_all,mse_all,2.0735023021698,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2026,zspace,mae_all,mae_all,0.9746114015579224,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2026,zspace,mse_ili,mse_ili,4.097942352294922,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2026,zspace,mae_ili,mae_ili,1.309746265411377,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2026,zspace,best_val,best_val,0.24515759944915771,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2026,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2026,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2027,zspace,mse_all,mse_all,2.0810322761535645,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2027,zspace,mae_all,mae_all,0.9733077883720398,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2027,zspace,mse_ili,mse_ili,4.115875720977783,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2027,zspace,mae_ili,mae_ili,1.3070025444030762,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2027,zspace,best_val,best_val,0.2521996796131134,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2027,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2027,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2028,zspace,mse_all,mse_all,2.0279290676116943,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2028,zspace,mae_all,mae_all,0.9654654860496521,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2028,zspace,mse_ili,mse_ili,3.9984214305877686,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2028,zspace,mae_ili,mae_ili,1.293389916419983,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2028,zspace,best_val,best_val,0.24342699348926544,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2028,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2028,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2029,zspace,mse_all,mse_all,2.035625457763672,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2029,zspace,mae_all,mae_all,0.9656401872634888,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2029,zspace,mse_ili,mse_ili,4.027579307556152,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2029,zspace,mae_ili,mae_ili,1.2949000597000122,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2029,zspace,best_val,best_val,0.2512376606464386,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2029,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2029,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2030,zspace,mse_all,mse_all,2.068375825881958,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2030,zspace,mae_all,mae_all,0.9726886749267578,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2030,zspace,mse_ili,mse_ili,4.086359977722168,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2030,zspace,mae_ili,mae_ili,1.3075569868087769,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2030,zspace,best_val,best_val,0.24287815392017365,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2030,zspace,total_parameters,total_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|nlinear|L60|s2030,zspace,trainable_parameters,trainable_parameters,6300.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2021,zspace,mse_all,mse_all,2.06601619720459,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2021,zspace,mae_all,mae_all,0.8612126111984253,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2021,zspace,mse_ili,mse_ili,4.130655288696289,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2021,zspace,mae_ili,mae_ili,1.2676374912261963,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2021,zspace,best_val,best_val,0.28657665848731995,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2021,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2021,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2022,zspace,mse_all,mse_all,1.9823641777038574,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2022,zspace,mae_all,mae_all,0.9107630848884583,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2022,zspace,mse_ili,mse_ili,4.095156669616699,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2022,zspace,mae_ili,mae_ili,1.3542835712432861,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2022,zspace,best_val,best_val,0.2548665404319763,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2022,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2022,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2023,zspace,mse_all,mse_all,2.2349462509155273,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2023,zspace,mae_all,mae_all,0.9645590782165527,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2023,zspace,mse_ili,mse_ili,4.566737174987793,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2023,zspace,mae_ili,mae_ili,1.4396628141403198,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2023,zspace,best_val,best_val,0.25931647419929504,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2023,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2023,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2024,zspace,mse_all,mse_all,2.096877098083496,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2024,zspace,mae_all,mae_all,0.9285035729408264,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2024,zspace,mse_ili,mse_ili,4.2064595222473145,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2024,zspace,mae_ili,mae_ili,1.3836926221847534,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2024,zspace,best_val,best_val,0.2589540183544159,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2024,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2024,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2025,zspace,mse_all,mse_all,2.1876039505004883,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2025,zspace,mae_all,mae_all,0.9213407635688782,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2025,zspace,mse_ili,mse_ili,4.282048225402832,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2025,zspace,mae_ili,mae_ili,1.346089482307434,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2025,zspace,best_val,best_val,0.27721473574638367,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2025,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2025,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2026,zspace,mse_all,mse_all,2.1274755001068115,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2026,zspace,mae_all,mae_all,0.9265990257263184,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2026,zspace,mse_ili,mse_ili,4.163853168487549,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2026,zspace,mae_ili,mae_ili,1.3228178024291992,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2026,zspace,best_val,best_val,0.22853699326515198,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2026,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2026,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2027,zspace,mse_all,mse_all,2.0936222076416016,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2027,zspace,mae_all,mae_all,0.9404581189155579,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2027,zspace,mse_ili,mse_ili,4.132173538208008,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2027,zspace,mae_ili,mae_ili,1.3713874816894531,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2027,zspace,best_val,best_val,0.2265745848417282,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2027,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2027,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2028,zspace,mse_all,mse_all,2.049598217010498,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2028,zspace,mae_all,mae_all,0.8940712213516235,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2028,zspace,mse_ili,mse_ili,4.05115270614624,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2028,zspace,mae_ili,mae_ili,1.302771806716919,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2028,zspace,best_val,best_val,0.2591646611690521,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2028,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2028,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2029,zspace,mse_all,mse_all,2.193431854248047,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2029,zspace,mae_all,mae_all,0.9190442562103271,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2029,zspace,mse_ili,mse_ili,4.340895175933838,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2029,zspace,mae_ili,mae_ili,1.3295860290527344,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2029,zspace,best_val,best_val,0.263590931892395,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2029,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2029,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2030,zspace,mse_all,mse_all,2.399240732192993,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2030,zspace,mae_all,mae_all,1.0012879371643066,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2030,zspace,mse_ili,mse_ili,4.843111991882324,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2030,zspace,mae_ili,mae_ili,1.508293867111206,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2030,zspace,best_val,best_val,0.27376890182495117,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2030,zspace,total_parameters,total_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L24|s2030,zspace,trainable_parameters,trainable_parameters,531878.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2021,zspace,mse_all,mse_all,1.8526887893676758,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2021,zspace,mae_all,mae_all,0.8767135739326477,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2021,zspace,mse_ili,mse_ili,3.556856155395508,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2021,zspace,mae_ili,mae_ili,1.2298344373703003,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2021,zspace,best_val,best_val,0.2517850995063782,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2021,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2021,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2022,zspace,mse_all,mse_all,2.0906059741973877,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2022,zspace,mae_all,mae_all,0.9734987020492554,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2022,zspace,mse_ili,mse_ili,4.190199851989746,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2022,zspace,mae_ili,mae_ili,1.3901962041854858,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2022,zspace,best_val,best_val,0.24540112912654877,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2022,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2022,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2023,zspace,mse_all,mse_all,1.8601101636886597,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2023,zspace,mae_all,mae_all,0.9074200391769409,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2023,zspace,mse_ili,mse_ili,3.478297472000122,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2023,zspace,mae_ili,mae_ili,1.2742708921432495,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2023,zspace,best_val,best_val,0.252237468957901,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2023,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2023,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2024,zspace,mse_all,mse_all,1.7606337070465088,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2024,zspace,mae_all,mae_all,0.8629913330078125,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2024,zspace,mse_ili,mse_ili,3.3548102378845215,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2024,zspace,mae_ili,mae_ili,1.2027442455291748,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2024,zspace,best_val,best_val,0.2074424922466278,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2024,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2024,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2025,zspace,mse_all,mse_all,2.197829246520996,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2025,zspace,mae_all,mae_all,0.9577678442001343,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2025,zspace,mse_ili,mse_ili,4.345637798309326,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2025,zspace,mae_ili,mae_ili,1.3815548419952393,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2025,zspace,best_val,best_val,0.20854826271533966,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2025,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2025,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2026,zspace,mse_all,mse_all,2.1575353145599365,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2026,zspace,mae_all,mae_all,0.9962800741195679,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2026,zspace,mse_ili,mse_ili,4.267083644866943,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2026,zspace,mae_ili,mae_ili,1.400645136833191,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2026,zspace,best_val,best_val,0.20686963200569153,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2026,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2026,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2027,zspace,mse_all,mse_all,2.1301581859588623,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2027,zspace,mae_all,mae_all,1.0011403560638428,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2027,zspace,mse_ili,mse_ili,4.20964241027832,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2027,zspace,mae_ili,mae_ili,1.3790311813354492,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2027,zspace,best_val,best_val,0.23656657338142395,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2027,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2027,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2028,zspace,mse_all,mse_all,1.879273533821106,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2028,zspace,mae_all,mae_all,0.8902349472045898,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2028,zspace,mse_ili,mse_ili,3.5536561012268066,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2028,zspace,mae_ili,mae_ili,1.2296785116195679,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2028,zspace,best_val,best_val,0.22833336889743805,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2028,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2028,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2029,zspace,mse_all,mse_all,1.8024072647094727,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2029,zspace,mae_all,mae_all,0.862655520439148,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2029,zspace,mse_ili,mse_ili,3.2595932483673096,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2029,zspace,mae_ili,mae_ili,1.193892240524292,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2029,zspace,best_val,best_val,0.2234133780002594,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2029,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2029,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2030,zspace,mse_all,mse_all,1.9523859024047852,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2030,zspace,mae_all,mae_all,0.8673285841941833,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2030,zspace,mse_ili,mse_ili,3.6712844371795654,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2030,zspace,mae_ili,mae_ili,1.2151591777801514,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2030,zspace,best_val,best_val,0.26051095128059387,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2030,zspace,total_parameters,total_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L36|s2030,zspace,trainable_parameters,trainable_parameters,594866.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2021,zspace,mse_all,mse_all,1.8874150514602661,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2021,zspace,mae_all,mae_all,0.9366457462310791,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2021,zspace,mse_ili,mse_ili,3.557913064956665,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2021,zspace,mae_ili,mae_ili,1.3204835653305054,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2021,zspace,best_val,best_val,0.229824960231781,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2021,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2021,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2022,zspace,mse_all,mse_all,1.9025746583938599,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2022,zspace,mae_all,mae_all,0.9219970107078552,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2022,zspace,mse_ili,mse_ili,3.571990728378296,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2022,zspace,mae_ili,mae_ili,1.2840673923492432,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2022,zspace,best_val,best_val,0.26698681712150574,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2022,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2022,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2023,zspace,mse_all,mse_all,1.9660117626190186,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2023,zspace,mae_all,mae_all,0.9569591879844666,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2023,zspace,mse_ili,mse_ili,3.8596689701080322,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2023,zspace,mae_ili,mae_ili,1.3380951881408691,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2023,zspace,best_val,best_val,0.23675978183746338,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2023,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2023,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2024,zspace,mse_all,mse_all,1.9096845388412476,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2024,zspace,mae_all,mae_all,0.9248400330543518,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2024,zspace,mse_ili,mse_ili,3.6819381713867188,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2024,zspace,mae_ili,mae_ili,1.2939034700393677,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2024,zspace,best_val,best_val,0.23899078369140625,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2024,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2024,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2025,zspace,mse_all,mse_all,1.8196496963500977,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2025,zspace,mae_all,mae_all,0.9032161831855774,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2025,zspace,mse_ili,mse_ili,3.3502159118652344,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2025,zspace,mae_ili,mae_ili,1.2795931100845337,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2025,zspace,best_val,best_val,0.2347523719072342,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2025,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2025,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2026,zspace,mse_all,mse_all,1.7189340591430664,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2026,zspace,mae_all,mae_all,0.8675927519798279,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2026,zspace,mse_ili,mse_ili,3.135939598083496,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2026,zspace,mae_ili,mae_ili,1.1808234453201294,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2026,zspace,best_val,best_val,0.24652282893657684,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2026,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2026,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2027,zspace,mse_all,mse_all,1.82436203956604,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2027,zspace,mae_all,mae_all,0.8832874894142151,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2027,zspace,mse_ili,mse_ili,3.207110643386841,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2027,zspace,mae_ili,mae_ili,1.1919268369674683,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2027,zspace,best_val,best_val,0.2520025968551636,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2027,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2027,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2028,zspace,mse_all,mse_all,1.6631155014038086,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2028,zspace,mae_all,mae_all,0.8689316511154175,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2028,zspace,mse_ili,mse_ili,3.0903282165527344,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2028,zspace,mae_ili,mae_ili,1.1974880695343018,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2028,zspace,best_val,best_val,0.22338563203811646,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2028,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2028,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2029,zspace,mse_all,mse_all,1.878365397453308,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2029,zspace,mae_all,mae_all,0.9246641993522644,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2029,zspace,mse_ili,mse_ili,3.5022943019866943,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2029,zspace,mae_ili,mae_ili,1.2770767211914062,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2029,zspace,best_val,best_val,0.2628532350063324,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2029,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2029,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2030,zspace,mse_all,mse_all,1.93349027633667,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2030,zspace,mae_all,mae_all,0.9435081481933594,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2030,zspace,mse_ili,mse_ili,3.6290431022644043,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2030,zspace,mae_ili,mae_ili,1.3331435918807983,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2030,zspace,best_val,best_val,0.2317919284105301,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2030,zspace,total_parameters,total_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L48|s2030,zspace,trainable_parameters,trainable_parameters,657854.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2021,zspace,mse_all,mse_all,1.9933967590332031,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2021,zspace,mae_all,mae_all,0.9942964911460876,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2021,zspace,mse_ili,mse_ili,3.925330877304077,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2021,zspace,mae_ili,mae_ili,1.3615425825119019,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2021,zspace,best_val,best_val,0.25679799914360046,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2021,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2021,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2022,zspace,mse_all,mse_all,1.9070518016815186,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2022,zspace,mae_all,mae_all,0.9822273850440979,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2022,zspace,mse_ili,mse_ili,3.602592945098877,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2022,zspace,mae_ili,mae_ili,1.340863823890686,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2022,zspace,best_val,best_val,0.27460378408432007,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2022,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2022,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2023,zspace,mse_all,mse_all,2.0259358882904053,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2023,zspace,mae_all,mae_all,0.9709986448287964,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2023,zspace,mse_ili,mse_ili,3.475203275680542,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2023,zspace,mae_ili,mae_ili,1.2998955249786377,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2023,zspace,best_val,best_val,0.2681547701358795,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2023,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2023,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2024,zspace,mse_all,mse_all,1.824461817741394,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2024,zspace,mae_all,mae_all,0.9215514063835144,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2024,zspace,mse_ili,mse_ili,3.219688653945923,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2024,zspace,mae_ili,mae_ili,1.2340447902679443,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2024,zspace,best_val,best_val,0.2678144574165344,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2024,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2024,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2025,zspace,mse_all,mse_all,1.7948988676071167,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2025,zspace,mae_all,mae_all,0.9292312860488892,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2025,zspace,mse_ili,mse_ili,3.3061187267303467,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2025,zspace,mae_ili,mae_ili,1.2600510120391846,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2025,zspace,best_val,best_val,0.29344746470451355,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2025,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2025,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2026,zspace,mse_all,mse_all,1.8353755474090576,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2026,zspace,mae_all,mae_all,0.9320680499076843,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2026,zspace,mse_ili,mse_ili,3.277557849884033,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2026,zspace,mae_ili,mae_ili,1.253404974937439,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2026,zspace,best_val,best_val,0.28355273604393005,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2026,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2026,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2027,zspace,mse_all,mse_all,1.6687620878219604,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2027,zspace,mae_all,mae_all,0.8515945076942444,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2027,zspace,mse_ili,mse_ili,3.5471696853637695,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2027,zspace,mae_ili,mae_ili,1.2274878025054932,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2027,zspace,best_val,best_val,0.2928072512149811,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2027,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2027,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2028,zspace,mse_all,mse_all,1.8738856315612793,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2028,zspace,mae_all,mae_all,0.9553886651992798,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2028,zspace,mse_ili,mse_ili,3.545499086380005,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2028,zspace,mae_ili,mae_ili,1.312264084815979,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2028,zspace,best_val,best_val,0.26607370376586914,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2028,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2028,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2029,zspace,mse_all,mse_all,1.5832411050796509,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2029,zspace,mae_all,mae_all,0.8569397926330566,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2029,zspace,mse_ili,mse_ili,2.997915744781494,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2029,zspace,mae_ili,mae_ili,1.1695927381515503,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2029,zspace,best_val,best_val,0.2781672179698944,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2029,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2029,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2030,zspace,mse_all,mse_all,1.9594578742980957,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2030,zspace,mae_all,mae_all,0.9845414161682129,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2030,zspace,mse_ili,mse_ili,3.776555299758911,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2030,zspace,mae_ili,mae_ili,1.340434193611145,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2030,zspace,best_val,best_val,0.26040133833885193,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2030,zspace,total_parameters,total_parameters,720842.0,one_cell,from metrics.csv
+CORE|national|patchtst|L60|s2030,zspace,trainable_parameters,trainable_parameters,720842.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2021,zspace,mse_all,mse_all,5.22756290435791,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2021,zspace,mae_all,mae_all,1.5645942687988281,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2021,zspace,mse_ili,mse_ili,9.769075393676758,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2021,zspace,mae_ili,mae_ili,1.952754020690918,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2021,zspace,best_val,best_val,0.4459971487522125,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2021,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2021,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2022,zspace,mse_all,mse_all,5.299311637878418,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2022,zspace,mae_all,mae_all,1.5788843631744385,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2022,zspace,mse_ili,mse_ili,9.871871948242188,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2022,zspace,mae_ili,mae_ili,1.9819955825805664,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2022,zspace,best_val,best_val,0.4458298087120056,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2022,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2022,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2023,zspace,mse_all,mse_all,5.302173137664795,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2023,zspace,mae_all,mae_all,1.5785945653915405,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2023,zspace,mse_ili,mse_ili,9.869830131530762,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2023,zspace,mae_ili,mae_ili,1.967933177947998,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2023,zspace,best_val,best_val,0.4300428032875061,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2023,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2023,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2024,zspace,mse_all,mse_all,5.280362606048584,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2024,zspace,mae_all,mae_all,1.5707169771194458,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2024,zspace,mse_ili,mse_ili,9.888155937194824,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2024,zspace,mae_ili,mae_ili,1.9733741283416748,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2024,zspace,best_val,best_val,0.4326137602329254,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2024,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2024,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2025,zspace,mse_all,mse_all,5.3712968826293945,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2025,zspace,mae_all,mae_all,1.5855289697647095,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2025,zspace,mse_ili,mse_ili,10.008800506591797,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2025,zspace,mae_ili,mae_ili,2.0056326389312744,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2025,zspace,best_val,best_val,0.4527287781238556,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2025,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2025,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2026,zspace,mse_all,mse_all,5.284868240356445,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2026,zspace,mae_all,mae_all,1.5711922645568848,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2026,zspace,mse_ili,mse_ili,9.887242317199707,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2026,zspace,mae_ili,mae_ili,1.9826276302337646,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2026,zspace,best_val,best_val,0.44508451223373413,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2026,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2026,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2027,zspace,mse_all,mse_all,5.349973678588867,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2027,zspace,mae_all,mae_all,1.5888350009918213,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2027,zspace,mse_ili,mse_ili,9.960746765136719,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2027,zspace,mae_ili,mae_ili,1.9994189739227295,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2027,zspace,best_val,best_val,0.4418429136276245,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2027,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2027,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2028,zspace,mse_all,mse_all,5.269858360290527,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2028,zspace,mae_all,mae_all,1.576788067817688,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2028,zspace,mse_ili,mse_ili,9.824982643127441,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2028,zspace,mae_ili,mae_ili,1.9831162691116333,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2028,zspace,best_val,best_val,0.43350428342819214,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2028,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2028,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2029,zspace,mse_all,mse_all,5.107883453369141,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2029,zspace,mae_all,mae_all,1.5476609468460083,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2029,zspace,mse_ili,mse_ili,9.618682861328125,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2029,zspace,mae_ili,mae_ili,1.9270867109298706,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2029,zspace,best_val,best_val,0.4223219156265259,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2029,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2029,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2030,zspace,mse_all,mse_all,5.268683433532715,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2030,zspace,mae_all,mae_all,1.573472499847412,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2030,zspace,mse_ili,mse_ili,9.83222770690918,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2030,zspace,mae_ili,mae_ili,1.9736316204071045,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2030,zspace,best_val,best_val,0.4282204210758209,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2030,zspace,total_parameters,total_parameters,126421416.0,one_cell,from metrics.csv
+B|national|calf_llm|L24|s2030,zspace,trainable_parameters,trainable_parameters,1981608.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2021,zspace,mse_all,mse_all,5.455495834350586,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2021,zspace,mae_all,mae_all,1.5941275358200073,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2021,zspace,mse_ili,mse_ili,10.333517074584961,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2021,zspace,mae_ili,mae_ili,2.037363052368164,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2021,zspace,best_val,best_val,0.38855117559432983,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2021,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2021,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2022,zspace,mse_all,mse_all,5.513369560241699,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2022,zspace,mae_all,mae_all,1.6047488451004028,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2022,zspace,mse_ili,mse_ili,10.47489070892334,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2022,zspace,mae_ili,mae_ili,2.0419280529022217,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2022,zspace,best_val,best_val,0.3929036557674408,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2022,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2022,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2023,zspace,mse_all,mse_all,5.445499420166016,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2023,zspace,mae_all,mae_all,1.5933256149291992,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2023,zspace,mse_ili,mse_ili,10.292881965637207,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2023,zspace,mae_ili,mae_ili,2.0197057723999023,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2023,zspace,best_val,best_val,0.37131255865097046,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2023,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2023,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2024,zspace,mse_all,mse_all,5.462141036987305,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2024,zspace,mae_all,mae_all,1.5956746339797974,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2024,zspace,mse_ili,mse_ili,10.362628936767578,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2024,zspace,mae_ili,mae_ili,2.03853702545166,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2024,zspace,best_val,best_val,0.36992692947387695,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2024,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2024,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2025,zspace,mse_all,mse_all,5.531358242034912,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2025,zspace,mae_all,mae_all,1.6028441190719604,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2025,zspace,mse_ili,mse_ili,10.459770202636719,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2025,zspace,mae_ili,mae_ili,2.0496432781219482,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2025,zspace,best_val,best_val,0.38929685950279236,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2025,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2025,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2026,zspace,mse_all,mse_all,5.4940338134765625,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2026,zspace,mae_all,mae_all,1.6016883850097656,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2026,zspace,mse_ili,mse_ili,10.453216552734375,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2026,zspace,mae_ili,mae_ili,2.0456011295318604,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2026,zspace,best_val,best_val,0.37860408425331116,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2026,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2026,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2027,zspace,mse_all,mse_all,5.322310447692871,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2027,zspace,mae_all,mae_all,1.571354627609253,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2027,zspace,mse_ili,mse_ili,10.145452499389648,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2027,zspace,mae_ili,mae_ili,1.9909791946411133,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2027,zspace,best_val,best_val,0.36405685544013977,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2027,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2027,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2028,zspace,mse_all,mse_all,5.294610500335693,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2028,zspace,mae_all,mae_all,1.5637571811676025,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2028,zspace,mse_ili,mse_ili,10.11421012878418,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2028,zspace,mae_ili,mae_ili,1.9850497245788574,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2028,zspace,best_val,best_val,0.36149218678474426,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2028,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2028,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2029,zspace,mse_all,mse_all,5.340389728546143,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2029,zspace,mae_all,mae_all,1.573862075805664,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2029,zspace,mse_ili,mse_ili,10.14768123626709,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2029,zspace,mae_ili,mae_ili,2.001171588897705,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2029,zspace,best_val,best_val,0.35513487458229065,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2029,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2029,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2030,zspace,mse_all,mse_all,5.4948506355285645,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2030,zspace,mae_all,mae_all,1.6010589599609375,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2030,zspace,mse_ili,mse_ili,10.472542762756348,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2030,zspace,mae_ili,mae_ili,2.0525689125061035,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2030,zspace,best_val,best_val,0.38544589281082153,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2030,zspace,total_parameters,total_parameters,126486012.0,one_cell,from metrics.csv
+B|national|calf_llm|L36|s2030,zspace,trainable_parameters,trainable_parameters,2046204.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2021,zspace,mse_all,mse_all,5.4810028076171875,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2021,zspace,mae_all,mae_all,1.597448468208313,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2021,zspace,mse_ili,mse_ili,10.717945098876953,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2021,zspace,mae_ili,mae_ili,2.060882091522217,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2021,zspace,best_val,best_val,0.3735399842262268,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2021,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2021,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2022,zspace,mse_all,mse_all,5.562761306762695,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2022,zspace,mae_all,mae_all,1.6115773916244507,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2022,zspace,mse_ili,mse_ili,10.75167179107666,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2022,zspace,mae_ili,mae_ili,2.07067608833313,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2022,zspace,best_val,best_val,0.3797765374183655,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2022,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2022,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2023,zspace,mse_all,mse_all,5.674806594848633,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2023,zspace,mae_all,mae_all,1.6268655061721802,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2023,zspace,mse_ili,mse_ili,10.961113929748535,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2023,zspace,mae_ili,mae_ili,2.0964605808258057,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2023,zspace,best_val,best_val,0.38589873909950256,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2023,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2023,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2024,zspace,mse_all,mse_all,5.574341773986816,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2024,zspace,mae_all,mae_all,1.6152832508087158,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2024,zspace,mse_ili,mse_ili,10.778550148010254,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2024,zspace,mae_ili,mae_ili,2.0652637481689453,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2024,zspace,best_val,best_val,0.37434571981430054,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2024,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2024,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2025,zspace,mse_all,mse_all,5.607320785522461,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2025,zspace,mae_all,mae_all,1.6226089000701904,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2025,zspace,mse_ili,mse_ili,10.86370849609375,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2025,zspace,mae_ili,mae_ili,2.0833747386932373,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2025,zspace,best_val,best_val,0.3847288489341736,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2025,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2025,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2026,zspace,mse_all,mse_all,5.608481407165527,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2026,zspace,mae_all,mae_all,1.6205766201019287,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2026,zspace,mse_ili,mse_ili,10.816794395446777,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2026,zspace,mae_ili,mae_ili,2.0824499130249023,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2026,zspace,best_val,best_val,0.3824101686477661,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2026,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2026,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2027,zspace,mse_all,mse_all,5.537756443023682,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2027,zspace,mae_all,mae_all,1.6069810390472412,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2027,zspace,mse_ili,mse_ili,10.695024490356445,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2027,zspace,mae_ili,mae_ili,2.063694953918457,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2027,zspace,best_val,best_val,0.3709167242050171,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2027,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2027,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2028,zspace,mse_all,mse_all,5.607535362243652,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2028,zspace,mae_all,mae_all,1.6194530725479126,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2028,zspace,mse_ili,mse_ili,10.890841484069824,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2028,zspace,mae_ili,mae_ili,2.0765771865844727,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2028,zspace,best_val,best_val,0.38120296597480774,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2028,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2028,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2029,zspace,mse_all,mse_all,5.560497760772705,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2029,zspace,mae_all,mae_all,1.6148258447647095,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2029,zspace,mse_ili,mse_ili,10.685274124145508,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2029,zspace,mae_ili,mae_ili,2.0696804523468018,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2029,zspace,best_val,best_val,0.3770190179347992,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2029,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2029,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2030,zspace,mse_all,mse_all,5.529850006103516,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2030,zspace,mae_all,mae_all,1.6089109182357788,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2030,zspace,mse_ili,mse_ili,10.751108169555664,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2030,zspace,mae_ili,mae_ili,2.06276273727417,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2030,zspace,best_val,best_val,0.37189358472824097,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2030,zspace,total_parameters,total_parameters,126550608.0,one_cell,from metrics.csv
+B|national|calf_llm|L48|s2030,zspace,trainable_parameters,trainable_parameters,2110800.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2021,zspace,mse_all,mse_all,5.724833011627197,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2021,zspace,mae_all,mae_all,1.6430139541625977,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2021,zspace,mse_ili,mse_ili,11.226088523864746,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2021,zspace,mae_ili,mae_ili,2.135911226272583,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2021,zspace,best_val,best_val,0.38792482018470764,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2021,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2021,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2022,zspace,mse_all,mse_all,5.890513896942139,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2022,zspace,mae_all,mae_all,1.6723971366882324,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2022,zspace,mse_ili,mse_ili,11.4851655960083,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2022,zspace,mae_ili,mae_ili,2.175055742263794,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2022,zspace,best_val,best_val,0.41312676668167114,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2022,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2022,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2023,zspace,mse_all,mse_all,5.771694183349609,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2023,zspace,mae_all,mae_all,1.6514784097671509,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2023,zspace,mse_ili,mse_ili,11.333462715148926,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2023,zspace,mae_ili,mae_ili,2.1382384300231934,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2023,zspace,best_val,best_val,0.39837801456451416,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2023,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2023,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2024,zspace,mse_all,mse_all,5.722766876220703,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2024,zspace,mae_all,mae_all,1.6437950134277344,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2024,zspace,mse_ili,mse_ili,11.246824264526367,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2024,zspace,mae_ili,mae_ili,2.1280298233032227,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2024,zspace,best_val,best_val,0.38764268159866333,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2024,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2024,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2025,zspace,mse_all,mse_all,5.7717108726501465,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2025,zspace,mae_all,mae_all,1.6518325805664062,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2025,zspace,mse_ili,mse_ili,11.318754196166992,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2025,zspace,mae_ili,mae_ili,2.149789571762085,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2025,zspace,best_val,best_val,0.3903963267803192,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2025,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2025,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2026,zspace,mse_all,mse_all,5.90492057800293,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2026,zspace,mae_all,mae_all,1.678892731666565,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2026,zspace,mse_ili,mse_ili,11.479265213012695,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2026,zspace,mae_ili,mae_ili,2.1756627559661865,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2026,zspace,best_val,best_val,0.39864102005958557,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2026,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2026,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2027,zspace,mse_all,mse_all,5.837948799133301,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2027,zspace,mae_all,mae_all,1.6625920534133911,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2027,zspace,mse_ili,mse_ili,11.42763614654541,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2027,zspace,mae_ili,mae_ili,2.1596245765686035,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2027,zspace,best_val,best_val,0.40505653619766235,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2027,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2027,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2028,zspace,mse_all,mse_all,5.848745822906494,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2028,zspace,mae_all,mae_all,1.6666120290756226,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2028,zspace,mse_ili,mse_ili,11.443506240844727,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2028,zspace,mae_ili,mae_ili,2.1596670150756836,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2028,zspace,best_val,best_val,0.39825257658958435,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2028,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2028,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2029,zspace,mse_all,mse_all,5.808729648590088,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2029,zspace,mae_all,mae_all,1.6580379009246826,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2029,zspace,mse_ili,mse_ili,11.386577606201172,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2029,zspace,mae_ili,mae_ili,2.1587722301483154,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2029,zspace,best_val,best_val,0.395479679107666,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2029,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2029,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2030,zspace,mse_all,mse_all,5.769439697265625,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2030,zspace,mae_all,mae_all,1.6543415784835815,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2030,zspace,mse_ili,mse_ili,11.300580978393555,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2030,zspace,mae_ili,mae_ili,2.1445870399475098,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2030,zspace,best_val,best_val,0.39050471782684326,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2030,zspace,total_parameters,total_parameters,126615204.0,one_cell,from metrics.csv
+B|national|calf_llm|L60|s2030,zspace,trainable_parameters,trainable_parameters,2175396.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2021,zspace,mse_all,mse_all,4.878252983093262,one_cell,from metrics.csv
+B|national|cnn|L24|s2021,zspace,mae_all,mae_all,1.5823619365692139,one_cell,from metrics.csv
+B|national|cnn|L24|s2021,zspace,mse_ili,mse_ili,9.331581115722656,one_cell,from metrics.csv
+B|national|cnn|L24|s2021,zspace,mae_ili,mae_ili,1.9029394388198853,one_cell,from metrics.csv
+B|national|cnn|L24|s2021,zspace,best_val,best_val,0.7081999778747559,one_cell,from metrics.csv
+B|national|cnn|L24|s2021,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2021,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2022,zspace,mse_all,mse_all,6.129701614379883,one_cell,from metrics.csv
+B|national|cnn|L24|s2022,zspace,mae_all,mae_all,1.7242112159729004,one_cell,from metrics.csv
+B|national|cnn|L24|s2022,zspace,mse_ili,mse_ili,11.086828231811523,one_cell,from metrics.csv
+B|national|cnn|L24|s2022,zspace,mae_ili,mae_ili,2.139439344406128,one_cell,from metrics.csv
+B|national|cnn|L24|s2022,zspace,best_val,best_val,0.7065034508705139,one_cell,from metrics.csv
+B|national|cnn|L24|s2022,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2022,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2023,zspace,mse_all,mse_all,5.919229030609131,one_cell,from metrics.csv
+B|national|cnn|L24|s2023,zspace,mae_all,mae_all,1.7057934999465942,one_cell,from metrics.csv
+B|national|cnn|L24|s2023,zspace,mse_ili,mse_ili,10.468798637390137,one_cell,from metrics.csv
+B|national|cnn|L24|s2023,zspace,mae_ili,mae_ili,2.019733428955078,one_cell,from metrics.csv
+B|national|cnn|L24|s2023,zspace,best_val,best_val,0.7189315557479858,one_cell,from metrics.csv
+B|national|cnn|L24|s2023,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2023,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2024,zspace,mse_all,mse_all,6.122406959533691,one_cell,from metrics.csv
+B|national|cnn|L24|s2024,zspace,mae_all,mae_all,1.726691722869873,one_cell,from metrics.csv
+B|national|cnn|L24|s2024,zspace,mse_ili,mse_ili,11.051939964294434,one_cell,from metrics.csv
+B|national|cnn|L24|s2024,zspace,mae_ili,mae_ili,2.1398074626922607,one_cell,from metrics.csv
+B|national|cnn|L24|s2024,zspace,best_val,best_val,0.7118654251098633,one_cell,from metrics.csv
+B|national|cnn|L24|s2024,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2024,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2025,zspace,mse_all,mse_all,6.2038068771362305,one_cell,from metrics.csv
+B|national|cnn|L24|s2025,zspace,mae_all,mae_all,1.735016107559204,one_cell,from metrics.csv
+B|national|cnn|L24|s2025,zspace,mse_ili,mse_ili,11.054888725280762,one_cell,from metrics.csv
+B|national|cnn|L24|s2025,zspace,mae_ili,mae_ili,2.1479759216308594,one_cell,from metrics.csv
+B|national|cnn|L24|s2025,zspace,best_val,best_val,0.7028067111968994,one_cell,from metrics.csv
+B|national|cnn|L24|s2025,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2025,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2026,zspace,mse_all,mse_all,7.439726829528809,one_cell,from metrics.csv
+B|national|cnn|L24|s2026,zspace,mae_all,mae_all,1.9098072052001953,one_cell,from metrics.csv
+B|national|cnn|L24|s2026,zspace,mse_ili,mse_ili,12.68554401397705,one_cell,from metrics.csv
+B|national|cnn|L24|s2026,zspace,mae_ili,mae_ili,2.4335899353027344,one_cell,from metrics.csv
+B|national|cnn|L24|s2026,zspace,best_val,best_val,0.7122243642807007,one_cell,from metrics.csv
+B|national|cnn|L24|s2026,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2026,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2027,zspace,mse_all,mse_all,6.4027557373046875,one_cell,from metrics.csv
+B|national|cnn|L24|s2027,zspace,mae_all,mae_all,1.767958402633667,one_cell,from metrics.csv
+B|national|cnn|L24|s2027,zspace,mse_ili,mse_ili,11.067267417907715,one_cell,from metrics.csv
+B|national|cnn|L24|s2027,zspace,mae_ili,mae_ili,2.126715898513794,one_cell,from metrics.csv
+B|national|cnn|L24|s2027,zspace,best_val,best_val,0.7110220193862915,one_cell,from metrics.csv
+B|national|cnn|L24|s2027,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2027,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2028,zspace,mse_all,mse_all,5.952103614807129,one_cell,from metrics.csv
+B|national|cnn|L24|s2028,zspace,mae_all,mae_all,1.6965510845184326,one_cell,from metrics.csv
+B|national|cnn|L24|s2028,zspace,mse_ili,mse_ili,10.822623252868652,one_cell,from metrics.csv
+B|national|cnn|L24|s2028,zspace,mae_ili,mae_ili,2.106022357940674,one_cell,from metrics.csv
+B|national|cnn|L24|s2028,zspace,best_val,best_val,0.6991873979568481,one_cell,from metrics.csv
+B|national|cnn|L24|s2028,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2028,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2029,zspace,mse_all,mse_all,5.379675388336182,one_cell,from metrics.csv
+B|national|cnn|L24|s2029,zspace,mae_all,mae_all,1.6272928714752197,one_cell,from metrics.csv
+B|national|cnn|L24|s2029,zspace,mse_ili,mse_ili,10.105499267578125,one_cell,from metrics.csv
+B|national|cnn|L24|s2029,zspace,mae_ili,mae_ili,1.9795398712158203,one_cell,from metrics.csv
+B|national|cnn|L24|s2029,zspace,best_val,best_val,0.7027374505996704,one_cell,from metrics.csv
+B|national|cnn|L24|s2029,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2029,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2030,zspace,mse_all,mse_all,4.964142322540283,one_cell,from metrics.csv
+B|national|cnn|L24|s2030,zspace,mae_all,mae_all,1.5875571966171265,one_cell,from metrics.csv
+B|national|cnn|L24|s2030,zspace,mse_ili,mse_ili,9.50282096862793,one_cell,from metrics.csv
+B|national|cnn|L24|s2030,zspace,mae_ili,mae_ili,1.9267128705978394,one_cell,from metrics.csv
+B|national|cnn|L24|s2030,zspace,best_val,best_val,0.7082116007804871,one_cell,from metrics.csv
+B|national|cnn|L24|s2030,zspace,total_parameters,total_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L24|s2030,zspace,trainable_parameters,trainable_parameters,22488.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2021,zspace,mse_all,mse_all,4.525169849395752,one_cell,from metrics.csv
+B|national|cnn|L36|s2021,zspace,mae_all,mae_all,1.5512531995773315,one_cell,from metrics.csv
+B|national|cnn|L36|s2021,zspace,mse_ili,mse_ili,8.982755661010742,one_cell,from metrics.csv
+B|national|cnn|L36|s2021,zspace,mae_ili,mae_ili,1.9635049104690552,one_cell,from metrics.csv
+B|national|cnn|L36|s2021,zspace,best_val,best_val,0.6575241088867188,one_cell,from metrics.csv
+B|national|cnn|L36|s2021,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2021,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2022,zspace,mse_all,mse_all,4.904360294342041,one_cell,from metrics.csv
+B|national|cnn|L36|s2022,zspace,mae_all,mae_all,1.5790425539016724,one_cell,from metrics.csv
+B|national|cnn|L36|s2022,zspace,mse_ili,mse_ili,9.620651245117188,one_cell,from metrics.csv
+B|national|cnn|L36|s2022,zspace,mae_ili,mae_ili,1.9408248662948608,one_cell,from metrics.csv
+B|national|cnn|L36|s2022,zspace,best_val,best_val,0.65862637758255,one_cell,from metrics.csv
+B|national|cnn|L36|s2022,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2022,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2023,zspace,mse_all,mse_all,4.5830464363098145,one_cell,from metrics.csv
+B|national|cnn|L36|s2023,zspace,mae_all,mae_all,1.5482618808746338,one_cell,from metrics.csv
+B|national|cnn|L36|s2023,zspace,mse_ili,mse_ili,9.15613079071045,one_cell,from metrics.csv
+B|national|cnn|L36|s2023,zspace,mae_ili,mae_ili,1.9582210779190063,one_cell,from metrics.csv
+B|national|cnn|L36|s2023,zspace,best_val,best_val,0.6547398567199707,one_cell,from metrics.csv
+B|national|cnn|L36|s2023,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2023,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2024,zspace,mse_all,mse_all,6.6736016273498535,one_cell,from metrics.csv
+B|national|cnn|L36|s2024,zspace,mae_all,mae_all,1.7986491918563843,one_cell,from metrics.csv
+B|national|cnn|L36|s2024,zspace,mse_ili,mse_ili,12.27983570098877,one_cell,from metrics.csv
+B|national|cnn|L36|s2024,zspace,mae_ili,mae_ili,2.315009832382202,one_cell,from metrics.csv
+B|national|cnn|L36|s2024,zspace,best_val,best_val,0.6587371230125427,one_cell,from metrics.csv
+B|national|cnn|L36|s2024,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2024,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2025,zspace,mse_all,mse_all,6.8340253829956055,one_cell,from metrics.csv
+B|national|cnn|L36|s2025,zspace,mae_all,mae_all,1.8192702531814575,one_cell,from metrics.csv
+B|national|cnn|L36|s2025,zspace,mse_ili,mse_ili,12.440455436706543,one_cell,from metrics.csv
+B|national|cnn|L36|s2025,zspace,mae_ili,mae_ili,2.339442014694214,one_cell,from metrics.csv
+B|national|cnn|L36|s2025,zspace,best_val,best_val,0.6579557061195374,one_cell,from metrics.csv
+B|national|cnn|L36|s2025,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2025,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2026,zspace,mse_all,mse_all,5.405601501464844,one_cell,from metrics.csv
+B|national|cnn|L36|s2026,zspace,mae_all,mae_all,1.6403791904449463,one_cell,from metrics.csv
+B|national|cnn|L36|s2026,zspace,mse_ili,mse_ili,10.296725273132324,one_cell,from metrics.csv
+B|national|cnn|L36|s2026,zspace,mae_ili,mae_ili,2.0008082389831543,one_cell,from metrics.csv
+B|national|cnn|L36|s2026,zspace,best_val,best_val,0.6612227559089661,one_cell,from metrics.csv
+B|national|cnn|L36|s2026,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2026,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2027,zspace,mse_all,mse_all,4.41464900970459,one_cell,from metrics.csv
+B|national|cnn|L36|s2027,zspace,mae_all,mae_all,1.540379524230957,one_cell,from metrics.csv
+B|national|cnn|L36|s2027,zspace,mse_ili,mse_ili,8.853534698486328,one_cell,from metrics.csv
+B|national|cnn|L36|s2027,zspace,mae_ili,mae_ili,1.9846744537353516,one_cell,from metrics.csv
+B|national|cnn|L36|s2027,zspace,best_val,best_val,0.6557462215423584,one_cell,from metrics.csv
+B|national|cnn|L36|s2027,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2027,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2028,zspace,mse_all,mse_all,4.651697635650635,one_cell,from metrics.csv
+B|national|cnn|L36|s2028,zspace,mae_all,mae_all,1.556226372718811,one_cell,from metrics.csv
+B|national|cnn|L36|s2028,zspace,mse_ili,mse_ili,9.22778034210205,one_cell,from metrics.csv
+B|national|cnn|L36|s2028,zspace,mae_ili,mae_ili,1.9496574401855469,one_cell,from metrics.csv
+B|national|cnn|L36|s2028,zspace,best_val,best_val,0.6540399789810181,one_cell,from metrics.csv
+B|national|cnn|L36|s2028,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2028,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2029,zspace,mse_all,mse_all,4.508040904998779,one_cell,from metrics.csv
+B|national|cnn|L36|s2029,zspace,mae_all,mae_all,1.5529069900512695,one_cell,from metrics.csv
+B|national|cnn|L36|s2029,zspace,mse_ili,mse_ili,8.944660186767578,one_cell,from metrics.csv
+B|national|cnn|L36|s2029,zspace,mae_ili,mae_ili,1.9707869291305542,one_cell,from metrics.csv
+B|national|cnn|L36|s2029,zspace,best_val,best_val,0.6606683731079102,one_cell,from metrics.csv
+B|national|cnn|L36|s2029,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2029,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2030,zspace,mse_all,mse_all,6.607450485229492,one_cell,from metrics.csv
+B|national|cnn|L36|s2030,zspace,mae_all,mae_all,1.7885457277297974,one_cell,from metrics.csv
+B|national|cnn|L36|s2030,zspace,mse_ili,mse_ili,12.184478759765625,one_cell,from metrics.csv
+B|national|cnn|L36|s2030,zspace,mae_ili,mae_ili,2.2890443801879883,one_cell,from metrics.csv
+B|national|cnn|L36|s2030,zspace,best_val,best_val,0.6599052548408508,one_cell,from metrics.csv
+B|national|cnn|L36|s2030,zspace,total_parameters,total_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L36|s2030,zspace,trainable_parameters,trainable_parameters,23268.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2021,zspace,mse_all,mse_all,4.702238082885742,one_cell,from metrics.csv
+B|national|cnn|L48|s2021,zspace,mae_all,mae_all,1.57406747341156,one_cell,from metrics.csv
+B|national|cnn|L48|s2021,zspace,mse_ili,mse_ili,9.361701965332031,one_cell,from metrics.csv
+B|national|cnn|L48|s2021,zspace,mae_ili,mae_ili,2.0035483837127686,one_cell,from metrics.csv
+B|national|cnn|L48|s2021,zspace,best_val,best_val,0.6617717146873474,one_cell,from metrics.csv
+B|national|cnn|L48|s2021,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2021,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2022,zspace,mse_all,mse_all,5.540442943572998,one_cell,from metrics.csv
+B|national|cnn|L48|s2022,zspace,mae_all,mae_all,1.6540850400924683,one_cell,from metrics.csv
+B|national|cnn|L48|s2022,zspace,mse_ili,mse_ili,10.929581642150879,one_cell,from metrics.csv
+B|national|cnn|L48|s2022,zspace,mae_ili,mae_ili,2.0791640281677246,one_cell,from metrics.csv
+B|national|cnn|L48|s2022,zspace,best_val,best_val,0.6564459204673767,one_cell,from metrics.csv
+B|national|cnn|L48|s2022,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2022,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2023,zspace,mse_all,mse_all,6.302429676055908,one_cell,from metrics.csv
+B|national|cnn|L48|s2023,zspace,mae_all,mae_all,1.7520307302474976,one_cell,from metrics.csv
+B|national|cnn|L48|s2023,zspace,mse_ili,mse_ili,12.144156455993652,one_cell,from metrics.csv
+B|national|cnn|L48|s2023,zspace,mae_ili,mae_ili,2.242464303970337,one_cell,from metrics.csv
+B|national|cnn|L48|s2023,zspace,best_val,best_val,0.6585817337036133,one_cell,from metrics.csv
+B|national|cnn|L48|s2023,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2023,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2024,zspace,mse_all,mse_all,5.849139213562012,one_cell,from metrics.csv
+B|national|cnn|L48|s2024,zspace,mae_all,mae_all,1.6930793523788452,one_cell,from metrics.csv
+B|national|cnn|L48|s2024,zspace,mse_ili,mse_ili,11.452471733093262,one_cell,from metrics.csv
+B|national|cnn|L48|s2024,zspace,mae_ili,mae_ili,2.145260810852051,one_cell,from metrics.csv
+B|national|cnn|L48|s2024,zspace,best_val,best_val,0.6586408019065857,one_cell,from metrics.csv
+B|national|cnn|L48|s2024,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2024,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2025,zspace,mse_all,mse_all,4.701918601989746,one_cell,from metrics.csv
+B|national|cnn|L48|s2025,zspace,mae_all,mae_all,1.5702168941497803,one_cell,from metrics.csv
+B|national|cnn|L48|s2025,zspace,mse_ili,mse_ili,9.40615177154541,one_cell,from metrics.csv
+B|national|cnn|L48|s2025,zspace,mae_ili,mae_ili,1.9883997440338135,one_cell,from metrics.csv
+B|national|cnn|L48|s2025,zspace,best_val,best_val,0.6583864092826843,one_cell,from metrics.csv
+B|national|cnn|L48|s2025,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2025,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2026,zspace,mse_all,mse_all,5.893833637237549,one_cell,from metrics.csv
+B|national|cnn|L48|s2026,zspace,mae_all,mae_all,1.6933540105819702,one_cell,from metrics.csv
+B|national|cnn|L48|s2026,zspace,mse_ili,mse_ili,11.571357727050781,one_cell,from metrics.csv
+B|national|cnn|L48|s2026,zspace,mae_ili,mae_ili,2.1587979793548584,one_cell,from metrics.csv
+B|national|cnn|L48|s2026,zspace,best_val,best_val,0.656866192817688,one_cell,from metrics.csv
+B|national|cnn|L48|s2026,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2026,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2027,zspace,mse_all,mse_all,5.302933216094971,one_cell,from metrics.csv
+B|national|cnn|L48|s2027,zspace,mae_all,mae_all,1.6354635953903198,one_cell,from metrics.csv
+B|national|cnn|L48|s2027,zspace,mse_ili,mse_ili,10.382232666015625,one_cell,from metrics.csv
+B|national|cnn|L48|s2027,zspace,mae_ili,mae_ili,2.0198206901550293,one_cell,from metrics.csv
+B|national|cnn|L48|s2027,zspace,best_val,best_val,0.6608328223228455,one_cell,from metrics.csv
+B|national|cnn|L48|s2027,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2027,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2028,zspace,mse_all,mse_all,6.23337984085083,one_cell,from metrics.csv
+B|national|cnn|L48|s2028,zspace,mae_all,mae_all,1.7496874332427979,one_cell,from metrics.csv
+B|national|cnn|L48|s2028,zspace,mse_ili,mse_ili,11.737995147705078,one_cell,from metrics.csv
+B|national|cnn|L48|s2028,zspace,mae_ili,mae_ili,2.174713611602783,one_cell,from metrics.csv
+B|national|cnn|L48|s2028,zspace,best_val,best_val,0.6593039631843567,one_cell,from metrics.csv
+B|national|cnn|L48|s2028,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2028,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2029,zspace,mse_all,mse_all,7.170236587524414,one_cell,from metrics.csv
+B|national|cnn|L48|s2029,zspace,mae_all,mae_all,1.8699907064437866,one_cell,from metrics.csv
+B|national|cnn|L48|s2029,zspace,mse_ili,mse_ili,13.460491180419922,one_cell,from metrics.csv
+B|national|cnn|L48|s2029,zspace,mae_ili,mae_ili,2.444455146789551,one_cell,from metrics.csv
+B|national|cnn|L48|s2029,zspace,best_val,best_val,0.6614415049552917,one_cell,from metrics.csv
+B|national|cnn|L48|s2029,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2029,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2030,zspace,mse_all,mse_all,7.226319313049316,one_cell,from metrics.csv
+B|national|cnn|L48|s2030,zspace,mae_all,mae_all,1.8800386190414429,one_cell,from metrics.csv
+B|national|cnn|L48|s2030,zspace,mse_ili,mse_ili,13.425207138061523,one_cell,from metrics.csv
+B|national|cnn|L48|s2030,zspace,mae_ili,mae_ili,2.4431838989257812,one_cell,from metrics.csv
+B|national|cnn|L48|s2030,zspace,best_val,best_val,0.6604915261268616,one_cell,from metrics.csv
+B|national|cnn|L48|s2030,zspace,total_parameters,total_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L48|s2030,zspace,trainable_parameters,trainable_parameters,24048.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2021,zspace,mse_all,mse_all,7.265756130218506,one_cell,from metrics.csv
+B|national|cnn|L60|s2021,zspace,mae_all,mae_all,1.892829418182373,one_cell,from metrics.csv
+B|national|cnn|L60|s2021,zspace,mse_ili,mse_ili,13.699821472167969,one_cell,from metrics.csv
+B|national|cnn|L60|s2021,zspace,mae_ili,mae_ili,2.4479269981384277,one_cell,from metrics.csv
+B|national|cnn|L60|s2021,zspace,best_val,best_val,0.6658467650413513,one_cell,from metrics.csv
+B|national|cnn|L60|s2021,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2021,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2022,zspace,mse_all,mse_all,6.903573036193848,one_cell,from metrics.csv
+B|national|cnn|L60|s2022,zspace,mae_all,mae_all,1.841030478477478,one_cell,from metrics.csv
+B|national|cnn|L60|s2022,zspace,mse_ili,mse_ili,13.326422691345215,one_cell,from metrics.csv
+B|national|cnn|L60|s2022,zspace,mae_ili,mae_ili,2.3999342918395996,one_cell,from metrics.csv
+B|national|cnn|L60|s2022,zspace,best_val,best_val,0.6615014672279358,one_cell,from metrics.csv
+B|national|cnn|L60|s2022,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2022,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2023,zspace,mse_all,mse_all,5.455288887023926,one_cell,from metrics.csv
+B|national|cnn|L60|s2023,zspace,mae_all,mae_all,1.6568175554275513,one_cell,from metrics.csv
+B|national|cnn|L60|s2023,zspace,mse_ili,mse_ili,10.942229270935059,one_cell,from metrics.csv
+B|national|cnn|L60|s2023,zspace,mae_ili,mae_ili,2.0996804237365723,one_cell,from metrics.csv
+B|national|cnn|L60|s2023,zspace,best_val,best_val,0.6533554792404175,one_cell,from metrics.csv
+B|national|cnn|L60|s2023,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2023,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2024,zspace,mse_all,mse_all,5.965557098388672,one_cell,from metrics.csv
+B|national|cnn|L60|s2024,zspace,mae_all,mae_all,1.724724292755127,one_cell,from metrics.csv
+B|national|cnn|L60|s2024,zspace,mse_ili,mse_ili,11.677099227905273,one_cell,from metrics.csv
+B|national|cnn|L60|s2024,zspace,mae_ili,mae_ili,2.173990488052368,one_cell,from metrics.csv
+B|national|cnn|L60|s2024,zspace,best_val,best_val,0.6640799045562744,one_cell,from metrics.csv
+B|national|cnn|L60|s2024,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2024,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2025,zspace,mse_all,mse_all,7.108031272888184,one_cell,from metrics.csv
+B|national|cnn|L60|s2025,zspace,mae_all,mae_all,1.8656530380249023,one_cell,from metrics.csv
+B|national|cnn|L60|s2025,zspace,mse_ili,mse_ili,13.527315139770508,one_cell,from metrics.csv
+B|national|cnn|L60|s2025,zspace,mae_ili,mae_ili,2.424058437347412,one_cell,from metrics.csv
+B|national|cnn|L60|s2025,zspace,best_val,best_val,0.6683956980705261,one_cell,from metrics.csv
+B|national|cnn|L60|s2025,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2025,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2026,zspace,mse_all,mse_all,6.7335076332092285,one_cell,from metrics.csv
+B|national|cnn|L60|s2026,zspace,mae_all,mae_all,1.8162357807159424,one_cell,from metrics.csv
+B|national|cnn|L60|s2026,zspace,mse_ili,mse_ili,12.957602500915527,one_cell,from metrics.csv
+B|national|cnn|L60|s2026,zspace,mae_ili,mae_ili,2.3428189754486084,one_cell,from metrics.csv
+B|national|cnn|L60|s2026,zspace,best_val,best_val,0.6542301774024963,one_cell,from metrics.csv
+B|national|cnn|L60|s2026,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2026,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2027,zspace,mse_all,mse_all,6.77667760848999,one_cell,from metrics.csv
+B|national|cnn|L60|s2027,zspace,mae_all,mae_all,1.8222867250442505,one_cell,from metrics.csv
+B|national|cnn|L60|s2027,zspace,mse_ili,mse_ili,13.225176811218262,one_cell,from metrics.csv
+B|national|cnn|L60|s2027,zspace,mae_ili,mae_ili,2.375004768371582,one_cell,from metrics.csv
+B|national|cnn|L60|s2027,zspace,best_val,best_val,0.65741366147995,one_cell,from metrics.csv
+B|national|cnn|L60|s2027,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2027,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2028,zspace,mse_all,mse_all,7.111028671264648,one_cell,from metrics.csv
+B|national|cnn|L60|s2028,zspace,mae_all,mae_all,1.8739874362945557,one_cell,from metrics.csv
+B|national|cnn|L60|s2028,zspace,mse_ili,mse_ili,13.417961120605469,one_cell,from metrics.csv
+B|national|cnn|L60|s2028,zspace,mae_ili,mae_ili,2.399960517883301,one_cell,from metrics.csv
+B|national|cnn|L60|s2028,zspace,best_val,best_val,0.664985716342926,one_cell,from metrics.csv
+B|national|cnn|L60|s2028,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2028,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2029,zspace,mse_all,mse_all,6.996222496032715,one_cell,from metrics.csv
+B|national|cnn|L60|s2029,zspace,mae_all,mae_all,1.8529449701309204,one_cell,from metrics.csv
+B|national|cnn|L60|s2029,zspace,mse_ili,mse_ili,13.308016777038574,one_cell,from metrics.csv
+B|national|cnn|L60|s2029,zspace,mae_ili,mae_ili,2.390413284301758,one_cell,from metrics.csv
+B|national|cnn|L60|s2029,zspace,best_val,best_val,0.6610057950019836,one_cell,from metrics.csv
+B|national|cnn|L60|s2029,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2029,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2030,zspace,mse_all,mse_all,6.97769832611084,one_cell,from metrics.csv
+B|national|cnn|L60|s2030,zspace,mae_all,mae_all,1.8544925451278687,one_cell,from metrics.csv
+B|national|cnn|L60|s2030,zspace,mse_ili,mse_ili,13.262238502502441,one_cell,from metrics.csv
+B|national|cnn|L60|s2030,zspace,mae_ili,mae_ili,2.380213737487793,one_cell,from metrics.csv
+B|national|cnn|L60|s2030,zspace,best_val,best_val,0.6635951399803162,one_cell,from metrics.csv
+B|national|cnn|L60|s2030,zspace,total_parameters,total_parameters,24828.0,one_cell,from metrics.csv
+B|national|cnn|L60|s2030,zspace,trainable_parameters,trainable_parameters,24828.0,one_cell,from metrics.csv
+B|national|decision_tree|L24|s2022,zspace,val_mse_7var_z,val_mse_7var_z,0.49416033779420127,one_cell,from metrics.json
+B|national|decision_tree|L24|s2022,zspace,val_mae_7var_z,val_mae_7var_z,0.4547075635641324,one_cell,from metrics.json
+B|national|decision_tree|L24|s2022,zspace,test_mse_7var_z,test_mse_7var_z,4.492410736076066,one_cell,from metrics.json
+B|national|decision_tree|L24|s2022,zspace,test_mae_7var_z,test_mae_7var_z,1.4178446017274846,one_cell,from metrics.json
+B|national|decision_tree|L24|s2022,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,7.582738247585418,one_cell,from metrics.json
+B|national|decision_tree|L24|s2022,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.6165200037255143,one_cell,from metrics.json
+B|national|decision_tree|L24|s2025,zspace,val_mse_7var_z,val_mse_7var_z,0.478162596324601,one_cell,from metrics.json
+B|national|decision_tree|L24|s2025,zspace,val_mae_7var_z,val_mae_7var_z,0.44020499580347533,one_cell,from metrics.json
+B|national|decision_tree|L24|s2025,zspace,test_mse_7var_z,test_mse_7var_z,4.31763312960888,one_cell,from metrics.json
+B|national|decision_tree|L24|s2025,zspace,test_mae_7var_z,test_mae_7var_z,1.3857574391576784,one_cell,from metrics.json
+B|national|decision_tree|L24|s2025,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.212796173131464,one_cell,from metrics.json
+B|national|decision_tree|L24|s2025,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.7057123488076624,one_cell,from metrics.json
+B|national|decision_tree|L24|s2028,zspace,val_mse_7var_z,val_mse_7var_z,0.4772585076159398,one_cell,from metrics.json
+B|national|decision_tree|L24|s2028,zspace,val_mae_7var_z,val_mae_7var_z,0.4292490786520412,one_cell,from metrics.json
+B|national|decision_tree|L24|s2028,zspace,test_mse_7var_z,test_mse_7var_z,4.6400870593507255,one_cell,from metrics.json
+B|national|decision_tree|L24|s2028,zspace,test_mae_7var_z,test_mae_7var_z,1.452349772592351,one_cell,from metrics.json
+B|national|decision_tree|L24|s2028,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.01050310328967,one_cell,from metrics.json
+B|national|decision_tree|L24|s2028,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.6875049128836277,one_cell,from metrics.json
+B|national|decision_tree|L36|s2021,zspace,val_mse_7var_z,val_mse_7var_z,0.48619603846348347,one_cell,from metrics.json
+B|national|decision_tree|L36|s2021,zspace,val_mae_7var_z,val_mae_7var_z,0.41631988123417757,one_cell,from metrics.json
+B|national|decision_tree|L36|s2021,zspace,test_mse_7var_z,test_mse_7var_z,3.908507101826663,one_cell,from metrics.json
+B|national|decision_tree|L36|s2021,zspace,test_mae_7var_z,test_mae_7var_z,1.3011580545395267,one_cell,from metrics.json
+B|national|decision_tree|L36|s2021,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.122006071057612,one_cell,from metrics.json
+B|national|decision_tree|L36|s2021,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.7251888048381472,one_cell,from metrics.json
+B|national|decision_tree|L36|s2024,zspace,val_mse_7var_z,val_mse_7var_z,0.4685937196922161,one_cell,from metrics.json
+B|national|decision_tree|L36|s2024,zspace,val_mae_7var_z,val_mae_7var_z,0.42151414796550296,one_cell,from metrics.json
+B|national|decision_tree|L36|s2024,zspace,test_mse_7var_z,test_mse_7var_z,3.9065398208520423,one_cell,from metrics.json
+B|national|decision_tree|L36|s2024,zspace,test_mae_7var_z,test_mae_7var_z,1.3043463979519676,one_cell,from metrics.json
+B|national|decision_tree|L36|s2024,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.073865880209064,one_cell,from metrics.json
+B|national|decision_tree|L36|s2024,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.7184610695051097,one_cell,from metrics.json
+B|national|decision_tree|L36|s2027,zspace,val_mse_7var_z,val_mse_7var_z,0.48580640294893646,one_cell,from metrics.json
+B|national|decision_tree|L36|s2027,zspace,val_mae_7var_z,val_mae_7var_z,0.4232011631311145,one_cell,from metrics.json
+B|national|decision_tree|L36|s2027,zspace,test_mse_7var_z,test_mse_7var_z,4.04901516888489,one_cell,from metrics.json
+B|national|decision_tree|L36|s2027,zspace,test_mae_7var_z,test_mae_7var_z,1.333362720902606,one_cell,from metrics.json
+B|national|decision_tree|L36|s2027,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.091530156625234,one_cell,from metrics.json
+B|national|decision_tree|L36|s2027,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.7012754326310329,one_cell,from metrics.json
+B|national|decision_tree|L36|s2030,zspace,val_mse_7var_z,val_mse_7var_z,0.6018399605268526,one_cell,from metrics.json
+B|national|decision_tree|L36|s2030,zspace,val_mae_7var_z,val_mae_7var_z,0.4477377799511712,one_cell,from metrics.json
+B|national|decision_tree|L36|s2030,zspace,test_mse_7var_z,test_mse_7var_z,3.980470436216818,one_cell,from metrics.json
+B|national|decision_tree|L36|s2030,zspace,test_mae_7var_z,test_mae_7var_z,1.314597854613285,one_cell,from metrics.json
+B|national|decision_tree|L36|s2030,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.116543175218732,one_cell,from metrics.json
+B|national|decision_tree|L36|s2030,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.7036908559053192,one_cell,from metrics.json
+B|national|decision_tree|L48|s2023,zspace,val_mse_7var_z,val_mse_7var_z,0.5686698179629549,one_cell,from metrics.json
+B|national|decision_tree|L48|s2023,zspace,val_mae_7var_z,val_mae_7var_z,0.43488478371407835,one_cell,from metrics.json
+B|national|decision_tree|L48|s2023,zspace,test_mse_7var_z,test_mse_7var_z,4.470910553924825,one_cell,from metrics.json
+B|national|decision_tree|L48|s2023,zspace,test_mae_7var_z,test_mae_7var_z,1.4026260358260862,one_cell,from metrics.json
+B|national|decision_tree|L48|s2023,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,9.048341419227658,one_cell,from metrics.json
+B|national|decision_tree|L48|s2023,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.8465311319890063,one_cell,from metrics.json
+B|national|decision_tree|L48|s2026,zspace,val_mse_7var_z,val_mse_7var_z,0.5370904012983424,one_cell,from metrics.json
+B|national|decision_tree|L48|s2026,zspace,val_mae_7var_z,val_mae_7var_z,0.42020658099699565,one_cell,from metrics.json
+B|national|decision_tree|L48|s2026,zspace,test_mse_7var_z,test_mse_7var_z,4.286605522149586,one_cell,from metrics.json
+B|national|decision_tree|L48|s2026,zspace,test_mae_7var_z,test_mae_7var_z,1.3694051202546689,one_cell,from metrics.json
+B|national|decision_tree|L48|s2026,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.661207619530552,one_cell,from metrics.json
+B|national|decision_tree|L48|s2026,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.804575870574414,one_cell,from metrics.json
+B|national|decision_tree|L48|s2029,zspace,val_mse_7var_z,val_mse_7var_z,0.4972203625754877,one_cell,from metrics.json
+B|national|decision_tree|L48|s2029,zspace,val_mae_7var_z,val_mae_7var_z,0.42212886557951734,one_cell,from metrics.json
+B|national|decision_tree|L48|s2029,zspace,test_mse_7var_z,test_mse_7var_z,4.1807946263849844,one_cell,from metrics.json
+B|national|decision_tree|L48|s2029,zspace,test_mae_7var_z,test_mae_7var_z,1.3643614795637606,one_cell,from metrics.json
+B|national|decision_tree|L48|s2029,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.446884008145195,one_cell,from metrics.json
+B|national|decision_tree|L48|s2029,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.7817050181449519,one_cell,from metrics.json
+B|national|decision_tree|L60|s2022,zspace,val_mse_7var_z,val_mse_7var_z,0.5327296249480116,one_cell,from metrics.json
+B|national|decision_tree|L60|s2022,zspace,val_mae_7var_z,val_mae_7var_z,0.4372056078613341,one_cell,from metrics.json
+B|national|decision_tree|L60|s2022,zspace,test_mse_7var_z,test_mse_7var_z,4.307919628483211,one_cell,from metrics.json
+B|national|decision_tree|L60|s2022,zspace,test_mae_7var_z,test_mae_7var_z,1.4145571849159977,one_cell,from metrics.json
+B|national|decision_tree|L60|s2022,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.488526516611582,one_cell,from metrics.json
+B|national|decision_tree|L60|s2022,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.810380103007603,one_cell,from metrics.json
+B|national|decision_tree|L60|s2025,zspace,val_mse_7var_z,val_mse_7var_z,0.4612560523392056,one_cell,from metrics.json
+B|national|decision_tree|L60|s2025,zspace,val_mae_7var_z,val_mae_7var_z,0.4164321660038777,one_cell,from metrics.json
+B|national|decision_tree|L60|s2025,zspace,test_mse_7var_z,test_mse_7var_z,4.369280736257752,one_cell,from metrics.json
+B|national|decision_tree|L60|s2025,zspace,test_mae_7var_z,test_mae_7var_z,1.4171590942390695,one_cell,from metrics.json
+B|national|decision_tree|L60|s2025,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.72603304061271,one_cell,from metrics.json
+B|national|decision_tree|L60|s2025,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.8273165147215829,one_cell,from metrics.json
+B|national|decision_tree|L60|s2028,zspace,val_mse_7var_z,val_mse_7var_z,0.5396702835911524,one_cell,from metrics.json
+B|national|decision_tree|L60|s2028,zspace,val_mae_7var_z,val_mae_7var_z,0.44084255183236687,one_cell,from metrics.json
+B|national|decision_tree|L60|s2028,zspace,test_mse_7var_z,test_mse_7var_z,4.34419118901737,one_cell,from metrics.json
+B|national|decision_tree|L60|s2028,zspace,test_mae_7var_z,test_mae_7var_z,1.4178130273268936,one_cell,from metrics.json
+B|national|decision_tree|L60|s2028,zspace,test_mse_ilitotal_z,test_mse_ilitotal_z,8.568316062115933,one_cell,from metrics.json
+B|national|decision_tree|L60|s2028,zspace,test_mae_ilitotal_z,test_mae_ilitotal_z,1.8266678567960122,one_cell,from metrics.json
+B|national|dnn|L24|s2021,zspace,mse_all,mse_all,2.155514717102051,one_cell,from metrics.csv
+B|national|dnn|L24|s2021,zspace,mae_all,mae_all,1.0030760765075684,one_cell,from metrics.csv
+B|national|dnn|L24|s2021,zspace,mse_ili,mse_ili,4.418429851531982,one_cell,from metrics.csv
+B|national|dnn|L24|s2021,zspace,mae_ili,mae_ili,1.436858057975769,one_cell,from metrics.csv
+B|national|dnn|L24|s2021,zspace,best_val,best_val,0.2522090971469879,one_cell,from metrics.csv
+B|national|dnn|L24|s2021,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2021,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2022,zspace,mse_all,mse_all,2.1519155502319336,one_cell,from metrics.csv
+B|national|dnn|L24|s2022,zspace,mae_all,mae_all,0.9850665330886841,one_cell,from metrics.csv
+B|national|dnn|L24|s2022,zspace,mse_ili,mse_ili,4.481429576873779,one_cell,from metrics.csv
+B|national|dnn|L24|s2022,zspace,mae_ili,mae_ili,1.4176832437515259,one_cell,from metrics.csv
+B|national|dnn|L24|s2022,zspace,best_val,best_val,0.2506164312362671,one_cell,from metrics.csv
+B|national|dnn|L24|s2022,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2022,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2023,zspace,mse_all,mse_all,2.065369129180908,one_cell,from metrics.csv
+B|national|dnn|L24|s2023,zspace,mae_all,mae_all,0.9483885169029236,one_cell,from metrics.csv
+B|national|dnn|L24|s2023,zspace,mse_ili,mse_ili,4.457137107849121,one_cell,from metrics.csv
+B|national|dnn|L24|s2023,zspace,mae_ili,mae_ili,1.4261165857315063,one_cell,from metrics.csv
+B|national|dnn|L24|s2023,zspace,best_val,best_val,0.24848850071430206,one_cell,from metrics.csv
+B|national|dnn|L24|s2023,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2023,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2024,zspace,mse_all,mse_all,2.172879219055176,one_cell,from metrics.csv
+B|national|dnn|L24|s2024,zspace,mae_all,mae_all,0.9894088506698608,one_cell,from metrics.csv
+B|national|dnn|L24|s2024,zspace,mse_ili,mse_ili,4.5866241455078125,one_cell,from metrics.csv
+B|national|dnn|L24|s2024,zspace,mae_ili,mae_ili,1.4504497051239014,one_cell,from metrics.csv
+B|national|dnn|L24|s2024,zspace,best_val,best_val,0.2308039516210556,one_cell,from metrics.csv
+B|national|dnn|L24|s2024,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2024,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2025,zspace,mse_all,mse_all,2.22387433052063,one_cell,from metrics.csv
+B|national|dnn|L24|s2025,zspace,mae_all,mae_all,1.0285398960113525,one_cell,from metrics.csv
+B|national|dnn|L24|s2025,zspace,mse_ili,mse_ili,4.273824214935303,one_cell,from metrics.csv
+B|national|dnn|L24|s2025,zspace,mae_ili,mae_ili,1.4015737771987915,one_cell,from metrics.csv
+B|national|dnn|L24|s2025,zspace,best_val,best_val,0.24762246012687683,one_cell,from metrics.csv
+B|national|dnn|L24|s2025,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2025,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2026,zspace,mse_all,mse_all,2.2022643089294434,one_cell,from metrics.csv
+B|national|dnn|L24|s2026,zspace,mae_all,mae_all,0.9966394305229187,one_cell,from metrics.csv
+B|national|dnn|L24|s2026,zspace,mse_ili,mse_ili,4.666543483734131,one_cell,from metrics.csv
+B|national|dnn|L24|s2026,zspace,mae_ili,mae_ili,1.464714527130127,one_cell,from metrics.csv
+B|national|dnn|L24|s2026,zspace,best_val,best_val,0.2488662600517273,one_cell,from metrics.csv
+B|national|dnn|L24|s2026,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2026,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2027,zspace,mse_all,mse_all,2.101900339126587,one_cell,from metrics.csv
+B|national|dnn|L24|s2027,zspace,mae_all,mae_all,0.9803769588470459,one_cell,from metrics.csv
+B|national|dnn|L24|s2027,zspace,mse_ili,mse_ili,4.518827438354492,one_cell,from metrics.csv
+B|national|dnn|L24|s2027,zspace,mae_ili,mae_ili,1.4796288013458252,one_cell,from metrics.csv
+B|national|dnn|L24|s2027,zspace,best_val,best_val,0.24696345627307892,one_cell,from metrics.csv
+B|national|dnn|L24|s2027,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2027,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2028,zspace,mse_all,mse_all,2.3024070262908936,one_cell,from metrics.csv
+B|national|dnn|L24|s2028,zspace,mae_all,mae_all,1.0138109922409058,one_cell,from metrics.csv
+B|national|dnn|L24|s2028,zspace,mse_ili,mse_ili,4.7530035972595215,one_cell,from metrics.csv
+B|national|dnn|L24|s2028,zspace,mae_ili,mae_ili,1.483201026916504,one_cell,from metrics.csv
+B|national|dnn|L24|s2028,zspace,best_val,best_val,0.24420350790023804,one_cell,from metrics.csv
+B|national|dnn|L24|s2028,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2028,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2029,zspace,mse_all,mse_all,2.2594573497772217,one_cell,from metrics.csv
+B|national|dnn|L24|s2029,zspace,mae_all,mae_all,1.014356255531311,one_cell,from metrics.csv
+B|national|dnn|L24|s2029,zspace,mse_ili,mse_ili,4.810100555419922,one_cell,from metrics.csv
+B|national|dnn|L24|s2029,zspace,mae_ili,mae_ili,1.5220613479614258,one_cell,from metrics.csv
+B|national|dnn|L24|s2029,zspace,best_val,best_val,0.24813750386238098,one_cell,from metrics.csv
+B|national|dnn|L24|s2029,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2029,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2030,zspace,mse_all,mse_all,2.1905598640441895,one_cell,from metrics.csv
+B|national|dnn|L24|s2030,zspace,mae_all,mae_all,1.0121486186981201,one_cell,from metrics.csv
+B|national|dnn|L24|s2030,zspace,mse_ili,mse_ili,4.330981254577637,one_cell,from metrics.csv
+B|national|dnn|L24|s2030,zspace,mae_ili,mae_ili,1.4141223430633545,one_cell,from metrics.csv
+B|national|dnn|L24|s2030,zspace,best_val,best_val,0.23300881683826447,one_cell,from metrics.csv
+B|national|dnn|L24|s2030,zspace,total_parameters,total_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L24|s2030,zspace,trainable_parameters,trainable_parameters,33048.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2021,zspace,mse_all,mse_all,2.188758611679077,one_cell,from metrics.csv
+B|national|dnn|L36|s2021,zspace,mae_all,mae_all,1.0202471017837524,one_cell,from metrics.csv
+B|national|dnn|L36|s2021,zspace,mse_ili,mse_ili,4.234716415405273,one_cell,from metrics.csv
+B|national|dnn|L36|s2021,zspace,mae_ili,mae_ili,1.3490866422653198,one_cell,from metrics.csv
+B|national|dnn|L36|s2021,zspace,best_val,best_val,0.22104033827781677,one_cell,from metrics.csv
+B|national|dnn|L36|s2021,zspace,total_parameters,total_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2021,zspace,trainable_parameters,trainable_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2022,zspace,mse_all,mse_all,2.1415436267852783,one_cell,from metrics.csv
+B|national|dnn|L36|s2022,zspace,mae_all,mae_all,0.9909381866455078,one_cell,from metrics.csv
+B|national|dnn|L36|s2022,zspace,mse_ili,mse_ili,4.474577903747559,one_cell,from metrics.csv
+B|national|dnn|L36|s2022,zspace,mae_ili,mae_ili,1.4048643112182617,one_cell,from metrics.csv
+B|national|dnn|L36|s2022,zspace,best_val,best_val,0.2206827849149704,one_cell,from metrics.csv
+B|national|dnn|L36|s2022,zspace,total_parameters,total_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2022,zspace,trainable_parameters,trainable_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2023,zspace,mse_all,mse_all,2.0653603076934814,one_cell,from metrics.csv
+B|national|dnn|L36|s2023,zspace,mae_all,mae_all,0.9758066534996033,one_cell,from metrics.csv
+B|national|dnn|L36|s2023,zspace,mse_ili,mse_ili,4.233360767364502,one_cell,from metrics.csv
+B|national|dnn|L36|s2023,zspace,mae_ili,mae_ili,1.3755370378494263,one_cell,from metrics.csv
+B|national|dnn|L36|s2023,zspace,best_val,best_val,0.22798946499824524,one_cell,from metrics.csv
+B|national|dnn|L36|s2023,zspace,total_parameters,total_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2023,zspace,trainable_parameters,trainable_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2024,zspace,mse_all,mse_all,2.079318046569824,one_cell,from metrics.csv
+B|national|dnn|L36|s2024,zspace,mae_all,mae_all,0.9682767987251282,one_cell,from metrics.csv
+B|national|dnn|L36|s2024,zspace,mse_ili,mse_ili,4.359639644622803,one_cell,from metrics.csv
+B|national|dnn|L36|s2024,zspace,mae_ili,mae_ili,1.3742032051086426,one_cell,from metrics.csv
+B|national|dnn|L36|s2024,zspace,best_val,best_val,0.21667855978012085,one_cell,from metrics.csv
+B|national|dnn|L36|s2024,zspace,total_parameters,total_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2024,zspace,trainable_parameters,trainable_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2025,zspace,mse_all,mse_all,1.9252322912216187,one_cell,from metrics.csv
+B|national|dnn|L36|s2025,zspace,mae_all,mae_all,0.9259462952613831,one_cell,from metrics.csv
+B|national|dnn|L36|s2025,zspace,mse_ili,mse_ili,4.098586559295654,one_cell,from metrics.csv
+B|national|dnn|L36|s2025,zspace,mae_ili,mae_ili,1.3378103971481323,one_cell,from metrics.csv
+B|national|dnn|L36|s2025,zspace,best_val,best_val,0.19940398633480072,one_cell,from metrics.csv
+B|national|dnn|L36|s2025,zspace,total_parameters,total_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2025,zspace,trainable_parameters,trainable_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2026,zspace,mse_all,mse_all,1.9201463460922241,one_cell,from metrics.csv
+B|national|dnn|L36|s2026,zspace,mae_all,mae_all,0.927528440952301,one_cell,from metrics.csv
+B|national|dnn|L36|s2026,zspace,mse_ili,mse_ili,3.993807554244995,one_cell,from metrics.csv
+B|national|dnn|L36|s2026,zspace,mae_ili,mae_ili,1.3011888265609741,one_cell,from metrics.csv
+B|national|dnn|L36|s2026,zspace,best_val,best_val,0.21412105858325958,one_cell,from metrics.csv
+B|national|dnn|L36|s2026,zspace,total_parameters,total_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2026,zspace,trainable_parameters,trainable_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2029,zspace,mse_all,mse_all,2.082888603210449,one_cell,from metrics.csv
+B|national|dnn|L36|s2029,zspace,mae_all,mae_all,0.9989095330238342,one_cell,from metrics.csv
+B|national|dnn|L36|s2029,zspace,mse_ili,mse_ili,4.214605331420898,one_cell,from metrics.csv
+B|national|dnn|L36|s2029,zspace,mae_ili,mae_ili,1.3866833448410034,one_cell,from metrics.csv
+B|national|dnn|L36|s2029,zspace,best_val,best_val,0.2135029435157776,one_cell,from metrics.csv
+B|national|dnn|L36|s2029,zspace,total_parameters,total_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L36|s2029,zspace,trainable_parameters,trainable_parameters,34596.0,one_cell,from metrics.csv
+B|national|dnn|L48|s2022,zspace,mse_all,mse_all,2.5688869953155518,one_cell,from metrics.csv
+B|national|dnn|L48|s2022,zspace,mae_all,mae_all,1.1585068702697754,one_cell,from metrics.csv
+B|national|dnn|L48|s2022,zspace,mse_ili,mse_ili,4.522202491760254,one_cell,from metrics.csv
+B|national|dnn|L48|s2022,zspace,mae_ili,mae_ili,1.417646884918213,one_cell,from metrics.csv
+B|national|dnn|L48|s2022,zspace,best_val,best_val,0.22263354063034058,one_cell,from metrics.csv
+B|national|dnn|L48|s2022,zspace,total_parameters,total_parameters,36144.0,one_cell,from metrics.csv
+B|national|dnn|L48|s2022,zspace,trainable_parameters,trainable_parameters,36144.0,one_cell,from metrics.csv
+B|national|dnn|L48|s2025,zspace,mse_all,mse_all,2.061918020248413,one_cell,from metrics.csv
+B|national|dnn|L48|s2025,zspace,mae_all,mae_all,0.9913442134857178,one_cell,from metrics.csv
+B|national|dnn|L48|s2025,zspace,mse_ili,mse_ili,4.183635234832764,one_cell,from metrics.csv
+B|national|dnn|L48|s2025,zspace,mae_ili,mae_ili,1.374467372894287,one_cell,from metrics.csv
+B|national|dnn|L48|s2025,zspace,best_val,best_val,0.224410742521286,one_cell,from metrics.csv
+B|national|dnn|L48|s2025,zspace,total_parameters,total_parameters,36144.0,one_cell,from metrics.csv
+B|national|dnn|L48|s2025,zspace,trainable_parameters,trainable_parameters,36144.0,one_cell,from metrics.csv
+B|national|dnn|L48|s2028,zspace,mse_all,mse_all,2.572274684906006,one_cell,from metrics.csv
+B|national|dnn|L48|s2028,zspace,mae_all,mae_all,1.1445090770721436,one_cell,from metrics.csv
+B|national|dnn|L48|s2028,zspace,mse_ili,mse_ili,4.6072492599487305,one_cell,from metrics.csv
+B|national|dnn|L48|s2028,zspace,mae_ili,mae_ili,1.4227561950683594,one_cell,from metrics.csv
+B|national|dnn|L48|s2028,zspace,best_val,best_val,0.22813311219215393,one_cell,from metrics.csv
+B|national|dnn|L48|s2028,zspace,total_parameters,total_parameters,36144.0,one_cell,from metrics.csv
+B|national|dnn|L48|s2028,zspace,trainable_parameters,trainable_parameters,36144.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2021,zspace,mse_all,mse_all,2.9576873779296875,one_cell,from metrics.csv
+B|national|dnn|L60|s2021,zspace,mae_all,mae_all,1.2406494617462158,one_cell,from metrics.csv
+B|national|dnn|L60|s2021,zspace,mse_ili,mse_ili,5.314930438995361,one_cell,from metrics.csv
+B|national|dnn|L60|s2021,zspace,mae_ili,mae_ili,1.541832447052002,one_cell,from metrics.csv
+B|national|dnn|L60|s2021,zspace,best_val,best_val,0.24968166649341583,one_cell,from metrics.csv
+B|national|dnn|L60|s2021,zspace,total_parameters,total_parameters,37692.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2021,zspace,trainable_parameters,trainable_parameters,37692.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2024,zspace,mse_all,mse_all,2.8522887229919434,one_cell,from metrics.csv
+B|national|dnn|L60|s2024,zspace,mae_all,mae_all,1.2100951671600342,one_cell,from metrics.csv
+B|national|dnn|L60|s2024,zspace,mse_ili,mse_ili,5.199713230133057,one_cell,from metrics.csv
+B|national|dnn|L60|s2024,zspace,mae_ili,mae_ili,1.5355737209320068,one_cell,from metrics.csv
+B|national|dnn|L60|s2024,zspace,best_val,best_val,0.24029943346977234,one_cell,from metrics.csv
+B|national|dnn|L60|s2024,zspace,total_parameters,total_parameters,37692.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2024,zspace,trainable_parameters,trainable_parameters,37692.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2027,zspace,mse_all,mse_all,2.8319380283355713,one_cell,from metrics.csv
+B|national|dnn|L60|s2027,zspace,mae_all,mae_all,1.2133395671844482,one_cell,from metrics.csv
+B|national|dnn|L60|s2027,zspace,mse_ili,mse_ili,5.108216285705566,one_cell,from metrics.csv
+B|national|dnn|L60|s2027,zspace,mae_ili,mae_ili,1.519187092781067,one_cell,from metrics.csv
+B|national|dnn|L60|s2027,zspace,best_val,best_val,0.23246753215789795,one_cell,from metrics.csv
+B|national|dnn|L60|s2027,zspace,total_parameters,total_parameters,37692.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2027,zspace,trainable_parameters,trainable_parameters,37692.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2030,zspace,mse_all,mse_all,2.2662601470947266,one_cell,from metrics.csv
+B|national|dnn|L60|s2030,zspace,mae_all,mae_all,1.0444210767745972,one_cell,from metrics.csv
+B|national|dnn|L60|s2030,zspace,mse_ili,mse_ili,4.359267234802246,one_cell,from metrics.csv
+B|national|dnn|L60|s2030,zspace,mae_ili,mae_ili,1.3432040214538574,one_cell,from metrics.csv
+B|national|dnn|L60|s2030,zspace,best_val,best_val,0.24456681311130524,one_cell,from metrics.csv
+B|national|dnn|L60|s2030,zspace,total_parameters,total_parameters,37692.0,one_cell,from metrics.csv
+B|national|dnn|L60|s2030,zspace,trainable_parameters,trainable_parameters,37692.0,one_cell,from metrics.csv

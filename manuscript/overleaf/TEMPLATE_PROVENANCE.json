@@ -1,0 +1,41 @@
+{
+  "access_date_hkt": "2026-11-05",
+  "author_guidance": {
+    "url": "https://www.embs.org/jbhi/prepare-and-submit-your-manuscript/",
+    "retrieved_via_direct_https": true,
+    "http_status": 200,
+    "private_capture_sha256": "5d31f50aabcb1e140ffcfa52849b5c2dda7176702a1377a89169a58827d0a33a",
+    "verified_requirements": {
+      "single_spaced": true,
+      "two_columns": true,
+      "embedded_figures_and_tables": true,
+      "abstract_max_words": 250,
+      "regular_paper_page_limit_including_supplement": 14
+    }
+  },
+  "selector": {
+    "url": "https://template-selector.ieee.org/secure/templateSelector/publicationType",
+    "http_status": 418,
+    "exact_current_download_verified": false
+  },
+  "publisher_class": {
+    "source_page": "https://bhi.embs.org/2024/submit/",
+    "zip_url": "https://confcats-event-sessions.s3.amazonaws.com/bhi24/uploads/IEEE-TJ-color-latex-template.zip",
+    "zip_sha256": "b425a57376adc6d1e3e85337ca833aaf7bcf3a183ec6254bf21b9f53c6da2a31",
+    "class_files_unmodified_sha256": {
+      "ieeecolor.cls": "c7487d9130b5617874f8933911727834235855c9115d43e0589edc9c9dadedbb",
+      "generic.sty": "d9a5538427803ad2f6e3059acfe72b24ee93392b4c40ac7c22d34dfd3c843b30"
+    },
+    "options": [
+      "journal",
+      "twoside",
+      "print"
+    ]
+  },
+  "local_compatibility": "review_layout.sty suppresses publisher sample LOGO/masthead, terminates the author paragraph correctly and restores the References heading omitted by the supplied class; body dimensions and column settings are unchanged",
+  "local_latex_compilation": "executed",
+  "overleaf_cloud_compilation": "NOT_EXECUTED",
+  "exact_current_jbhi_template_compliance": "NOT_VERIFIED",
+  "submission_readiness": "not inferred from formatting",
+  "local_compatibility_sha256": "6a9b9494c88edb3c9b7d059d5751ec4a9b12158162a740d0d76e472277539c4e"
+}

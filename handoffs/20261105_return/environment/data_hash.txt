@@ -1,0 +1,5 @@
+# Input data hashes (sha256), measured 2026-11-04
+2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5  national_illness_author_repo_966.csv
+# HPC-measured (see PROFILE_COMPARISON.md):
+31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a  author_966 (HPC)
+2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5  author_repo_966 (HPC)

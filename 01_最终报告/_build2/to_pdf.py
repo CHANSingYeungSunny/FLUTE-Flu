@@ -1,65 +1,23 @@
-# -*- coding: utf-8 -*-
-"""Convert the six DOCX 01_最终报告 to PDF with the bundled LibreOffice kit.
-
-Also reports the page count of each PDF (parsed from the PDF itself, no library)
-and verifies the %PDF- signature and a non-trivial size.
-"""
-from __future__ import annotations
-
-import os
-import re
-import subprocess
-import sys
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from dlv import data as D  # noqa: E402
-
-NODE = (r"C:\Users\Asus\AppData\Local\Programs\DeepSeek Harness\resources\runtime"
-        r"\primary-runtime\dependencies\node\bin\node.exe")
-CLI = (r"C:\Users\Asus\AppData\Local\Programs\DeepSeek Harness\resources"
-       r"\app.asar.unpacked\dsh\node_modules\@deepseek-ai\libreoffice-kit\lib\cli.js")
-
-OUT = os.path.join(D.ROOT, "01_最终报告")
-DOCS = ["report_internal_en", "report_internal_zh",
-        "progress_report_en", "progress_report_zh",
-        "ieee_manuscript_en", "ieee_manuscript_zh"]
-
-
-def page_count(pdf: str) -> int:
-    """/Type /Page objects, excluding the /Pages tree node."""
-    data = open(pdf, "rb").read()
-    n = len(re.findall(rb"/Type\s*/Page[^s]", data))
-    if n:
-        return n
-    m = re.search(rb"/Count\s+(\d+)", data)
-    return int(m.group(1)) if m else 0
-
-
+#!/usr/bin/env python3
+"""Portable conversion of the eight current DOCX files using installed/bundled LibreOffice."""
+from pathlib import Path
+import os,shutil,subprocess,tempfile
+ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'01_最终报告'
+NAMES=[f'{kind}_{lang}' for kind in ['report_internal','progress_report','ieee_manuscript','record_for_journal'] for lang in ['en','zh']]+['report_internal_qa_zh']
 def main():
-    rows = []
-    for name in DOCS:
-        src = os.path.join(OUT, name + ".docx")
-        dst = os.path.join(OUT, name + ".pdf")
-        if os.path.exists(dst):
-            os.remove(dst)
-        cp = subprocess.run([NODE, CLI, "convert", "--input", src, "--output", dst],
-                            capture_output=True, text=True)
-        ok = os.path.exists(dst) and os.path.getsize(dst) > 20_000
-        sig = ok and open(dst, "rb").read(5) == b"%PDF-"
-        pages = page_count(dst) if ok else 0
-        rows.append((name, os.path.getsize(src), os.path.getsize(dst) if ok else 0, pages, sig,
-                     cp.returncode, (cp.stderr or "").strip()[:120]))
-    print(f"{'document':<24}{'docx B':>10}{'pdf B':>10}{'pages':>7}  sig  rc")
-    for r in rows:
-        print(f"{r[0]:<24}{r[1]:>10,}{r[2]:>10,}{r[3]:>7}  {r[4]!s:<5} {r[5]}")
-        if r[6]:
-            print("    stderr:", r[6])
-    bad = [r for r in rows if not r[4] or r[3] == 0]
-    if bad:
-        print("FAILED:", [b[0] for b in bad])
-        return 1
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+ runtime=os.environ.get('CODEX_PRIMARY_RUNTIME_ROOT');candidate=Path(runtime)/'dependencies/bin/override/soffice' if runtime else None
+ executable=str(candidate) if candidate and candidate.exists() else shutil.which('soffice') or shutil.which('libreoffice')
+ if not executable:raise SystemExit('LibreOffice missing. Install LibreOffice and put soffice on PATH.')
+ for name in NAMES:
+  if name=='ieee_manuscript_en':
+   subprocess.run([os.environ.get('CODEX_PRIMARY_RUNTIME_PYTHON') or __import__('sys').executable,str(ROOT/'manuscript/build_pdf.py')],check=True)
+   continue
+  src=OUT/(name+'.docx')
+  with tempfile.TemporaryDirectory(prefix='miflu_pdf_') as tmp:
+   path=Path(tmp);profile=(path/'profile').as_uri()
+   cp=subprocess.run([executable,'--headless','-env:UserInstallation='+profile,'--convert-to','pdf','--outdir',str(path),str(src)],capture_output=True,text=True,timeout=120)
+   result=path/(name+'.pdf')
+   if cp.returncode or not result.exists():raise RuntimeError(name+': '+cp.stderr+cp.stdout)
+   shutil.copy2(result,OUT/result.name)
+  print(name+'.pdf')
+if __name__=='__main__':main()

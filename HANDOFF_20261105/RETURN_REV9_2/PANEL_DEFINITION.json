@@ -1,0 +1,60 @@
+{
+  "spec_version": "MIFlu-scoring-2026-11-05-v1",
+  "created_utc": "2026-11-05T16:30:00Z",
+  "created_hkt": "2026-11-06 00:30 HKT",
+  "status": "PROPOSED_RETROSPECTIVE_NOT_PREREGISTERED",
+  "disclosure": "Chosen AFTER execution of the 1120-cell matrix and AFTER historical test outcomes were inspected. This is NOT prospective pre-registration. The original PROTOCOL_LOCK.json (frozen:false at submission) is preserved unchanged.",
+  "primary_panel": {
+    "name": "all_valid_strict",
+    "definition": "all valid test windows under strict containment, drop_last=False at inference",
+    "expected_n_by_L": {
+      "24": 170,
+      "36": 158,
+      "48": 146,
+      "60": 134
+    },
+    "status": "MUST_BE_VERIFIED_AGAINST_REAL_EXPORTS"
+  },
+  "sensitivity_panel": {
+    "name": "historical_crop",
+    "definition": "common historical crop using identical target populations for every compared model",
+    "expected_n_by_L": {
+      "24": 160,
+      "36": 144,
+      "48": 144,
+      "60": 128
+    },
+    "status": "MUST_BE_VERIFIED_AGAINST_REAL_EXPORTS"
+  },
+  "rules": [
+    "Keep cropped and all-valid windows separate",
+    "Never mix target rows/channels/leads within a declared panel",
+    "Never pool duplicate core/national configurations",
+    "Deterministic fits are one effective run, not ten",
+    "Ten seeds estimate training variation, not independent epidemics"
+  ],
+  "channel_order": [
+    "wili",
+    "unwili",
+    "age_0_4",
+    "age_5_24",
+    "ilitotal",
+    "num_providers",
+    "ot"
+  ],
+  "axis_order": "(N_window, N_channel=7, N_lead=L)  -- TO BE VERIFIED against L and channel names",
+  "profiles": {
+    "author_966": {
+      "sha256": "31ffc1693de205ca8de5e966d40c93252e0a0076a212fffc54d1418e1a13b87a",
+      "shape": "966x9",
+      "used_by": "backbone/classical/encoder"
+    },
+    "author_repo_966": {
+      "sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+      "shape": "966x8",
+      "used_by": "MIFlu"
+    },
+    "numeric_equivalence": "measured max |diff| = 0.0 across the 7 aligned channels on 2026-11-04; byte hashes DIFFER"
+  },
+  "calendar": "epiweek/date labels are synthetic; real CDC calendar and vintage NOT verified; no season-wise claim"
+}

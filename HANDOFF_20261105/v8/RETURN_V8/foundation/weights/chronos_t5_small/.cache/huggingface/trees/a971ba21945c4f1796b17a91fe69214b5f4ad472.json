@@ -1,0 +1,32 @@
+{
+ "format_version": 1,
+ "files": {
+  ".gitattributes": {
+   "size": 1519,
+   "blob_id": "a6344aac8c09253b3b630fb776ae94478aa0275b"
+  },
+  "README.md": {
+   "size": 6149,
+   "blob_id": "95e180bb39a7cd53761ba43cbba685b0d872e1a8"
+  },
+  "config.json": {
+   "size": 1113,
+   "blob_id": "b9ce8d0e4e0eee976236d60380470d74b210328b"
+  },
+  "figures/main-figure.png": {
+   "size": 232294,
+   "blob_id": "329b89017adfeac8a7c51e5a513bddb2d7fc52d1"
+  },
+  "generation_config.json": {
+   "size": 142,
+   "blob_id": "7528dbb1b6ce860d242aff71294a5fef12a41572"
+  },
+  "model.safetensors": {
+   "size": 184632480,
+   "blob_id": "443524636866e7abb012f0c5f53068f263e01c15",
+   "lfs_sha256": "9c8b6fde5300f72b01c173153bf9288fa0a200614275bf0585071ad71a6a3d43",
+   "lfs_size": 184632480,
+   "xet_hash": "6ff2ea46a1c5cb817cc2c8f15a75bc16b03100f457e07992d4da88183ee9f331"
+  }
+ }
+}

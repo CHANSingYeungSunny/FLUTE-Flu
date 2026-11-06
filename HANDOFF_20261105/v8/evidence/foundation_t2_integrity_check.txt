@@ -1,0 +1,24 @@
+-- chronos_bolt_tiny
+   MATCH  model.safetensors
+      hf_lfs_oid_sha256 = 75068728d376d2bec670379eeef4bfb4d24c0cfe24d957451f8d19b447030a32
+      local_sha256      = 75068728d376d2bec670379eeef4bfb4d24c0cfe24d957451f8d19b447030a32  size=34622352
+   lfs_files_checked=1
+-- chronos_t5_small
+   MATCH  model.safetensors
+      hf_lfs_oid_sha256 = 9c8b6fde5300f72b01c173153bf9288fa0a200614275bf0585071ad71a6a3d43
+      local_sha256      = 9c8b6fde5300f72b01c173153bf9288fa0a200614275bf0585071ad71a6a3d43  size=184632480
+   lfs_files_checked=1
+-- timesfm_1_0_200m
+   MATCH  checkpoints/checkpoint_1100000/state/checkpoint
+      hf_lfs_oid_sha256 = d147f95bbe40ffeb1e8d61643925dd29eeb00b5696db33bf9f6e1887682f6391
+      local_sha256      = d147f95bbe40ffeb1e8d61643925dd29eeb00b5696db33bf9f6e1887682f6391  size=814291152
+   lfs_files_checked=1
+-- timesfm_2_0_500m_pytorch
+   MATCH  model.safetensors
+      hf_lfs_oid_sha256 = bb9d7022d8027325f4e656b7d5cf36dd919269fd79ad714eab41f5ba49cc1cfe
+      local_sha256      = bb9d7022d8027325f4e656b7d5cf36dd919269fd79ad714eab41f5ba49cc1cfe  size=1995406976
+   MATCH  torch_model.ckpt
+      hf_lfs_oid_sha256 = a3a1362cdc26f0dde45c9790c438951ff02af96b2d1d6445fdb58f28c77e18de
+      local_sha256      = a3a1362cdc26f0dde45c9790c438951ff02af96b2d1d6445fdb58f28c77e18de  size=1995545448
+   lfs_files_checked=2
+ALL_LFS_MATCH=True

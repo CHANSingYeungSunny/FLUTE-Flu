@@ -1,0 +1,2218 @@
+[
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L24_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L36_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L48_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "dlinear",
+    "cell": "L60_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2021",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2022",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2023",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2024",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2025",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2026",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2027",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2028",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2029",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L24_s2030",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2021",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2022",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2023",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2024",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2025",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2026",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2027",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2028",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2029",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L36_s2030",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2021",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2022",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2023",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2024",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2025",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2026",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2027",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2028",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2029",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L48_s2030",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2021",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2022",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2023",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2024",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2025",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2026",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2027",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2028",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2029",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "miflu",
+    "cell": "L60_s2030",
+    "route": "miflu",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L24_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L36_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L48_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "nlinear",
+    "cell": "L60_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L24_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L36_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L48_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "core",
+    "model": "patchtst",
+    "cell": "L60_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L24_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L36_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L48_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "calf_llm",
+    "cell": "L60_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L24_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L36_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L48_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "cnn",
+    "cell": "L60_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L24_s2022",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L24_s2025",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L24_s2028",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L36_s2021",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L36_s2024",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L36_s2027",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L36_s2030",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L48_s2023",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L48_s2026",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L48_s2029",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L60_s2022",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L60_s2025",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "decision_tree",
+    "cell": "L60_s2028",
+    "route": "classical",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L24_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L36_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L36_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L36_s2023",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L36_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L36_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L36_s2026",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L36_s2029",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L48_s2022",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L48_s2025",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L48_s2028",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L60_s2021",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L60_s2024",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L60_s2027",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  },
+  {
+    "phase": "all",
+    "model": "dnn",
+    "cell": "L60_s2030",
+    "route": "backbone",
+    "complete": true,
+    "reason": ""
+  }
+]

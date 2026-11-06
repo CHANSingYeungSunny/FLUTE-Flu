@@ -45,7 +45,9 @@ PAPER_MSE_4L = 1.4355
 PAPER_MAE_4L = 0.7452
 
 OURS_MSE = {24: 1.3045, 36: 1.3561, 48: 1.6543, 60: 1.6829}   # 10-rep means
-OURS_MAE = {24: 0.7482, 36: 0.7712}                            # L48/L60: not in artefact set
+OURS_MAE = {24: 0.7482, 36: 0.7712, 48: 0.8381, 60: 0.8596}   # 10-rep means, all four
+# The authoritative reproduction table (paper value, ours, delta, MAE side).
+TABLE_V = pd.read_csv(os.path.join(PT, "ESSAY_VS_REPRODUCTION_TABLE_V.csv"))
 ORACLE = {   # per-seed 7-var aggregate MSE, seeds 2021..2030
     24: [1.240157, 1.201078, 1.284212, 1.259462, 1.464643,
          1.368497, 1.392309, 1.230425, 1.231536, 1.373057],
@@ -198,6 +200,128 @@ def pareto_facts():
 
 PARETO = pareto_facts()
 
+
+# ------------------------------------------------- peak skill vs accuracy (28)
+def _ks_summary():
+    """Per-model K&S facts, read from BENCH_PTE_PIE_BY_STEP.csv (3 seeds per cell)."""
+    out = {}
+    for m, g in PTE.groupby("model"):
+        s0 = g[g.step == 0]
+        out[m] = {
+            "passes": int(g.kramer_shaman_pass.astype(bool).sum()),
+            "n": int(len(g)),
+            "mean_pte": float(g.PTE_wk.mean()),
+            "mean_pie": float(g.PIE_pct.mean()),
+            "step0_pie": float(s0.PIE_pct.mean()),
+            "step0_pte": float(s0.PTE_wk.mean()),
+            "step0_passes": int(s0.kramer_shaman_pass.astype(bool).sum()),
+        }
+    return out
+
+
+KS = _ks_summary()
+
+
+def _spearman(x, y):
+    """Spearman rho and its two-sided p, without requiring scipy at build time."""
+    try:
+        from scipy.stats import spearmanr
+        r = spearmanr(x, y)
+        return float(r.statistic), float(r.pvalue)
+    except Exception:                                    # pragma: no cover
+        rx, ry = pd.Series(x).rank(), pd.Series(y).rank()
+        rho = float(np.corrcoef(rx, ry)[0, 1])
+        n = len(rx)
+        t = rho * np.sqrt((n - 2) / max(1e-12, 1 - rho ** 2))
+        from math import erf, sqrt
+        p = 2 * (1 - 0.5 * (1 + erf(abs(t) / sqrt(2))))
+        return rho, float(p)
+
+
+def _decoupling_facts():
+    """Rank associations between accuracy (MSE) and peak skill across the 28 arms.
+
+    Reported because the honest version of the 'MSE vs peak skill' claim is not
+    'they are unrelated': across the whole roster they are positively correlated.
+    The finding is that the *frontier* is ordered the other way round, and that
+    the acceptance verdict does not follow the MSE rank.
+    """
+    d = pd.DataFrame({"mse": {r["model"]: r["mean"] for r in RANK}})
+    d["pie"] = [KS[m]["mean_pie"] for m in d.index]
+    d["pte"] = [KS[m]["mean_pte"] for m in d.index]
+    d["passes"] = [KS[m]["passes"] for m in d.index]
+    rho_pie, p_pie = _spearman(d.mse, d.pie)
+    rho_pte, p_pte = _spearman(d.mse, d.pte)
+    rho_pass, p_pass = _spearman(d.mse, d.passes)
+    top3 = ["miflu", "patchtst", "nlinear"]
+    return {
+        "n": int(len(d)),
+        "rho_pie": rho_pie, "p_pie": p_pie,
+        "rho_pte": rho_pte, "p_pte": p_pte,
+        "rho_pass": rho_pass, "p_pass": p_pass,
+        "top3": top3,
+        "top3_mse": [float(d.loc[m, "mse"]) for m in top3],
+        "top3_pie": [float(d.loc[m, "pie"]) for m in top3],
+        "top3_passes": [int(d.loc[m, "passes"]) for m in top3],
+    }
+
+
+DECOUPLE = _decoupling_facts()
+
+
+def _encoder_facts():
+    """The 11 frozen-encoder arms, read from the same ranking table."""
+    enc = [r for r in RANK if r["family"] == "llm_encoder"]
+    enc.sort(key=lambda r: r["mean"])
+    return {
+        "n": len(enc),
+        "best": enc[0]["model"], "best_mse": float(enc[0]["mean"]),
+        "worst": enc[-1]["model"], "worst_mse": float(enc[-1]["mean"]),
+        "ratio_best": float(enc[0]["mean"] / BENCH_MEAN["miflu"]),
+        "ratio_worst": float(enc[-1]["mean"] / BENCH_MEAN["miflu"]),
+        "passes": sum(KS[r["model"]]["passes"] for r in enc),
+        "all": [(r["model"], float(r["mean"])) for r in enc],
+    }
+
+
+ENC = _encoder_facts()
+
+# ---------------------------------------------------------------- paired tests
+# The exported CSV's `p_holm` column was produced with a reverse cumulative
+# minimum, which is not a valid Holm adjustment.  The step-down adjustment is
+# recomputed here from `p_raw`, so every document uses the correct value.  With
+# m = 136 pairs and n = 12 cells the smallest attainable raw p is 2/2^12, hence
+# the smallest attainable adjusted p is 136 * 0.000488 = 0.066: no pair can
+# survive at 0.05, which is a statement about power, not about the models.
+def _holm_adjust(p):
+    p = np.asarray(p, float)
+    m = len(p)
+    order = np.argsort(p)
+    adj = np.empty(m)
+    run = 0.0
+    for rank, idx in enumerate(order):
+        run = max(run, (m - rank) * p[idx])
+        adj[idx] = min(1.0, run)
+    return adj
+
+
+PAIRED = PAIRED.assign(p_holm=_holm_adjust(PAIRED.p_raw.values))
+N_PAIRS = int(len(PAIRED))
+N_PAIRS_SIG = int((PAIRED.p_holm < 0.05).sum())
+N_RAW_SIG = int((PAIRED.p_raw < 0.05).sum())
+HOLM_MIN = float(PAIRED.p_holm.min())
+PAIR = PAIRED[((PAIRED.model_a == "nlinear") & (PAIRED.model_b == "patchtst"))].iloc[0]
+PAIR_RANK = int((PAIRED.p_holm < PAIR.p_holm).sum()) + 1
+
+# family counts, read from the CSV rather than typed into prose
+FAMILY_COUNTS = {k: int(v) for k, v in
+                 pd.read_csv(os.path.join(PT, "BENCH_MSE_BY_MODEL_L.csv"))
+                 .groupby("family")["model"].nunique().items()}
+N_CONVENTIONAL = int(sum(FAMILY_COUNTS.get(k, 0) for k in
+                         ("classical_ml", "neural", "transformer", "linear")))
+N_LLM_BASED = int(FAMILY_COUNTS.get("llm", 0))
+N_ENCODERS = int(FAMILY_COUNTS.get("llm_encoder", 0))
+
 # ------------------------------------------------------------- LLM encoder arms
 LLM_ARMS = [
     ("Qwen2.5-1.5B", "Qwen2.5 (dense)", 1.5),
@@ -226,8 +350,22 @@ LLM_EXCLUDED = [
 LLM_CELLS_DONE, LLM_CELLS_TOTAL = 132, 156
 
 # ------------------------------------------------------------------- in flight
+# Table VIII: 5 variants x 4 horizons x 3 seeds = 60 cells.  The snapshot that
+# these documents are built from (MANIFEST.md, 3 Nov 2026 05:27) reports 27 of 60
+# complete and no per-variant export pulled; one older note claims 60/60, which no
+# artefact on disk supports.  The documents therefore report the design and the
+# completion count, and claim no depth trend.
 TABLE8_DONE, TABLE8_TOTAL = 27, 60
 DRIVER_JOB = "722968"
+ABLATION = [
+    # variant, flag, cells (0 = reference row, not part of the 60), question
+    ("full (K=6)", "default", 0, "Reference arm: the MIFlu benchmark instance itself (already in the benchmark table)."),
+    ("no_lora", "--no-lora", 12, "Is the accuracy carried by the LoRA adaptation, or by the frozen backbone?"),
+    ("K=2", "--num-layers 2", 12, "Depth ladder: does a 2-layer stack lose accuracy?"),
+    ("K=4", "--num-layers 4", 12, "Depth ladder: the paper's regional depth."),
+    ("K=8", "--num-layers 8", 12, "Depth ladder: does extra depth help?"),
+    ("K=12", "--num-layers 12", 12, "Depth ladder: is there a capacity ceiling?"),
+]
 
 # --------------------------------------------------------------- defect ledger
 DEFECTS = [
@@ -273,6 +411,10 @@ assert abs(np.mean([PAPER_MSE[L] for L in HORIZONS]) - PAPER_MSE_4L) < 5e-4
 assert abs(np.mean([OURS_MSE[L] for L in HORIZONS]) - 1.4995) < 5e-4, np.mean([OURS_MSE[L] for L in HORIZONS])
 for L in HORIZONS:
     assert abs(np.mean(ORACLE[L]) - OURS_MSE[L]) < 5e-4, (L, np.mean(ORACLE[L]), OURS_MSE[L])
+    row = TABLE_V[TABLE_V.L.astype(str) == str(L)].iloc[0]
+    assert abs(float(row.our_MSE) - OURS_MSE[L]) < 5e-5, (L, row.our_MSE, OURS_MSE[L])
+    assert abs(float(row.our_MAE) - OURS_MAE[L]) < 5e-5, (L, row.our_MAE, OURS_MAE[L])
+assert abs(float(TABLE_V[TABLE_V.L.astype(str) == "4L-mean"].iloc[0].our_MAE) - 0.8043) < 5e-5
 assert abs(BENCH_MEAN["patchtst"] - 1.6621) < 5e-4
 assert abs(BENCH_MEAN["nlinear"] - 1.8716) < 5e-4
 assert abs(BENCH_MEAN["dnn"] - 2.1415) < 5e-4
@@ -291,3 +433,29 @@ assert int(round(PARETO["ratio"])) == 211
 assert abs(PARETO["mse_gain_pct"] - 11.2) < 0.06
 assert len(PROV) == 204 and (PROV.gpu_type == "A100-SXM4-80GB").all()
 assert (PROV.partition == "stingy").all()
+# --- peak skill vs accuracy -------------------------------------------------
+assert KS["miflu"]["passes"] == 4 and KS["nlinear"]["passes"] == 4
+assert KS["patchtst"]["passes"] == 0
+assert KS["nlinear"]["step0_passes"] == 4 and KS["miflu"]["step0_passes"] == 3
+assert KS["miflu"]["mean_pte"] < KS["patchtst"]["mean_pte"] < KS["nlinear"]["mean_pte"]
+assert KS["nlinear"]["mean_pie"] < KS["miflu"]["mean_pie"] < KS["patchtst"]["mean_pie"]
+# The frontier is ordered the other way round from MSE: NLinear (3rd) has the
+# best PIE, PatchTST (2nd) the worst of the three.
+assert DECOUPLE["top3"] == ["miflu", "patchtst", "nlinear"]
+assert DECOUPLE["top3_pie"][2] < DECOUPLE["top3_pie"][0] < DECOUPLE["top3_pie"][1]
+assert DECOUPLE["top3_passes"] == [4, 0, 4]
+assert abs(DECOUPLE["rho_pie"] - 0.7356) < 5e-3 and DECOUPLE["p_pie"] < 1e-4
+assert abs(DECOUPLE["rho_pass"] + 0.4292) < 5e-3 and DECOUPLE["p_pass"] < 0.05
+assert ENC["n"] == 11 and ENC["passes"] == 0
+assert abs(ENC["best_mse"] - 4.7374) < 5e-4 and abs(ENC["worst_mse"] - 5.2049) < 5e-4
+assert ENC["best_mse"] > BENCH_MEAN["decision_tree"]      # every encoder loses to a decision tree
+assert abs(ENC["ratio_best"] - 3.04) < 0.01
+# --- significance -----------------------------------------------------------
+assert N_PAIRS == 136 and N_PAIRS_SIG == 0 and N_RAW_SIG == 128
+assert abs(HOLM_MIN - 0.0664) < 5e-4
+assert abs(float(PAIR.p_holm) - 0.1172) < 5e-4
+# family decomposition: 13 conventional + 4 LLM-based + 11 frozen encoders = 28
+assert (N_CONVENTIONAL, N_LLM_BASED, N_ENCODERS) == (13, 4, 11)
+assert float(PAIR.mean_diff) > 0 and int(PAIR.wins_a) == 2
+assert PAIR_RANK > 100, PAIR_RANK        # it is nowhere near the top six by p
+assert TABLE8_DONE < TABLE8_TOTAL

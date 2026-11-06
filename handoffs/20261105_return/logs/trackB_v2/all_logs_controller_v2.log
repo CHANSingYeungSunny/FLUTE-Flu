@@ -1,0 +1,9 @@
+2026-11-04T15:08:02Z CONTROLLER_START phase=all total=1120 job=735277
+2026-11-04T15:08:05Z WAIT_CORE_PHASE (core not yet validated complete)
+2026-11-04T15:17:35Z CONTROLLER_START phase=all total=1120 job=735298
+sbatch: error: QOSMaxWallDurationPerJobLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+2026-11-04T15:17:42Z RESUBMIT_FAILED trackB_v2_all_l2
+2026-11-04T15:17:42Z STATUS complete=117/1120 blocked=0 retries=40 quota=306G
+2026-11-04T15:22:43Z STATUS complete=117/1120 blocked=0 retries=40 quota=306G
+2026-11-04T15:27:44Z STATUS complete=117/1120 blocked=0 retries=40 quota=306G

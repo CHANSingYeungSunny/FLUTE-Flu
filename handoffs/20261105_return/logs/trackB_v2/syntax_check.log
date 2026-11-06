@@ -1,0 +1,14 @@
+OK core/controller_v2.sbatch
+OK core/lane0_v2.sbatch
+OK core/lane1_v2.sbatch
+OK all/controller_v2.sbatch
+OK all/lane0_v2.sbatch
+OK all/lane1_v2.sbatch
+OK all/lane2_v2.sbatch
+OK all/post_all_v2.sbatch
+OK controller_v2.sh
+OK run_lane_v2.sh
+OK post_all_v2.sh
+OK write_sbatch.sh
+PY_OK cellok.py
+exit 0

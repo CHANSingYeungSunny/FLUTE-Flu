@@ -1,0 +1,2 @@
+status,reason,planned_denominator,available,source
+BLOCKED,"params, wall time, peak memory, inference latency: 0/40 seven-channel MIFlu tensors and 40 blocked encoder cells; jobs 739549/740183 PENDING gpu_a100 StartTime=2026-11-07T13:20:16; CPU pilot 740296 running to measure a faster path",40 MIFlu cells,1080 national cells validated but not independently rescored here,RETURN_STATUS.json / SCIENTIFIC_AUDIT.md

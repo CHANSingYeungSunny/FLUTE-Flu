@@ -1,0 +1,5 @@
+[MIFlu] MEASURED NPZ-scoring-path: mean=0.0291ms std=0.0018ms warmup=5 repeat=50 shape=(170, 7, 24) dtype=float32
+[NLinear] MEASURED NPZ-scoring-path: mean=0.0297ms std=0.0015ms warmup=5 repeat=50 shape=(170, 7, 24) dtype=float32
+[PatchTST] MEASURED NPZ-scoring-path: mean=0.0287ms std=0.0014ms warmup=5 repeat=50 shape=(170, 7, 24) dtype=float32
+[DeepSeek-R1-Distill-Qwen-1.5B (frozen encoder)] MEASURED NPZ-scoring-path: mean=0.0287ms std=0.0016ms warmup=5 repeat=50 shape=(170, 7, 24) dtype=float32
+MEASURE_LATENCY_OK measured= 4

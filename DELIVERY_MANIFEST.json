@@ -1,0 +1,145 @@
+{
+  "revision": "9.2",
+  "date_hkt": "2026-11-05",
+  "change_scope": "Chinese internal report/Q&A separation only; scientific snapshot unchanged",
+  "packages": [
+    {
+      "filename": "MIFlu_DeepSeek_Handoff_Rev9_2_20261105.zip",
+      "bytes": 6099770,
+      "sha256": "9b53135a7a773eb3c2183e05e4dc2c50bc5fb768c6f8b9ead6a64d0c5d8bc77d",
+      "entries": 403,
+      "crc_checked": true,
+      "scope": "Focused execution instructions, current deliverables, separate Chinese Q&A, metadata and return contract; use full project/Burgundy tree for raw evidence."
+    },
+    {
+      "filename": "MIFlu_Review_Deliverables_Rev9_2_20261105.zip",
+      "bytes": 83729892,
+      "sha256": "3fd74491395880d210650d9619f3a72eea0081d0bdfc2831b906d5597c39b36d",
+      "entries": 902,
+      "crc_checked": true,
+      "scope": "Current review/rebuild corpus with concise Chinese report and separate Q&A; large raw predictions omitted."
+    },
+    {
+      "filename": "MIFlu_Full_Project_Rev9_2_20261105.zip",
+      "bytes": 285420273,
+      "sha256": "1f8b4cdcee6a68aac04ffdf2705ddc92b65ee6374cdf49f74b64f70a50f7821b",
+      "entries": 2627,
+      "crc_checked": true,
+      "scope": "Complete current project, supplied dated raw evidence, archived combined report and new separate Q&A; no unsupplied HPC checkpoints/caches."
+    }
+  ],
+  "checks": {
+    "revision": "9.2",
+    "main_pages": 12,
+    "previous_main_pages": 25,
+    "companion_pages": 11,
+    "main_question_headings": 0,
+    "companion_questions": 25,
+    "question_answer_paragraphs_preserved_verbatim": 150,
+    "reference_entries_preserved_verbatim": 25,
+    "scientific_tables_preserved": 11,
+    "original_figure_assets_byte_identical": 6,
+    "all_23_final_pages_visually_reviewed": true,
+    "final_table_flow_fix_changed_only_main_pages": [
+      5,
+      6
+    ],
+    "main_other_10_pages_pixel_identical_to_prior_inspected_render": true,
+    "unchanged_artifact_hashes": {
+      "01_最终报告/progress_report_en.docx": "a6b6b08f3b65688d91e4d1c977c9d85678fff219895fa1685e55c16124f8127a",
+      "01_最终报告/progress_report_en.pdf": "3581c26f67f22628d3e08b79694b39ff11a24f09a0d3b36f506379e3d620ff2b",
+      "01_最终报告/progress_report_zh.docx": "6c1b443ae2062ec99c87ec1fd623f5666d36fae2cb90fe33a0a60bb1d872d209",
+      "01_最终报告/progress_report_zh.pdf": "c3bc9e0b24c2977cb6aea37198d48b37aab0099bc84aed6caac780886bb3b2e5",
+      "01_最终报告/ieee_manuscript_en.docx": "98b978fb22687ad1b435e3969f92d60cdf49055aa68b7416d36c4b1b353dd8c8",
+      "01_最终报告/ieee_manuscript_en.pdf": "3d220d865b0893a9d22eac6f58a80162d4b69aaccaf8010d670a6365fefa336a",
+      "presentation/Week12_Progress_Presentation.pptx": "40dc9d546933557e5b5b1add457ad86fceb20a4f3bb0e95dce9a813f03078e69",
+      "presentation/Week12_Progress_Presentation.pdf": "3bd271f3b88c8a4885b1e95a9d4c18f73fcf825d833c56e125384cf6391adc28",
+      "presentation/Presentation_Notes_EN.docx": "b3c8561c1eafce062523c850c9a47360aeaa6d1a427896d6b8aa036792564ad4",
+      "presentation/Presentation_Notes_EN.pdf": "8333c4eadb36db2dfdc347f81a9fd579bdea7cd7c496158e4a8469ff6073d830",
+      "presentation/TALKING_SCRIPT.md": "a5868fcbd9ada0cd53e7694b65fcf810bd8905d89765f3488dad94f462c9114a"
+    },
+    "frozen_csvs_unchanged": 83,
+    "new_scientific_result": false,
+    "model_or_hpc_execution": false
+  },
+  "current_deliverable_index": {
+    "release": "revision9.2",
+    "scientific_snapshot": "historical audited results; no new result panel",
+    "execution_capture": "last owner handoff 2026-11-05 00:15 HKT, not live",
+    "requested_deliverables": [
+      {
+        "role": "Chinese internal report",
+        "files": [
+          "01_最终报告/report_internal_zh.docx",
+          "01_最终报告/report_internal_zh.pdf"
+        ]
+      },
+      {
+        "role": "Chinese Q&A companion",
+        "files": [
+          "01_最终报告/report_internal_qa_zh.docx",
+          "01_最终报告/report_internal_qa_zh.pdf"
+        ]
+      },
+      {
+        "role": "English FYP progress report",
+        "files": [
+          "01_最终报告/progress_report_en.docx",
+          "01_最终报告/progress_report_en.pdf"
+        ]
+      },
+      {
+        "role": "English journal manuscript",
+        "files": [
+          "01_最终报告/ieee_manuscript_en.docx",
+          "01_最终报告/ieee_manuscript_en.pdf",
+          "manuscript/overleaf/main.tex"
+        ]
+      },
+      {
+        "role": "Presentation",
+        "files": [
+          "presentation/Week12_Progress_Presentation.pptx",
+          "presentation/Week12_Progress_Presentation.pdf"
+        ]
+      },
+      {
+        "role": "English speaking notes",
+        "files": [
+          "presentation/Presentation_Notes_EN.docx",
+          "presentation/Presentation_Notes_EN.pdf",
+          "presentation/TALKING_SCRIPT.md"
+        ]
+      },
+      {
+        "role": "DeepSeek handoff",
+        "files": [
+          "handoff_revision9/PROMPT_TO_DEEPSEEK.md",
+          "handoff_revision9/PROMPT_RETURN_TO_CHATGPT.md",
+          "handoff_revision9/RETURN_CONTRACT.json"
+        ]
+      }
+    ],
+    "unchanged_current_artifacts": [
+      "FYP reports revision9.1",
+      "English manuscript revision9",
+      "owner-layout deck revision8",
+      "English notes revision9 and 606-word timed script"
+    ],
+    "older_context": [
+      "Chinese manuscript revision8",
+      "other bilingual report/journal pairs"
+    ],
+    "administrative_update": "FYP Part A only; programme/course/term confirmed; meetings and weekly hours required and blank",
+    "document_organisation": "Chinese main report contains scientific narrative/tables/figures; complete Q01–Q25 are in separate companion"
+  },
+  "unchanged_overleaf_source_zip": "MIFlu_Overleaf_Rev9_20261105.zip",
+  "not_executed_here": [
+    "model/pytest assertions",
+    "HPC/training/aggregation",
+    "cloud Overleaf",
+    "native Microsoft Office",
+    "human rehearsal"
+  ],
+  "scientific_readiness_not_certified_by_integrity_checks": true
+}

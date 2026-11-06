@@ -1,0 +1,44 @@
+{
+  "ieee_manuscript_en": {
+    "pages": 8,
+    "changed_pages": [
+      1
+    ],
+    "content_change_only": "author name; all paragraphs, tables and figure counts otherwise unchanged"
+  },
+  "ieee_manuscript_zh": {
+    "pages": 9,
+    "changed_pages": [
+      1
+    ],
+    "content_change_only": "author name; all paragraphs, tables and figure counts otherwise unchanged"
+  },
+  "progress_report_en": {
+    "pages": 8,
+    "changed_pages": [
+      1
+    ],
+    "content_change_only": "author name; all paragraphs, tables and figure counts otherwise unchanged"
+  },
+  "progress_report_zh": {
+    "pages": 8,
+    "changed_pages": [
+      1
+    ],
+    "content_change_only": "author name; all paragraphs, tables and figure counts otherwise unchanged"
+  },
+  "report_internal_en": {
+    "pages": 16,
+    "changed_pages": [
+      1
+    ],
+    "content_change_only": "author name; all paragraphs, tables and figure counts otherwise unchanged"
+  },
+  "report_internal_zh": {
+    "pages": 17,
+    "changed_pages": [
+      1
+    ],
+    "content_change_only": "author name; all paragraphs, tables and figure counts otherwise unchanged"
+  }
+}

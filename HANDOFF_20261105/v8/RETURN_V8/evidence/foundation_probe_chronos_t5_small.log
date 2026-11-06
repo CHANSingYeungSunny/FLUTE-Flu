@@ -1,0 +1,27 @@
+# foundation_probe_chronos_t5_small.log
+# captured_utc=2026-11-06T13:32:06Z
+# exact_command:
+#   timeout 180s env PYTHONPATH=C:/Users/Asus/AppData/Local/Temp/mlflu_hfhub_20261106 HF_HUB_DISABLE_TELEMETRY=1 HF_HUB_DISABLE_PROGRESS_BARS=1 HF_HUB_ETAG_TIMEOUT=15 HF_HUB_DOWNLOAD_TIMEOUT=60 python "HANDOFF_20261105/v8/foundation/foundation_hf_probe.py" --repo-id "amazon/chronos-t5-small" --revision "a971ba21945c4f1796b17a91fe69214b5f4ad472" --local-dir "HANDOFF_20261105/v8/foundation/weights/chronos_t5_small" --allow-patterns config.json README.md
+# allow_patterns restricts to config.json + README.md ONLY (NO weight tensors fetched).
+# ---------------------------------------------------------------
+probe_start
+repo_id=amazon/chronos-t5-small
+revision=a971ba21945c4f1796b17a91fe69214b5f4ad472
+local_dir=HANDOFF_20261105/v8/foundation/weights/chronos_t5_small
+allow_patterns=['config.json', 'README.md']
+huggingface_hub_version=2.4.0
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+snapshot_download_returned=C:\Users\Asus\Desktop\FYP code\MLFlu\HANDOFF_20261105\v8\foundation\weights\chronos_t5_small
+STATUS=OK
+--- files present under local_dir ---
+FILE rel=README.md bytes=6149 sha256=75d6b65b15700271750f7ed9c9d01a13e6983929c8d2cf66a1832ec33a439464
+FILE rel=config.json bytes=1113 sha256=76b7445a93491851e434733a138b67e26eda4375f83e08f80a07383c6b3f571a
+FILE rel=.cache/huggingface/.gitignore bytes=1 sha256=684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1
+FILE rel=.cache/huggingface/CACHEDIR.TAG bytes=195 sha256=e8893e2dcb3f4545ef67a0a5b7b769113d38eef1aa61c7c7ba14659b02af955f
+FILE rel=.cache/huggingface/download/README.md.metadata bytes=104 sha256=01ee75fa5db6f043941b5830973719ce860ea0074406899fd0ce2aec9c6025f7
+FILE rel=.cache/huggingface/download/config.json.metadata bytes=104 sha256=2303291af7b4e2da8f7cea651f81739acbae861bf4c20abdeec46a2c154e4184
+FILE rel=.cache/huggingface/trees/a971ba21945c4f1796b17a91fe69214b5f4ad472.json bytes=888 sha256=6ee934f14aa151e53cc7300e64e9fa880edd0cf230516ab66f7d6a4945446cec
+FILE_COUNT=7
+TOTAL_BYTES=8554
+probe_end
+probe_exit_code=0

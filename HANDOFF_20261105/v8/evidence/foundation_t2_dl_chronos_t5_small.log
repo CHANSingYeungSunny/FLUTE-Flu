@@ -1,0 +1,30 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+START_UTC=2026-11-06T15:08:22Z
+REPO_ID=amazon/chronos-t5-small
+REVISION=a971ba21945c4f1796b17a91fe69214b5f4ad472
+LOCAL_DIR=C:/models/mlflu_fm/chronos_t5_small
+NAME=chronos_t5_small
+HFHUB_VERSION=2.4.0
+HFHUB_LOADED_FROM=C:\models\mlflu_fm\_deps\huggingface_hub\__init__.py
+TREE_URL=https://huggingface.co/amazon/chronos-t5-small/tree/a971ba21945c4f1796b17a91fe69214b5f4ad472
+SNAPSHOT_RETURNED=C:\models\mlflu_fm\chronos_t5_small
+MANIFEST=HANDOFF_20261105/v8/evidence\foundation_t2_manifest_chronos_t5_small.txt
+FILE_COUNT=15
+TOTAL_BYTES=184875427
+END_UTC=2026-11-06T15:08:44Z
+FILE 1 684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1 .cache/huggingface/.gitignore
+FILE 195 e8893e2dcb3f4545ef67a0a5b7b769113d38eef1aa61c7c7ba14659b02af955f .cache/huggingface/CACHEDIR.TAG
+FILE 104 73dbd6cd7fe6061e0c73a6fa052ab6ed9321b8538d043360fbb33dc88c8fe5ec .cache/huggingface/download/.gitattributes.metadata
+FILE 104 ea1b5a25cc22f5158e3b33855f251159fcfb56f2a23cbb5ea6b73aa7c06f0601 .cache/huggingface/download/README.md.metadata
+FILE 103 c314bc484595b1e865302d4f50a9bdbd717e9ca4c4388ca48b23a1bd14a76e1c .cache/huggingface/download/config.json.metadata
+FILE 104 560c5c6bd55a66a9bcd07c744ba5afca2cedd6e457f6101235af39f6b1ca8f6f .cache/huggingface/download/figures/main-figure.png.metadata
+FILE 104 afb2b2e10dd976780f78640f66f28e94bb6a3e7151236038df4e7ecdbecc6b91 .cache/huggingface/download/generation_config.json.metadata
+FILE 127 376db9ec56082e05232dfdaaac7c18b3ebb8fd93cbdec98f8a50aba2fdbd5ae5 .cache/huggingface/download/model.safetensors.metadata
+FILE 888 6ee934f14aa151e53cc7300e64e9fa880edd0cf230516ab66f7d6a4945446cec .cache/huggingface/trees/a971ba21945c4f1796b17a91fe69214b5f4ad472.json
+FILE 1519 11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361 .gitattributes
+FILE 6149 75d6b65b15700271750f7ed9c9d01a13e6983929c8d2cf66a1832ec33a439464 README.md
+FILE 1113 76b7445a93491851e434733a138b67e26eda4375f83e08f80a07383c6b3f571a config.json
+FILE 232294 5be3368b7c92972fcd68505591a4a685db9fc2fa156f9df5adc01601cbd365e7 figures/main-figure.png
+FILE 142 8f6833851ce53496a43ef87a975c766f7a3049e2d598ecef609a526ca6308534 generation_config.json
+FILE 184632480 9c8b6fde5300f72b01c173153bf9288fa0a200614275bf0585071ad71a6a3d43 model.safetensors
+STATUS=OK

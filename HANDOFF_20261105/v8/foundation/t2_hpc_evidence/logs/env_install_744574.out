@@ -1,0 +1,98 @@
+=== T2_ENV_INSTALL START 2026-11-06T15:45:59Z host=cpunode-034 job=744574 ===
+--- base python ---
+Python 3.11.13
+--- site-packages of mlflu_llm (reuse its Python-3.11 torch/transformers) ---
+3.11.13 (main, Jun  1 2026, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-14)]
+/home/sychan552/.venvs/mlflu_llm/lib64/python3.11/site-packages
+/home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages
+--- key packages already in mlflu_llm (metadata only, NO torch import) ---
+torch=2.6.0
+transformers=5.22.1
+numpy=2.4.6
+pandas=MISSING (PackageNotFoundError)
+safetensors=0.8.0
+einops=MISSING (PackageNotFoundError)
+accelerate=1.15.0
+jax=MISSING (PackageNotFoundError)
+jaxlib=MISSING (PackageNotFoundError)
+flax=MISSING (PackageNotFoundError)
+huggingface-hub=2.4.0
+scikit-learn=MISSING (PackageNotFoundError)
+absl-py=MISSING (PackageNotFoundError)
+einshape=MISSING (PackageNotFoundError)
+chronos-forecasting=MISSING (PackageNotFoundError)
+timesfm=MISSING (PackageNotFoundError)
+fire=MISSING (PackageNotFoundError)
+PyYAML=6.0.3
+--- does mlflu_llm torch actually import on a COMPUTE node? ---
+torch 2.6.0+cu124 cuda_available False
+TORCH_IMPORT_RC=0
+--- create isolated venv (Python 3.11) ---
+VENV_CREATE_RC=0
+Python 3.11.13
+--- reuse mlflu_llm site-packages via .pth (both are Python 3.11) ---
+NEW_VENV_SITE=/home/sychan552/.venvs/mlflu_fm/lib64/python3.11/site-packages
+PTH_WRITTEN=/home/sychan552/.venvs/mlflu_fm/lib64/python3.11/site-packages/_mlflu_llm_reuse.pth
+--- pip install pinned, source-pinned packages (no deps first) ---
+Collecting chronos-forecasting==2.3.2
+  Downloading chronos_forecasting-2.3.2-py3-none-any.whl (80 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.8/80.8 kB 8.1 MB/s eta 0:00:00
+Collecting timesfm==1.3.0
+  Downloading timesfm-1.3.0-py3-none-any.whl (55 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 kB 11.3 MB/s eta 0:00:00
+Installing collected packages: timesfm, chronos-forecasting
+Successfully installed chronos-forecasting-2.3.2 timesfm-1.3.0
+PIP_NO_DEPS_RC=0
+--- install any small missing pure-python deps (no torch, no jax) ---
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (12.4.127)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (12.4.127)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (12.4.127)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (12.4.5.8)
+Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (11.2.1.3)
+Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (10.3.5.147)
+Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (11.6.1.9)
+Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (12.3.1.170)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (0.6.2)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (12.4.127)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (12.4.127)
+Requirement already satisfied: triton==3.2.0 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (3.2.0)
+Requirement already satisfied: sympy==1.13.1 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from torch>=2.0.0->accelerate>=0.28) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from sympy==1.13.1->torch>=2.0.0->accelerate>=0.28) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/sychan552/.venvs/mlflu_llm/lib/python3.11/site-packages (from jinja2->torch>=2.0.0->accelerate>=0.28) (3.0.4)
+Installing collected packages: termcolor, einops, absl-py, fire, einshape
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+chronos-forecasting 2.3.2 requires pandas<4,>=2.0, which is not installed.
+timesfm 1.3.0 requires pandas>=2.0.0, which is not installed.
+timesfm 1.3.0 requires scikit-learn>=1.2.2, which is not installed.
+timesfm 1.3.0 requires utilsforecast>=0.1.10, which is not installed.
+timesfm 1.3.0 requires wandb>=0.17.5, which is not installed.
+Successfully installed absl-py-2.5.1 einops-0.8.2 einshape-1.0 fire-0.7.1 termcolor-3.3.0
+PIP_SMALL_DEPS_RC=0
+--- verify imports (INSIDE sbatch) ---
+python 3.11.13 /home/sychan552/.venvs/mlflu_fm/bin/python
+IMPORT_OK torch 2.6.0+cu124
+IMPORT_OK numpy 2.4.6
+IMPORT_FAIL pandas ModuleNotFoundError No module named 'pandas'
+IMPORT_OK transformers 5.22.1
+IMPORT_OK safetensors 0.8.0
+IMPORT_OK einops 0.8.2
+IMPORT_FAIL chronos ModuleNotFoundError No module named 'pandas'
+ See https://github.com/google-research/timesfm/blob/master/README.md for updated APIs.
+IMPORT_FAIL timesfm ModuleNotFoundError No module named 'pandas'
+CHRONOS_API_FAIL ModuleNotFoundError No module named 'pandas'
+ See https://github.com/google-research/timesfm/blob/master/README.md for updated APIs.
+TIMESFM_API_FAIL ModuleNotFoundError No module named 'pandas'
+IMPORT_VERIFY_RC=0
+--- installed versions in NEW venv ---
+accelerate               1.15.0
+chronos-forecasting      2.3.2
+einops                   0.8.2
+huggingface_hub          2.4.0
+numpy                    2.4.6
+safetensors              0.8.0
+timesfm                  1.3.0
+torch                    2.6.0
+transformers             5.22.1
+=== T2_ENV_INSTALL END 2026-11-06T15:46:33Z ===

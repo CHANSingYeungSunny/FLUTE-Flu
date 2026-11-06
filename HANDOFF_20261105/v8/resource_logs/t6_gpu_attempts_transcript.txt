@@ -1,0 +1,92 @@
+T6 GPU MEASUREMENT ATTEMPTS - LOCAL TRANSCRIPT (verbatim observed command output)
+Note: this is a locally written transcript of SSH command outputs. It is NOT an
+HPC-produced log. HPC-side authoritative state is in gpu_attempts_state.txt.
+
+All SSH commands used ONE connection each, wrapped in `timeout 25s`:
+  ssh -o ServerAliveInterval=0 -o ServerAliveCountMax=0 -o BatchMode=yes sychan552@burgundy.hpc.cityu.edu.hk '...'
+
+--------------------------------------------------------------------------------
+ATTEMPT A - GPU job on --partition=gpu_a100
+--------------------------------------------------------------------------------
+command (2026-11-06T13:54:48Z):
+  cd /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res \
+    && sbatch --parsable t6_res_gpu.sbatch
+output:
+  submit_utc=2026-11-06T13:54:48Z
+  744253
+exit code: 0
+
+Script t6_res_gpu.sbatch directives:
+  #SBATCH --job-name=t6_res_gpu
+  #SBATCH --partition=gpu_a100
+  #SBATCH --gres=gpu:a100:1
+  #SBATCH --exclude=gpu-a100-03
+  #SBATCH --time=00:12:00
+  (would have run a REAL MIFlu forward from the existing checkpoint
+   author_runs/ckpt_L36_s2023/best_miflu_L36.pth via export_miflu_all7.py
+   --device cuda, with /usr/bin/time -v and nvidia-smi -l 1 sampling)
+
+scontrol show job 744253 (2026-11-06T13:55Z approx):
+  JobId=744253 JobName=t6_res_gpu
+     JobState=PENDING Reason=Priority Dependency=(null)
+     RunTime=00:00:00 TimeLimit=00:12:00 TimeMin=N/A
+     StartTime=2026-11-08T02:25:47 EndTime=2026-11-08T02:37:47 Deadline=N/A
+     Partition=gpu_a100
+     ExcNodeList=gpu-a100-03
+     TresPerNode=gres/gpu:a100:1
+  => Predicted start 2026-11-08T02:25:47Z (~2 days away). TIME-BOXED OUT.
+
+command (2026-11-06T13:56:49Z):
+  scancel 744253
+output:
+  scancel_utc=2026-11-06T13:56:49Z
+  scancel_rc=0
+  JobId=744253 JobState=CANCELLED Reason=Priority
+  743850 still RUNNING on gpu-a100-03 (unchanged)
+exit code: 0
+
+--------------------------------------------------------------------------------
+ATTEMPT B - GPU job on --partition=stingy --gres=gpu:a100:1 --exclude=gpu-a100-03
+--------------------------------------------------------------------------------
+Script t6_res_gpu_stingy.sbatch (same body, --partition=stingy,
+--job-name=t6_res_gpu_stingy). Upload via scp at 13:57:00Z succeeded.
+
+command (2026-11-06T13:57:00Z):
+  cd /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res \
+    && sbatch --parsable t6_res_gpu_stingy.sbatch
+output:
+  submit_utc=2026-11-06T13:57:00Z
+  sbatch: error: QOSMaxSubmitJobPerUserLimit
+  sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+exit code: 1   (NO job id produced, NO job ran)
+
+Diagnostic: squeue -u sychan552 showed only ONE active job (743850 RUNNING) plus
+the `squeue -h` "Last update in ..." artifact (AGENTS.md RULE 3).
+
+command (2026-11-06T13:57:30Z) - SINGLE retry, not a loop:
+  cd /gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res \
+    && sbatch --parsable t6_res_gpu_stingy.sbatch
+output:
+  retry_utc=2026-11-06T13:57:30Z
+  sbatch: error: QOSMaxSubmitJobPerUserLimit
+  sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+exit code: 1
+
+--------------------------------------------------------------------------------
+RESULT
+--------------------------------------------------------------------------------
+No GPU job ever started. No nvidia-smi VRAM sampling occurred. No real model
+forward pass was executed. Therefore peak_vram_mib = NOT_MEASURED for every row,
+and true model-forward inference latency = NOT_MEASURED for every row.
+
+Exact reasons:
+  1. CPU job 744239 ran on --partition=tiny with NO --gres=gpu; nvidia-smi was
+     not present (resource_logs/nvidia_smi_L.txt, resource_logs/gpu_probe.txt).
+     Reason string: "no GPU allocated in this job".
+  2. Job 744253 was PENDING Reason=Priority with predicted StartTime
+     2026-11-08T02:25:47Z; time-boxed, cancelled by this task (scancel rc=0).
+  3. Both stingy submissions were rejected at submit time with
+     "QOSMaxSubmitJobPerUserLimit" (rc=1), producing no job and no logs.
+
+Job 743850 (wf_fix218) remained RUNNING on gpu-a100-03 throughout and was never
+cancelled, never written to, never interfered with (see gpu_attempts_state.txt).

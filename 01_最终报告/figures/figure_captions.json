@@ -1,74 +1,88 @@
 [
- {
-  "file": "fig_forecast_patchtst_L24.png",
-  "model": "patchtst",
-  "L": 24,
-  "kind": "npz",
-  "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
-  "caption_en": "**PATCHTST at L=24.** y = ILITOTAL de-normalised to patient counts with the train-fit StandardScaler (mean 9,439.84, sd 9,003.15 patients); x = test-set week. Black = ground truth; one line per fixed step 0/1/2/3 = 1/2/3/4 weeks ahead. Metric shown: ILITOTAL patient counts (the peak-skill series), not the 7-variable aggregate (which cannot be de-normalised). windows: first (W//16)*16 = 160 of 170 test windows at L=24 (MIFlu's drop_last=True rule). Hardware: A100-SXM4-80GB | partition stingy | CityU HPC Burgundy.",
-  "caption_zh": "**PATCHTST，L=24。** y 为用训练集拟合的 StandardScaler 反归一化后的 ILITOTAL 患者人数（均值 9,439.84，标准差 9,003.15 人）；x 为测试集周次。黑线为真值，其余每步 0/1/2/3（即提前 1/2/3/4 周）一条预测线。图中指标为 ILITOTAL 患者人数（峰值技巧所用序列），不是无法反归一化的 7 变量聚合。评测窗口：L=24 时取前 (W//16)*16 = 160 个测试窗口（共 170 个），与 MIFlu 的 drop_last=True 规则一致。硬件：A100-SXM4-80GB，stingy 分区，CityU HPC Burgundy。"
- },
- {
-  "file": "fig_forecast_patchtst_L60.png",
-  "model": "patchtst",
-  "L": 60,
-  "kind": "npz",
-  "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
-  "caption_en": "**PATCHTST at L=60.** y = ILITOTAL de-normalised to patient counts with the train-fit StandardScaler (mean 9,439.84, sd 9,003.15 patients); x = test-set week. Black = ground truth; one line per fixed step 0/1/2/3 = 1/2/3/4 weeks ahead. Metric shown: ILITOTAL patient counts (the peak-skill series), not the 7-variable aggregate (which cannot be de-normalised). windows: first (W//16)*16 = 128 of 134 test windows at L=60 (MIFlu's drop_last=True rule). Hardware: A100-SXM4-80GB | partition stingy | CityU HPC Burgundy.",
-  "caption_zh": "**PATCHTST，L=60。** y 为用训练集拟合的 StandardScaler 反归一化后的 ILITOTAL 患者人数（均值 9,439.84，标准差 9,003.15 人）；x 为测试集周次。黑线为真值，其余每步 0/1/2/3（即提前 1/2/3/4 周）一条预测线。图中指标为 ILITOTAL 患者人数（峰值技巧所用序列），不是无法反归一化的 7 变量聚合。评测窗口：L=60 时取前 (W//16)*16 = 128 个测试窗口（共 134 个），与 MIFlu 的 drop_last=True 规则一致。硬件：A100-SXM4-80GB，stingy 分区，CityU HPC Burgundy。"
- },
- {
-  "file": "fig_forecast_nlinear_L24.png",
-  "model": "nlinear",
-  "L": 24,
-  "kind": "npz",
-  "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
-  "caption_en": "**NLINEAR at L=24.** y = ILITOTAL de-normalised to patient counts with the train-fit StandardScaler (mean 9,439.84, sd 9,003.15 patients); x = test-set week. Black = ground truth; one line per fixed step 0/1/2/3 = 1/2/3/4 weeks ahead. Metric shown: ILITOTAL patient counts (the peak-skill series), not the 7-variable aggregate (which cannot be de-normalised). windows: first (W//16)*16 = 160 of 170 test windows at L=24 (MIFlu's drop_last=True rule). Hardware: A100-SXM4-80GB | partition stingy | CityU HPC Burgundy.",
-  "caption_zh": "**NLINEAR，L=24。** y 为用训练集拟合的 StandardScaler 反归一化后的 ILITOTAL 患者人数（均值 9,439.84，标准差 9,003.15 人）；x 为测试集周次。黑线为真值，其余每步 0/1/2/3（即提前 1/2/3/4 周）一条预测线。图中指标为 ILITOTAL 患者人数（峰值技巧所用序列），不是无法反归一化的 7 变量聚合。评测窗口：L=24 时取前 (W//16)*16 = 160 个测试窗口（共 170 个），与 MIFlu 的 drop_last=True 规则一致。硬件：A100-SXM4-80GB，stingy 分区，CityU HPC Burgundy。"
- },
- {
-  "file": "fig_forecast_nlinear_L60.png",
-  "model": "nlinear",
-  "L": 60,
-  "kind": "npz",
-  "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
-  "caption_en": "**NLINEAR at L=60.** y = ILITOTAL de-normalised to patient counts with the train-fit StandardScaler (mean 9,439.84, sd 9,003.15 patients); x = test-set week. Black = ground truth; one line per fixed step 0/1/2/3 = 1/2/3/4 weeks ahead. Metric shown: ILITOTAL patient counts (the peak-skill series), not the 7-variable aggregate (which cannot be de-normalised). windows: first (W//16)*16 = 128 of 134 test windows at L=60 (MIFlu's drop_last=True rule). Hardware: A100-SXM4-80GB | partition stingy | CityU HPC Burgundy.",
-  "caption_zh": "**NLINEAR，L=60。** y 为用训练集拟合的 StandardScaler 反归一化后的 ILITOTAL 患者人数（均值 9,439.84，标准差 9,003.15 人）；x 为测试集周次。黑线为真值，其余每步 0/1/2/3（即提前 1/2/3/4 周）一条预测线。图中指标为 ILITOTAL 患者人数（峰值技巧所用序列），不是无法反归一化的 7 变量聚合。评测窗口：L=60 时取前 (W//16)*16 = 128 个测试窗口（共 134 个），与 MIFlu 的 drop_last=True 规则一致。硬件：A100-SXM4-80GB，stingy 分区，CityU HPC Burgundy。"
- },
- {
-  "file": "fig_forecast_miflu_L24.png",
-  "model": "miflu",
-  "L": 24,
-  "kind": "miflu",
-  "hardware": "CityU HPC (reproduction run; GPU record in the run logs, not in the export)",
-  "caption_en": "**MIFLU at L=24.** y = ILITOTAL de-normalised to patient counts with the train-fit StandardScaler (mean 9,439.84, sd 9,003.15 patients); x = test-set week. Black = ground truth; one line per fixed step 0/1/2/3 = 1/2/3/4 weeks ahead. Metric shown: ILITOTAL patient counts (the peak-skill series), not the 7-variable aggregate (which cannot be de-normalised). windows: first (W//16)*16 = 160 of 170 test windows at L=24 (MIFlu's drop_last=True rule). Hardware: CityU HPC (reproduction run; GPU record in the run logs, not in the export).",
-  "caption_zh": "**MIFLU，L=24。** y 为用训练集拟合的 StandardScaler 反归一化后的 ILITOTAL 患者人数（均值 9,439.84，标准差 9,003.15 人）；x 为测试集周次。黑线为真值，其余每步 0/1/2/3（即提前 1/2/3/4 周）一条预测线。图中指标为 ILITOTAL 患者人数（峰值技巧所用序列），不是无法反归一化的 7 变量聚合。评测窗口：L=24 时取前 (W//16)*16 = 160 个测试窗口（共 170 个），与 MIFlu 的 drop_last=True 规则一致。硬件：CityU HPC（复现运行；单次 GPU 记录见运行日志，未包含在该导出中）。"
- },
- {
-  "file": "fig_forecast_miflu_L60.png",
-  "model": "miflu",
-  "L": 60,
-  "kind": "miflu",
-  "hardware": "CityU HPC (reproduction run; GPU record in the run logs, not in the export)",
-  "caption_en": "**MIFLU at L=60.** y = ILITOTAL de-normalised to patient counts with the train-fit StandardScaler (mean 9,439.84, sd 9,003.15 patients); x = test-set week. Black = ground truth; one line per fixed step 0/1/2/3 = 1/2/3/4 weeks ahead. Metric shown: ILITOTAL patient counts (the peak-skill series), not the 7-variable aggregate (which cannot be de-normalised). windows: first (W//16)*16 = 128 of 134 test windows at L=60 (MIFlu's drop_last=True rule). Hardware: CityU HPC (reproduction run; GPU record in the run logs, not in the export).",
-  "caption_zh": "**MIFLU，L=60。** y 为用训练集拟合的 StandardScaler 反归一化后的 ILITOTAL 患者人数（均值 9,439.84，标准差 9,003.15 人）；x 为测试集周次。黑线为真值，其余每步 0/1/2/3（即提前 1/2/3/4 周）一条预测线。图中指标为 ILITOTAL 患者人数（峰值技巧所用序列），不是无法反归一化的 7 变量聚合。评测窗口：L=60 时取前 (W//16)*16 = 128 个测试窗口（共 134 个），与 MIFlu 的 drop_last=True 规则一致。硬件：CityU HPC（复现运行；单次 GPU 记录见运行日志，未包含在该导出中）。"
- },
- {
-  "file": "fig_pte_pie_heatmap.png",
-  "model": "16 arms",
-  "L": "all",
-  "kind": "heatmap",
-  "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
-  "caption_en": "**Per-step peak skill, all 16 benchmark arms.** Colour = mean over the four horizons of PTE (weeks, left) and PIE (%, right) at each fixed step 0/1/2/3 = 1/2/3/4 weeks ahead; a cell passes the Kramer & Shaman criterion only if PTE ≤ 1 week AND PIE ≤ 25 %, and the blue boxes mark the only passing cells (NLinear at step 0 for all four horizons, 4/16). Windows: shared (W//16)*16 = 160/144/144/128; seeds 42/43/44. Hardware: A100-SXM4-80GB | partition stingy | CityU HPC Burgundy.",
-  "caption_zh": "**全部 16 个基准模型的逐步峰值技巧。** 颜色为四个预测跨度上 PTE（周，左）与 PIE（%，右）在固定步 0/1/2/3（提前 1/2/3/4 周）的均值；仅当 PTE ≤ 1 周且 PIE ≤ 25% 时该格通过 Kramer & Shaman 判据，蓝框标出唯一通过的格子（NLinear 在步 0，四个跨度全部通过，4/16）。窗口为共享的 (W//16)*16 = 160/144/144/128；种子 42/43/44。硬件：A100-SXM4-80GB，stingy 分区，CityU HPC Burgundy。"
- },
- {
-  "file": "fig_pareto_frontier.png",
-  "model": "16 arms",
-  "L": "all",
-  "kind": "pareto",
-  "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
-  "caption_en": "**Accuracy–efficiency Pareto frontier.** x = parameter count (log scale), y = 4-horizon mean 7-variable z-space MSE; the step line is the Pareto set {NLinear, 2,520 parameters; PatchTST, 531,878 parameters}. PatchTST spends 211× the parameters of NLinear for 11.2 % lower MSE; the fitted slope of MSE against log₁₀(parameters) is +0.1171 with R² = 0.0223, i.e. size explains ~2 % of the variance and the sign is positive. Windows: shared (W//16)*16 = 160/144/144/128; seeds 42/43/44. Reproduced by `05_程序代码/plot_pareto.py`. Hardware: A100-SXM4-80GB | partition stingy | CityU HPC Burgundy.",
-  "caption_zh": "**精度—效率帕累托前沿。** x 为参数量（对数轴），y 为 4 个跨度的 7 变量 z 空间 MSE 均值；阶梯线为帕累托集合 {NLinear 2,520 参数；PatchTST 531,878 参数}。PatchTST 用 211 倍参数量换取 11.2% 的 MSE 下降；MSE 对 log₁₀(参数量) 的拟合斜率为 +0.1171，R² = 0.0223，即规模只能解释约 2% 的方差且符号为正。窗口为共享的 (W//16)*16 = 160/144/144/128；种子 42/43/44。由 `05_程序代码/plot_pareto.py` 生成。硬件：A100-SXM4-80GB，stingy 分区，CityU HPC Burgundy。"
- }
+  {
+    "file": "fig_forecast_patchtst_L24.png",
+    "model": "patchtst",
+    "L": 24,
+    "kind": "npz",
+    "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
+    "caption_en": "patchtst, L=24. ILITOTAL in patient counts against the file’s test-week index. Black is the observed series; the other curves use fixed forecast steps s0–s3. Scored windows: 160. Imported illustrative figure; raw figure inputs were not independently regenerated in this audit.",
+    "caption_zh": "patchtst，L=24。纵轴为 ILITOTAL 患者人数，横轴为文件测试周下标。黑线为观测，其余为固定预测步 s0–s3。计分窗口 160。此图沿用所附示例，本次未独立重建绘图原始输入。"
+  },
+  {
+    "file": "fig_forecast_patchtst_L60.png",
+    "model": "patchtst",
+    "L": 60,
+    "kind": "npz",
+    "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
+    "caption_en": "patchtst, L=60. ILITOTAL in patient counts against the file’s test-week index. Black is the observed series; the other curves use fixed forecast steps s0–s3. Scored windows: 128. Imported illustrative figure; raw figure inputs were not independently regenerated in this audit.",
+    "caption_zh": "patchtst，L=60。纵轴为 ILITOTAL 患者人数，横轴为文件测试周下标。黑线为观测，其余为固定预测步 s0–s3。计分窗口 128。此图沿用所附示例，本次未独立重建绘图原始输入。"
+  },
+  {
+    "file": "fig_forecast_nlinear_L24.png",
+    "model": "nlinear",
+    "L": 24,
+    "kind": "npz",
+    "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
+    "caption_en": "nlinear, L=24. ILITOTAL in patient counts against the file’s test-week index. Black is the observed series; the other curves use fixed forecast steps s0–s3. Scored windows: 160. Imported illustrative figure; raw figure inputs were not independently regenerated in this audit.",
+    "caption_zh": "nlinear，L=24。纵轴为 ILITOTAL 患者人数，横轴为文件测试周下标。黑线为观测，其余为固定预测步 s0–s3。计分窗口 160。此图沿用所附示例，本次未独立重建绘图原始输入。"
+  },
+  {
+    "file": "fig_forecast_nlinear_L60.png",
+    "model": "nlinear",
+    "L": 60,
+    "kind": "npz",
+    "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
+    "caption_en": "nlinear, L=60. ILITOTAL in patient counts against the file’s test-week index. Black is the observed series; the other curves use fixed forecast steps s0–s3. Scored windows: 128. Imported illustrative figure; raw figure inputs were not independently regenerated in this audit.",
+    "caption_zh": "nlinear，L=60。纵轴为 ILITOTAL 患者人数，横轴为文件测试周下标。黑线为观测，其余为固定预测步 s0–s3。计分窗口 128。此图沿用所附示例，本次未独立重建绘图原始输入。"
+  },
+  {
+    "file": "fig_forecast_miflu_L24.png",
+    "model": "miflu",
+    "L": 24,
+    "kind": "miflu",
+    "hardware": "CityU HPC (reproduction run; GPU record in the run logs, not in the export)",
+    "caption_en": "miflu, L=24. ILITOTAL in patient counts against the file’s test-week index. Black is the observed series; the other curves use fixed forecast steps s0–s3. Scored windows: 160. Imported illustrative figure; raw figure inputs were not independently regenerated in this audit.",
+    "caption_zh": "miflu，L=24。纵轴为 ILITOTAL 患者人数，横轴为文件测试周下标。黑线为观测，其余为固定预测步 s0–s3。计分窗口 160。此图沿用所附示例，本次未独立重建绘图原始输入。"
+  },
+  {
+    "file": "fig_forecast_miflu_L60.png",
+    "model": "miflu",
+    "L": 60,
+    "kind": "miflu",
+    "hardware": "CityU HPC (reproduction run; GPU record in the run logs, not in the export)",
+    "caption_en": "miflu, L=60. ILITOTAL in patient counts against the file’s test-week index. Black is the observed series; the other curves use fixed forecast steps s0–s3. Scored windows: 128. Imported illustrative figure; raw figure inputs were not independently regenerated in this audit.",
+    "caption_zh": "miflu，L=60。纵轴为 ILITOTAL 患者人数，横轴为文件测试周下标。黑线为观测，其余为固定预测步 s0–s3。计分窗口 128。此图沿用所附示例，本次未独立重建绘图原始输入。"
+  },
+  {
+    "file": "fig_pte_pie_heatmap.png",
+    "model": "28 arms",
+    "L": "all",
+    "kind": "heatmap",
+    "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
+    "caption_en": "Peak error heat map for all 28 retained arms. Cells display means across horizons at fixed steps. Mean-level highlighting must not be interpreted as every horizon passing; the detailed grid gives per-horizon passes. Source: BENCH_PTE_PIE_BY_STEP.csv.",
+    "caption_zh": "28 个保留模型的峰值误差热图。每格展示固定提前步上跨跨度的均值。均值层面的框选不能理解为每个跨度均通过，逐跨度通过情况见详细网格。来源：BENCH_PTE_PIE_BY_STEP.csv。"
+  },
+  {
+    "file": "fig_ks_ranking.png",
+    "model": "MIFlu / NLinear / PatchTST",
+    "L": "step 0",
+    "kind": "bars",
+    "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
+    "caption_en": "Step-zero mean PTE and PIE across horizons for the three leading arms. Mean-level tolerances are illustrative; MIFlu still fails L48 at step zero. A mean error below a threshold is not a season-level success rate. Source: BENCH_PTE_PIE_BY_STEP.csv.",
+    "caption_zh": "三个领先模型在提前步零上跨跨度的平均 PTE 与 PIE。均值容差线仅用于说明；MIFlu 在 L48 提前步零仍未通过。平均误差小于阈值不等于逐季成功率。来源：BENCH_PTE_PIE_BY_STEP.csv。"
+  },
+  {
+    "file": "fig_pareto_frontier.png",
+    "model": "11 parametric arms",
+    "L": "all",
+    "kind": "pareto",
+    "hardware": "A100-SXM4-80GB | partition stingy | CityU HPC Burgundy",
+    "caption_en": "Accuracy–parameter trade-off among 11 models with exported parameter counts. MIFlu and frozen encoders are omitted from this subset. Parameter count is not a measured runtime or memory cost. Source: BENCH_EFFICIENCY.csv.",
+    "caption_zh": "11 个导出参数量模型的精度与参数取舍。此子集未包括 MIFlu 与冻结编码器。参数量不是实测运行时间或内存代价。来源：BENCH_EFFICIENCY.csv。"
+  },
+  {
+    "file": "fig_pareto_presentation.png",
+    "caption_en": "Presentation-specific parameter frontier from BENCH_EFFICIENCY.csv. Eleven measured arms; labels focus on NLinear and PatchTST. MSE uses the shared retained windows. Parameter count is a size proxy, not measured runtime; MIFlu and encoders are excluded.",
+    "caption_zh": "PPT 专用参数前沿，来源 BENCH_EFFICIENCY.csv。保留 11 个有参数导出的模型，仅重点标注 NLinear 与 PatchTST。MSE 使用统一保留窗口。参数量仅为规模代理，不是实测运行时间；MIFlu 与编码器不在此子集。"
+  }
 ]

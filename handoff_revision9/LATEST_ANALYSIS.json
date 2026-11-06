@@ -1,0 +1,34 @@
+{
+  "release": "9.2",
+  "new_scientific_result": false,
+  "historical_roster": {
+    "conventional": 13,
+    "llm_based": 4,
+    "frozen_encoders": 11
+  },
+  "historical_paired_models": 17,
+  "historical_pairs": 136,
+  "holm_rejections": 0,
+  "raw_rejections": 128,
+  "nlinear_patchtst_adjusted_p_display": 0.1172,
+  "core_artifact_count_at_prior_return": 160,
+  "national_packaged_completed_at_20261104_2335_hkt": 117,
+  "national_owner_report_at_20261105_0015_hkt": 141,
+  "national_planned": 1120,
+  "ablation_queue_done": 60,
+  "ablation_aggregate_verified": false,
+  "new_common_scoring_harmonised": false,
+  "miflu_complete_seven_channel_export_available": false,
+  "live_hpc_queried_here": false,
+  "O1_default": true,
+  "O2_optional": true,
+  "publication_readiness_certified": false,
+  "administrative_change": "Confirmed FYP programme/course/term; required meetings/hours fields retained blank",
+  "chinese_qa": {
+    "layout": "separate companion",
+    "questions": 25,
+    "main": "01_\u6700\u7ec8\u62a5\u544a/report_internal_zh",
+    "companion": "01_\u6700\u7ec8\u62a5\u544a/report_internal_qa_zh",
+    "scientific_tables_and_figures_in_main": true
+  }
+}

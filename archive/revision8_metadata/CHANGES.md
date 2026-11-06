@@ -1,0 +1,20 @@
+# Revision 8 changes — keyed to the 5 November return
+
+- `handoffs/20261105_return/DOCUMENTS/v6`: exact six baseline DOCX inputs retained in `source_snapshots/v6`; all six current reports rewritten at anchored execution/status paragraphs, preserving historical scientific table cells except declared operational completion cells.
+- `RETURN_SUMMARY.md`, `RUN_LEDGER.csv`, `HPC_VALIDATED_CELLS.tsv`, `LIVE_STATUS_DRIFT.md`: distinguish core 160/160 from national 117/1120 packaged and later owner 141/1120. Both matrix membership and capture times are explicit. DLinear core cells are outside the retained 28-arm family; overlaps must not be pooled twice.
+- `tests/no_text_runtime.xml` and supplied runtime log: three fixed-weight CPU assertions passed, zero skipped. Reports, slide 11, notes and Q22/Q25 updated; independent rerun here not executed. Archive collection still fails; no total/passing suite claimed.
+- Ablation queue reports 60/60 DONE. Q23 and all status tables now distinguish queue completion from an unverified per-variant aggregate. Historical job 722968 is cancelled.
+- `PROTOCOL_LOCK.json`: frozen:false after submission disclosed; no backdating/prospective confirmation. Source-profile byte difference versus reported seven-channel numeric equality disclosed.
+- `RAW_EVIDENCE`: 237 seven-channel NPZ stored-metric checks and 40 MIFlu ILITOTAL cropped-panel checks match. MIFlu historical crop versus other full-window scoring prevents a harmonised new leaderboard; full seven-channel MIFlu exports are missing. No new peak/accuracy/statistical conclusion is inserted.
+- Validator as-received failure caused by one unlisted temporary file is disclosed. All 896 listed hashes match; quarantine in a review copy yields PASS. Original ZIPs and manifests are unchanged; integrity is not scientific validation.
+- `01_最终报告/record_for_journal_en/zh`: rebuilt current full journal evidence records from audited internal text, preserving Q01–Q25 and named-paper reasons, with evidence/command/update appendices. Old pre-audit records preserved under `archive/journal_record_before_audit`.
+- `presentation`: owner layout/master retained, current 13-slide status/notes synchronised; native charts and workbook bytes preserved. Negative axis IDs encoded as unsigned; numerical chart-cache lexemes refreshed from exact unchanged workbook cells (differences <1e-12). Artifact Tool import, package/layout gates and exact workbook/cache contracts pass. Notes contain 606 planned spoken words and 300 seconds; human rehearsal not executed.
+- `README.md`, start files, build entry points, inventories and this audit are synchronised. `RESULT_UPDATE_POLICY.md` records the standing instruction to verify new evidence then revise methods/results/interpretation across all outputs.
+
+## Claims retained
+
+Historical MSE/MAE, peak, parameter and Holm science is unchanged: 13+4+11; 17-model paired family including MIFlu, excluding DLinear/encoders; 0/136 Holm versus 128/136 raw; minimum adjusted p about 0.0664; NLinear–PatchTST 0.1172; ordering inverted at both ends. Frozen-encoder and no-text claims stay within tested protocols. O1 remains default; optional O2 needs suitable validation/test exports, zero new GPU training only under that condition, CPU cost unmeasured.
+
+## Still blocked / not executed
+
+Full 1120 completion, harmonised seven-channel core/national scoring, full peaks/statistics, per-variant ablation trends, regional/walk-forward validity, numerical-foundation and readout controls, comparable measured efficiency, pinned upstream protocol and official current venue checks. v2 Table VI 19 TODO and walk-forward 170 TODO not started; reconcile older DONE rows and nine regional TODO. Owner-reported 13 empty decision-tree partials, two GPU lanes pending and quota 306/300 GB soft (10-day grace, 1024 GB hard) are dated observations, not live readings. No Burgundy connection, new training/inference, independent model-test rerun, native Office or human rehearsal here. Exact execution-end commands are in `handoffs/20261105_return/REPRODUCE.md`, `audit/EXECUTION_STATUS.md` and `audit/NO_TEXT_VERIFICATION.md`.

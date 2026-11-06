@@ -1,0 +1,6 @@
+env_probe rc=0
+scontrol_show_job rc=0
+record_versions rc=0
+extract_wall rc=0
+measure_latency rc=0
+manifest rc=0

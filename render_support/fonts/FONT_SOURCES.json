@@ -1,0 +1,42 @@
+{
+  "urls": {
+    "Carlito-Regular.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/carlito/Carlito-Regular.ttf",
+    "Carlito-Italic.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/carlito/Carlito-Italic.ttf",
+    "Carlito-Bold.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/carlito/Carlito-Bold.ttf",
+    "Carlito-BoldItalic.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/carlito/Carlito-BoldItalic.ttf",
+    "NotoSansCJKsc-Regular.otf": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+    "NotoSerifCJKsc-Regular.otf": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Regular.otf"
+  },
+  "files": [
+    {
+      "name": "Carlito-Regular.ttf",
+      "bytes": 628032,
+      "sha256": "f6418f708baede9789daef5d458c0f53d2a888af9820e8062934e504fedc6595"
+    },
+    {
+      "name": "Carlito-Italic.ttf",
+      "bytes": 615236,
+      "sha256": "0b019225e58d702bfedcbd35c21696769f8ee115cb6343f84c2f240312450d1c"
+    },
+    {
+      "name": "Carlito-Bold.ttf",
+      "bytes": 682468,
+      "sha256": "bb5d20f79b82599ec72983597437373a80f2d2085fa91fc144fd74e876a594db"
+    },
+    {
+      "name": "Carlito-BoldItalic.ttf",
+      "bytes": 808508,
+      "sha256": "b32928186c119599e03ca6a1ffc680fdcb7fac95772f4b95d989cf6cd3861517"
+    },
+    {
+      "name": "NotoSansCJKsc-Regular.otf",
+      "bytes": 16437364,
+      "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
+    },
+    {
+      "name": "NotoSerifCJKsc-Regular.otf",
+      "bytes": 24543080,
+      "sha256": "2a2eae2628df83556c54018c41e20fa532c1b862c5256ae8b3f23feb918d12ca"
+    }
+  ]
+}

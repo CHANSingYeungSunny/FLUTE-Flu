@@ -1,0 +1,17 @@
+{
+  "integrity_status": "FAIL",
+  "scope": "structure, file hashes and limited status consistency only; NOT scientific validation",
+  "run_status_counts": {
+    "completed": 117,
+    "queued": 1003
+  },
+  "check_status_counts": {
+    "passed": 18,
+    "failed": 1,
+    "not_executed": 4
+  },
+  "scientific_readiness": "NOT_ASSESSED",
+  "errors": [
+    "manifest coverage differs: ['RAW_EVIDENCE/cells/core/export/miflu/L36_s2029/.predictions_miflu_L36_paper_protocol.csv.HmAaGI']"
+  ]
+}

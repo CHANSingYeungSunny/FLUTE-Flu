@@ -72,3 +72,30 @@ _*.err
 # memory/runtime caches
 __pycache__/
 *.pyc
+
+# --- 2026-11-07 push hygiene: raw evidence payloads are delivered as ZIPs, not git ---
+# GitHub hard limit is 100 MB/file; keep the repository near the <1 GB recommendation.
+# These remain on disk and inside the two delivered return ZIPs.
+*.tar.gz
+*.tgz
+render_support/fonts/*.otf
+render_support/fonts/*.ttf
+HANDOFF_20261105/v7/RETURN_V7/RAW_EVIDENCE/
+HANDOFF_20261105/v8/RETURN_V8/RAW_EVIDENCE/
+HANDOFF_20261105/v7/raw_npz.tar.gz
+handoffs/20261105_return/RAW_EVIDENCE/cells/
+# byte-identical duplicate copies of HANDOFF_20261105/final/PEAK_EVENTS.csv
+# inside packaged snapshots (sha256 9dcedc0bfa1df4fe..., 6 identical copies);
+# the canonical file in final/ stays tracked.
+HANDOFF_20261105/v7/RETURN_V7/PEAK_EVENTS.csv
+HANDOFF_20261105/v7/RETURN_V7/final/PEAK_EVENTS.csv
+HANDOFF_20261105/v8/RETURN_V8/PEAK_EVENTS.csv
+HANDOFF_20261105/v8/RETURN_V8/final/PEAK_EVENTS.csv
+HANDOFF_20261105/v8/RETURN_V8/v7_snapshot/PEAK_EVENTS.csv
+# transient probes / atomic-write leftovers
+*.Jbk79F
+.*.Jbk*
+_jbhi_authors.html
+_t1_missing218.txt
+# IDE plan scratch (project data, but not part of the deliverable)
+.codebuddy/plans/

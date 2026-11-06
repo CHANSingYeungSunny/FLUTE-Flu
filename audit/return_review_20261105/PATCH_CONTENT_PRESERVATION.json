@@ -1,0 +1,44 @@
+[
+  {
+    "filename": "ieee_manuscript_en.docx",
+    "crc_pass": true,
+    "images_byte_identical": 3,
+    "reference_paragraphs_unchanged": 18,
+    "no_current_27_of_60_phrase": true
+  },
+  {
+    "filename": "ieee_manuscript_zh.docx",
+    "crc_pass": true,
+    "images_byte_identical": 3,
+    "reference_paragraphs_unchanged": 18,
+    "no_current_27_of_60_phrase": true
+  },
+  {
+    "filename": "progress_report_en.docx",
+    "crc_pass": true,
+    "images_byte_identical": 2,
+    "reference_paragraphs_unchanged": 6,
+    "no_current_27_of_60_phrase": true
+  },
+  {
+    "filename": "progress_report_zh.docx",
+    "crc_pass": true,
+    "images_byte_identical": 2,
+    "reference_paragraphs_unchanged": 6,
+    "no_current_27_of_60_phrase": true
+  },
+  {
+    "filename": "report_internal_en.docx",
+    "crc_pass": true,
+    "images_byte_identical": 6,
+    "reference_paragraphs_unchanged": 25,
+    "no_current_27_of_60_phrase": true
+  },
+  {
+    "filename": "report_internal_zh.docx",
+    "crc_pass": true,
+    "images_byte_identical": 6,
+    "reference_paragraphs_unchanged": 25,
+    "no_current_27_of_60_phrase": true
+  }
+]

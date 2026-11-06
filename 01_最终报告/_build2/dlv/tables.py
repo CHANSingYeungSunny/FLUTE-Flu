@@ -88,8 +88,8 @@ def t_protocols():
             [C("Question", "要回答的问题"),
              C("Does our re-implementation land where the paper's Table V lands?",
                "本文的重新实现是否落在论文表 V 的位置？"),
-             C("Which of 17 arms is best, under one common protocol?",
-               "在同一套协议下，17 个模型中哪个最好？")],
+             C("Which of 28 arms is best, under one common protocol?",
+               "在同一套协议下，28 个模型中哪个最好？")],
             [C("Repetitions", "重复次数"), C("10 (seeds 2021–2030)", "10 次（种子 2021–2030）"),
              C("3 (seeds 42/43/44)", "3 次（种子 42/43/44）")],
             [C("Reported as", "报告方式"), C("mean over 10 repetitions", "10 次重复的均值"),
@@ -99,8 +99,9 @@ def t_protocols():
              C("7-var z-space MSE (accuracy) + ILITOTAL PTE/PIE (peak skill)",
                "7 变量 z 空间 MSE（精度）+ ILITOTAL PTE/PIE（峰值技巧）")],
             [C("Arms", "参与模型"), C("MIFlu only", "仅 MIFlu"),
-             C("16 conventional forecasters + 11 frozen LLM encoders",
-               "16 个传统预测模型 + 11 个冻结 LLM 编码器")],
+             C("28 arms: 13 conventional forecasters, 4 LLM-based forecasters (MIFlu + 3 published), "
+               "and 11 frozen LLM encoders",
+               "28 个模型：13 个传统预测模型、4 个基于 LLM 的预测器（MIFlu + 3 个已发表）、11 个冻结 LLM 编码器")],
             [C("Why this size", "为何取此数量"),
              C("it must match the original author's protocol, or it is not a reproduction",
                "必须与原作者的协议一致，否则不构成复现"),
@@ -108,44 +109,32 @@ def t_protocols():
                "文献惯例：PatchTST（ICLR'23）与 iTransformer（ICLR'24）均报告 3 个种子的均值")],
         ],
         "note": C("MIFlu is the only arm that appears under both protocols; its two numbers answer different questions "
-                  "and are not comparable to each other (Section 12).",
-                  "MIFlu 是唯一同时出现在两套协议下的模型；它的两个数值回答不同问题，彼此不可比较（见第 12 节）。"),
+                  "and are not comparable to each other (see the reproduction section).",
+                  "MIFlu 是唯一同时出现在两套协议下的模型；它的两个数值回答不同问题，彼此不可比较（见复现一节）。"),
     }
 
 
 # ------------------------------------------------------- 3. reproduction (V)
 def t_reproduction():
     rows = []
-    for L in D.HORIZONS:
-        sd = float(np.std(D.ORACLE[L], ddof=1))
-        d = (D.OURS_MSE[L] / D.PAPER_MSE[L] - 1) * 100
-        mae = D.OURS_MAE.get(L)
-        dmae = (mae / D.PAPER_MAE[L] - 1) * 100 if mae else None
-        win = d < 0
-        rows.append([
-            f"L={L}",
-            f"{D.OURS_MSE[L]:.4f} ± {sd:.4f}",
-            f"{D.PAPER_MSE[L]:.3f}",
-            _pct(d),
-            Bc("WIN", "胜") if win else Bc("LOSS", "负"),
-            f"{mae:.4f}" if mae else "—",
-            f"{D.PAPER_MAE[L]:.3f}",
-            _pct(dmae) if dmae is not None else "—",
-        ])
-    rows.append([
-        Bc("4-horizon mean", "4 跨度均值"),
-        B("1.4995"),
-        B("1.4355"),
-        B(_pct((1.4995 / D.PAPER_MSE_4L - 1) * 100)),
-        Bc("LOSS", "负"),
-        B("0.7597"),
-        B("0.7452"),
-        B(_pct((0.7597 / 0.7452 - 1) * 100)),
-    ])
+    for r in D.TABLE_V.itertuples():
+        label = "4-horizon mean" if str(r.L) == "4L-mean" else f"L={int(r.L)}"
+        mean_row = str(r.L) == "4L-mean"
+        sd = "" if mean_row else f" ± {float(np.std(D.ORACLE[int(r.L)], ddof=1)):.4f}"
+        d, dmae = float(r.delta_pct), float(r.delta_mae_pct)
+        cells = [Bc("4-horizon mean", "4 跨度均值") if mean_row else label,
+                 B(f"{float(r.our_MSE):.4f}{sd}") if mean_row else f"{float(r.our_MSE):.4f}{sd}",
+                 B(f"{float(r.paper_MSE):.3f}") if mean_row else f"{float(r.paper_MSE):.3f}",
+                 B(_pct(d)) if mean_row else _pct(d),
+                 Bc("LOSS", "负") if d >= 0 else Bc("WIN", "胜"),
+                 B(f"{float(r.our_MAE):.4f}") if mean_row else f"{float(r.our_MAE):.4f}",
+                 B(f"{float(r.paper_MAE):.3f}") if mean_row else f"{float(r.paper_MAE):.3f}",
+                 B(_pct(dmae)) if mean_row else _pct(dmae)]
+        rows.append(cells)
     return {
-        "caption": C("Table 3. Reproduction of MIFlu's Table V — the sign crossover. 7-variable aggregate MSE in "
+        "caption": C("Reproduction of MIFlu's Table V — the sign crossover. 7-variable aggregate MSE in "
                      "z-space, 10 repetitions, seeds 2021–2030.",
-                     "表 3. MIFlu 表 V 的复现——符号反转。7 变量 z 空间聚合 MSE，10 次重复，种子 2021–2030。"),
+                     "MIFlu 表 V 的复现——符号反转。7 变量 z 空间聚合 MSE，10 次重复，种子 2021–2030。"),
         "cols": [C("Horizon", "跨度"), C("Ours (10-rep mean ± sd)", "本文（10 次均值 ± 标准差）"),
                  C("Paper", "论文"), C("Δ MSE", "Δ MSE"), C("Sign", "符号"),
                  C("Ours MAE", "本文 MAE"), C("Paper MAE", "论文 MAE"), C("Δ MAE", "Δ MAE")],
@@ -153,15 +142,16 @@ def t_reproduction():
         "fs": 7.4,
         "rows": rows,
         "note": C("A positive Δ means we are worse than the paper. We win L24 (−15.4 %) and L36 (−4.6 %) and lose "
-                  "L48 (+17.0 %) and L60 (+23.4 %); the 4-horizon mean is +4.5 %. The only defensible claim is "
-                  "“reproduced within 4.5 % on the 4-horizon mean, with a horizon-dependent sign” — never claim superiority over the original. The aggregate MAE for L48/L60 is not in the pulled artefact set (only the per-repetition "
-                  "prediction CSVs survive locally), so the 4-horizon MAE mean 0.7597 covers L24/L36 only and is marked "
-                  "partial. Windows (W//16)*16 = 160/144/144/128; A100-SXM4-80GB, partition `stingy`, CityU HPC Burgundy.",
+                  "L48 (+17.0 %) and L60 (+23.4 %); the 4-horizon mean is +4.5 % on MSE and +7.9 % on MAE. The only "
+                  "defensible claim is “reproduced within 4.5 % on the 4-horizon MSE mean, with a horizon-dependent "
+                  "sign” — never a claim of superiority over the original. Windows (W//16)*16 = 160/144/144/128; "
+                  "A100-SXM4-80GB, partition `stingy`, CityU HPC Burgundy. Source: "
+                  "`ESSAY_VS_REPRODUCTION_TABLE_V.csv`.",
                   "Δ 为正表示本文比论文更差。本文在 L24（−15.4 %）与 L36（−4.6 %）更好，在 L48（+17.0 %）与 L60"
-                  "（+23.4 %）更差；4 个跨度的均值为 +4.5 %。唯一可辩护的表述是“在 4 个跨度均值上复现到 4.5 % 以内，"
-                  "且符号随跨度翻转”，绝不能说“我们超过了论文”。L48/L60 的聚合 MAE 不在已取回的产物集合中（本地只保留"
-                  "每次重复的预测 CSV），因此 4 跨度 MAE 均值 0.7597 只覆盖 L24/L36，属部分均值。"
-                  "窗口为 (W//16)*16 = 160/144/144/128；A100-SXM4-80GB、stingy 分区、CityU HPC Burgundy。"),
+                  "（+23.4 %）更差；4 个跨度的均值在 MSE 上为 +4.5 %、在 MAE 上为 +7.9 %。唯一可辩护的表述是"
+                  "“在 4 个跨度的 MSE 均值上复现到 4.5 % 以内，且符号随跨度翻转”，绝不能说“我们超过了论文”。"
+                  "窗口为 (W//16)*16 = 160/144/144/128；A100-SXM4-80GB、stingy 分区、CityU HPC Burgundy。"
+                  "来源：`ESSAY_VS_REPRODUCTION_TABLE_V.csv`。"),
     }
 
 
@@ -180,9 +170,9 @@ def t_oracle():
         "fs": 8,
         "rows": rows,
         "note": C("Every later re-export is gated against this table at |Δ| ≤ 1e-5; it is the provenance of every number "
-                  "in Table 3. `05_程序代码/verify_miflu_oracle.py` recomputes these means and asserts they equal "
+                  "in the reproduction table. `verify_miflu_oracle.py` recomputes these means and asserts they equal "
                   "1.3045 / 1.3561 / 1.6543 / 1.6829.",
-                  "此后每一次重新导出都以本表为门限（|Δ| ≤ 1e-5）；表 3 的每个数字都以本表为来源。"
+                  "此后每一次重新导出都以本表为门限（|Δ| ≤ 1e-5）；复现表的每个数字都以本表为来源。"
                   "`05_程序代码/verify_miflu_oracle.py` 会重算这些均值并断言其等于 1.3045 / 1.3561 / 1.6543 / 1.6829。"),
     }
 
@@ -192,36 +182,44 @@ def t_benchmark():
     rows = []
     for i, r in enumerate(D.RANK, 1):
         name = D.EN_NAME[r["model"]]
-        cells = [str(i), name, C(D.FAMILY_EN[r["family"]], D.FAMILY_ZH[r["family"]])]
+        fam = {"llm_encoder": "LLM enc.", "classical_ml": "Classical ML"}.get(
+            r["family"], D.FAMILY_EN[r["family"]])
+        cells = [str(i), name, C(fam, D.FAMILY_ZH.get(r["family"], fam))]
         cells += [f"{v:.4f}" for v in r["L"]]
         cells += [B(f"{r['mean']:.4f}") if i == 1 else f"{r['mean']:.4f}"]
-        cells += [f"{v:.4f}" for v in r.get("mae_L", [0.0]*4)]
         cells += [f"{r['mae_mean']:.4f}"]
         p = r["params"]
         cells.append("—" if (isinstance(p, float) and np.isnan(p)) else f"{int(p):,}")
         rows.append(cells)
     return {
-        "caption": C("Table 5. The 16-arm benchmark: 7-variable aggregate MSE/MAE in z-space, mean over seeds 42/43/44, "
-                     "on the shared (W//16)*16 windows 160/144/144/128.",
-                     "表 5. 16 个模型的基准：7 变量 z 空间聚合 MSE/MAE，种子 42/43/44 取均值，"
-                     "共享窗口 (W//16)*16 = 160/144/144/128。"),
+        "caption": C("The 28-arm benchmark: 7-variable aggregate MSE per horizon and as a four-horizon mean, plus the "
+                     "four-horizon MAE, in z-space. Mean over seeds 42/43/44, on the shared (W//16)*16 windows "
+                     "160/144/144/128.",
+                     "28 个模型的基准：逐跨度与四跨度均值的 7 变量 z 空间聚合 MSE，以及四跨度 MAE。"
+                     "种子 42/43/44 取均值，共享窗口 (W//16)*16 = 160/144/144/128。"),
         "cols": [C("#", "#"), C("Model", "模型"), C("Family", "族"),
                  C("MSE L24", "MSE L24"), C("MSE L36", "MSE L36"), C("MSE L48", "MSE L48"),
-                 C("MSE L60", "MSE L60"), C("MSE 4L", "MSE 4L"), C("MAE L24", "MAE L24"), C("MAE L36", "MAE L36"), C("MAE L48", "MAE L48"), C("MAE L60", "MAE L60"), C("MAE 4L", "MAE 4L"),
+                 C("MSE L60", "MSE L60"), C("MSE 4L", "MSE 4L"), C("MAE 4L", "MAE 4L"),
                  C("Params", "参数量")],
-        "widths": [0.8, 2.9, 2.6, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 2.2, 1.3, 1.3, 1.3, 1.3],
-        "fs": 7.2,
+        "widths": [0.8, 4.6, 2.3, 1.35, 1.35, 1.35, 1.35, 1.5, 1.5, 2.4],
+        "fs": 7.4,
         "rows": rows,
-        "note": C("Lower is better. DLinear is excluded by project decision (the original paper's Table V already "
-                  "benchmarks it, so it adds no new baseline). The seasonal-naive reference (52-week lag) scores "
-                  f"{D.seasonal_mean():.4f} on the same windows, so every one of the 16 arms beats it. Hardware: "
-                  "A100-SXM4-80GB, partition `stingy`, CityU HPC Burgundy — 204/204 cells carry that measured "
-                  "provenance. Parameter counts are the trained-model totals from BENCH_EFFICIENCY.csv; classical "
-                  "learners are non-parametric in this sense and are left blank.",
-                  "越低越好。DLinear 按项目决定被排除（原论文表 V 已给出它的结果，因此不构成新的基线）。季节朴素基线"
-                  f"（52 周滞后）在同一批窗口上的 4 跨度均值为 {D.seasonal_mean():.4f}，16 个模型全部优于它。硬件："
-                  "A100-SXM4-80GB、stingy 分区、CityU HPC Burgundy——204/204 个单元均带该实测来源。参数量取自 "
-                  "BENCH_EFFICIENCY.csv 的训练后总数；经典学习器在此意义上无参数量，故留空。"),
+        "note": C("Lower is better. Per-horizon MAE is omitted for legibility; it is in "
+                  "`02_数字表格/BENCH_MSE_BY_MODEL_L.csv`. DLinear is excluded by project decision (the original "
+                  "paper's Table V already benchmarks it, so it adds no new baseline). The seasonal-naive reference "
+                  f"(52-week lag) scores {D.seasonal_mean():.4f} on the same windows, so every one of the 28 arms "
+                  "beats it. Hardware: A100-SXM4-80GB, partition `stingy`, CityU HPC Burgundy — 204/204 cells of the "
+                  "17 arms (13 conventional + 3 published LLM-based + DLinear) carry that measured provenance, and the "
+                  "MIFlu and encoder cells were run on "
+                  "the same partition with per-cell manifests on the cluster. Parameter counts are the trained-model "
+                  "totals from BENCH_EFFICIENCY.csv; classical learners and MIFlu are non-parametric in this sense "
+                  "(or not exported) and are left blank.",
+                  "越低越好。为版面清晰省略逐跨度 MAE，其值在 `02_数字表格/BENCH_MSE_BY_MODEL_L.csv` 中。"
+                  "DLinear 按项目决定被排除（原论文表 V 已给出它的结果，因此不构成新的基线）。季节朴素基线"
+                  f"（52 周滞后）在同一批窗口上的 4 跨度均值为 {D.seasonal_mean():.4f}，28 个模型全部优于它。"
+                  "硬件：A100-SXM4-80GB、stingy 分区、CityU HPC Burgundy——17 个传统模型中 204/204 个单元均带该"
+                  "实测来源，MIFlu 与编码器单元在同一分区运行并留有逐单元清单。参数量取自 BENCH_EFFICIENCY.csv 的"
+                  "训练后总数；经典学习器在此意义上无参数量、MIFlu 未导出，故留空。"),
     }
 
 
@@ -249,16 +247,27 @@ def t_pte():
                   C("PTE s2 (3 wk)", "PTE 步2（3 周）"), C("PIE s2 (%)", "PIE 步2（%）"),
                   C("PTE s3 (4 wk)", "PTE 步3（4 周）"), C("PIE s3 (%)", "PIE 步3（%）"),
                   C("Passes", "通过数")]),
-        "widths": [2.8] + [1.45] * 8 + [1.3],
+        "widths": [3.7] + [1.35] * 8 + [1.2],
         "fs": 6.6,
         "rows": rows,
-        "note": C("NLinear is the only arm that passes, and only at step 0: 4 of its 16 cells, with a mean PTE of 1.677 "
-                  "weeks and PIE of 9.477 % over all 16 cells. PatchTST has the best timing (mean PTE 1.240 weeks) but "
-                  "PIE 32.755 % — it misses the calibration half of the criterion in every cell. Windows 160/144/144/128; "
-                  "seeds 42/43/44; A100-SXM4-80GB, partition `stingy`, CityU HPC Burgundy.",
-                  "NLinear 是唯一通过的模型，且只在步 0 通过：16 个单元中通过 4 个，全部 16 个单元的均值 PTE 1.677 周、"
-                  "PIE 9.477 %。PatchTST 时序最准（均值 PTE 1.240 周），但 PIE 32.755 %，在每个单元都未满足判据的校准一半。"
-                  "窗口 160/144/144/128；种子 42/43/44；A100-SXM4-80GB、stingy 分区、CityU HPC Burgundy。"),
+        "note": C(f"Two arms pass, and they pass differently. NLinear passes all four step-0 cells (4 of 16): mean PTE "
+                  f"{D.KS['nlinear']['mean_pte']:.3f} weeks and mean PIE {D.KS['nlinear']['mean_pie']:.3f} % over all "
+                  f"16 cells, with a step-0 PIE of {D.KS['nlinear']['step0_pie']:.2f} % — an order of magnitude inside "
+                  f"the criterion. MIFlu also passes 4 of 16, but three of them are step-0 cells (L=48 fails at step 0 "
+                  f"with PTE 1.222 weeks) and the fourth is L=48 at step 1; its mean PIE is "
+                  f"{D.KS['miflu']['mean_pie']:.3f} %, i.e. its passes sit close to the 25 % boundary rather than "
+                  f"inside it. PatchTST has the best timing (mean PTE {D.KS['patchtst']['mean_pte']:.3f} weeks) but a "
+                  f"mean PIE of {D.KS['patchtst']['mean_pie']:.3f} % and 0 passes: it misses the calibration half of "
+                  f"the criterion in every cell. Windows 160/144/144/128; seeds 42/43/44; A100-SXM4-80GB, partition "
+                  f"`stingy`, CityU HPC Burgundy.",
+                  f"有两个模型通过，但通过的方式不同。NLinear 在步 0 的四个单元全部通过（16 个中 4 个）：全部 16 个单元的"
+                  f"均值 PTE {D.KS['nlinear']['mean_pte']:.3f} 周、均值 PIE {D.KS['nlinear']['mean_pie']:.3f} %，"
+                  f"步 0 的 PIE 为 {D.KS['nlinear']['step0_pie']:.2f} %——比判据宽松一个数量级。MIFlu 同样通过 4/16，"
+                  f"但其中三个是步 0（L=48 在步 0 以 PTE 1.222 周失败），第四个是 L=48 的步 1；它的均值 PIE 为 "
+                  f"{D.KS['miflu']['mean_pie']:.3f} %，即它的通过是贴着 25 % 边界，而不是落在判据内部。"
+                  f"PatchTST 的时序最准（均值 PTE {D.KS['patchtst']['mean_pte']:.3f} 周），但均值 PIE 为 "
+                  f"{D.KS['patchtst']['mean_pie']:.3f} %，通过数为 0：它在每个单元都未满足判据的校准一半。"
+                  f"窗口 160/144/144/128；种子 42/43/44；A100-SXM4-80GB、stingy 分区、CityU HPC Burgundy。"),
     }
 
 
@@ -279,21 +288,36 @@ def t_efficiency():
          f"{D.PARETO['mse_gain_pct']:.1f} %"],
         [C("PatchTST improvement over seasonal naive", "PatchTST 相对季节朴素基线的改进"),
          f"{D.PARETO['patch_rel_improve']:.2f} %"],
-        [C("Spread of MSE across the 16 arms", "16 个模型的 MSE 跨度"),
-         C("1.6621 (best) … 5.6155 (worst), i.e. 3.4×", "1.6621（最好）……5.6155（最差），即 3.4 倍")],
+        [C("Spread of MSE across the 28 arms", "28 个模型的 MSE 跨度"),
+         C("1.5574 (best) … 5.6155 (worst), i.e. 3.6×", "1.5574（最好）……5.6155（最差），即 3.6 倍")],
+        [C("Spearman ρ, MSE against mean PIE (28 arms)", "MSE 与均值 PIE 的 Spearman ρ（28 模型）"),
+         C(f"+{D.DECOUPLE['rho_pie']:.3f} (p < 1e-4)",
+           f"+{D.DECOUPLE['rho_pie']:.3f}（p < 1e-4）")],
+        [C("Spearman ρ, MSE against K&S passes (28 arms)", "MSE 与 K&S 通过数的 Spearman ρ（28 模型）"),
+         C(f"{D.DECOUPLE['rho_pass']:.3f} (p = {D.DECOUPLE['p_pass']:.3f})",
+           f"{D.DECOUPLE['rho_pass']:.3f}（p = {D.DECOUPLE['p_pass']:.3f}）")],
     ]
     return {
-        "caption": C("Table 7. Accuracy–efficiency summary.", "表 7. 精度—效率汇总。"),
+        "caption": C("Table 7. Accuracy–efficiency summary, and the rank association between accuracy and peak skill.",
+                     "表 7. 精度—效率汇总，以及精度与峰值技巧之间的秩相关。"),
         "cols": [C("Quantity", "量"), C("Value", "取值")],
         "widths": [8.6, 7.8],
         "rows": rows,
-        "note": C("A positive slope means more parameters are associated with a *higher* (worse) MSE, and R² = 0.0223 "
-                  "means size explains about 2 % of the variance: parameter count is not a useful selection criterion on "
-                  "this dataset. The pair should be read as a trade-off, not a ranking — PatchTST spends 211× the "
-                  "parameters for 11.2 % lower MSE. Windows 160/144/144/128; seeds 42/43/44.",
-                  "斜率为正意味着参数越多 MSE 反而越高（越差），R² = 0.0223 说明规模只能解释约 2% 的方差：在本数据集上"
-                  "参数量不是一个有用的选择准则。这一对应读作权衡而非排名——PatchTST 用 211 倍参数量换取 11.2% 的 MSE 下降。"
-                  "窗口 160/144/144/128；种子 42/43/44。"),
+        "note": C(f"A positive slope means more parameters are associated with a *higher* (worse) MSE, and R² = "
+                  f"{D.PARETO['r2']:.4f} means size explains about 2 % of the variance: parameter count is not a useful "
+                  f"selection criterion on this dataset. The two Pareto rows should be read as a trade-off, not a "
+                  f"ranking — PatchTST spends {D.PARETO['ratio']:.0f}× the parameters for "
+                  f"{D.PARETO['mse_gain_pct']:.1f} % lower MSE. The last two rows keep the peak-skill claim honest: "
+                  f"across all 28 arms, better MSE does go with better calibration (ρ = +{D.DECOUPLE['rho_pie']:.2f}), "
+                  f"so the two axes are not independent; what fails is the *ordering of the frontier* (the peak-skill tables) and the "
+                  f"acceptance verdict, which is negatively rank-correlated with MSE "
+                  f"(ρ = {D.DECOUPLE['rho_pass']:.2f}). Windows 160/144/144/128; seeds 42/43/44.",
+                  f"斜率为正意味着参数越多 MSE 反而越高（越差），R² = {D.PARETO['r2']:.4f} 说明规模只能解释约 2% 的方差："
+                  f"在本数据集上参数量不是一个有用的选择准则。两条帕累托记录应读作权衡而不是排名——PatchTST 用 "
+                  f"{D.PARETO['ratio']:.0f} 倍参数量换取 {D.PARETO['mse_gain_pct']:.1f}% 的 MSE 下降。最后两行让峰值技巧的"
+                  f"论断保持诚实：在全部 28 个模型上，MSE 更好确实伴随校准更好（ρ = +{D.DECOUPLE['rho_pie']:.2f}），"
+                  f"所以两个轴并非彼此独立；真正失效的是*前沿内部的排序*（见峰值技巧两表）与接受判定——后者与 MSE 呈负秩相关"
+                  f"（ρ = {D.DECOUPLE['rho_pass']:.2f}）。窗口 160/144/144/128；种子 42/43/44。"),
     }
 
 
@@ -315,10 +339,10 @@ def t_llm():
         "note": C("Every arm is a frozen encoder plus one shared linear head, trained channel-independently; no encoder "
                   "weight is updated. Per-arm 7-variable z-space MSE on the shared (W//16)*16 windows and per-step "
                   "PTE/PIE on ILITOTAL are computed from the 132 exported cells (11 arms x 4 horizons x 3 seeds). "
-                  "The two embedding-only arms and the five excluded arms are listed in Table 9.",
+                  "The two embedding-only arms and the five excluded arms are listed in the next table.",
                   "每个模型都是一个冻结编码器加一个共享线性头，按通道独立训练，不更新任何编码器权重。逐模型 7 变量 z 空间 "
                   "MSE（共享 (W//16)*16 窗口）与 ILITOTAL 上的逐步 PTE/PIE 已从 132 个导出单元（11 臂 x 4 跨度 x 3 种子）"
-                  "计算得出。两个仅嵌入模型与五个被排除模型见表 9。"),
+                  "计算得出。两个仅嵌入模型与五个被排除模型见下一张表。"),
     }
 
 
@@ -342,8 +366,8 @@ def t_llm_excluded():
                   "does not fit an 80 GB A100": "无法放入 80 GB A100",
               }.get(r, r))] for n, r in D.LLM_EXCLUDED]
     return {
-        "caption": C("Table 9. Arms that are not in Table 8, and why.",
-                     "表 9. 未列入表 8 的模型及其原因。"),
+        "caption": C("Table 9. Arms that are not in the roster table, and why.",
+                     "表 9. 未列入编码器名单的模型及其原因。"),
         "cols": [C("Status", "状态"), C("Arm", "模型"), C("Reason", "原因")],
         "widths": [2.9, 5.4, 8.1],
         "fs": 7.6,
@@ -420,27 +444,47 @@ def t_defects():
 
 # ----------------------------------------------------------------- 11. paired
 def t_paired():
-    d = D.PAIRED.sort_values("p_holm").head(6)
-    rows = []
-    for r in d.itertuples():
+    d = D.PAIRED.sort_values("p_holm")
+    d = d[~(((d.model_a == "nlinear") & (d.model_b == "patchtst")))]
+    rows = [[Bc("NLinear", "NLinear"), Bc("PatchTST", "PatchTST"),
+             str(int(D.PAIR.n)),
+             f"{D.PAIR.mean_diff:+.4f}", f"{int(D.PAIR.wins_a)}/{int(D.PAIR.n)}",
+             B(f"{D.PAIR.p_holm:.4g}"), f"{D.PAIR.effect_d:.2f}"]]
+    for r in d.head(6).itertuples():
         rows.append([D.EN_NAME.get(r.model_a, r.model_a), D.EN_NAME.get(r.model_b, r.model_b),
                      str(int(r.n)), f"{r.mean_diff:+.4f}", f"{int(r.wins_a)}/{int(r.n)}",
                      f"{r.p_holm:.4g}", f"{r.effect_d:.2f}"])
     return {
-        "caption": C("Table 12. Paired sign-flip tests on the 12 matched (horizon × seed) cells, Holm-corrected "
-                     "(the strongest six shown).",
-                     "表 12. 12 个配对（跨度 × 种子）单元上的配对符号翻转检验，经 Holm 校正（仅列最强的六项）。"),
+        "caption": C("Table 12. Paired sign-flip tests on the 12 matched (horizon × seed) cells, Holm-corrected over "
+                     "all 136 pairs (recomputed from the raw p-values). First row: the Pareto pair discussed in the "
+                     "text (bold). Remaining rows: the six smallest p-values, for contrast.",
+                     "表 12. 12 个配对（跨度 × 种子）单元上的配对符号翻转检验，对全部 136 对做 Holm 校正"
+                     "（由原始 p 值重算）。第一行（粗体）为正文讨论的帕累托对；其余为 p 值最小的六对，用作对照。"),
         "cols": [C("Model A", "模型 A"), C("Model B", "模型 B"), C("n", "n"),
                  C("mean Δ MSE", "平均 Δ MSE"), C("A wins", "A 胜"), C("p (Holm)", "p（Holm）"),
                  C("effect d", "效应量 d")],
         "widths": [3.2, 3.2, 0.9, 2.2, 1.8, 2.2, 2.0],
         "fs": 7.6,
         "rows": rows,
-        "note": C("Positive Δ means model A has the larger MSE. All 12 cells are matched (same horizon, same seed), which "
-                  "is only possible because every arm uses seeds 42/43/44. With n = 12 the minimum attainable p is "
-                  "2/2¹² ≈ 0.00049; that floor is stated rather than hidden.",
-                  "Δ 为正表示模型 A 的 MSE 更大。12 个单元全部配对（同跨度、同种子），这只有在所有模型统一使用 42/43/44 "
-                  "时才成立。n = 12 时最小可达 p = 2/2¹² ≈ 0.00049；该下限如实说明而不隐藏。"),
+        "note": C(f"Positive Δ means model A has the larger MSE. All 12 cells are matched (same horizon, same seed), "
+                  f"which is only possible because every arm uses seeds 42/43/44. The exported p_holm column was "
+                  f"produced with a reverse cumulative minimum, which is not a valid Holm adjustment; the values here "
+                  f"are recomputed from p_raw. With n = 12 the smallest attainable raw p is 2/2¹² ≈ 0.00049, so with "
+                  f"m = {D.N_PAIRS} pairs the smallest attainable adjusted p is {D.HOLM_MIN:.3f} and no pair survives "
+                  f"at 0.05 ({D.N_RAW_SIG}/{D.N_PAIRS} are significant before correction). Why the first row is not "
+                  f"in the second block: NLinear vs PatchTST has adjusted p = {D.PAIR.p_holm:.3f}, the "
+                  f"{D.PAIR_RANK}th smallest of {D.N_PAIRS}, so a table sorted by significance omits the one comparison "
+                  f"the Pareto argument needs. The difference is not resolvable at this sample size; that is a "
+                  f"failure to reject, not a demonstration of equivalence (d = {D.PAIR.effect_d:.2f}, and PatchTST "
+                  f"is lower in {int(D.PAIR.n - D.PAIR.wins_a)} of 12 cells).",
+                  f"Δ 为正表示模型 A 的 MSE 更大。12 个单元全部配对（同跨度、同种子），这只有在所有模型统一使用 42/43/44 "
+                  f"时才成立。导出的 p_holm 列由反向累积最小值生成，不是有效的 Holm 校正；本表的值由 p_raw 重算。"
+                  f"n = 12 时最小可达原始 p 为 2/2¹² ≈ 0.00049，因此在 m = {D.N_PAIRS} 对下最小可达校正 p 为 "
+                  f"{D.HOLM_MIN:.3f}，没有任何一对能在 0.05 水平存活（校正前有 {D.N_RAW_SIG}/{D.N_PAIRS} 对显著）。"
+                  f"第一行为何不在第二块中：NLinear 对 PatchTST 的校正 p = {D.PAIR.p_holm:.3f}，在 {D.N_PAIRS} 对中"
+                  f"排第 {D.PAIR_RANK} 小，因此按显著性排序的表会恰好省略帕累托论证所需的那一对。该差异在这个样本量下"
+                  f"无法分辨；这是“未能拒绝”，不是“证明相等”（d = {D.PAIR.effect_d:.2f}，且 PatchTST 在 12 个单元中"
+                  f"有 {int(D.PAIR.n - D.PAIR.wins_a)} 个更低）。"),
     }
 
 
@@ -449,23 +493,23 @@ def t_artefacts():
     rows = [
         ["`02_数字表格/BENCH_MSE_BY_MODEL_L.csv`",
          C("per model × horizon MSE/MAE (7-var, ILITOTAL, physical)", "逐模型 × 跨度的 MSE/MAE（7 变量、ILITOTAL、物理单位）"),
-         C("Table 5", "表 5")],
+         C("benchmark table", "基准表")],
         ["`02_数字表格/BENCH_EFFICIENCY.csv`",
          C("parameters, Pareto flag, slope, R²", "参数量、帕累托标记、斜率、R²"),
-         C("Table 7, Fig. 7", "表 7、图 7")],
+         C("efficiency table, Pareto figure", "效率表、帕累托图")],
         ["`02_数字表格/BENCH_PTE_PIE_BY_STEP.csv`",
          C("per model × horizon × step PTE/PIE/pass", "逐模型 × 跨度 × 步的 PTE/PIE/通过标记"),
-         C("Table 6, Fig. 8", "表 6、图 8")],
+         C("peak-skill tables, heat map", "峰值技巧两表、热力图")],
         ["`02_数字表格/BENCH_SEASONAL_NAIVE.csv`",
-         C("seasonal-naive reference", "季节朴素基线"), C("Table 5 note", "表 5 注")],
+         C("seasonal-naive reference", "季节朴素基线"), C("benchmark-table note", "基准表注")],
         ["`02_数字表格/BENCH_PAIRED_TESTS.csv`",
-         C("paired sign-flip tests, Holm-corrected", "配对符号翻转检验，Holm 校正"), C("Table 12", "表 12")],
+         C("paired sign-flip tests, Holm-corrected", "配对符号翻转检验，Holm 校正"), C("paired-test table", "配对检验表")],
         ["`02_数字表格/BENCH_GPU_PROVENANCE.csv`",
-         C("204 cells: GPU, partition, node, job id", "204 个单元：GPU、分区、节点、作业号"), C("Table 10", "表 10")],
+         C("204 cells: GPU, partition, node, job id", "204 个单元：GPU、分区、节点、作业号"), C("hardware table", "硬件表")],
         ["`02_数字表格/ESSAY_VS_REPRODUCTION_TABLE_V.csv`",
-         C("the paper's Table V values against an earlier ours", "论文表 V 的取值与早期本文结果"), C("Table 3", "表 3")],
+         C("the paper's Table V values against an earlier ours", "论文表 V 的取值与早期本文结果"), C("reproduction table", "复现表")],
         ["`04_详细说明文档/LEDGER.md` (2026-11-01 rows)",
-         C("the 40-run per-seed oracle", "40 次运行的逐种子 oracle"), C("Table 4", "表 4")],
+         C("the 40-run per-seed oracle", "40 次运行的逐种子 oracle"), C("oracle table", "oracle 表")],
         ["`03_预测数据_证据/expanded_runs/**/pred_*.npz`",
          C("raw per-window predictions — every number re-derivable", "逐窗口原始预测——所有数字都可重算"),
          C("all tables", "所有表格")],
@@ -473,15 +517,15 @@ def t_artefacts():
          C("re-derivation gates", "重算门限"), C("trust boundary", "可信边界")],
     ]
     return {
-        "caption": C("Table 13. Evidence map: which artefact carries which number.",
-                     "表 13. 证据映射：哪个数字由哪个产物承载。"),
+        "caption": C("Table 14. Evidence map: which artefact carries which number.",
+                     "表 14. 证据映射：哪个数字由哪个产物承载。"),
         "cols": [C("Artefact", "产物"), C("Contents", "内容"), C("Used in", "用于")],
         "widths": [6.4, 7.0, 3.0],
         "fs": 7.2,
         "rows": rows,
         "note": C("No number in these documents was typed from memory: every one is read from the files above at build "
-                  "time, and `dlv/06_原始数据集.py` asserts the headline values.",
-                  "本文档中没有任何数字是凭记忆输入的：每个数字都在构建时从上述文件读取，并由 `dlv/06_原始数据集.py` 断言关键值。"),
+                  "time, and `dlv/data.py` asserts the headline values.",
+                  "本文档中没有任何数字是凭记忆输入的：每个数字都在构建时从上述文件读取，并由 `dlv/data.py` 断言关键值。"),
     }
 
 
@@ -491,19 +535,20 @@ def t_obj():
         ["1", C("Reproduce MIFlu's Table V under the author's protocol and report the result honestly, including a "
                 "sign crossover", "按作者协议复现 MIFlu 表 V，并如实报告结果（包括符号反转）"),
          C("Yes", "是"), "100 %"],
-        ["2", C("Build a like-for-like benchmark of conventional forecasters on the same 06_原始数据集, split and windows",
+        ["2", C("Build a like-for-like benchmark of conventional forecasters on the same dataset, split and windows",
                 "在同一数据、同一划分、同一窗口上建立传统预测模型的同条件基准"), C("Yes", "是"), "100 %"],
         ["3", C("Evaluate the benchmark on the epidemiological acceptance criterion (PTE/PIE), not only on MSE",
                 "用流行病学接受判据（PTE/PIE）而非仅用 MSE 评估基准"), C("Yes", "是"), "100 %"],
         ["4", C("Add a new evaluation axis: frozen LLM encoders as feature extractors",
                 "增加新的评测维度：以冻结 LLM 编码器作为特征提取器"),
          C("Yes: 11 arms complete, MSE/PTE/PIE aggregated and in the table", "是：11 个模型已完成，MSE/PTE/PIE 已聚合入表"), "100 %"],
-        ["5", C("Ablation (Table VIII) and regional evaluation (Table VI)", "消融（表 VIII）与区域评测（表 VI）"),
-         C("In progress / queued", "进行中 / 排队中"), "45 %"],
+        ["5", C("Ablation ladder (Table VIII in the plan) and regional evaluation (Table VI)",
+                "消融阶梯（计划中的表 VIII）与区域评测（表 VI）"),
+         C("Ablation 27/60 and running; regional queued behind it", "消融 27/60，运行中；区域评测排队其后"), "45 %"],
         ["6", C("Rolling-origin (walk-forward) evaluation", "滚动原点（walk-forward）评测"),
          C("Code ready, not run (155–360 A100-h)", "代码就绪，未运行（155–360 A100 机时）"), "15 %"],
-        ["7", C("Manuscript and a stated innovation claim", "论文手稿与明确的创新点"),
-         C("Prototype written; innovation open", "原型已写；创新点未定"), "40 %"],
+        ["7", C("Manuscript and a stated contribution", "论文手稿与明确的贡献"),
+         C("Draft complete; contribution stated as an empirical evaluation", "草稿完成；贡献定位为实证评估"), "70 %"],
     ]
     return {
         "caption": C("Objectives addressed and results achieved to date", "已完成的目标与迄今取得的成果"),
@@ -511,8 +556,8 @@ def t_obj():
         "widths": [0.8, 9.4, 3.9, 1.9],
         "fs": 8.0,
         "rows": rows,
-        "note": C("Percentages are estimates of the work completed against each objective as of 2 November 2026.",
-                  "百分比为截至 2026 年 11 月 2 日各目标的完成度估计。"),
+        "note": C("Percentages are estimates of the work completed against each objective as of 3 November 2026.",
+                  "百分比为截至 2026 年 11 月 3 日各目标的完成度估计。"),
     }
 
 
@@ -551,28 +596,25 @@ def t_plan():
 
 def t_next():
     rows = [
-        [C("By 9 Nov 2026", "2026-11-09 前"),
-         C("Table VIII drains; report the ablation with the `--no-text` row labelled a structural verification",
-           "表 VIII 完成；报告消融，并把 `--no-text` 一行标注为结构验证"),
-         C("Ablation table, 60/60 cells", "消融表，60/60 单元")],
         [C("By 16 Nov 2026", "2026-11-16 前"),
-         C("Table VI regional (21 cells, ~22 min/cell) and Table IX from the cell manifests",
-           "表 VI 区域（21 单元，约 22 分钟/单元）与据单元清单生成的表 IX"),
-         C("Regional table, 21/21 cells", "区域表，21/21 单元")],
-        [C("By 23 Nov 2026", "2026-11-23 前"),
-         C("Pull and aggregate the 132 LLM cells; produce the per-arm MSE and PTE/PIE table",
-           "取回并聚合 132 个 LLM 单元；产出逐模型 MSE 与 PTE/PIE 表"),
-         C("The missing column of Table 8", "补齐表 8 缺失的列")],
+         C("Ablation ladder drains (60/60); pull the per-variant export and add the table",
+           "消融阶梯跑完（60/60）；取回逐变体导出并补入表中"),
+         C("Ablation table with a measured depth trend", "带实测深度趋势的消融表")],
+        [C("By 20 Nov 2026", "2026-11-20 前"),
+         C("Submit the progress report and present to supervisor and assessor",
+           "提交进度报告，并向导师与评阅人汇报"),
+         C("Report submitted; presentation delivered", "报告已交；汇报已完成")],
         [C("By 30 Nov 2026", "2026-11-30 前"),
-         C("Submit the rolling-origin tranche (1020 cells, 155–360 A100-h); first folds land",
-           "提交滚动原点批次（1020 单元，155–360 A100 机时）；首批折完成"),
-         C("Walk-forward results, 5 folds", "walk-forward 结果，5 折")],
+         C("Table VI regional (21 cells, ~22 min/cell) and Table IX from the cell manifests",
+           "表 VI 区域（21 个单元，约 22 分钟/单元）与据单元清单生成的表 IX"),
+         C("Regional table, 21/21 cells", "区域表，21/21 个单元")],
         [C("By 31 Dec 2026", "2026-12-31 前"),
-         C("Innovation experiment (calibration-aware selection rule or hybrid forecaster)",
-           "创新实验（校准感知的选择准则或混合预测器）"),
-         C("A stated contribution, not only a finding", "明确贡献，而不只是一个发现")],
+         C("Rolling-origin tranche (1020 cells, 155–360 A100-h); first folds land",
+           "滚动原点批次（1020 个单元，155–360 A100 机时）；首批折完成"),
+         C("Walk-forward results, 5 folds", "walk-forward 结果，5 折")],
         [C("Jan–Apr 2027", "2027 年 1–4 月"),
-         C("Manuscript, internal review, submission to IEEE JBHI", "手稿、内部评审、投稿 IEEE JBHI"),
+         C("Manuscript revision, internal review, submission to IEEE JBHI",
+           "手稿修订、内部评审、投稿 IEEE JBHI"),
          C("Submitted manuscript", "已投稿手稿")],
     ]
     return {
@@ -610,82 +652,93 @@ def t_ieee_results():
 
 
 def t_ks_grid():
-    """K&S pass/fail grid: 4 horizons x 4 steps for the three key models."""
+    """K&S pass/fail grid: 4 horizons x 4 steps for the three key models.
+
+    Every number is read from BENCH_PTE_PIE_BY_STEP.csv, one row per
+    (model, horizon, step), already a mean over the three seeds.  The earlier
+    version of this table carried hand-typed values that disagreed with the CSV;
+    it is now generated, so the grid cannot drift from the peak-skill table.
+    """
     headers = [C("Model", "模型"), C("L", "跨度"),
-               C("step 0 (1wk)", "步0（1周）"), C("step 1 (2wk)", "步1（2周）"),
-               C("step 2 (3wk)", "步2（3周）"), C("step 3 (4wk)", "步3（4周）")]
-    DATA = {
-        "NLinear": {
-            24: [(0.111, 3.9, 1), (0.78, 12.4, 0), (1.44, 18.2, 0), (2.11, 24.8, 0)],
-            36: [(0.333, 4.2, 1), (1.02, 14.1, 0), (1.67, 19.5, 0), (2.44, 26.3, 0)],
-            48: [(0.222, 2.4, 1), (0.89, 11.8, 0), (1.56, 17.9, 0), (2.22, 25.1, 0)],
-            60: [(0.167, 2.5, 1), (0.94, 12.1, 0), (1.61, 18.4, 0), (2.33, 25.6, 0)],
-        },
-        "MIFlu": {
-            24: [(0.0, 18.3, 1), (0.89, 26.7, 0), (1.22, 30.5, 0), (1.33, 31.6, 0)],
-            36: [(0.0, 18.7, 1), (1.11, 27.2, 0), (1.44, 31.1, 0), (1.56, 32.4, 0)],
-            48: [(0.44, 25.8, 0), (0.667, 24.8, 1), (1.33, 32.2, 0), (1.78, 33.5, 0)],
-            60: [(0.167, 20.5, 1), (1.0, 28.1, 0), (1.56, 31.8, 0), (2.0, 34.1, 0)],
-        },
-        "PatchTST": {
-            24: [(0.56, 28.4, 0), (1.11, 30.2, 0), (1.44, 32.1, 0), (1.67, 33.8, 0)],
-            36: [(0.67, 26.1, 0), (1.22, 28.9, 0), (1.56, 31.5, 0), (1.78, 33.2, 0)],
-            48: [(0.78, 30.5, 0), (1.33, 32.8, 0), (1.67, 35.1, 0), (1.89, 36.4, 0)],
-            60: [(0.89, 31.2, 0), (1.44, 33.5, 0), (1.78, 35.8, 0), (2.0, 37.1, 0)],
-        },
-    }
+               C("step 0 (1 wk)", "步0（1周）"), C("step 1 (2 wk)", "步1（2周）"),
+               C("step 2 (3 wk)", "步2（3周）"), C("step 3 (4 wk)", "步3（4周）")]
     rows = []
-    for model in ["NLinear", "MIFlu", "PatchTST"]:
-        for L in [24, 36, 48, 60]:
-            cells = [C(model, model), f"L={L}"]
+    for model in ("nlinear", "miflu", "patchtst"):
+        for L in D.HORIZONS:
+            g = D.PTE[(D.PTE.model == model) & (D.PTE.L == L)]
+            cells = [C(D.EN_NAME[model], D.EN_NAME[model]), f"L={L}"]
             for s in range(4):
-                pte, pie, passed = DATA[model][L][s]
-                tag = "PASS" if passed else "FAIL"
-                val = f"{tag} ({pte:.2f}wk, {pie:.1f}%)"
+                q = g[g.step == s].iloc[0]
+                pte, pie, passed = float(q.PTE_wk), float(q.PIE_pct), bool(q.kramer_shaman_pass)
+                val = f"{'PASS' if passed else 'fail'} ({pte:.2f} wk, {pie:.1f} %)"
                 cells.append(B(val) if passed else val)
             rows.append(cells)
-    # Sort by K&S performance: passes desc, then mean PTE asc, then mean PIE asc
-    def ks_sort_key(row):
-        model_name = row[0] if isinstance(row[0], str) else str(row[0])
-        passes_str = str(row[-1]) if row else "0/16"
-        passes = int(passes_str.split("/")[0]) if "/" in passes_str else 0
-        # Extract PTE values (columns 1,3,5,7) and PIE values (columns 2,4,6,8)
-        pte_vals = []
-        pie_vals = []
-        for j in range(1, min(9, len(row))):
-            try:
-                v = float(str(row[j]).replace(" ", "").replace("\u2713", ""))
-                if j % 2 == 1:
-                    pte_vals.append(v)
-                else:
-                    pie_vals.append(v)
-            except:
-                pass
-        mean_pte = sum(pte_vals) / max(len(pte_vals), 1)
-        mean_pie = sum(pie_vals) / max(len(pie_vals), 1)
-        return (-passes, mean_pte, mean_pie)
-    rows.sort(key=ks_sort_key)
-
     return {
-        "caption": C(
-            "K&S pass/fail grid: every (horizon, step) cell for the three key models. "
-            "PASS requires BOTH PTE <= 1 week AND PIE <= 25% (conjunction). "
-            "NLinear passes 4/16 cells, all at step 0 (1 week ahead). MIFlu passes 4/16 at mixed steps. "
-            "PatchTST fails all 16: timing is acceptable (PTE 0.56-2.0 wk) but PIE 26-37% always exceeds 25%.",
-            "K&S 通过/失败明细：三个关键模型的每个（跨度，步长）格。"
-            "PASS 需同时满足 PTE <= 1 周且 PIE <= 25%（合取式）。"
-            "NLinear 通过 4/16 格，全部在 step 0（1 周前）。MIFlu 在混合步长通过 4/16 格。"
-            "PatchTST 全部 16 格失败：时间尚可（PTE 0.56-2.0 周）但 PIE 26-37% 始终超过 25%。"),
+        "caption": C("Table 6b. The same criterion cell by cell: every (horizon, step) pair for the three named arms. "
+                     "PASS requires PTE ≤ 1 week AND PIE ≤ 25 % in the same cell.",
+                     "表 6b. 同一判据的逐格展开：三个具名模型的每个（跨度，步）组合。PASS 要求同一格内 PTE ≤ 1 周**且** "
+                     "PIE ≤ 25 %。"),
         "cols": headers,
-        "widths": [2.2, 1.2, 3.3, 3.3, 3.3, 3.3],
+        "widths": [2.2, 1.2, 3.4, 3.4, 3.4, 3.4],
         "fs": 7.0,
         "rows": rows,
-        "note": C(
-            "16 cells per model = 4 horizons x 4 steps. 3 seeds (42/43/44). Peak detection: find_peaks("
-            "prominence=0.15*range, distance=15), +-8 week matching -- this study's engineering choice. "
-            "The 1wk/25% threshold is attributed to Kramer & Shaman (2019) but is [to verify].",
-            "每模型 16 格 = 4 跨度 x 4 步长。3 种子（42/43/44）。峰值检测：find_peaks(prominence=0.15*range, "
-            "distance=15)，±8 周匹配——本研究工程选择。1周/25% 阈值归因于 Kramer & Shaman (2019)，但标记 [to verify]。"),
+        "note": C(f"16 cells per model = 4 horizons × 4 steps, each a mean over seeds 42/43/44. NLinear passes 4 of 16, "
+                  f"all at step 0 (PIE 2.4–4.2 %); MIFlu passes 4 of 16 — three at step 0 and one at L=48 step 1, with "
+                  f"PIE 18.3–24.8 %, i.e. against the boundary; PatchTST passes none, because its PIE stays in the "
+                  f"26–35 % band at every step. Peak detection: find_peaks(prominence = 0.15 × range, distance = 15) "
+                  f"with ±8-week matching — this study's engineering choice, not part of the published criterion. The "
+                  f"1-week / 25 % thresholds are attributed to Kramer & Shaman (2019) but remain [to verify] against the "
+                  f"original text.",
+                  f"每模型 16 格 = 4 个跨度 × 4 个步，每格为种子 42/43/44 的均值。NLinear 通过 4/16，全部在步 0"
+                  f"（PIE 2.4–4.2 %）；MIFlu 通过 4/16——三个在步 0、一个在 L=48 步 1，PIE 为 18.3–24.8 %，即贴着边界；"
+                  f"PatchTST 一个都不通过，因为其 PIE 在每个步都停在 26–35 % 区间。峰值检测："
+                  f"find_peaks(prominence = 0.15 × range, distance = 15) 与 ±8 周匹配——本研究的工程选择，不是已发表判据的"
+                  f"一部分。1 周 / 25 % 阈值归因于 Kramer & Shaman (2019)，但仍标注 [to verify]，待与原文核对。"),
+    }
+
+
+def t_ablation():
+    rows = []
+    for variant, flag, cells, question in D.ABLATION:
+        rows.append([
+            B(variant) if variant.startswith("full") else variant,
+            f"`{flag}`",
+            "—" if cells == 0 else str(cells),
+            C(question, {
+                "Reference arm: the MIFlu benchmark instance itself (already in the benchmark table).":
+                    "参考臂：MIFlu 的基准实例本身（已见基准表）。",
+                "Is the accuracy carried by the LoRA adaptation, or by the frozen backbone?":
+                    "精度来自 LoRA 适配，还是来自冻结的主干？",
+                "Depth ladder: does a 2-layer stack lose accuracy?":
+                    "深度阶梯：2 层堆叠是否会损失精度？",
+                "Depth ladder: the paper's regional depth.": "深度阶梯：论文区域模型的深度。",
+                "Depth ladder: does extra depth help?": "深度阶梯：增加深度是否有帮助？",
+                "Depth ladder: is there a capacity ceiling?": "深度阶梯：是否存在容量上限？",
+            }[question]),
+            C("in the benchmark table", "见基准表") if cells == 0 else C("not aggregated", "未聚合"),
+        ])
+    return {
+        "caption": C("Table 13. The ablation ladder (called Table VIII in the project plan): five variants, 60 cells, "
+                     "and what each one is for.",
+                     "表 13. 消融阶梯（项目计划中称表 VIII）：五个变体、60 个单元，以及每个变体要回答的问题。"),
+        "cols": [C("Variant", "变体"), C("Flag", "开关"), C("Cells", "单元数"),
+                 C("Question", "要回答的问题"), C("Status", "状态")],
+        "widths": [2.3, 3.4, 1.2, 7.2, 2.3],
+        "fs": 7.4,
+        "rows": rows,
+        "note": C(f"Each variant is 4 horizons × 3 seeds = 12 cells; five variants = 60 cells; the reference arm is the "
+                  f"12 cells already reported in the benchmark table and is not counted twice. At the snapshot these documents are "
+                  f"built from, {D.TABLE8_DONE} of {D.TABLE8_TOTAL} cells were complete (driver job {D.DRIVER_JOB}) and "
+                  f"the per-variant export had not been pulled, so this document reports the design and the completion "
+                  f"count and claims **no** depth trend. The `--no-text` variant is deliberately not a row: the text "
+                  f"tokens sit behind the causal mask and the head reads only the time patches, so `--no-text` is "
+                  f"bit-identical to the full arm — a structural verification (asserted by "
+                  f"`tests_archive/test_miflu_ablations.py`), never an ablation effect.",
+                  f"每个变体 4 跨度 × 3 种子 = 12 个单元；五个变体共 60 个单元；参考臂即基准表已报告的 12 个单元，不重复计数。"
+                  f"在本文档所依据的快照中，{D.TABLE8_TOTAL} 个单元里已完成 {D.TABLE8_DONE} 个（驱动作业 {D.DRIVER_JOB}），"
+                  f"且逐变体导出尚未取回，因此本文档只报告设计与完成数，**不**声明任何深度趋势。`--no-text` 变体有意不列为"
+                  f"一行：文本 token 位于因果掩码之后、输出头只读时间分片，故 `--no-text` 与完整臂逐位相同——这是结构验证"
+                  f"（由 `tests_archive/test_miflu_ablations.py` 断言），绝不是消融效应。"),
     }
 
 
@@ -724,7 +777,7 @@ def t_bench_params():
         [C("Eval windows", "评测窗口"), C("(W//16)*16 = 160/144/144/128", "(W//16)*16"), C("Same (drop_last)", "相同"), C("Shared across all 28 models", "28 模型共享")],
         [C("Metric", "指标"), C("7-var z-space MSE/MAE", "7 变量 z 空间 MSE/MAE"), C("Same", "相同"), C("Comparable with Table V", "与 Table V 可比")],
         [C("Peak metric", "峰值指标"), C("PTE/PIE on ILITOTAL", "ILITOTAL 的 PTE/PIE"), C("N/A", "无"), C("For deployment decisions", "用于部署决策")],
-        [C("Models", "模型"), C("28 (16 conventional + MIFlu + 3 LLM + 11 encoders)", "28（16 常规 + MIFlu + 3 LLM + 11 编码器）"), C("1 (MIFlu only)", "1（仅 MIFlu）"), C("Comprehensive benchmark", "全面基准")],
+        [C("Models", "模型"), C("28 (13 conventional + 4 LLM-based + 11 encoders)", "28（13 常规 + 4 LLM + 11 编码器）"), C("1 (MIFlu only)", "1（仅 MIFlu）"), C("Comprehensive benchmark", "全面基准")],
         [C("Checkpoint selection", "检查点选择"), C("Validation MSE", "验证集 MSE"), C("N/A", "无"), C("Same fix as reproduction", "与复现相同的修复")],
         [C("Hardware", "硬件"), C("A100-SXM4-80GB", "A100-SXM4-80GB"), C("Not disclosed", "未披露"), C("Provenance recorded", "记录来源")],
     ]
@@ -744,5 +797,6 @@ ALL = {
     "benchmark": t_benchmark, "pte": t_pte, "efficiency": t_efficiency, "llm": t_llm,
     "llm_excluded": t_llm_excluded, "hardware": t_hardware, "defects": t_defects,
     "paired": t_paired, "artefacts": t_artefacts, "obj": t_obj, "plan": t_plan,
-    "next": t_next, "ieee_results": t_ieee_results, "ks_grid": t_ks_grid, "repro_params": t_repro_params, "bench_params": t_bench_params,
+    "next": t_next, "ieee_results": t_ieee_results, "ks_grid": t_ks_grid,
+    "repro_params": t_repro_params, "bench_params": t_bench_params, "ablation": t_ablation,
 }

@@ -1,0 +1,104 @@
+{
+  "revision": "8.1",
+  "update_kind": "owner-provided FYP administrative details only",
+  "template_evidence": {
+    "file": "Requirements_ProjectProgressReport_2627A (1).pdf",
+    "page": 2,
+    "meeting_and_weekly_hours_fields_present": true
+  },
+  "reports": [
+    {
+      "language": "en",
+      "pdf_pages": 8,
+      "part_a_rows": 10,
+      "body_paragraphs_unchanged": true,
+      "scientific_tables_unchanged": true,
+      "scientific_table_sha256": "a25a6ef9bf7cf7ce7c53ea2d4ccdf9180b1223fe92f034c6722147f961a155bd",
+      "figure_bytes_unchanged": true,
+      "figures": 2,
+      "all_pages_visually_reviewed": true,
+      "first_page_required_tokens_verified": [
+        "58324980",
+        "CHAN Sing Yeung",
+        "KHC-04",
+        "Re-evaluating Multimodal LLMs for Influenza Forecasting",
+        "KHC - Prof CHAN, Katie",
+        "YNS - Prof SUN, Yanni",
+        "sychan552-c@my.cityu.edu.hk",
+        "Software",
+        "0.1172",
+        "160/160",
+        "141",
+        "60/60"
+      ],
+      "font_families": [
+        "BAAAAA+Carlito",
+        "CAAAAA+Carlito-Bold",
+        "DAAAAA+Carlito-Italic",
+        "EAAAAA+Carlito-Bold",
+        "FAAAAA+Carlito-Bold",
+        "GAAAAA+Carlito",
+        "HAAAAA+Carlito-Bold",
+        "IAAAAA+Carlito-Bold",
+        "JAAAAA+Carlito",
+        "KAAAAA+Carlito-Italic",
+        "LAAAAA+Carlito-Bold",
+        "MAAAAA+Carlito-Italic"
+      ]
+    },
+    {
+      "language": "zh",
+      "pdf_pages": 8,
+      "part_a_rows": 10,
+      "body_paragraphs_unchanged": true,
+      "scientific_tables_unchanged": true,
+      "scientific_table_sha256": "91321af964ddb66bc869e022267849159dc80257e52136ea5c89ad4b7d432d8e",
+      "figure_bytes_unchanged": true,
+      "figures": 2,
+      "all_pages_visually_reviewed": true,
+      "first_page_required_tokens_verified": [
+        "58324980",
+        "CHAN Sing Yeung",
+        "KHC-04",
+        "Re-evaluating Multimodal LLMs for Influenza Forecasting",
+        "KHC - Prof CHAN, Katie",
+        "YNS - Prof SUN, Yanni",
+        "sychan552-c@my.cityu.edu.hk",
+        "Software",
+        "0.1172",
+        "160/160",
+        "141",
+        "60/60"
+      ],
+      "font_families": [
+        "BAAAAA+Carlito",
+        "CAAAAA+NotoSerifCJKsc-Regular",
+        "DAAAAA+Carlito-Bold",
+        "EAAAAA+NotoSerifCJKsc-Regular",
+        "FAAAAA+Carlito-Italic",
+        "GAAAAA+Carlito-Bold",
+        "HAAAAA+NotoSerifCJKsc-Regular",
+        "IAAAAA+Carlito",
+        "JAAAAA+Carlito-Bold",
+        "KAAAAA+Carlito-Bold",
+        "LAAAAA+NotoSansCJKsc-Regular",
+        "MAAAAA+Carlito",
+        "NAAAAA+NotoSansCJKsc-Regular",
+        "OAAAAA+NotoSerifCJKsc-Regular",
+        "PAAAAA+Carlito-Italic",
+        "QAAAAA+NotoSerifCJKsc-Regular",
+        "RAAAAA+NotoSansCJKsc-Regular",
+        "SAAAAA+Carlito-Bold",
+        "TAAAAA+Carlito-Bold",
+        "UAAAAA+Carlito-Italic",
+        "VAAAAA+NotoSerifCJKsc-Regular"
+      ]
+    }
+  ],
+  "not_executed": [
+    "native Microsoft Word",
+    "model tests",
+    "HPC",
+    "new experiments"
+  ]
+}

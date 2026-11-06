@@ -1,0 +1,31 @@
+=== T2_ENV_PROBE START 2026-11-06T15:30:43Z host=cpunode-034 job=744533 ===
+--- python candidates ---
+/usr/bin/python3 -> Python 3.9.25
+/usr/local/bin/python3 MISSING
+/gpfs1/home/sychan552/.conda/envs/mlflu_hpc/bin/python -> Python 3.9.25
+/home/sychan552/.venvs/mlflu_llm/bin/python -> Python 3.11.13
+--- which python3 / pip ---
+/usr/bin/which: no pip in (/home/sychan552/.local/bin:/home/sychan552/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin)
+/usr/bin/which: no pip3 in (/home/sychan552/.local/bin:/home/sychan552/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin)
+/usr/bin/python3
+--- proxy ---
+NO_PROXY=localhost,127.0.0.1,burgundy2025.hpc.cityu.edu.hk,hpclogin03,hpclogin03.cityu.edu.hk
+HTTPS_PROXY=http://proxy.cityu.edu.hk:8080
+HTTP_PROXY=http://proxy.cityu.edu.hk:8080
+--- internet + PyPI reachability (short) ---
+pypi_json_http=200
+hf_http=200
+--- pip index test from mlflu_hpc python ---
+chronos-forecasting (1.5.3)
+Available versions: 1.5.3, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.0
+--- system python3 version detail ---
+3.9.25 (main, Aug  6 2026, 00:00:00) 
+[GCC 11.5.0 20240719 (Red Hat 11.5.0-14)]
+/usr/bin/python3
+--- conda envs ---
+total 2
+drwxr-xr-x  3 sychan552 sychan552 4096 Aug  6 18:27 .
+drwxr-xr-x  4 sychan552 sychan552 4096 Aug  6 18:27 ..
+-rw-r--r--  1 sychan552 sychan552    0 Aug  6 18:27 .conda_envs_dir_test
+drwxr-xr-x 20 sychan552 sychan552 4096 Aug  6 18:33 mlflu_hpc
+=== T2_ENV_PROBE END 2026-11-06T15:30:48Z ===

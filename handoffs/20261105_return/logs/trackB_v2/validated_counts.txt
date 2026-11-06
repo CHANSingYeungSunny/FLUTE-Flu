@@ -1,0 +1,4 @@
+COMPLETE 160 / 160
+BY_REASON {}
+COMPLETE 117 / 1120
+BY_REASON {"no cell dir": 975, "no metrics.csv": 1, "no metrics.json": 27}

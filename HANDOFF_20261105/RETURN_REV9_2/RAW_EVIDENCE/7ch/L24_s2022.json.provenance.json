@@ -1,0 +1,80 @@
+{
+  "cell": "L24_s2022",
+  "prediction_path": "/gpfs1/scratch/sychan552/trackB_20261104/core/export7ch/L24_s2022.npz",
+  "target_path_or_embedded_key": "target (embedded in same npz)",
+  "array_axis_order": [
+    "N_window",
+    "N_channel=7",
+    "N_lead=L"
+  ],
+  "channel_names": [
+    "wili",
+    "unwili",
+    "age_0_4",
+    "age_5_24",
+    "ilitotal",
+    "num_providers",
+    "ot"
+  ],
+  "channel_index_ilitotal": 4,
+  "pred_shape": [
+    170,
+    7,
+    24
+  ],
+  "target_shape": [
+    170,
+    7,
+    24
+  ],
+  "target_row_indices": {
+    "key": "target_start_row",
+    "min": 773,
+    "max": 942,
+    "n": 170
+  },
+  "forecast_origin_indices": "target_start_row - T(104); verify before use",
+  "lead_indices": {
+    "key": "axis 2",
+    "min": 0,
+    "max": 23,
+    "n": 24
+  },
+  "normalised_or_physical_units": "z-space (normalised); scaler mean/std embedded as train_mean/train_std",
+  "scaler_path": "/gpfs1/scratch/sychan552/stage5_a2_durable/data/scaler_miflu_author_repo_966.json",
+  "scaler_train_mean": [
+    1.7401299476623535,
+    1.7104113101959229,
+    2672.45263671875,
+    3745.14794921875,
+    9439.841796875,
+    1322.1583251953125,
+    493629.34375
+  ],
+  "scaler_train_std": [
+    1.227785587310791,
+    1.1508954763412476,
+    2129.548583984375,
+    4244.9619140625,
+    9003.15234375,
+    493.5039367675781,
+    228807.40625
+  ],
+  "finite_value_check": true,
+  "shape_check": true,
+  "source_profile": "author_repo_966",
+  "source_profile_sha256": "2a96dfed7db532f0a36b6fddb3f4091e665b3d36b7662292589e3bbca95ebfe5",
+  "checkpoint_path": "/gpfs1/scratch/sychan552/trackB_20261104/core/ckpt/miflu/L24_s2022/best_miflu_L24.pth",
+  "checkpoint_sha256": "0092999314ebaa58ddd75e40e6be78695647171f054b49f372471b3f11e4b8fc",
+  "checkpoint_selection_rule": "val-selected best_miflu_L{L}.pth from the 2021-2030 v2 core run",
+  "seed": 2022,
+  "L": 24,
+  "window_panel": "all_valid_strict",
+  "drop_last": false,
+  "hardware": "cpunode-030 / CPU (tiny partition)",
+  "device": "cpu",
+  "wall_seconds_export": 434,
+  "mse_all_z": 1.6865779161453247,
+  "code_revision": "export_miflu_7ch.py (sha recorded in COMMANDS_EXECUTED.csv)",
+  "label": "O1_CPU_RECOVERY_20261105 distinct from GPU job 739549"
+}

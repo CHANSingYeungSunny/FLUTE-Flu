@@ -1,14 +1,15 @@
 {
- "built_at": "2026-11-03 05:27:42",
+ "built_at": "2026-11-04 00:07:29",
  "path": "01_\u6700\u7ec8\u62a5\u544a/PROJECT_HANDOFF.zip",
- "entries": 1586,
- "zip_bytes": 181884662,
- "zip_mb": 173.5,
- "input_bytes": 321082612,
- "input_mb": 306.2,
- "seconds": 12.6,
+ "entries": 1446,
+ "zip_bytes": 173086134,
+ "zip_mb": 165.1,
+ "input_bytes": 311417982,
+ "input_mb": 297.0,
+ "seconds": 7.7,
  "crc_ok": true,
  "excluded_dirs": [
+  ".codebuddy",
   ".git",
   ".pytest_cache",
   ".quarantine",
@@ -21,5 +22,28 @@
   "01_\u6700\u7ec8\u62a5\u544a/_build",
   "results/v3_clean/final",
   "results/v3_clean/test_eval"
- ]
+ ],
+ "top_counts": {
+  ".gitignore": 1,
+  "00_START_HERE.md": 1,
+  "Appendix II.pdf": 1,
+  "Appendix II.zip": 1,
+  "CITATION.cff": 1,
+  "CODE_MAP.md": 1,
+  "HPC_GUIDE.md": 1,
+  "LICENSE": 1,
+  "README.md": 1,
+  "README_START_HERE.md": 1,
+  "Requirements_ProjectProgressReport_2627A (1).pdf": 1,
+  "WHERE_EVERYTHING_IS.md": 1,
+  "reproduce_all.py": 1,
+  "requirements.txt": 1,
+  "01_\u6700\u7ec8\u62a5\u544a": 174,
+  "02_\u6570\u5b57\u8868\u683c": 87,
+  "03_\u9884\u6d4b\u6570\u636e_\u8bc1\u636e": 904,
+  "04_\u8be6\u7ec6\u8bf4\u660e\u6587\u6863": 49,
+  "05_\u7a0b\u5e8f\u4ee3\u7801": 165,
+  "06_\u539f\u59cb\u6570\u636e\u96c6": 8,
+  "hpc_experiments": 45
+ }
 }

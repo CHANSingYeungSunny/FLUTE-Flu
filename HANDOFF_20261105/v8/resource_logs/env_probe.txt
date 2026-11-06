@@ -1,0 +1,13 @@
+utc=2026-11-06T13:51:27Z
+hostname=cpunode-034
+SLURM_JOB_ID=744239
+SLURM_JOB_NAME=t6_res_cpu
+SLURM_JOB_NODELIST=cpunode-034
+SLURM_JOB_PARTITION=tiny
+SLURM_CPUS_PER_TASK=4
+CUDA_VISIBLE_DEVICES=<unset>
+uname=Linux cpunode-034 5.14.0-687.41.1.el9_8.x86_64 #1 SMP PREEMPT_DYNAMIC Thu Aug 20 15:28:10 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+nproc=4
+python_binary=/gpfs1/home/sychan552/.conda/envs/mlflu_hpc/bin/python
+python_V=Python 3.9.25
+gnu_time_version=time (GNU Time) 1.9

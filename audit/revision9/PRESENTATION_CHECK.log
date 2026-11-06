@@ -1,0 +1,24 @@
+{
+  "original_user_master_preserved": true,
+  "current_deck_is_authorised_status_edit": true,
+  "embedded_workbook_values_checked": true,
+  "embedded_workbook_absolute_tolerance": 1e-12,
+  "slides": 13,
+  "embedded_chart_workbooks": 2,
+  "matching_bilingual_speaker_notes": 13,
+  "planned_seconds": 300,
+  "script_whitespace_words": 606,
+  "assessor_questions": 10,
+  "internal_questions_per_language": 25,
+  "literature_backed_internal_questions_per_language": 25,
+  "notes_pdf_pages": 15,
+  "pptx_sha256": "40dc9d546933557e5b5b1add457ad86fceb20a4f3bb0e95dce9a813f03078e69",
+  "repeat_byte_identical": null,
+  "failures": [],
+  "not_executed": [
+    "native PowerPoint/Word",
+    "actual human rehearsal",
+    "independent model-test rerun here",
+    "GPU training/live HPC here"
+  ]
+}

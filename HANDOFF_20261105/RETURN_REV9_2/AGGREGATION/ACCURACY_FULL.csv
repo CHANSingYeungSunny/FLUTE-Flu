@@ -1,0 +1,5 @@
+model,L,seed,panel,n_windows,n_channels,n_leads,mse_7var_z,mae_7var_z,numerator,denominator,source,status
+miflu,24,2021,all_valid_strict,170,7,24,1.743923,,sum((pred-target)^2) over all valid windows x 7 channels x L leads,28560,RAW_EVIDENCE/7ch/L24_s2021.npz,PARTIAL_4_OF_40
+miflu,24,2022,all_valid_strict,170,7,24,1.686578,,sum((pred-target)^2) over all valid windows x 7 channels x L leads,28560,RAW_EVIDENCE/7ch/L24_s2022.npz,PARTIAL_4_OF_40
+miflu,24,2023,all_valid_strict,170,7,24,1.804358,,sum((pred-target)^2) over all valid windows x 7 channels x L leads,28560,RAW_EVIDENCE/7ch/L24_s2023.npz,PARTIAL_4_OF_40
+miflu,24,2024,all_valid_strict,170,7,24,1.816547,,sum((pred-target)^2) over all valid windows x 7 channels x L leads,28560,RAW_EVIDENCE/7ch/L24_s2024.npz,PARTIAL_4_OF_40

@@ -1,0 +1,74 @@
+captured_utc=2026-11-06T13:57:58Z
+--- scontrol show job 744253 (t6_res_gpu, CANCELLED by this task) ---
+JobId=744253 JobName=t6_res_gpu
+   UserId=sychan552(90731875) GroupId=sychan552(90731875) MCS_label=N/A
+   Priority=962 Nice=0 Account=ga_bms_kkhchan QOS=normal
+   JobState=CANCELLED Reason=Priority Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:12:00 TimeMin=N/A
+   SubmitTime=2026-11-06T21:54:48 EligibleTime=2026-11-06T21:54:48
+   AccrueTime=2026-11-06T21:54:48
+   StartTime=2026-11-06T21:56:49 EndTime=2026-11-06T21:56:49 Deadline=N/A
+   PreemptEligibleTime=2026-11-06T21:56:49 PreemptTime=None
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-06T21:56:38 Scheduler=Backfill
+   Partition=gpu_a100 AllocNode:Sid=hpclogin02:2942788
+   ReqNodeList=(null) ExcNodeList=gpu-a100-03
+   NodeList=
+   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=4,mem=32G,node=1,billing=30,gres/gpu=1,gres/gpu:a100=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=32G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/t6_res_gpu.sbatch
+   WorkDir=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res
+   StdErr=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/logs/t6_res_gpu_744253.err
+   StdIn=/dev/null
+   StdOut=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/t6_res/logs/t6_res_gpu_744253.out
+   Power=
+   TresPerNode=gres/gpu:a100:1
+   TresPerTask=cpu:4
+   
+
+--- scontrol show job 743850 (wf_fix218, MUST remain RUNNING) ---
+JobId=743850 JobName=wf_fix218
+   UserId=sychan552(90731875) GroupId=sychan552(90731875) MCS_label=N/A
+   Priority=984 Nice=0 Account=ga_bms_kkhchan QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=02:06:21 TimeLimit=04:00:00 TimeMin=N/A
+   SubmitTime=2026-11-06T19:51:22 EligibleTime=2026-11-06T19:51:22
+   AccrueTime=2026-11-06T19:51:22
+   StartTime=2026-11-06T19:51:37 EndTime=2026-11-06T23:51:37 Deadline=N/A
+   PreemptEligibleTime=2026-11-06T19:51:37 PreemptTime=None
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-06T19:51:37 Scheduler=Backfill
+   Partition=stingy AllocNode:Sid=hpclogin02:1045491
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=gpu-a100-03
+   BatchHost=gpu-a100-03
+   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=4,mem=32G,node=1,billing=15,gres/gpu=1,gres/gpu:a100=1
+   AllocTRES=cpu=4,mem=32G,node=1,billing=15,gres/gpu=1,gres/gpu:a100=1
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=32G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/wf_fix218/wf_fix218_single.sbatch
+   WorkDir=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/wf_fix218
+   StdErr=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/wf_fix218/logs/single_743850.err
+   StdIn=/dev/null
+   StdOut=/gpfs1/scratch/sychan552/stage5_a2_durable/code/queue/wf_fix218/logs/single_743850.out
+   Power=
+   TresPerNode=gres/gpu:a100:1
+   TresPerTask=cpu:4
+   
+
+--- sacct 744239 / 744253 ---
+744239       t6_res_cpu  COMPLETED      0:0   00:00:14 
+744239.batch      batch  COMPLETED      0:0   00:00:14 
+744239.exte+     extern  COMPLETED      0:0   00:00:14 
+744253       t6_res_gpu CANCELLED+      0:0   00:00:00 
+--- squeue user active ---
+743850|wf_fix218|RUNNING
+Last update in 0 seconds ago
