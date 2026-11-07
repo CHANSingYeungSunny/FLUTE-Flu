@@ -1,3 +1,33 @@
+## V8 evidence update — 2026-11-07
+
+Keyed to the requested document surfaces:
+
+- `01_最终报告/v8/ieee_manuscript_en_v8.docx/.pdf`: updated manuscript body
+  with the 1,120-cell national panel, separate 1,020-cell legacy walk-forward
+  panel, 80/80 foundation rolling-origin roster, non-monotonic ablation,
+  retrospective CDC vintage scope, six-model resources, and dated JBHI limits.
+- `01_最终报告/v8/report_internal_zh_v8.docx/.pdf`: Chinese internal report
+  rebuilt with the same old-snapshot/new-panel separation and explicit
+  superseded claims.
+- `01_最终报告/v8/report_internal_qa_zh_v8.docx/.pdf`: Q01–Q25 companion
+  retained as a separate document and updated with the v8 superseded-claims
+  index.
+- `01_最终报告/v8/progress_report_en_v8.docx/.pdf`: English FYP progress
+  report update; blank meeting and hours fields remain blank.
+- `presentation/V8_PROPOSED_UPDATE.md` and
+  `presentation/Presentation_Notes_EN_v8.docx/.pdf`: proposed slide/notes
+  changes only; owner-edited PPTX was not overwritten.
+- `README.md`, `JOURNAL_RECORD_REV9.md`, and `PAPER_TO_CODE.md`: current
+  evidence pointers and provenance/T5 guidance update.
+- `HANDOFF_20261105/v8/DOCUMENT_UPDATE_MAP.csv`,
+  `HANDOFF_20261105/v8/docs/V8_SCIENTIFIC_ADDENDUM.md`,
+  `HANDOFF_20261105/v8/docs/V8_CHANGELOG.md`, and
+  `HANDOFF_20261105/v8/BLOCKED_AND_UNVERIFIED.md`: final package map,
+  addendum, change log, and remaining blocked/unverified register.
+
+Frozen CSVs under `02_数字表格/` and the owner-edited PPTX were preserved.
+Validator PASS remains structural only (`scientific_readiness: NOT_ASSESSED`).
+
 # Revision 9.2 Chinese report and Q&A separation
 
 - Moved all Q01–Q25 into report_internal_qa_zh.docx / .pdf as requested by the owner.

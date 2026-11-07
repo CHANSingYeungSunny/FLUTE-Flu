@@ -8,8 +8,6 @@ We reproduced the paper's **Table V** on the official US CDC National-Illness 96
 
 > **中文说明**：本仓库是 CHAN Sing Yeung 的毕业设计（FYP）成果，独立复现并创新扩展了 Moon et al. (IEEE JBHI 2025) 的 MIFlu 方法。在官方 966 行 US CDC National-Illness 数据集上复现 Table V，并跑了一个 28 模型基准（含四个子基准）。复现过程诚实标注了两处修复的缺陷（验证集选检查点修复数据泄漏、7 变量指标修复 test-loader bug）。最新的 1120 格共同协议结果与旧快照分开保存，见下文 **New common 1120-cell panel**。
 
----
-
 ## Headline Results
 
 ### Reproduction of Table V (MIFlu, 10-seed mean, 2021–2030, validation-selected checkpoints)
@@ -79,7 +77,7 @@ Every figure below was re-checked against the files on disk and against Burgundy
 | Foundation matrix (separate roster) | `FOUNDATION_80_CELLS.csv` → **80 / 80 `ok`**, all finite, 80 real NPZ (40 Chronos + 40 TimesFM); sha256 `6278267…92cf` |
 | Foundation pilot cost | peak VRAM **2608 MiB**; Chronos **10.229 ± 1.074 ms**, TimesFM **50.906 ± 4.459 ms** (warm-up + repeats) |
 | Legacy `final_llm_import` tree | **388 / 388 NPZ readable** (two previously corrupt files restored by COPY, originals quarantined not deleted); `BENCH_MSE_BY_MODEL_L.csv` sha256 `a7d98ad…1e46`, 69 lines |
-| Walk-forward (legacy N=3 panel) | `WF_RECOMPUTED.csv` **1020 / 1020 `ok`** |
+| Walk-forward (legacy N=3 panel) | `WF_RECOMPUTED.csv` **1020 / 1020 `ok`**; legacy means MIFlu **2.2203**, PatchTST **3.0396**, NLinear **3.2116** (seeds 42/43/44, separate population) |
 | Regional Table VI | **53 / 53** valid `mse_z` rows |
 | Six-model resource measurements | peak VRAM (MiB): MIFlu **4816**, NLinear **558**, PatchTST **720**, GPT-2 frozen encoder **1070**, Chronos **596**, TimesFM **2594**; latency 6.98 ± 0.097 / 9.854 ± 0.337 / 48.273 ± 3.531 ms; `RESOURCE_MEASUREMENTS.csv` sha256 `9574eef…1117` |
 | v8c documents | manuscript 10 pp, internal report 10 pp, Q&A companion 16 pp; all six DOCX/PDF conversions rc=0; hashes match `v8/docs/V8C_REBUILD_LOG.md` |
