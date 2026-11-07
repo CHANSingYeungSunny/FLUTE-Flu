@@ -28,6 +28,19 @@ Keyed to the requested document surfaces:
 Frozen CSVs under `02_数字表格/` and the owner-edited PPTX were preserved.
 Validator PASS remains structural only (`scientific_readiness: NOT_ASSESSED`).
 
+## V7-format correction pass — 2026-11-07
+
+The requested stronger v7 layouts were used as templates and updated in place:
+
+- `01_最终报告/v7/ieee_manuscript_en.docx/.pdf`
+- `01_最终报告/v7/report_internal_zh.docx/.pdf`
+- `01_最终报告/v7/progress_report_zh.docx/.pdf`
+
+Each retains its original formatting and historical material, adds a prominent
+v8 supersession notice, and appends the complete current evidence summary.
+Generated `_v8_formatted` copies are retained beside them for audit comparison.
+The archived/handoff v7 snapshots were not modified.
+
 # Revision 9.2 Chinese report and Q&A separation
 
 - Moved all Q01–Q25 into report_internal_qa_zh.docx / .pdf as requested by the owner.
